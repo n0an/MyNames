@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ANViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,6 +37,9 @@
                                         <exclude reference="VwD-Uv-JQP"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="actionGenerateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d5K-Ss-dYT"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0lu-bU-4Wf">
                                 <rect key="frame" x="117" y="460" width="170" height="29"/>
@@ -47,6 +50,9 @@
                                     <segment title="Masculine"/>
                                     <segment title="Feminine"/>
                                 </segments>
+                                <connections>
+                                    <action selector="actionGenderControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZhZ-FZ-ygY"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fN-WY-lq8">
                                 <rect key="frame" x="25" y="463" width="62" height="21"/>
@@ -127,6 +133,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="genderControl" destination="0lu-bU-4Wf" id="vg0-Ev-CHV"/>
+                        <outlet property="generateButton" destination="nl5-8s-DDE" id="1Te-RW-NUq"/>
+                        <outlet property="nameCategoryTextField" destination="7FU-4f-b0W" id="pYp-RL-Knj"/>
+                        <outlet property="nameCountTextField" destination="WPs-Xo-NjA" id="WTM-5X-hPF"/>
+                        <outlet property="nameResultLabel" destination="uay-78-7I1" id="fhS-9M-Vhh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

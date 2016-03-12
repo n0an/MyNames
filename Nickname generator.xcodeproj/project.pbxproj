@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		18F1B9761C8F43C1001A3B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9751C8F43C1001A3B25 /* main.m */; };
 		18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9781C8F43C1001A3B25 /* AppDelegate.m */; };
-		18F1B97C1C8F43C1001A3B25 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B97B1C8F43C1001A3B25 /* ViewController.m */; };
 		18F1B97F1C8F43C1001A3B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F1B97D1C8F43C1001A3B25 /* Main.storyboard */; };
 		18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F1B9801C8F43C1001A3B25 /* Assets.xcassets */; };
 		18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */; };
@@ -35,12 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1893C01F1C94A6A100D17DA5 /* ANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
+		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		18F1B9711C8F43C1001A3B25 /* Nickname generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nickname generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F1B9751C8F43C1001A3B25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18F1B9771C8F43C1001A3B25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18F1B9781C8F43C1001A3B25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18F1B97A1C8F43C1001A3B25 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18F1B97B1C8F43C1001A3B25 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18F1B97E1C8F43C1001A3B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18F1B9801C8F43C1001A3B25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F1B9831C8F43C1001A3B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 			children = (
 				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
 				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
-				18F1B97A1C8F43C1001A3B25 /* ViewController.h */,
-				18F1B97B1C8F43C1001A3B25 /* ViewController.m */,
+				1893C01F1C94A6A100D17DA5 /* ANViewController.h */,
+				1893C0201C94A6A100D17DA5 /* ANViewController.m */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
 				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
@@ -273,9 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F1B97C1C8F43C1001A3B25 /* ViewController.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
+				1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +501,7 @@
 				18F1B9A01C8F43C1001A3B25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18F1B9A11C8F43C1001A3B25 /* Build configuration list for PBXNativeTarget "Nickname generatorTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +510,7 @@
 				18F1B9A31C8F43C1001A3B25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18F1B9A41C8F43C1001A3B25 /* Build configuration list for PBXNativeTarget "Nickname generatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +519,7 @@
 				18F1B9A61C8F43C1001A3B25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,27 +1,28 @@
 //
-//  ViewController.m
+//  ANViewController.m
 //  Nickname generator
 //
-//  Created by Anton Novoselov on 08/03/16.
+//  Created by Anton Novoselov on 12/03/16.
 //  Copyright © 2016 Anton Novoselov. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ANViewController.h"
 
-@interface ViewController ()
+@interface ANViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ANViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
