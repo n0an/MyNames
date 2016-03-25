@@ -10,6 +10,7 @@
 		182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546371CA5228D006293A6 /* ANGreekMythNames.m */; };
 		1825463D1CA55988006293A6 /* ANHinduismNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463C1CA55988006293A6 /* ANHinduismNames.m */; };
 		182546401CA55A44006293A6 /* ANName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463F1CA55A44006293A6 /* ANName.m */; };
+		182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546461CA5659F006293A6 /* ANCategoryVC.m */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		18F1B9761C8F43C1001A3B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9751C8F43C1001A3B25 /* main.m */; };
@@ -45,6 +46,8 @@
 		1825463C1CA55988006293A6 /* ANHinduismNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANHinduismNames.m; sourceTree = "<group>"; };
 		1825463E1CA55A44006293A6 /* ANName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANName.h; sourceTree = "<group>"; };
 		1825463F1CA55A44006293A6 /* ANName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANName.m; sourceTree = "<group>"; };
+		182546451CA5659F006293A6 /* ANCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryVC.h; sourceTree = "<group>"; };
+		182546461CA5659F006293A6 /* ANCategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCategoryVC.m; sourceTree = "<group>"; };
 		1893C01F1C94A6A100D17DA5 /* ANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
 		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		1893C0221C94A92700D17DA5 /* ANUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUtils.h; sourceTree = "<group>"; };
@@ -112,6 +115,17 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		182546411CA56483006293A6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				182546451CA5659F006293A6 /* ANCategoryVC.h */,
+				182546461CA5659F006293A6 /* ANCategoryVC.m */,
+				1893C01F1C94A6A100D17DA5 /* ANViewController.h */,
+				1893C0201C94A6A100D17DA5 /* ANViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		18F1B9681C8F43C1001A3B25 = {
 			isa = PBXGroup;
 			children = (
@@ -135,12 +149,11 @@
 		18F1B9731C8F43C1001A3B25 /* Nickname generator */ = {
 			isa = PBXGroup;
 			children = (
-				182546391CA5596C006293A6 /* Models */,
 				1825463A1CA55977006293A6 /* Utils */,
+				182546391CA5596C006293A6 /* Models */,
+				182546411CA56483006293A6 /* Controllers */,
 				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
 				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
-				1893C01F1C94A6A100D17DA5 /* ANViewController.h */,
-				1893C0201C94A6A100D17DA5 /* ANViewController.m */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
 				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
@@ -316,6 +329,7 @@
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
 				1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */,
 				182546401CA55A44006293A6 /* ANName.m in Sources */,
+				182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
