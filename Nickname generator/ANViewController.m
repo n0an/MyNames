@@ -8,22 +8,22 @@
 
 #import "ANViewController.h"
 #import "ANUtils.h"
-#import "ANGreekMythNames.h"
-#import "ANHinduismNames.h"
 
 #import "ANCategoryVC.h"
+
+#import "ANNamesFactory.h"
 
 
 @interface ANViewController () <UITextFieldDelegate, ANCategorySelectionDelegate>
 
 @property (assign, nonatomic) NSInteger namesCount;
-@property (assign, nonatomic) ANGender* selectedGender;
+@property (assign, nonatomic) ANGender selectedGender;
 
 @property (strong, nonatomic) NSArray* namesCategories;
 
-@property (strong, nonatomic) NSString* selectedCategory;
-@property (assign, nonatomic) NSInteger selectedCategoryIndex;
+@property (assign, nonatomic) ANNamesCategory selectedCategoryInd;
 
+@property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
 
 @end
 
@@ -32,19 +32,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.namesCategories = [NSArray arrayWithObjects:
-                            @"Greek Mythology",
-                            @"Hinduism",
-                            nil];
+    self.sharedNamesFactory = [ANNamesFactory sharedFactory];
     
-    self.selectedCategoryIndex = 1;
-    self.nameCategoryTextField.text = [self.namesCategories objectAtIndex:self.selectedCategoryIndex];
-    self.selectedCategory = [self.namesCategories objectAtIndex:self.selectedCategoryIndex];
+//    self.namesCategories = [NSArray arrayWithObjects:
+//                            @"Greek Mythology",
+//                            @"Hinduism",
+//                            nil];
     
+    
+    self.selectedCategoryInd = ANNamesCategoryGreekMythology;
+    
+//    self.nameCategoryTextField.text = [self.namesCategories objectAtIndex:self.selectedCategoryInd];
+    self.nameCategoryTextField.text = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
     
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
     
-    self.selectedGender = (ANGender*)self.genderControl.selectedSegmentIndex;
+    self.selectedGender = (ANGender)self.genderControl.selectedSegmentIndex;
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
@@ -56,22 +59,23 @@
 
 #pragma mark - Helper Methods
 
+
 - (NSString*) getNamesStringForNamesCount:(NSInteger) count {
     
     NSMutableArray* array = [NSMutableArray array];
     
-    for (int i = 0; i < count; i++) {
-      
-        ANHinduismNames* generatedName = [ANHinduismNames randomNameforGender:self.selectedGender];
-        [array addObject:generatedName.firstName];
+    for (int nameIndex = 0; nameIndex < count; nameIndex++) {
         
+        NSString* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategoryInd andGender:self.selectedGender];
+        
+        [array addObject:name];
     }
     
     NSString* resultString = [array componentsJoinedByString:@" "];
     
     return resultString;
-    
 }
+
 
 
 #pragma mark - Actions
@@ -99,13 +103,12 @@
     ANLog(@"actionGenderControlValueChanged");
     ANLog(@"New value is = %d", sender.selectedSegmentIndex);
     
-    self.selectedGender = (ANGender*)self.genderControl.selectedSegmentIndex;
+    self.selectedGender = (ANGender)self.genderControl.selectedSegmentIndex;
 
 }
 
 
 #pragma mark - UITextFieldDelegate
-
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
@@ -115,8 +118,9 @@
     
     ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
     
-    vc.categories = self.namesCategories;
-    vc.selectedCategoryIndex = self.selectedCategoryIndex;
+//    vc.categories = self.namesCategories;
+    vc.categories = self.sharedNamesFactory.namesCategories;
+    vc.selectedCategoryIndex = self.selectedCategoryInd;
     
     vc.delegate = self;
     
@@ -134,10 +138,11 @@
 
 - (void) categoryDidSelect:(NSInteger) categoryIndex {
     
-    self.selectedCategoryIndex = categoryIndex;
+    self.selectedCategoryInd = (ANNamesCategory)categoryIndex;
     
-    self.nameCategoryTextField.text = [self.namesCategories objectAtIndex:self.selectedCategoryIndex];
-    self.selectedCategory = [self.namesCategories objectAtIndex:self.selectedCategoryIndex];
+//    self.nameCategoryTextField.text = [self.namesCategories objectAtIndex:self.selectedCategoryInd];
+    self.nameCategoryTextField.text = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
+
 
 }
 

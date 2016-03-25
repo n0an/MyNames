@@ -32,7 +32,7 @@ static NSString* feminineNames[] = {
 };
 
 
-+ (ANGreekMythNames*) randomNameforGender:(ANGender*) gender {
++ (ANGreekMythNames*) randomNameforGender:(ANGender) gender {
     
     ANGreekMythNames* name = [[ANGreekMythNames alloc] init];
     

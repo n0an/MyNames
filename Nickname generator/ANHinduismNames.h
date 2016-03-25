@@ -13,6 +13,6 @@
 
 @property (strong, nonatomic) NSString* firstName;
 
-+ (ANHinduismNames*) randomNameforGender:(ANGender*) gender;
++ (ANHinduismNames*) randomNameforGender:(ANGender) gender;
 
 @end

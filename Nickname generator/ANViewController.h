@@ -19,8 +19,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl* nameCountControl;
 
 
-
-
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender;
 - (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender;
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender;
