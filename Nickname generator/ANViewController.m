@@ -8,17 +8,15 @@
 
 #import "ANViewController.h"
 #import "ANUtils.h"
-#import "ANNickName.h"
+#import "ANGreekMythNames.h"
 
-typedef enum {
-    ANGenderMasculine,
-    ANGenderFeminine
-} ANGender;
+#import "ANHinduismNames.h"
 
 
 @interface ANViewController ()
 
 @property (assign, nonatomic) NSInteger namesCount;
+@property (assign, nonatomic) ANGender* selectedGender;
 
 
 @end
@@ -27,37 +25,17 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
+    self.selectedGender = (ANGender*)self.genderControl.selectedSegmentIndex;
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
     self.nameResultLabel.text = currentNamesLabel;
     
     
-    [[NSNotificationCenter defaultCenter]
-     addObserverForName:ANLogNotification
-     object:nil
-     queue:[NSOperationQueue mainQueue]
-     usingBlock:^(NSNotification * _Nonnull notif) {
-         
-         ANLog(@"%@", [notif.userInfo objectForKey:ANLogNotificationTextUserInfoKey]);
-         
-     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
-- (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 #pragma mark - Helper Methods
 
@@ -66,9 +44,8 @@ typedef enum {
     NSMutableArray* array = [NSMutableArray array];
     
     for (int i = 0; i < count; i++) {
-        
-        ANNickName* generatedName = [ANNickName randomName];
-        
+      
+        ANHinduismNames* generatedName = [ANHinduismNames randomNameforGender:self.selectedGender];
         [array addObject:generatedName.firstName];
         
     }
@@ -92,11 +69,9 @@ typedef enum {
 
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender {
     
-    ANLog(@"actionNameCountControlValueChanged");
     ANLog(@"New value is = %d", sender.selectedSegmentIndex);
     
     self.namesCount = sender.selectedSegmentIndex + 1;
-    
     
 }
 
@@ -107,7 +82,8 @@ typedef enum {
     ANLog(@"actionGenderControlValueChanged");
     ANLog(@"New value is = %d", sender.selectedSegmentIndex);
     
-    
+    self.selectedGender = (ANGender*)self.genderControl.selectedSegmentIndex;
+
 
     
     

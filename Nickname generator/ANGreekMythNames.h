@@ -1,5 +1,5 @@
 //
-//  ANNickName.h
+//  ANGreekMythNames.h
 //  Nickname generator
 //
 //  Created by Anton Novoselov on 25/03/16.
@@ -7,16 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ANName.h"
 
-@interface ANNickName : NSObject
+@interface ANGreekMythNames : ANName
 
 @property (strong, nonatomic) NSString* firstName;
-@property (strong, nonatomic) NSString* secondName;
-@property (strong, nonatomic) NSString* thirdName;
 
-
-
-+ (ANNickName*) randomName;
++ (ANGreekMythNames*) randomNameforGender:(ANGender*) gender;
 
 
 @end
