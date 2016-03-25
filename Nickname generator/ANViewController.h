@@ -15,13 +15,15 @@
 @property (weak, nonatomic) IBOutlet UIButton* generateButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl* genderControl;
 @property (weak, nonatomic) IBOutlet UITextField* nameCategoryTextField;
-@property (weak, nonatomic) IBOutlet UITextField* nameCountTextField;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl* nameCountControl;
+
 
 
 
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender;
 - (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender;
-
+- (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender;
 
 
 @end
