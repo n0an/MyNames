@@ -14,6 +14,7 @@
 		1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546491CA57701006293A6 /* ANNamesFactory.m */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
+		18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */; };
 		18F1B9761C8F43C1001A3B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9751C8F43C1001A3B25 /* main.m */; };
 		18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9781C8F43C1001A3B25 /* AppDelegate.m */; };
 		18F1B97F1C8F43C1001A3B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F1B97D1C8F43C1001A3B25 /* Main.storyboard */; };
@@ -55,6 +56,8 @@
 		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		1893C0221C94A92700D17DA5 /* ANUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUtils.h; sourceTree = "<group>"; };
 		1893C0231C94A92700D17DA5 /* ANUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUtils.m; sourceTree = "<group>"; };
+		18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDescriptioinVC.h; sourceTree = "<group>"; };
+		18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDescriptioinVC.m; sourceTree = "<group>"; };
 		18F1B9711C8F43C1001A3B25 /* Nickname generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nickname generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F1B9751C8F43C1001A3B25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18F1B9771C8F43C1001A3B25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 		182546411CA56483006293A6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */,
+				18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */,
 				182546451CA5659F006293A6 /* ANCategoryVC.h */,
 				182546461CA5659F006293A6 /* ANCategoryVC.m */,
 				1893C01F1C94A6A100D17DA5 /* ANViewController.h */,
@@ -329,6 +334,7 @@
 			files = (
 				1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */,
 				182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */,
+				18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */,
 				1825463D1CA55988006293A6 /* ANHinduismNames.m in Sources */,
 				1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,

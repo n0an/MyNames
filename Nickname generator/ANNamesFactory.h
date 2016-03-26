@@ -25,8 +25,7 @@ typedef enum {
 
 @property (strong, nonatomic) NSArray* namesCategories;
 
-
-- (NSString*) getRandomNameForCategory:(ANNamesCategory) category andGender:(ANGender) gender;
+- (ANName*) getRandomNameForCategory:(ANNamesCategory) category andGender:(ANGender) gender;
 
 + (ANNamesFactory*) sharedFactory;
 

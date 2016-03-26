@@ -15,17 +15,17 @@
 @implementation ANNamesFactory
 
 
-- (NSString*) getRandomNameForCategory:(ANNamesCategory) category andGender:(ANGender) gender {
+- (ANName*) getRandomNameForCategory:(ANNamesCategory) category andGender:(ANGender) gender {
     
-    NSString* result;
+    ANName* result;
     
     switch (category) {
         case ANNamesCategoryHinduism:
-            result = [[ANHinduismNames randomNameforGender:gender] firstName];
+            result = [ANHinduismNames randomNameforGender:gender];
             break;
             
         case ANNamesCategoryGreekMythology:
-            result = [[ANGreekMythNames randomNameforGender:gender] firstName];
+            result = [ANGreekMythNames randomNameforGender:gender];
             break;
             
         case ANNamesCategoryRomanMythology:
