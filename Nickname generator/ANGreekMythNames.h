@@ -11,7 +11,7 @@
 
 @interface ANGreekMythNames : ANName
 
-@property (strong, nonatomic) NSString* firstName;
+
 
 + (ANGreekMythNames*) randomNameforGender:(ANGender) gender;
 

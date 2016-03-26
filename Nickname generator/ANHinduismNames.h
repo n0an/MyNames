@@ -11,7 +11,7 @@
 
 @interface ANHinduismNames : ANName
 
-@property (strong, nonatomic) NSString* firstName;
+
 
 + (ANHinduismNames*) randomNameforGender:(ANGender) gender;
 

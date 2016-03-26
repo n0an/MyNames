@@ -51,6 +51,9 @@ static NSString* feminineNames[] = {
         name.firstName = feminineNames[randomIndex];
     }
     
+    name.nameCategory = @"HinduMyth";
+    name.nameID = [NSString stringWithFormat:@"01.02.%d.%ld", gender,(long)randomIndex];
+    
     return name;
     
 }
