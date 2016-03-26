@@ -11,6 +11,7 @@
 		1825463D1CA55988006293A6 /* ANHinduismNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463C1CA55988006293A6 /* ANHinduismNames.m */; };
 		182546401CA55A44006293A6 /* ANName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463F1CA55A44006293A6 /* ANName.m */; };
 		182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546461CA5659F006293A6 /* ANCategoryVC.m */; };
+		1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546491CA57701006293A6 /* ANNamesFactory.m */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		18F1B9761C8F43C1001A3B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9751C8F43C1001A3B25 /* main.m */; };
@@ -48,6 +49,8 @@
 		1825463F1CA55A44006293A6 /* ANName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANName.m; sourceTree = "<group>"; };
 		182546451CA5659F006293A6 /* ANCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryVC.h; sourceTree = "<group>"; };
 		182546461CA5659F006293A6 /* ANCategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCategoryVC.m; sourceTree = "<group>"; };
+		182546481CA57701006293A6 /* ANNamesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNamesFactory.h; sourceTree = "<group>"; };
+		182546491CA57701006293A6 /* ANNamesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNamesFactory.m; sourceTree = "<group>"; };
 		1893C01F1C94A6A100D17DA5 /* ANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
 		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		1893C0221C94A92700D17DA5 /* ANUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUtils.h; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 				1825463C1CA55988006293A6 /* ANHinduismNames.m */,
 				1825463E1CA55A44006293A6 /* ANName.h */,
 				1825463F1CA55A44006293A6 /* ANName.m */,
+				182546481CA57701006293A6 /* ANNamesFactory.h */,
+				182546491CA57701006293A6 /* ANNamesFactory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */,
 				182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */,
 				1825463D1CA55988006293A6 /* ANHinduismNames.m in Sources */,
+				1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
 				1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */,
