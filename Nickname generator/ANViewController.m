@@ -13,17 +13,24 @@
 
 #import "ANNamesFactory.h"
 
+#import "ANName.h"
+
+#import "ANDescriptioinVC.h"
+
 
 @interface ANViewController () <UITextFieldDelegate, ANCategorySelectionDelegate>
 
 @property (assign, nonatomic) NSInteger namesCount;
 @property (assign, nonatomic) ANGender selectedGender;
 
-@property (strong, nonatomic) NSArray* namesCategories;
-
 @property (assign, nonatomic) ANNamesCategory selectedCategoryInd;
 
 @property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
+
+@property (strong, nonatomic) NSArray* displayedNames;
+@property (strong, nonatomic) NSArray* namesWithDescriptions;
+
+@property (assign, nonatomic) BOOL isDescriptionAvailable;
 
 @end
 
@@ -33,32 +40,43 @@
     [super viewDidLoad];
     
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
-    
-//    self.namesCategories = [NSArray arrayWithObjects:
-//                            @"Greek Mythology",
-//                            @"Hinduism",
-//                            nil];
-    
-    
     self.selectedCategoryInd = ANNamesCategoryGreekMythology;
     
-//    self.nameCategoryTextField.text = [self.namesCategories objectAtIndex:self.selectedCategoryInd];
     self.nameCategoryTextField.text = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
     
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
     
     self.selectedGender = (ANGender)self.genderControl.selectedSegmentIndex;
     
+    self.isDescriptionAvailable = NO;
+    
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
     self.nameResultLabel.text = currentNamesLabel;
     
     
+    
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // Setting gesture recognizer for main label
+    
+    if (self.isDescriptionAvailable) {
+        self.nameResultLabel.userInteractionEnabled = YES;
+    } else {
+        self.nameResultLabel.userInteractionEnabled = NO;
+    }
+    
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnNameLabel:)];
+    
+    [self.nameResultLabel addGestureRecognizer:tapGesture];
+    
 }
 
 
 #pragma mark - Helper Methods
-
 
 - (NSString*) getNamesStringForNamesCount:(NSInteger) count {
     
@@ -66,19 +84,71 @@
     
     for (int nameIndex = 0; nameIndex < count; nameIndex++) {
         
-        NSString* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategoryInd andGender:self.selectedGender];
+        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategoryInd andGender:self.selectedGender];
         
         [array addObject:name];
     }
     
-    NSString* resultString = [array componentsJoinedByString:@" "];
+    self.displayedNames = array;
+    
+    NSString* resultString = @"";
+    
+    for (ANName* name in array) {
+        
+        resultString = [NSString stringWithFormat:@"%@ %@", resultString, name.firstName];
+    }
+    
+    
+    self.namesWithDescriptions = [self getNamesWithDescriptions];
     
     return resultString;
+}
+
+- (NSArray*) getNamesWithDescriptions {
+    
+    NSMutableArray* cleanArray = [NSMutableArray array];
+    for (ANName* name in self.displayedNames) {
+
+        if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
+            [cleanArray addObject:name];
+        }
+
+    }
+    
+    if ([cleanArray count] > 0) {
+        self.isDescriptionAvailable = YES;
+    } else {
+        self.isDescriptionAvailable = NO;
+    }
+    
+    NSArray* resArray = cleanArray;
+    
+    return resArray;
 }
 
 
 
 #pragma mark - Actions
+
+- (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
+    
+    ANLog(@"actionTapOnNameLabel");
+    
+    // *** If there're names in array of names with descriptions - initializate ANDescriptionVC and transfer names array to it.
+    
+    if (self.isDescriptionAvailable) {
+        ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
+        
+        vc.namesArray = self.namesWithDescriptions;
+        
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        [self presentViewController:nav animated:YES completion:nil];
+
+    }
+    
+}
+
 
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender {
     
@@ -118,7 +188,6 @@
     
     ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
     
-//    vc.categories = self.namesCategories;
     vc.categories = self.sharedNamesFactory.namesCategories;
     vc.selectedCategoryIndex = self.selectedCategoryInd;
     
@@ -140,9 +209,7 @@
     
     self.selectedCategoryInd = (ANNamesCategory)categoryIndex;
     
-//    self.nameCategoryTextField.text = [self.namesCategories objectAtIndex:self.selectedCategoryInd];
     self.nameCategoryTextField.text = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
-
 
 }
 
