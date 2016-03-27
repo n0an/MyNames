@@ -13,21 +13,116 @@
 
 static NSString* masculineNames[] = {
     
-    @"Achilles", @"Achilleus", @"Adonis", @"Adrastos", @"Aeolus",
-    @"Aeson", @"Agamemnon", @"Aias", @"Aineias", @"Aiolos",
-    
-    @"Ajax", @"Alcides", @"Alexander", @"Alexandros", @"Alkeides",
-    @"Apollo", @"Apollon", @"Ares", @"Argus", @"Aristaeus"
+    @"ACHILLES", @"ACHILLEUS", @"ADONIS", @"ADRASTOS", @"AEOLUS",
+    @"AESON", @"AGAMEMNON", @"AIAS", @"AINEIAS", @"AIOLOS",
+    // ----- 10 -----
+    @"AJAX", @"ALCIDES", @"ALEXANDER", @"ALEXANDROS", @"ALKEIDES",
+    @"APOLLO", @"APOLLON", @"ARES", @"ARGUS", @"ARISTAEUS",
+    // ----- 20 -----
+    @"ARISTAIOS", @"ARISTODEMOS", @"ASKLEPIOS", @"ATLAS", @"BACCHUS",
+    @"BRONTES", @"CASTOR", @"CEPHALUS", @"CEPHEUS", @"CERBERUS",
+    // ----- 30 -----
+    @"CHARON", @"CHRYSES", @"COEUS", @"CRIUS", @"CRONUS",
+    @"DAEDALUS", @"DAMOCLES", @"DAMOKLES", @"DAMON", @"DARDANOS",
+    // ----- 40 -----
+    @"DEIMOS", @"DIOMEDES", @"DIONYSOS", @"DIONYSUS", @"ENDYMION",
+    @"EPIMETHEUS", @"EREBOS", @"EREBUS", @"EROS", @"EUANDROS",
+    // ----- 50 -----
+    @"EVANDER", @"GANYMEDE", @"GANYMEDES", @"GLAUCUS", @"GLAUKOS",
+    @"HADES", @"HECTOR", @"HEKTOR", @"HELIOS", @"HEPHAESTUS",
+    // ----- 60 -----
+    @"HEPHAISTOS", @"HERACLES", @"HERAKLES", @"HERMES", @"HIPPOLYTOS",
+    @"HYACINTH", @"HYACINTHUS", @"HYAKINTHOS", @"HYPERION", @"IACCHUS",
+    // ----- 70 -----
+    @"IAPETOS", @"IAPETUS", @"IASON", @"ICARUS", @"ION",
+    @"JASON", @"KASTOR", @"KEPHALOS", @"KEPHEUS", @"KERBEROS",
+    // ----- 80 -----
+    @"KOIOS", @"KREIOS", @"KRONOS", @"LEANDER", @"LEANDROS",
+    @"LINOS", @"LINUS", @"LYCURGUS", @"LYCUS", @"LYKOS",
+    // ----- 90 -----
+    @"LYKOURGOS", @"MELANTHIOS", @"MENELAOS", @"MENELAUS", @"MENTOR",
+    @"MIDAS", @"MORPHEUS", @"NARCISSUS", @"NARKISSOS", @"NEOPTOLEMOS",
+    // ----- 100 -----
+    @"NEOPTOLEMUS", @"NEREUS", @"NESTOR", @"NIKEPHOROS", @"OCEANUS",
+    @"ODYSSEUS", @"OEDIPUS", @"OIDIPOUS", @"OKEANOS", @"ORESTES",
+    // ----- 110 -----
+    @"ORION", @"ORPHEUS", @"OURANOS", @"PALLAS", @"PAN",
+    @"PARIS", @"PATROCLUS", @"PATROKLOS", @"PEGASUS", @"PERSEUS",
+    // ----- 120 -----
+    @"PHILANDER", @"PHILANDROS", @"PHOBOS", @"PHOEBUS", @"PHOIBOS",
+    @"PHRIXOS", @"PHRIXUS", @"PLOUTON", @"PLUTO", @"POLYDEUKES",
+    // ----- 130 -----
+    @"POSEIDON", @"PRIAM", @"PRIAMOS", @"PROMETHEUS", @"PROTEUS",
+    @"PYRRHOS", @"PYRRHUS", @"PYTHIOS", @"SARPEDON", @"THANATOS",
+    // ----- 140 -----
+    @"THESEUS", @"URANUS", @"ZEPHYR", @"ZEPHYROS", @"ZEPHYRUS",
+    @"ZEUS"
+    // ----- 146 -----
 
 };
 
 static NSString* feminineNames[] = {
     
-    @"Acantha", @"Adrastea", @"Adrasteia", @"Aegle", @"Aella",
-    @"Agaue", @"Aglaea", @"Aglaia", @"Aigle", @"Akantha",
-    
-    @"Alcippe", @"Alcyone", @"Alecto", @"Alekto", @"Alexandra",
-    @"Alkippe", @"Alkyone", @"Althea", @"Amalthea", @"Andromache"
+    @"ACANTHA", @"ADRASTEA", @"ADRASTEIA", @"AEGLE", @"AELLA",
+    @"AGAUE", @"AGLAEA", @"AGLAIA", @"AIGLE", @"AKANTHA",
+    // ----- 10 -----
+    @"ALCIPPE", @"ALCYONE", @"ALECTO", @"ALEKTO", @"ALEXANDRA",
+    @"ALKIPPE", @"ALKYONE", @"ALTHEA", @"AMALTHEA", @"ANDROMACHE",
+    // ----- 20 -----
+    @"ANDROMEDA", @"ANTHEA", @"ANTHEIA", @"ANTIGONE", @"ANTIOPE",
+    @"AOEDE", @"AOIDE", @"APHRODITE", @"ARACHNE", @"ARETHOUSA",
+    // ----- 30 -----
+    @"ARETHUSA", @"ARIADNE", @"ARTEMIS", @"ASTRAEA", @"ASTRAIA",
+    @"ATALANTA", @"ATHENA", @"ATHENE", @"ATROPOS", @"BRISEIS",
+    // ----- 40 -----
+    @"CALLIOPE", @"CALLISTO", @"CALYPSO", @"CARME", @"CASSANDRA",
+    @"CASSIOPEA", @"CASSIOPEIA", @"CHLOE", @"CHLORIS", @"CHRYSEIS",
+    // ----- 50 -----
+    @"CIRCE", @"CLIO", @"CLOTHO", @"CLYTEMNESTRA", @"CLYTIA",
+    @"CORA", @"CYNTHIA", @"DANAË", @"DAPHNE", @"DELIA",
+    // ----- 60 -----
+    @"DEMETER", @"DESPOINA", @"DIKE", @"DIONE", @"DORIS",
+    @"ECHO", @"EILEITHYIA", @"EIRENE", @"ELECTRA", @"ELEKTRA",
+    // ----- 70 -----
+    @"ELPIS", @"ENYO", @"EOS", @"ERATO", @"ERIS",
+    @"EUADNE", @"EUANTHE", @"EUDORA", @"EUNOMIA", @"EUPHROSYNE",
+    // ----- 80 -----
+    @"EUROPA", @"EUROPE", @"EURYDICE", @"EURYDIKE", @"EUTERPE",
+    @"EVADNE", @"GAEA", @"GAIA", @"HALCYONE", @"HALKYONE",
+    // ----- 90 -----
+    @"HARMONIA", @"HEBE", @"HECATE", @"HECUBA", @"HEKABE",
+    @"HEKATE", @"HELEN", @"HELENA", @"HELENE", @"HELLE",
+    // ----- 100 -----
+    @"HEMERA", @"HERA", @"HERMIONE", @"HERO", @"HESTIA",
+    @"HIPPOLYTA", @"HIPPOLYTE", @"IANTHE", @"ILITHYIA", @"IO",
+    // ----- 110 -----
+    @"IOLE", @"IONE", @"IPHIGENEIA", @"IPHIGENIA", @"IRENE",
+    @"IRIS", @"ISMENE", @"JOCASTA", @"KALLIOPE", @"KALLISTO",
+    // ----- 120 -----
+    @"KALYPSO", @"KARME", @"KASSANDRA", @"KASSIOPEIA", @"KIRKE",
+    @"KLEIO", @"KLOTHO", @"KLYTAIMNESTRA", @"KLYTIË", @"KORE",
+    // ----- 130 -----
+    @"KORË", @"KYNTHIA", @"LACHESIS", @"LAMIA", @"LARISA",
+    @"LEDA", @"LETO", @"LIGEIA", @"MAIA", @"MEDEA",
+    // ----- 140 -----
+    @"MEDEIA", @"MEDOUSA", @"MEDUSA", @"MEGAERA", @"MEGAIRA",
+    @"MELAINA", @"MELETE", @"MELIA", @"MELISSA", @"MELPOMENE",
+    // ----- 150 -----
+    @"MNEME", @"MNEMOSYNE", @"NAUSICAA", @"NAUSIKAA", @"NEMESIS",
+    @"NEPHELE", @"NIKE", @"NIKEPHOROS", @"NIOBE", @"NYX",
+    // ----- 160 -----
+    @"OENONE", @"OINONE", @"OURANIA", @"PALLAS", @"PANDORA",
+    @"PARTHENIA", @"PARTHENOPE", @"PENELOPE", @"PERSEPHONE", @"PHAEDRA",
+    // ----- 170 -----
+    @"PHAENNA", @"PHAIDRA", @"PHILOMELA", @"PHOEBE", @"PHOIBE",
+    @"PHYLLIS", @"PISTIS", @"POLYHYMNIA", @"POLYMNIA", @"POLYXENA",
+    // ----- 180 -----
+    @"POLYXENE", @"PRAXIS", @"PSYCHE", @"RHEA", @"RHEIA",
+    @"SELENA", @"SELENE", @"SEMELE", @"TERPSICHORE", @"TETHYS",
+    // ----- 190 -----
+    @"THALEIA", @"THALIA", @"THEIA", @"THEMIS", @"TISIPHONE",
+    @"URANIA", @"XANTHE"
+    // ----- 197 -----
     
 };
 
@@ -79,7 +174,7 @@ static NSString* mascDescriptions[] = {
     
     @"А́ргус (точнее Аргос или Арг др.-греч. Ἄργος), прозванный Паноптес, то есть всевидящий — в древнегреческой мифологии многоглазый великан; в переносном смысле — неусыпный страж. Сын Арестора (по Ферекиду), либо (по Асклепиаду) сын Инаха, либо (по Керкопу) сын Аргоса и Исмены, либо (по Акусилаю и Эсхилу) сын Геи, либо сын Агенора. По преданию, он поборол чудовищного быка, опустошавшего Аркадию. Он задушил также змею Эхидну, дочь Земли и Тартара. По Гесиоду и Ферекиду, у него было четыре глаза, он никогда не спал. По Овидию, у него было 100 глаз (согласно Нонну, 1000). Гера поставила его стражем превращённой в корову Ио.",
     
-    @"Аристей (др.-греч. Ἀρισταῖος, то есть лучший) — имя греческого героя или божества. Существует сказание, что Аристей — сын Аполлона (у Нонна назван сыном «кеосского Феба») и Кирены, внучки или дочери речного бога в Фессалии — Пенея. По редкой версии — сын Геи и Урана. Аристей родился на берегу Ливии, названном потом Киренаикой. Согласно Пиндару, Гермес умчал его на небо, его напоили нектаром и амбросией. Гермес передал ребёнка Горам и Гее, воспитавшим его нектаром и амбросией. Аполлон отдал его на воспитание Хирону. Музы научили Аристея искусству предсказания и исцеления. Его называли Аполлон Пастуший. Аристея особенно ценили как покровителя пчёл (и потому назвали Мелиссей), охоты (Агрей) и пастухов (Номий). В некоторых местностях Аристей почитался наравне с Зевсом и Аполлоном. На древних монетах его изображали то Зевсом, то Аполлоном, а на обратной стороне было изображение пчёл или винограда.",
+    @"Аристей (др.-греч. Ἀρισταῖος, то есть лучший) — имя греческого героя или божества. Существует сказание, что Аристей — сын Аполлона (у Нонна назван сыном «кеосского Феба») и Кирены, внучки или дочери речного бога в Фессалии — Пенея. По редкой версии — сын Геи и Урана. Аристей родился на берегу Ливии, названном потом Киренаикой. Согласно Пиндару, Гермес умчал его на небо, его напоили нектаром и амбросией. Гермес передал ребёнка Горам и Гее, воспитавшим его нектаром и амбросией. Аполлон отдал его на воспитание Хирону. Музы научили Аристея искусству предсказания и исцеления. Его называли Аполлон Пастуший. Аристея особенно ценили как покровителя пчёл (и потому назвали Мелиссей), охоты (Агрей) и пастухов (Номий). В некоторых местностях Аристей почитался наравне с Зевсом и Аполлоном. На древних монетах его изображали то Зевсом, то Аполлоном, а на обратной стороне было изображение пчёл или винограда."
     
     // ------------ 20 ------------
 
@@ -132,7 +227,7 @@ static NSString* femDescriptions[] = {
 
     @"Амалфея, Амалте́я, Амальте́я (др.-греч. Ἀμάλθεια, букв. «нежная богиня») — в древнегреческой мифологии — легендарная коза, вскормившая своим молоком младенца Зевса на острове Крит в пещере Козьей горы (др.-греч. Αἰγαῖον ὄρος) в то время, когда богиня Рея прятала юного бога от его отца Кроноса. Когда родился Зевс, произвела на свет двух козлят. По Мусею, шкуру этой козы (Эгиду) Зевс использовал для щита во время войны с титанами.",
     
-    @"Андрома́ха (др.-греч. Ἀνδρομάχη, букв. «воюющая с мужем») — в древнегреческой мифологии — дочь Ээтиона, родом из Фив Плакийских (либо дочь Андремона), супруга Гектора, — вождя троянцев в их войне с греками, мать Астианакта. Именуется «внучкой Дардана».",
+    @"Андрома́ха (др.-греч. Ἀνδρομάχη, букв. «воюющая с мужем») — в древнегреческой мифологии — дочь Ээтиона, родом из Фив Плакийских (либо дочь Андремона), супруга Гектора, — вождя троянцев в их войне с греками, мать Астианакта. Именуется «внучкой Дардана»."
     
     // ------------ 20 ------------
 
@@ -140,37 +235,49 @@ static NSString* femDescriptions[] = {
 
 
 
-
-
-
-
 + (ANGreekMythNames*) randomNameforGender:(ANGender) gender {
     
     ANGreekMythNames* name = [[ANGreekMythNames alloc] init];
     
-    NSInteger rand1000 = arc4random_uniform(2000);
-    ANLog(@"%d", rand1000);
-    
-    
-    NSInteger randomIndex = rand1000 / 100;
-    ANLog(@"%d", randomIndex);
+    NSString* tmpStr;
+    NSInteger totalNames;
     
     if (gender == ANGenderMasculine) {
-        name.firstName = masculineNames[randomIndex];
-        name.nameDescription = mascDescriptions[randomIndex];
+        
+        totalNames = 146;
+        
+        NSInteger randIndex = [self getRandomForCount:totalNames];
+        
+        tmpStr = masculineNames[randIndex];
+        
+        name.nameID = [NSString stringWithFormat:@"01.01.%d.%ld", gender,(long)randIndex];
+
+        
     } else {
-        name.firstName = feminineNames[randomIndex];
-        name.nameDescription = femDescriptions[randomIndex];
+        
+        totalNames = 197;
+        
+        NSInteger randIndex = [self getRandomForCount:totalNames];
+
+        tmpStr = feminineNames[randIndex];
+        
+        name.nameID = [NSString stringWithFormat:@"01.01.%d.%ld", gender,(long)randIndex];
 
     }
     
+    
+    
+    NSString* randomName = tmpStr.lowercaseString.capitalizedString;
+    name.firstName = randomName;
+    
     name.nameCategory = @"GreekMyth";
-    name.nameID = [NSString stringWithFormat:@"01.01.%d.%ld", gender,(long)randomIndex];
     
     
     return name;
     
+    
 }
+
 
 
 

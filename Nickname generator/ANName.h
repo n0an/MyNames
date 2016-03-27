@@ -29,7 +29,7 @@ typedef enum {
 @property (strong, nonatomic) NSString* imageName;
 
 
-
++ (NSInteger) getRandomForCount:(NSInteger) totalCount;
 
 @end
 
