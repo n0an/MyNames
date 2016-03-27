@@ -17,6 +17,8 @@
 
 #import "ANDescriptioinVC.h"
 
+#import "ANNameCategory.h"
+
 
 @interface ANViewController () <UITextFieldDelegate, ANCategorySelectionDelegate>
 
@@ -42,7 +44,9 @@
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
     self.selectedCategoryInd = ANNamesCategoryGreekMythology;
     
-    self.nameCategoryTextField.text = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
+    ANNameCategory* selectedCategory = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
+    
+    self.nameCategoryTextField.text = selectedCategory.nameCategoryTitle;
     
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
     
@@ -208,8 +212,11 @@
 - (void) categoryDidSelect:(NSInteger) categoryIndex {
     
     self.selectedCategoryInd = (ANNamesCategory)categoryIndex;
+
     
-    self.nameCategoryTextField.text = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
+    ANNameCategory* selectedCategory = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
+    
+    self.nameCategoryTextField.text = selectedCategory.nameCategoryTitle;
 
 }
 

@@ -40,8 +40,14 @@ typedef enum {
  
  XX.YY.Z.NN
  
- XX - Area: Myth, Regular names, Ancient names, etc.
- YY - Category in Area. Greek Myth, Roman Myth, etc.
+ XX - Area: Myth, Regular names, Ancient names, etc:
+    01 - Myth
+    02 - 
+ 
+ YY - Category in Area. Greek Myth, Roman Myth, etc:
+    01 - Greek Myth
+    02 - Vedic Myth
+ 
  Z - Gender: 0 - Masculine, 1 - Feminine
  NN - Index of name in base
  

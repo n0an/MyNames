@@ -8,9 +8,12 @@
 
 #import "ANCategoryVC.h"
 
+#import "ANCategoryCell.h"
+
+#import "ANNameCategory.h"
+
 @interface ANCategoryVC ()
 
-@property (strong, nonatomic) NSIndexPath* checkedIndexPath;
 
 @end
 
@@ -49,13 +52,13 @@
     
     static NSString* cellIdentifier = @"CategoryCell";
     
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    ANCategoryCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+    ANNameCategory* currentCategory = [self.categories objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [self.categories objectAtIndex:indexPath.row];
+    cell.categoryName.text = currentCategory.nameCategoryTitle;
+    cell.categoryImageView.image = [UIImage imageNamed:currentCategory.nameCategoryImageName];
+    
     
     if (self.selectedCategoryIndex == indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
