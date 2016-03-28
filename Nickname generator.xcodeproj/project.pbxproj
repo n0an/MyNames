@@ -14,6 +14,7 @@
 		182546401CA55A44006293A6 /* ANName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463F1CA55A44006293A6 /* ANName.m */; };
 		182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546461CA5659F006293A6 /* ANCategoryVC.m */; };
 		1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546491CA57701006293A6 /* ANNamesFactory.m */; };
+		18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18349C231CA9413300A2A68E /* MythGreekMasc.plist */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
@@ -58,6 +59,7 @@
 		182546461CA5659F006293A6 /* ANCategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCategoryVC.m; sourceTree = "<group>"; };
 		182546481CA57701006293A6 /* ANNamesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNamesFactory.h; sourceTree = "<group>"; };
 		182546491CA57701006293A6 /* ANNamesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNamesFactory.m; sourceTree = "<group>"; };
+		18349C231CA9413300A2A68E /* MythGreekMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekMasc.plist; sourceTree = "<group>"; };
 		1893C01F1C94A6A100D17DA5 /* ANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
 		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		1893C0221C94A92700D17DA5 /* ANUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUtils.h; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1810F9741CA816F500D7D00A /* MythGreekFem.plist */,
+				18349C231CA9413300A2A68E /* MythGreekMasc.plist */,
 				1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */,
 				1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */,
 				182546361CA5228D006293A6 /* ANGreekMythNames.h */,
@@ -326,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */,
 				1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */,
 				18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,

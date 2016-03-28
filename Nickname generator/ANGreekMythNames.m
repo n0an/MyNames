@@ -291,7 +291,7 @@ static NSString* femDescriptions[] = {
     
     if (gender == ANGenderMasculine) {
         
-        pathName = @"MythGreekFem";
+        pathName = @"MythGreekMasc";
         
     } else {
         pathName = @"MythGreekFem";
