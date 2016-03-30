@@ -25,4 +25,13 @@
 
 
 
++ (NSString *)stringWithoutBrackets:(NSString *)input{
+    NSString *expression = @"\\[[\\w]+\\]";
+    while ([input rangeOfString:expression options:NSRegularExpressionSearch|NSCaseInsensitiveSearch].location!=NSNotFound){
+        input = [input stringByReplacingOccurrencesOfString:expression withString:@"" options:NSRegularExpressionSearch|NSCaseInsensitiveSearch range:NSMakeRange(0, [input length])];
+    }
+    return input;
+}
+
+
 @end

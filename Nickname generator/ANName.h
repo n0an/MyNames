@@ -30,6 +30,7 @@ typedef enum {
 
 
 + (NSInteger) getRandomForCount:(NSInteger) totalCount;
++ (NSString *)stringWithoutBrackets:(NSString *)input;
 
 @end
 

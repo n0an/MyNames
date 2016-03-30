@@ -12,7 +12,6 @@
 @interface ANGreekMythNames : ANName
 
 
-
 + (ANGreekMythNames*) randomNameforGender:(ANGender) gender;
 
 
