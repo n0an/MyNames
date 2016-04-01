@@ -9,7 +9,8 @@
 #import "ANNamesFactory.h"
 
 #import "ANGreekMythNames.h"
-#import "ANHinduismNames.h"
+
+#import "ANVedicMythNames.h"
 
 #import "ANNameCategory.h"
 
@@ -22,12 +23,12 @@
     ANName* result;
     
     switch (category) {
-        case ANNamesCategoryHinduism:
-            result = [ANHinduismNames randomNameforGender:gender];
-            break;
-            
         case ANNamesCategoryGreekMythology:
             result = [ANGreekMythNames randomNameforGender:gender];
+            break;
+        
+        case ANNamesCategoryVedicMythology:
+            result = [ANVedicMythNames randomNameforGender:gender];
             break;
             
         case ANNamesCategoryRomanMythology:
@@ -36,7 +37,6 @@
         default:
             break;
     }
-    
     
     
     return result;

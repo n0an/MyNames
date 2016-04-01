@@ -13,7 +13,7 @@
 
 typedef enum {
     ANNamesCategoryGreekMythology,
-    ANNamesCategoryHinduism,
+    ANNamesCategoryVedicMythology,
     ANNamesCategoryRomanMythology
 
 

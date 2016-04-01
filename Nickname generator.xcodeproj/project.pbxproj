@@ -10,11 +10,11 @@
 		1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */; };
 		1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1810F9741CA816F500D7D00A /* MythGreekFem.plist */; };
 		182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546371CA5228D006293A6 /* ANGreekMythNames.m */; };
-		1825463D1CA55988006293A6 /* ANHinduismNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463C1CA55988006293A6 /* ANHinduismNames.m */; };
 		182546401CA55A44006293A6 /* ANName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463F1CA55A44006293A6 /* ANName.m */; };
 		182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546461CA5659F006293A6 /* ANCategoryVC.m */; };
 		1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546491CA57701006293A6 /* ANNamesFactory.m */; };
 		18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18349C231CA9413300A2A68E /* MythGreekMasc.plist */; };
+		187AC8EF1CAEB0B70028E087 /* ANVedicMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 187AC8EE1CAEB0B70028E087 /* ANVedicMythNames.m */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
@@ -51,8 +51,6 @@
 		1810F9741CA816F500D7D00A /* MythGreekFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekFem.plist; sourceTree = "<group>"; };
 		182546361CA5228D006293A6 /* ANGreekMythNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGreekMythNames.h; sourceTree = "<group>"; };
 		182546371CA5228D006293A6 /* ANGreekMythNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGreekMythNames.m; sourceTree = "<group>"; };
-		1825463B1CA55988006293A6 /* ANHinduismNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANHinduismNames.h; sourceTree = "<group>"; };
-		1825463C1CA55988006293A6 /* ANHinduismNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANHinduismNames.m; sourceTree = "<group>"; };
 		1825463E1CA55A44006293A6 /* ANName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANName.h; sourceTree = "<group>"; };
 		1825463F1CA55A44006293A6 /* ANName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANName.m; sourceTree = "<group>"; };
 		182546451CA5659F006293A6 /* ANCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryVC.h; sourceTree = "<group>"; };
@@ -60,6 +58,8 @@
 		182546481CA57701006293A6 /* ANNamesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNamesFactory.h; sourceTree = "<group>"; };
 		182546491CA57701006293A6 /* ANNamesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNamesFactory.m; sourceTree = "<group>"; };
 		18349C231CA9413300A2A68E /* MythGreekMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekMasc.plist; sourceTree = "<group>"; };
+		187AC8ED1CAEB0B70028E087 /* ANVedicMythNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVedicMythNames.h; sourceTree = "<group>"; };
+		187AC8EE1CAEB0B70028E087 /* ANVedicMythNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANVedicMythNames.m; sourceTree = "<group>"; };
 		1893C01F1C94A6A100D17DA5 /* ANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
 		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		1893C0221C94A92700D17DA5 /* ANUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUtils.h; sourceTree = "<group>"; };
@@ -118,8 +118,8 @@
 				1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */,
 				182546361CA5228D006293A6 /* ANGreekMythNames.h */,
 				182546371CA5228D006293A6 /* ANGreekMythNames.m */,
-				1825463B1CA55988006293A6 /* ANHinduismNames.h */,
-				1825463C1CA55988006293A6 /* ANHinduismNames.m */,
+				187AC8ED1CAEB0B70028E087 /* ANVedicMythNames.h */,
+				187AC8EE1CAEB0B70028E087 /* ANVedicMythNames.m */,
 				1825463E1CA55A44006293A6 /* ANName.h */,
 				1825463F1CA55A44006293A6 /* ANName.m */,
 				182546481CA57701006293A6 /* ANNamesFactory.h */,
@@ -285,6 +285,7 @@
 		18F1B9691C8F43C1001A3B25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AN;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Anton Novoselov";
 				TargetAttributes = {
@@ -362,7 +363,6 @@
 				189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */,
 				182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */,
 				18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */,
-				1825463D1CA55988006293A6 /* ANHinduismNames.m in Sources */,
 				1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
@@ -370,6 +370,7 @@
 				1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */,
 				182546401CA55A44006293A6 /* ANName.m in Sources */,
 				182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */,
+				187AC8EF1CAEB0B70028E087 /* ANVedicMythNames.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
