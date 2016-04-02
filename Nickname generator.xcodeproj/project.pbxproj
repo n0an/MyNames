@@ -26,6 +26,7 @@
 		18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */; };
 		18F1B98F1C8F43C1001A3B25 /* Nickname_generatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B98E1C8F43C1001A3B25 /* Nickname_generatorTests.m */; };
 		18F1B99A1C8F43C1001A3B25 /* Nickname_generatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9991C8F43C1001A3B25 /* Nickname_generatorUITests.m */; };
+		18FE1A711CAFCA0A004B5101 /* MythGreekFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		18F1B9951C8F43C1001A3B25 /* Nickname generatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nickname generatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F1B9991C8F43C1001A3B25 /* Nickname_generatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nickname_generatorUITests.m; sourceTree = "<group>"; };
 		18F1B99B1C8F43C1001A3B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythGreekFemImages.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
 				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
+				18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */,
 				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
 				18F1B9851C8F43C1001A3B25 /* Info.plist */,
@@ -333,6 +336,7 @@
 				18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */,
 				1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */,
 				18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */,
+				18FE1A711CAFCA0A004B5101 /* MythGreekFemImages.xcassets in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,
 				18F1B97F1C8F43C1001A3B25 /* Main.storyboard in Resources */,
 			);
