@@ -8,6 +8,7 @@
 
 #import "ANDescriptioinVC.h"
 #import "ANName.h"
+#import "ANUtils.h"
 
 @interface ANDescriptioinVC ()
 
@@ -23,6 +24,23 @@
     self.currentName = [self.namesArray firstObject];
     
     self.descriptionLabel.text = self.currentName.nameDescription;
+    
+//    UIImage* imageName = [UIImage imageNamed:self.currentName.imageName];
+//    
+//    if (!imageName) {
+//        self.imageHeightConstraint.constant = 0;
+//        
+//        ANLog(@"no image");
+//        ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
+//        
+//    } else {
+//        self.nameImageView.image = imageName;
+//        ANLog(@"there's image");
+//        ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
+//
+//    }
+    
+    [self setImageAndImageHeight];
     
     
     // Navigation bar buttons
@@ -60,8 +78,10 @@
     if (iterationDirection == ANNameIterationDirectionNext) {
         if ([self.currentName isEqual:[self.namesArray lastObject]]) {
             self.currentName = [self.namesArray firstObject];
+            
         } else {
             self.currentName = [self.namesArray objectAtIndex:currInd + 1];
+            
         }
         
     } else {
@@ -73,8 +93,30 @@
     }
     
     self.descriptionLabel.text = self.currentName.nameDescription;
+    
+    [self setImageAndImageHeight];
+    
 }
 
+
+
+- (void) setImageAndImageHeight {
+    UIImage* imageName = [UIImage imageNamed:self.currentName.imageName];
+    
+    if (!imageName) {
+        self.imageHeightConstraint.constant = 0;
+        
+        ANLog(@"no image");
+        ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
+        
+    } else {
+        self.nameImageView.image = imageName;
+        ANLog(@"there's image");
+        ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
+        
+    }
+
+}
 
 
 

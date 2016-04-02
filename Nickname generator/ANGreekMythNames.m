@@ -55,6 +55,7 @@
 
     name.firstName = randomName;
     name.nameDescription = cleanedDesc;
+    name.imageName = nameImageName;
     
     return name;
     
