@@ -12,7 +12,11 @@
 
 #import "ANVedicMythNames.h"
 
+#import "ANRomanMythNames.h"
+
 #import "ANNameCategory.h"
+
+
 
 
 @implementation ANNamesFactory
@@ -32,6 +36,8 @@
             break;
             
         case ANNamesCategoryRomanMythology:
+            result = [ANRomanMythNames randomNameforGender:gender];
+
             break;
             
         default:
@@ -55,9 +61,10 @@
         
         ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryTitle:@"Greek Mythology" andCategoryImageName:@"greek_gods"];
         ANNameCategory* area01cat02 = [[ANNameCategory alloc] initWithCategoryTitle:@"Vedic Mythology" andCategoryImageName:nil];
+        ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryTitle:@"Roman Mythology" andCategoryImageName:nil];
         
 
-        sharedFactory.namesCategories = @[area01cat01, area01cat02];
+        sharedFactory.namesCategories = @[area01cat01, area01cat02, area01cat03];
         
     });
     

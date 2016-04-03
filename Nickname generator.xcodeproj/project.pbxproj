@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180044921CB16AF70038206F /* MythRomanMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180044911CB16AF70038206F /* MythRomanMasc.plist */; };
+		180044941CB16C920038206F /* MythRomanFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180044931CB16C920038206F /* MythRomanFem.plist */; };
+		180044961CB16CBA0038206F /* MythRomanMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */; };
+		180044981CB16CD60038206F /* MythRomanFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180044971CB16CD60038206F /* MythRomanFemImages.xcassets */; };
+		1800449B1CB16D170038206F /* ANRomanMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800449A1CB16D170038206F /* ANRomanMythNames.m */; };
 		1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */; };
 		1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1810F9741CA816F500D7D00A /* MythGreekFem.plist */; };
 		182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546371CA5228D006293A6 /* ANGreekMythNames.m */; };
@@ -51,6 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180044911CB16AF70038206F /* MythRomanMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythRomanMasc.plist; sourceTree = "<group>"; };
+		180044931CB16C920038206F /* MythRomanFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythRomanFem.plist; sourceTree = "<group>"; };
+		180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythRomanMascImages.xcassets; sourceTree = "<group>"; };
+		180044971CB16CD60038206F /* MythRomanFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythRomanFemImages.xcassets; sourceTree = "<group>"; };
+		180044991CB16D170038206F /* ANRomanMythNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRomanMythNames.h; sourceTree = "<group>"; };
+		1800449A1CB16D170038206F /* ANRomanMythNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRomanMythNames.m; sourceTree = "<group>"; };
 		1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNameCategory.h; sourceTree = "<group>"; };
 		1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNameCategory.m; sourceTree = "<group>"; };
 		1810F9741CA816F500D7D00A /* MythGreekFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekFem.plist; sourceTree = "<group>"; };
@@ -129,6 +140,8 @@
 				182546371CA5228D006293A6 /* ANGreekMythNames.m */,
 				187AC8ED1CAEB0B70028E087 /* ANVedicMythNames.h */,
 				187AC8EE1CAEB0B70028E087 /* ANVedicMythNames.m */,
+				180044991CB16D170038206F /* ANRomanMythNames.h */,
+				1800449A1CB16D170038206F /* ANRomanMythNames.m */,
 				1825463E1CA55A44006293A6 /* ANName.h */,
 				1825463F1CA55A44006293A6 /* ANName.m */,
 				182546481CA57701006293A6 /* ANNamesFactory.h */,
@@ -164,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				1810F9741CA816F500D7D00A /* MythGreekFem.plist */,
+				180044931CB16C920038206F /* MythRomanFem.plist */,
+				180044911CB16AF70038206F /* MythRomanMasc.plist */,
 				18349C231CA9413300A2A68E /* MythGreekMasc.plist */,
 				18267E251CB1323A00AB130B /* MythVedicFem.plist */,
 				18267E2A1CB1367C00AB130B /* MythVedicMasc.plist */,
@@ -210,6 +225,8 @@
 				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
 				18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */,
+				180044971CB16CD60038206F /* MythRomanFemImages.xcassets */,
+				180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */,
 				18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */,
 				18267E271CB132B800AB130B /* MythVedicFemImages.xcassets */,
 				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
@@ -356,12 +373,16 @@
 				18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */,
 				1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */,
 				18267E281CB132B800AB130B /* MythVedicFemImages.xcassets in Resources */,
+				180044921CB16AF70038206F /* MythRomanMasc.plist in Resources */,
 				18267E2D1CB136C400AB130B /* MythVedicMascImages.xcassets in Resources */,
 				18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */,
+				180044961CB16CBA0038206F /* MythRomanMascImages.xcassets in Resources */,
 				18FE1A711CAFCA0A004B5101 /* MythGreekFemImages.xcassets in Resources */,
+				180044941CB16C920038206F /* MythRomanFem.plist in Resources */,
 				18267E261CB1323A00AB130B /* MythVedicFem.plist in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,
 				18267E2B1CB1367C00AB130B /* MythVedicMasc.plist in Resources */,
+				180044981CB16CD60038206F /* MythRomanFemImages.xcassets in Resources */,
 				18F1B97F1C8F43C1001A3B25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */,
+				1800449B1CB16D170038206F /* ANRomanMythNames.m in Sources */,
 				189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */,
 				182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */,
 				18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */,
