@@ -87,7 +87,7 @@
 
 
 - (void) setImageAndImageHeight {
-    UIImage* imageName = [UIImage imageNamed:self.currentName.imageName];
+    UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
     
     if (!imageName) {
         self.imageHeightConstraint.constant = 0;

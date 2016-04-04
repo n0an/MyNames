@@ -15,22 +15,21 @@ typedef enum {
     
 } ANGender;
 
+@class ANNameCategory;
 
 @interface ANName : NSObject
 
 @property (strong, nonatomic) NSString* nameID;
-
 @property (strong, nonatomic) NSString* firstName;
-
-@property (strong, nonatomic) NSString* nameCategory;
-
+@property (strong, nonatomic) ANNameCategory* nameCategory;
 @property (strong, nonatomic) NSString* nameDescription;
+@property (strong, nonatomic) NSString* nameImageName;
+@property (strong, nonatomic) NSString* nameURL;
+@property (assign, nonatomic) ANGender  nameGender;
 
-@property (strong, nonatomic) NSString* imageName;
 
++ (ANName*) randomNameforCategory:(ANNameCategory*)category andGender:(ANGender) gender;
 
-+ (NSInteger) getRandomForCount:(NSInteger) totalCount;
-+ (NSString *)stringWithoutBrackets:(NSString *)input;
 
 @end
 

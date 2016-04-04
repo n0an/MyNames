@@ -8,16 +8,14 @@
 
 #import "ANViewController.h"
 #import "ANUtils.h"
+#import "ANDataManager.h"
 
 #import "ANCategoryVC.h"
-
-#import "ANNamesFactory.h"
-
-#import "ANName.h"
-
 #import "ANDescriptioinVC.h"
 
+#import "ANName.h"
 #import "ANNameCategory.h"
+#import "ANNamesFactory.h"
 
 
 @interface ANViewController () <UITextFieldDelegate, ANCategorySelectionDelegate>
@@ -25,7 +23,7 @@
 @property (assign, nonatomic) NSInteger namesCount;
 @property (assign, nonatomic) ANGender selectedGender;
 
-@property (assign, nonatomic) ANNamesCategory selectedCategoryInd;
+@property (strong, nonatomic) ANNameCategory* selectedCategory;
 
 @property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
 
@@ -42,11 +40,11 @@
     [super viewDidLoad];
     
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
-    self.selectedCategoryInd = ANNamesCategoryGreekMythology;
     
-    ANNameCategory* selectedCategory = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
+    // Choose MythGreek Category for default
+    self.selectedCategory = [self.sharedNamesFactory.namesCategories objectAtIndex:0];
     
-    self.nameCategoryTextField.text = selectedCategory.nameCategoryTitle;
+    self.nameCategoryTextField.text = self.selectedCategory.nameCategoryTitle;
     
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
     
@@ -57,7 +55,6 @@
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
     self.nameResultLabel.text = currentNamesLabel;
-    
     
     
 }
@@ -87,36 +84,32 @@
     NSMutableArray* array = [NSMutableArray array];
     
     for (int nameIndex = 0; nameIndex < count; nameIndex++) {
-        
-        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategoryInd andGender:self.selectedGender];
+        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
         
         [array addObject:name];
     }
-    
     self.displayedNames = array;
     
     NSString* resultString = @"";
     
     for (ANName* name in array) {
-        
         resultString = [NSString stringWithFormat:@"%@ %@", resultString, name.firstName];
     }
     
-    
     self.namesWithDescriptions = [self getNamesWithDescriptions];
-    
     return resultString;
 }
+
 
 - (NSArray*) getNamesWithDescriptions {
     
     NSMutableArray* cleanArray = [NSMutableArray array];
+    
     for (ANName* name in self.displayedNames) {
 
         if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
             [cleanArray addObject:name];
         }
-
     }
     
     if ([cleanArray count] > 0) {
@@ -167,9 +160,11 @@
     
     ANLog(@"actionlikeButtonPressed");
     
+    // *** Saving choosen names to CoreData
     
+    NSArray* arr = self.displayedNames;
     
-    
+    ANLog(@"%@", arr);
     
 }
 
@@ -205,11 +200,12 @@
     ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
     
     vc.categories = self.sharedNamesFactory.namesCategories;
-    vc.selectedCategoryIndex = self.selectedCategoryInd;
+
+    vc.selectedCategory = self.selectedCategory;
     
     vc.delegate = self;
     
-    ANLog(@"selectedCategoryIndex = %d", vc.selectedCategoryIndex);
+    ANLog(@"selectedCategory = %@", vc.selectedCategory);
 
     
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -221,19 +217,13 @@
 
 #pragma mark - +++ ANCategorySelectionDelegate +++
 
-- (void) categoryDidSelect:(NSInteger) categoryIndex {
+- (void) categoryDidSelect:(ANNameCategory*) category {
     
-    self.selectedCategoryInd = (ANNamesCategory)categoryIndex;
+    self.selectedCategory = category;
 
-    
-    ANNameCategory* selectedCategory = [self.sharedNamesFactory.namesCategories objectAtIndex:self.selectedCategoryInd];
-    
-    self.nameCategoryTextField.text = selectedCategory.nameCategoryTitle;
+    self.nameCategoryTextField.text = self.selectedCategory.nameCategoryTitle;
 
 }
-
-
-
 
 
 

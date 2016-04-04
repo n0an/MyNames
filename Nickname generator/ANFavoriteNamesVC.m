@@ -25,14 +25,37 @@
     [super viewDidLoad];
     
     
+    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                                                                target:self
+                                                                                action:@selector(actionEdit:)];
     
-    
-    
-    
-    
+    self.navigationItem.rightBarButtonItem = editButton;
+
+
 }
 
 
+
+#pragma mark - Actions
+
+- (void) actionEdit:(UIBarButtonItem*) sender {
+    
+    BOOL isEditing = self.tableView.editing;
+    
+    [self.tableView setEditing:!isEditing animated:YES];
+    
+    UIBarButtonSystemItem item = UIBarButtonSystemItemEdit;
+    
+    if (self.tableView.editing) {
+        item = UIBarButtonSystemItemDone;
+    }
+    
+    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:item
+                                                                                target:self
+                                                                                action:@selector(actionEdit:)];
+    [self.navigationItem setLeftBarButtonItem:editButton animated:YES];
+    
+}
 
 
 

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ANNameCategory;
+
 @protocol ANCategorySelectionDelegate;
 
 @interface ANCategoryVC : UIViewController
@@ -15,7 +17,8 @@
 @property (strong, nonatomic) IBOutlet UITableView* tableView;
 
 @property (strong, nonatomic) NSArray* categories;
-@property (assign, nonatomic) NSInteger selectedCategoryIndex;
+
+@property (strong, nonatomic) ANNameCategory* selectedCategory;
 
 @property (weak, nonatomic) id <ANCategorySelectionDelegate> delegate;
 
@@ -25,6 +28,6 @@
 
 @required
 
-- (void) categoryDidSelect:(NSInteger) categoryIndex;
+- (void) categoryDidSelect:(ANNameCategory*) category;
 
 @end

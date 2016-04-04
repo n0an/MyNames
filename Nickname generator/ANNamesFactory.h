@@ -11,21 +11,11 @@
 
 
 
-typedef enum {
-    ANNamesCategoryGreekMythology,
-    ANNamesCategoryVedicMythology,
-    ANNamesCategoryRomanMythology
-
-
-} ANNamesCategory;
-
-
-
 @interface ANNamesFactory : NSObject
 
 @property (strong, nonatomic) NSArray* namesCategories;
 
-- (ANName*) getRandomNameForCategory:(ANNamesCategory) category andGender:(ANGender) gender;
+- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender;
 
 + (ANNamesFactory*) sharedFactory;
 
