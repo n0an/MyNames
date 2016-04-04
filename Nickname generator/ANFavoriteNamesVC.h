@@ -6,14 +6,8 @@
 //  Copyright © 2016 Anton Novoselov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ANCoreDataVC.h"
 
-@interface ANFavoriteNamesVC : UIViewController
-
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-
-
+@interface ANFavoriteNamesVC : ANCoreDataVC
 
 @end

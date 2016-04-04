@@ -9,7 +9,7 @@
 #import "ANCoreDataVC.h"
 #import "ANDataManager.h"
 
-@interface ANCoreDataVC ()  <NSFetchedResultsControllerDelegate>
+@interface ANCoreDataVC ()
 
 @end
 

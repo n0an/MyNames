@@ -12,7 +12,6 @@
 		180044961CB16CBA0038206F /* MythRomanMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */; };
 		180044981CB16CD60038206F /* MythRomanFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180044971CB16CD60038206F /* MythRomanFemImages.xcassets */; };
 		1800449B1CB16D170038206F /* ANRomanMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800449A1CB16D170038206F /* ANRomanMythNames.m */; };
-		18100DAA1CB245AB00508F1D /* ANFavoriteNamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18100DA91CB245AB00508F1D /* ANFavoriteNamesVC.m */; };
 		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
 		1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */; };
 		1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1810F9741CA816F500D7D00A /* MythGreekFem.plist */; };
@@ -46,6 +45,7 @@
 		18FECE3E1CB24E650003CED4 /* ANFavNameArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE381CB24E650003CED4 /* ANFavNameArea.m */; };
 		18FECE411CB252520003CED4 /* ANDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE401CB252520003CED4 /* ANDataManager.m */; };
 		18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE431CB256700003CED4 /* ANCoreDataVC.m */; };
+		18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +72,6 @@
 		180044971CB16CD60038206F /* MythRomanFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythRomanFemImages.xcassets; sourceTree = "<group>"; };
 		180044991CB16D170038206F /* ANRomanMythNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRomanMythNames.h; sourceTree = "<group>"; };
 		1800449A1CB16D170038206F /* ANRomanMythNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRomanMythNames.m; sourceTree = "<group>"; };
-		18100DA81CB245AB00508F1D /* ANFavoriteNamesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavoriteNamesVC.h; sourceTree = "<group>"; };
-		18100DA91CB245AB00508F1D /* ANFavoriteNamesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavoriteNamesVC.m; sourceTree = "<group>"; };
 		18100DAC1CB248C400508F1D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNameCategory.h; sourceTree = "<group>"; };
 		1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNameCategory.m; sourceTree = "<group>"; };
@@ -132,6 +130,8 @@
 		18FECE401CB252520003CED4 /* ANDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDataManager.m; sourceTree = "<group>"; };
 		18FECE421CB256700003CED4 /* ANCoreDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCoreDataVC.h; sourceTree = "<group>"; };
 		18FECE431CB256700003CED4 /* ANCoreDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCoreDataVC.m; sourceTree = "<group>"; };
+		18FECE461CB259850003CED4 /* ANFavoriteNamesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavoriteNamesVC.h; sourceTree = "<group>"; };
+		18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavoriteNamesVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,8 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				18FECE451CB258090003CED4 /* Abstract ViewControllers */,
-				18100DA81CB245AB00508F1D /* ANFavoriteNamesVC.h */,
-				18100DA91CB245AB00508F1D /* ANFavoriteNamesVC.m */,
+				18FECE461CB259850003CED4 /* ANFavoriteNamesVC.h */,
+				18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */,
 				18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */,
 				18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */,
 				182546451CA5659F006293A6 /* ANCategoryVC.h */,
@@ -489,6 +489,7 @@
 				18FECE3D1CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m in Sources */,
 				18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */,
 				1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */,
+				18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */,
 				18FECE391CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
 				18FECE3B1CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.m in Sources */,
@@ -499,7 +500,6 @@
 				182546401CA55A44006293A6 /* ANName.m in Sources */,
 				182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */,
 				18FECE3E1CB24E650003CED4 /* ANFavNameArea.m in Sources */,
-				18100DAA1CB245AB00508F1D /* ANFavoriteNamesVC.m in Sources */,
 				18FECE3A1CB24E650003CED4 /* ANFavNameCategory.m in Sources */,
 				187AC8EF1CAEB0B70028E087 /* ANVedicMythNames.m in Sources */,
 				18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */,
