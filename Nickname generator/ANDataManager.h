@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "ANFavoriteName+CoreDataProperties.h"
+#import "ANFavNameCategory+CoreDataProperties.h"
+#import "ANFavNameArea+CoreDataProperties.h"
+
+@class ANName;
+
 
 @interface ANDataManager : NSObject
 
@@ -29,6 +35,13 @@
 - (NSArray*) getAllObjectsForName:(NSString*) name andSortUsingDescriptors:(NSArray*) descriptors;
 
 - (void) addFavoriteNameWithID:(NSString*) nameID andFirstName:(NSString*) firstName andGender:(BOOL) nameGender andDescription:(NSString*) nameDescription andURL:(NSString*) nameURL andImage:(NSString*) nameImage;
+
+- (void) addFavoriteName:(ANName*) name;
+
+
+- (void) clearNamesDataBase;
+
+- (void) showAllNames;
 
 
 @end

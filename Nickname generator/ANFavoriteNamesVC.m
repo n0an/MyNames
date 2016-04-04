@@ -121,10 +121,10 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    ANName* name = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ANFavoriteName* favoriteName = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", name.firstName];
-    cell.detailTextLabel.text = name.nameID;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
+    cell.detailTextLabel.text = favoriteName.nameID;
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     

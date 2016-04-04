@@ -50,12 +50,6 @@
     NSString* nameURL = [nameParams objectForKey:@"nameURL"];
     NSString* nameImageName = [nameParams objectForKey:@"nameImageName"];
     
-    ANLog(@"name = %@", randomName);
-    ANLog(@"nameID = %@", nameID);
-    ANLog(@"Desc = %@", cleanedDesc);
-    ANLog(@"nameURL = %@", nameURL);
-    ANLog(@"nameImageName = %@", nameImageName);
-    
     name.firstName          = randomName;
     name.nameID             = nameID;
     name.nameDescription    = cleanedDesc;

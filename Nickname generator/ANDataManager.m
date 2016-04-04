@@ -7,6 +7,8 @@
 //
 
 #import "ANDataManager.h"
+#import "ANName.h"
+#import "ANNameCategory.h"
 
 
 
@@ -24,6 +26,46 @@
     
     return manager;
 }
+
+
+#pragma mark - Public Methods
+
+- (NSArray*) getAllObjectsForName:(NSString*) name {
+    return nil;
+}
+
+- (NSArray*) getAllObjectsForName:(NSString*) name andSortUsingDescriptors:(NSArray*) descriptors {
+    return nil;
+
+}
+
+- (void) addFavoriteNameWithID:(NSString*) nameID andFirstName:(NSString*) firstName andGender:(BOOL) nameGender andDescription:(NSString*) nameDescription andURL:(NSString*) nameURL andImage:(NSString*) nameImage {
+    
+}
+
+
+- (void) addFavoriteName:(ANName*) name {
+    
+    ANNameCategory* category = name.nameCategory;
+    
+    ANFavoriteName* favoriteName = [NSEntityDescription insertNewObjectForEntityForName:@"ANFavoriteName" inManagedObjectContext:self.managedObjectContext];
+    
+    favoriteName.nameFirstName = name.firstName;
+    favoriteName.nameID = name.nameID;
+    favoriteName.nameGender = [NSNumber numberWithBool:name.nameGender];
+    favoriteName.nameDescription = name.nameDescription;
+    favoriteName.nameURL = name.nameURL;
+    favoriteName.nameImageName = name.nameImageName;
+    
+    NSError* error = nil;
+    
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    
+}
+
+
 
 
 

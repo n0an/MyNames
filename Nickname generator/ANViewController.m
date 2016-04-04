@@ -157,15 +157,10 @@
 
 
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
-    
-    ANLog(@"actionlikeButtonPressed");
-    
     // *** Saving choosen names to CoreData
     
     NSArray* arr = self.displayedNames;
-    
-    ANLog(@"%@", arr);
-    
+    [[ANDataManager sharedManager] addFavoriteName:[arr firstObject]];
 }
 
 

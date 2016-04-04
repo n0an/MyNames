@@ -36,19 +36,24 @@ typedef enum {
 
 // NAME CATEGORY:
 /**********************
- 01.02.0.15
+ 01.02.0.15 - Myth, Vedic, Masculine, 15th name in Plist
  
  XX.YY.Z.NN
  
  XX - Area: Myth, Regular names, Ancient names, etc:
     01 - Myth
-    02 - 
+    02 - Tolkien World
+    03 - Herbert's Dune World
  
  YY - Category in Area. Greek Myth, Roman Myth, etc:
     01 - Greek Myth
     02 - Vedic Myth
+    03 - Roman Myth
  
- Z - Gender: 0 - Masculine, 1 - Feminine
+ Z - Gender:
+    0 - Masculine
+    1 - Feminine
+ 
  NN - Index of name in base
  
 */
