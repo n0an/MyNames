@@ -60,7 +60,7 @@
 
 
 
-#pragma mark - === NSFetchedResultsController ===
+#pragma mark - NSFetchedResultsController
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -137,9 +137,11 @@
     
     ANLog(@"didSelectRowAtIndexPath: %ld", (long)indexPath.row);
     
-    ANName* name = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ANFavoriteName* name = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    ANLog(@"selected name = %@", name.firstName);
+    ANLog(@"selected name = %@", name.nameFirstName);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
