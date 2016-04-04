@@ -162,6 +162,7 @@
     NSArray* arr = self.displayedNames;
     [[ANDataManager sharedManager] addFavoriteName:[arr firstObject]];
     
+    ANLog(@"\n=========== LIKE PRESSED ===========");
     [[ANDataManager sharedManager] showAllNames];
     [[ANDataManager sharedManager] showAllNameCategories];
 }

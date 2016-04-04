@@ -31,7 +31,6 @@
 
 #pragma mark - Public Methods
 
-
 - (void) addFavoriteName:(ANName*) name;
 
 - (void) clearFavoriteNamesDB;

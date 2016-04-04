@@ -6,7 +6,7 @@
     </entity>
     <entity name="ANFavNameCategory" representedClassName="ANFavNameCategory" syncable="YES">
         <attribute name="categoryType" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="area" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ANFavNameArea" inverseName="categories" inverseEntity="ANFavNameArea" syncable="YES"/>
+        <relationship name="area" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ANFavNameArea" inverseName="categories" inverseEntity="ANFavNameArea" syncable="YES"/>
         <relationship name="names" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ANFavoriteName" inverseName="category" inverseEntity="ANFavoriteName" syncable="YES"/>
     </entity>
     <entity name="ANFavoriteName" representedClassName="ANFavoriteName" syncable="YES">

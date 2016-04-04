@@ -53,8 +53,6 @@
     
 }
 
-
-
 - (NSArray*) getAllObjectsForName:(NSString*) name {
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     
@@ -111,6 +109,36 @@
 
 
 
+- (void) addOrGetCategory:(ANNameCategory*) category andAddName:(ANFavoriteName*) name {
+    
+    NSString* alias = category.alias;
+    
+    NSArray* addedFavNameCats = [self getAllObjectsForName:@"ANFavNameCategory"];
+    
+    // If there're categories already - check for coincidence
+    BOOL isArrEmpty = [addedFavNameCats count] == 0;
+    
+    if (!isArrEmpty) {
+        // If there's already added category with such alias - stop execution
+        for (ANFavNameCategory* favNavCat in addedFavNameCats) {
+            if ([favNavCat.categoryType isEqualToString:category.alias]) {
+                [favNavCat addNamesObject:name];
+                return;
+            }
+        }
+    }
+    
+    // If categories array is not empty, or there's no such category - add it to DB
+    
+    ANFavNameCategory* newCategory = [NSEntityDescription insertNewObjectForEntityForName:@"ANFavNameCategory" inManagedObjectContext:self.managedObjectContext];
+    
+    newCategory.categoryType = category.alias;
+    [newCategory addNamesObject:name];
+    
+    
+}
+
+
 
 
 #pragma mark - Public Methods
@@ -131,6 +159,8 @@
     
     NSError* error = nil;
     
+    [self addOrGetCategory:category andAddName:favoriteName];
+    
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"%@", [error localizedDescription]);
     }
@@ -139,11 +169,13 @@
 
 
 - (void) showAllNames {
+    NSLog(@"===== showAllNames =====");
     [self printArray:[self getAllObjectsForName:@"ANFavoriteName"]];
 }
 
 
 - (void) showAllNameCategories {
+    NSLog(@"===== showAllNameCategories =====");
     [self printArray:[self getAllObjectsForName:@"ANFavNameCategory"]];
 }
 
