@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="ANFavoriteName" syncable="YES">
+        <attribute name="nameDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameFirstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameGender" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nameID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameImageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ANNameCategory" inverseName="names" inverseEntity="ANNameCategory" syncable="YES"/>
+    </entity>
+    <entity name="ANNameArea" syncable="YES">
+        <attribute name="areaType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ANNameCategory" inverseName="area" inverseEntity="ANNameCategory" syncable="YES"/>
+    </entity>
+    <entity name="ANNameCategory" syncable="YES">
+        <attribute name="categoryType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="area" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ANNameArea" inverseName="categories" inverseEntity="ANNameArea" syncable="YES"/>
+        <relationship name="names" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ANFavoriteName" inverseName="category" inverseEntity="ANFavoriteName" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ANNameCategory" positionX="-200" positionY="45" width="128" height="88"/>
+        <element name="ANFavoriteName" positionX="-441" positionY="-30" width="128" height="148"/>
+        <element name="ANNameArea" positionX="16" positionY="44" width="128" height="73"/>
+    </elements>
+</model>

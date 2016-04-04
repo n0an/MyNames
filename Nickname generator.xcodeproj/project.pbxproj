@@ -13,6 +13,7 @@
 		180044981CB16CD60038206F /* MythRomanFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180044971CB16CD60038206F /* MythRomanFemImages.xcassets */; };
 		1800449B1CB16D170038206F /* ANRomanMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800449A1CB16D170038206F /* ANRomanMythNames.m */; };
 		18100DAA1CB245AB00508F1D /* ANFavoriteNamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18100DA91CB245AB00508F1D /* ANFavoriteNamesVC.m */; };
+		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
 		1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */; };
 		1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1810F9741CA816F500D7D00A /* MythGreekFem.plist */; };
 		182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546371CA5228D006293A6 /* ANGreekMythNames.m */; };
@@ -65,6 +66,7 @@
 		1800449A1CB16D170038206F /* ANRomanMythNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRomanMythNames.m; sourceTree = "<group>"; };
 		18100DA81CB245AB00508F1D /* ANFavoriteNamesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavoriteNamesVC.h; sourceTree = "<group>"; };
 		18100DA91CB245AB00508F1D /* ANFavoriteNamesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavoriteNamesVC.m; sourceTree = "<group>"; };
+		18100DAC1CB248C400508F1D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNameCategory.h; sourceTree = "<group>"; };
 		1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNameCategory.m; sourceTree = "<group>"; };
 		1810F9741CA816F500D7D00A /* MythGreekFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekFem.plist; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		18100DBA1CB249E800508F1D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				18100DAB1CB248C400508F1D /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		182546391CA5596C006293A6 /* Models */ = {
@@ -242,6 +252,7 @@
 				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
 				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
+				18100DBA1CB249E800508F1D /* CoreData */,
 				18100DA71CB23EAF00508F1D /* Assets */,
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
 				18F1B9851C8F43C1001A3B25 /* Info.plist */,
@@ -423,6 +434,7 @@
 			files = (
 				1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */,
 				1800449B1CB16D170038206F /* ANRomanMythNames.m in Sources */,
+				18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */,
 				189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */,
 				182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */,
 				18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */,
@@ -681,6 +693,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18100DAB1CB248C400508F1D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18100DAC1CB248C400508F1D /* Model.xcdatamodel */,
+			);
+			currentVersion = 18100DAC1CB248C400508F1D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18F1B9691C8F43C1001A3B25 /* Project object */;
 }
