@@ -44,6 +44,8 @@
 		18FECE3C1CB24E650003CED4 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE341CB24E650003CED4 /* ANFavoriteName.m */; };
 		18FECE3D1CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE361CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m */; };
 		18FECE3E1CB24E650003CED4 /* ANFavNameArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE381CB24E650003CED4 /* ANFavNameArea.m */; };
+		18FECE411CB252520003CED4 /* ANDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE401CB252520003CED4 /* ANDataManager.m */; };
+		18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE431CB256700003CED4 /* ANCoreDataVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,10 @@
 		18FECE361CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavNameArea+CoreDataProperties.m"; path = "../ANFavNameArea+CoreDataProperties.m"; sourceTree = "<group>"; };
 		18FECE371CB24E650003CED4 /* ANFavNameArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavNameArea.h; path = ../ANFavNameArea.h; sourceTree = "<group>"; };
 		18FECE381CB24E650003CED4 /* ANFavNameArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANFavNameArea.m; path = ../ANFavNameArea.m; sourceTree = "<group>"; };
+		18FECE3F1CB252520003CED4 /* ANDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDataManager.h; sourceTree = "<group>"; };
+		18FECE401CB252520003CED4 /* ANDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDataManager.m; sourceTree = "<group>"; };
+		18FECE421CB256700003CED4 /* ANCoreDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCoreDataVC.h; sourceTree = "<group>"; };
+		18FECE431CB256700003CED4 /* ANCoreDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCoreDataVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,8 @@
 				18FECE331CB24E650003CED4 /* ANFavoriteName.h */,
 				18FECE341CB24E650003CED4 /* ANFavoriteName.m */,
 				18100DAB1CB248C400508F1D /* Model.xcdatamodeld */,
+				18FECE3F1CB252520003CED4 /* ANDataManager.h */,
+				18FECE401CB252520003CED4 /* ANDataManager.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 		182546411CA56483006293A6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18FECE451CB258090003CED4 /* Abstract ViewControllers */,
 				18100DA81CB245AB00508F1D /* ANFavoriteNamesVC.h */,
 				18100DA91CB245AB00508F1D /* ANFavoriteNamesVC.m */,
 				18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */,
@@ -315,6 +324,15 @@
 				18F1B99B1C8F43C1001A3B25 /* Info.plist */,
 			);
 			path = "Nickname generatorUITests";
+			sourceTree = "<group>";
+		};
+		18FECE451CB258090003CED4 /* Abstract ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18FECE421CB256700003CED4 /* ANCoreDataVC.h */,
+				18FECE431CB256700003CED4 /* ANCoreDataVC.m */,
+			);
+			name = "Abstract ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +494,7 @@
 				18FECE3B1CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
 				1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */,
+				18FECE411CB252520003CED4 /* ANDataManager.m in Sources */,
 				1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */,
 				182546401CA55A44006293A6 /* ANName.m in Sources */,
 				182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */,
@@ -483,6 +502,7 @@
 				18100DAA1CB245AB00508F1D /* ANFavoriteNamesVC.m in Sources */,
 				18FECE3A1CB24E650003CED4 /* ANFavNameCategory.m in Sources */,
 				187AC8EF1CAEB0B70028E087 /* ANVedicMythNames.m in Sources */,
+				18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
