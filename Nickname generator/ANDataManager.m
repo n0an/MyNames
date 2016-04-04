@@ -111,8 +111,6 @@
 
 - (void) addOrGetCategory:(ANNameCategory*) category andAddName:(ANFavoriteName*) name {
     
-    NSString* alias = category.alias;
-    
     NSArray* addedFavNameCats = [self getAllObjectsForName:@"ANFavNameCategory"];
     
     // If there're categories already - check for coincidence
@@ -135,20 +133,33 @@
     newCategory.categoryType = category.alias;
     [newCategory addNamesObject:name];
     
-    
 }
-
-
 
 
 #pragma mark - Public Methods
 
-
 - (void) addFavoriteName:(ANName*) name {
     
-    ANNameCategory* category = name.nameCategory;
+    // Checking for doubles. If there's such name in DB - return from method
+    NSArray* addedNames = [self getAllObjectsForName:@"ANFavoriteName"];
     
+    // If there're names already - check for coincidence
+    BOOL isArrEmpty = [addedNames count] == 0;
+    
+    if (!isArrEmpty) {
+        // If there's already added name with such nameID - stop execution
+        for (ANFavoriteName* favName in addedNames) {
+            if ([favName.nameID isEqualToString:name.nameID]) {
+                return;
+            }
+        }
+    }
+    
+    
+    ANNameCategory* category = name.nameCategory;
+
     ANFavoriteName* favoriteName = [NSEntityDescription insertNewObjectForEntityForName:@"ANFavoriteName" inManagedObjectContext:self.managedObjectContext];
+    
     
     favoriteName.nameFirstName = name.firstName;
     favoriteName.nameID = name.nameID;
@@ -182,6 +193,7 @@
 
 - (void) clearFavoriteNamesDB {
     [self deleteAllObjectsForName:@"ANFavoriteName"];
+    [self deleteAllObjectsForName:@"ANFavNameCategory"];
 
 }
 
