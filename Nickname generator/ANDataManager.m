@@ -28,20 +28,92 @@
 }
 
 
-#pragma mark - Public Methods
+#pragma mark - Private Methods
 
-- (NSArray*) getAllObjectsForName:(NSString*) name {
-    return nil;
-}
-
-- (NSArray*) getAllObjectsForName:(NSString*) name andSortUsingDescriptors:(NSArray*) descriptors {
-    return nil;
-
-}
-
-- (void) addFavoriteNameWithID:(NSString*) nameID andFirstName:(NSString*) firstName andGender:(BOOL) nameGender andDescription:(NSString*) nameDescription andURL:(NSString*) nameURL andImage:(NSString*) nameImage {
+- (void) printArray:(NSArray*) array {
+    
+    for (id object in array) {
+        
+        if ([object isKindOfClass:[ANFavoriteName class]]) {
+            ANFavoriteName* favoriteName = (ANFavoriteName*) object;
+            NSLog(@"NAME: %@ %@", favoriteName.nameFirstName, favoriteName.nameID);
+            
+        } else if ([object isKindOfClass:[ANFavNameCategory class]]) {
+            ANFavNameCategory* category = (ANFavNameCategory*) object;
+            NSLog(@"CATEGORY: %@, Names: %lu", category.categoryType, [category.names count]);
+            
+        }
+        else {
+            NSLog(@"!!! UNKNOWN OBJECT !!!");
+        }
+        
+    }
+    
+    NSLog(@"COUNT = %lu", (unsigned long)[array count]);
     
 }
+
+
+
+- (NSArray*) getAllObjectsForName:(NSString*) name {
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription* description =
+    [NSEntityDescription entityForName:name
+                inManagedObjectContext:self.managedObjectContext];
+    
+    request.entity = description;
+    // request.resultType = NSDictionaryResultType; // Selecting type for NSDictionary of request
+    
+    
+    NSError* reqestError = nil;
+    NSArray* resultArray = [self.managedObjectContext executeFetchRequest:request error:&reqestError];
+    
+    if (reqestError) {
+        NSLog(@"requestError = %@", [reqestError localizedDescription]);
+    }
+    
+    return resultArray;
+}
+
+
+- (NSArray*) getAllObjectsForName:(NSString*) name andSortUsingDescriptors:(NSArray*) descriptors {
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription* description =
+    [NSEntityDescription entityForName:name
+                inManagedObjectContext:self.managedObjectContext];
+    
+    request.entity = description;
+    
+    [request setSortDescriptors:descriptors];
+    
+    NSError* reqestError = nil;
+    NSArray* resultArray = [self.managedObjectContext executeFetchRequest:request error:&reqestError];
+    
+    if (reqestError) {
+        NSLog(@"requestError = %@", [reqestError localizedDescription]);
+    }
+    
+    return resultArray;
+}
+
+
+- (void) deleteAllObjectsForName:(NSString*) name {
+    NSArray* allObjects = [self getAllObjectsForName:name];
+    
+    for (id object in allObjects) {
+        NSLog(@"Mark for delete: %@", object);
+        [self.managedObjectContext deleteObject:object]; // Marking in Context object to delete
+    }
+    [self.managedObjectContext save:nil]; // Saving context, and deleting marked objects
+}
+
+
+
+
+
+#pragma mark - Public Methods
 
 
 - (void) addFavoriteName:(ANName*) name {
@@ -66,7 +138,20 @@
 }
 
 
+- (void) showAllNames {
+    [self printArray:[self getAllObjectsForName:@"ANFavoriteName"]];
+}
 
+
+- (void) showAllNameCategories {
+    [self printArray:[self getAllObjectsForName:@"ANFavNameCategory"]];
+}
+
+
+- (void) clearFavoriteNamesDB {
+    [self deleteAllObjectsForName:@"ANFavoriteName"];
+
+}
 
 
 

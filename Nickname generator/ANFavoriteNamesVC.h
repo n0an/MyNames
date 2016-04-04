@@ -10,4 +10,7 @@
 
 @interface ANFavoriteNamesVC : ANCoreDataVC
 
+- (IBAction)actionResetButtonPressed:(UIBarButtonItem*)sender;
+
+
 @end

@@ -181,7 +181,13 @@
                             <outlet property="delegate" destination="Z8D-J2-Jdx" id="aK8-fy-kqE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5R3-fs-Bra"/>
+                    <navigationItem key="navigationItem" id="5R3-fs-Bra">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="T2U-jY-QyN">
+                            <connections>
+                                <action selector="actionResetButtonPressed:" destination="Z8D-J2-Jdx" id="pOR-Mo-qzN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5A2-Hf-qey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

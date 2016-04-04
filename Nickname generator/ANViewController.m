@@ -161,6 +161,9 @@
     
     NSArray* arr = self.displayedNames;
     [[ANDataManager sharedManager] addFavoriteName:[arr firstObject]];
+    
+    [[ANDataManager sharedManager] showAllNames];
+    [[ANDataManager sharedManager] showAllNameCategories];
 }
 
 

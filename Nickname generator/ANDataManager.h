@@ -31,17 +31,13 @@
 
 #pragma mark - Public Methods
 
-- (NSArray*) getAllObjectsForName:(NSString*) name;
-- (NSArray*) getAllObjectsForName:(NSString*) name andSortUsingDescriptors:(NSArray*) descriptors;
-
-- (void) addFavoriteNameWithID:(NSString*) nameID andFirstName:(NSString*) firstName andGender:(BOOL) nameGender andDescription:(NSString*) nameDescription andURL:(NSString*) nameURL andImage:(NSString*) nameImage;
 
 - (void) addFavoriteName:(ANName*) name;
 
-
-- (void) clearNamesDataBase;
+- (void) clearFavoriteNamesDB;
 
 - (void) showAllNames;
+- (void) showAllNameCategories;
 
 
 @end

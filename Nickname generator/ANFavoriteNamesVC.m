@@ -11,6 +11,7 @@
 #import "ANUtils.h"
 
 #import "ANFavoriteName+CoreDataProperties.h"
+#import "ANDataManager.h"
 
 
 @interface ANFavoriteNamesVC ()
@@ -25,13 +26,13 @@
     [super viewDidLoad];
     
     
-    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                                target:self
-                                                                                action:@selector(actionEdit:)];
+    UIBarButtonItem* editButton = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                   target:self
+                                   action:@selector(actionEdit:)];
     
-    self.navigationItem.rightBarButtonItem = editButton;
-
-
+    self.navigationItem.leftBarButtonItem = editButton;
+    
 }
 
 
@@ -50,12 +51,24 @@
         item = UIBarButtonSystemItemDone;
     }
     
-    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:item
-                                                                                target:self
-                                                                                action:@selector(actionEdit:)];
+    UIBarButtonItem* editButton = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:item
+                                   target:self
+                                   action:@selector(actionEdit:)];
+    
     [self.navigationItem setLeftBarButtonItem:editButton animated:YES];
     
 }
+
+
+- (IBAction)actionResetButtonPressed:(UIBarButtonItem*)sender {
+    
+    [[ANDataManager sharedManager] clearFavoriteNamesDB];
+    
+    [[ANDataManager sharedManager] showAllNames];
+    [[ANDataManager sharedManager] showAllNameCategories];
+}
+
 
 
 
