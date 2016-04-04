@@ -130,6 +130,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18100DA71CB23EAF00508F1D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */,
+				180044971CB16CD60038206F /* MythRomanFemImages.xcassets */,
+				180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */,
+				18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */,
+				18267E271CB132B800AB130B /* MythVedicFemImages.xcassets */,
+				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		182546391CA5596C006293A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,12 +237,7 @@
 				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
 				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
-				18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */,
-				180044971CB16CD60038206F /* MythRomanFemImages.xcassets */,
-				180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */,
-				18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */,
-				18267E271CB132B800AB130B /* MythVedicFemImages.xcassets */,
-				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
+				18100DA71CB23EAF00508F1D /* Assets */,
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
 				18F1B9851C8F43C1001A3B25 /* Info.plist */,
 				18F1B9741C8F43C1001A3B25 /* Supporting Files */,
