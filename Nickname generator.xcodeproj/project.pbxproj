@@ -169,6 +169,10 @@
 		18100DBA1CB249E800508F1D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				18FECE351CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.h */,
+				18FECE361CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m */,
+				18FECE371CB24E650003CED4 /* ANFavNameArea.h */,
+				18FECE381CB24E650003CED4 /* ANFavNameArea.m */,
 				18FECE2D1CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.h */,
 				18FECE2E1CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.m */,
 				18FECE2F1CB24E650003CED4 /* ANFavNameCategory.h */,
@@ -177,10 +181,6 @@
 				18FECE321CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.m */,
 				18FECE331CB24E650003CED4 /* ANFavoriteName.h */,
 				18FECE341CB24E650003CED4 /* ANFavoriteName.m */,
-				18FECE351CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.h */,
-				18FECE361CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m */,
-				18FECE371CB24E650003CED4 /* ANFavNameArea.h */,
-				18FECE381CB24E650003CED4 /* ANFavNameArea.m */,
 				18100DAB1CB248C400508F1D /* Model.xcdatamodeld */,
 			);
 			name = CoreData;

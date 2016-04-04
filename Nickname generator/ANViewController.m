@@ -162,6 +162,18 @@
     
 }
 
+
+- (IBAction)actionlikeButtonPressed:(UIButton*)sender {
+    
+    ANLog(@"actionlikeButtonPressed");
+    
+    
+    
+    
+    
+}
+
+
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender {
     
     ANLog(@"New value is = %d", sender.selectedSegmentIndex);

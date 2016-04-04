@@ -109,16 +109,26 @@
                                     <action selector="actionNameCountControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="8I5-c2-lLX"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igX-WN-kk6">
+                                <rect key="frame" x="460" y="285" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="JGq-bg-Tom"/>
+                                    <constraint firstAttribute="height" constant="30" id="SUO-b7-PhY"/>
+                                </constraints>
+                                <state key="normal" title="Like"/>
+                                <connections>
+                                    <action selector="actionlikeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ryl-Cj-L7m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SQx-4E-WZK" firstAttribute="top" secondItem="Swh-Uw-2Ih" secondAttribute="bottom" constant="24" id="48y-WC-Nii"/>
-                            <constraint firstItem="nl5-8s-DDE" firstAttribute="top" secondItem="uay-78-7I1" secondAttribute="bottom" constant="66" id="C7I-PX-JQS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="igX-WN-kk6" secondAttribute="bottom" constant="236" id="5wa-ia-CWc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="igX-WN-kk6" secondAttribute="trailing" constant="74" id="6Ck-sf-TdA"/>
                             <constraint firstAttribute="trailing" secondItem="uay-78-7I1" secondAttribute="trailing" constant="20" id="F6A-IG-afQ"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="top" secondItem="uay-78-7I1" secondAttribute="bottom" constant="92" id="H5c-y4-DVO"/>
-                            <constraint firstItem="uay-78-7I1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HJJ-0L-m5Q"/>
                             <constraint firstItem="7FU-4f-b0W" firstAttribute="top" secondItem="0lu-bU-4Wf" secondAttribute="bottom" constant="16" id="JMx-83-gCy"/>
-                            <constraint firstItem="uay-78-7I1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NDd-Xk-dZn"/>
                             <constraint firstItem="7FU-4f-b0W" firstAttribute="leading" secondItem="Swh-Uw-2Ih" secondAttribute="trailing" constant="17" id="NEJ-OW-2ig"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OdE-Q2-Qd7"/>
                             <constraint firstItem="Swh-Uw-2Ih" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="Rja-gu-1WW"/>
@@ -133,18 +143,12 @@
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="smi-b9-UkF"/>
                             <constraint firstItem="Swh-Uw-2Ih" firstAttribute="top" secondItem="3fN-WY-lq8" secondAttribute="bottom" constant="24" id="yog-0e-qvH"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="HJJ-0L-m5Q"/>
-                                <exclude reference="NDd-Xk-dZn"/>
-                                <exclude reference="C7I-PX-JQS"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="O5p-v6-RQs"/>
                     <connections>
                         <outlet property="genderControl" destination="0lu-bU-4Wf" id="vg0-Ev-CHV"/>
                         <outlet property="generateButton" destination="nl5-8s-DDE" id="1Te-RW-NUq"/>
+                        <outlet property="likeButton" destination="igX-WN-kk6" id="Q2Z-mT-iZR"/>
                         <outlet property="nameCategoryTextField" destination="7FU-4f-b0W" id="pYp-RL-Knj"/>
                         <outlet property="nameCountControl" destination="udp-kH-BYI" id="LTf-To-pCj"/>
                         <outlet property="nameResultLabel" destination="uay-78-7I1" id="fhS-9M-Vhh"/>
