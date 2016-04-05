@@ -10,6 +10,8 @@
 #import "ANName.h"
 #import "ANUtils.h"
 
+#import "ANWebViewVC.h"
+
 @interface ANDescriptioinVC ()
 
 @property (strong, nonatomic) ANName* currentName;
@@ -24,6 +26,12 @@
     self.currentName = [self.namesArray firstObject];
     
     self.descriptionLabel.text = self.currentName.nameDescription;
+    
+    if (self.currentName.nameURL && ![self.currentName.nameURL isEqualToString:@""]) {
+        self.readMoreButton.hidden = NO;
+    } else {
+        self.readMoreButton.hidden = YES;
+    }
     
     
     [self setImageAndImageHeight];
@@ -46,6 +54,18 @@
 //    
 //    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
+    
+    UISwipeGestureRecognizer* rightSwipeGesture =
+    [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleRightSwipe:)];
+    rightSwipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    UISwipeGestureRecognizer* leftSwipeGesture =
+    [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleLeftSwipe:)];
+    leftSwipeGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    
+    [self.view addGestureRecognizer:rightSwipeGesture];
+    [self.view addGestureRecognizer:leftSwipeGesture];
+
 }
 
 
@@ -81,6 +101,12 @@
     self.descriptionLabel.text = self.currentName.nameDescription;
     
     [self setImageAndImageHeight];
+    
+    if (self.currentName.nameURL && ![self.currentName.nameURL isEqualToString:@""]) {
+        self.readMoreButton.hidden = NO;
+    } else {
+        self.readMoreButton.hidden = YES;
+    }
     
 }
 
@@ -125,9 +151,29 @@
 }
 
 
+- (void) handleRightSwipe: (UITapGestureRecognizer*) recognizer {
+    
+    [self iterateNameWithDirection:ANNameIterationDirectionPrevious];
+    
+}
+
+- (void) handleLeftSwipe: (UITapGestureRecognizer*) recognizer {
+    
+    [self iterateNameWithDirection:ANNameIterationDirectionNext];
+    
+}
 
 
 
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showANWebViewVC"]) {
+        
+        ANWebViewVC* vc = segue.destinationViewController;
+        vc.nameURL = self.currentName.nameURL;
+    }
+}
 
 
 

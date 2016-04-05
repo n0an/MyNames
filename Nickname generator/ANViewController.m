@@ -149,6 +149,7 @@
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
         
         [self presentViewController:nav animated:YES completion:nil];
+        
 
     }
     

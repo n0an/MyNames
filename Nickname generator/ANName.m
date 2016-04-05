@@ -33,6 +33,7 @@
     
     NSArray* namesArr = [dict allKeys];
     
+    
     totalNames = [dict count];
     
     NSInteger randIndex = [self getRandomForCount:totalNames];

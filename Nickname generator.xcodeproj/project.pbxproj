@@ -27,6 +27,7 @@
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
 		18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */; };
 		18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */; };
+		18B35E111CB4475400CDABF9 /* ANWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E101CB4475400CDABF9 /* ANWebViewVC.m */; };
 		18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */; };
 		18F1B9761C8F43C1001A3B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9751C8F43C1001A3B25 /* main.m */; };
 		18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9781C8F43C1001A3B25 /* AppDelegate.m */; };
@@ -88,6 +89,8 @@
 		18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
 		18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavoriteName.h; path = ../ANFavoriteName.h; sourceTree = "<group>"; };
 		18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANFavoriteName.m; path = ../ANFavoriteName.m; sourceTree = "<group>"; };
+		18B35E0F1CB4475400CDABF9 /* ANWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWebViewVC.h; sourceTree = "<group>"; };
+		18B35E101CB4475400CDABF9 /* ANWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWebViewVC.m; sourceTree = "<group>"; };
 		18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDescriptioinVC.h; sourceTree = "<group>"; };
 		18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDescriptioinVC.m; sourceTree = "<group>"; };
 		18F1B9711C8F43C1001A3B25 /* Nickname generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nickname generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +201,8 @@
 				18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */,
 				182546451CA5659F006293A6 /* ANCategoryVC.h */,
 				182546461CA5659F006293A6 /* ANCategoryVC.m */,
+				18B35E0F1CB4475400CDABF9 /* ANWebViewVC.h */,
+				18B35E101CB4475400CDABF9 /* ANWebViewVC.m */,
 				1893C01F1C94A6A100D17DA5 /* ANViewController.h */,
 				1893C0201C94A6A100D17DA5 /* ANViewController.m */,
 				189C8EA51CA717CA002414AE /* Cells */,
@@ -458,6 +463,7 @@
 				18FECE411CB252520003CED4 /* ANDataManager.m in Sources */,
 				18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */,
 				1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */,
+				18B35E111CB4475400CDABF9 /* ANWebViewVC.m in Sources */,
 				182546401CA55A44006293A6 /* ANName.m in Sources */,
 				182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */,
 				18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */,
