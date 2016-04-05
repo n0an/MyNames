@@ -36,6 +36,10 @@
 
 @implementation ANViewController
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -62,6 +66,8 @@
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+
+    
     // Setting gesture recognizer for main label
     
     if (self.isDescriptionAvailable) {
@@ -71,6 +77,8 @@
     }
     
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnNameLabel:)];
+    
+    
     
     [self.nameResultLabel addGestureRecognizer:tapGesture];
     
@@ -144,6 +152,17 @@
 
     }
     
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (UIEventSubtypeMotionShake) {
+        
+        ANLog(@"I'm shaking!");
+        
+        NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
+        
+        self.nameResultLabel.text = currentNamesLabel;
+    }
 }
 
 
