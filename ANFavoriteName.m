@@ -2,12 +2,11 @@
 //  ANFavoriteName.m
 //  Nickname generator
 //
-//  Created by Anton Novoselov on 04/04/16.
+//  Created by Anton Novoselov on 05/04/16.
 //  Copyright © 2016 Anton Novoselov. All rights reserved.
 //
 
 #import "ANFavoriteName.h"
-#import "ANFavNameCategory.h"
 
 @implementation ANFavoriteName
 

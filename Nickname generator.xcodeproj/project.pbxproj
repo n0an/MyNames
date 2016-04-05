@@ -25,6 +25,8 @@
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
+		18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */; };
+		18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */; };
 		18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */; };
 		18F1B9761C8F43C1001A3B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9751C8F43C1001A3B25 /* main.m */; };
 		18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9781C8F43C1001A3B25 /* AppDelegate.m */; };
@@ -34,12 +36,6 @@
 		18F1B98F1C8F43C1001A3B25 /* Nickname_generatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B98E1C8F43C1001A3B25 /* Nickname_generatorTests.m */; };
 		18F1B99A1C8F43C1001A3B25 /* Nickname_generatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9991C8F43C1001A3B25 /* Nickname_generatorUITests.m */; };
 		18FE1A711CAFCA0A004B5101 /* MythGreekFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */; };
-		18FECE391CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE2E1CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.m */; };
-		18FECE3A1CB24E650003CED4 /* ANFavNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE301CB24E650003CED4 /* ANFavNameCategory.m */; };
-		18FECE3B1CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE321CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.m */; };
-		18FECE3C1CB24E650003CED4 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE341CB24E650003CED4 /* ANFavoriteName.m */; };
-		18FECE3D1CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE361CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m */; };
-		18FECE3E1CB24E650003CED4 /* ANFavNameArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE381CB24E650003CED4 /* ANFavNameArea.m */; };
 		18FECE411CB252520003CED4 /* ANDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE401CB252520003CED4 /* ANDataManager.m */; };
 		18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE431CB256700003CED4 /* ANCoreDataVC.m */; };
 		18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */; };
@@ -88,6 +84,10 @@
 		1893C0231C94A92700D17DA5 /* ANUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUtils.m; sourceTree = "<group>"; };
 		189C8EA21CA717C3002414AE /* ANCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryCell.h; sourceTree = "<group>"; };
 		189C8EA31CA717C3002414AE /* ANCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCategoryCell.m; sourceTree = "<group>"; };
+		18B35E091CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavoriteName+CoreDataProperties.h"; path = "../ANFavoriteName+CoreDataProperties.h"; sourceTree = "<group>"; };
+		18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
+		18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavoriteName.h; path = ../ANFavoriteName.h; sourceTree = "<group>"; };
+		18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANFavoriteName.m; path = ../ANFavoriteName.m; sourceTree = "<group>"; };
 		18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDescriptioinVC.h; sourceTree = "<group>"; };
 		18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDescriptioinVC.m; sourceTree = "<group>"; };
 		18F1B9711C8F43C1001A3B25 /* Nickname generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nickname generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,18 +105,6 @@
 		18F1B9991C8F43C1001A3B25 /* Nickname_generatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nickname_generatorUITests.m; sourceTree = "<group>"; };
 		18F1B99B1C8F43C1001A3B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythGreekFemImages.xcassets; sourceTree = "<group>"; };
-		18FECE2D1CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavNameCategory+CoreDataProperties.h"; path = "../ANFavNameCategory+CoreDataProperties.h"; sourceTree = "<group>"; };
-		18FECE2E1CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavNameCategory+CoreDataProperties.m"; path = "../ANFavNameCategory+CoreDataProperties.m"; sourceTree = "<group>"; };
-		18FECE2F1CB24E650003CED4 /* ANFavNameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavNameCategory.h; path = ../ANFavNameCategory.h; sourceTree = "<group>"; };
-		18FECE301CB24E650003CED4 /* ANFavNameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANFavNameCategory.m; path = ../ANFavNameCategory.m; sourceTree = "<group>"; };
-		18FECE311CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavoriteName+CoreDataProperties.h"; path = "../ANFavoriteName+CoreDataProperties.h"; sourceTree = "<group>"; };
-		18FECE321CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
-		18FECE331CB24E650003CED4 /* ANFavoriteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavoriteName.h; path = ../ANFavoriteName.h; sourceTree = "<group>"; };
-		18FECE341CB24E650003CED4 /* ANFavoriteName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANFavoriteName.m; path = ../ANFavoriteName.m; sourceTree = "<group>"; };
-		18FECE351CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavNameArea+CoreDataProperties.h"; path = "../ANFavNameArea+CoreDataProperties.h"; sourceTree = "<group>"; };
-		18FECE361CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavNameArea+CoreDataProperties.m"; path = "../ANFavNameArea+CoreDataProperties.m"; sourceTree = "<group>"; };
-		18FECE371CB24E650003CED4 /* ANFavNameArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavNameArea.h; path = ../ANFavNameArea.h; sourceTree = "<group>"; };
-		18FECE381CB24E650003CED4 /* ANFavNameArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANFavNameArea.m; path = ../ANFavNameArea.m; sourceTree = "<group>"; };
 		18FECE3F1CB252520003CED4 /* ANDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDataManager.h; sourceTree = "<group>"; };
 		18FECE401CB252520003CED4 /* ANDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDataManager.m; sourceTree = "<group>"; };
 		18FECE421CB256700003CED4 /* ANCoreDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCoreDataVC.h; sourceTree = "<group>"; };
@@ -166,18 +154,10 @@
 		18100DBA1CB249E800508F1D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				18FECE351CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.h */,
-				18FECE361CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m */,
-				18FECE371CB24E650003CED4 /* ANFavNameArea.h */,
-				18FECE381CB24E650003CED4 /* ANFavNameArea.m */,
-				18FECE2D1CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.h */,
-				18FECE2E1CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.m */,
-				18FECE2F1CB24E650003CED4 /* ANFavNameCategory.h */,
-				18FECE301CB24E650003CED4 /* ANFavNameCategory.m */,
-				18FECE311CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.h */,
-				18FECE321CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.m */,
-				18FECE331CB24E650003CED4 /* ANFavoriteName.h */,
-				18FECE341CB24E650003CED4 /* ANFavoriteName.m */,
+				18B35E091CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.h */,
+				18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */,
+				18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */,
+				18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */,
 				18100DAB1CB248C400508F1D /* Model.xcdatamodeld */,
 				18FECE3F1CB252520003CED4 /* ANDataManager.h */,
 				18FECE401CB252520003CED4 /* ANDataManager.m */,
@@ -467,23 +447,19 @@
 			files = (
 				1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */,
 				18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */,
-				18FECE3C1CB24E650003CED4 /* ANFavoriteName.m in Sources */,
 				189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */,
-				18FECE3D1CB24E650003CED4 /* ANFavNameArea+CoreDataProperties.m in Sources */,
 				18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */,
 				1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */,
 				18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */,
-				18FECE391CB24E650003CED4 /* ANFavNameCategory+CoreDataProperties.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
-				18FECE3B1CB24E650003CED4 /* ANFavoriteName+CoreDataProperties.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
 				1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */,
+				18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */,
 				18FECE411CB252520003CED4 /* ANDataManager.m in Sources */,
+				18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */,
 				1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */,
 				182546401CA55A44006293A6 /* ANName.m in Sources */,
 				182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */,
-				18FECE3E1CB24E650003CED4 /* ANFavNameArea.m in Sources */,
-				18FECE3A1CB24E650003CED4 /* ANFavNameCategory.m in Sources */,
 				18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

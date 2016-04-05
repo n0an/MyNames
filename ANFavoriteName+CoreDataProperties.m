@@ -2,7 +2,7 @@
 //  ANFavoriteName+CoreDataProperties.m
 //  Nickname generator
 //
-//  Created by Anton Novoselov on 04/04/16.
+//  Created by Anton Novoselov on 05/04/16.
 //  Copyright © 2016 Anton Novoselov. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -19,6 +19,6 @@
 @dynamic nameID;
 @dynamic nameImageName;
 @dynamic nameURL;
-@dynamic category;
+@dynamic nameCategoryTitle;
 
 @end

@@ -38,18 +38,13 @@
             ANFavoriteName* favoriteName = (ANFavoriteName*) object;
             NSLog(@"NAME: %@ %@", favoriteName.nameFirstName, favoriteName.nameID);
             
-        } else if ([object isKindOfClass:[ANFavNameCategory class]]) {
-            ANFavNameCategory* category = (ANFavNameCategory*) object;
-            NSLog(@"CATEGORY: %@, Names: %lu", category.categoryType, [category.names count]);
-            
-        }
-        else {
+        } else {
             NSLog(@"!!! UNKNOWN OBJECT !!!");
         }
         
     }
     
-    NSLog(@"COUNT = %lu", (unsigned long)[array count]);
+    NSLog(@"TOTAL COUNT = %lu", (unsigned long)[array count]);
     
 }
 
@@ -61,8 +56,6 @@
                 inManagedObjectContext:self.managedObjectContext];
     
     request.entity = description;
-    // request.resultType = NSDictionaryResultType; // Selecting type for NSDictionary of request
-    
     
     NSError* reqestError = nil;
     NSArray* resultArray = [self.managedObjectContext executeFetchRequest:request error:&reqestError];
@@ -109,32 +102,6 @@
 
 
 
-- (void) addOrGetCategory:(ANNameCategory*) category andAddName:(ANFavoriteName*) name {
-    
-    NSArray* addedFavNameCats = [self getAllObjectsForName:@"ANFavNameCategory"];
-    
-    // If there're categories already - check for coincidence
-    BOOL isArrEmpty = [addedFavNameCats count] == 0;
-    
-    if (!isArrEmpty) {
-        // If there's already added category with such alias - stop execution
-        for (ANFavNameCategory* favNavCat in addedFavNameCats) {
-            if ([favNavCat.categoryType isEqualToString:category.alias]) {
-                [favNavCat addNamesObject:name];
-                return;
-            }
-        }
-    }
-    
-    // If categories array is not empty, or there's no such category - add it to DB
-    
-    ANFavNameCategory* newCategory = [NSEntityDescription insertNewObjectForEntityForName:@"ANFavNameCategory" inManagedObjectContext:self.managedObjectContext];
-    
-    newCategory.categoryType = category.alias;
-    [newCategory addNamesObject:name];
-    
-}
-
 
 #pragma mark - Public Methods
 
@@ -156,8 +123,6 @@
     }
     
     
-    ANNameCategory* category = name.nameCategory;
-
     ANFavoriteName* favoriteName = [NSEntityDescription insertNewObjectForEntityForName:@"ANFavoriteName" inManagedObjectContext:self.managedObjectContext];
     
     
@@ -168,9 +133,10 @@
     favoriteName.nameURL = name.nameURL;
     favoriteName.nameImageName = name.nameImageName;
     
+    favoriteName.nameCategoryTitle = name.nameCategory.nameCategoryTitle;
+    
     NSError* error = nil;
     
-    [self addOrGetCategory:category andAddName:favoriteName];
     
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"%@", [error localizedDescription]);
@@ -185,16 +151,10 @@
 }
 
 
-- (void) showAllNameCategories {
-    NSLog(@"===== showAllNameCategories =====");
-    [self printArray:[self getAllObjectsForName:@"ANFavNameCategory"]];
-}
-
 
 - (void) clearFavoriteNamesDB {
     [self deleteAllObjectsForName:@"ANFavoriteName"];
-    [self deleteAllObjectsForName:@"ANFavNameCategory"];
-
+    
 }
 
 

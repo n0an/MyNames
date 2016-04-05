@@ -10,8 +10,7 @@
 #import <CoreData/CoreData.h>
 
 #import "ANFavoriteName+CoreDataProperties.h"
-#import "ANFavNameCategory+CoreDataProperties.h"
-#import "ANFavNameArea+CoreDataProperties.h"
+
 
 @class ANName;
 
@@ -36,7 +35,6 @@
 - (void) clearFavoriteNamesDB;
 
 - (void) showAllNames;
-- (void) showAllNameCategories;
 
 
 @end

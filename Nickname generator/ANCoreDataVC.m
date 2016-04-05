@@ -163,7 +163,7 @@
     }
     NSLog(@"\n********* AFTER DELETE *************");
     [[ANDataManager sharedManager] showAllNames];
-    [[ANDataManager sharedManager] showAllNameCategories];
+    
 }
 
 

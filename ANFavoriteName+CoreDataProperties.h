@@ -2,7 +2,7 @@
 //  ANFavoriteName+CoreDataProperties.h
 //  Nickname generator
 //
-//  Created by Anton Novoselov on 04/04/16.
+//  Created by Anton Novoselov on 05/04/16.
 //  Copyright © 2016 Anton Novoselov. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *nameID;
 @property (nullable, nonatomic, retain) NSString *nameImageName;
 @property (nullable, nonatomic, retain) NSString *nameURL;
-@property (nullable, nonatomic, retain) ANFavNameCategory *category;
+@property (nullable, nonatomic, retain) NSString *nameCategoryTitle;
 
 @end
 

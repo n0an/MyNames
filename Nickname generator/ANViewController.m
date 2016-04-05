@@ -164,7 +164,7 @@
     
     ANLog(@"\n=========== LIKE PRESSED ===========");
     [[ANDataManager sharedManager] showAllNames];
-    [[ANDataManager sharedManager] showAllNameCategories];
+    
 }
 
 
