@@ -111,8 +111,50 @@
 }
 
 
+- (void) handleImage {
+    
+    UIImage* currentImage = [UIImage imageNamed:self.currentName.nameImageName];
+    ANLog(@"currentImage.size.width = %f",currentImage.size.width);
+    ANLog(@"currentImage.size.height = %f",currentImage.size.height);
+    
+    CGFloat currentWidth = CGRectGetWidth(self.view.bounds);
+    
+    CGFloat maxRequiredSizeOfImage = MIN(currentWidth, 800);
+    
+    CGFloat ratio = currentImage.size.width / currentImage.size.height;
+    
+    CGFloat heightOfCurrentPhoto;
+    CGFloat widthOfCurrentPhoto;
+    
+    if (ratio < 1) { // ** Portrait oriented photo
+        
+        heightOfCurrentPhoto = maxRequiredSizeOfImage;
+        
+        widthOfCurrentPhoto = heightOfCurrentPhoto * ratio;
+        
+    } else { // ** Landscape oriented photo
+        
+        widthOfCurrentPhoto = maxRequiredSizeOfImage;
+        
+        heightOfCurrentPhoto = widthOfCurrentPhoto / ratio;
+    }
+
+  
+    ANLog(@"ratio = %f",ratio);
+    ANLog(@"widthOfCurrentPhoto = %f",widthOfCurrentPhoto);
+    ANLog(@"heightOfCurrentPhoto = %f",heightOfCurrentPhoto);
+
+    
+    
+}
+
+
+
 
 - (void) setImageAndImageHeight {
+    
+    [self handleImage];
+    
     UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
     
     if (!imageName) {
