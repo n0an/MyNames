@@ -11,10 +11,9 @@
 		180044941CB16C920038206F /* MythRomanFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180044931CB16C920038206F /* MythRomanFem.plist */; };
 		180044961CB16CBA0038206F /* MythRomanMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */; };
 		180044981CB16CD60038206F /* MythRomanFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180044971CB16CD60038206F /* MythRomanFemImages.xcassets */; };
-		1800449B1CB16D170038206F /* ANRomanMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800449A1CB16D170038206F /* ANRomanMythNames.m */; };
+		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
 		1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */; };
 		1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1810F9741CA816F500D7D00A /* MythGreekFem.plist */; };
-		182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546371CA5228D006293A6 /* ANGreekMythNames.m */; };
 		182546401CA55A44006293A6 /* ANName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463F1CA55A44006293A6 /* ANName.m */; };
 		182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546461CA5659F006293A6 /* ANCategoryVC.m */; };
 		1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546491CA57701006293A6 /* ANNamesFactory.m */; };
@@ -23,10 +22,11 @@
 		18267E2B1CB1367C00AB130B /* MythVedicMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18267E2A1CB1367C00AB130B /* MythVedicMasc.plist */; };
 		18267E2D1CB136C400AB130B /* MythVedicMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */; };
 		18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18349C231CA9413300A2A68E /* MythGreekMasc.plist */; };
-		187AC8EF1CAEB0B70028E087 /* ANVedicMythNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 187AC8EE1CAEB0B70028E087 /* ANVedicMythNames.m */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
+		18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */; };
+		18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */; };
 		18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */; };
 		18F1B9761C8F43C1001A3B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9751C8F43C1001A3B25 /* main.m */; };
 		18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9781C8F43C1001A3B25 /* AppDelegate.m */; };
@@ -36,6 +36,9 @@
 		18F1B98F1C8F43C1001A3B25 /* Nickname_generatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B98E1C8F43C1001A3B25 /* Nickname_generatorTests.m */; };
 		18F1B99A1C8F43C1001A3B25 /* Nickname_generatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9991C8F43C1001A3B25 /* Nickname_generatorUITests.m */; };
 		18FE1A711CAFCA0A004B5101 /* MythGreekFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */; };
+		18FECE411CB252520003CED4 /* ANDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE401CB252520003CED4 /* ANDataManager.m */; };
+		18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE431CB256700003CED4 /* ANCoreDataVC.m */; };
+		18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,13 +63,10 @@
 		180044931CB16C920038206F /* MythRomanFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythRomanFem.plist; sourceTree = "<group>"; };
 		180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythRomanMascImages.xcassets; sourceTree = "<group>"; };
 		180044971CB16CD60038206F /* MythRomanFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythRomanFemImages.xcassets; sourceTree = "<group>"; };
-		180044991CB16D170038206F /* ANRomanMythNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRomanMythNames.h; sourceTree = "<group>"; };
-		1800449A1CB16D170038206F /* ANRomanMythNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRomanMythNames.m; sourceTree = "<group>"; };
+		18100DAC1CB248C400508F1D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNameCategory.h; sourceTree = "<group>"; };
 		1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNameCategory.m; sourceTree = "<group>"; };
 		1810F9741CA816F500D7D00A /* MythGreekFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekFem.plist; sourceTree = "<group>"; };
-		182546361CA5228D006293A6 /* ANGreekMythNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANGreekMythNames.h; sourceTree = "<group>"; };
-		182546371CA5228D006293A6 /* ANGreekMythNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANGreekMythNames.m; sourceTree = "<group>"; };
 		1825463E1CA55A44006293A6 /* ANName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANName.h; sourceTree = "<group>"; };
 		1825463F1CA55A44006293A6 /* ANName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANName.m; sourceTree = "<group>"; };
 		182546451CA5659F006293A6 /* ANCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryVC.h; sourceTree = "<group>"; };
@@ -78,14 +78,16 @@
 		18267E2A1CB1367C00AB130B /* MythVedicMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythVedicMasc.plist; sourceTree = "<group>"; };
 		18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythVedicMascImages.xcassets; sourceTree = "<group>"; };
 		18349C231CA9413300A2A68E /* MythGreekMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekMasc.plist; sourceTree = "<group>"; };
-		187AC8ED1CAEB0B70028E087 /* ANVedicMythNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVedicMythNames.h; sourceTree = "<group>"; };
-		187AC8EE1CAEB0B70028E087 /* ANVedicMythNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANVedicMythNames.m; sourceTree = "<group>"; };
 		1893C01F1C94A6A100D17DA5 /* ANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
 		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		1893C0221C94A92700D17DA5 /* ANUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUtils.h; sourceTree = "<group>"; };
 		1893C0231C94A92700D17DA5 /* ANUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUtils.m; sourceTree = "<group>"; };
 		189C8EA21CA717C3002414AE /* ANCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryCell.h; sourceTree = "<group>"; };
 		189C8EA31CA717C3002414AE /* ANCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCategoryCell.m; sourceTree = "<group>"; };
+		18B35E091CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavoriteName+CoreDataProperties.h"; path = "../ANFavoriteName+CoreDataProperties.h"; sourceTree = "<group>"; };
+		18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
+		18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavoriteName.h; path = ../ANFavoriteName.h; sourceTree = "<group>"; };
+		18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANFavoriteName.m; path = ../ANFavoriteName.m; sourceTree = "<group>"; };
 		18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDescriptioinVC.h; sourceTree = "<group>"; };
 		18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDescriptioinVC.m; sourceTree = "<group>"; };
 		18F1B9711C8F43C1001A3B25 /* Nickname generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nickname generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,12 @@
 		18F1B9991C8F43C1001A3B25 /* Nickname_generatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nickname_generatorUITests.m; sourceTree = "<group>"; };
 		18F1B99B1C8F43C1001A3B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythGreekFemImages.xcassets; sourceTree = "<group>"; };
+		18FECE3F1CB252520003CED4 /* ANDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDataManager.h; sourceTree = "<group>"; };
+		18FECE401CB252520003CED4 /* ANDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDataManager.m; sourceTree = "<group>"; };
+		18FECE421CB256700003CED4 /* ANCoreDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCoreDataVC.h; sourceTree = "<group>"; };
+		18FECE431CB256700003CED4 /* ANCoreDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCoreDataVC.m; sourceTree = "<group>"; };
+		18FECE461CB259850003CED4 /* ANFavoriteNamesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavoriteNamesVC.h; sourceTree = "<group>"; };
+		18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavoriteNamesVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,18 +151,26 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		18100DBA1CB249E800508F1D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				18B35E091CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.h */,
+				18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */,
+				18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */,
+				18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */,
+				18100DAB1CB248C400508F1D /* Model.xcdatamodeld */,
+				18FECE3F1CB252520003CED4 /* ANDataManager.h */,
+				18FECE401CB252520003CED4 /* ANDataManager.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		182546391CA5596C006293A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				18267E291CB132E600AB130B /* Names Plists */,
 				1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */,
 				1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */,
-				182546361CA5228D006293A6 /* ANGreekMythNames.h */,
-				182546371CA5228D006293A6 /* ANGreekMythNames.m */,
-				187AC8ED1CAEB0B70028E087 /* ANVedicMythNames.h */,
-				187AC8EE1CAEB0B70028E087 /* ANVedicMythNames.m */,
-				180044991CB16D170038206F /* ANRomanMythNames.h */,
-				1800449A1CB16D170038206F /* ANRomanMythNames.m */,
 				1825463E1CA55A44006293A6 /* ANName.h */,
 				1825463F1CA55A44006293A6 /* ANName.m */,
 				182546481CA57701006293A6 /* ANNamesFactory.h */,
@@ -175,6 +191,9 @@
 		182546411CA56483006293A6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18FECE451CB258090003CED4 /* Abstract ViewControllers */,
+				18FECE461CB259850003CED4 /* ANFavoriteNamesVC.h */,
+				18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */,
 				18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */,
 				18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */,
 				182546451CA5659F006293A6 /* ANCategoryVC.h */,
@@ -237,6 +256,7 @@
 				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
 				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
+				18100DBA1CB249E800508F1D /* CoreData */,
 				18100DA71CB23EAF00508F1D /* Assets */,
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
 				18F1B9851C8F43C1001A3B25 /* Info.plist */,
@@ -269,6 +289,15 @@
 				18F1B99B1C8F43C1001A3B25 /* Info.plist */,
 			);
 			path = "Nickname generatorUITests";
+			sourceTree = "<group>";
+		};
+		18FECE451CB258090003CED4 /* Abstract ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18FECE421CB256700003CED4 /* ANCoreDataVC.h */,
+				18FECE431CB256700003CED4 /* ANCoreDataVC.m */,
+			);
+			name = "Abstract ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,18 +446,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */,
-				1800449B1CB16D170038206F /* ANRomanMythNames.m in Sources */,
+				18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */,
 				189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */,
-				182546381CA5228D006293A6 /* ANGreekMythNames.m in Sources */,
 				18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */,
 				1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */,
+				18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
 				1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */,
+				18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */,
+				18FECE411CB252520003CED4 /* ANDataManager.m in Sources */,
+				18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */,
 				1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */,
 				182546401CA55A44006293A6 /* ANName.m in Sources */,
 				182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */,
-				187AC8EF1CAEB0B70028E087 /* ANVedicMythNames.m in Sources */,
+				18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +707,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18100DAB1CB248C400508F1D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18100DAC1CB248C400508F1D /* Model.xcdatamodel */,
+			);
+			currentVersion = 18100DAC1CB248C400508F1D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18F1B9691C8F43C1001A3B25 /* Project object */;
 }

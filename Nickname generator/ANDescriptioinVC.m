@@ -25,20 +25,6 @@
     
     self.descriptionLabel.text = self.currentName.nameDescription;
     
-//    UIImage* imageName = [UIImage imageNamed:self.currentName.imageName];
-//    
-//    if (!imageName) {
-//        self.imageHeightConstraint.constant = 0;
-//        
-//        ANLog(@"no image");
-//        ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
-//        
-//    } else {
-//        self.nameImageView.image = imageName;
-//        ANLog(@"there's image");
-//        ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
-//
-//    }
     
     [self setImageAndImageHeight];
     
@@ -101,7 +87,7 @@
 
 
 - (void) setImageAndImageHeight {
-    UIImage* imageName = [UIImage imageNamed:self.currentName.imageName];
+    UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
     
     if (!imageName) {
         self.imageHeightConstraint.constant = 0;

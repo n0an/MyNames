@@ -60,7 +60,8 @@
     cell.categoryImageView.image = [UIImage imageNamed:currentCategory.nameCategoryImageName];
     
     
-    if (self.selectedCategoryIndex == indexPath.row) {
+    
+    if ([currentCategory isEqual:self.selectedCategory]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -74,17 +75,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    ANNameCategory* currentCategory = [self.categories objectAtIndex:indexPath.row];
     
-    if (self.selectedCategoryIndex != indexPath.row) {
-        self.selectedCategoryIndex = indexPath.row;
-        
-        [self.delegate categoryDidSelect:self.selectedCategoryIndex];
-        
+    if (![currentCategory isEqual:self.selectedCategory]) {
+        self.selectedCategory = currentCategory;
+        [self.delegate categoryDidSelect:self.selectedCategory];
     }
+    
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.tableView reloadData];
-    
     
 }
 

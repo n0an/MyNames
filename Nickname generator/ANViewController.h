@@ -18,10 +18,16 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl* nameCountControl;
 
+@property (weak, nonatomic) IBOutlet UIButton* likeButton;
+
 
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender;
+- (IBAction)actionlikeButtonPressed:(UIButton*)sender;
+
 - (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender;
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender;
+
+
 
 
 @end

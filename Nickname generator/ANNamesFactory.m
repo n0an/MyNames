@@ -8,42 +8,17 @@
 
 #import "ANNamesFactory.h"
 
-#import "ANGreekMythNames.h"
-
-#import "ANVedicMythNames.h"
-
-#import "ANRomanMythNames.h"
-
 #import "ANNameCategory.h"
-
-
 
 
 @implementation ANNamesFactory
 
 
-- (ANName*) getRandomNameForCategory:(ANNamesCategory) category andGender:(ANGender) gender {
+- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
     
     ANName* result;
     
-    switch (category) {
-        case ANNamesCategoryGreekMythology:
-            result = [ANGreekMythNames randomNameforGender:gender];
-            break;
-        
-        case ANNamesCategoryVedicMythology:
-            result = [ANVedicMythNames randomNameforGender:gender];
-            break;
-            
-        case ANNamesCategoryRomanMythology:
-            result = [ANRomanMythNames randomNameforGender:gender];
-
-            break;
-            
-        default:
-            break;
-    }
-    
+    result = [ANName randomNameforCategory:category andGender:gender];
     
     return result;
 }
@@ -58,12 +33,10 @@
     dispatch_once(&onceToken, ^{
         sharedFactory = [[ANNamesFactory alloc] init];
         
-        
-        ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryTitle:@"Greek Mythology" andCategoryImageName:@"greek_gods"];
-        ANNameCategory* area01cat02 = [[ANNameCategory alloc] initWithCategoryTitle:@"Vedic Mythology" andCategoryImageName:nil];
-        ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryTitle:@"Roman Mythology" andCategoryImageName:nil];
-        
-
+        ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:@"Greek Mythology" andCategoryImageName:@"greek_gods" andAlias:@"MythGreek"];
+        ANNameCategory* area01cat02 = [[ANNameCategory alloc] initWithCategoryID:@"01.02" andCategoryTitle:@"Vedic Mythology" andCategoryImageName:nil andAlias:@"MythVedic"];
+        ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryID:@"01.03" andCategoryTitle:@"Roman Mythology" andCategoryImageName:nil andAlias:@"MythRoman"];
+   
         sharedFactory.namesCategories = @[area01cat01, area01cat02, area01cat03];
         
     });
