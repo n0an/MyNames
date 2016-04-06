@@ -7,9 +7,18 @@
 //
 
 #import "ANFavoriteName.h"
+#import "ANUtils.h"
 
 @implementation ANFavoriteName
 
 // Insert code here to add functionality to your managed object subclass
+
+- (BOOL)validateForDelete:(NSError **)error {
+
+    
+    return YES;
+    
+}
+
 
 @end
