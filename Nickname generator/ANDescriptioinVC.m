@@ -153,7 +153,7 @@
 
 - (void) setImageAndImageHeight {
     
-    [self handleImage];
+//    [self handleImage];
     
     UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
     
@@ -164,6 +164,7 @@
         ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
         
     } else {
+        self.imageHeightConstraint.constant = 250;
         self.nameImageView.image = imageName;
         ANLog(@"there's image");
         ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
