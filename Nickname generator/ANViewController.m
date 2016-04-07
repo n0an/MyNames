@@ -61,6 +61,14 @@
     self.nameResultLabel.text = currentNamesLabel;
     
     
+    UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
+    
+    lightBlurEffectView.frame = self.view.bounds;
+    
+    [self.bgImageView addSubview:lightBlurEffectView];
+    
+    
 }
 
 -(void) viewDidAppear:(BOOL)animated {

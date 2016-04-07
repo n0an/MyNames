@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Новое имя-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ANViewController" sceneMemberID="viewController">
@@ -18,19 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gaia Eos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uay-78-7I1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Athena_in_Musei_Capitolini" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gaia Eos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uay-78-7I1">
                                 <rect key="frame" x="20" y="157" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl5-8s-DDE">
-                                <rect key="frame" x="268" y="285" width="64" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl5-8s-DDE">
+                                <rect key="frame" x="260" y="260" width="80" height="80"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="28O-gr-Kbq"/>
                                     <constraint firstAttribute="width" constant="64" id="AGe-gj-KR2"/>
                                     <constraint firstAttribute="height" constant="30" id="VwD-Uv-JQP"/>
+                                    <constraint firstAttribute="height" constant="80" id="bEQ-Y7-3eW"/>
                                 </constraints>
-                                <state key="normal" title="Generate"/>
+                                <state key="normal" image="refresh22"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="AGe-gj-KR2"/>
@@ -109,13 +114,21 @@
                                     <action selector="actionNameCountControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="8I5-c2-lLX"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igX-WN-kk6">
-                                <rect key="frame" x="460" y="285" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igX-WN-kk6">
+                                <rect key="frame" x="274" y="379" width="52" height="49"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="3Rw-Bz-9i6"/>
                                     <constraint firstAttribute="width" constant="46" id="JGq-bg-Tom"/>
                                     <constraint firstAttribute="height" constant="30" id="SUO-b7-PhY"/>
+                                    <constraint firstAttribute="height" constant="49" id="azI-TB-ScD"/>
                                 </constraints>
-                                <state key="normal" title="Like"/>
+                                <state key="normal" title="Like" image="like1"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JGq-bg-Tom"/>
+                                        <exclude reference="SUO-b7-PhY"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="actionlikeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ryl-Cj-L7m"/>
                                 </connections>
@@ -123,12 +136,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="t6e-XU-g0u" secondAttribute="bottom" id="05U-jL-YDE"/>
+                            <constraint firstItem="igX-WN-kk6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2ZR-fA-nHK"/>
                             <constraint firstItem="SQx-4E-WZK" firstAttribute="top" secondItem="Swh-Uw-2Ih" secondAttribute="bottom" constant="24" id="48y-WC-Nii"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="igX-WN-kk6" secondAttribute="bottom" constant="236" id="5wa-ia-CWc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="igX-WN-kk6" secondAttribute="trailing" constant="74" id="6Ck-sf-TdA"/>
+                            <constraint firstItem="nl5-8s-DDE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9jv-Vp-IY9"/>
                             <constraint firstAttribute="trailing" secondItem="uay-78-7I1" secondAttribute="trailing" constant="20" id="F6A-IG-afQ"/>
+                            <constraint firstItem="nl5-8s-DDE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gei-Kd-1gR"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="top" secondItem="uay-78-7I1" secondAttribute="bottom" constant="92" id="H5c-y4-DVO"/>
+                            <constraint firstAttribute="trailing" secondItem="t6e-XU-g0u" secondAttribute="trailing" id="HI0-ma-78V"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="igX-WN-kk6" secondAttribute="bottom" constant="123" id="IdX-2y-RY8"/>
                             <constraint firstItem="7FU-4f-b0W" firstAttribute="top" secondItem="0lu-bU-4Wf" secondAttribute="bottom" constant="16" id="JMx-83-gCy"/>
+                            <constraint firstItem="t6e-XU-g0u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KnW-IF-4oc"/>
                             <constraint firstItem="7FU-4f-b0W" firstAttribute="leading" secondItem="Swh-Uw-2Ih" secondAttribute="trailing" constant="17" id="NEJ-OW-2ig"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OdE-Q2-Qd7"/>
                             <constraint firstItem="Swh-Uw-2Ih" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="Rja-gu-1WW"/>
@@ -141,11 +161,19 @@
                             <constraint firstItem="SQx-4E-WZK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="n6N-O3-V3N"/>
                             <constraint firstItem="udp-kH-BYI" firstAttribute="top" secondItem="7FU-4f-b0W" secondAttribute="bottom" constant="16" id="nPc-Uf-xDq"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="smi-b9-UkF"/>
+                            <constraint firstItem="t6e-XU-g0u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uKA-JG-FZn"/>
                             <constraint firstItem="Swh-Uw-2Ih" firstAttribute="top" secondItem="3fN-WY-lq8" secondAttribute="bottom" constant="24" id="yog-0e-qvH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6Ck-sf-TdA"/>
+                                <exclude reference="5wa-ia-CWc"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="O5p-v6-RQs"/>
+                    <tabBarItem key="tabBarItem" title="Новое имя" image="shapes" id="O5p-v6-RQs"/>
                     <connections>
+                        <outlet property="bgImageView" destination="t6e-XU-g0u" id="er7-Ow-ZnY"/>
                         <outlet property="genderControl" destination="0lu-bU-4Wf" id="vg0-Ev-CHV"/>
                         <outlet property="generateButton" destination="nl5-8s-DDE" id="1Te-RW-NUq"/>
                         <outlet property="likeButton" destination="igX-WN-kk6" id="Q2Z-mT-iZR"/>
@@ -493,11 +521,11 @@
             </objects>
             <point key="canvasLocation" x="459" y="504"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Избранное-->
         <scene sceneID="f4i-lE-QAa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oTK-J9-LqI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="3O2-CT-aGS"/>
+                    <tabBarItem key="tabBarItem" title="Избранное" image="top_charts" id="3O2-CT-aGS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b0K-XM-HZe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -513,4 +541,11 @@
             <point key="canvasLocation" x="1271" y="1337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Athena_in_Musei_Capitolini" width="589" height="444"/>
+        <image name="like1" width="498" height="498"/>
+        <image name="refresh22" width="497" height="497"/>
+        <image name="shapes" width="21" height="21"/>
+        <image name="top_charts" width="22" height="22"/>
+    </resources>
 </document>

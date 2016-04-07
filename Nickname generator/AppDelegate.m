@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ANDataManager.h"
+#import "ANUtils.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIColor *tabBarColor = RGBA(201, 81, 0, 255);
+    [[UITabBar appearance] setTintColor:tabBarColor];
+
+    
+    
     return YES;
 }
 

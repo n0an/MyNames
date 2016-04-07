@@ -10,6 +10,7 @@
 
 @interface ANViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView* bgImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
 @property (weak, nonatomic) IBOutlet UIButton* generateButton;
