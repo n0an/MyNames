@@ -66,7 +66,10 @@
     
     lightBlurEffectView.frame = self.view.bounds;
     
-    [self.bgImageView addSubview:lightBlurEffectView];
+//    [self.bgImageView addSubview:lightBlurEffectView];
+    
+    // Initial Animation State of Generate Button
+    self.generateButton.transform = CGAffineTransformMakeScale(0.f, 0.f);
     
     
 }
@@ -74,7 +77,7 @@
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-
+    [self animateGenerateButton];
     
     // Setting gesture recognizer for main label
     
@@ -91,6 +94,49 @@
     [self.nameResultLabel addGestureRecognizer:tapGesture];
     
 }
+
+
+
+#pragma mark - Animations
+
+- (void) animateGenerateButton {
+    
+    [UIView animateWithDuration:0.7f
+                          delay:0.f
+         usingSpringWithDamping:0.5f
+          initialSpringVelocity:0.5f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         self.generateButton.transform = CGAffineTransformMakeScale(1.f, 1.f);
+                         
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+    
+}
+
+- (void) animateGenerateButtonOnClick {
+    
+    
+    
+    [UIView animateWithDuration:0.15f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.generateButton.transform = CGAffineTransformMakeScale(1.2f, 1.2f);
+                     } completion:^(BOOL finished) {
+                         
+                         [UIView animateWithDuration:0.15f animations:^{
+                             self.generateButton.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+                         }];
+                         
+                     }];
+    
+    
+}
+
 
 
 #pragma mark - Helper Methods
@@ -177,9 +223,27 @@
 
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender {
     
-    NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
+    [self animateGenerateButtonOnClick];
     
-    self.nameResultLabel.text = currentNamesLabel;
+    [UIView animateWithDuration:0.2f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.nameResultLabel.alpha = 0.f;
+                     } completion:^(BOOL finished) {
+                         
+                         NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
+                         
+                         self.nameResultLabel.text = currentNamesLabel;
+                         
+                         [UIView animateWithDuration:0.5f
+                                          animations:^{
+                                              self.nameResultLabel.alpha = 1.f;
+                                          }];
+                         
+                     }];
+
+    
     
 }
 
