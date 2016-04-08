@@ -33,6 +33,14 @@
     
     self.navigationItem.leftBarButtonItem = editButton;
     
+    
+    
+    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    
+    UIColor *separatorColor = RGBA(252, 232, 255, 255);
+
+    [self.tableView setSeparatorColor:separatorColor];
+    
 }
 
 
