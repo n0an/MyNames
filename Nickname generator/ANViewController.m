@@ -64,9 +64,15 @@
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
     
-    lightBlurEffectView.frame = self.view.bounds;
-    
+//    lightBlurEffectView.frame = self.view.bounds;
 //    [self.bgImageView addSubview:lightBlurEffectView];
+    
+    
+//    lightBlurEffectView.frame = self.controlsView.bounds;
+//    [self.controlsView insertSubview:lightBlurEffectView atIndex:0];
+    
+    self.controlsView.layer.cornerRadius = 20.f;
+//    lightBlurEffectView.layer.cornerRadius = 30.f;
     
     // Initial Animation State of Generate Button
     self.generateButton.transform = CGAffineTransformMakeScale(0.f, 0.f);
