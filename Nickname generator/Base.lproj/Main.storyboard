@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Athena_in_Musei_Capitolini" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg03" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKj-8T-EF7" userLabel="ViewWithResultLabel">
@@ -131,7 +131,6 @@
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.83779737460000003" blue="0.48589185039999999" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Swh-Uw-2Ih" firstAttribute="top" secondItem="3fN-WY-lq8" secondAttribute="bottom" constant="22" id="39a-4T-tOo"/>
                                     <constraint firstItem="udp-kH-BYI" firstAttribute="width" secondItem="0lu-bU-4Wf" secondAttribute="width" id="7pQ-cv-Mv8"/>
@@ -642,7 +641,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Athena_in_Musei_Capitolini" width="589" height="444"/>
+        <image name="bg03" width="640" height="400"/>
         <image name="like1" width="498" height="498"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shapes" width="21" height="21"/>
