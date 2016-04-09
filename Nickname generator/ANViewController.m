@@ -61,17 +61,19 @@
     self.nameResultLabel.text = currentNamesLabel;
     
     
-    UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
     
 //    lightBlurEffectView.frame = self.view.bounds;
 //    [self.bgImageView addSubview:lightBlurEffectView];
     
     
-//    lightBlurEffectView.frame = self.controlsView.bounds;
-//    [self.controlsView insertSubview:lightBlurEffectView atIndex:0];
+    lightBlurEffectView.frame = self.controlsView.bounds;
+    [self.controlsView insertSubview:lightBlurEffectView atIndex:0];
     
-    self.controlsView.layer.cornerRadius = 20.f;
+    self.controlsView.clipsToBounds = YES;
+    
+    self.controlsView.layer.cornerRadius = 10.f;
 //    lightBlurEffectView.layer.cornerRadius = 30.f;
     
     // Initial Animation State of Generate Button
