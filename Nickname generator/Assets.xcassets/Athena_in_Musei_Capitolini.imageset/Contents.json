@@ -14,6 +14,26 @@
       "idiom" : "universal",
       "filename" : "Athena_in_Musei_Capitolini@3x.jpg",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {
