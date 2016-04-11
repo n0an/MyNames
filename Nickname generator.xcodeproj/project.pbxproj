@@ -22,6 +22,7 @@
 		18267E2B1CB1367C00AB130B /* MythVedicMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18267E2A1CB1367C00AB130B /* MythVedicMasc.plist */; };
 		18267E2D1CB136C400AB130B /* MythVedicMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */; };
 		18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18349C231CA9413300A2A68E /* MythGreekMasc.plist */; };
+		186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186D62201CBC25C60094E885 /* Backgrounds.xcassets */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
@@ -80,6 +81,7 @@
 		18267E2A1CB1367C00AB130B /* MythVedicMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythVedicMasc.plist; sourceTree = "<group>"; };
 		18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythVedicMascImages.xcassets; sourceTree = "<group>"; };
 		18349C231CA9413300A2A68E /* MythGreekMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekMasc.plist; sourceTree = "<group>"; };
+		186D62201CBC25C60094E885 /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
 		1893C01F1C94A6A100D17DA5 /* ANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
 		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		1893C0221C94A92700D17DA5 /* ANUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUtils.h; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		18100DA71CB23EAF00508F1D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				186D62201CBC25C60094E885 /* Backgrounds.xcassets */,
 				18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */,
 				18F1ADEA1CB8159C007D00C4 /* MythGreekMascImages.xcassets */,
 				180044971CB16CD60038206F /* MythRomanFemImages.xcassets */,
@@ -418,6 +421,7 @@
 				18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */,
 				1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */,
 				18267E281CB132B800AB130B /* MythVedicFemImages.xcassets in Resources */,
+				186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */,
 				180044921CB16AF70038206F /* MythRomanMasc.plist in Resources */,
 				18267E2D1CB136C400AB130B /* MythVedicMascImages.xcassets in Resources */,
 				18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */,
