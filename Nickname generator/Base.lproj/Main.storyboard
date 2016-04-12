@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="romanBg07_7784" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vedicBg10_2437" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-5n-4AZ" userLabel="ViewWithControls">
@@ -647,8 +647,8 @@
     <resources>
         <image name="like1" width="498" height="498"/>
         <image name="refresh22" width="497" height="497"/>
-        <image name="romanBg07_7784" width="1729" height="1172"/>
         <image name="shapes" width="21" height="21"/>
         <image name="top_charts" width="22" height="22"/>
+        <image name="vedicBg10_2437" width="602" height="812"/>
     </resources>
 </document>
