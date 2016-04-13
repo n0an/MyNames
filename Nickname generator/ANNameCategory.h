@@ -12,9 +12,9 @@
 
 @property (strong, nonatomic) NSString* nameCategoryTitle;
 @property (strong, nonatomic) NSString* nameCategoryImageName;
+@property (strong, nonatomic) NSString* nameCategoryBackgroundImageName;
 @property (strong, nonatomic) NSString* alias;
 @property (strong, nonatomic) NSString* nameCategoryID;
 
-- (instancetype)initWithCategoryID:(NSString*) nameCategoryID andCategoryTitle:(NSString*) title andCategoryImageName:(NSString*) categoryImageName andAlias:(NSString*) alias;
-
+- (instancetype)initWithCategoryID:(NSString*) nameCategoryID andCategoryTitle:(NSString*) title andCategoryImageName:(NSString*) categoryImageName andCategoryBackgroundImageName:(NSString*) nameCategoryBackgroundImageName andAlias:(NSString*) alias;
 @end

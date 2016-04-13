@@ -35,9 +35,6 @@
 }
 
 
-#pragma mark - Helper Methods
-
-
 
 #pragma mark - Actions
 
@@ -69,8 +66,6 @@
     CGFloat translation = CGRectGetMaxX(cell.frame);
     
     cell.whiteTransparentView.transform = CGAffineTransformMakeTranslation(translation, 0);
-    
-    
     
     
     if ([currentCategory isEqual:self.selectedCategory]) {
@@ -123,7 +118,7 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
     ANNameCategory* currentCategory = [self.categories objectAtIndex:indexPath.row];

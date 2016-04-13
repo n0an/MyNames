@@ -67,6 +67,8 @@
 //    lightBlurEffectView.frame = self.view.bounds;
 //    [self.bgImageView addSubview:lightBlurEffectView];
     
+    [self.bgImageView setImage:[UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName]];
+    
     
     lightBlurEffectView.frame = self.controlsView.bounds;
     [self.controlsView insertSubview:lightBlurEffectView atIndex:0];
@@ -319,6 +321,13 @@
 - (void) categoryDidSelect:(ANNameCategory*) category {
     
     self.selectedCategory = category;
+    
+    [self.bgImageView setImage:[UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName]];
+    
+    NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
+    
+    self.nameResultLabel.text = currentNamesLabel;
+    
 
     self.nameCategoryTextField.text = self.selectedCategory.nameCategoryTitle;
 
