@@ -35,7 +35,7 @@
         
         ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:@"Greek Mythology" andCategoryImageName:@"bg06" andAlias:@"MythGreek"];
         ANNameCategory* area01cat02 = [[ANNameCategory alloc] initWithCategoryID:@"01.02" andCategoryTitle:@"Vedic Mythology" andCategoryImageName:nil andAlias:@"MythVedic"];
-        ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryID:@"01.03" andCategoryTitle:@"Roman Mythology" andCategoryImageName:nil andAlias:@"MythRoman"];
+        ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryID:@"01.03" andCategoryTitle:@"Roman Mythology" andCategoryImageName:@"romanBg14_4592" andAlias:@"MythRoman"];
    
         sharedFactory.namesCategories = @[area01cat01, area01cat02, area01cat03];
         
