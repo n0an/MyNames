@@ -64,31 +64,47 @@
     cell.categoryImageView.image = [UIImage imageNamed:currentCategory.nameCategoryImageName];
     cell.categoryImageView.contentMode = UIViewContentModeScaleAspectFill;
     
+    cell.categoryName.alpha = 0;
+    
+    CGFloat translation = CGRectGetMaxX(cell.frame);
+    
+    cell.whiteTransparentView.transform = CGAffineTransformMakeTranslation(translation, 0);
+    
+    
     
     
     if ([currentCategory isEqual:self.selectedCategory]) {
 
         
-        [UIView animateWithDuration:0.2f
+        [UIView animateWithDuration:0.3f
                               delay:0.f
                             options:UIViewAnimationOptionCurveLinear
                          animations:^{
-
+                             cell.categoryName.alpha = 1;
                              cell.fadeView.alpha = 0;
                          } completion:^(BOOL finished) {
-                             
+
                          }];
+        
+        [UIView animateWithDuration:0.2f
+                              delay:0.1f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             cell.whiteTransparentView.transform = CGAffineTransformMakeTranslation(0, 0);
+                         } completion:nil];
+        
 
         cell.whiteBoxLeftConstraint.constant = 0;
 
         
     } else {
         
-        [UIView animateWithDuration:0.2f
+        [UIView animateWithDuration:0.3f
                               delay:0.f
                             options:UIViewAnimationOptionCurveLinear
                          animations:^{
                              
+                             cell.categoryName.alpha = 0;
                              cell.fadeView.alpha = 0.5;
 
                          } completion:^(BOOL finished) {
@@ -98,7 +114,6 @@
         CGFloat cellWidth = CGRectGetWidth(cell.bounds);
         cell.whiteBoxLeftConstraint.constant = cellWidth;
 
-        
     }
     
     return cell;

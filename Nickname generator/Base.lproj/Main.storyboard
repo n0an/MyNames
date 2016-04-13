@@ -508,7 +508,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vedicBg21_1920" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Z5-OJ4">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjR-2o-er7">
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjR-2o-er7">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
