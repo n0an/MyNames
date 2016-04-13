@@ -35,6 +35,10 @@
 }
 
 
+#pragma mark - Helper Methods
+
+
+
 #pragma mark - Actions
 
 - (void) actionDone:(UIBarButtonItem*) sender {
@@ -58,14 +62,44 @@
     
     cell.categoryName.text = currentCategory.nameCategoryTitle;
     cell.categoryImageView.image = [UIImage imageNamed:currentCategory.nameCategoryImageName];
+    cell.categoryImageView.contentMode = UIViewContentModeScaleAspectFill;
     
     
     
-//    if ([currentCategory isEqual:self.selectedCategory]) {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    } else {
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
+    if ([currentCategory isEqual:self.selectedCategory]) {
+
+        
+        [UIView animateWithDuration:0.2f
+                              delay:0.f
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+
+                             cell.fadeView.alpha = 0;
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+
+        cell.whiteBoxLeftConstraint.constant = 0;
+
+        
+    } else {
+        
+        [UIView animateWithDuration:0.2f
+                              delay:0.f
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             
+                             cell.fadeView.alpha = 0.5;
+
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+        
+        CGFloat cellWidth = CGRectGetWidth(cell.bounds);
+        cell.whiteBoxLeftConstraint.constant = cellWidth;
+
+        
+    }
     
     return cell;
 }
@@ -74,19 +108,36 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     
     ANNameCategory* currentCategory = [self.categories objectAtIndex:indexPath.row];
     
     if (![currentCategory isEqual:self.selectedCategory]) {
         self.selectedCategory = currentCategory;
+ 
         [self.delegate categoryDidSelect:self.selectedCategory];
     }
     
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.tableView reloadData];
     
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 150.f;
+    
+}
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 150.f; // Auto Layout elements in the cell
+}
+
+
+
 
 
 

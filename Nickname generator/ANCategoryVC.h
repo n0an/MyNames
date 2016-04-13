@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) id <ANCategorySelectionDelegate> delegate;
 
+
 @end
 
 @protocol ANCategorySelectionDelegate <NSObject>

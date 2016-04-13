@@ -13,5 +13,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView* categoryImageView;
 @property (weak, nonatomic) IBOutlet UILabel* categoryName;
 
+@property (weak, nonatomic) IBOutlet UIView* fadeView;
+@property (weak, nonatomic) IBOutlet UIView* whiteTransparentView;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* whiteBoxLeftConstraint;
 
 @end
