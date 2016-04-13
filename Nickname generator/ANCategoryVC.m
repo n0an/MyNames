@@ -61,11 +61,11 @@
     
     
     
-    if ([currentCategory isEqual:self.selectedCategory]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+//    if ([currentCategory isEqual:self.selectedCategory]) {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
     
     return cell;
 }

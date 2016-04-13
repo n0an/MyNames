@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WSn-gb-sgd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WSn-gb-sgd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -505,7 +505,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Z5-OJ4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg06" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Z5-OJ4">
                                                     <rect key="frame" x="8" y="8" width="584" height="133.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="420" id="GRd-FI-X29"/>
@@ -518,12 +518,13 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCT-D7-8rh">
-                                                    <rect key="frame" x="37" y="8" width="555" height="133.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCT-D7-8rh">
+                                                    <rect key="frame" x="66" y="111" width="468" height="30.5"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="440" id="ii0-Yk-61g"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -534,11 +535,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ZCT-D7-8rh" secondAttribute="trailing" id="3Yz-en-rAV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZCT-D7-8rh" secondAttribute="trailing" constant="62" id="3Yz-en-rAV"/>
                                                 <constraint firstItem="qg4-Z5-OJ4" firstAttribute="leading" secondItem="Ic8-d2-7si" secondAttribute="leadingMargin" id="3vx-FH-QNA"/>
+                                                <constraint firstItem="ZCT-D7-8rh" firstAttribute="bottom" secondItem="qg4-Z5-OJ4" secondAttribute="bottom" id="4SP-vy-JkV"/>
                                                 <constraint firstAttribute="bottom" secondItem="qg4-Z5-OJ4" secondAttribute="bottom" constant="8" id="5Sp-Ue-mxs"/>
                                                 <constraint firstItem="ZCT-D7-8rh" firstAttribute="bottom" secondItem="Ic8-d2-7si" secondAttribute="bottomMargin" id="5mU-kK-CCF"/>
                                                 <constraint firstItem="ZCT-D7-8rh" firstAttribute="top" secondItem="Ic8-d2-7si" secondAttribute="topMargin" id="5or-Fm-WWV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZCT-D7-8rh" secondAttribute="trailing" constant="58" id="6eG-zZ-BVi"/>
                                                 <constraint firstAttribute="bottom" secondItem="qg4-Z5-OJ4" secondAttribute="bottom" constant="8" id="FgK-m9-qBc"/>
                                                 <constraint firstItem="ZCT-D7-8rh" firstAttribute="trailing" secondItem="Ic8-d2-7si" secondAttribute="trailingMargin" id="GCp-wo-EeC"/>
                                                 <constraint firstItem="ZCT-D7-8rh" firstAttribute="leading" secondItem="qg4-Z5-OJ4" secondAttribute="trailing" constant="8" id="GcS-Nz-aUK"/>
@@ -546,11 +549,13 @@
                                                 <constraint firstItem="ZCT-D7-8rh" firstAttribute="leading" secondItem="qg4-Z5-OJ4" secondAttribute="trailing" constant="-112" id="Niy-8h-tGa"/>
                                                 <constraint firstItem="qg4-Z5-OJ4" firstAttribute="bottom" secondItem="Ic8-d2-7si" secondAttribute="bottomMargin" id="NoP-H7-zll"/>
                                                 <constraint firstItem="qg4-Z5-OJ4" firstAttribute="top" secondItem="Ic8-d2-7si" secondAttribute="top" constant="8" id="P4k-jV-9JZ"/>
-                                                <constraint firstItem="ZCT-D7-8rh" firstAttribute="top" secondItem="Ic8-d2-7si" secondAttribute="topMargin" id="S5d-pg-k5o"/>
+                                                <constraint firstItem="ZCT-D7-8rh" firstAttribute="top" secondItem="Ic8-d2-7si" secondAttribute="topMargin" constant="104" id="S5d-pg-k5o"/>
                                                 <constraint firstItem="qg4-Z5-OJ4" firstAttribute="top" secondItem="Ic8-d2-7si" secondAttribute="topMargin" id="Ysh-oJ-1Ni"/>
                                                 <constraint firstItem="qg4-Z5-OJ4" firstAttribute="leading" secondItem="Ic8-d2-7si" secondAttribute="leading" constant="8" id="ZYE-jK-num"/>
-                                                <constraint firstItem="ZCT-D7-8rh" firstAttribute="leading" secondItem="Ic8-d2-7si" secondAttribute="leadingMargin" constant="29" id="dsh-Zv-SqX"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZCT-D7-8rh" secondAttribute="bottom" id="aZ3-ih-koi"/>
+                                                <constraint firstItem="ZCT-D7-8rh" firstAttribute="leading" secondItem="Ic8-d2-7si" secondAttribute="leadingMargin" constant="54" id="dsh-Zv-SqX"/>
                                                 <constraint firstItem="qg4-Z5-OJ4" firstAttribute="trailing" secondItem="Ic8-d2-7si" secondAttribute="trailingMargin" id="etJ-Bm-6ci"/>
+                                                <constraint firstItem="ZCT-D7-8rh" firstAttribute="leading" secondItem="Ic8-d2-7si" secondAttribute="leadingMargin" constant="58" id="gi2-Oq-Ilb"/>
                                                 <constraint firstItem="ZCT-D7-8rh" firstAttribute="leading" secondItem="qg4-Z5-OJ4" secondAttribute="trailing" constant="-256" id="o33-zI-W94"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZCT-D7-8rh" secondAttribute="bottom" constant="8" id="soa-V6-Uxw"/>
                                                 <constraint firstItem="qg4-Z5-OJ4" firstAttribute="top" secondItem="Ic8-d2-7si" secondAttribute="top" constant="8" id="tqw-Sv-TQL"/>
@@ -566,11 +571,16 @@
                                                     <exclude reference="ZYE-jK-num"/>
                                                     <exclude reference="tqw-Sv-TQL"/>
                                                     <exclude reference="u7t-f3-aat"/>
+                                                    <exclude reference="3Yz-en-rAV"/>
+                                                    <exclude reference="5mU-kK-CCF"/>
                                                     <exclude reference="5or-Fm-WWV"/>
                                                     <exclude reference="GCp-wo-EeC"/>
                                                     <exclude reference="GcS-Nz-aUK"/>
                                                     <exclude reference="MUZ-uU-7uB"/>
                                                     <exclude reference="Niy-8h-tGa"/>
+                                                    <exclude reference="S5d-pg-k5o"/>
+                                                    <exclude reference="aZ3-ih-koi"/>
+                                                    <exclude reference="dsh-Zv-SqX"/>
                                                     <exclude reference="o33-zI-W94"/>
                                                     <exclude reference="soa-V6-Uxw"/>
                                                     <exclude reference="vHf-fG-1Uq"/>
@@ -645,6 +655,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg06" width="382" height="214"/>
         <image name="like1" width="498" height="498"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shapes" width="21" height="21"/>
