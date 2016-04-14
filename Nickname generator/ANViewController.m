@@ -212,6 +212,8 @@
         
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
         
+        nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
         [self presentViewController:nav animated:YES completion:nil];
         
 
