@@ -63,9 +63,9 @@
     
     cell.categoryName.alpha = 0;
     
-    CGFloat translation = CGRectGetMaxX(cell.frame);
+//    CGFloat translation = CGRectGetMaxX(cell.frame);
     
-    cell.whiteTransparentView.transform = CGAffineTransformMakeTranslation(translation, 0);
+//    cell.whiteTransparentView.transform = CGAffineTransformMakeTranslation(translation, 0);
     
     
     if ([currentCategory isEqual:self.selectedCategory]) {
@@ -85,11 +85,10 @@
                               delay:0.1f
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             cell.whiteTransparentView.transform = CGAffineTransformMakeTranslation(0, 0);
+//                             cell.whiteTransparentView.transform = CGAffineTransformMakeTranslation(0, 0);
+                             cell.whiteBoxLeftConstraint.constant = 0;
+                             [cell layoutIfNeeded];
                          } completion:nil];
-        
-
-        cell.whiteBoxLeftConstraint.constant = 0;
 
         
     } else {
@@ -106,8 +105,20 @@
                              
                          }];
         
-        CGFloat cellWidth = CGRectGetWidth(cell.bounds);
-        cell.whiteBoxLeftConstraint.constant = cellWidth;
+        
+        [UIView animateWithDuration:0.2f
+                              delay:0.1f
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             
+                             CGFloat cellWidth = CGRectGetWidth(cell.frame);
+                             cell.whiteBoxLeftConstraint.constant = cellWidth * 2;
+                             
+                             [cell layoutIfNeeded];
+                         } completion:nil];
+
+        
+        
 
     }
     
