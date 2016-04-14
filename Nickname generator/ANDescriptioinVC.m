@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.view layoutIfNeeded];
+    
     self.currentName = [self.namesArray firstObject];
     
     self.descriptionLabel.text = self.currentName.nameDescription;
@@ -158,14 +160,24 @@
     UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
     
     if (!imageName) {
-        self.imageHeightConstraint.constant = 0;
+        
+        self.nameImageView.image = nil;
+        
+        self.imageHeightConstraint.active = NO;
+        
+        [self.view layoutIfNeeded];
         
         ANLog(@"no image");
         ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
         
     } else {
-        self.imageHeightConstraint.constant = 250;
+
         self.nameImageView.image = imageName;
+        
+        self.imageHeightConstraint.active = YES;
+
+        
+        [self.view layoutIfNeeded];
         ANLog(@"there's image");
         ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
         

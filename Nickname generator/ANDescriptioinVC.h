@@ -23,6 +23,7 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageHeightConstraint;
 
+
 @property (weak, nonatomic) IBOutlet UIButton* readMoreButton;
 
 @property (strong, nonatomic) NSArray* namesArray;

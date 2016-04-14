@@ -338,15 +338,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2B-ov-y0O">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2B-ov-y0O">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-dq-fkA">
-                                        <rect key="frame" x="20" y="262" width="560" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7f-Pb-uep">
                                         <rect key="frame" x="506" y="550" width="74" height="30"/>
                                         <state key="normal" title="Read More"/>
@@ -355,9 +349,10 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-c3-PUO">
-                                        <rect key="frame" x="20" y="8" width="560" height="246"/>
+                                        <rect key="frame" x="20" y="20" width="150" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="height" multiplier="245:123" id="95M-6O-5mZ"/>
+                                            <constraint firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="height" multiplier="1:1" id="i1e-tr-HvL"/>
                                             <constraint firstAttribute="height" constant="250" id="sIC-QB-2XH"/>
                                         </constraints>
                                         <variation key="default">
@@ -367,22 +362,30 @@
                                             </mask>
                                         </variation>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-dq-fkA">
+                                        <rect key="frame" x="20" y="178" width="560" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Ec4-dq-fkA" firstAttribute="top" secondItem="JQp-c3-PUO" secondAttribute="bottom" constant="8" id="J1G-m9-8Ta"/>
                                     <constraint firstAttribute="trailing" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="8" id="KYA-wl-iNf"/>
-                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="top" secondItem="O2B-ov-y0O" secondAttribute="top" constant="8" id="NRD-Ob-PXs"/>
-                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="centerX" secondItem="O2B-ov-y0O" secondAttribute="centerX" id="PYl-6X-0Wy"/>
-                                    <constraint firstAttribute="trailing" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="20" id="Thh-aB-xZz"/>
+                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="top" secondItem="O2B-ov-y0O" secondAttribute="top" constant="20" id="NRD-Ob-PXs"/>
+                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="centerX" secondItem="O2B-ov-y0O" secondAttribute="centerX" constant="-205" id="PYl-6X-0Wy"/>
+                                    <constraint firstAttribute="trailing" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="430" id="Thh-aB-xZz"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="leading" secondItem="O2B-ov-y0O" secondAttribute="leading" constant="20" id="URf-o2-ssb"/>
-                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="height" secondItem="O2B-ov-y0O" secondAttribute="height" multiplier="0.41" id="tog-mz-LbH"/>
+                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="height" secondItem="O2B-ov-y0O" secondAttribute="height" multiplier="0.25" id="tog-mz-LbH"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="width" secondItem="O2B-ov-y0O" secondAttribute="width" multiplier="0.8" id="vcN-FK-t2B"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ec4-dq-fkA" secondAttribute="bottom" constant="20" id="wgd-qU-taB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ec4-dq-fkA" secondAttribute="bottom" constant="413.5" id="wgd-qU-taB"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="leading" secondItem="O2B-ov-y0O" secondAttribute="leading" constant="8" id="xXe-e7-jWe"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="KYA-wl-iNf"/>
+                                        <exclude reference="PYl-6X-0Wy"/>
+                                        <exclude reference="Thh-aB-xZz"/>
                                         <exclude reference="vcN-FK-t2B"/>
                                         <exclude reference="xXe-e7-jWe"/>
                                     </mask>
@@ -403,7 +406,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="Ec4-dq-fkA" id="BvK-f9-J4A"/>
-                        <outlet property="imageHeightConstraint" destination="sIC-QB-2XH" id="Cby-LT-xg4"/>
+                        <outlet property="imageHeightConstraint" destination="tog-mz-LbH" id="R3W-rS-Fap"/>
                         <outlet property="nameImageView" destination="JQp-c3-PUO" id="5ch-Uu-Vds"/>
                         <outlet property="readMoreButton" destination="X7f-Pb-uep" id="7Vu-5j-pEk"/>
                     </connections>
