@@ -349,7 +349,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-c3-PUO">
-                                        <rect key="frame" x="20" y="20" width="150" height="150"/>
+                                        <rect key="frame" x="225" y="20" width="150" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="height" multiplier="245:123" id="95M-6O-5mZ"/>
                                             <constraint firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="height" multiplier="1:1" id="i1e-tr-HvL"/>
@@ -376,6 +376,7 @@
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="centerX" secondItem="O2B-ov-y0O" secondAttribute="centerX" constant="-205" id="PYl-6X-0Wy"/>
                                     <constraint firstAttribute="trailing" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="430" id="Thh-aB-xZz"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="leading" secondItem="O2B-ov-y0O" secondAttribute="leading" constant="20" id="URf-o2-ssb"/>
+                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="centerX" secondItem="O2B-ov-y0O" secondAttribute="centerX" id="XXH-H7-32y"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="height" secondItem="O2B-ov-y0O" secondAttribute="height" multiplier="0.25" id="tog-mz-LbH"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="width" secondItem="O2B-ov-y0O" secondAttribute="width" multiplier="0.8" id="vcN-FK-t2B"/>
                                     <constraint firstAttribute="bottom" secondItem="Ec4-dq-fkA" secondAttribute="bottom" constant="413.5" id="wgd-qU-taB"/>
@@ -386,6 +387,7 @@
                                         <exclude reference="KYA-wl-iNf"/>
                                         <exclude reference="PYl-6X-0Wy"/>
                                         <exclude reference="Thh-aB-xZz"/>
+                                        <exclude reference="URf-o2-ssb"/>
                                         <exclude reference="vcN-FK-t2B"/>
                                         <exclude reference="xXe-e7-jWe"/>
                                     </mask>
