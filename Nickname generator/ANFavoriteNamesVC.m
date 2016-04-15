@@ -15,6 +15,8 @@
 
 #import "ANFavouriteNameCell.h"
 
+#import "ANDescriptioinVC.h"
+
 
 @interface ANFavoriteNamesVC ()
 
@@ -79,6 +81,11 @@
     [[ANDataManager sharedManager] showAllNames];
     
 }
+
+
+
+
+
 
 
 
@@ -164,6 +171,8 @@
     } else {
         cell.nameImageView.image = [UIImage imageNamed:favoriteName.nameImageName];
 
+        [cell.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
+
     }
     
     
@@ -184,13 +193,26 @@
     
     ANLog(@"selected name = %@", name.nameFirstName);
     
+    
+    if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
+        
+        ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
+        
+        vc.namesArray = @[name];
+        vc.isCustomNavigationBar = YES;
+        
+//        [self.navigationController pushViewController:vc animated:YES];
+        
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
+        [self presentViewController:nav animated:YES completion:nil];
+        
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
-
-
-
 
 
 
