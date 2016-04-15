@@ -13,6 +13,8 @@
 #import "ANFavoriteName+CoreDataProperties.h"
 #import "ANDataManager.h"
 
+#import "ANFavouriteNameCell.h"
+
 
 @interface ANFavoriteNamesVC ()
 
@@ -135,22 +137,45 @@
 }
 
 
-
-
-
-
 #pragma mark - UITableViewDataSource
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+//- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+//    
+//    ANFavoriteName* favoriteName = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    
+//    
+//    
+//    
+//    
+//    
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
+//    cell.detailTextLabel.text = favoriteName.nameID;
+//    
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    
+//}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString* identifier = @"FavoriteCell";
     
     ANFavoriteName* favoriteName = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-    cell.detailTextLabel.text = favoriteName.nameID;
+    ANFavouriteNameCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
+    cell.nameImageView.image = [UIImage imageNamed:favoriteName.nameImageName];
+    cell.genderLabel.text = favoriteName.nameGender ? @"Masc" : @"Fem";
+    cell.nameAreaLabel.text = @"Myth";
+    cell.nameCategoryLabel.text = favoriteName.nameCategoryTitle;
     
+    
+    return cell;
 }
+
+
+
 
 
 #pragma mark - UITableViewDelegate
