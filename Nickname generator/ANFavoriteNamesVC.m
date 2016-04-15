@@ -167,7 +167,7 @@
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
     cell.nameImageView.image = [UIImage imageNamed:favoriteName.nameImageName];
     cell.genderLabel.text = favoriteName.nameGender ? @"Masc" : @"Fem";
-    cell.nameAreaLabel.text = @"Myth";
+    
     cell.nameCategoryLabel.text = favoriteName.nameCategoryTitle;
     
     
