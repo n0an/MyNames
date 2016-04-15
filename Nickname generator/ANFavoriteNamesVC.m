@@ -36,12 +36,12 @@
     self.navigationItem.leftBarButtonItem = editButton;
     
     
-    
+    // !!!IMPORTANT!!!
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-    
-    UIColor *separatorColor = RGBA(252, 232, 255, 255);
 
-    [self.tableView setSeparatorColor:separatorColor];
+//    UIColor *separatorColor = RGBA(10, 10, 10, 255);
+//
+//    [self.tableView setSeparatorColor:separatorColor];
     
 }
 
@@ -139,23 +139,6 @@
 
 #pragma mark - UITableViewDataSource
 
-//- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-//    
-//    ANFavoriteName* favoriteName = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    
-//    
-//    
-//    
-//    
-//    
-//    cell.textLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-//    cell.detailTextLabel.text = favoriteName.nameID;
-//    
-//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    
-//}
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString* identifier = @"FavoriteCell";
@@ -165,10 +148,23 @@
     ANFavouriteNameCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-    cell.nameImageView.image = [UIImage imageNamed:favoriteName.nameImageName];
-    cell.genderLabel.text = favoriteName.nameGender ? @"Masc" : @"Fem";
-    
+    cell.genderLabel.text = favoriteName.nameGender ? @"Masculine" : @"Feminine";
     cell.nameCategoryLabel.text = favoriteName.nameCategoryTitle;
+    
+    
+    UIImage* imageName = [UIImage imageNamed:favoriteName.nameImageName];
+    
+    if (!imageName) {
+        
+        cell.nameImageView.image = [UIImage imageNamed:@"eye"];
+        
+        [cell.nameImageView setContentMode:UIViewContentModeCenter];
+        
+
+    } else {
+        cell.nameImageView.image = [UIImage imageNamed:favoriteName.nameImageName];
+
+    }
     
     
     return cell;

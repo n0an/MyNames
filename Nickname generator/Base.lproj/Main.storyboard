@@ -327,15 +327,15 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oceanus" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HY-5N-HsF">
-                                            <rect key="frame" x="118" y="24.5" width="474" height="41"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                            <rect key="frame" x="130" y="28" width="462" height="34.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="WOr-9h-Bjz" secondAttribute="bottom" constant="9" id="3Jt-4X-zKL"/>
-                                        <constraint firstItem="3HY-5N-HsF" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="8" id="9cE-63-ZtD"/>
+                                        <constraint firstItem="3HY-5N-HsF" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="20" id="9cE-63-ZtD"/>
                                         <constraint firstItem="vt2-E6-tus" firstAttribute="top" secondItem="Kjn-Fo-lGw" secondAttribute="topMargin" constant="2" id="BJJ-41-EZr"/>
                                         <constraint firstItem="EbI-7s-Ou8" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="8" id="DmP-L9-Xuh"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3HY-5N-HsF" secondAttribute="trailing" id="Y7W-Wf-Jm2"/>
