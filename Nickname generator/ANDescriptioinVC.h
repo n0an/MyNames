@@ -22,6 +22,8 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIImageView* nameImageView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageWidthLandscape;
+
 
 
 @property (weak, nonatomic) IBOutlet UIButton* readMoreButton;

@@ -163,7 +163,18 @@
         
         self.nameImageView.image = nil;
         
-        self.imageHeightConstraint.active = NO;
+        
+        
+        if (isOrientationPortrait()) {
+            self.imageHeightConstraint.active = NO;
+        }
+        
+        if (isOrientationLandscape()) {
+            self.imageWidthLandscape.active = NO;
+
+        }
+
+        
         
         [self.view layoutIfNeeded];
         
@@ -174,7 +185,17 @@
 
         self.nameImageView.image = imageName;
         
-        self.imageHeightConstraint.active = YES;
+
+        if (isOrientationPortrait()) {
+            self.imageHeightConstraint.active = YES;
+        }
+        
+        if (isOrientationLandscape()) {
+            self.imageWidthLandscape.active = YES;
+            
+        }
+        
+
 
         
         [self.view layoutIfNeeded];

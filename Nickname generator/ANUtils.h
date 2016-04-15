@@ -20,9 +20,7 @@
 #define LOGS_NOTIFICATION_ENABLED 1
 
 
-
-
-#define APP_SHORT_NAME @"TRICKS"
+#define APP_SHORT_NAME @"NicknameGen"
 
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a/255.f];
 
@@ -43,8 +41,14 @@ typedef enum {
 
 NSString* fancyDateStringFromDate(NSDate* date);
 
+
+
 BOOL iPad();
 BOOL iPhone();
+
+BOOL isOrientationPortrait();
+
+BOOL isOrientationLandscape();
 
 
 

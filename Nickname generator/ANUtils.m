@@ -40,6 +40,20 @@ BOOL iPhone() {
     
 }
 
+
+BOOL isOrientationPortrait() {
+    return UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation);
+}
+
+BOOL isOrientationLandscape() {
+    return UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation);
+}
+
+
+
+
+
+
 NSString* NSStringFromANProgrammerType(ANProgrammerType type) {
     
     switch (type) {

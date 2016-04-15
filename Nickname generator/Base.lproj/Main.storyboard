@@ -349,7 +349,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-c3-PUO">
-                                        <rect key="frame" x="225" y="20" width="150" height="150"/>
+                                        <rect key="frame" x="210" y="20" width="180" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="height" multiplier="245:123" id="95M-6O-5mZ"/>
                                             <constraint firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="height" multiplier="1:1" id="i1e-tr-HvL"/>
@@ -363,13 +363,15 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-dq-fkA">
-                                        <rect key="frame" x="20" y="178" width="560" height="20.5"/>
+                                        <rect key="frame" x="20" y="208" width="560" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="width" secondItem="O2B-ov-y0O" secondAttribute="width" multiplier="0.3" id="0Df-g9-xue"/>
+                                    <constraint firstItem="Ec4-dq-fkA" firstAttribute="leading" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="11" id="C9d-CB-Lyl"/>
                                     <constraint firstItem="Ec4-dq-fkA" firstAttribute="top" secondItem="JQp-c3-PUO" secondAttribute="bottom" constant="8" id="J1G-m9-8Ta"/>
                                     <constraint firstAttribute="trailing" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="8" id="KYA-wl-iNf"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="top" secondItem="O2B-ov-y0O" secondAttribute="top" constant="20" id="NRD-Ob-PXs"/>
@@ -377,19 +379,41 @@
                                     <constraint firstAttribute="trailing" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="430" id="Thh-aB-xZz"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="leading" secondItem="O2B-ov-y0O" secondAttribute="leading" constant="20" id="URf-o2-ssb"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="centerX" secondItem="O2B-ov-y0O" secondAttribute="centerX" id="XXH-H7-32y"/>
-                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="height" secondItem="O2B-ov-y0O" secondAttribute="height" multiplier="0.25" id="tog-mz-LbH"/>
+                                    <constraint firstItem="Ec4-dq-fkA" firstAttribute="top" secondItem="JQp-c3-PUO" secondAttribute="top" constant="8" id="cm2-Qq-eJF">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="leading" secondItem="O2B-ov-y0O" secondAttribute="leading" constant="20" id="lJJ-dQ-7UX"/>
+                                    <constraint firstItem="JQp-c3-PUO" firstAttribute="height" secondItem="O2B-ov-y0O" secondAttribute="height" multiplier="0.3" id="tog-mz-LbH"/>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="width" secondItem="O2B-ov-y0O" secondAttribute="width" multiplier="0.8" id="vcN-FK-t2B"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ec4-dq-fkA" secondAttribute="bottom" constant="413.5" id="wgd-qU-taB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ec4-dq-fkA" secondAttribute="bottom" constant="413.5" id="wgd-qU-taB">
+                                        <variation key="heightClass=compact" constant="414"/>
+                                    </constraint>
                                     <constraint firstItem="JQp-c3-PUO" firstAttribute="leading" secondItem="O2B-ov-y0O" secondAttribute="leading" constant="8" id="xXe-e7-jWe"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="0Df-g9-xue"/>
                                         <exclude reference="KYA-wl-iNf"/>
                                         <exclude reference="PYl-6X-0Wy"/>
                                         <exclude reference="Thh-aB-xZz"/>
                                         <exclude reference="URf-o2-ssb"/>
+                                        <exclude reference="lJJ-dQ-7UX"/>
                                         <exclude reference="vcN-FK-t2B"/>
                                         <exclude reference="xXe-e7-jWe"/>
+                                        <exclude reference="C9d-CB-Lyl"/>
+                                        <exclude reference="cm2-Qq-eJF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                    <mask key="constraints">
+                                        <include reference="0Df-g9-xue"/>
+                                        <exclude reference="XXH-H7-32y"/>
+                                        <include reference="lJJ-dQ-7UX"/>
+                                        <exclude reference="tog-mz-LbH"/>
+                                        <include reference="C9d-CB-Lyl"/>
+                                        <exclude reference="J1G-m9-8Ta"/>
+                                        <include reference="cm2-Qq-eJF"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -405,17 +429,23 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ec4-dq-fkA" secondAttribute="trailing" id="ZE8-hO-u0l"/>
                             <constraint firstAttribute="trailing" secondItem="O2B-ov-y0O" secondAttribute="trailing" id="fhy-Yl-lEC"/>
                         </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="Tih-6f-O91"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="Ec4-dq-fkA" id="BvK-f9-J4A"/>
                         <outlet property="imageHeightConstraint" destination="tog-mz-LbH" id="R3W-rS-Fap"/>
+                        <outlet property="imageWidthLandscape" destination="0Df-g9-xue" id="dNH-ae-Le5"/>
                         <outlet property="nameImageView" destination="JQp-c3-PUO" id="5ch-Uu-Vds"/>
                         <outlet property="readMoreButton" destination="X7f-Pb-uep" id="7Vu-5j-pEk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4S-Ei-Jxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="-203"/>
+            <point key="canvasLocation" x="1271" y="-204"/>
         </scene>
         <!--Web ViewVC-->
         <scene sceneID="n2n-V3-SD1">
