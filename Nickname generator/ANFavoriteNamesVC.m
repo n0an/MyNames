@@ -13,6 +13,10 @@
 #import "ANFavoriteName+CoreDataProperties.h"
 #import "ANDataManager.h"
 
+#import "ANFavouriteNameCell.h"
+
+#import "ANDescriptioinVC.h"
+
 
 @interface ANFavoriteNamesVC ()
 
@@ -34,12 +38,12 @@
     self.navigationItem.leftBarButtonItem = editButton;
     
     
-    
+    // !!!IMPORTANT!!!
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-    
-    UIColor *separatorColor = RGBA(252, 232, 255, 255);
 
-    [self.tableView setSeparatorColor:separatorColor];
+//    UIColor *separatorColor = RGBA(10, 10, 10, 255);
+//
+//    [self.tableView setSeparatorColor:separatorColor];
     
 }
 
@@ -77,6 +81,11 @@
     [[ANDataManager sharedManager] showAllNames];
     
 }
+
+
+
+
+
 
 
 
@@ -135,22 +144,43 @@
 }
 
 
-
-
-
-
 #pragma mark - UITableViewDataSource
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString* identifier = @"FavoriteCell";
     
     ANFavoriteName* favoriteName = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-    cell.detailTextLabel.text = favoriteName.nameID;
+    ANFavouriteNameCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
+    cell.genderLabel.text = favoriteName.nameGender ? @"Masculine" : @"Feminine";
+    cell.nameCategoryLabel.text = favoriteName.nameCategoryTitle;
     
+    
+    UIImage* imageName = [UIImage imageNamed:favoriteName.nameImageName];
+    
+    if (!imageName) {
+        
+        cell.nameImageView.image = [UIImage imageNamed:@"eye"];
+        
+        [cell.nameImageView setContentMode:UIViewContentModeCenter];
+        
+
+    } else {
+        cell.nameImageView.image = [UIImage imageNamed:favoriteName.nameImageName];
+
+        [cell.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
+
+    }
+    
+    
+    return cell;
 }
+
+
+
 
 
 #pragma mark - UITableViewDelegate
@@ -163,13 +193,26 @@
     
     ANLog(@"selected name = %@", name.nameFirstName);
     
+    
+    if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
+        
+        ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
+        
+        vc.namesArray = @[name];
+        vc.isCustomNavigationBar = YES;
+        
+//        [self.navigationController pushViewController:vc animated:YES];
+        
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
+        [self presentViewController:nav animated:YES completion:nil];
+        
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
-
-
-
 
 
 

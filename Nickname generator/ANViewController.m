@@ -84,8 +84,8 @@
     
 }
 
--(void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     [self animateGenerateButton];
     
@@ -209,6 +209,7 @@
         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
         
         vc.namesArray = self.namesWithDescriptions;
+        vc.isCustomNavigationBar = YES;
         
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
         
