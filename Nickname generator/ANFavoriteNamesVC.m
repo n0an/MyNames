@@ -154,7 +154,9 @@
     
 }
 
-
+- (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender {
+    NSLog(@"actionGenderControlValueChanged. value = %d", sender.selectedSegmentIndex);
+}
 
 
 

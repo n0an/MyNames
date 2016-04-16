@@ -14,5 +14,7 @@
 
 - (IBAction)actionResetButtonPressed:(UIBarButtonItem*)sender;
 
+- (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender;
+
 
 @end
