@@ -10,6 +10,8 @@
 
 @interface ANFavoriteNamesVC : ANCoreDataVC
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 - (IBAction)actionResetButtonPressed:(UIBarButtonItem*)sender;
 
 

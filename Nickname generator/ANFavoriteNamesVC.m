@@ -93,13 +93,6 @@
 
 
 
-
-
-
-
-
-
-
 #pragma mark - NSFetchedResultsController
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -116,15 +109,18 @@
     
     fetchRequest.entity = description;
     
+    NSSortDescriptor* nameCategoryTitleDescriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"nameCategoryTitle" ascending:YES];
+
     
     NSSortDescriptor* firstNameDescriptor =
     [[NSSortDescriptor alloc] initWithKey:@"nameFirstName" ascending:YES];
     
-//    NSSortDescriptor* lastNameDescriptor =
-//    [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+    NSSortDescriptor* nameGenderDescriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"nameGender" ascending:YES];
     
     
-    [fetchRequest setSortDescriptors:@[firstNameDescriptor]]; // SORTING USING FETCH
+    [fetchRequest setSortDescriptors:@[nameCategoryTitleDescriptor, firstNameDescriptor, nameGenderDescriptor]]; // SORTING USING FETCH
     
     
     // Edit the section name key path and cache name if appropriate.
@@ -132,7 +128,7 @@
     NSFetchedResultsController *aFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:self.managedObjectContext
-                                          sectionNameKeyPath:nil
+                                          sectionNameKeyPath:@"nameCategoryTitle"
                                                    cacheName:nil];
     
     aFetchedResultsController.delegate = self;
@@ -155,6 +151,12 @@
 
 #pragma mark - UITableViewDataSource
 
+- (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo name];
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString* identifier = @"FavoriteCell";
@@ -164,7 +166,7 @@
     ANFavouriteNameCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-    cell.genderLabel.text = favoriteName.nameGender ? @"Masculine" : @"Feminine";
+    cell.genderLabel.text = !favoriteName.nameGender.boolValue ? @"Masculine" : @"Feminine";
     cell.nameCategoryLabel.text = favoriteName.nameCategoryTitle;
     
     
@@ -222,6 +224,36 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+
+
+
+
+#pragma mark - UISearchBarDelegate
+
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    NSLog(@"textDidChange searchText = %@", searchText);
+    
+    
+    
+    
+    [self.tableView reloadData];
+    
+}
+
+
 
 
 

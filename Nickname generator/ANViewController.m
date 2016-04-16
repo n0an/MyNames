@@ -159,6 +159,7 @@
         ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
         
         [array addObject:name];
+        
     }
     self.displayedNames = array;
     

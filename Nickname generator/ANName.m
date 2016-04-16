@@ -57,6 +57,7 @@
     name.nameURL            = nameURL;
     name.nameImageName      = nameImageName;
     name.nameCategory       = category;
+    name.nameGender         = gender;
     
     return name;
     
