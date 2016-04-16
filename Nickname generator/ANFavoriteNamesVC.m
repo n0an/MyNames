@@ -20,6 +20,9 @@
 
 @interface ANFavoriteNamesVC ()
 
+@property (strong, nonatomic) NSString* searchPredicateString;
+
+
 @end
 
 @implementation ANFavoriteNamesVC
@@ -58,6 +61,64 @@
 
 
 
+
+#pragma mark - Helper Methods
+
+- (void) configureFetchResultsController {
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription* description =
+    [NSEntityDescription entityForName:@"ANFavoriteName"
+                inManagedObjectContext:self.managedObjectContext];
+    
+    fetchRequest.entity = description;
+    
+    NSSortDescriptor* nameCategoryTitleDescriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"nameCategoryTitle" ascending:YES];
+    
+    
+    NSSortDescriptor* firstNameDescriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"nameFirstName" ascending:YES];
+    
+    NSSortDescriptor* nameGenderDescriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"nameGender" ascending:YES];
+    
+    if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
+        
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains %@", self.searchPredicateString];
+        
+        [fetchRequest setPredicate:predicate];
+    }
+    
+    
+    [fetchRequest setSortDescriptors:@[nameCategoryTitleDescriptor, firstNameDescriptor, nameGenderDescriptor]];
+    
+    
+    NSFetchedResultsController *aFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:self.managedObjectContext
+                                          sectionNameKeyPath:@"nameCategoryTitle"
+                                                   cacheName:nil];
+    
+    
+    
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+    
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+}
+
+
+
+
 #pragma mark - Actions
 
 - (void) actionEdit:(UIBarButtonItem*) sender {
@@ -82,6 +143,8 @@
 }
 
 
+
+
 - (IBAction)actionResetButtonPressed:(UIBarButtonItem*)sender {
     
     [[ANDataManager sharedManager] clearFavoriteNamesDB];
@@ -93,6 +156,8 @@
 
 
 
+
+
 #pragma mark - NSFetchedResultsController
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -101,49 +166,8 @@
         return _fetchedResultsController;
     }
     
-    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    [self configureFetchResultsController];
     
-    NSEntityDescription* description =
-    [NSEntityDescription entityForName:@"ANFavoriteName"
-                inManagedObjectContext:self.managedObjectContext];
-    
-    fetchRequest.entity = description;
-    
-    NSSortDescriptor* nameCategoryTitleDescriptor =
-    [[NSSortDescriptor alloc] initWithKey:@"nameCategoryTitle" ascending:YES];
-
-    
-    NSSortDescriptor* firstNameDescriptor =
-    [[NSSortDescriptor alloc] initWithKey:@"nameFirstName" ascending:YES];
-    
-    NSSortDescriptor* nameGenderDescriptor =
-    [[NSSortDescriptor alloc] initWithKey:@"nameGender" ascending:YES];
-    
-    
-    [fetchRequest setSortDescriptors:@[nameCategoryTitleDescriptor, firstNameDescriptor, nameGenderDescriptor]]; // SORTING USING FETCH
-    
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:self.managedObjectContext
-                                          sectionNameKeyPath:@"nameCategoryTitle"
-                                                   cacheName:nil];
-    
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-    
-    
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error]) {
-        
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
     
     return _fetchedResultsController;
 }
@@ -246,12 +270,16 @@
     
     NSLog(@"textDidChange searchText = %@", searchText);
     
+    self.searchPredicateString = searchText;
     
+    [self configureFetchResultsController];
     
     
     [self.tableView reloadData];
     
+    
 }
+
 
 
 

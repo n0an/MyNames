@@ -111,14 +111,12 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    NSLog(@"numberOfSectionsInTableView = %lu", [[self.fetchedResultsController sections] count]);
+
     return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-//    NSLog(@"sectionInfo = %@", sectionInfo);
-//    NSLog(@"numberOfRowsInSection = %lu", (unsigned long)[sectionInfo numberOfObjects]);
 
     return [sectionInfo numberOfObjects];
 }
