@@ -32,6 +32,9 @@
 
 @property (assign, nonatomic) BOOL isDescriptionAvailable;
 
+
+
+
 @end
 
 @implementation ANViewController
@@ -52,14 +55,14 @@
     
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
     
-    self.selectedGender = (ANGender)self.genderControl.selectedSegmentIndex;
+    self.selectedGender = ANGenderMasculine;
+
     
     self.isDescriptionAvailable = NO;
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
     self.nameResultLabel.text = currentNamesLabel;
-    
     
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
@@ -258,8 +261,6 @@
                          
                      }];
 
-    
-    
 }
 
 
@@ -282,6 +283,40 @@
     self.namesCount = sender.selectedSegmentIndex + 1;
     
 }
+
+- (IBAction)actionGndrBtnPressed:(id)sender {
+    
+    UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
+    UIImage* mascNonactiveImage = [UIImage imageNamed:@"masc02"];
+    
+    UIImage* femActiveImage = [UIImage imageNamed:@"fem01"];
+    UIImage* femNonactiveImage = [UIImage imageNamed:@"fem02"];
+
+    
+    if ([sender isEqual:self.genderButtonMasc]) {
+        NSLog(@"Masc selected");
+        
+        self.selectedGender = ANGenderMasculine;
+
+        self.imgViewGenderMasc.image = mascActiveImage;
+        self.imgViewGenderFem.image = femNonactiveImage;
+        
+        
+    } else if ([sender isEqual:self.genderButtonFem]) {
+        
+        NSLog(@"Fem selected");
+        
+        self.selectedGender = ANGenderFeminine;
+
+        self.imgViewGenderMasc.image = mascNonactiveImage;
+        self.imgViewGenderFem.image = femActiveImage;
+        
+    }
+    
+    
+}
+
+
 
 
 

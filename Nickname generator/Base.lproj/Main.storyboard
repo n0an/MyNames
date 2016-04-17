@@ -80,7 +80,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0lu-bU-4Wf">
-                                        <rect key="frame" x="103" y="13" width="182" height="29"/>
+                                        <rect key="frame" x="103" y="-6" width="182" height="29"/>
                                         <segments>
                                             <segment title="Masculine"/>
                                             <segment title="Feminine"/>
@@ -89,11 +89,49 @@
                                             <action selector="actionGenderControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZhZ-FZ-ygY"/>
                                         </connections>
                                     </segmentedControl>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="masc01" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-54-2rK" userLabel="mascImg">
+                                        <rect key="frame" x="108" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="eaR-2J-Gvn"/>
+                                            <constraint firstAttribute="width" constant="30" id="vSv-rL-aua"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLC-OS-2I1">
+                                        <rect key="frame" x="108" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="RfC-lF-RUt"/>
+                                            <constraint firstAttribute="height" constant="30" id="xeJ-3K-eCS"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="actionGndrBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P75-0Z-A6V"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fem02" translatesAutoresizingMaskIntoConstraints="NO" id="2Bv-3M-Yff" userLabel="femImg">
+                                        <rect key="frame" x="146" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="8BS-Z5-V7T"/>
+                                            <constraint firstAttribute="height" constant="30" id="8NS-6s-R3o"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xm-g8-GKG">
+                                        <rect key="frame" x="146" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4TR-D5-ox6"/>
+                                            <constraint firstAttribute="width" constant="30" id="CpK-Fw-aEZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="actionGndrBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qvL-8b-kOV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="2Bv-3M-Yff" firstAttribute="centerX" secondItem="5xm-g8-GKG" secondAttribute="centerX" id="2CE-gt-lVb"/>
+                                    <constraint firstItem="2Bv-3M-Yff" firstAttribute="top" secondItem="5xm-g8-GKG" secondAttribute="top" id="371-mS-DhF"/>
                                     <constraint firstItem="Swh-Uw-2Ih" firstAttribute="top" secondItem="3fN-WY-lq8" secondAttribute="bottom" constant="22" id="39a-4T-tOo"/>
                                     <constraint firstItem="udp-kH-BYI" firstAttribute="width" secondItem="0lu-bU-4Wf" secondAttribute="width" id="7pQ-cv-Mv8"/>
+                                    <constraint firstItem="5xm-g8-GKG" firstAttribute="leading" secondItem="HLC-OS-2I1" secondAttribute="trailing" constant="8" id="AeZ-TM-j2Y"/>
                                     <constraint firstItem="udp-kH-BYI" firstAttribute="leading" secondItem="SQx-4E-WZK" secondAttribute="trailing" constant="20" id="BKn-UO-haV"/>
+                                    <constraint firstItem="lnN-54-2rK" firstAttribute="top" secondItem="HLC-OS-2I1" secondAttribute="top" id="EXZ-jd-eth"/>
                                     <constraint firstAttribute="height" constant="133.5" id="Gpo-bH-Apg"/>
                                     <constraint firstAttribute="bottom" secondItem="SQx-4E-WZK" secondAttribute="bottom" constant="8" id="GwX-Oy-sFw"/>
                                     <constraint firstItem="SQx-4E-WZK" firstAttribute="leading" secondItem="QRe-5n-4AZ" secondAttribute="leading" constant="8" id="HBf-vv-rha"/>
@@ -101,11 +139,17 @@
                                     <constraint firstItem="7FU-4f-b0W" firstAttribute="width" secondItem="0lu-bU-4Wf" secondAttribute="width" id="Jrd-fg-0PS"/>
                                     <constraint firstAttribute="width" constant="293" id="K65-zc-irR"/>
                                     <constraint firstItem="SQx-4E-WZK" firstAttribute="leading" secondItem="3fN-WY-lq8" secondAttribute="leading" id="VNQ-nx-y0M"/>
+                                    <constraint firstItem="lnN-54-2rK" firstAttribute="centerX" secondItem="HLC-OS-2I1" secondAttribute="centerX" id="ZPg-C5-JNx"/>
                                     <constraint firstItem="Swh-Uw-2Ih" firstAttribute="leading" secondItem="3fN-WY-lq8" secondAttribute="leading" id="bss-1I-2OC"/>
+                                    <constraint firstItem="lnN-54-2rK" firstAttribute="centerY" secondItem="HLC-OS-2I1" secondAttribute="centerY" id="cbR-7j-gE2"/>
+                                    <constraint firstItem="7FU-4f-b0W" firstAttribute="top" secondItem="5xm-g8-GKG" secondAttribute="bottom" constant="4" id="d8d-fj-foJ"/>
                                     <constraint firstItem="udp-kH-BYI" firstAttribute="top" secondItem="7FU-4f-b0W" secondAttribute="bottom" constant="13" id="e50-Mj-pIV"/>
-                                    <constraint firstItem="7FU-4f-b0W" firstAttribute="top" secondItem="0lu-bU-4Wf" secondAttribute="bottom" constant="13" id="eTI-CS-K2u"/>
+                                    <constraint firstItem="7FU-4f-b0W" firstAttribute="top" secondItem="0lu-bU-4Wf" secondAttribute="bottom" constant="32" id="eTI-CS-K2u"/>
+                                    <constraint firstItem="7FU-4f-b0W" firstAttribute="top" secondItem="HLC-OS-2I1" secondAttribute="bottom" constant="4" id="h54-hZ-gGV"/>
                                     <constraint firstAttribute="bottom" secondItem="udp-kH-BYI" secondAttribute="bottom" constant="8" id="i5Z-ab-1Hy"/>
                                     <constraint firstItem="7FU-4f-b0W" firstAttribute="trailing" secondItem="0lu-bU-4Wf" secondAttribute="trailing" id="jmn-1e-SUn"/>
+                                    <constraint firstItem="HLC-OS-2I1" firstAttribute="leading" secondItem="3fN-WY-lq8" secondAttribute="trailing" constant="25" id="qE2-6f-xNC"/>
+                                    <constraint firstItem="2Bv-3M-Yff" firstAttribute="centerY" secondItem="5xm-g8-GKG" secondAttribute="centerY" id="s4c-h0-xTM"/>
                                     <constraint firstItem="Swh-Uw-2Ih" firstAttribute="width" secondItem="3fN-WY-lq8" secondAttribute="width" id="uuG-1v-O17"/>
                                     <constraint firstItem="SQx-4E-WZK" firstAttribute="top" secondItem="Swh-Uw-2Ih" secondAttribute="bottom" constant="20" id="wBA-qV-T69"/>
                                     <constraint firstItem="udp-kH-BYI" firstAttribute="trailing" secondItem="0lu-bU-4Wf" secondAttribute="trailing" id="wYY-si-BAL"/>
@@ -288,8 +332,12 @@
                     <connections>
                         <outlet property="bgImageView" destination="t6e-XU-g0u" id="er7-Ow-ZnY"/>
                         <outlet property="controlsView" destination="QRe-5n-4AZ" id="80f-q0-0mF"/>
+                        <outlet property="genderButtonFem" destination="5xm-g8-GKG" id="CoI-P1-4oP"/>
+                        <outlet property="genderButtonMasc" destination="HLC-OS-2I1" id="9Rq-Tv-d3A"/>
                         <outlet property="genderControl" destination="0lu-bU-4Wf" id="vg0-Ev-CHV"/>
                         <outlet property="generateButton" destination="nl5-8s-DDE" id="1Te-RW-NUq"/>
+                        <outlet property="imgViewGenderFem" destination="2Bv-3M-Yff" id="csG-aY-QfL"/>
+                        <outlet property="imgViewGenderMasc" destination="lnN-54-2rK" id="VqD-uO-Fpl"/>
                         <outlet property="infoImageView" destination="Wsg-y9-3h0" id="DvV-ya-d7I"/>
                         <outlet property="likeButton" destination="igX-WN-kk6" id="Q2Z-mT-iZR"/>
                         <outlet property="nameCategoryTextField" destination="7FU-4f-b0W" id="pYp-RL-Knj"/>
@@ -772,8 +820,10 @@
     </scenes>
     <resources>
         <image name="WhiteTransparentFade" width="375" height="150"/>
+        <image name="fem02" width="60" height="60"/>
         <image name="info01" width="42" height="99"/>
         <image name="like1" width="498" height="498"/>
+        <image name="masc01" width="60" height="60"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shapes" width="21" height="21"/>
         <image name="top_charts" width="22" height="22"/>
