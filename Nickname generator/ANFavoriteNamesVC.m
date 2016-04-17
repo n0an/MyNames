@@ -54,9 +54,9 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-
-    self.navigationController.hidesBarsOnSwipe = YES;
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    // !!!IMPORTANT!!!
+//    self.navigationController.hidesBarsOnSwipe = YES;
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 
@@ -83,14 +83,34 @@
     NSSortDescriptor* nameGenderDescriptor =
     [[NSSortDescriptor alloc] initWithKey:@"nameGender" ascending:YES];
     
-    if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
+    
+    
+    NSPredicate* predicate;
+    
+    if (self.genderSelectionSegmetControl.selectedSegmentIndex != 2) {
         
-        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains %@", self.searchPredicateString];
+        if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
+            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains %@ AND nameGender == %@", self.searchPredicateString, [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
+        } else {
+            predicate = [NSPredicate predicateWithFormat:@"nameGender == %@", [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
+        }
         
-        [fetchRequest setPredicate:predicate];
+    } else {
+        
+        if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
+            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains %@", self.searchPredicateString];
+        } else {
+            predicate = nil;
+        }
+        
     }
     
     
+    if (predicate) {
+        [fetchRequest setPredicate:predicate];
+    }
+    
+
     [fetchRequest setSortDescriptors:@[nameCategoryTitleDescriptor, firstNameDescriptor, nameGenderDescriptor]];
     
     
@@ -155,7 +175,11 @@
 }
 
 - (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender {
-    NSLog(@"actionGenderControlValueChanged. value = %d", sender.selectedSegmentIndex);
+    
+    [self configureFetchResultsController];
+    
+    [self.tableView reloadData];
+    
 }
 
 

@@ -310,14 +310,15 @@
                                         <outlet property="delegate" destination="Z8D-J2-Jdx" id="ZYB-2U-HAc"/>
                                     </connections>
                                 </searchBar>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pCn-hD-bIp">
-                                    <rect key="frame" x="8" y="4" width="182" height="29"/>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="pCn-hD-bIp">
+                                    <rect key="frame" x="8" y="4" width="211" height="29"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="182" id="Vbe-iq-xbm"/>
+                                        <constraint firstAttribute="width" constant="211" id="Vbe-iq-xbm"/>
                                     </constraints>
                                     <segments>
                                         <segment title="Masculine"/>
                                         <segment title="Feminine"/>
+                                        <segment title="Все"/>
                                     </segments>
                                     <connections>
                                         <action selector="actionGenderControlValueChanged:" destination="Z8D-J2-Jdx" eventType="valueChanged" id="YyB-li-9Pp"/>
@@ -407,6 +408,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="genderSelectionSegmetControl" destination="pCn-hD-bIp" id="TCY-hX-brm"/>
                         <outlet property="searchBar" destination="UGy-1T-Vn3" id="agc-wV-z5B"/>
                     </connections>
                 </tableViewController>
