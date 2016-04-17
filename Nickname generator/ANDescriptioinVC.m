@@ -46,11 +46,12 @@
     
     if ([self.namesArray count] > 1) {
         
-        UIBarButtonItem* nextButton = [[UIBarButtonItem alloc] initWithTitle:@">" style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
-        UIBarButtonItem* previousButton = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStylePlain target:self action:@selector(actionPreviousPressed:)];
+        UIBarButtonItem* nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowRight01"] style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
         
+        UIBarButtonItem* previousButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowLeft01"] style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
+
         UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
-        fixedSpace.width = 50;
+        fixedSpace.width = 4;
         
         self.navigationItem.rightBarButtonItems = @[nextButton, fixedSpace, previousButton];
     }
