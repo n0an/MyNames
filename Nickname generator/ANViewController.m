@@ -93,13 +93,13 @@
     
     if (self.isDescriptionAvailable) {
         self.nameResultLabel.userInteractionEnabled = YES;
+        self.infoImageView.hidden = NO;
     } else {
         self.nameResultLabel.userInteractionEnabled = NO;
+        self.infoImageView.hidden = YES;
     }
     
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnNameLabel:)];
-    
-    
     
     [self.nameResultLabel addGestureRecognizer:tapGesture];
     
@@ -124,12 +124,10 @@
                      } completion:^(BOOL finished) {
                          
                      }];
-    
 }
 
+
 - (void) animateGenerateButtonOnClick {
-    
-    
     
     [UIView animateWithDuration:0.15f
                           delay:0.f
@@ -143,8 +141,6 @@
                          }];
                          
                      }];
-    
-    
 }
 
 
@@ -187,8 +183,13 @@
     
     if ([cleanArray count] > 0) {
         self.isDescriptionAvailable = YES;
+        self.nameResultLabel.userInteractionEnabled = YES;
+        self.infoImageView.hidden = NO;
     } else {
         self.isDescriptionAvailable = NO;
+        self.nameResultLabel.userInteractionEnabled = NO;
+        self.infoImageView.hidden = YES;
+
     }
     
     NSArray* resArray = cleanArray;

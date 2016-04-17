@@ -83,8 +83,6 @@
     NSSortDescriptor* nameGenderDescriptor =
     [[NSSortDescriptor alloc] initWithKey:@"nameGender" ascending:YES];
     
-    
-    
     NSPredicate* predicate;
     
     if (self.genderSelectionSegmetControl.selectedSegmentIndex != 2) {
@@ -113,7 +111,6 @@
 
     [fetchRequest setSortDescriptors:@[nameCategoryTitleDescriptor, firstNameDescriptor, nameGenderDescriptor]];
     
-    
     NSFetchedResultsController *aFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:self.managedObjectContext
@@ -121,10 +118,8 @@
                                                    cacheName:nil];
     
     
-    
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
-    
     
     
     NSError *error = nil;
@@ -134,6 +129,12 @@
         abort();
     }
     
+}
+
+
+- (BOOL) isDescriptionAvailable: (ANFavoriteName*) name {
+    
+    return name.nameDescription && ![name.nameDescription isEqualToString:@""];
 }
 
 
@@ -236,9 +237,16 @@
 
     }
     
+    if ([self isDescriptionAvailable:favoriteName]) {
+        cell.infoImageView.hidden = NO;
+    } else {
+        cell.infoImageView.hidden = YES;
+    }
+    
     
     return cell;
 }
+
 
 
 
@@ -255,7 +263,7 @@
     ANLog(@"selected name = %@", name.nameFirstName);
     
     
-    if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
+    if ([self isDescriptionAvailable:name]) {
         
         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
         

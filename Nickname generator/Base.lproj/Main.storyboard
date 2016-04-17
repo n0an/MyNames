@@ -290,6 +290,7 @@
                         <outlet property="controlsView" destination="QRe-5n-4AZ" id="80f-q0-0mF"/>
                         <outlet property="genderControl" destination="0lu-bU-4Wf" id="vg0-Ev-CHV"/>
                         <outlet property="generateButton" destination="nl5-8s-DDE" id="1Te-RW-NUq"/>
+                        <outlet property="infoImageView" destination="Wsg-y9-3h0" id="DvV-ya-d7I"/>
                         <outlet property="likeButton" destination="igX-WN-kk6" id="Q2Z-mT-iZR"/>
                         <outlet property="nameCategoryTextField" destination="7FU-4f-b0W" id="pYp-RL-Knj"/>
                         <outlet property="nameCountControl" destination="udp-kH-BYI" id="LTf-To-pCj"/>
@@ -407,6 +408,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="genderLabel" destination="EbI-7s-Ou8" id="Wrr-2z-DoZ"/>
+                                    <outlet property="infoImageView" destination="C1B-HP-7B9" id="NdD-bA-kwV"/>
                                     <outlet property="nameCategoryLabel" destination="WOr-9h-Bjz" id="fNu-Py-sfy"/>
                                     <outlet property="nameImageView" destination="vt2-E6-tus" id="fT7-q7-akV"/>
                                     <outlet property="nameLabel" destination="3HY-5N-HsF" id="V5H-BU-lYV"/>

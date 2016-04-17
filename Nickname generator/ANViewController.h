@@ -23,6 +23,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton* likeButton;
 
+@property (weak, nonatomic) IBOutlet UIImageView *infoImageView;
+
+
+
 
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender;
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender;
