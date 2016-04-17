@@ -131,8 +131,8 @@
                                                         </constraints>
                                                         <variation key="default">
                                                             <mask key="constraints">
-                                                                <exclude reference="8NS-6s-R3o"/>
                                                                 <exclude reference="8BS-Z5-V7T"/>
+                                                                <exclude reference="8NS-6s-R3o"/>
                                                             </mask>
                                                         </variation>
                                                     </imageView>
@@ -709,32 +709,32 @@
                                     <outlet property="delegate" destination="pZ7-Am-sbg" id="viK-Wk-aBh"/>
                                 </connections>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RdK-bG-XmU">
+                                <rect key="frame" x="282" y="281.5" width="37" height="37"/>
+                                <color key="color" red="0.051043525338172913" green="0.60705900192260742" blue="0.91731446981430054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FO-OA-9vh">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="x7w-Tg-EPn">
+                                    <barButtonItem image="arrowLeft03" id="x7w-Tg-EPn">
                                         <connections>
                                             <action selector="actionBack:" destination="pZ7-Am-sbg" id="9ND-SL-DL8"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="47" systemItem="fixedSpace" id="UL0-nP-Os1"/>
-                                    <barButtonItem systemItem="fastForward" id="se5-1o-NLK">
+                                    <barButtonItem image="arrowRight03" id="se5-1o-NLK">
                                         <connections>
                                             <action selector="actionForward:" destination="pZ7-Am-sbg" id="yaB-Lx-gAc"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="MAz-A1-ThL"/>
-                                    <barButtonItem systemItem="refresh" id="Gux-mK-jkX">
+                                    <barButtonItem image="refresh02" id="Gux-mK-jkX">
                                         <connections>
                                             <action selector="actionRefresh:" destination="pZ7-Am-sbg" id="0KZ-ZR-iwl"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RdK-bG-XmU">
-                                <rect key="frame" x="282" y="281.5" width="37" height="37"/>
-                                <color key="color" red="0.051043525338172913" green="0.60705900192260742" blue="0.91731446981430054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -905,11 +905,14 @@
     </scenes>
     <resources>
         <image name="WhiteTransparentFade" width="375" height="150"/>
+        <image name="arrowLeft03" width="14" height="24"/>
+        <image name="arrowRight03" width="14" height="24"/>
         <image name="fem02" width="60" height="60"/>
         <image name="info01" width="42" height="99"/>
         <image name="like1" width="498" height="498"/>
         <image name="masc01" width="60" height="60"/>
         <image name="masc02" width="60" height="60"/>
+        <image name="refresh02" width="25" height="24"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shapes" width="21" height="21"/>
         <image name="top_charts" width="22" height="22"/>
