@@ -299,9 +299,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="aQp-H4-qJ5">
+                            <rect key="frame" x="0.0" y="64" width="600" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-1T-Vn3">
+                                    <rect key="frame" x="0.0" y="36" width="600" height="44"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Z8D-J2-Jdx" id="ZYB-2U-HAc"/>
+                                    </connections>
+                                </searchBar>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="pCn-hD-bIp">
+                                    <rect key="frame" x="8" y="4" width="211" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="211" id="Vbe-iq-xbm"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="Masculine"/>
+                                        <segment title="Feminine"/>
+                                        <segment title="Все"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="actionGenderControlValueChanged:" destination="Z8D-J2-Jdx" eventType="valueChanged" id="YyB-li-9Pp"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="UGy-1T-Vn3" secondAttribute="trailing" id="2qL-am-Kc8"/>
+                                <constraint firstItem="UGy-1T-Vn3" firstAttribute="top" secondItem="pCn-hD-bIp" secondAttribute="bottom" constant="4" id="2xr-tL-x7V"/>
+                                <constraint firstItem="UGy-1T-Vn3" firstAttribute="leading" secondItem="aQp-H4-qJ5" secondAttribute="leading" id="AMT-b9-eOQ"/>
+                                <constraint firstAttribute="trailing" secondItem="pCn-hD-bIp" secondAttribute="trailing" constant="410" id="lq3-fL-981"/>
+                                <constraint firstItem="pCn-hD-bIp" firstAttribute="leading" secondItem="aQp-H4-qJ5" secondAttribute="leading" constant="8" id="sON-xN-MqB"/>
+                                <constraint firstAttribute="bottom" secondItem="UGy-1T-Vn3" secondAttribute="bottom" id="smV-1x-xPv"/>
+                                <constraint firstItem="pCn-hD-bIp" firstAttribute="top" secondItem="aQp-H4-qJ5" secondAttribute="top" constant="4" id="zEi-NT-PoP"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="lq3-fL-981"/>
+                                </mask>
+                            </variation>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="120" id="qUo-SD-CEq" customClass="ANFavouriteNameCell">
-                                <rect key="frame" x="0.0" y="92" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="172" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qUo-SD-CEq" id="Kjn-Fo-lGw">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
@@ -317,19 +359,19 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masculine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbI-7s-Ou8">
                                             <rect key="frame" x="118" y="89" width="70" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greek Mythology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-9h-Bjz">
                                             <rect key="frame" x="472" y="89" width="120" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oceanus" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HY-5N-HsF">
                                             <rect key="frame" x="130" y="28" width="462" height="34.5"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -365,6 +407,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="genderSelectionSegmetControl" destination="pCn-hD-bIp" id="TCY-hX-brm"/>
+                        <outlet property="searchBar" destination="UGy-1T-Vn3" id="agc-wV-z5B"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5A2-Hf-qey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

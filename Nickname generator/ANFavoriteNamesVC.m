@@ -20,6 +20,9 @@
 
 @interface ANFavoriteNamesVC ()
 
+@property (strong, nonatomic) NSString* searchPredicateString;
+
+
 @end
 
 @implementation ANFavoriteNamesVC
@@ -51,10 +54,88 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-
-    self.navigationController.hidesBarsOnSwipe = YES;
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    // !!!IMPORTANT!!!
+//    self.navigationController.hidesBarsOnSwipe = YES;
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
+
+
+
+
+#pragma mark - Helper Methods
+
+- (void) configureFetchResultsController {
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription* description =
+    [NSEntityDescription entityForName:@"ANFavoriteName"
+                inManagedObjectContext:self.managedObjectContext];
+    
+    fetchRequest.entity = description;
+    
+    NSSortDescriptor* nameCategoryTitleDescriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"nameCategoryTitle" ascending:YES];
+    
+    
+    NSSortDescriptor* firstNameDescriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"nameFirstName" ascending:YES];
+    
+    NSSortDescriptor* nameGenderDescriptor =
+    [[NSSortDescriptor alloc] initWithKey:@"nameGender" ascending:YES];
+    
+    
+    
+    NSPredicate* predicate;
+    
+    if (self.genderSelectionSegmetControl.selectedSegmentIndex != 2) {
+        
+        if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
+            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains %@ AND nameGender == %@", self.searchPredicateString, [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
+        } else {
+            predicate = [NSPredicate predicateWithFormat:@"nameGender == %@", [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
+        }
+        
+    } else {
+        
+        if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
+            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains %@", self.searchPredicateString];
+        } else {
+            predicate = nil;
+        }
+        
+    }
+    
+    
+    if (predicate) {
+        [fetchRequest setPredicate:predicate];
+    }
+    
+
+    [fetchRequest setSortDescriptors:@[nameCategoryTitleDescriptor, firstNameDescriptor, nameGenderDescriptor]];
+    
+    
+    NSFetchedResultsController *aFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:self.managedObjectContext
+                                          sectionNameKeyPath:@"nameCategoryTitle"
+                                                   cacheName:nil];
+    
+    
+    
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+    
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+}
+
 
 
 
@@ -82,6 +163,8 @@
 }
 
 
+
+
 - (IBAction)actionResetButtonPressed:(UIBarButtonItem*)sender {
     
     [[ANDataManager sharedManager] clearFavoriteNamesDB];
@@ -91,12 +174,13 @@
     
 }
 
-
-
-
-
-
-
+- (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender {
+    
+    [self configureFetchResultsController];
+    
+    [self.tableView reloadData];
+    
+}
 
 
 
@@ -108,52 +192,20 @@
         return _fetchedResultsController;
     }
     
-    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    [self configureFetchResultsController];
     
-    NSEntityDescription* description =
-    [NSEntityDescription entityForName:@"ANFavoriteName"
-                inManagedObjectContext:self.managedObjectContext];
-    
-    fetchRequest.entity = description;
-    
-    
-    NSSortDescriptor* firstNameDescriptor =
-    [[NSSortDescriptor alloc] initWithKey:@"nameFirstName" ascending:YES];
-    
-//    NSSortDescriptor* lastNameDescriptor =
-//    [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
-    
-    
-    [fetchRequest setSortDescriptors:@[firstNameDescriptor]]; // SORTING USING FETCH
-    
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:self.managedObjectContext
-                                          sectionNameKeyPath:nil
-                                                   cacheName:nil];
-    
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-    
-    
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error]) {
-        
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
     
     return _fetchedResultsController;
 }
 
 
 #pragma mark - UITableViewDataSource
+
+- (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo name];
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -164,7 +216,7 @@
     ANFavouriteNameCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-    cell.genderLabel.text = favoriteName.nameGender ? @"Masculine" : @"Feminine";
+    cell.genderLabel.text = !favoriteName.nameGender.boolValue ? @"Masculine" : @"Feminine";
     cell.nameCategoryLabel.text = favoriteName.nameCategoryTitle;
     
     
@@ -222,6 +274,40 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+
+
+
+
+#pragma mark - UISearchBarDelegate
+
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    NSLog(@"textDidChange searchText = %@", searchText);
+    
+    self.searchPredicateString = searchText;
+    
+    [self configureFetchResultsController];
+    
+    
+    [self.tableView reloadData];
+    
+    
+}
+
+
+
 
 
 

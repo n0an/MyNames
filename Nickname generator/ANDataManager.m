@@ -128,6 +128,7 @@
     
     favoriteName.nameFirstName = name.firstName;
     favoriteName.nameID = name.nameID;
+    NSLog(@"favoriteName.nameGender = %@", [NSNumber numberWithBool:name.nameGender]);
     favoriteName.nameGender = [NSNumber numberWithBool:name.nameGender];
     favoriteName.nameDescription = name.nameDescription;
     favoriteName.nameURL = name.nameURL;
