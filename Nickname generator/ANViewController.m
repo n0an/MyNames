@@ -318,18 +318,6 @@
 
 
 
-
-
-- (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender {
-    
-    ANLog(@"actionGenderControlValueChanged");
-    ANLog(@"New value is = %d", sender.selectedSegmentIndex);
-    
-    self.selectedGender = (ANGender)self.genderControl.selectedSegmentIndex;
-
-}
-
-
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {

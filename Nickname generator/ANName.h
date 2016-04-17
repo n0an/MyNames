@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-
+    
+    ANGenderAll = -1,
     ANGenderMasculine = 0,
     ANGenderFeminine = 1
     

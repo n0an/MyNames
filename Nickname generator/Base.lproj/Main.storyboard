@@ -388,36 +388,98 @@
                                         <outlet property="delegate" destination="Z8D-J2-Jdx" id="ZYB-2U-HAc"/>
                                     </connections>
                                 </searchBar>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="pCn-hD-bIp">
-                                    <rect key="frame" x="8" y="4" width="211" height="29"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="211" id="Vbe-iq-xbm"/>
-                                    </constraints>
-                                    <segments>
-                                        <segment title="Masculine"/>
-                                        <segment title="Feminine"/>
-                                        <segment title="Все"/>
-                                    </segments>
-                                    <connections>
-                                        <action selector="actionGenderControlValueChanged:" destination="Z8D-J2-Jdx" eventType="valueChanged" id="YyB-li-9Pp"/>
-                                    </connections>
-                                </segmentedControl>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fYi-g9-67y" userLabel="genders Stack View">
+                                    <rect key="frame" x="8" y="3" width="70" height="30"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOp-lD-cBs" userLabel="mascMicroView">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="masc02" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-ZX-izT" userLabel="mascImg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="9a5-HK-fjz"/>
+                                                        <constraint firstAttribute="width" constant="30" id="BZS-dU-yGW"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="9a5-HK-fjz"/>
+                                                            <exclude reference="BZS-dU-yGW"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-xo-2je">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Prr-ql-Q2P"/>
+                                                        <constraint firstAttribute="height" constant="30" id="gvN-j1-SGr"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="actionGndrBtnPressed:" destination="Z8D-J2-Jdx" eventType="touchUpInside" id="9ol-l4-1fS"/>
+                                                        <action selector="actionGndrBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BZU-gF-Pgo"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="9kO-ZX-izT" secondAttribute="trailing" id="3dE-G1-yNd"/>
+                                                <constraint firstAttribute="trailing" secondItem="IMy-xo-2je" secondAttribute="trailing" id="7KU-WO-hE3"/>
+                                                <constraint firstItem="IMy-xo-2je" firstAttribute="leading" secondItem="KOp-lD-cBs" secondAttribute="leading" id="GO9-gJ-ueD"/>
+                                                <constraint firstItem="9kO-ZX-izT" firstAttribute="leading" secondItem="KOp-lD-cBs" secondAttribute="leading" id="IUi-He-aHB"/>
+                                                <constraint firstAttribute="bottom" secondItem="9kO-ZX-izT" secondAttribute="bottom" id="U8Q-X6-nSF"/>
+                                                <constraint firstAttribute="bottom" secondItem="IMy-xo-2je" secondAttribute="bottom" id="aOL-iw-PWB"/>
+                                                <constraint firstItem="9kO-ZX-izT" firstAttribute="top" secondItem="KOp-lD-cBs" secondAttribute="top" id="d8g-29-bMr"/>
+                                                <constraint firstItem="IMy-xo-2je" firstAttribute="top" secondItem="KOp-lD-cBs" secondAttribute="top" id="rsB-P5-u3b"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7R-nd-lhq" userLabel="femMicroView">
+                                            <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fem02" translatesAutoresizingMaskIntoConstraints="NO" id="O5r-23-1zY" userLabel="femImg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Gbn-qo-9Hb"/>
+                                                        <constraint firstAttribute="width" constant="30" id="vvZ-5c-ZBA"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Gbn-qo-9Hb"/>
+                                                            <exclude reference="vvZ-5c-ZBA"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tm-FA-BmH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="RdF-Yc-r5d"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Sob-6K-7k1"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="actionGndrBtnPressed:" destination="Z8D-J2-Jdx" eventType="touchUpInside" id="KWb-20-bSj"/>
+                                                        <action selector="actionGndrBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jsq-tb-U3T"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3tm-FA-BmH" firstAttribute="leading" secondItem="W7R-nd-lhq" secondAttribute="leading" id="GCf-SQ-g7D"/>
+                                                <constraint firstAttribute="trailing" secondItem="O5r-23-1zY" secondAttribute="trailing" id="OS8-jf-2uE"/>
+                                                <constraint firstAttribute="trailing" secondItem="3tm-FA-BmH" secondAttribute="trailing" id="U1Q-t5-VWA"/>
+                                                <constraint firstAttribute="bottom" secondItem="3tm-FA-BmH" secondAttribute="bottom" id="UD3-JH-nDl"/>
+                                                <constraint firstItem="O5r-23-1zY" firstAttribute="leading" secondItem="W7R-nd-lhq" secondAttribute="leading" id="VEE-54-vDG"/>
+                                                <constraint firstItem="O5r-23-1zY" firstAttribute="top" secondItem="W7R-nd-lhq" secondAttribute="top" id="gkG-Gu-STw"/>
+                                                <constraint firstItem="3tm-FA-BmH" firstAttribute="top" secondItem="W7R-nd-lhq" secondAttribute="top" id="obn-PB-qDL"/>
+                                                <constraint firstAttribute="bottom" secondItem="O5r-23-1zY" secondAttribute="bottom" id="upt-tx-hUa"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="UGy-1T-Vn3" secondAttribute="trailing" id="2qL-am-Kc8"/>
-                                <constraint firstItem="UGy-1T-Vn3" firstAttribute="top" secondItem="pCn-hD-bIp" secondAttribute="bottom" constant="4" id="2xr-tL-x7V"/>
                                 <constraint firstItem="UGy-1T-Vn3" firstAttribute="leading" secondItem="aQp-H4-qJ5" secondAttribute="leading" id="AMT-b9-eOQ"/>
-                                <constraint firstAttribute="trailing" secondItem="pCn-hD-bIp" secondAttribute="trailing" constant="410" id="lq3-fL-981"/>
-                                <constraint firstItem="pCn-hD-bIp" firstAttribute="leading" secondItem="aQp-H4-qJ5" secondAttribute="leading" constant="8" id="sON-xN-MqB"/>
+                                <constraint firstItem="fYi-g9-67y" firstAttribute="top" secondItem="aQp-H4-qJ5" secondAttribute="top" constant="3" id="baH-ij-I5G"/>
                                 <constraint firstAttribute="bottom" secondItem="UGy-1T-Vn3" secondAttribute="bottom" id="smV-1x-xPv"/>
-                                <constraint firstItem="pCn-hD-bIp" firstAttribute="top" secondItem="aQp-H4-qJ5" secondAttribute="top" constant="4" id="zEi-NT-PoP"/>
+                                <constraint firstItem="fYi-g9-67y" firstAttribute="leading" secondItem="aQp-H4-qJ5" secondAttribute="leading" constant="8" id="zsM-z5-mlT"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="lq3-fL-981"/>
-                                </mask>
-                            </variation>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="120" id="qUo-SD-CEq" customClass="ANFavouriteNameCell">
@@ -496,7 +558,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="genderSelectionSegmetControl" destination="pCn-hD-bIp" id="TCY-hX-brm"/>
+                        <outlet property="genderButtonFem" destination="3tm-FA-BmH" id="ziM-jY-FTB"/>
+                        <outlet property="genderButtonMasc" destination="IMy-xo-2je" id="glL-vV-RjC"/>
+                        <outlet property="imgViewGenderFem" destination="O5r-23-1zY" id="FhS-h8-9B4"/>
+                        <outlet property="imgViewGenderMasc" destination="9kO-ZX-izT" id="Cp8-iD-uGP"/>
                         <outlet property="searchBar" destination="UGy-1T-Vn3" id="agc-wV-z5B"/>
                     </connections>
                 </tableViewController>
@@ -844,6 +909,7 @@
         <image name="info01" width="42" height="99"/>
         <image name="like1" width="498" height="498"/>
         <image name="masc01" width="60" height="60"/>
+        <image name="masc02" width="60" height="60"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shapes" width="21" height="21"/>
         <image name="top_charts" width="22" height="22"/>

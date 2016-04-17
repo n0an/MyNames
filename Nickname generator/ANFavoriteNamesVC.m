@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) NSString* searchPredicateString;
 
+@property (assign, nonatomic) ANGender selectedGender;
 
 @end
 
@@ -47,6 +48,8 @@
 //    UIColor *separatorColor = RGBA(10, 10, 10, 255);
 //
 //    [self.tableView setSeparatorColor:separatorColor];
+    
+    self.selectedGender = ANGenderAll;
     
 }
 
@@ -85,12 +88,13 @@
     
     NSPredicate* predicate;
     
-    if (self.genderSelectionSegmetControl.selectedSegmentIndex != 2) {
+    
+    if (self.selectedGender != ANGenderAll) {
         
         if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
-            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains[cd] %@ AND nameGender == %@", self.searchPredicateString, [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
+            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains[cd] %@ AND nameGender == %@", self.searchPredicateString, [NSNumber numberWithInteger:self.selectedGender]];
         } else {
-            predicate = [NSPredicate predicateWithFormat:@"nameGender == %@", [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
+            predicate = [NSPredicate predicateWithFormat:@"nameGender == %@", [NSNumber numberWithInteger:self.selectedGender]];
         }
         
     } else {
@@ -102,8 +106,7 @@
         }
         
     }
-    
-    
+
     if (predicate) {
         [fetchRequest setPredicate:predicate];
     }
@@ -175,11 +178,66 @@
     
 }
 
-- (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender {
+
+- (IBAction)actionGndrBtnPressed:(id)sender {
+    
+    UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
+    UIImage* mascNonactiveImage = [UIImage imageNamed:@"masc02"];
+    
+    UIImage* femActiveImage = [UIImage imageNamed:@"fem01"];
+    UIImage* femNonactiveImage = [UIImage imageNamed:@"fem02"];
+    
+    
+    if ([sender isEqual:self.genderButtonMasc]) {
+        
+        if (self.selectedGender == ANGenderAll || self.selectedGender == ANGenderFeminine) {
+            
+            NSLog(@"Masc selected");
+            
+            self.selectedGender = ANGenderMasculine;
+            
+            self.imgViewGenderMasc.image = mascActiveImage;
+            self.imgViewGenderFem.image = femNonactiveImage;
+
+        } else if (self.selectedGender == ANGenderMasculine) {
+            
+            NSLog(@"All selected");
+            
+            self.selectedGender = ANGenderAll;
+            
+            self.imgViewGenderMasc.image = mascNonactiveImage;
+            self.imgViewGenderFem.image = femNonactiveImage;
+        }
+        
+        
+    } else if ([sender isEqual:self.genderButtonFem]) {
+        
+        if (self.selectedGender == ANGenderAll || self.selectedGender == ANGenderMasculine) {
+            
+            NSLog(@"Fem selected");
+            
+            self.selectedGender = ANGenderFeminine;
+            
+            self.imgViewGenderMasc.image = mascNonactiveImage;
+            self.imgViewGenderFem.image = femActiveImage;
+            
+        } else if (self.selectedGender == ANGenderFeminine) {
+            
+            NSLog(@"All selected");
+            
+            self.selectedGender = ANGenderAll;
+            
+            self.imgViewGenderMasc.image = mascNonactiveImage;
+            self.imgViewGenderFem.image = femNonactiveImage;
+        }
+        
+        
+    }
     
     [self configureFetchResultsController];
-    
     [self.tableView reloadData];
+
+    
     
 }
 
