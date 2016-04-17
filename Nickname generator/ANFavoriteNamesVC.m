@@ -90,7 +90,7 @@
     if (self.genderSelectionSegmetControl.selectedSegmentIndex != 2) {
         
         if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
-            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains %@ AND nameGender == %@", self.searchPredicateString, [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
+            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains[cd] %@ AND nameGender == %@", self.searchPredicateString, [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
         } else {
             predicate = [NSPredicate predicateWithFormat:@"nameGender == %@", [NSNumber numberWithInteger:self.genderSelectionSegmetControl.selectedSegmentIndex]];
         }
@@ -98,7 +98,7 @@
     } else {
         
         if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
-            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains %@", self.searchPredicateString];
+            predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains[cd] %@", self.searchPredicateString];
         } else {
             predicate = nil;
         }
