@@ -21,14 +21,20 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView* nameImageView;
 
+
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageWidthLandscape;
 
 @property (weak, nonatomic) IBOutlet UIButton* readMoreButton;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @property (strong, nonatomic) NSArray* namesArray;
 
 @property (assign, nonatomic) BOOL isCustomNavigationBar;
+
+- (IBAction)actionlikeButtonPressed:(UIButton*)sender;
+
 
 
 @end

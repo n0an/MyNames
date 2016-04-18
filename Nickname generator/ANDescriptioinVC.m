@@ -6,11 +6,15 @@
 //  Copyright © 2016 Anton Novoselov. All rights reserved.
 //
 
+#import "ANDataManager.h"
+
 #import "ANDescriptioinVC.h"
 #import "ANName.h"
 #import "ANUtils.h"
 
 #import "ANWebViewVC.h"
+
+
 
 @interface ANDescriptioinVC ()
 
@@ -241,6 +245,17 @@
 - (void) handleLeftSwipe: (UITapGestureRecognizer*) recognizer {
     
     [self iterateNameWithDirection:ANNameIterationDirectionNext];
+    
+}
+
+- (IBAction)actionlikeButtonPressed:(UIButton*)sender {
+    // *** Saving choosen names to CoreData
+    
+    
+    [[ANDataManager sharedManager] addFavoriteName:self.currentName];
+    
+    ANLog(@"\n=========== LIKE PRESSED ===========");
+    [[ANDataManager sharedManager] showAllNames];
     
 }
 
