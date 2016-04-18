@@ -32,6 +32,8 @@
 
 - (void) addFavoriteName:(ANName*) name;
 
+- (void) deleteFavoriteName:(ANName*) name;
+
 - (void) clearFavoriteNamesDB;
 
 - (void) showAllNames;

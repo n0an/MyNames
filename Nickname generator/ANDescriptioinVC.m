@@ -272,14 +272,28 @@
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
     // *** Saving choosen names to CoreData
     
+    if (self.isNameFavorite) {
+        
+        [[ANDataManager sharedManager] deleteFavoriteName:self.currentName];
+        
+        ANLog(@"\n=========== LIKE PRESSED . FAVORITE DELETED ===========");
+        [[ANDataManager sharedManager] showAllNames];
+        
+        [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
+        
+    } else {
+        
+        [[ANDataManager sharedManager] addFavoriteName:self.currentName];
+        
+        ANLog(@"\n=========== LIKE PRESSED . FAVORITE ADDED ===========");
+        [[ANDataManager sharedManager] showAllNames];
+        
+        [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
+        
+    }
     
-    
-    
-    
-    [[ANDataManager sharedManager] addFavoriteName:self.currentName];
-    
-    ANLog(@"\n=========== LIKE PRESSED ===========");
-    [[ANDataManager sharedManager] showAllNames];
+    self.isNameFavorite = !self.isNameFavorite;
+
     
 }
 
