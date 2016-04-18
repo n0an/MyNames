@@ -10,6 +10,7 @@
 #import "ANName.h"
 #import "ANNameCategory.h"
 
+#import "ANUtils.h"
 
 
 @implementation ANDataManager
@@ -108,7 +109,7 @@
 - (void) addFavoriteName:(ANName*) name {
     
     // Checking for doubles. If there's such name in DB - return from method
-    NSArray* addedNames = [self getAllObjectsForName:@"ANFavoriteName"];
+    NSArray* addedNames = [self getAllObjectsForName:ANCDMFavoriteName];
     
     // If there're names already - check for coincidence
     BOOL isArrEmpty = [addedNames count] == 0;
@@ -121,10 +122,8 @@
             }
         }
     }
-    
-    
-    ANFavoriteName* favoriteName = [NSEntityDescription insertNewObjectForEntityForName:@"ANFavoriteName" inManagedObjectContext:self.managedObjectContext];
-    
+
+    ANFavoriteName* favoriteName = [NSEntityDescription insertNewObjectForEntityForName:ANCDMFavoriteName inManagedObjectContext:self.managedObjectContext];
     
     favoriteName.nameFirstName = name.firstName;
     favoriteName.nameID = name.nameID;
@@ -138,7 +137,6 @@
     
     NSError* error = nil;
     
-    
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"%@", [error localizedDescription]);
     }
@@ -146,16 +144,69 @@
 }
 
 
-- (void) showAllNames {
-    NSLog(@"===== showAllNames =====");
-    [self printArray:[self getAllObjectsForName:@"ANFavoriteName"]];
+
+- (void) deleteFavoriteName:(ANName*) name {
+    
+    NSArray* addedNames = [self getAllObjectsForName:ANCDMFavoriteName];
+    
+    // If there're names already - check for coincidence
+    BOOL isArrEmpty = [addedNames count] == 0;
+    
+    if (!isArrEmpty) {
+        // If there's already added name with such nameID - stop execution
+        for (ANFavoriteName* favName in addedNames) {
+            if ([favName.nameID isEqualToString:name.nameID]) {
+                [self.managedObjectContext deleteObject:favName];
+                break;
+            }
+        }
+    }
+    
+    [self.managedObjectContext save:nil]; // Saving context, and deleting marked objects
+
 }
 
 
 
+
+
+- (void) showAllNames {
+    NSLog(@"===== showAllNames =====");
+    [self printArray:[self getAllObjectsForName:ANCDMFavoriteName]];
+}
+
+
 - (void) clearFavoriteNamesDB {
-    [self deleteAllObjectsForName:@"ANFavoriteName"];
+    [self deleteAllObjectsForName:ANCDMFavoriteName];
     
+}
+
+- (BOOL) isNameFavorite:(ANName*) name {
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription* description =
+    [NSEntityDescription entityForName:ANCDMFavoriteName
+                inManagedObjectContext:self.managedObjectContext];
+    
+    request.entity = description;
+    
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameFirstName == %@", name.firstName];
+    
+    request.predicate = predicate;
+    
+    NSError* reqestError = nil;
+    NSArray* resultArray = [self.managedObjectContext executeFetchRequest:request error:&reqestError];
+    
+    if (reqestError) {
+        NSLog(@"requestError = %@", [reqestError localizedDescription]);
+    }
+    
+    NSLog(@"[resultArray count] == %lu", (unsigned long)[resultArray count]);
+    
+    
+    
+    return [resultArray count];
 }
 
 

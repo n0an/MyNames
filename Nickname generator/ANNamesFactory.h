@@ -15,9 +15,12 @@
 
 @property (strong, nonatomic) NSArray* namesCategories;
 
++ (ANNamesFactory*) sharedFactory;
+
 - (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender;
 
-+ (ANNamesFactory*) sharedFactory;
+- (ANName*) getNameForID:(NSString*) nameID;
+
 
 
 @end

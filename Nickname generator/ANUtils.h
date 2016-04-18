@@ -27,6 +27,9 @@
 
 extern NSString* const ANLogNotification;
 extern NSString* const ANLogNotificationTextUserInfoKey;
+extern NSString* const ANCDMFavoriteName;
+
+
 
 
 typedef enum {

@@ -20,6 +20,11 @@
 
 @property (strong, nonatomic) ANName* currentName;
 
+@property (assign, nonatomic) BOOL isNameFavorite;
+@property (strong, nonatomic) UIImage* likeNonSetImage;
+@property (strong, nonatomic) UIImage* likeSetImage;
+
+
 @end
 
 @implementation ANDescriptioinVC
@@ -60,12 +65,10 @@
         self.navigationItem.rightBarButtonItems = @[nextButton, fixedSpace, previousButton];
     }
     
-    
 //    [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
 //    
 //    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
-    
+
     UISwipeGestureRecognizer* rightSwipeGesture =
     [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleRightSwipe:)];
     rightSwipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
@@ -77,6 +80,31 @@
     [self.view addGestureRecognizer:rightSwipeGesture];
     [self.view addGestureRecognizer:leftSwipeGesture];
 
+}
+
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.likeNonSetImage = [UIImage imageNamed:@"like1"];
+    self.likeSetImage = [UIImage imageNamed:@"like1set"];
+    
+    self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.currentName];
+    
+    NSLog(@"self.isNameFavorite = %d", self.isNameFavorite);
+    
+    
+    if (self.isNameFavorite) {
+
+        [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
+
+    } else {
+
+        [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
+
+    }
+    
+    
 }
 
 
@@ -172,8 +200,6 @@
         
         self.nameImageView.image = nil;
         
-        
-        
         if (isOrientationPortrait()) {
             self.imageHeightConstraint.active = NO;
         }
@@ -182,8 +208,6 @@
             self.imageWidthLandscape.active = NO;
 
         }
-
-        
         
         [self.view layoutIfNeeded];
         
@@ -203,9 +227,6 @@
             self.imageWidthLandscape.active = YES;
             
         }
-        
-
-
         
         [self.view layoutIfNeeded];
         ANLog(@"there's image");
@@ -251,11 +272,28 @@
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
     // *** Saving choosen names to CoreData
     
+    if (self.isNameFavorite) {
+        
+        [[ANDataManager sharedManager] deleteFavoriteName:self.currentName];
+        
+        ANLog(@"\n=========== LIKE PRESSED . FAVORITE DELETED ===========");
+        [[ANDataManager sharedManager] showAllNames];
+        
+        [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
+        
+    } else {
+        
+        [[ANDataManager sharedManager] addFavoriteName:self.currentName];
+        
+        ANLog(@"\n=========== LIKE PRESSED . FAVORITE ADDED ===========");
+        [[ANDataManager sharedManager] showAllNames];
+        
+        [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
+        
+    }
     
-    [[ANDataManager sharedManager] addFavoriteName:self.currentName];
-    
-    ANLog(@"\n=========== LIKE PRESSED ===========");
-    [[ANDataManager sharedManager] showAllNames];
+    self.isNameFavorite = !self.isNameFavorite;
+
     
 }
 

@@ -14,14 +14,6 @@
 @implementation ANNamesFactory
 
 
-- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
-    
-    ANName* result;
-    
-    result = [ANName randomNameforCategory:category andGender:gender];
-    
-    return result;
-}
 
 
 
@@ -44,6 +36,50 @@
     return sharedFactory;
     
 }
+
+
+- (ANNameCategory*) getCategoryForID:(NSString*) categoryID {
+
+    ANNameCategory* resultCategory;
+    
+    for (ANNameCategory* category in self.namesCategories) {
+        
+        if ([category.nameCategoryID isEqualToString:categoryID]) {
+            
+            
+            resultCategory = category;
+            break;
+        }
+        
+    }
+    
+    return resultCategory;
+}
+
+
+- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
+    
+    ANName* result;
+    
+    result = [ANName randomNameforCategory:category andGender:gender];
+    
+    return result;
+}
+
+
+
+- (ANName*) getNameForID:(NSString*) nameID {
+    
+    NSString* nameCategoryID = [nameID substringToIndex:5];
+    
+    ANNameCategory* category = [self getCategoryForID:nameCategoryID];
+
+    ANName* result = [ANName getNameForID:nameID andCategory:category];
+
+    return result;
+    
+}
+
 
 
 
