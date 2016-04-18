@@ -32,6 +32,9 @@
 
 @property (assign, nonatomic) BOOL isDescriptionAvailable;
 
+
+
+
 @end
 
 @implementation ANViewController
@@ -52,14 +55,14 @@
     
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
     
-    self.selectedGender = (ANGender)self.genderControl.selectedSegmentIndex;
+    self.selectedGender = ANGenderMasculine;
+
     
     self.isDescriptionAvailable = NO;
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
     self.nameResultLabel.text = currentNamesLabel;
-    
     
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
@@ -93,13 +96,13 @@
     
     if (self.isDescriptionAvailable) {
         self.nameResultLabel.userInteractionEnabled = YES;
+        self.infoImageView.hidden = NO;
     } else {
         self.nameResultLabel.userInteractionEnabled = NO;
+        self.infoImageView.hidden = YES;
     }
     
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnNameLabel:)];
-    
-    
     
     [self.nameResultLabel addGestureRecognizer:tapGesture];
     
@@ -124,12 +127,10 @@
                      } completion:^(BOOL finished) {
                          
                      }];
-    
 }
 
+
 - (void) animateGenerateButtonOnClick {
-    
-    
     
     [UIView animateWithDuration:0.15f
                           delay:0.f
@@ -143,8 +144,6 @@
                          }];
                          
                      }];
-    
-    
 }
 
 
@@ -187,8 +186,13 @@
     
     if ([cleanArray count] > 0) {
         self.isDescriptionAvailable = YES;
+        self.nameResultLabel.userInteractionEnabled = YES;
+        self.infoImageView.hidden = NO;
     } else {
         self.isDescriptionAvailable = NO;
+        self.nameResultLabel.userInteractionEnabled = NO;
+        self.infoImageView.hidden = YES;
+
     }
     
     NSArray* resArray = cleanArray;
@@ -257,8 +261,6 @@
                          
                      }];
 
-    
-    
 }
 
 
@@ -282,16 +284,38 @@
     
 }
 
-
-
-- (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender {
+- (IBAction)actionGndrBtnPressed:(id)sender {
     
-    ANLog(@"actionGenderControlValueChanged");
-    ANLog(@"New value is = %d", sender.selectedSegmentIndex);
+    UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
+    UIImage* mascNonactiveImage = [UIImage imageNamed:@"masc02"];
     
-    self.selectedGender = (ANGender)self.genderControl.selectedSegmentIndex;
+    UIImage* femActiveImage = [UIImage imageNamed:@"fem01"];
+    UIImage* femNonactiveImage = [UIImage imageNamed:@"fem02"];
 
+    
+    if ([sender isEqual:self.genderButtonMasc]) {
+        NSLog(@"Masc selected");
+        
+        self.selectedGender = ANGenderMasculine;
+
+        self.imgViewGenderMasc.image = mascActiveImage;
+        self.imgViewGenderFem.image = femNonactiveImage;
+        
+        
+    } else if ([sender isEqual:self.genderButtonFem]) {
+        
+        NSLog(@"Fem selected");
+        
+        self.selectedGender = ANGenderFeminine;
+
+        self.imgViewGenderMasc.image = mascNonactiveImage;
+        self.imgViewGenderFem.image = femActiveImage;
+        
+    }
+    
+    
 }
+
 
 
 #pragma mark - UITextFieldDelegate

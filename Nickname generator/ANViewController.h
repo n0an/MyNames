@@ -16,19 +16,31 @@
 
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
 @property (weak, nonatomic) IBOutlet UIButton* generateButton;
-@property (weak, nonatomic) IBOutlet UISegmentedControl* genderControl;
+
 @property (weak, nonatomic) IBOutlet UITextField* nameCategoryTextField;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl* nameCountControl;
 
 @property (weak, nonatomic) IBOutlet UIButton* likeButton;
 
+@property (weak, nonatomic) IBOutlet UIImageView *infoImageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *genderButtonMasc;
+
+@property (weak, nonatomic) IBOutlet UIButton *genderButtonFem;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewGenderMasc;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewGenderFem;
+
 
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender;
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender;
 
-- (IBAction)actionGenderControlValueChanged:(UISegmentedControl*)sender;
+
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender;
+
+
+- (IBAction)actionGndrBtnPressed:(id)sender;
 
 
 

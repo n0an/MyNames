@@ -6,11 +6,15 @@
 //  Copyright © 2016 Anton Novoselov. All rights reserved.
 //
 
+#import "ANDataManager.h"
+
 #import "ANDescriptioinVC.h"
 #import "ANName.h"
 #import "ANUtils.h"
 
 #import "ANWebViewVC.h"
+
+
 
 @interface ANDescriptioinVC ()
 
@@ -46,11 +50,12 @@
     
     if ([self.namesArray count] > 1) {
         
-        UIBarButtonItem* nextButton = [[UIBarButtonItem alloc] initWithTitle:@">" style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
-        UIBarButtonItem* previousButton = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStylePlain target:self action:@selector(actionPreviousPressed:)];
+        UIBarButtonItem* nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowRight01"] style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
         
+        UIBarButtonItem* previousButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowLeft01"] style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
+
         UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
-        fixedSpace.width = 50;
+        fixedSpace.width = 4;
         
         self.navigationItem.rightBarButtonItems = @[nextButton, fixedSpace, previousButton];
     }
@@ -240,6 +245,17 @@
 - (void) handleLeftSwipe: (UITapGestureRecognizer*) recognizer {
     
     [self iterateNameWithDirection:ANNameIterationDirectionNext];
+    
+}
+
+- (IBAction)actionlikeButtonPressed:(UIButton*)sender {
+    // *** Saving choosen names to CoreData
+    
+    
+    [[ANDataManager sharedManager] addFavoriteName:self.currentName];
+    
+    ANLog(@"\n=========== LIKE PRESSED ===========");
+    [[ANDataManager sharedManager] showAllNames];
     
 }
 
