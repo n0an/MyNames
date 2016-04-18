@@ -46,6 +46,26 @@
 }
 
 
+- (ANNameCategory*) getCategoryForID:(NSString*) categoryID {
+
+    ANNameCategory* resultCategory;
+    
+    for (ANNameCategory* category in self.namesCategories) {
+        
+        if ([category.nameCategoryID isEqualToString:categoryID]) {
+            
+            
+            resultCategory = category;
+            break;
+        }
+        
+    }
+    
+    return resultCategory;
+}
+
+
+
 
 
 

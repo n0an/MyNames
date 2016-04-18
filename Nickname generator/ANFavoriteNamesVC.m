@@ -17,6 +17,10 @@
 
 #import "ANDescriptioinVC.h"
 
+#import "ANNamesFactory.h"
+
+#import "ANNameCategory.h"
+
 
 @interface ANFavoriteNamesVC ()
 
@@ -320,12 +324,31 @@
     
     ANLog(@"selected name = %@", name.nameFirstName);
     
-    
     if ([self isDescriptionAvailable:name]) {
         
         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
         
-        vc.namesArray = @[name];
+        NSString* nameID = name.nameID;
+        
+        NSString* nameCategoryID = [nameID substringToIndex:5];
+        
+        ANNameCategory* category = [[ANNamesFactory sharedFactory] getCategoryForID:nameCategoryID];
+        
+        
+        ANName* originName = [[ANName alloc] init];
+        
+        originName.firstName        = name.nameFirstName;
+        originName.nameID           = name.nameID;
+        originName.nameGender       = name.nameGender.boolValue;
+        originName.nameURL          = name.nameURL;
+        
+        originName.nameDescription  = name.nameDescription;
+        originName.nameImageName    = name.nameImageName;
+        
+        originName.nameCategory     = category;
+
+        
+        vc.namesArray = @[originName];
         vc.isCustomNavigationBar = YES;
         
 //        [self.navigationController pushViewController:vc animated:YES];

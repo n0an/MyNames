@@ -65,6 +65,27 @@
 
 
 
++ (ANName*) getNameForID:(NSString*) nameID {
+
+    // 01.02.0.15 - EXAMPLE OF ID
+    // !!!NOT DONE!!!
+    
+    ANName* name = [[ANName alloc] init];
+
+    NSArray* nameParams = [nameID componentsSeparatedByString:@"."];
+
+    NSString* nameCategoryID = [nameParams objectAtIndex:1];
+    
+    NSString* nameGenderStr = [nameParams objectAtIndex:2];
+    ANGender* nameGender = [nameGenderStr integerValue];
+    
+    NSString* nameIDInList = [nameParams objectAtIndex:3];
+    
+    
+    return name;
+}
+
+
 
 + (NSInteger) getRandomForCount:(NSInteger) totalCount {
     
