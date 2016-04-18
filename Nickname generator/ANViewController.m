@@ -32,7 +32,9 @@
 
 @property (assign, nonatomic) BOOL isDescriptionAvailable;
 
-
+@property (assign, nonatomic) BOOL isNameFavorite;
+@property (strong, nonatomic) UIImage* likeNonSetImage;
+@property (strong, nonatomic) UIImage* likeSetImage;
 
 
 @end
@@ -84,6 +86,8 @@
     // Initial Animation State of Generate Button
     self.generateButton.transform = CGAffineTransformMakeScale(0.f, 0.f);
     
+    self.likeNonSetImage = [UIImage imageNamed:@"like1"];
+    self.likeSetImage = [UIImage imageNamed:@"like1set"];
     
 }
 
@@ -105,6 +109,15 @@
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnNameLabel:)];
     
     [self.nameResultLabel addGestureRecognizer:tapGesture];
+    
+    
+    
+    NSArray* arr = self.displayedNames;
+    
+    ANName* firstName = [arr firstObject];
+    
+    self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:firstName];
+    [self refreshLikeButton];
     
 }
 
@@ -201,6 +214,23 @@
 }
 
 
+- (void) refreshLikeButton {
+    
+    NSLog(@"firstName = %d", self.isNameFavorite);
+    
+    if (self.isNameFavorite) {
+        
+        [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
+        
+    } else {
+        
+        [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
+    }
+
+    
+}
+
+
 
 #pragma mark - Actions
 
@@ -254,24 +284,55 @@
                          
                          self.nameResultLabel.text = currentNamesLabel;
                          
+                         NSArray* arr = self.displayedNames;
+                         
+                         ANName* firstName = [arr firstObject];
+                         
+                         self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:firstName];
+                         [self refreshLikeButton];
+                         
                          [UIView animateWithDuration:0.5f
                                           animations:^{
                                               self.nameResultLabel.alpha = 1.f;
                                           }];
                          
                      }];
+    
+    
 
 }
 
 
+
+
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
+  
     // *** Saving choosen names to CoreData
     
     NSArray* arr = self.displayedNames;
-    [[ANDataManager sharedManager] addFavoriteName:[arr firstObject]];
     
-    ANLog(@"\n=========== LIKE PRESSED ===========");
-    [[ANDataManager sharedManager] showAllNames];
+    ANName* currentName = [arr firstObject];
+    
+    if (self.isNameFavorite) {
+        
+        [[ANDataManager sharedManager] deleteFavoriteName:currentName];
+        
+        ANLog(@"\n=========== LIKE PRESSED . FAVORITE DELETED ===========");
+        [[ANDataManager sharedManager] showAllNames];
+        
+    } else {
+        
+        [[ANDataManager sharedManager] addFavoriteName:currentName];
+        
+        ANLog(@"\n=========== LIKE PRESSED . FAVORITE ADDED ===========");
+        [[ANDataManager sharedManager] showAllNames];
+        
+    }
+    
+    self.isNameFavorite = !self.isNameFavorite;
+    
+    [self refreshLikeButton];
+
     
 }
 
