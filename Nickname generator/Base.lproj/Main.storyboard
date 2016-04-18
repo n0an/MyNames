@@ -621,7 +621,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXY-de-x5m">
                                         <rect key="frame" x="480" y="20" width="40" height="40"/>
-                                        <state key="normal" title="Button" image="like1"/>
+                                        <state key="normal" title="Button" image="like1set"/>
                                         <connections>
                                             <action selector="actionlikeButtonPressed:" destination="WUg-cz-UtD" eventType="touchUpInside" id="cN2-fZ-rfo"/>
                                         </connections>
@@ -978,6 +978,7 @@
         <image name="fem02" width="60" height="60"/>
         <image name="info01" width="42" height="99"/>
         <image name="like1" width="498" height="498"/>
+        <image name="like1set" width="498" height="497"/>
         <image name="masc01" width="60" height="60"/>
         <image name="masc02" width="60" height="60"/>
         <image name="refresh02" width="25" height="24"/>

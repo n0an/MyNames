@@ -10,6 +10,7 @@
 #import "ANName.h"
 #import "ANNameCategory.h"
 
+#import "ANUtils.h"
 
 
 @implementation ANDataManager
@@ -152,10 +153,37 @@
 }
 
 
-
 - (void) clearFavoriteNamesDB {
     [self deleteAllObjectsForName:@"ANFavoriteName"];
     
+}
+
+- (BOOL) isNameFavorite:(ANName*) name {
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription* description =
+    [NSEntityDescription entityForName:ANCDMFavoriteName
+                inManagedObjectContext:self.managedObjectContext];
+    
+    request.entity = description;
+    
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameFirstName == %@", name.firstName];
+    
+    request.predicate = predicate;
+    
+    NSError* reqestError = nil;
+    NSArray* resultArray = [self.managedObjectContext executeFetchRequest:request error:&reqestError];
+    
+    if (reqestError) {
+        NSLog(@"requestError = %@", [reqestError localizedDescription]);
+    }
+    
+    NSLog(@"[resultArray count] == %lu", (unsigned long)[resultArray count]);
+    
+    
+    
+    return [resultArray count];
 }
 
 

@@ -36,5 +36,7 @@
 
 - (void) showAllNames;
 
+- (BOOL) isNameFavorite:(ANName*) name;
+
 
 @end
