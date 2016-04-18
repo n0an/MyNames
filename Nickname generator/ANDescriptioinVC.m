@@ -79,6 +79,10 @@
     
     [self.view addGestureRecognizer:rightSwipeGesture];
     [self.view addGestureRecognizer:leftSwipeGesture];
+    
+    self.likeNonSetImage = [UIImage imageNamed:@"like1"];
+    self.likeSetImage = [UIImage imageNamed:@"like1set"];
+
 
 }
 
@@ -86,24 +90,12 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.likeNonSetImage = [UIImage imageNamed:@"like1"];
-    self.likeSetImage = [UIImage imageNamed:@"like1set"];
     
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.currentName];
     
     NSLog(@"self.isNameFavorite = %d", self.isNameFavorite);
     
-    
-    if (self.isNameFavorite) {
-
-        [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
-
-    } else {
-
-        [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
-
-    }
-    
+    [self refreshLikeButton];
     
 }
 
@@ -146,6 +138,12 @@
     } else {
         self.readMoreButton.hidden = YES;
     }
+    
+    self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.currentName];
+    
+    NSLog(@"self.isNameFavorite = %d", self.isNameFavorite);
+    
+    [self refreshLikeButton];
     
 }
 
@@ -237,6 +235,23 @@
 }
 
 
+- (void) refreshLikeButton {
+    
+    NSLog(@"firstName = %d", self.isNameFavorite);
+    
+    if (self.isNameFavorite) {
+        
+        [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
+        
+    } else {
+        
+        [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
+    }
+    
+    
+}
+
+
 
 #pragma mark - Actions
 
@@ -279,8 +294,6 @@
         ANLog(@"\n=========== LIKE PRESSED . FAVORITE DELETED ===========");
         [[ANDataManager sharedManager] showAllNames];
         
-        [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
-        
     } else {
         
         [[ANDataManager sharedManager] addFavoriteName:self.currentName];
@@ -288,13 +301,11 @@
         ANLog(@"\n=========== LIKE PRESSED . FAVORITE ADDED ===========");
         [[ANDataManager sharedManager] showAllNames];
         
-        [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
-        
     }
     
     self.isNameFavorite = !self.isNameFavorite;
 
-    
+    [self refreshLikeButton];
 }
 
 
