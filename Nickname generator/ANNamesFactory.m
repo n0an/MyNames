@@ -14,14 +14,6 @@
 @implementation ANNamesFactory
 
 
-- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
-    
-    ANName* result;
-    
-    result = [ANName randomNameforCategory:category andGender:gender];
-    
-    return result;
-}
 
 
 
@@ -63,6 +55,17 @@
     
     return resultCategory;
 }
+
+
+- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
+    
+    ANName* result;
+    
+    result = [ANName randomNameforCategory:category andGender:gender];
+    
+    return result;
+}
+
 
 
 - (ANName*) getNameForID:(NSString*) nameID {

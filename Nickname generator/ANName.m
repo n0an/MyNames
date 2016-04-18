@@ -76,7 +76,6 @@
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory {
 
     // 01.02.0.15 - EXAMPLE OF ID
-    // !!!NOT DONE!!!
     
     ANName* name = [[ANName alloc] init];
 

@@ -22,8 +22,5 @@
 - (ANName*) getNameForID:(NSString*) nameID;
 
 
-//- (ANNameCategory*) getCategoryForID:(NSString*) categoryID;
-
-
 
 @end

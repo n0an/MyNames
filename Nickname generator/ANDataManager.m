@@ -147,17 +147,6 @@
 
 - (void) deleteFavoriteName:(ANName*) name {
     
-    
-//    for (id object in allObjects) {
-//        NSLog(@"Mark for delete: %@", object);
-//        [self.managedObjectContext deleteObject:object]; // Marking in Context object to delete
-//    }
-//    [self.managedObjectContext save:nil]; // Saving context, and deleting marked objects
-    
-    
-    
-    
-    
     NSArray* addedNames = [self getAllObjectsForName:ANCDMFavoriteName];
     
     // If there're names already - check for coincidence
@@ -168,34 +157,13 @@
         for (ANFavoriteName* favName in addedNames) {
             if ([favName.nameID isEqualToString:name.nameID]) {
                 [self.managedObjectContext deleteObject:favName];
-                return;
+                break;
             }
         }
     }
+    
     [self.managedObjectContext save:nil]; // Saving context, and deleting marked objects
 
-    
-    
-//    ANFavoriteName* favoriteName = [NSEntityDescription insertNewObjectForEntityForName:ANCDMFavoriteName inManagedObjectContext:self.managedObjectContext];
-//    
-//    
-//    favoriteName.nameFirstName = name.firstName;
-//    favoriteName.nameID = name.nameID;
-//    NSLog(@"favoriteName.nameGender = %@", [NSNumber numberWithBool:name.nameGender]);
-//    favoriteName.nameGender = [NSNumber numberWithBool:name.nameGender];
-//    favoriteName.nameDescription = name.nameDescription;
-//    favoriteName.nameURL = name.nameURL;
-//    favoriteName.nameImageName = name.nameImageName;
-//    
-//    favoriteName.nameCategoryTitle = name.nameCategory.nameCategoryTitle;
-//    
-//    NSError* error = nil;
-//    
-//    
-//    if (![self.managedObjectContext save:&error]) {
-//        NSLog(@"%@", [error localizedDescription]);
-//    }
-    
 }
 
 
