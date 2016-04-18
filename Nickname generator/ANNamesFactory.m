@@ -65,6 +65,19 @@
 }
 
 
+- (ANName*) getNameForID:(NSString*) nameID {
+    
+    NSString* nameCategoryID = [nameID substringToIndex:5];
+    
+    ANNameCategory* category = [self getCategoryForID:nameCategoryID];
+
+    ANName* result = [ANName getNameForID:nameID andCategory:category];
+
+    return result;
+    
+}
+
+
 
 
 

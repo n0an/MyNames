@@ -222,10 +222,10 @@
 		18267E291CB132E600AB130B /* Names Plists */ = {
 			isa = PBXGroup;
 			children = (
+				18349C231CA9413300A2A68E /* MythGreekMasc.plist */,
 				1810F9741CA816F500D7D00A /* MythGreekFem.plist */,
 				180044931CB16C920038206F /* MythRomanFem.plist */,
 				180044911CB16AF70038206F /* MythRomanMasc.plist */,
-				18349C231CA9413300A2A68E /* MythGreekMasc.plist */,
 				18267E251CB1323A00AB130B /* MythVedicFem.plist */,
 				18267E2A1CB1367C00AB130B /* MythVedicMasc.plist */,
 			);

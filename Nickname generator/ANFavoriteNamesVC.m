@@ -329,24 +329,9 @@
         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
         
         NSString* nameID = name.nameID;
-        
-        NSString* nameCategoryID = [nameID substringToIndex:5];
-        
-        ANNameCategory* category = [[ANNamesFactory sharedFactory] getCategoryForID:nameCategoryID];
-        
-        
-        ANName* originName = [[ANName alloc] init];
-        
-        originName.firstName        = name.nameFirstName;
-        originName.nameID           = name.nameID;
-        originName.nameGender       = name.nameGender.boolValue;
-        originName.nameURL          = name.nameURL;
-        
-        originName.nameDescription  = name.nameDescription;
-        originName.nameImageName    = name.nameImageName;
-        
-        originName.nameCategory     = category;
 
+        
+        ANName* originName = [[ANNamesFactory sharedFactory] getNameForID:nameID];
         
         vc.namesArray = @[originName];
         vc.isCustomNavigationBar = YES;

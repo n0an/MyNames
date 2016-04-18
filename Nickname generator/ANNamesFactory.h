@@ -19,7 +19,11 @@
 
 - (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender;
 
-- (ANNameCategory*) getCategoryForID:(NSString*) categoryID;
+- (ANName*) getNameForID:(NSString*) nameID;
+
+
+//- (ANNameCategory*) getCategoryForID:(NSString*) categoryID;
+
 
 
 @end

@@ -30,6 +30,7 @@ typedef enum {
 
 
 + (ANName*) randomNameforCategory:(ANNameCategory*)category andGender:(ANGender) gender;
++ (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory;
 
 
 @end
