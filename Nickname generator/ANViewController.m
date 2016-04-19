@@ -83,6 +83,15 @@
     self.controlsView.layer.cornerRadius = 10.f;
 //    lightBlurEffectView.layer.cornerRadius = 30.f;
     
+    
+    UIBlurEffect *lightBlurEffect1 = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    UIVisualEffectView *lightBlurEffectView1 = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect1];
+    
+    lightBlurEffectView1.frame = self.wheelView.bounds;
+    [self.wheelView insertSubview:lightBlurEffectView1 atIndex:0];
+    self.wheelView.clipsToBounds = YES;
+    
+    
     // Initial Animation State of Generate Button
     self.generateButton.transform = CGAffineTransformMakeScale(0.f, 0.f);
     

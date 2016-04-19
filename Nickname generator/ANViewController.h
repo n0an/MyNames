@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView* bgImageView;
 @property (weak, nonatomic) IBOutlet UIView* controlsView;
+@property (weak, nonatomic) IBOutlet UIView *wheelView;
 
 
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
