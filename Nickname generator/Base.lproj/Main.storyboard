@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-5n-4AZ" userLabel="ViewWithControls">
-                                <rect key="frame" x="0.0" y="409" width="346" height="133.5"/>
+                                <rect key="frame" x="4" y="409" width="346" height="133.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwy-Pv-6gN">
                                         <rect key="frame" x="0.0" y="0.5" width="306" height="133.5"/>
@@ -315,7 +315,7 @@
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:10" id="5mJ-vo-BRK"/>
                             <constraint firstItem="t6e-XU-g0u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5zP-lf-efC"/>
                             <constraint firstAttribute="trailing" secondItem="t6e-XU-g0u" secondAttribute="trailing" id="6lP-Zj-VWb"/>
-                            <constraint firstItem="QRe-5n-4AZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7wP-BJ-bZr"/>
+                            <constraint firstItem="QRe-5n-4AZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="4" id="7wP-BJ-bZr"/>
                             <constraint firstItem="igX-WN-kk6" firstAttribute="top" secondItem="nl5-8s-DDE" secondAttribute="bottom" constant="17" id="Abk-C5-jjP"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DmW-lx-BE4"/>
                             <constraint firstItem="t6e-XU-g0u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FMe-2L-ep8"/>
