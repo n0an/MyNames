@@ -36,6 +36,8 @@
 @property (strong, nonatomic) UIImage* likeNonSetImage;
 @property (strong, nonatomic) UIImage* likeSetImage;
 
+@property (assign, nonatomic) BOOL isSettingsActive;
+
 
 @end
 
@@ -61,6 +63,7 @@
 
     
     self.isDescriptionAvailable = NO;
+    self.isSettingsActive = NO;
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
@@ -166,6 +169,31 @@
                          }];
                          
                      }];
+}
+
+
+- (void) animateSettingView {
+    
+    NSInteger newConstant;
+    UIViewAnimationOptions options;
+    
+    if (self.isSettingsActive) {
+        options = UIViewAnimationOptionCurveEaseIn;
+        newConstant = -301;
+    } else {
+        options = UIViewAnimationOptionCurveEaseOut;
+        newConstant = 4;
+    }
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.f
+                        options:options
+                     animations:^{
+                         self.settingsViewLeadingConstraint.constant = newConstant;
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:nil];
+    
 }
 
 
@@ -384,7 +412,9 @@
 
 - (IBAction)actionWheelBtnPressed:(UIButton *)sender {
     
+    [self animateSettingView];
     
+    self.isSettingsActive = !self.isSettingsActive;
     
 }
 

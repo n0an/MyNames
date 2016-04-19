@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *wheelBtn;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *settingsViewLeadingConstraint;
 
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
 @property (weak, nonatomic) IBOutlet UIButton* generateButton;
