@@ -43,10 +43,8 @@
 
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender;
 
-
 - (IBAction)actionGndrBtnPressed:(id)sender;
 
-- (IBAction)actionWheelBtnPressed:(UIButton *)sender;
 
 
 

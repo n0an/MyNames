@@ -20,23 +20,23 @@
 
 @interface ANViewController () <UITextFieldDelegate, ANCategorySelectionDelegate>
 
+@property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
+
+@property (assign, nonatomic) BOOL isDescriptionAvailable;
+@property (assign, nonatomic) BOOL isNameFavorite;
+
+@property (assign, nonatomic) BOOL isSettingsActive;
+@property (assign, nonatomic) BOOL settingsViewPickedUp;
+
 @property (assign, nonatomic) NSInteger namesCount;
 @property (assign, nonatomic) ANGender selectedGender;
-
 @property (strong, nonatomic) ANNameCategory* selectedCategory;
-
-@property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
 
 @property (strong, nonatomic) NSArray* displayedNames;
 @property (strong, nonatomic) NSArray* namesWithDescriptions;
 
-@property (assign, nonatomic) BOOL isDescriptionAvailable;
-
-@property (assign, nonatomic) BOOL isNameFavorite;
 @property (strong, nonatomic) UIImage* likeNonSetImage;
 @property (strong, nonatomic) UIImage* likeSetImage;
-
-@property (assign, nonatomic) BOOL isSettingsActive;
 
 @property (strong, nonatomic) UIVisualEffectView* blurEffectView1;
 
@@ -45,10 +45,6 @@
 @property (assign, nonatomic) CGPoint touchOffset;
 @property (assign, nonatomic) CGPoint lastLocation;
 
-@property (assign, nonatomic) BOOL settingsViewPickedUp;
-
-
-@property (assign, nonatomic) NSInteger settingsViewLeadingConstraintConstant;
 
 @end
 
@@ -75,7 +71,7 @@
     
     self.isDescriptionAvailable = NO;
     self.isSettingsActive = NO;
-    self.settingsViewLeadingConstraintConstant = -301;
+    
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
@@ -103,7 +99,6 @@
     self.wheelView.clipsToBounds = YES;
     
     self.blurEffectView1 = lightBlurEffectView1;
-    
     
     
     
@@ -142,11 +137,11 @@
     [self refreshLikeButton];
     
     
+    
     UITapGestureRecognizer* tapGestureOnWheelView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnWheelView:)];
     
     [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
 }
-
 
 
 #pragma mark - Animations
@@ -183,31 +178,6 @@
                          }];
                          
                      }];
-}
-
-
-- (void) animateSettingView {
-    
-    NSInteger newConstant;
-    UIViewAnimationOptions options;
-    
-    if (self.isSettingsActive) {
-        options = UIViewAnimationOptionCurveEaseIn;
-        newConstant = -301;
-    } else {
-        options = UIViewAnimationOptionCurveEaseOut;
-        newConstant = 4;
-    }
-    
-    [UIView animateWithDuration:0.3f
-                          delay:0.f
-                        options:options
-                     animations:^{
-                         self.settingsViewLeadingConstraint.constant = newConstant;
-                         [self.view layoutIfNeeded];
-                     }
-                     completion:nil];
-    
 }
 
 
@@ -333,7 +303,6 @@
 
 
 
-
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
   
     // *** Saving choosen names to CoreData
@@ -402,13 +371,6 @@
     
 }
 
-- (IBAction)actionWheelBtnPressed:(UIButton *)sender {
-    
-    [self animateSettingView];
-    
-    self.isSettingsActive = !self.isSettingsActive;
-    
-}
 
 
 #pragma mark - Touches

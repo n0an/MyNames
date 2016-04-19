@@ -167,7 +167,7 @@
                                                                 </segments>
                                                                 <variation key="heightClass=compact">
                                                                     <mask key="constraints">
-                                                                        <exclude reference="KvH-Sq-WNW"/>
+                                                                        <include reference="KvH-Sq-WNW"/>
                                                                     </mask>
                                                                 </variation>
                                                                 <connections>
