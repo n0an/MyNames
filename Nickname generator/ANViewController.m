@@ -38,6 +38,17 @@
 
 @property (assign, nonatomic) BOOL isSettingsActive;
 
+@property (strong, nonatomic) UIVisualEffectView* blurEffectView1;
+
+@property (strong, nonatomic) UIView* draggingView;
+
+@property (assign, nonatomic) CGPoint touchOffset;
+@property (assign, nonatomic) CGPoint lastLocation;
+
+@property (assign, nonatomic) BOOL settingsViewPickedUp;
+
+
+@property (assign, nonatomic) NSInteger settingsViewLeadingConstraintConstant;
 
 @end
 
@@ -64,6 +75,7 @@
     
     self.isDescriptionAvailable = NO;
     self.isSettingsActive = NO;
+    self.settingsViewLeadingConstraintConstant = -301;
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
@@ -93,6 +105,10 @@
     lightBlurEffectView1.frame = self.wheelView.bounds;
     [self.wheelView insertSubview:lightBlurEffectView1 atIndex:0];
     self.wheelView.clipsToBounds = YES;
+    
+    self.blurEffectView1 = lightBlurEffectView1;
+    
+    
     
     
     // Initial Animation State of Generate Button
@@ -418,6 +434,57 @@
     
 }
 
+
+#pragma mark - Touches
+
+- (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    UITouch* touch = [touches anyObject];
+    
+    CGPoint touchPoint = [touch locationInView:self.view];
+    
+    UIView* view = [self.view hitTest:touchPoint withEvent:event];
+    
+    if ([view isEqual:self.blurEffectView1]) {
+        
+        self.lastLocation = touchPoint;
+        
+        self.settingsViewPickedUp = YES;
+        
+        ANLog(@"began: self.lastLocation = %f, %f", self.lastLocation.x, self.lastLocation.y);
+        
+    }
+    
+}
+
+
+- (void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    if (self.settingsViewPickedUp) {
+        
+        UITouch* touch = [touches anyObject];
+        
+        CGPoint touchPoint = [touch locationInView:self.view];
+        
+        CGFloat translationX = touchPoint.x - self.lastLocation.x;
+        
+        self.settingsViewLeadingConstraint.constant += translationX;
+        
+        self.lastLocation = touchPoint;
+        
+        [self.view layoutIfNeeded];
+
+    }
+    
+}
+
+- (void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.settingsViewPickedUp = NO;
+}
+
+- (void) touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.settingsViewPickedUp = NO;
+}
 
 
 #pragma mark - UITextFieldDelegate

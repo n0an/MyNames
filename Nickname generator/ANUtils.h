@@ -53,7 +53,7 @@ BOOL isOrientationPortrait();
 
 BOOL isOrientationLandscape();
 
-
+UIColor* randomColor();
 
 
 NSString* NSStringFromANProgrammerType(ANProgrammerType type);

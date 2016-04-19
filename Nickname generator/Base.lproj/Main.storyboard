@@ -188,23 +188,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-cl-1fJ" userLabel="wheelView">
                                         <rect key="frame" x="274" y="37" width="60" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qr-7A-H33">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings01" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-fv-y1H">
                                                 <rect key="frame" x="10" y="10" width="40" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="0o5-p4-Ty0"/>
-                                                    <constraint firstAttribute="width" constant="40" id="wbM-an-uTJ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Xkj-bH-lcv"/>
+                                                    <constraint firstAttribute="width" constant="40" id="tZz-of-u7k"/>
                                                 </constraints>
-                                                <state key="normal" image="Settings01"/>
-                                                <connections>
-                                                    <action selector="actionWheelBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYW-Z5-whF"/>
-                                                </connections>
-                                            </button>
+                                            </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="1Qr-7A-H33" firstAttribute="centerY" secondItem="qpY-cl-1fJ" secondAttribute="centerY" id="asF-Bz-i7z"/>
-                                            <constraint firstItem="1Qr-7A-H33" firstAttribute="centerX" secondItem="qpY-cl-1fJ" secondAttribute="centerX" id="fVU-fL-eU0"/>
+                                            <constraint firstItem="Shk-fv-y1H" firstAttribute="centerX" secondItem="qpY-cl-1fJ" secondAttribute="centerX" id="QuY-cS-JDx"/>
                                             <constraint firstAttribute="width" constant="60" id="iCf-fR-LqD"/>
                                             <constraint firstAttribute="height" constant="60" id="oz0-jP-uxB"/>
+                                            <constraint firstItem="Shk-fv-y1H" firstAttribute="centerY" secondItem="qpY-cl-1fJ" secondAttribute="centerY" id="qlC-y6-VTP"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -395,7 +391,7 @@
                         <outlet property="nameCountControl" destination="udp-kH-BYI" id="LTf-To-pCj"/>
                         <outlet property="nameResultLabel" destination="uay-78-7I1" id="fhS-9M-Vhh"/>
                         <outlet property="settingsViewLeadingConstraint" destination="7wP-BJ-bZr" id="DM0-6Q-NVM"/>
-                        <outlet property="wheelBtn" destination="1Qr-7A-H33" id="MjQ-ZE-pjg"/>
+                        <outlet property="wheelImageView" destination="Shk-fv-y1H" id="dNI-Dw-Oqu"/>
                         <outlet property="wheelView" destination="qpY-cl-1fJ" id="Rft-BP-hVx"/>
                     </connections>
                 </viewController>

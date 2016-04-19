@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView* controlsView;
 @property (weak, nonatomic) IBOutlet UIView *wheelView;
 
-@property (weak, nonatomic) IBOutlet UIButton *wheelBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *wheelImageView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *settingsViewLeadingConstraint;
 
