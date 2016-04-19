@@ -20,21 +20,30 @@
 
 @interface ANViewController () <UITextFieldDelegate, ANCategorySelectionDelegate>
 
+@property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
+
+@property (assign, nonatomic) BOOL isDescriptionAvailable;
+@property (assign, nonatomic) BOOL isNameFavorite;
+
+@property (assign, nonatomic) BOOL isSettingsActive;
+@property (assign, nonatomic) BOOL settingsViewPickedUp;
+
 @property (assign, nonatomic) NSInteger namesCount;
 @property (assign, nonatomic) ANGender selectedGender;
-
 @property (strong, nonatomic) ANNameCategory* selectedCategory;
-
-@property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
 
 @property (strong, nonatomic) NSArray* displayedNames;
 @property (strong, nonatomic) NSArray* namesWithDescriptions;
 
-@property (assign, nonatomic) BOOL isDescriptionAvailable;
-
-@property (assign, nonatomic) BOOL isNameFavorite;
 @property (strong, nonatomic) UIImage* likeNonSetImage;
 @property (strong, nonatomic) UIImage* likeSetImage;
+
+@property (strong, nonatomic) UIVisualEffectView* blurEffectView1;
+
+@property (strong, nonatomic) UIView* draggingView;
+
+@property (assign, nonatomic) CGPoint touchOffset;
+@property (assign, nonatomic) CGPoint lastLocation;
 
 
 @end
@@ -61,6 +70,8 @@
 
     
     self.isDescriptionAvailable = NO;
+    self.isSettingsActive = NO;
+    
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
@@ -69,8 +80,6 @@
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
     
-//    lightBlurEffectView.frame = self.view.bounds;
-//    [self.bgImageView addSubview:lightBlurEffectView];
     
     [self.bgImageView setImage:[UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName]];
     
@@ -79,9 +88,19 @@
     [self.controlsView insertSubview:lightBlurEffectView atIndex:0];
     
     self.controlsView.clipsToBounds = YES;
-    
     self.controlsView.layer.cornerRadius = 10.f;
-//    lightBlurEffectView.layer.cornerRadius = 30.f;
+
+    
+    UIBlurEffect *lightBlurEffect1 = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    UIVisualEffectView *lightBlurEffectView1 = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect1];
+    
+    lightBlurEffectView1.frame = self.wheelView.bounds;
+    [self.wheelView insertSubview:lightBlurEffectView1 atIndex:0];
+    self.wheelView.clipsToBounds = YES;
+    
+    self.blurEffectView1 = lightBlurEffectView1;
+    
+    
     
     // Initial Animation State of Generate Button
     self.generateButton.transform = CGAffineTransformMakeScale(0.f, 0.f);
@@ -110,8 +129,6 @@
     
     [self.nameResultLabel addGestureRecognizer:tapGesture];
     
-    
-    
     NSArray* arr = self.displayedNames;
     
     ANName* firstName = [arr firstObject];
@@ -119,8 +136,12 @@
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:firstName];
     [self refreshLikeButton];
     
+    
+    
+    UITapGestureRecognizer* tapGestureOnWheelView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnWheelView:)];
+    
+    [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
 }
-
 
 
 #pragma mark - Animations
@@ -234,28 +255,6 @@
 
 #pragma mark - Actions
 
-- (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
-    
-    ANLog(@"actionTapOnNameLabel");
-    
-    // *** If there're names in array of names with descriptions - initializate ANDescriptionVC and transfer names array to it.
-    
-    if (self.isDescriptionAvailable) {
-        ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
-        
-        vc.namesArray = self.namesWithDescriptions;
-        vc.isCustomNavigationBar = YES;
-        
-        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        
-        nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        
-        [self presentViewController:nav animated:YES completion:nil];
-        
-
-    }
-    
-}
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (UIEventSubtypeMotionShake) {
@@ -301,7 +300,6 @@
     
 
 }
-
 
 
 
@@ -355,7 +353,6 @@
 
     
     if ([sender isEqual:self.genderButtonMasc]) {
-        NSLog(@"Masc selected");
         
         self.selectedGender = ANGenderMasculine;
 
@@ -365,18 +362,138 @@
         
     } else if ([sender isEqual:self.genderButtonFem]) {
         
-        NSLog(@"Fem selected");
-        
         self.selectedGender = ANGenderFeminine;
 
         self.imgViewGenderMasc.image = mascNonactiveImage;
         self.imgViewGenderFem.image = femActiveImage;
-        
     }
     
     
 }
 
+
+
+#pragma mark - Touches
+
+- (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    UITouch* touch = [touches anyObject];
+    
+    CGPoint touchPoint = [touch locationInView:self.view];
+    
+    UIView* view = [self.view hitTest:touchPoint withEvent:event];
+    
+    if ([view isEqual:self.blurEffectView1]) {
+        
+        self.lastLocation = touchPoint;
+        
+        self.settingsViewPickedUp = YES;
+        
+        ANLog(@"began: self.lastLocation = %f, %f", self.lastLocation.x, self.lastLocation.y);
+        
+    }
+    
+}
+
+
+- (void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    if (self.settingsViewPickedUp) {
+        
+        UITouch* touch = [touches anyObject];
+        
+        CGPoint touchPoint = [touch locationInView:self.view];
+        
+        CGFloat translationX = touchPoint.x - self.lastLocation.x;
+        
+        CGFloat nextConstant = self.settingsViewLeadingConstraint.constant + translationX;
+        
+        if (-301 <= nextConstant && nextConstant <= 4) {
+            self.settingsViewLeadingConstraint.constant = nextConstant;
+            
+            self.lastLocation = touchPoint;
+            
+            
+        } else {
+            ANLog(@"out of bounds");
+            
+            if (self.settingsViewLeadingConstraint.constant > -100) {
+                self.settingsViewLeadingConstraint.constant = 4;
+                self.isSettingsActive = YES;
+            }
+  
+            self.settingsViewPickedUp = NO;
+            
+        }
+        self.lastLocation = touchPoint;
+        
+        [self.view layoutIfNeeded];
+        
+    }
+    
+}
+
+- (void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.settingsViewPickedUp = NO;
+}
+
+- (void) touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.settingsViewPickedUp = NO;
+}
+
+#pragma mark - Gestures
+
+- (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
+    
+    ANLog(@"actionTapOnNameLabel");
+    
+    // *** If there're names in array of names with descriptions - initializate ANDescriptionVC and transfer names array to it.
+    
+    if (self.isDescriptionAvailable) {
+        ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
+        
+        vc.namesArray = self.namesWithDescriptions;
+        vc.isCustomNavigationBar = YES;
+        
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
+        [self presentViewController:nav animated:YES completion:nil];
+        
+        
+    }
+    
+}
+
+- (void) actionTapOnWheelView:(UITapGestureRecognizer*) recognizer {
+    ANLog(@"actionTapOnWheelView");
+    
+    
+    NSInteger newConstant;
+    UIViewAnimationOptions options;
+    
+    if (self.isSettingsActive) {
+        options = UIViewAnimationOptionCurveEaseIn;
+        newConstant = -301;
+    } else {
+        options = UIViewAnimationOptionCurveEaseOut;
+        newConstant = 4;
+    }
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.f
+                        options:options
+                     animations:^{
+                         self.settingsViewLeadingConstraint.constant = newConstant;
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:nil];
+
+    
+    self.isSettingsActive = !self.isSettingsActive;
+    
+}
 
 
 #pragma mark - UITextFieldDelegate

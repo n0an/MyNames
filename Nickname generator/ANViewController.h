@@ -12,7 +12,11 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView* bgImageView;
 @property (weak, nonatomic) IBOutlet UIView* controlsView;
+@property (weak, nonatomic) IBOutlet UIView *wheelView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *wheelImageView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *settingsViewLeadingConstraint;
 
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
 @property (weak, nonatomic) IBOutlet UIButton* generateButton;
@@ -38,7 +42,6 @@
 
 
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender;
-
 
 - (IBAction)actionGndrBtnPressed:(id)sender;
 
