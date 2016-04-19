@@ -19,20 +19,9 @@
     
     NSInteger totalNames;
     
-    NSString* pathName;
-    
-    if (gender == ANGenderMasculine) {
-        pathName = [category.alias stringByAppendingString:@"Masc"];
-        
-    } else {
-        pathName = [category.alias stringByAppendingString:@"Fem"];
-    }
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSDictionary* dict = [self getNamesDictionaryforCategory:category andGender:gender];
     
     NSArray* namesArr = [dict allKeys];
-    
     
     totalNames = [dict count];
     
@@ -42,35 +31,9 @@
     
     [self fillName:name withParams:dict andKey:tmpStr andGender:gender andCategory:category];
     
-    /*
-     // OLD WAY
-    NSString* randomName = tmpStr.lowercaseString.capitalizedString;
-    
-    NSDictionary* nameParams = [dict objectForKey:tmpStr];
-    
-    NSString* nameID = [nameParams objectForKey:@"nameID"];
-    
-    NSString* nameDesc = [nameParams objectForKey:@"nameDescription"];
-    NSString* cleanedDesc = [self stringWithoutBrackets:nameDesc];
-    
-    NSString* nameURL = [nameParams objectForKey:@"nameURL"];
-    NSString* nameImageName = [nameParams objectForKey:@"nameImageName"];
-    
-    name.firstName          = randomName;
-    name.nameID             = nameID;
-    name.nameDescription    = cleanedDesc;
-    name.nameURL            = nameURL;
-    name.nameImageName      = nameImageName;
-    name.nameCategory       = category;
-    name.nameGender         = gender;
-    */
-    
     return name;
     
 }
-
-
-
 
 
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory {
@@ -87,18 +50,7 @@
     
     NSLog(@"nameIDInPList = %ld", (long)nameIDInPList);
     
-    
-    NSString* pathName;
-    
-    if (nameGender == ANGenderMasculine) {
-        pathName = [nameCategory.alias stringByAppendingString:@"Masc"];
-        
-    } else {
-        pathName = [nameCategory.alias stringByAppendingString:@"Fem"];
-    }
-
-    NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSDictionary *dict = [self getNamesDictionaryforCategory:nameCategory andGender:nameGender];
     
     NSArray* namesArr = [dict allKeys];
     
@@ -130,6 +82,25 @@
 
 
 #pragma mark - Helper Methods
+
++ (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*)category andGender:(ANGender) gender {
+    
+    NSString* pathName;
+    
+    if (gender == ANGenderMasculine) {
+        pathName = [category.alias stringByAppendingString:@"Masc"];
+        
+    } else {
+        pathName = [category.alias stringByAppendingString:@"Fem"];
+    }
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    return dict;
+    
+}
+
 
 + (void) fillName:(ANName*)inputName withParams:(NSDictionary*) params andKey:(NSString*) key andGender:(ANGender) gender andCategory:(ANNameCategory*) category {
     
