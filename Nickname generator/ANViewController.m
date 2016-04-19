@@ -468,12 +468,29 @@
         
         CGFloat translationX = touchPoint.x - self.lastLocation.x;
         
-        self.settingsViewLeadingConstraint.constant += translationX;
+        CGFloat nextConstant = self.settingsViewLeadingConstraint.constant + translationX;
         
+        if (-301 <= nextConstant && nextConstant <= 4) {
+            self.settingsViewLeadingConstraint.constant = nextConstant;
+            
+            self.lastLocation = touchPoint;
+            
+            
+        } else {
+            ANLog(@"out of bounds");
+            
+            if (self.settingsViewLeadingConstraint.constant > -100) {
+                self.settingsViewLeadingConstraint.constant = 4;
+            }
+            self.settingsViewPickedUp = NO;
+            
+        }
         self.lastLocation = touchPoint;
         
         [self.view layoutIfNeeded];
+        
 
+        
     }
     
 }
