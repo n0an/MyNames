@@ -195,6 +195,9 @@
                                                     <constraint firstAttribute="width" constant="40" id="wbM-an-uTJ"/>
                                                 </constraints>
                                                 <state key="normal" image="Settings01"/>
+                                                <connections>
+                                                    <action selector="actionWheelBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYW-Z5-whF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -391,6 +394,7 @@
                         <outlet property="nameCategoryTextField" destination="7FU-4f-b0W" id="pYp-RL-Knj"/>
                         <outlet property="nameCountControl" destination="udp-kH-BYI" id="LTf-To-pCj"/>
                         <outlet property="nameResultLabel" destination="uay-78-7I1" id="fhS-9M-Vhh"/>
+                        <outlet property="wheelBtn" destination="1Qr-7A-H33" id="MjQ-ZE-pjg"/>
                         <outlet property="wheelView" destination="qpY-cl-1fJ" id="Rft-BP-hVx"/>
                     </connections>
                 </viewController>

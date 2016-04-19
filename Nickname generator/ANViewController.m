@@ -364,7 +364,6 @@
 
     
     if ([sender isEqual:self.genderButtonMasc]) {
-        NSLog(@"Masc selected");
         
         self.selectedGender = ANGenderMasculine;
 
@@ -374,14 +373,17 @@
         
     } else if ([sender isEqual:self.genderButtonFem]) {
         
-        NSLog(@"Fem selected");
-        
         self.selectedGender = ANGenderFeminine;
 
         self.imgViewGenderMasc.image = mascNonactiveImage;
         self.imgViewGenderFem.image = femActiveImage;
-        
     }
+    
+    
+}
+
+- (IBAction)actionWheelBtnPressed:(UIButton *)sender {
+    
     
     
 }
