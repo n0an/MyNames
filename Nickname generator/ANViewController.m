@@ -84,8 +84,6 @@
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
     
-//    lightBlurEffectView.frame = self.view.bounds;
-//    [self.bgImageView addSubview:lightBlurEffectView];
     
     [self.bgImageView setImage:[UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName]];
     
@@ -94,10 +92,8 @@
     [self.controlsView insertSubview:lightBlurEffectView atIndex:0];
     
     self.controlsView.clipsToBounds = YES;
-    
     self.controlsView.layer.cornerRadius = 10.f;
-//    lightBlurEffectView.layer.cornerRadius = 30.f;
-    
+
     
     UIBlurEffect *lightBlurEffect1 = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView1 = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect1];
@@ -138,8 +134,6 @@
     
     [self.nameResultLabel addGestureRecognizer:tapGesture];
     
-    
-    
     NSArray* arr = self.displayedNames;
     
     ANName* firstName = [arr firstObject];
@@ -147,6 +141,10 @@
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:firstName];
     [self refreshLikeButton];
     
+    
+    UITapGestureRecognizer* tapGestureOnWheelView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnWheelView:)];
+    
+    [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
 }
 
 
@@ -287,28 +285,6 @@
 
 #pragma mark - Actions
 
-- (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
-    
-    ANLog(@"actionTapOnNameLabel");
-    
-    // *** If there're names in array of names with descriptions - initializate ANDescriptionVC and transfer names array to it.
-    
-    if (self.isDescriptionAvailable) {
-        ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
-        
-        vc.namesArray = self.namesWithDescriptions;
-        vc.isCustomNavigationBar = YES;
-        
-        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        
-        nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        
-        [self presentViewController:nav animated:YES completion:nil];
-        
-
-    }
-    
-}
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (UIEventSubtypeMotionShake) {
@@ -481,15 +457,15 @@
             
             if (self.settingsViewLeadingConstraint.constant > -100) {
                 self.settingsViewLeadingConstraint.constant = 4;
+                self.isSettingsActive = YES;
             }
+  
             self.settingsViewPickedUp = NO;
             
         }
         self.lastLocation = touchPoint;
         
         [self.view layoutIfNeeded];
-        
-
         
     }
     
@@ -501,6 +477,60 @@
 
 - (void) touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.settingsViewPickedUp = NO;
+}
+
+#pragma mark - Gestures
+
+- (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
+    
+    ANLog(@"actionTapOnNameLabel");
+    
+    // *** If there're names in array of names with descriptions - initializate ANDescriptionVC and transfer names array to it.
+    
+    if (self.isDescriptionAvailable) {
+        ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
+        
+        vc.namesArray = self.namesWithDescriptions;
+        vc.isCustomNavigationBar = YES;
+        
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
+        [self presentViewController:nav animated:YES completion:nil];
+        
+        
+    }
+    
+}
+
+- (void) actionTapOnWheelView:(UITapGestureRecognizer*) recognizer {
+    ANLog(@"actionTapOnWheelView");
+    
+    
+    NSInteger newConstant;
+    UIViewAnimationOptions options;
+    
+    if (self.isSettingsActive) {
+        options = UIViewAnimationOptionCurveEaseIn;
+        newConstant = -301;
+    } else {
+        options = UIViewAnimationOptionCurveEaseOut;
+        newConstant = 4;
+    }
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.f
+                        options:options
+                     animations:^{
+                         self.settingsViewLeadingConstraint.constant = newConstant;
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:nil];
+
+    
+    self.isSettingsActive = !self.isSettingsActive;
+    
 }
 
 
