@@ -28,6 +28,8 @@
     
     [self refreshButtons];
     
+    NSLog(@"toolbar height = %f", self.toolBar.frame.size.height);
+    
 }
 
 - (void)didReceiveMemoryWarning {

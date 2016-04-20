@@ -851,6 +851,7 @@
                         <outlet property="activityIndicator" destination="RdK-bG-XmU" id="0bU-x8-JIu"/>
                         <outlet property="backButtonItem" destination="x7w-Tg-EPn" id="EXf-0D-P4K"/>
                         <outlet property="forwardButtonItem" destination="se5-1o-NLK" id="TvP-cc-mdU"/>
+                        <outlet property="toolBar" destination="1FO-OA-9vh" id="4dZ-HW-ahT"/>
                         <outlet property="webView" destination="0rw-FY-0ZD" id="bq6-DX-eHr"/>
                     </connections>
                 </viewController>
@@ -1017,7 +1018,7 @@
         <image name="shapes" width="21" height="21"/>
         <image name="top_charts" width="22" height="22"/>
         <image name="vedicBg10_2437" width="602" height="812"/>
-        <image name="vedicBg21_1920" width="640" height="400"/>
+        <image name="vedicBg21_1920" width="603" height="400"/>
         <image name="wiki01" width="498" height="498"/>
     </resources>
 </document>

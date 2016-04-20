@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem* forwardButtonItem;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView* activityIndicator;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 - (IBAction)actionBack:(id)sender;
 - (IBAction)actionForward:(id)sender;

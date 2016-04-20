@@ -55,9 +55,9 @@
     
     if ([self.namesArray count] > 1) {
         
-        UIBarButtonItem* nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowRight01"] style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
+        UIBarButtonItem* nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowDescRight32"] landscapeImagePhone:[UIImage imageNamed:@"arrowDescRight24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
         
-        UIBarButtonItem* previousButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowLeft01"] style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
+        UIBarButtonItem* previousButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowDescLeft32"] landscapeImagePhone:[UIImage imageNamed:@"arrowDescLeft24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionPreviousPressed:)];
 
         UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
         fixedSpace.width = 4;
@@ -69,6 +69,9 @@
 //    
 //    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 
+    
+    
+    
     UISwipeGestureRecognizer* rightSwipeGesture =
     [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleRightSwipe:)];
     rightSwipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
@@ -83,7 +86,9 @@
     self.likeNonSetImage = [UIImage imageNamed:@"like1"];
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
 
-
+    NSLog(@"navbar height = %f", self.navigationController.navigationBar.frame.size.height);
+    
+    
 }
 
 
@@ -319,6 +324,8 @@
         vc.nameURL = self.currentName.nameURL;
     }
 }
+
+
 
 
 
