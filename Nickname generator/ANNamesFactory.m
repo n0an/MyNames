@@ -25,7 +25,7 @@
     dispatch_once(&onceToken, ^{
         sharedFactory = [[ANNamesFactory alloc] init];
         
-        ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:@"Греческая мифология" andCategoryImageName:@"bg06" andCategoryBackgroundImageName:@"bg03" andAlias:@"MythGreek"];
+        ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:@"Греческая мифология" andCategoryImageName:@"medusa-bronze" andCategoryBackgroundImageName:@"bg03" andAlias:@"MythGreek"];
         ANNameCategory* area01cat02 = [[ANNameCategory alloc] initWithCategoryID:@"01.02" andCategoryTitle:@"Ведическая мифология" andCategoryImageName:@"vedicBg21_1920" andCategoryBackgroundImageName:@"vedicBg10_2437" andAlias:@"MythVedic"];
         ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryID:@"01.03" andCategoryTitle:@"Римская мифология" andCategoryImageName:@"romanBg14_4592" andCategoryBackgroundImageName:@"romanBg07_7784" andAlias:@"MythRoman"];
    
