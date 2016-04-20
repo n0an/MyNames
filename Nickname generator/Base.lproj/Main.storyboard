@@ -737,6 +737,9 @@
                                         <exclude reference="tUR-Bi-2jO"/>
                                     </mask>
                                 </variation>
+                                <variation key="widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                                 </variation>
@@ -783,6 +786,7 @@
                         <outlet property="likeButton" destination="HXY-de-x5m" id="3LP-zc-JY5"/>
                         <outlet property="nameImageView" destination="JQp-c3-PUO" id="5ch-Uu-Vds"/>
                         <outlet property="readMoreButton" destination="X7f-Pb-uep" id="7Vu-5j-pEk"/>
+                        <outlet property="scrollView" destination="O2B-ov-y0O" id="UlW-7g-fs5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4S-Ei-Jxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
