@@ -279,7 +279,12 @@
     ANFavouriteNameCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-    cell.genderLabel.text = !favoriteName.nameGender.boolValue ? @"Masculine" : @"Feminine";
+//    cell.genderLabel.text = !favoriteName.nameGender.boolValue ? @"Masculine" : @"Feminine";
+    
+    NSString* genderImage = !favoriteName.nameGender.boolValue ? @"masc02" : @"fem02";
+    
+    cell.genderImageView.image = [UIImage imageNamed:genderImage];
+    
     cell.nameCategoryLabel.text = favoriteName.nameCategoryTitle;
     
     

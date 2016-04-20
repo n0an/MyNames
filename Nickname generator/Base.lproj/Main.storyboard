@@ -526,12 +526,6 @@
                                                 <constraint firstAttribute="width" constant="100" id="Bnj-JL-7fk"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masculine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbI-7s-Ou8">
-                                            <rect key="frame" x="118" y="89" width="70" height="21"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greek Mythology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-9h-Bjz">
                                             <rect key="frame" x="472" y="89" width="120" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
@@ -551,23 +545,30 @@
                                                 <constraint firstAttribute="height" constant="20" id="zLV-vq-BTe"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="masc02" translatesAutoresizingMaskIntoConstraints="NO" id="Edx-2F-ZNQ">
+                                            <rect key="frame" x="118" y="90" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="9iw-74-wVL"/>
+                                                <constraint firstAttribute="height" constant="20" id="ENg-5I-zFN"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Edx-2F-ZNQ" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="8" id="0L1-dc-hrU"/>
                                         <constraint firstAttribute="bottom" secondItem="WOr-9h-Bjz" secondAttribute="bottom" constant="9" id="3Jt-4X-zKL"/>
                                         <constraint firstItem="C1B-HP-7B9" firstAttribute="top" secondItem="Kjn-Fo-lGw" secondAttribute="top" constant="8" id="7kw-za-dDz"/>
                                         <constraint firstItem="3HY-5N-HsF" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="20" id="9cE-63-ZtD"/>
                                         <constraint firstItem="vt2-E6-tus" firstAttribute="top" secondItem="Kjn-Fo-lGw" secondAttribute="topMargin" constant="2" id="BJJ-41-EZr"/>
-                                        <constraint firstItem="EbI-7s-Ou8" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="8" id="DmP-L9-Xuh"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3HY-5N-HsF" secondAttribute="trailing" id="Y7W-Wf-Jm2"/>
                                         <constraint firstAttribute="trailing" secondItem="C1B-HP-7B9" secondAttribute="trailing" constant="8" id="c2o-mT-3Eh"/>
-                                        <constraint firstItem="EbI-7s-Ou8" firstAttribute="bottom" secondItem="vt2-E6-tus" secondAttribute="bottom" id="qSh-Zz-2T4"/>
                                         <constraint firstItem="vt2-E6-tus" firstAttribute="leading" secondItem="Kjn-Fo-lGw" secondAttribute="leadingMargin" constant="2" id="t5X-01-cUc"/>
+                                        <constraint firstItem="Edx-2F-ZNQ" firstAttribute="bottom" secondItem="vt2-E6-tus" secondAttribute="bottom" id="tvm-E0-6wd"/>
                                         <constraint firstAttribute="trailing" secondItem="WOr-9h-Bjz" secondAttribute="trailing" constant="8" id="vLn-o4-8WM"/>
                                         <constraint firstItem="3HY-5N-HsF" firstAttribute="centerY" secondItem="Kjn-Fo-lGw" secondAttribute="centerY" multiplier="0.75" id="vcZ-OM-cXo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="genderLabel" destination="EbI-7s-Ou8" id="Wrr-2z-DoZ"/>
+                                    <outlet property="genderImageView" destination="Edx-2F-ZNQ" id="yxn-Dy-a7a"/>
                                     <outlet property="infoImageView" destination="C1B-HP-7B9" id="NdD-bA-kwV"/>
                                     <outlet property="nameCategoryLabel" destination="WOr-9h-Bjz" id="fNu-Py-sfy"/>
                                     <outlet property="nameImageView" destination="vt2-E6-tus" id="fT7-q7-akV"/>

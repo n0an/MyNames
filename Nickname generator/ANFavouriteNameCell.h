@@ -12,6 +12,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameAreaLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *genderImageView;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *nameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *infoImageView;
