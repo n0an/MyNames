@@ -32,6 +32,8 @@
 		18B35E111CB4475400CDABF9 /* ANWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E101CB4475400CDABF9 /* ANWebViewVC.m */; };
 		18C776301CC9461300F5FFFF /* MythNorseMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C7762F1CC9461300F5FFFF /* MythNorseMasc.plist */; };
 		18C776321CC946BC00F5FFFF /* MythNorseFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C776311CC946BC00F5FFFF /* MythNorseFem.plist */; };
+		18C776341CC9514F00F5FFFF /* MythNorseMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C776331CC9514F00F5FFFF /* MythNorseMascImages.xcassets */; };
+		18C776361CC9517000F5FFFF /* MythNorseFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C776351CC9517000F5FFFF /* MythNorseFemImages.xcassets */; };
 		18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */; };
 		18F1ADEB1CB8159C007D00C4 /* MythGreekMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F1ADEA1CB8159C007D00C4 /* MythGreekMascImages.xcassets */; };
 		18F1B9761C8F43C1001A3B25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1B9751C8F43C1001A3B25 /* main.m */; };
@@ -101,6 +103,8 @@
 		18B35E101CB4475400CDABF9 /* ANWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWebViewVC.m; sourceTree = "<group>"; };
 		18C7762F1CC9461300F5FFFF /* MythNorseMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythNorseMasc.plist; sourceTree = "<group>"; };
 		18C776311CC946BC00F5FFFF /* MythNorseFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythNorseFem.plist; sourceTree = "<group>"; };
+		18C776331CC9514F00F5FFFF /* MythNorseMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythNorseMascImages.xcassets; sourceTree = "<group>"; };
+		18C776351CC9517000F5FFFF /* MythNorseFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythNorseFemImages.xcassets; sourceTree = "<group>"; };
 		18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDescriptioinVC.h; sourceTree = "<group>"; };
 		18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDescriptioinVC.m; sourceTree = "<group>"; };
 		18F1ADEA1CB8159C007D00C4 /* MythGreekMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythGreekMascImages.xcassets; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */,
 				18F1ADEA1CB8159C007D00C4 /* MythGreekMascImages.xcassets */,
 				180044971CB16CD60038206F /* MythRomanFemImages.xcassets */,
+				18C776351CC9517000F5FFFF /* MythNorseFemImages.xcassets */,
+				18C776331CC9514F00F5FFFF /* MythNorseMascImages.xcassets */,
 				180044951CB16CBA0038206F /* MythRomanMascImages.xcassets */,
 				18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */,
 				18267E271CB132B800AB130B /* MythVedicFemImages.xcassets */,
@@ -435,12 +441,14 @@
 				18267E281CB132B800AB130B /* MythVedicFemImages.xcassets in Resources */,
 				186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */,
 				180044921CB16AF70038206F /* MythRomanMasc.plist in Resources */,
+				18C776361CC9517000F5FFFF /* MythNorseFemImages.xcassets in Resources */,
 				18267E2D1CB136C400AB130B /* MythVedicMascImages.xcassets in Resources */,
 				18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */,
 				180044961CB16CBA0038206F /* MythRomanMascImages.xcassets in Resources */,
 				18FE1A711CAFCA0A004B5101 /* MythGreekFemImages.xcassets in Resources */,
 				180044941CB16C920038206F /* MythRomanFem.plist in Resources */,
 				18267E261CB1323A00AB130B /* MythVedicFem.plist in Resources */,
+				18C776341CC9514F00F5FFFF /* MythNorseMascImages.xcassets in Resources */,
 				18F1ADEB1CB8159C007D00C4 /* MythGreekMascImages.xcassets in Resources */,
 				18C776301CC9461300F5FFFF /* MythNorseMasc.plist in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,
