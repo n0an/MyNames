@@ -44,13 +44,16 @@ typedef enum {
  
  XX - Area: Myth, Regular names, Ancient names, etc:
     01 - Myth
-    02 - Tolkien World
-    03 - Herbert's Dune World
+    02 - Fantasy and Fiction
+    03 -
  
  YY - Category in Area. Greek Myth, Roman Myth, etc:
     01 - Greek Myth
     02 - Vedic Myth
     03 - Roman Myth
+    04 - Norse Myth
+    05 - Egypt Myth
+    06 - Persian Myth
  
  Z - Gender:
     0 - Masculine

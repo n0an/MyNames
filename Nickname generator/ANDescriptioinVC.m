@@ -89,6 +89,17 @@
     NSLog(@"navbar height = %f", self.navigationController.navigationBar.frame.size.height);
     
     
+    
+    
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self setScrollViewContentSize];
+    
+    
 }
 
 
@@ -98,9 +109,9 @@
     
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.currentName];
     
-    NSLog(@"self.isNameFavorite = %d", self.isNameFavorite);
     
     [self refreshLikeButton];
+    
     
 }
 
@@ -112,6 +123,19 @@
 
 
 #pragma mark - Helper Methods
+
+- (void) setScrollViewContentSize {
+    CGRect contentRect = CGRectZero;
+    for (UIView *view in self.scrollView.subviews) {
+        NSLog(@"view size = {%f, %f}", view.bounds.size.width, view.bounds.size.height);
+        contentRect = CGRectUnion(contentRect, view.frame);
+        
+        
+    }
+    
+    self.scrollView.contentSize = contentRect.size;
+}
+
 
 - (void) iterateNameWithDirection:(ANNameIterationDirection) iterationDirection {
     
@@ -149,6 +173,9 @@
     NSLog(@"self.isNameFavorite = %d", self.isNameFavorite);
     
     [self refreshLikeButton];
+    
+    
+    [self setScrollViewContentSize];
     
 }
 
