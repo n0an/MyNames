@@ -28,6 +28,10 @@
 		188F87881CCA6749007A34A4 /* MythPersianFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188F87871CCA6749007A34A4 /* MythPersianFem.plist */; };
 		188F878A1CCA6764007A34A4 /* MythPersianMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F87891CCA6764007A34A4 /* MythPersianMascImages.xcassets */; };
 		188F878C1CCA6778007A34A4 /* MythPersianFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F878B1CCA6778007A34A4 /* MythPersianFemImages.xcassets */; };
+		188F878E1CCA835A007A34A4 /* MythCelticMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188F878D1CCA835A007A34A4 /* MythCelticMasc.plist */; };
+		188F87901CCA8393007A34A4 /* MythCelticFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188F878F1CCA8393007A34A4 /* MythCelticFem.plist */; };
+		188F87921CCA83ED007A34A4 /* MythCelticMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F87911CCA83ED007A34A4 /* MythCelticMascImages.xcassets */; };
+		188F87941CCA8401007A34A4 /* MythCelticFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F87931CCA8401007A34A4 /* MythCelticFemImages.xcassets */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
@@ -101,6 +105,10 @@
 		188F87871CCA6749007A34A4 /* MythPersianFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythPersianFem.plist; sourceTree = "<group>"; };
 		188F87891CCA6764007A34A4 /* MythPersianMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythPersianMascImages.xcassets; sourceTree = "<group>"; };
 		188F878B1CCA6778007A34A4 /* MythPersianFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythPersianFemImages.xcassets; sourceTree = "<group>"; };
+		188F878D1CCA835A007A34A4 /* MythCelticMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythCelticMasc.plist; sourceTree = "<group>"; };
+		188F878F1CCA8393007A34A4 /* MythCelticFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythCelticFem.plist; sourceTree = "<group>"; };
+		188F87911CCA83ED007A34A4 /* MythCelticMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythCelticMascImages.xcassets; sourceTree = "<group>"; };
+		188F87931CCA8401007A34A4 /* MythCelticFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythCelticFemImages.xcassets; sourceTree = "<group>"; };
 		1893C01F1C94A6A100D17DA5 /* ANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANViewController.h; sourceTree = "<group>"; };
 		1893C0201C94A6A100D17DA5 /* ANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANViewController.m; sourceTree = "<group>"; };
 		1893C0221C94A92700D17DA5 /* ANUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUtils.h; sourceTree = "<group>"; };
@@ -178,7 +186,9 @@
 				186D62201CBC25C60094E885 /* Backgrounds.xcassets */,
 				18FE1A701CAFCA0A004B5101 /* MythGreekFemImages.xcassets */,
 				18F1ADEA1CB8159C007D00C4 /* MythGreekMascImages.xcassets */,
+				188F87911CCA83ED007A34A4 /* MythCelticMascImages.xcassets */,
 				188F878B1CCA6778007A34A4 /* MythPersianFemImages.xcassets */,
+				188F87931CCA8401007A34A4 /* MythCelticFemImages.xcassets */,
 				18C7763B1CC960B300F5FFFF /* MythEgyptMascImages.xcassets */,
 				188F87891CCA6764007A34A4 /* MythPersianMascImages.xcassets */,
 				18C7763D1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets */,
@@ -252,17 +262,19 @@
 		18267E291CB132E600AB130B /* Names Plists */ = {
 			isa = PBXGroup;
 			children = (
-				18349C231CA9413300A2A68E /* MythGreekMasc.plist */,
-				18C7762F1CC9461300F5FFFF /* MythNorseMasc.plist */,
+				188F878F1CCA8393007A34A4 /* MythCelticFem.plist */,
+				188F878D1CCA835A007A34A4 /* MythCelticMasc.plist */,
+				18C776391CC95CB000F5FFFF /* MythEgyptFem.plist */,
+				18C776371CC95BDA00F5FFFF /* MythEgyptMasc.plist */,
 				1810F9741CA816F500D7D00A /* MythGreekFem.plist */,
+				18349C231CA9413300A2A68E /* MythGreekMasc.plist */,
 				18C776311CC946BC00F5FFFF /* MythNorseFem.plist */,
+				18C7762F1CC9461300F5FFFF /* MythNorseMasc.plist */,
+				188F87871CCA6749007A34A4 /* MythPersianFem.plist */,
+				188F87851CCA6705007A34A4 /* MythPersianMasc.plist */,
 				180044931CB16C920038206F /* MythRomanFem.plist */,
 				180044911CB16AF70038206F /* MythRomanMasc.plist */,
 				18267E251CB1323A00AB130B /* MythVedicFem.plist */,
-				188F87851CCA6705007A34A4 /* MythPersianMasc.plist */,
-				188F87871CCA6749007A34A4 /* MythPersianFem.plist */,
-				18C776371CC95BDA00F5FFFF /* MythEgyptMasc.plist */,
-				18C776391CC95CB000F5FFFF /* MythEgyptFem.plist */,
 				18267E2A1CB1367C00AB130B /* MythVedicMasc.plist */,
 			);
 			name = "Names Plists";
@@ -462,6 +474,7 @@
 				188F87881CCA6749007A34A4 /* MythPersianFem.plist in Resources */,
 				18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */,
 				188F87861CCA6705007A34A4 /* MythPersianMasc.plist in Resources */,
+				188F87901CCA8393007A34A4 /* MythCelticFem.plist in Resources */,
 				18C776321CC946BC00F5FFFF /* MythNorseFem.plist in Resources */,
 				1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */,
 				18267E281CB132B800AB130B /* MythVedicFemImages.xcassets in Resources */,
@@ -473,17 +486,20 @@
 				18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */,
 				18C7763A1CC95CB000F5FFFF /* MythEgyptFem.plist in Resources */,
 				180044961CB16CBA0038206F /* MythRomanMascImages.xcassets in Resources */,
+				188F878E1CCA835A007A34A4 /* MythCelticMasc.plist in Resources */,
 				188F878A1CCA6764007A34A4 /* MythPersianMascImages.xcassets in Resources */,
 				18FE1A711CAFCA0A004B5101 /* MythGreekFemImages.xcassets in Resources */,
 				180044941CB16C920038206F /* MythRomanFem.plist in Resources */,
 				18267E261CB1323A00AB130B /* MythVedicFem.plist in Resources */,
 				18C776341CC9514F00F5FFFF /* MythNorseMascImages.xcassets in Resources */,
+				188F87921CCA83ED007A34A4 /* MythCelticMascImages.xcassets in Resources */,
 				18C7763E1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets in Resources */,
 				18F1ADEB1CB8159C007D00C4 /* MythGreekMascImages.xcassets in Resources */,
 				18C776301CC9461300F5FFFF /* MythNorseMasc.plist in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,
 				188F878C1CCA6778007A34A4 /* MythPersianFemImages.xcassets in Resources */,
 				18267E2B1CB1367C00AB130B /* MythVedicMasc.plist in Resources */,
+				188F87941CCA8401007A34A4 /* MythCelticFemImages.xcassets in Resources */,
 				180044981CB16CD60038206F /* MythRomanFemImages.xcassets in Resources */,
 				18F1B97F1C8F43C1001A3B25 /* Main.storyboard in Resources */,
 				18C776381CC95BDA00F5FFFF /* MythEgyptMasc.plist in Resources */,
