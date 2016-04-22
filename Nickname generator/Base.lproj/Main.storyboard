@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vedicBg10_2437" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norseBG07_5713" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-5n-4AZ" userLabel="ViewWithControls">
@@ -887,7 +887,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vedicBg21_1920" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Z5-OJ4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norseBG05_2329" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Z5-OJ4">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                                 </imageView>
                                                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjR-2o-er7">
@@ -1018,12 +1018,12 @@
         <image name="like1set" width="498" height="497"/>
         <image name="masc01" width="60" height="60"/>
         <image name="masc02" width="60" height="60"/>
+        <image name="norseBG05_2329" width="250" height="776"/>
+        <image name="norseBG07_5713" width="858" height="1269"/>
         <image name="refresh02" width="25" height="24"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shapes" width="21" height="21"/>
         <image name="top_charts" width="22" height="22"/>
-        <image name="vedicBg10_2437" width="602" height="812"/>
-        <image name="vedicBg21_1920" width="603" height="400"/>
         <image name="wiki01" width="498" height="498"/>
     </resources>
 </document>
