@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="133.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dc3-ye-PA2">
-                                                <rect key="frame" x="2.5" y="10" width="272" height="114"/>
+                                                <rect key="frame" x="8" y="10" width="272" height="114"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6JV-fA-Vq0" userLabel="settingsLabels Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="86" height="114"/>
@@ -188,7 +188,13 @@
                                             <constraint firstItem="dc3-ye-PA2" firstAttribute="centerY" secondItem="Dwy-Pv-6gN" secondAttribute="centerY" id="Esz-pm-WYn"/>
                                             <constraint firstItem="dc3-ye-PA2" firstAttribute="centerX" secondItem="Dwy-Pv-6gN" secondAttribute="centerX" constant="-14.5" id="GMe-Ls-xKq"/>
                                             <constraint firstAttribute="width" constant="306" id="ZPT-Zl-x5t"/>
+                                            <constraint firstItem="dc3-ye-PA2" firstAttribute="leading" secondItem="Dwy-Pv-6gN" secondAttribute="leading" constant="8" id="cGR-JW-zgV"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="GMe-Ls-xKq"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-cl-1fJ" userLabel="wheelView">
                                         <rect key="frame" x="274" y="37" width="60" height="60"/>
