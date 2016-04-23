@@ -33,7 +33,7 @@
         
         ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryID:@"01.03" andCategoryTitle:@"Римская мифология" andCategoryImageName:@"romanBg14_4592" andCategoryBackgroundImageName:@"romanBg07_7784" andAlias:@"MythRoman"];
         
-        ANNameCategory* area01cat04 = [[ANNameCategory alloc] initWithCategoryID:@"01.04" andCategoryTitle:@"Скандинав мифология" andCategoryImageName:@"norseBG05_2329" andCategoryBackgroundImageName:@"norseBG07_5713" andAlias:@"MythNorse"];
+        ANNameCategory* area01cat04 = [[ANNameCategory alloc] initWithCategoryID:@"01.04" andCategoryTitle:@"Скандинавская мифология" andCategoryImageName:@"norseBG05_2329" andCategoryBackgroundImageName:@"norseBG07_5713" andAlias:@"MythNorse"];
         
         ANNameCategory* area01cat05 = [[ANNameCategory alloc] initWithCategoryID:@"01.05" andCategoryTitle:@"Египетская мифология" andCategoryImageName:@"egyptBG15_1923" andCategoryBackgroundImageName:@"egyptBG01_1936" andAlias:@"MythEgypt"];
         
