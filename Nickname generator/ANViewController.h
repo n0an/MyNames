@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
 @property (weak, nonatomic) IBOutlet UIButton* generateButton;
 
-@property (weak, nonatomic) IBOutlet UITextField* nameCategoryTextField;
+@property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl* nameCountControl;
 

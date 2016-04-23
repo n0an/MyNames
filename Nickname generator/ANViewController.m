@@ -17,8 +17,12 @@
 #import "ANNameCategory.h"
 #import "ANNamesFactory.h"
 
+typedef enum {
+    ANMenuConstantStateClosed = -321,
+    ANMenuConstantStateOpened = 1
+} ANMenuConstantState;
 
-@interface ANViewController () <UITextFieldDelegate, ANCategorySelectionDelegate>
+@interface ANViewController () <ANCategorySelectionDelegate>
 
 @property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
 
@@ -62,7 +66,7 @@
     // Choose MythGreek Category for default
     self.selectedCategory = [self.sharedNamesFactory.namesCategories objectAtIndex:0];
     
-    self.nameCategoryTextField.text = self.selectedCategory.nameCategoryTitle;
+    self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;
     
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
     
@@ -114,6 +118,11 @@
     [super viewWillAppear:animated];
     
     [self animateGenerateButton];
+    
+    self.nameCategoryLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer* tapCategoryGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
+    [self.nameCategoryLabel addGestureRecognizer:tapCategoryGesture];
+    
     
     // Setting gesture recognizer for main label
     
@@ -408,7 +417,7 @@
         
         CGFloat nextConstant = self.settingsViewLeadingConstraint.constant + translationX;
         
-        if (-301 <= nextConstant && nextConstant <= 4) {
+        if (ANMenuConstantStateClosed <= nextConstant && nextConstant <= ANMenuConstantStateOpened) {
             self.settingsViewLeadingConstraint.constant = nextConstant;
             
             self.lastLocation = touchPoint;
@@ -466,6 +475,32 @@
     
 }
 
+
+
+
+- (void) actionTapOnCategoryLabel:(UITapGestureRecognizer*) recognizer {
+    
+    ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
+    
+    vc.categories = self.sharedNamesFactory.namesCategories;
+    
+    vc.selectedCategory = self.selectedCategory;
+    
+    vc.delegate = self;
+    
+    ANLog(@"selectedCategory = %@", vc.selectedCategory);
+    
+    
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self presentViewController:nav animated:YES completion:nil];
+
+    
+    
+}
+
+
+
 - (void) actionTapOnWheelView:(UITapGestureRecognizer*) recognizer {
     ANLog(@"actionTapOnWheelView");
     
@@ -475,10 +510,10 @@
     
     if (self.isSettingsActive) {
         options = UIViewAnimationOptionCurveEaseIn;
-        newConstant = -301;
+        newConstant = ANMenuConstantStateClosed;
     } else {
         options = UIViewAnimationOptionCurveEaseOut;
-        newConstant = 4;
+        newConstant = ANMenuConstantStateOpened;
     }
     
     [UIView animateWithDuration:0.3f
@@ -496,31 +531,6 @@
 }
 
 
-#pragma mark - UITextFieldDelegate
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    
-    [textField resignFirstResponder];
-    
-    ANLog(@"textFieldDidBeginEditing");
-    
-    ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
-    
-    vc.categories = self.sharedNamesFactory.namesCategories;
-
-    vc.selectedCategory = self.selectedCategory;
-    
-    vc.delegate = self;
-    
-    ANLog(@"selectedCategory = %@", vc.selectedCategory);
-
-    
-    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    
-    [self presentViewController:nav animated:YES completion:nil];
-    
-}
-
 
 #pragma mark - +++ ANCategorySelectionDelegate +++
 
@@ -534,8 +544,7 @@
     
     self.nameResultLabel.text = currentNamesLabel;
     
-
-    self.nameCategoryTextField.text = self.selectedCategory.nameCategoryTitle;
+    self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;
 
 }
 
