@@ -25,7 +25,7 @@
     dispatch_once(&onceToken, ^{
         sharedFactory = [[ANNamesFactory alloc] init];
         
-        ANNameCategory* randomCategory = [[ANNameCategory alloc] initWithCategoryID:@"00.00" andCategoryTitle:@"Случайное имя" andCategoryImageName:nil andCategoryBackgroundImageName:nil andAlias:@"RandomCat"];
+        ANNameCategory* randomCategory = [[ANNameCategory alloc] initWithCategoryID:@"00.00" andCategoryTitle:@"Случайное имя" andCategoryImageName:@"diceBG01_3840" andCategoryBackgroundImageName:@"diceBG03_1920" andAlias:@"RandomCat"];
 
         ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:@"Греческая мифология" andCategoryImageName:@"medusa-bronze" andCategoryBackgroundImageName:@"bg03" andAlias:@"MythGreek"];
         
