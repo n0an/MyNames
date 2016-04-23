@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   MythPersianFem.plist
+   Nickname generator
+
+   Created by Anton Novoselov on 22/04/16.
+   Copyright (c) 2016 Anton Novoselov. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+    
+    
+    <key>AMERETAT</key><dict><key>nameID</key><string>01.06.1.1</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>MythPersianFemAMERETAT</string></dict>
+    <key>AMORDAD</key><dict><key>nameID</key><string>01.06.1.2</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>MythPersianFemAMERETAT</string></dict>
+    <key>AMURDAD</key><dict><key>nameID</key><string>01.06.1.3</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>MythPersianFemAMERETAT</string></dict>
+    <key>ANAHITA</key><dict><key>nameID</key><string>01.06.1.4</string><key>nameDescription</key><string>Ардвисура Анахита (авест. Arədvī Sūrā Anāhitā) — богиня воды и плодородия в иранской мифологии. </string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D1%85%D0%B8%D1%82%D0%B0</string><key>nameImageName</key><string>MythPersianFemANAHITA</string></dict>
+    <key>ANAITIS</key><dict><key>nameID</key><string>01.06.1.5</string><key>nameDescription</key><string>Ардвисура Анахита (авест. Arədvī Sūrā Anāhitā) — богиня воды и плодородия в иранской мифологии. </string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D1%85%D0%B8%D1%82%D0%B0</string><key>nameImageName</key><string>MythPersianFemANAHITA</string></dict>
+    <key>ASHTAD</key><dict><key>nameID</key><string>01.06.1.6</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>MythPersianFemASHTAD</string></dict>
+    <key>HAURVATAT</key><dict><key>nameID</key><string>01.06.1.7</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>MythPersianFemHAURVATAT</string></dict>
+    <key>KHORDAD</key><dict><key>nameID</key><string>01.06.1.8</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>MythPersianFemKHORDAD</string></dict>
+    <key>KHURSHID</key><dict><key>nameID</key><string>01.06.1.9</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>MythPersianFemKHURSHID</string></dict>
+    <key>MORDAD</key><dict><key>nameID</key><string>01.06.1.10</string><key>nameDescription</key><string>Мордад (перс. مرداد‎) — пятый месяц иранского календаря, состоит из 31 дня. В григорианском календаре соответствует 23 июля — 22 августа в невисокосных годах или 22 июля — 21 августа в високосных. Мордад — второй месяц лета.
+        Название происходит от среднеперсидского 'Amurdad' и авестийского 'Ameretat', зороастрийского божества бессмертия.</string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D1%80%D0%B4%D0%B0%D0%B4</string><key>nameImageName</key><string>MythPersianFemMORDAD</string></dict>
+
+    
+    
+    
+    </dict>
+</plist>

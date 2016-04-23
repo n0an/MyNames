@@ -54,6 +54,7 @@ typedef enum {
     04 - Norse Myth
     05 - Egypt Myth
     06 - Persian Myth
+    07 - Celtic Myth
  
  Z - Gender:
     0 - Masculine
