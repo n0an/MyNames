@@ -25,6 +25,8 @@
     dispatch_once(&onceToken, ^{
         sharedFactory = [[ANNamesFactory alloc] init];
         
+        ANNameCategory* randomCategory = [[ANNameCategory alloc] initWithCategoryID:@"00.00" andCategoryTitle:@"Случайное имя" andCategoryImageName:nil andCategoryBackgroundImageName:nil andAlias:@"RandomCat"];
+
         ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:@"Греческая мифология" andCategoryImageName:@"medusa-bronze" andCategoryBackgroundImageName:@"bg03" andAlias:@"MythGreek"];
         
         ANNameCategory* area01cat02 = [[ANNameCategory alloc] initWithCategoryID:@"01.02" andCategoryTitle:@"Ведическая мифология" andCategoryImageName:@"vedicBg21_1920" andCategoryBackgroundImageName:@"vedicBg10_2437" andAlias:@"MythVedic"];
@@ -39,11 +41,28 @@
         
         ANNameCategory* area01cat07 = [[ANNameCategory alloc] initWithCategoryID:@"01.07" andCategoryTitle:@"Кельтская мифология" andCategoryImageName:@"celticBG05_1990" andCategoryBackgroundImageName:@"celticBG06_1280" andAlias:@"MythCeltic"];
    
-        sharedFactory.namesCategories = @[area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
+        sharedFactory.namesCategories = @[randomCategory, area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
         
     });
     
     return sharedFactory;
+    
+}
+
+- (ANNameCategory*) getRandomCategory {
+    
+    ANNameCategory* resultCategory;
+    
+    NSMutableArray* tmpArr = [NSMutableArray arrayWithArray:self.namesCategories];
+    [tmpArr removeObjectAtIndex:0];
+    
+    NSInteger categoriesCount = [tmpArr count];
+    
+    NSInteger randomInd = arc4random_uniform((unsigned int)categoriesCount * 1000) / 1000;
+    
+    resultCategory = [tmpArr objectAtIndex:randomInd];
+    
+    return resultCategory;
     
 }
 
@@ -70,8 +89,16 @@
 - (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
     
     ANName* result;
+    ANNameCategory* queryCategory;
     
-    result = [ANName randomNameforCategory:category andGender:gender];
+    if ([category.nameCategoryID isEqualToString:@"00.00"]) {
+        queryCategory = [self getRandomCategory];
+        
+    } else {
+        queryCategory = category;
+    }
+    
+    result = [ANName randomNameforCategory:queryCategory andGender:gender];
     
     return result;
 }
