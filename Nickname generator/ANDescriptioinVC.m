@@ -126,7 +126,7 @@
 
 - (void) setScrollViewContentSize {
     CGRect contentRect = CGRectZero;
-    for (UIView *view in self.scrollView.subviews) {
+    for (UIView *view in self.contenView.subviews) {
         NSLog(@"view size = {%f, %f}", view.bounds.size.width, view.bounds.size.height);
         contentRect = CGRectUnion(contentRect, view.frame);
         
@@ -230,37 +230,31 @@
         
         self.nameImageView.image = nil;
         
+        
         if (isOrientationPortrait()) {
-            self.imageHeightConstraint.active = NO;
+            self.constrPortrImg.constant = -200;
+            self.constrPortrLbl.constant = 40;
+        } else {
+            
         }
         
-        if (isOrientationLandscape()) {
-            self.imageWidthLandscape.active = NO;
-
-        }
         
         [self.view layoutIfNeeded];
         
         ANLog(@"no image");
-        ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
         
     } else {
 
         self.nameImageView.image = imageName;
         
-
         if (isOrientationPortrait()) {
-            self.imageHeightConstraint.active = YES;
+            self.constrPortrImg.constant = 20;
+            self.constrPortrLbl.constant = 8;
         }
         
-        if (isOrientationLandscape()) {
-            self.imageWidthLandscape.active = YES;
-            
-        }
         
         [self.view layoutIfNeeded];
         ANLog(@"there's image");
-        ANLog(@"self.imageHeightConstraint = %f", self.imageHeightConstraint.constant);
         
     }
 
