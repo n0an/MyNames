@@ -20,15 +20,13 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView* nameImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *genderImageView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIView *contenView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint* constrPortrImg;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint* constrPortrLbl;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint* constrLandImg;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint* constrLandLbl;
+
 
 
 @property (weak, nonatomic) IBOutlet UIButton* readMoreButton;

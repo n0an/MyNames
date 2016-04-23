@@ -630,8 +630,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNp-yE-vGl" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-c3-PUO">
-                                                <rect key="frame" x="20" y="20" width="180" height="180"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dump" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-c3-PUO">
+                                                <rect key="frame" x="20" y="20" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="height" multiplier="245:123" id="95M-6O-5mZ"/>
                                                     <constraint firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="height" multiplier="1:1" id="i1e-tr-HvL"/>
@@ -645,8 +645,8 @@
                                                 </variation>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-dq-fkA">
-                                                <rect key="frame" x="20" y="208" width="560" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="20" y="178" width="560" height="22"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -673,16 +673,16 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скандинавская мифология" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-zD-VsN">
-                                                <rect key="frame" x="208" y="68" width="372" height="94"/>
+                                                <rect key="frame" x="178" y="68" width="402" height="74"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="masc02" translatesAutoresizingMaskIntoConstraints="NO" id="HFK-V7-nwk">
-                                                <rect key="frame" x="208" y="170" width="30" height="30"/>
+                                                <rect key="frame" x="178" y="150" width="20" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="f3z-8h-wpv"/>
-                                                    <constraint firstAttribute="height" constant="30" id="kV7-SG-pu2"/>
+                                                    <constraint firstAttribute="width" constant="20" id="f3z-8h-wpv"/>
+                                                    <constraint firstAttribute="height" constant="20" id="kV7-SG-pu2"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -716,9 +716,6 @@
                                     <constraint firstItem="wNp-yE-vGl" firstAttribute="centerX" secondItem="O2B-ov-y0O" secondAttribute="centerX" id="k6O-NI-fcq"/>
                                     <constraint firstItem="wNp-yE-vGl" firstAttribute="centerY" secondItem="O2B-ov-y0O" secondAttribute="centerY" id="qqA-hI-ysC"/>
                                 </constraints>
-                                <variation key="heightClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
-                                </variation>
                                 <variation key="widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                 </variation>
@@ -730,18 +727,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qIN-1P-i2J" firstAttribute="top" secondItem="O2B-ov-y0O" secondAttribute="bottom" id="3PQ-tt-sse"/>
-                            <constraint firstItem="JQp-c3-PUO" firstAttribute="height" secondItem="xeW-w4-8dz" secondAttribute="height" multiplier="0.3" id="OdR-VK-VJ5"/>
+                            <constraint firstItem="JQp-c3-PUO" firstAttribute="height" secondItem="xeW-w4-8dz" secondAttribute="height" multiplier="0.25" id="OdR-VK-VJ5"/>
                             <constraint firstItem="O2B-ov-y0O" firstAttribute="top" secondItem="xeW-w4-8dz" secondAttribute="top" id="SqO-8G-FTE"/>
                             <constraint firstItem="O2B-ov-y0O" firstAttribute="leading" secondItem="xeW-w4-8dz" secondAttribute="leading" id="Vec-O6-RqQ"/>
                             <constraint firstAttribute="trailing" secondItem="O2B-ov-y0O" secondAttribute="trailing" id="fhy-Yl-lEC"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="constrLandImg" destination="itt-WF-hb3" id="2uh-Pj-534"/>
-                        <outlet property="constrPortrImg" destination="ZE5-qq-Sg3" id="yAi-7s-3IO"/>
-                        <outlet property="constrPortrLbl" destination="uIn-Vi-TuS" id="cMR-0W-Sfh"/>
                         <outlet property="contenView" destination="wNp-yE-vGl" id="LF3-hk-0QO"/>
                         <outlet property="descriptionLabel" destination="Ec4-dq-fkA" id="BvK-f9-J4A"/>
+                        <outlet property="genderImageView" destination="HFK-V7-nwk" id="UoL-Vm-xzU"/>
                         <outlet property="likeButton" destination="HXY-de-x5m" id="3LP-zc-JY5"/>
                         <outlet property="nameImageView" destination="JQp-c3-PUO" id="5ch-Uu-Vds"/>
                         <outlet property="readMoreButton" destination="X7f-Pb-uep" id="7Vu-5j-pEk"/>
@@ -971,6 +966,7 @@
         <image name="WhiteTransparentFade" width="375" height="150"/>
         <image name="arrowLeft03" width="14" height="24"/>
         <image name="arrowRight03" width="14" height="24"/>
+        <image name="dump" width="150" height="150"/>
         <image name="fem02" width="60" height="60"/>
         <image name="info01" width="42" height="99"/>
         <image name="like1" width="498" height="498"/>

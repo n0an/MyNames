@@ -36,7 +36,8 @@
     
     self.currentName = [self.namesArray firstObject];
     
-    self.descriptionLabel.text = self.currentName.nameDescription;
+    [self refreshLabels];
+    
     
     if (self.currentName.nameURL && ![self.currentName.nameURL isEqualToString:@""]) {
         self.readMoreButton.hidden = NO;
@@ -91,7 +92,6 @@
     
     
     
-    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -124,8 +124,16 @@
 
 #pragma mark - Helper Methods
 
+- (void) refreshLabels {
+    self.descriptionLabel.text = self.currentName.nameDescription;
+    NSString* genderImage = !self.currentName.nameGender ? @"masc02" : @"fem02";
+    
+    self.genderImageView.image = [UIImage imageNamed:genderImage];
+}
+
 - (void) setScrollViewContentSize {
     CGRect contentRect = CGRectZero;
+    
     for (UIView *view in self.contenView.subviews) {
         NSLog(@"view size = {%f, %f}", view.bounds.size.width, view.bounds.size.height);
         contentRect = CGRectUnion(contentRect, view.frame);
@@ -133,7 +141,9 @@
         
     }
     
-    self.scrollView.contentSize = contentRect.size;
+//    self.scrollView.contentSize = contentRect.size;
+    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(contentRect));
+
 }
 
 
@@ -158,7 +168,9 @@
         }
     }
     
-    self.descriptionLabel.text = self.currentName.nameDescription;
+    
+    
+    [self refreshLabels];
     
     [self setImageAndImageHeight];
     
@@ -228,33 +240,33 @@
     
     if (!imageName) {
         
-        self.nameImageView.image = nil;
+        self.nameImageView.image = [UIImage imageNamed:@"dump"];
         
         
-        if (isOrientationPortrait()) {
-            self.constrPortrImg.constant = -200;
-            self.constrPortrLbl.constant = 40;
-        } else {
-            
-        }
-        
-        
-        [self.view layoutIfNeeded];
-        
-        ANLog(@"no image");
+//        if (isOrientationPortrait()) {
+//            self.constrPortrImg.constant = -200;
+//            self.constrPortrLbl.constant = 40;
+//        } else {
+//            
+//        }
+//        
+//        
+//        [self.view layoutIfNeeded];
+//        
+//        ANLog(@"no image");
         
     } else {
 
         self.nameImageView.image = imageName;
         
-        if (isOrientationPortrait()) {
-            self.constrPortrImg.constant = 20;
-            self.constrPortrLbl.constant = 8;
-        }
-        
-        
-        [self.view layoutIfNeeded];
-        ANLog(@"there's image");
+//        if (isOrientationPortrait()) {
+//            self.constrPortrImg.constant = 20;
+//            self.constrPortrLbl.constant = 8;
+//        }
+//        
+//        
+//        [self.view layoutIfNeeded];
+//        ANLog(@"there's image");
         
     }
 
