@@ -150,6 +150,8 @@ typedef enum {
     UITapGestureRecognizer* tapGestureOnWheelView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnWheelView:)];
     
     [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
+    
+    [self animateWheelRotating];
 }
 
 
@@ -186,7 +188,26 @@ typedef enum {
                              self.generateButton.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
                          }];
                          
+                         
+
+                         
                      }];
+}
+
+- (void) animateWheelRotating {
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         self.wheelView.transform = CGAffineTransformMakeRotation(M_PI/2);
+                        
+                         
+                     } completion:^(BOOL finished) {
+                         self.wheelView.transform = CGAffineTransformIdentity;
+                     }];
+    
 }
 
 
@@ -419,8 +440,6 @@ typedef enum {
         CGFloat translationX = touchPoint.x - self.lastLocation.x;
         
         CGFloat nextConstant = self.settingsViewLeadingConstraint.constant + translationX;
-        
-        NSLog(@"nextConstant = %f", nextConstant);
         
         if (ANMenuConstantStateClosed <= nextConstant && nextConstant <= ANMenuConstantStateOpened) {
             self.settingsViewLeadingConstraint.constant = nextConstant;
