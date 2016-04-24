@@ -398,7 +398,10 @@ typedef enum {
         
         self.settingsViewPickedUp = YES;
         
-        ANLog(@"began: self.lastLocation = %f, %f", self.lastLocation.x, self.lastLocation.y);
+        [UIView animateWithDuration:0.1f animations:^{
+            self.wheelView.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
+            self.wheelView.alpha = 0.8f;
+        }];
         
     }
     
@@ -417,6 +420,8 @@ typedef enum {
         
         CGFloat nextConstant = self.settingsViewLeadingConstraint.constant + translationX;
         
+        NSLog(@"nextConstant = %f", nextConstant);
+        
         if (ANMenuConstantStateClosed <= nextConstant && nextConstant <= ANMenuConstantStateOpened) {
             self.settingsViewLeadingConstraint.constant = nextConstant;
             
@@ -427,7 +432,7 @@ typedef enum {
             ANLog(@"out of bounds");
             
             if (self.settingsViewLeadingConstraint.constant > -100) {
-                self.settingsViewLeadingConstraint.constant = 4;
+                self.settingsViewLeadingConstraint.constant = ANMenuConstantStateOpened;
                 self.isSettingsActive = YES;
             }
   
@@ -443,7 +448,15 @@ typedef enum {
 }
 
 - (void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    [UIView animateWithDuration:0.1f animations:^{
+        self.wheelView.transform = CGAffineTransformIdentity;
+        self.wheelView.alpha = 1.f;
+    }];
+
+    
     self.settingsViewPickedUp = NO;
+
 }
 
 - (void) touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -503,6 +516,14 @@ typedef enum {
 
 - (void) actionTapOnWheelView:(UITapGestureRecognizer*) recognizer {
     ANLog(@"actionTapOnWheelView");
+    
+    [UIView animateWithDuration:0.1f animations:^{
+        self.wheelView.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
+        self.wheelView.alpha = 0.8f;
+    } completion:^(BOOL finished) {
+        self.wheelView.transform = CGAffineTransformIdentity;
+        self.wheelView.alpha = 1.f;
+    }];
     
     
     NSInteger newConstant;
