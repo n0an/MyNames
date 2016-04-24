@@ -151,6 +151,8 @@ typedef enum {
     
     [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
     
+//    [self animateWheelFlapOnLaunch];
+    
     [self animateWheelRotating];
 }
 
@@ -206,7 +208,38 @@ typedef enum {
                          
                      } completion:^(BOOL finished) {
                          self.wheelView.transform = CGAffineTransformIdentity;
+                         
+                         [self animateWheelFlapOnLaunch];
+                         
                      }];
+    
+}
+
+- (void) animateWheelFlapOnLaunch {
+    
+    
+    [UIView animateKeyframesWithDuration:1.0 delay:0.0 options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
+
+        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
+            self.settingsViewLeadingConstraint.constant = -270;
+            [self.view layoutIfNeeded];
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:0.25 animations:^{
+            self.settingsViewLeadingConstraint.constant = ANMenuConstantStateClosed;
+            [self.view layoutIfNeeded];
+        }];
+        
+        [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:0.125 animations:^{
+            self.settingsViewLeadingConstraint.constant = -290;
+            [self.view layoutIfNeeded];
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.875 relativeDuration:0.125 animations:^{
+            self.settingsViewLeadingConstraint.constant = ANMenuConstantStateClosed;
+            [self.view layoutIfNeeded];
+        }];
+        
+    } completion:nil];
+    
     
 }
 
