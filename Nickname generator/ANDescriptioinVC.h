@@ -17,8 +17,12 @@ typedef enum {
 @class ANName;
 
 @interface ANDescriptioinVC : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
+
+
 @property (weak, nonatomic) IBOutlet UIImageView* nameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *genderImageView;
 
