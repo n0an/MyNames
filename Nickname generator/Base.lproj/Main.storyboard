@@ -570,28 +570,18 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Edx-2F-ZNQ" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="8" id="0L1-dc-hrU"/>
-                                        <constraint firstAttribute="bottom" secondItem="WOr-9h-Bjz" secondAttribute="bottom" constant="9" id="3Jt-4X-zKL"/>
                                         <constraint firstItem="C1B-HP-7B9" firstAttribute="top" secondItem="Kjn-Fo-lGw" secondAttribute="top" constant="8" id="7kw-za-dDz"/>
                                         <constraint firstItem="WOr-9h-Bjz" firstAttribute="top" secondItem="3HY-5N-HsF" secondAttribute="bottom" constant="8" id="9NM-KG-4eq"/>
                                         <constraint firstItem="3HY-5N-HsF" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="8" id="9cE-63-ZtD"/>
                                         <constraint firstItem="vt2-E6-tus" firstAttribute="top" secondItem="Kjn-Fo-lGw" secondAttribute="topMargin" constant="2" id="BJJ-41-EZr"/>
                                         <constraint firstItem="C1B-HP-7B9" firstAttribute="leading" secondItem="3HY-5N-HsF" secondAttribute="trailing" constant="8" id="Hbk-AZ-mrx"/>
                                         <constraint firstItem="WOr-9h-Bjz" firstAttribute="leading" secondItem="Edx-2F-ZNQ" secondAttribute="trailing" constant="8" id="UzY-WO-jtx"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="3HY-5N-HsF" secondAttribute="trailing" id="Y7W-Wf-Jm2"/>
                                         <constraint firstAttribute="trailing" secondItem="C1B-HP-7B9" secondAttribute="trailing" constant="8" id="c2o-mT-3Eh"/>
                                         <constraint firstItem="3HY-5N-HsF" firstAttribute="top" secondItem="vt2-E6-tus" secondAttribute="top" id="lSG-kz-oJI"/>
                                         <constraint firstItem="vt2-E6-tus" firstAttribute="leading" secondItem="Kjn-Fo-lGw" secondAttribute="leadingMargin" constant="2" id="t5X-01-cUc"/>
                                         <constraint firstItem="Edx-2F-ZNQ" firstAttribute="bottom" secondItem="vt2-E6-tus" secondAttribute="bottom" id="tvm-E0-6wd"/>
                                         <constraint firstAttribute="trailing" secondItem="WOr-9h-Bjz" secondAttribute="trailing" constant="8" id="vLn-o4-8WM"/>
-                                        <constraint firstItem="3HY-5N-HsF" firstAttribute="centerY" secondItem="Kjn-Fo-lGw" secondAttribute="centerY" multiplier="0.75" id="vcZ-OM-cXo"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="Y7W-Wf-Jm2"/>
-                                            <exclude reference="vcZ-OM-cXo"/>
-                                            <exclude reference="3Jt-4X-zKL"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="genderImageView" destination="Edx-2F-ZNQ" id="yxn-Dy-a7a"/>
