@@ -14,6 +14,8 @@
 
 #import "ANWebViewVC.h"
 
+#import "ANNameCategory.h"
+
 
 @interface ANDescriptioinVC ()
 
@@ -106,11 +108,16 @@
 #pragma mark - Helper Methods
 
 - (void) refreshLabels {
+    
+    self.firstNameLabel.text = self.currentName.firstName;
+    self.nameCategoryLabel.text = self.currentName.nameCategory.nameCategoryTitle;
     self.descriptionLabel.text = self.currentName.nameDescription;
     NSString* genderImage = !self.currentName.nameGender ? @"masc02" : @"fem02";
     
     self.genderImageView.image = [UIImage imageNamed:genderImage];
     
+    [self.firstNameLabel sizeToFit];
+    [self.nameCategoryLabel sizeToFit];
     [self.descriptionLabel sizeToFit];
 }
 
