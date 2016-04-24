@@ -15,7 +15,6 @@
 #import "ANWebViewVC.h"
 
 
-
 @interface ANDescriptioinVC ()
 
 @property (strong, nonatomic) ANName* currentName;
@@ -38,13 +37,11 @@
     
     [self refreshLabels];
     
-    
     if (self.currentName.nameURL && ![self.currentName.nameURL isEqualToString:@""]) {
         self.readMoreButton.hidden = NO;
     } else {
         self.readMoreButton.hidden = YES;
     }
-    
     
     [self setImageAndImageHeight];
     
@@ -69,9 +66,6 @@
 //    [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
 //    
 //    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-
-    
-    
     
     UISwipeGestureRecognizer* rightSwipeGesture =
     [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleRightSwipe:)];
@@ -86,10 +80,6 @@
     
     self.likeNonSetImage = [UIImage imageNamed:@"like1"];
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
-
-    NSLog(@"navbar height = %f", self.navigationController.navigationBar.frame.size.height);
-    
-    
     
     
 }
@@ -99,27 +89,18 @@
     
     [self setScrollViewContentSize];
     
-    
 }
 
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.currentName];
-    
     
     [self refreshLikeButton];
     
-    
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    NSLog(@"didReceiveMemoryWarning");
-}
 
 
 #pragma mark - Helper Methods
@@ -129,6 +110,8 @@
     NSString* genderImage = !self.currentName.nameGender ? @"masc02" : @"fem02";
     
     self.genderImageView.image = [UIImage imageNamed:genderImage];
+    
+    [self.descriptionLabel sizeToFit];
 }
 
 - (void) setScrollViewContentSize {
@@ -138,14 +121,10 @@
         NSLog(@"view size = {%f, %f}", view.bounds.size.width, view.bounds.size.height);
         contentRect = CGRectUnion(contentRect, view.frame);
         
-        
     }
     
-    //    self.scrollView.contentSize = contentRect.size;
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(contentRect));
     
-    NSLog(@"contentSize = {%f, %f}", self.scrollView.contentSize.width, self.scrollView.contentSize.height);
-
 }
 
 
@@ -196,49 +175,8 @@
 }
 
 
-- (void) handleImage {
-    
-    UIImage* currentImage = [UIImage imageNamed:self.currentName.nameImageName];
-    ANLog(@"currentImage.size.width = %f",currentImage.size.width);
-    ANLog(@"currentImage.size.height = %f",currentImage.size.height);
-    
-    CGFloat currentWidth = CGRectGetWidth(self.view.bounds);
-    
-    CGFloat maxRequiredSizeOfImage = MIN(currentWidth, 800);
-    
-    CGFloat ratio = currentImage.size.width / currentImage.size.height;
-    
-    CGFloat heightOfCurrentPhoto;
-    CGFloat widthOfCurrentPhoto;
-    
-    if (ratio < 1) { // ** Portrait oriented photo
-        
-        heightOfCurrentPhoto = maxRequiredSizeOfImage;
-        
-        widthOfCurrentPhoto = heightOfCurrentPhoto * ratio;
-        
-    } else { // ** Landscape oriented photo
-        
-        widthOfCurrentPhoto = maxRequiredSizeOfImage;
-        
-        heightOfCurrentPhoto = widthOfCurrentPhoto / ratio;
-    }
-
-  
-    ANLog(@"ratio = %f",ratio);
-    ANLog(@"widthOfCurrentPhoto = %f",widthOfCurrentPhoto);
-    ANLog(@"heightOfCurrentPhoto = %f",heightOfCurrentPhoto);
-
-    
-    
-}
-
-
-
 
 - (void) setImageAndImageHeight {
-    
-//    [self handleImage];
     
     UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
     
@@ -246,32 +184,10 @@
         
         self.nameImageView.image = [UIImage imageNamed:@"dump"];
         
-        
-//        if (isOrientationPortrait()) {
-//            self.constrPortrImg.constant = -200;
-//            self.constrPortrLbl.constant = 40;
-//        } else {
-//            
-//        }
-//        
-//        
-//        [self.view layoutIfNeeded];
-//        
-//        ANLog(@"no image");
-        
     } else {
 
         self.nameImageView.image = imageName;
-        
-//        if (isOrientationPortrait()) {
-//            self.constrPortrImg.constant = 20;
-//            self.constrPortrLbl.constant = 8;
-//        }
-//        
-//        
-//        [self.view layoutIfNeeded];
-//        ANLog(@"there's image");
-        
+
     }
 
 }
@@ -289,7 +205,6 @@
         
         [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
     }
-    
     
 }
 
