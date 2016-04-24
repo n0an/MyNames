@@ -651,21 +651,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скандинавская мифология" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jK-zD-VsN">
-                                                <rect key="frame" x="178" y="68" width="402" height="74"/>
+                                                <rect key="frame" x="178" y="96" width="402" height="22"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="masc02" translatesAutoresizingMaskIntoConstraints="NO" id="HFK-V7-nwk">
-                                                <rect key="frame" x="178" y="150" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="f3z-8h-wpv"/>
-                                                    <constraint firstAttribute="height" constant="20" id="kV7-SG-pu2"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amon Ra" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdK-oS-xiI">
-                                                <rect key="frame" x="178" y="68" width="402" height="74"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -691,18 +678,34 @@
                                                     <action selector="actionlikeButtonPressed:" destination="WUg-cz-UtD" eventType="touchUpInside" id="cN2-fZ-rfo"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amon Ra" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdK-oS-xiI">
+                                                <rect key="frame" x="178" y="68" width="402" height="24"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="masc02" translatesAutoresizingMaskIntoConstraints="NO" id="HFK-V7-nwk">
+                                                <rect key="frame" x="178" y="122" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="f3z-8h-wpv"/>
+                                                    <constraint firstAttribute="height" constant="20" id="kV7-SG-pu2"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="gdK-oS-xiI" firstAttribute="width" secondItem="JQp-c3-PUO" secondAttribute="width" id="2ln-qK-vCb"/>
                                             <constraint firstAttribute="trailing" secondItem="Ec4-dq-fkA" secondAttribute="trailing" constant="20" id="62b-g9-xgT"/>
-                                            <constraint firstItem="Ec4-dq-fkA" firstAttribute="top" secondItem="JQp-c3-PUO" secondAttribute="bottom" constant="8" id="8Se-7Y-kMD"/>
+                                            <constraint firstItem="Ec4-dq-fkA" firstAttribute="top" secondItem="JQp-c3-PUO" secondAttribute="bottom" priority="750" constant="8" id="8Se-7Y-kMD"/>
                                             <constraint firstItem="gdK-oS-xiI" firstAttribute="top" secondItem="JQp-c3-PUO" secondAttribute="bottom" constant="8" id="9dC-rn-Cv6"/>
                                             <constraint firstItem="HXY-de-x5m" firstAttribute="top" secondItem="HFK-V7-nwk" secondAttribute="bottom" constant="20" id="DJ0-eC-zoI"/>
                                             <constraint firstItem="HXY-de-x5m" firstAttribute="leading" secondItem="HFK-V7-nwk" secondAttribute="leading" id="Dsi-IF-buO"/>
+                                            <constraint firstItem="9jK-zD-VsN" firstAttribute="top" secondItem="gdK-oS-xiI" secondAttribute="bottom" constant="4" id="Eec-Xr-4vd"/>
+                                            <constraint firstItem="Ec4-dq-fkA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HFK-V7-nwk" secondAttribute="bottom" constant="8" id="HK1-O4-cJa"/>
                                             <constraint firstAttribute="trailing" secondItem="X7f-Pb-uep" secondAttribute="trailing" constant="20" id="IoJ-rY-jMe"/>
                                             <constraint firstItem="HFK-V7-nwk" firstAttribute="leading" secondItem="9jK-zD-VsN" secondAttribute="leading" id="J7H-79-YIH"/>
                                             <constraint firstAttribute="trailing" secondItem="9jK-zD-VsN" secondAttribute="trailing" constant="20" id="NfT-MJ-tf3"/>
+                                            <constraint firstItem="gdK-oS-xiI" firstAttribute="top" secondItem="HXY-de-x5m" secondAttribute="bottom" constant="8" id="NvK-21-xvh"/>
                                             <constraint firstItem="9jK-zD-VsN" firstAttribute="width" secondItem="gdK-oS-xiI" secondAttribute="width" id="Tkn-EF-0iH"/>
                                             <constraint firstItem="X7f-Pb-uep" firstAttribute="width" secondItem="HXY-de-x5m" secondAttribute="width" id="TvU-1D-aQr"/>
                                             <constraint firstItem="HFK-V7-nwk" firstAttribute="top" secondItem="9jK-zD-VsN" secondAttribute="bottom" constant="8" id="VGh-U6-T8b"/>
@@ -717,28 +720,29 @@
                                             <constraint firstItem="9jK-zD-VsN" firstAttribute="leading" secondItem="gdK-oS-xiI" secondAttribute="leading" id="gwU-Vf-qhm"/>
                                             <constraint firstItem="HFK-V7-nwk" firstAttribute="leading" secondItem="9jK-zD-VsN" secondAttribute="leading" id="h2e-3m-SRL"/>
                                             <constraint firstItem="JQp-c3-PUO" firstAttribute="top" secondItem="wNp-yE-vGl" secondAttribute="top" constant="20" id="itt-WF-hb3"/>
-                                            <constraint firstItem="HFK-V7-nwk" firstAttribute="top" secondItem="9jK-zD-VsN" secondAttribute="bottom" constant="8" id="oBj-Ri-Mey"/>
+                                            <constraint firstItem="gdK-oS-xiI" firstAttribute="leading" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="8" id="mVW-so-6LU"/>
+                                            <constraint firstItem="HFK-V7-nwk" firstAttribute="top" secondItem="9jK-zD-VsN" secondAttribute="bottom" constant="4" id="oBj-Ri-Mey"/>
                                             <constraint firstItem="9jK-zD-VsN" firstAttribute="leading" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="8" id="uIn-Vi-TuS"/>
                                             <constraint firstItem="X7f-Pb-uep" firstAttribute="top" secondItem="wNp-yE-vGl" secondAttribute="top" constant="20" id="uUg-nA-HGa"/>
                                             <constraint firstItem="Ec4-dq-fkA" firstAttribute="leading" secondItem="JQp-c3-PUO" secondAttribute="trailing" constant="8" id="vDf-Kq-hUa"/>
+                                            <constraint firstAttribute="trailing" secondItem="gdK-oS-xiI" secondAttribute="trailing" constant="20" id="xtb-v2-3ve"/>
                                             <constraint firstItem="X7f-Pb-uep" firstAttribute="top" secondItem="HXY-de-x5m" secondAttribute="top" id="y7Z-t8-b5e"/>
                                             <constraint firstItem="HFK-V7-nwk" firstAttribute="bottom" secondItem="JQp-c3-PUO" secondAttribute="bottom" id="yiC-8C-ji0"/>
                                         </constraints>
                                         <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="gdK-oS-xiI"/>
-                                            </mask>
                                             <mask key="constraints">
+                                                <exclude reference="cWJ-9e-JDj"/>
+                                                <exclude reference="vDf-Kq-hUa"/>
                                                 <exclude reference="2ln-qK-vCb"/>
                                                 <exclude reference="9dC-rn-Cv6"/>
                                                 <exclude reference="Xa6-IN-6hv"/>
-                                                <exclude reference="cWJ-9e-JDj"/>
-                                                <exclude reference="vDf-Kq-hUa"/>
                                                 <exclude reference="Tkn-EF-0iH"/>
+                                                <exclude reference="YbY-mA-G5c"/>
                                                 <exclude reference="dGn-X8-mma"/>
                                                 <exclude reference="gwU-Vf-qhm"/>
                                                 <exclude reference="VGh-U6-T8b"/>
                                                 <exclude reference="h2e-3m-SRL"/>
+                                                <exclude reference="yiC-8C-ji0"/>
                                                 <exclude reference="DJ0-eC-zoI"/>
                                                 <exclude reference="Dsi-IF-buO"/>
                                             </mask>
@@ -748,13 +752,18 @@
                                                 <include reference="gdK-oS-xiI"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="2ln-qK-vCb"/>
-                                                <include reference="9dC-rn-Cv6"/>
-                                                <include reference="Xa6-IN-6hv"/>
                                                 <exclude reference="8Se-7Y-kMD"/>
+                                                <exclude reference="HK1-O4-cJa"/>
                                                 <exclude reference="XBh-dL-6IT"/>
                                                 <include reference="cWJ-9e-JDj"/>
                                                 <include reference="vDf-Kq-hUa"/>
+                                                <include reference="2ln-qK-vCb"/>
+                                                <include reference="9dC-rn-Cv6"/>
+                                                <exclude reference="NvK-21-xvh"/>
+                                                <include reference="Xa6-IN-6hv"/>
+                                                <exclude reference="mVW-so-6LU"/>
+                                                <exclude reference="xtb-v2-3ve"/>
+                                                <exclude reference="Eec-Xr-4vd"/>
                                                 <exclude reference="NfT-MJ-tf3"/>
                                                 <include reference="Tkn-EF-0iH"/>
                                                 <exclude reference="YbY-mA-G5c"/>
