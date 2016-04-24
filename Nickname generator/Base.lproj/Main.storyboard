@@ -411,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="1271" y="504"/>
         </scene>
-        <!--Favorite NamesVC-->
+        <!--Избранное-->
         <scene sceneID="2jh-nG-ilb">
             <objects>
                 <tableViewController id="Z8D-J2-Jdx" customClass="ANFavoriteNamesVC" sceneMemberID="viewController">
@@ -597,13 +597,7 @@
                             <outlet property="delegate" destination="Z8D-J2-Jdx" id="aK8-fy-kqE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5R3-fs-Bra">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="T2U-jY-QyN">
-                            <connections>
-                                <action selector="actionResetButtonPressed:" destination="Z8D-J2-Jdx" id="pOR-Mo-qzN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Избранное" id="5R3-fs-Bra"/>
                     <connections>
                         <outlet property="genderButtonFem" destination="3tm-FA-BmH" id="ziM-jY-FTB"/>
                         <outlet property="genderButtonMasc" destination="IMy-xo-2je" id="glL-vV-RjC"/>

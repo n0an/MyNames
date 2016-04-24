@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
-- (IBAction)actionResetButtonPressed:(UIBarButtonItem*)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *genderButtonMasc;
 @property (weak, nonatomic) IBOutlet UIButton *genderButtonFem;

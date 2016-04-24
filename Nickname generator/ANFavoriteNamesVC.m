@@ -38,12 +38,13 @@
     [super viewDidLoad];
     
     
-    UIBarButtonItem* editButton = [[UIBarButtonItem alloc]
-                                   initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                   target:self
-                                   action:@selector(actionEdit:)];
+    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
+    
+    UIBarButtonItem* clearButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"clear32"] landscapeImagePhone:[UIImage imageNamed:@"clear24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionClear:)];
+
     
     self.navigationItem.leftBarButtonItem = editButton;
+    self.navigationItem.rightBarButtonItem = clearButton;
     
     
     // !!!IMPORTANT!!!
@@ -155,32 +156,34 @@
     
     [self.tableView setEditing:!isEditing animated:YES];
     
-    UIBarButtonSystemItem item = UIBarButtonSystemItemEdit;
+    
+    UIBarButtonItem* editButton;
     
     if (self.tableView.editing) {
-        item = UIBarButtonSystemItemDone;
+        editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"affirm_3_32"] landscapeImagePhone:[UIImage imageNamed:@"affirm_3_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
+
+    } else {
+        editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
+
     }
     
-    UIBarButtonItem* editButton = [[UIBarButtonItem alloc]
-                                   initWithBarButtonSystemItem:item
-                                   target:self
-                                   action:@selector(actionEdit:)];
     
     [self.navigationItem setLeftBarButtonItem:editButton animated:YES];
     
 }
 
 
-
-
-- (IBAction)actionResetButtonPressed:(UIBarButtonItem*)sender {
+- (void) actionClear:(UIBarButtonItem*) sender {
     
+#warning ADD ALERT CONTROLLER HERE
+
     [[ANDataManager sharedManager] clearFavoriteNamesDB];
     
     NSLog(@"\n********* AFTER DELETE *************");
     [[ANDataManager sharedManager] showAllNames];
-    
 }
+
+
 
 
 - (IBAction)actionGndrBtnPressed:(id)sender {
