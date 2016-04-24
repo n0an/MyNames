@@ -49,8 +49,9 @@
     
     
     // Navigation bar buttons
+        
+    UIBarButtonItem* cancel = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close32"] landscapeImagePhone:[UIImage imageNamed:@"close24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionCancel:)];
     
-    UIBarButtonItem* cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancel:)];
     self.navigationItem.leftBarButtonItem = cancel;
     
     if ([self.namesArray count] > 1) {
