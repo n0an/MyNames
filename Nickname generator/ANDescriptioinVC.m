@@ -141,13 +141,16 @@
         
     }
     
-//    self.scrollView.contentSize = contentRect.size;
+    //    self.scrollView.contentSize = contentRect.size;
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(contentRect));
+    
+    NSLog(@"contentSize = {%f, %f}", self.scrollView.contentSize.width, self.scrollView.contentSize.height);
 
 }
 
 
 - (void) iterateNameWithDirection:(ANNameIterationDirection) iterationDirection {
+    
     
     NSInteger currInd = [self.namesArray indexOfObject:self.currentName];
     
@@ -188,6 +191,7 @@
     
     
     [self setScrollViewContentSize];
+
     
 }
 
