@@ -25,9 +25,9 @@
     
     self.pageControl.currentPage = self.index;
     
-    self.nextButton.hidden = (self.index == 0) ? NO : YES;
+    self.nextButton.hidden = (self.index == 4) ? YES : NO;
     
-    self.startButton.hidden = (self.index == 1) ? NO : YES;
+    self.startButton.hidden = (self.index == 4) ? NO : YES;
     
 }
 
@@ -45,7 +45,6 @@
 
 
 
-
 - (IBAction)actionNextScreen:(UIButton *)sender {
     
     ANPageViewController* pageVC = (ANPageViewController*) self.parentViewController;
@@ -53,7 +52,6 @@
     [pageVC nextPage:self.index];
     
 }
-
 
 
 

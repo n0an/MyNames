@@ -28,9 +28,24 @@
     
     self.dataSource = self;
     
-    self.pageHeaders = @[@"Hdr1", @"Hdr2"];
-    self.pageSubHeaders = @[@"Sub1", @"Sub2"];
-    self.pageImageContents = @[@"bg04", @"bg05"];
+    self.pageHeaders = @[@"Nicknames Generator",
+                         @"Удобный интерфейс",
+                         @"Гибкие настройки",
+                         @"Больше информации",
+                         @"Избранное"];
+    
+    
+    self.pageSubHeaders = @[@"Генерируйте имена, пока не найдете подходящее",
+                            @"Нажмите на кнопку, или встряхните телефон",
+                            @"Сконфигурируйте генератор по своему желанию",
+                            @"Узнайте больше об имени в каталоге имен",
+                            @"Добавляйте понравившиеся имена в Избранное"];
+    
+    self.pageImageContents = @[@"bg11",
+                               @"bg12",
+                               @"bg13",
+                               @"bg14",
+                               @"bg15"];
     
     
     ANContentPageViewController* firstVC = [self showViewControllerAtIndex:0];
@@ -95,12 +110,9 @@
 }
 
 
-
-
-
-
-
-
+- (BOOL)shouldAutorotate {
+    return NO;
+}
 
 
 
