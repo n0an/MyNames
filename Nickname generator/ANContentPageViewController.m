@@ -13,6 +13,8 @@
 
 @end
 
+extern NSString* const kAppAlreadySeen;
+
 @implementation ANContentPageViewController
 
 - (void)viewDidLoad {
@@ -37,7 +39,7 @@
     
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     
-    [userDefaults setBool:YES forKey:@"appAlreadySeen"];
+    [userDefaults setBool:YES forKey:kAppAlreadySeen];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     

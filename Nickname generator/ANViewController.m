@@ -54,6 +54,10 @@ typedef enum {
 
 @end
 
+
+NSString* const kAppAlreadySeen = @"appAlreadySeen";
+
+
 @implementation ANViewController
 
 - (BOOL)canBecomeFirstResponder {
@@ -264,7 +268,7 @@ typedef enum {
 - (void) checkUserDefaults {
     
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-    BOOL appAlreadySeen = [userDefaults boolForKey:@"appAlreadySeen"];
+    BOOL appAlreadySeen = [userDefaults boolForKey:kAppAlreadySeen];
     
     if (!appAlreadySeen) {
         
