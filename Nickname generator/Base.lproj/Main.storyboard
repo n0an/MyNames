@@ -1028,6 +1028,32 @@
             </objects>
             <point key="canvasLocation" x="459" y="504"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Ujn-Nb-kwe">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ky8-7E-avO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUz-pi-JGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-409" y="1337"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ghf-v4-iTo">
+            <objects>
+                <viewController id="Tkg-rQ-y2R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g13-Tq-Oex"/>
+                        <viewControllerLayoutGuide type="bottom" id="rNe-42-2Wl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gH0-Qb-BGd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBM-l3-Bgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="379" y="1337"/>
+        </scene>
         <!--Избранное-->
         <scene sceneID="f4i-lE-QAa">
             <objects>
