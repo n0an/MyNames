@@ -8,6 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ANContentPageViewController : UIPageViewController
+@interface ANContentPageViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *subHeaderLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImageView;
+
+- (IBAction)actionClose:(UIButton *)sender;
+- (IBAction)actionNextScreen:(UIButton *)sender;
+
+
+
+@property (assign, nonatomic) NSInteger index;
+@property (strong, nonatomic) NSString* header;
+@property (strong, nonatomic) NSString* subHeader;
+@property (strong, nonatomic) NSString* imageFile;
+
+
 
 @end

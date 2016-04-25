@@ -7,6 +7,7 @@
 //
 
 #import "ANContentPageViewController.h"
+#import "ANPageViewController.h"
 
 @interface ANContentPageViewController ()
 
@@ -16,22 +17,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.headerLabel.text = self.header;
+    self.subHeaderLabel.text = self.subHeader;
+    self.contentImageView.image = [UIImage imageNamed:self.imageFile];
+    
+    
+    self.pageControl.currentPage = self.index;
+    
+    self.nextButton.hidden = (self.index == 0) ? NO : YES;
+    
+    self.startButton.hidden = (self.index == 1) ? NO : YES;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (IBAction)actionClose:(UIButton *)sender {
+    
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    [userDefaults setBool:YES forKey:@"appAlreadySeen"];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+
+- (IBAction)actionNextScreen:(UIButton *)sender {
+    
+    ANPageViewController* pageVC = (ANPageViewController*) self.parentViewController;
+    
+    [pageVC nextPage:self.index];
+    
 }
-*/
+
+
+
+
+
 
 @end

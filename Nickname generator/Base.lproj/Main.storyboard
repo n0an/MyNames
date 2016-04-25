@@ -1031,7 +1031,7 @@
         <!--Page View Controller-->
         <scene sceneID="Ujn-Nb-kwe">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ky8-7E-avO" customClass="ANPageViewController" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="ANPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ky8-7E-avO" customClass="ANPageViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUz-pi-JGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-409" y="1337"/>
@@ -1039,7 +1039,7 @@
         <!--Content Page View Controller-->
         <scene sceneID="Ghf-v4-iTo">
             <objects>
-                <viewController id="Tkg-rQ-y2R" customClass="ANContentPageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ANContentPageViewController" id="Tkg-rQ-y2R" customClass="ANContentPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g13-Tq-Oex"/>
                         <viewControllerLayoutGuide type="bottom" id="rNe-42-2Wl"/>
@@ -1048,7 +1048,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rV6-2H-9vh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rV6-2H-9vh">
                                 <rect key="frame" x="0.0" y="240" width="600" height="360"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsZ-lM-DEw">
@@ -1064,6 +1064,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionNextScreen:" destination="Tkg-rQ-y2R" eventType="touchUpInside" id="wd3-XA-QK8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP2-dN-n9I">
                                 <rect key="frame" x="250" y="198" width="100" height="34"/>
@@ -1081,6 +1084,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionClose:" destination="Tkg-rQ-y2R" eventType="touchUpInside" id="7H1-Mb-9N3"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="W0T-eK-OBu">
                                 <rect key="frame" x="289" y="20" width="23" height="37"/>
@@ -1124,6 +1130,14 @@
                             <constraint firstAttribute="trailing" secondItem="ZEg-LV-0OF" secondAttribute="trailing" constant="20" id="uer-g6-dbp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="rV6-2H-9vh" id="Hl1-nh-5ie"/>
+                        <outlet property="headerLabel" destination="BeS-aN-aYZ" id="xXi-Ph-NLz"/>
+                        <outlet property="nextButton" destination="LsZ-lM-DEw" id="hnH-wr-19h"/>
+                        <outlet property="pageControl" destination="W0T-eK-OBu" id="KBM-hZ-uEO"/>
+                        <outlet property="startButton" destination="UP2-dN-n9I" id="Dnn-fC-5Mh"/>
+                        <outlet property="subHeaderLabel" destination="ZEg-LV-0OF" id="yeO-Ae-BhD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBM-l3-Bgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

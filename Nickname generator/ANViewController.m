@@ -17,6 +17,8 @@
 #import "ANNameCategory.h"
 #import "ANNamesFactory.h"
 
+#import "ANPageViewController.h"
+
 typedef enum {
     ANMenuConstantStateClosed = -321,
     ANMenuConstantStateOpened = 1
@@ -60,6 +62,7 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
     
@@ -117,8 +120,17 @@ typedef enum {
     
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: animated];
+    
+    [self checkUserDefaults];
+
+}
+
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+
     
     [self animateGenerateButton];
     
@@ -248,6 +260,21 @@ typedef enum {
 
 
 #pragma mark - Helper Methods
+
+- (void) checkUserDefaults {
+    
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL appAlreadySeen = [userDefaults boolForKey:@"appAlreadySeen"];
+    
+    if (!appAlreadySeen) {
+        
+        ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
+        
+        [self presentViewController:pageVC animated:YES completion:nil];
+    }
+    
+    
+}
 
 - (NSString*) getNamesStringForNamesCount:(NSInteger) count {
     
