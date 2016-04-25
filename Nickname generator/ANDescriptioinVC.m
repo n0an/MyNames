@@ -120,6 +120,8 @@
     [self.firstNameLabel sizeToFit];
     [self.nameCategoryLabel sizeToFit];
     [self.descriptionLabel sizeToFit];
+    
+    self.navigationItem.title = self.currentName.firstName;
 }
 
 - (void) setScrollViewContentSize {

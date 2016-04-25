@@ -112,6 +112,9 @@ typedef enum {
     self.likeNonSetImage = [UIImage imageNamed:@"like1"];
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
     
+    [self animateWheelRotating];
+
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -151,9 +154,8 @@ typedef enum {
     
     [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
     
-//    [self animateWheelFlapOnLaunch];
+
     
-    [self animateWheelRotating];
 }
 
 

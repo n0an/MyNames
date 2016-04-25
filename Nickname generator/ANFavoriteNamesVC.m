@@ -175,12 +175,25 @@
 
 - (void) actionClear:(UIBarButtonItem*) sender {
     
-#warning ADD ALERT CONTROLLER HERE
-
-    [[ANDataManager sharedManager] clearFavoriteNamesDB];
     
-    NSLog(@"\n********* AFTER DELETE *************");
-    [[ANDataManager sharedManager] showAllNames];
+    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Подтвердите удаление" message:@"Очистить избранное? Все избранные имена будут удалены" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[ANDataManager sharedManager] clearFavoriteNamesDB];
+        
+        NSLog(@"\n********* AFTER DELETE *************");
+        [[ANDataManager sharedManager] showAllNames];
+    }];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+
 }
 
 
