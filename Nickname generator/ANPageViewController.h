@@ -10,4 +10,9 @@
 
 @interface ANPageViewController : UIPageViewController
 
+- (void) nextPage:(NSInteger) index;
+
+
+
+
 @end

@@ -22,6 +22,7 @@
 		18267E2B1CB1367C00AB130B /* MythVedicMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18267E2A1CB1367C00AB130B /* MythVedicMasc.plist */; };
 		18267E2D1CB136C400AB130B /* MythVedicMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */; };
 		183410751CCE764000C19817 /* ANPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410741CCE764000C19817 /* ANPageViewController.m */; };
+		183410791CCE7A5900C19817 /* ANContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410781CCE7A5900C19817 /* ANContentPageViewController.m */; };
 		18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18349C231CA9413300A2A68E /* MythGreekMasc.plist */; };
 		184A13B41CC160C20031F217 /* ANFavouriteNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */; };
 		186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186D62201CBC25C60094E885 /* Backgrounds.xcassets */; };
@@ -100,6 +101,8 @@
 		18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythVedicMascImages.xcassets; sourceTree = "<group>"; };
 		183410731CCE764000C19817 /* ANPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPageViewController.h; sourceTree = "<group>"; };
 		183410741CCE764000C19817 /* ANPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPageViewController.m; sourceTree = "<group>"; };
+		183410771CCE7A5900C19817 /* ANContentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANContentPageViewController.h; sourceTree = "<group>"; };
+		183410781CCE7A5900C19817 /* ANContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANContentPageViewController.m; sourceTree = "<group>"; };
 		18349C231CA9413300A2A68E /* MythGreekMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekMasc.plist; sourceTree = "<group>"; };
 		184A13B21CC160C20031F217 /* ANFavouriteNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavouriteNameCell.h; sourceTree = "<group>"; };
 		184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavouriteNameCell.m; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 			children = (
 				183410731CCE764000C19817 /* ANPageViewController.h */,
 				183410741CCE764000C19817 /* ANPageViewController.m */,
+				183410771CCE7A5900C19817 /* ANContentPageViewController.h */,
+				183410781CCE7A5900C19817 /* ANContentPageViewController.m */,
 			);
 			name = PageViewController;
 			sourceTree = "<group>";
@@ -546,6 +551,7 @@
 				18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */,
 				1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */,
 				184A13B41CC160C20031F217 /* ANFavouriteNameCell.m in Sources */,
+				183410791CCE7A5900C19817 /* ANContentPageViewController.m in Sources */,
 				18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
