@@ -709,6 +709,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antonnovoselov.Nickname-generator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "25e1ad3e-e0fd-43ee-b7f4-076859f2223a";
 			};
 			name = Debug;
 		};
@@ -720,6 +721,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antonnovoselov.Nickname-generator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "25e1ad3e-e0fd-43ee-b7f4-076859f2223a";
 			};
 			name = Release;
 		};
