@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIImageView *clickImageView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *shakeImageView;
 
 
 

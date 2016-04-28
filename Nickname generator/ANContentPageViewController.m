@@ -36,11 +36,21 @@ extern NSString* const kAppAlreadySeen;
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
-    if (self.index == 0) {
-        
-        [self sceneOne];
-        
+    switch (self.index) {
+        case 0:
+            [self sceneOne];
+            break;
+            
+        case 1:
+            [self sceneTwo];
+            break;
+            
+        case 2:
+            [self sceneThree];
+            break;
+            
+        default:
+            break;
     }
     
     
@@ -56,11 +66,11 @@ extern NSString* const kAppAlreadySeen;
     
     self.clickImageView.hidden = NO;
     
+    self.firstDimView.hidden = NO;
     self.firstDimView.backgroundColor = [UIColor whiteColor];
-    self.firstDimView.alpha = 0.f;
+    self.firstDimView.alpha = 0;
     
     self.clickImageView.transform = CGAffineTransformMakeTranslation(-CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-    
     
     [UIView animateWithDuration:0.f
                           delay:0.f
@@ -70,9 +80,9 @@ extern NSString* const kAppAlreadySeen;
                          self.firstDimView.alpha = 0.1f;
                      } completion:^(BOOL finished) {
                          
-                         [UIView animateWithDuration:1.4f
+                         [UIView animateWithDuration:1.0f
                                                delay:1.f
-                                             options:UIViewAnimationOptionCurveEaseInOut
+                                             options:UIViewAnimationOptionCurveEaseOut
                                           animations:^{
                                               
                                               self.firstDimView.alpha = 0.8f;
@@ -82,14 +92,60 @@ extern NSString* const kAppAlreadySeen;
                          
                      }];
     
-    
-    
-    
-    
-    
-    
 
 }
+
+
+- (void) sceneTwo {
+    
+    self.shakeImageView.hidden = NO;
+    
+    self.secondDimView.hidden = NO;
+    self.secondDimView.backgroundColor = [UIColor whiteColor];
+    self.secondDimView.alpha = 0;
+    
+    
+    [UIView transitionWithView:self.secondDimView
+                      duration:1.0f
+                       options:UIViewAnimationOptionCurveEaseOut
+                    animations:^{
+                        self.secondDimView.alpha = 0.9f;
+                    } completion:^(BOOL finished) {
+                        [self animateShake];
+                    }];
+    
+    
+    
+    
+}
+
+- (void) sceneThree {
+    
+    self.likeButton.hidden = NO;
+    self.generateButton.hidden = NO;
+    
+    self.clickImageView.hidden = NO;
+    
+    self.secondDimView.hidden = NO;
+    self.secondDimView.backgroundColor = [UIColor whiteColor];
+    self.secondDimView.alpha = 0;
+    
+    self.clickImageView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.view.bounds));
+    
+    [UIView transitionWithView:self.secondDimView
+                      duration:1.0f
+                       options:UIViewAnimationOptionCurveEaseOut
+                    animations:^{
+                        self.secondDimView.alpha = 0.9f;
+                    } completion:^(BOOL finished) {
+                        [self animateShake];
+                    }];
+
+    
+    NSLog(@"likeBtn position = %d", [self.view sub];);
+    
+}
+
 
 
 #pragma mark - Helper methods
@@ -103,6 +159,44 @@ extern NSString* const kAppAlreadySeen;
                      } completion:^(BOOL finished) {
                          
                      }];
+    
+}
+
+- (void) animateShake {
+    
+    [UIView animateKeyframesWithDuration:1.0 delay:0.0 options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
+        
+        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
+            self.shakeImageView.transform = CGAffineTransformMakeTranslation(-100, 0);
+            [self.view layoutIfNeeded];
+            
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:0.25 animations:^{
+            self.shakeImageView.transform = CGAffineTransformMakeTranslation(100, 0);
+            [self.view layoutIfNeeded];
+
+        }];
+        
+        [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:0.125 animations:^{
+            self.shakeImageView.transform = CGAffineTransformMakeTranslation(-50, 0);
+            [self.view layoutIfNeeded];
+
+        }];
+        
+        [UIView addKeyframeWithRelativeStartTime:0.875 relativeDuration:0.0625 animations:^{
+            self.shakeImageView.transform = CGAffineTransformMakeTranslation(50, 0);
+            [self.view layoutIfNeeded];
+
+        }];
+        
+        [UIView addKeyframeWithRelativeStartTime:0.9375 relativeDuration:0.0625 animations:^{
+            self.shakeImageView.transform = CGAffineTransformMakeTranslation(0, 0);
+            [self.view layoutIfNeeded];
+
+        }];
+        
+    } completion:nil];
+    
     
 }
 
