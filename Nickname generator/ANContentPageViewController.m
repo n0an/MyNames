@@ -91,8 +91,11 @@ extern NSString* const kAppAlreadySeen;
                                               
                                               self.firstDimView.alpha = 0.8f;
                                           } completion:^(BOOL finished) {
-//                                              [self animateClickImageViewTranslateToPoint:CGPointMake(0, 0)];
-                                              [self translateView:self.clickImageView toPoint:CGPointMake(0, 0) completion:nil];
+                                              [self translateView:self.clickImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
+                                              
+                                                  [self animateGenerateButtonOnClick];
+                                              
+                                              }];
                                           }];
                          
                      }];
@@ -148,8 +151,11 @@ extern NSString* const kAppAlreadySeen;
                         
                         CGFloat diff = self.likeButton.center.y - self.generateButton.center.y;
                         
-//                        [self animateClickImageViewTranslateToPoint:CGPointMake(0, diff)];
-                        [self translateView:self.clickImageView toPoint:CGPointMake(0, diff) completion:nil];
+                        [self translateView:self.clickImageView toPoint:CGPointMake(0, diff) completion:^(BOOL finished) {
+                            
+                            [self.likeButton setImage:[UIImage imageNamed:@"like1set"] forState:UIControlStateNormal];
+                            
+                        }];
 
 
                     }];
@@ -167,6 +173,9 @@ extern NSString* const kAppAlreadySeen;
     self.secondDimView.backgroundColor = [UIColor whiteColor];
     self.secondDimView.alpha = 0;
     
+    self.settingsViewLeadingConstraint.constant = -321;
+    [self.view layoutIfNeeded];
+
     
     [UIView transitionWithView:self.secondDimView
                       duration:1.0f
@@ -255,6 +264,26 @@ extern NSString* const kAppAlreadySeen;
     
     
 }
+
+- (void) animateGenerateButtonOnClick {
+    
+    [UIView animateWithDuration:0.15f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.generateButton.transform = CGAffineTransformMakeScale(1.2f, 1.2f);
+                     } completion:^(BOOL finished) {
+                         
+                         [UIView animateWithDuration:0.15f animations:^{
+                             self.generateButton.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+                         }];
+                         
+                         
+                         
+                         
+                     }];
+}
+
 
 
 
