@@ -65,6 +65,11 @@ extern NSString* const kAppAlreadySeen;
 
 - (void) scene01 {
     
+    self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
+    
+    
+
+    
     self.likeButton.hidden = NO;
     self.generateButton.hidden = NO;
     
@@ -83,9 +88,10 @@ extern NSString* const kAppAlreadySeen;
                          
                          self.firstDimView.alpha = 0.1f;
                      } completion:^(BOOL finished) {
+                         [self animateNextSlideButton];
                          
                          [UIView animateWithDuration:0.5f
-                                               delay:1.f
+                                               delay:0.f
                                              options:UIViewAnimationOptionCurveEaseIn
                                           animations:^{
                                               
@@ -105,6 +111,10 @@ extern NSString* const kAppAlreadySeen;
 
 
 - (void) scene02 {
+    
+    self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
+    
+    [self animateNextSlideButton];
     
     self.shakeImageView.hidden = NO;
     
@@ -128,6 +138,10 @@ extern NSString* const kAppAlreadySeen;
 }
 
 - (void) scene03 {
+    
+    self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
+    
+    [self animateNextSlideButton];
     
     self.likeButton.hidden = NO;
     self.generateButton.hidden = NO;
@@ -163,6 +177,10 @@ extern NSString* const kAppAlreadySeen;
 }
 
 - (void) scene04 {
+    
+    self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
+    
+    [self animateNextSlideButton];
     
     self.viewWithControls.hidden = NO;
     self.dragImageView.hidden = NO;
@@ -282,6 +300,24 @@ extern NSString* const kAppAlreadySeen;
                          
                          
                      }];
+}
+
+
+- (void) animateNextSlideButton {
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.6f
+         usingSpringWithDamping:0.5f
+          initialSpringVelocity:0.5f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.nextButton.transform = CGAffineTransformMakeTranslation(0, 0);
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+
+    
 }
 
 

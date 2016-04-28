@@ -1060,23 +1060,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diceBG03_1920" translatesAutoresizingMaskIntoConstraints="NO" id="rV6-2H-9vh">
                                 <rect key="frame" x="0.0" y="240" width="600" height="360"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsZ-lM-DEw">
-                                <rect key="frame" x="285" y="200" width="30" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.98804439109999997" blue="0.61530338669999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2nQ-0U-eKd"/>
-                                    <constraint firstAttribute="width" constant="30" id="An1-p1-JdT"/>
-                                </constraints>
-                                <state key="normal" image="next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="actionNextScreen:" destination="Tkg-rQ-y2R" eventType="touchUpInside" id="wd3-XA-QK8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP2-dN-n9I">
                                 <rect key="frame" x="250" y="198" width="100" height="34"/>
                                 <color key="backgroundColor" red="0.019760560244321823" green="0.57087606191635132" blue="0.97810298204421997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1402,6 +1385,30 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsZ-lM-DEw">
+                                <rect key="frame" x="492" y="195" width="88" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2nQ-0U-eKd"/>
+                                    <constraint firstAttribute="width" constant="88" id="7vK-m0-wpQ"/>
+                                    <constraint firstAttribute="width" constant="30" id="An1-p1-JdT"/>
+                                    <constraint firstAttribute="height" constant="35" id="WaA-82-aao"/>
+                                </constraints>
+                                <state key="normal" image="nextSlide"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2nQ-0U-eKd"/>
+                                        <exclude reference="An1-p1-JdT"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="actionNextScreen:" destination="Tkg-rQ-y2R" eventType="touchUpInside" id="wd3-XA-QK8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1413,6 +1420,7 @@
                             <constraint firstItem="LsZ-lM-DEw" firstAttribute="centerY" secondItem="UP2-dN-n9I" secondAttribute="centerY" id="48Q-I3-Tix"/>
                             <constraint firstItem="LsZ-lM-DEw" firstAttribute="centerX" secondItem="gH0-Qb-BGd" secondAttribute="centerX" id="5O7-66-wRn"/>
                             <constraint firstItem="UP2-dN-n9I" firstAttribute="top" secondItem="ZEg-LV-0OF" secondAttribute="bottom" constant="8" id="8VA-zp-sZf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LsZ-lM-DEw" secondAttribute="trailing" id="8yZ-R8-5dz"/>
                             <constraint firstItem="PCQ-Du-tNg" firstAttribute="trailing" secondItem="rV6-2H-9vh" secondAttribute="trailing" id="BUD-R0-YMA"/>
                             <constraint firstItem="BeS-aN-aYZ" firstAttribute="top" secondItem="W0T-eK-OBu" secondAttribute="bottom" constant="8" id="GPT-tD-QmW"/>
                             <constraint firstItem="yca-B2-JhX" firstAttribute="leading" secondItem="gH0-Qb-BGd" secondAttribute="leadingMargin" constant="-321" id="HOo-HU-bJt"/>
@@ -1450,6 +1458,7 @@
                             <mask key="constraints">
                                 <exclude reference="YZB-rr-ET6"/>
                                 <exclude reference="48Q-I3-Tix"/>
+                                <exclude reference="5O7-66-wRn"/>
                                 <exclude reference="lue-A9-F6E"/>
                             </mask>
                         </variation>
@@ -1511,7 +1520,7 @@
         <image name="like1set" width="498" height="497"/>
         <image name="masc01" width="60" height="60"/>
         <image name="masc02" width="60" height="60"/>
-        <image name="next" width="256" height="256"/>
+        <image name="nextSlide" width="88" height="35"/>
         <image name="norseBG05_2329" width="250" height="776"/>
         <image name="norseBG07_5713" width="858" height="1269"/>
         <image name="refresh02" width="25" height="24"/>
