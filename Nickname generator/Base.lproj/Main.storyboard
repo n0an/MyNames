@@ -1111,31 +1111,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCQ-Du-tNg">
-                                <rect key="frame" x="0.0" y="240" width="600" height="360"/>
-                                <color key="backgroundColor" white="1" alpha="0.85158889358108103" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCF-Q2-S80">
-                                <rect key="frame" x="270" y="390" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="tCF-Q2-S80" secondAttribute="height" multiplier="1:1" id="XCi-aY-2or"/>
-                                </constraints>
-                                <state key="normal" image="refresh22"/>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="XCi-aY-2or"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="actionGenerateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jqo-5k-8MT"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDo-vA-Rv8">
-                                <rect key="frame" x="0.0" y="240" width="600" height="360"/>
-                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-Jv-v4C">
-                                <rect key="frame" x="278" y="498" width="44" height="41.5"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-Jv-v4C">
+                                <rect key="frame" x="280.5" y="507" width="39" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NR3-Jv-v4C" secondAttribute="height" multiplier="44:41" id="FFE-2A-D7r"/>
                                 </constraints>
@@ -1149,8 +1126,31 @@
                                     <action selector="actionlikeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2V-p3-uxI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="click" translatesAutoresizingMaskIntoConstraints="NO" id="73u-mF-dUE">
-                                <rect key="frame" x="260" y="420" width="48" height="70"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCQ-Du-tNg">
+                                <rect key="frame" x="0.0" y="240" width="600" height="360"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCF-Q2-S80">
+                                <rect key="frame" x="273" y="393" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tCF-Q2-S80" secondAttribute="height" multiplier="1:1" id="XCi-aY-2or"/>
+                                </constraints>
+                                <state key="normal" image="refresh22"/>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="XCi-aY-2or"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="actionGenerateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jqo-5k-8MT"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDo-vA-Rv8">
+                                <rect key="frame" x="0.0" y="240" width="600" height="360"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="click" translatesAutoresizingMaskIntoConstraints="NO" id="73u-mF-dUE">
+                                <rect key="frame" x="235" y="437" width="48" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="CbA-7a-lkT"/>
                                     <constraint firstAttribute="width" constant="48" id="zub-Nj-4Tg"/>
@@ -1172,7 +1172,7 @@
                             <constraint firstItem="NR3-Jv-v4C" firstAttribute="width" secondItem="tCF-Q2-S80" secondAttribute="width" multiplier="11:15" id="Jud-tj-0Cx"/>
                             <constraint firstItem="ZEg-LV-0OF" firstAttribute="top" secondItem="BeS-aN-aYZ" secondAttribute="bottom" constant="8" id="KjP-6Z-LFQ"/>
                             <constraint firstItem="tCF-Q2-S80" firstAttribute="centerY" secondItem="rV6-2H-9vh" secondAttribute="centerY" id="MhN-0T-nuO"/>
-                            <constraint firstItem="73u-mF-dUE" firstAttribute="top" secondItem="tCF-Q2-S80" secondAttribute="bottom" constant="-30" id="NhC-Vw-XPR"/>
+                            <constraint firstItem="73u-mF-dUE" firstAttribute="top" secondItem="tCF-Q2-S80" secondAttribute="bottom" constant="-10" id="NhC-Vw-XPR"/>
                             <constraint firstItem="rV6-2H-9vh" firstAttribute="height" secondItem="gH0-Qb-BGd" secondAttribute="height" multiplier="0.6" id="NvH-YN-uZV"/>
                             <constraint firstItem="PCQ-Du-tNg" firstAttribute="top" secondItem="rV6-2H-9vh" secondAttribute="top" id="Pdq-KA-kRa"/>
                             <constraint firstItem="UP2-dN-n9I" firstAttribute="centerX" secondItem="gH0-Qb-BGd" secondAttribute="centerX" id="R0V-5J-h1v"/>
@@ -1186,9 +1186,9 @@
                             <constraint firstItem="BeS-aN-aYZ" firstAttribute="top" secondItem="g13-Tq-Oex" secondAttribute="bottom" constant="30" id="YZB-rr-ET6"/>
                             <constraint firstItem="PCQ-Du-tNg" firstAttribute="leading" secondItem="rV6-2H-9vh" secondAttribute="leading" id="Yv7-D5-zuA"/>
                             <constraint firstItem="rV6-2H-9vh" firstAttribute="top" secondItem="LsZ-lM-DEw" secondAttribute="bottom" constant="10" id="Z1Y-OL-uTW"/>
-                            <constraint firstItem="tCF-Q2-S80" firstAttribute="leading" secondItem="73u-mF-dUE" secondAttribute="trailing" constant="-38" id="ZpX-71-1JK"/>
+                            <constraint firstItem="tCF-Q2-S80" firstAttribute="leading" secondItem="73u-mF-dUE" secondAttribute="trailing" constant="-10" id="ZpX-71-1JK"/>
                             <constraint firstItem="rNe-42-2Wl" firstAttribute="top" secondItem="rV6-2H-9vh" secondAttribute="bottom" id="dA7-4l-OQH"/>
-                            <constraint firstItem="tCF-Q2-S80" firstAttribute="width" secondItem="rV6-2H-9vh" secondAttribute="width" multiplier="0.1" id="dBB-bM-0rT"/>
+                            <constraint firstItem="tCF-Q2-S80" firstAttribute="height" secondItem="rV6-2H-9vh" secondAttribute="height" multiplier="0.15" id="dBB-bM-0rT"/>
                             <constraint firstItem="cDo-vA-Rv8" firstAttribute="bottom" secondItem="rV6-2H-9vh" secondAttribute="bottom" id="dJI-A1-m2x"/>
                             <constraint firstItem="rV6-2H-9vh" firstAttribute="leading" secondItem="gH0-Qb-BGd" secondAttribute="leading" id="fEI-N9-CpA"/>
                             <constraint firstItem="PCQ-Du-tNg" firstAttribute="bottom" secondItem="rV6-2H-9vh" secondAttribute="bottom" id="hfo-yb-tm3"/>

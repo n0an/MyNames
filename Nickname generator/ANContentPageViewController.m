@@ -33,6 +33,79 @@ extern NSString* const kAppAlreadySeen;
     
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+    if (self.index == 0) {
+        
+        [self sceneOne];
+        
+    }
+    
+    
+    
+    
+}
+
+
+- (void) sceneOne {
+    
+    self.likeButton.hidden = NO;
+    self.generateButton.hidden = NO;
+    
+    self.clickImageView.hidden = NO;
+    
+    self.firstDimView.backgroundColor = [UIColor whiteColor];
+    self.firstDimView.alpha = 0.f;
+    
+    self.clickImageView.transform = CGAffineTransformMakeTranslation(-CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
+    
+    
+    [UIView animateWithDuration:0.f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         self.firstDimView.alpha = 0.1f;
+                     } completion:^(BOOL finished) {
+                         
+                         [UIView animateWithDuration:1.4f
+                                               delay:1.f
+                                             options:UIViewAnimationOptionCurveEaseInOut
+                                          animations:^{
+                                              
+                                              self.firstDimView.alpha = 0.8f;
+                                          } completion:^(BOOL finished) {
+                                              [self animateClickImageView];
+                                          }];
+                         
+                     }];
+    
+    
+    
+    
+    
+    
+    
+
+}
+
+
+#pragma mark - Helper methods
+
+- (void) animateClickImageView {
+    
+    [UIView animateWithDuration:1.f
+                     animations:^{
+                         self.clickImageView.transform = CGAffineTransformIdentity;
+
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+    
+}
+
 
 
 - (IBAction)actionClose:(UIButton *)sender {
