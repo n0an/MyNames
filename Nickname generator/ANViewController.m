@@ -270,16 +270,16 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL appAlreadySeen = [userDefaults boolForKey:kAppAlreadySeen];
     
-//    if (!appAlreadySeen) {
-//        
-//        ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
-//        
-//        [self presentViewController:pageVC animated:YES completion:nil];
-//    }
+    if (!appAlreadySeen) {
+        
+        ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
+        
+        [self presentViewController:pageVC animated:YES completion:nil];
+    }
     
-    ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
-    
-    [self presentViewController:pageVC animated:YES completion:nil];
+//    ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
+//    
+//    [self presentViewController:pageVC animated:YES completion:nil];
     
     
 }

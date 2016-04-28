@@ -42,8 +42,8 @@
                             @"Узнайте больше об имени в каталоге имен"];
     
     self.pageImageContents = @[@"diceBG03_1920",
-                               @"bg12",
-                               @"bg13",
+                               @"celticBG03_1200",
+                               @"egyptBG14_1030",
                                @"bg14",
                                @"descr"];
     

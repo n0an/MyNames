@@ -53,6 +53,10 @@ extern NSString* const kAppAlreadySeen;
             [self scene04];
             break;
             
+        case 4:
+            [self scene05];
+            break;
+            
         default:
             break;
     }
@@ -99,7 +103,7 @@ extern NSString* const kAppAlreadySeen;
                                           } completion:^(BOOL finished) {
                                               [self translateView:self.clickImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
                                               
-                                                  [self animateGenerateButtonOnClick];
+                                                  [self animateBlinkButton:self.generateButton withDelay:0.f];
                                               
                                               }];
                                           }];
@@ -214,6 +218,14 @@ extern NSString* const kAppAlreadySeen;
     
 }
 
+- (void) scene05 {
+    
+    
+    [self animateBlinkButton:self.startButton withDelay:0.7f];
+
+    
+}
+
 
 
 #pragma mark - Helper methods
@@ -283,17 +295,18 @@ extern NSString* const kAppAlreadySeen;
     
 }
 
-- (void) animateGenerateButtonOnClick {
+
+- (void) animateBlinkButton:(UIButton*) button withDelay:(CGFloat) delay {
     
     [UIView animateWithDuration:0.15f
-                          delay:0.f
+                          delay:delay
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                         self.generateButton.transform = CGAffineTransformMakeScale(1.2f, 1.2f);
+                         button.transform = CGAffineTransformMakeScale(1.2f, 1.2f);
                      } completion:^(BOOL finished) {
                          
                          [UIView animateWithDuration:0.15f animations:^{
-                             self.generateButton.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+                             button.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
                          }];
                          
                          
@@ -301,6 +314,7 @@ extern NSString* const kAppAlreadySeen;
                          
                      }];
 }
+
 
 
 - (void) animateNextSlideButton {
