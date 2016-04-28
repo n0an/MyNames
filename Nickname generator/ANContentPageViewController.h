@@ -30,12 +30,15 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIImageView *clickImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *dragImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *shakeImageView;
 
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *settingsViewLeadingConstraint;
 
 
+@property (weak, nonatomic) IBOutlet UIView *viewWithControls;
 
 
 - (IBAction)actionClose:(UIButton *)sender;

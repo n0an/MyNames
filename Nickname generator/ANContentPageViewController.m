@@ -38,15 +38,19 @@ extern NSString* const kAppAlreadySeen;
     
     switch (self.index) {
         case 0:
-            [self sceneOne];
+            [self scene01];
             break;
             
         case 1:
-            [self sceneTwo];
+            [self scene02];
             break;
             
         case 2:
-            [self sceneThree];
+            [self scene03];
+            break;
+            
+        case 3:
+            [self scene04];
             break;
             
         default:
@@ -59,7 +63,7 @@ extern NSString* const kAppAlreadySeen;
 }
 
 
-- (void) sceneOne {
+- (void) scene01 {
     
     self.likeButton.hidden = NO;
     self.generateButton.hidden = NO;
@@ -80,23 +84,24 @@ extern NSString* const kAppAlreadySeen;
                          self.firstDimView.alpha = 0.1f;
                      } completion:^(BOOL finished) {
                          
-                         [UIView animateWithDuration:1.0f
+                         [UIView animateWithDuration:0.5f
                                                delay:1.f
                                              options:UIViewAnimationOptionCurveEaseIn
                                           animations:^{
                                               
                                               self.firstDimView.alpha = 0.8f;
                                           } completion:^(BOOL finished) {
-                                              [self animateClickImageViewTranslateToPoint:CGPointMake(0, 0)];
+//                                              [self animateClickImageViewTranslateToPoint:CGPointMake(0, 0)];
+                                              [self translateView:self.clickImageView toPoint:CGPointMake(0, 0) completion:nil];
                                           }];
                          
                      }];
     
-
+    
 }
 
 
-- (void) sceneTwo {
+- (void) scene02 {
     
     self.shakeImageView.hidden = NO;
     
@@ -119,7 +124,7 @@ extern NSString* const kAppAlreadySeen;
     
 }
 
-- (void) sceneThree {
+- (void) scene03 {
     
     self.likeButton.hidden = NO;
     self.generateButton.hidden = NO;
@@ -143,15 +148,41 @@ extern NSString* const kAppAlreadySeen;
                         
                         CGFloat diff = self.likeButton.center.y - self.generateButton.center.y;
                         
-                        [self animateClickImageViewTranslateToPoint:CGPointMake(0, diff)];
+//                        [self animateClickImageViewTranslateToPoint:CGPointMake(0, diff)];
+                        [self translateView:self.clickImageView toPoint:CGPointMake(0, diff) completion:nil];
 
-                        
-                        
+
                     }];
-    
-    
+ 
+}
 
+- (void) scene04 {
     
+    self.viewWithControls.hidden = NO;
+    self.dragImageView.hidden = NO;
+    
+    self.dragImageView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.viewWithControls.bounds));
+    
+    self.secondDimView.hidden = NO;
+    self.secondDimView.backgroundColor = [UIColor whiteColor];
+    self.secondDimView.alpha = 0;
+    
+    
+    [UIView transitionWithView:self.secondDimView
+                      duration:1.0f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+                        self.secondDimView.alpha = 0.9f;
+                    } completion:^(BOOL finished) {
+                        
+                        [self translateView:self.dragImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
+                            [self animateViewWithControls];
+                        }];
+                        
+                        
+
+                    }];
+
     
     
 }
@@ -160,27 +191,14 @@ extern NSString* const kAppAlreadySeen;
 
 #pragma mark - Helper methods
 
-- (void) animateClickImageView {
+
+- (void) translateView:(UIView*) view toPoint:(CGPoint) dstPoint completion:(void (^)(BOOL finished))completion {
     
     [UIView animateWithDuration:1.f
                      animations:^{
-                         self.clickImageView.transform = CGAffineTransformIdentity;
-
-                     } completion:^(BOOL finished) {
+                         view.transform = CGAffineTransformMakeTranslation(dstPoint.x, dstPoint.y);
                          
-                     }];
-    
-}
-
-- (void) animateClickImageViewTranslateToPoint:(CGPoint) dstPoint {
-    
-    [UIView animateWithDuration:1.f
-                     animations:^{
-                         self.clickImageView.transform = CGAffineTransformMakeTranslation(dstPoint.x, dstPoint.y);
-                         
-                     } completion:^(BOOL finished) {
-                         
-                     }];
+                     } completion: completion];
     
 }
 
@@ -224,6 +242,23 @@ extern NSString* const kAppAlreadySeen;
 }
 
 
+- (void) animateViewWithControls {
+    
+    
+    [UIView animateWithDuration:1.5f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.settingsViewLeadingConstraint.constant = -10;
+                         [self.view layoutIfNeeded];
+                     } completion:nil];
+    
+    
+}
+
+
+
+#pragma mark - Actions
 
 - (IBAction)actionClose:(UIButton *)sender {
     
