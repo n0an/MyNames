@@ -74,7 +74,7 @@ extern NSString* const kAppAlreadySeen;
     
     [UIView animateWithDuration:0.f
                           delay:0.f
-                        options:UIViewAnimationOptionCurveEaseInOut
+                        options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          
                          self.firstDimView.alpha = 0.1f;
@@ -82,12 +82,12 @@ extern NSString* const kAppAlreadySeen;
                          
                          [UIView animateWithDuration:1.0f
                                                delay:1.f
-                                             options:UIViewAnimationOptionCurveEaseOut
+                                             options:UIViewAnimationOptionCurveEaseIn
                                           animations:^{
                                               
                                               self.firstDimView.alpha = 0.8f;
                                           } completion:^(BOOL finished) {
-                                              [self animateClickImageView];
+                                              [self animateClickImageViewTranslateToPoint:CGPointMake(0, 0)];
                                           }];
                          
                      }];
@@ -107,7 +107,7 @@ extern NSString* const kAppAlreadySeen;
     
     [UIView transitionWithView:self.secondDimView
                       duration:1.0f
-                       options:UIViewAnimationOptionCurveEaseOut
+                       options:UIViewAnimationOptionCurveEaseIn
                     animations:^{
                         self.secondDimView.alpha = 0.9f;
                     } completion:^(BOOL finished) {
@@ -132,17 +132,27 @@ extern NSString* const kAppAlreadySeen;
     
     self.clickImageView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.view.bounds));
     
+    [self.view bringSubviewToFront:self.likeButton];
+    
     [UIView transitionWithView:self.secondDimView
                       duration:1.0f
-                       options:UIViewAnimationOptionCurveEaseOut
+                       options:UIViewAnimationOptionCurveEaseIn
                     animations:^{
                         self.secondDimView.alpha = 0.9f;
                     } completion:^(BOOL finished) {
-                        [self animateShake];
+                        
+                        CGFloat diff = self.likeButton.center.y - self.generateButton.center.y;
+                        
+                        [self animateClickImageViewTranslateToPoint:CGPointMake(0, diff)];
+
+                        
+                        
                     }];
+    
+    
 
     
-    NSLog(@"likeBtn position = %d", [self.view sub];);
+    
     
 }
 
@@ -161,6 +171,19 @@ extern NSString* const kAppAlreadySeen;
                      }];
     
 }
+
+- (void) animateClickImageViewTranslateToPoint:(CGPoint) dstPoint {
+    
+    [UIView animateWithDuration:1.f
+                     animations:^{
+                         self.clickImageView.transform = CGAffineTransformMakeTranslation(dstPoint.x, dstPoint.y);
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+    
+}
+
 
 - (void) animateShake {
     
