@@ -20,6 +20,23 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIImageView *contentImageView;
 
+
+
+
+@property (weak, nonatomic) IBOutlet UIView *firstDimView;
+@property (weak, nonatomic) IBOutlet UIView *secondDimView;
+
+@property (weak, nonatomic) IBOutlet UIButton *generateButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIImageView *clickImageView;
+
+
+
+
+
+
+
 - (IBAction)actionClose:(UIButton *)sender;
 - (IBAction)actionNextScreen:(UIButton *)sender;
 
