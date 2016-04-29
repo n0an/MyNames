@@ -1081,30 +1081,36 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="W0T-eK-OBu">
-                                <rect key="frame" x="265" y="20" width="71" height="35"/>
+                                <rect key="frame" x="265" y="20" width="71" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="u4n-Az-lF4"/>
+                                    <constraint firstAttribute="height" constant="20" id="u4n-Az-lF4"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" red="0.070588235294117646" green="0.38039215686274508" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubHeader" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-LV-0OF">
-                                <rect key="frame" x="20" y="110" width="560" height="79.5"/>
+                                <rect key="frame" x="20" y="87" width="560" height="102.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeS-aN-aYZ">
-                                <rect key="frame" x="20" y="63" width="560" height="39"/>
+                                <rect key="frame" x="20" y="40" width="560" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="1He-Iq-BTD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                </variation>
                             </label>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-Jv-v4C">
-                                <rect key="frame" x="280" y="507" width="39" height="36"/>
+                                <rect key="frame" x="280" y="486" width="39" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NR3-Jv-v4C" secondAttribute="height" multiplier="44:41" id="FFE-2A-D7r"/>
                                 </constraints>
@@ -1422,10 +1428,11 @@
                             <constraint firstItem="UP2-dN-n9I" firstAttribute="top" secondItem="ZEg-LV-0OF" secondAttribute="bottom" constant="8" id="8VA-zp-sZf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LsZ-lM-DEw" secondAttribute="trailing" id="8yZ-R8-5dz"/>
                             <constraint firstItem="PCQ-Du-tNg" firstAttribute="trailing" secondItem="rV6-2H-9vh" secondAttribute="trailing" id="BUD-R0-YMA"/>
-                            <constraint firstItem="BeS-aN-aYZ" firstAttribute="top" secondItem="W0T-eK-OBu" secondAttribute="bottom" constant="8" id="GPT-tD-QmW"/>
+                            <constraint firstItem="BeS-aN-aYZ" firstAttribute="top" secondItem="W0T-eK-OBu" secondAttribute="bottom" id="GPT-tD-QmW"/>
                             <constraint firstItem="yca-B2-JhX" firstAttribute="leading" secondItem="gH0-Qb-BGd" secondAttribute="leadingMargin" constant="-321" id="HOo-HU-bJt"/>
                             <constraint firstItem="tCF-Q2-S80" firstAttribute="top" secondItem="NR3-Jv-v4C" secondAttribute="bottom" constant="-150" id="JCT-De-IXT"/>
                             <constraint firstItem="NR3-Jv-v4C" firstAttribute="width" secondItem="tCF-Q2-S80" secondAttribute="width" multiplier="11:15" id="Jud-tj-0Cx"/>
+                            <constraint firstItem="NR3-Jv-v4C" firstAttribute="centerY" secondItem="rV6-2H-9vh" secondAttribute="centerY" multiplier="1.2" id="K4Q-ZM-mL3"/>
                             <constraint firstItem="ZEg-LV-0OF" firstAttribute="top" secondItem="BeS-aN-aYZ" secondAttribute="bottom" constant="8" id="KjP-6Z-LFQ"/>
                             <constraint firstItem="tCF-Q2-S80" firstAttribute="centerY" secondItem="rV6-2H-9vh" secondAttribute="centerY" id="MhN-0T-nuO"/>
                             <constraint firstItem="73u-mF-dUE" firstAttribute="top" secondItem="tCF-Q2-S80" secondAttribute="bottom" constant="-10" id="NhC-Vw-XPR"/>
@@ -1457,6 +1464,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="YZB-rr-ET6"/>
+                                <exclude reference="JCT-De-IXT"/>
                                 <exclude reference="48Q-I3-Tix"/>
                                 <exclude reference="5O7-66-wRn"/>
                                 <exclude reference="lue-A9-F6E"/>
