@@ -37,6 +37,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.selectedGender = ANGenderAll;
+    
     
     UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
     
@@ -54,7 +56,7 @@
 //
 //    [self.tableView setSeparatorColor:separatorColor];
     
-    self.selectedGender = ANGenderAll;
+    
     
 }
 
