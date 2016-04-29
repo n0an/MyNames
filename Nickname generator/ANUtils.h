@@ -15,9 +15,9 @@
 
 //#define PRODUCTION_BUILD
 
-#define LOGS_ENABLED 1
+#define LOGS_ENABLED 0
 
-#define LOGS_NOTIFICATION_ENABLED 1
+#define LOGS_NOTIFICATION_ENABLED 0
 
 
 #define APP_SHORT_NAME @"NicknameGen"

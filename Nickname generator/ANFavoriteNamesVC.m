@@ -39,36 +39,16 @@
     
     self.selectedGender = ANGenderAll;
     
-    
     UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
-    
     UIBarButtonItem* clearButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"clear32"] landscapeImagePhone:[UIImage imageNamed:@"clear24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionClear:)];
 
-    
     self.navigationItem.leftBarButtonItem = editButton;
     self.navigationItem.rightBarButtonItem = clearButton;
     
-    
-    // !!!IMPORTANT!!!
+
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-
-//    UIColor *separatorColor = RGBA(10, 10, 10, 255);
-//
-//    [self.tableView setSeparatorColor:separatorColor];
-    
-    
     
 }
-
-
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    // !!!IMPORTANT!!!
-//    self.navigationController.hidesBarsOnSwipe = YES;
-//    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
-
 
 
 
@@ -183,8 +163,6 @@
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [[ANDataManager sharedManager] clearFavoriteNamesDB];
         
-        NSLog(@"\n********* AFTER DELETE *************");
-        [[ANDataManager sharedManager] showAllNames];
     }];
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleCancel handler:nil];
@@ -195,10 +173,7 @@
     
     [self presentViewController:alertController animated:YES completion:nil];
     
-
 }
-
-
 
 
 - (IBAction)actionGndrBtnPressed:(id)sender {
@@ -297,7 +272,6 @@
     ANFavouriteNameCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-//    cell.genderLabel.text = !favoriteName.nameGender.boolValue ? @"Masculine" : @"Feminine";
     
     NSString* genderImage = !favoriteName.nameGender.boolValue ? @"masc02" : @"fem02";
     
@@ -335,8 +309,6 @@
 
 
 
-
-
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -359,7 +331,6 @@
         vc.namesArray = @[originName];
         vc.isCustomNavigationBar = YES;
         
-//        [self.navigationController pushViewController:vc animated:YES];
         
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
         
@@ -391,22 +362,13 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     
-    NSLog(@"textDidChange searchText = %@", searchText);
-    
     self.searchPredicateString = searchText;
     
     [self configureFetchResultsController];
     
-    
     [self.tableView reloadData];
     
-    
 }
-
-
-
-
-
 
 
 
