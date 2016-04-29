@@ -329,7 +329,6 @@
         ANName* originName = [[ANNamesFactory sharedFactory] getNameForID:nameID];
         
         vc.namesArray = @[originName];
-        vc.isCustomNavigationBar = YES;
         
         
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];

@@ -564,7 +564,6 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
         
         vc.namesArray = self.namesWithDescriptions;
-        vc.isCustomNavigationBar = YES;
         
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
         

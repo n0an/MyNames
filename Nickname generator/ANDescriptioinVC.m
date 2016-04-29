@@ -66,9 +66,6 @@
         self.navigationItem.rightBarButtonItems = @[nextButton, fixedSpace, previousButton];
     }
     
-//    [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
-//    
-//    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     UISwipeGestureRecognizer* rightSwipeGesture =
     [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleRightSwipe:)];
@@ -128,9 +125,7 @@
     CGRect contentRect = CGRectZero;
     
     for (UIView *view in self.contenView.subviews) {
-        NSLog(@"view size = {%f, %f}", view.bounds.size.width, view.bounds.size.height);
         contentRect = CGRectUnion(contentRect, view.frame);
-        
     }
     
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(contentRect));
@@ -139,7 +134,6 @@
 
 
 - (void) iterateNameWithDirection:(ANNameIterationDirection) iterationDirection {
-    
     
     NSInteger currInd = [self.namesArray indexOfObject:self.currentName];
     
@@ -174,16 +168,11 @@
     
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.currentName];
     
-    NSLog(@"self.isNameFavorite = %d", self.isNameFavorite);
-    
     [self refreshLikeButton];
-    
     
     [self setScrollViewContentSize];
 
-    
 }
-
 
 
 - (void) setImageAndImageHeight {
@@ -204,8 +193,6 @@
 
 
 - (void) refreshLikeButton {
-    
-    NSLog(@"firstName = %d", self.isNameFavorite);
     
     if (self.isNameFavorite) {
         
@@ -258,15 +245,10 @@
         
         [[ANDataManager sharedManager] deleteFavoriteName:self.currentName];
         
-        ANLog(@"\n=========== LIKE PRESSED . FAVORITE DELETED ===========");
-        [[ANDataManager sharedManager] showAllNames];
         
     } else {
         
         [[ANDataManager sharedManager] addFavoriteName:self.currentName];
-        
-        ANLog(@"\n=========== LIKE PRESSED . FAVORITE ADDED ===========");
-        [[ANDataManager sharedManager] showAllNames];
         
     }
     
