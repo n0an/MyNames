@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="ANFavoriteName" representedClassName="ANFavoriteName" syncable="YES">
+        <attribute name="nameCategoryTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameFirstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameGender" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nameID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameImageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameURL" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ANFavoriteName" positionX="-441" positionY="-30" width="128" height="148"/>
+    </elements>
+</model>

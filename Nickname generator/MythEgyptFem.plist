@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   MythEgyptFem.plist
+   Nickname generator
+
+   Created by Anton Novoselov on 21/04/16.
+   Copyright (c) 2016 Anton Novoselov. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+        
+        <key>BAST</key><dict><key>nameID</key><string>01.05.1.1</string><key>nameDescription</key><string>Баст или Бастет — в Древнем Египте богиня радости, веселья и любви, женской красоты, плодородия и домашнего очага, которая изображалась в виде кошки или женщины с головой кошки. </string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%81%D1%82</string><key>nameImageName</key><string>MythEgyptFemBAST</string></dict>
+        <key>BASTET</key><dict><key>nameID</key><string>01.05.1.2</string><key>nameDescription</key><string>Баст или Бастет — в Древнем Египте богиня радости, веселья и любви, женской красоты, плодородия и домашнего очага, которая изображалась в виде кошки или женщины с головой кошки. </string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%81%D1%82</string><key>nameImageName</key><string>MythEgyptFemBAST</string></dict>
+        <key>HATHOR</key><dict><key>nameID</key><string>01.05.1.3</string><key>nameDescription</key><string>Хатхор, или Хатор/Гатор («дом Гора», то есть «небо») — в египетской мифологии богиня неба, любви, женственности, красоты, веселья и танцев. А также супруга Хора. Первоначально считалась дочерью Ра. Термин Хатор — греческий, египетское имя этой богини — Херу. Иногда упоминается под именем Атор[1].</string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%82%D1%85%D0%BE%D1%80</string><key>nameImageName</key><string>MythEgyptFemHATHOR</string></dict>
+        <key>HET-HERU</key><dict><key>nameID</key><string>01.05.1.4</string><key>nameDescription</key><string>Хатхор, или Хатор/Гатор («дом Гора», то есть «небо») — в египетской мифологии богиня неба, любви, женственности, красоты, веселья и танцев. А также супруга Хора. Первоначально считалась дочерью Ра. Термин Хатор — греческий, египетское имя этой богини — Херу. Иногда упоминается под именем Атор[1].</string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%82%D1%85%D0%BE%D1%80</string><key>nameImageName</key><string>MythEgyptFemHATHOR</string></dict>
+        <key>ISET</key><dict><key>nameID</key><string>01.05.1.5</string><key>nameDescription</key><string>Иси́да (Изи́да; егип. js.t, др.-греч. Ἶσις, лат. Isis) — одна из величайших богинь древности, ставшая образцом для понимания египетского идеала женственности и материнства.</string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%B8%D0%B4%D0%B0</string><key>nameImageName</key><string>MythEgyptFemISIS</string></dict>
+        <key>ISIS</key><dict><key>nameID</key><string>01.05.1.6</string><key>nameDescription</key><string>Иси́да (Изи́да; егип. js.t, др.-греч. Ἶσις, лат. Isis) — одна из величайших богинь древности, ставшая образцом для понимания египетского идеала женственности и материнства.</string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%B8%D0%B4%D0%B0</string><key>nameImageName</key><string>MythEgyptFemISIS</string></dict>
+        <key>NEITH</key><dict><key>nameID</key><string>01.05.1.7</string><key>nameDescription</key><string>Нейт — египетская богиня охоты и войны, покровительница Саиса в Западной Дельте.</string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B9%D1%82</string><key>nameImageName</key><string>MythEgyptFemNEITH</string></dict>
+        <key>NEPHTHYS</key><dict><key>nameID</key><string>01.05.1.8</string><key>nameDescription</key><string>Нефтида (греч.), Небетхет (др.-егип. «Госпожа обители») — в египетской мифологии младшая из детей Геба и Нут, родилась в последний день года. Богиня гелиопольской Эннеады.</string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%84%D1%82%D0%B8%D0%B4%D0%B0</string><key>nameImageName</key><string>MythEgyptFemNEPHTHYS</string></dict>
+        <key>NIT</key><dict><key>nameID</key><string>01.05.1.9</string><key>nameDescription</key><string>Нейт — египетская богиня охоты и войны, покровительница Саиса в Западной Дельте.</string><key>nameURL</key><string>https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B9%D1%82</string><key>nameImageName</key><string>MythEgyptFemNEITH</string></dict>
+
+        
+        
+    
+    </dict>
+</plist>
