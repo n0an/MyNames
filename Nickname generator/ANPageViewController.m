@@ -28,7 +28,7 @@
     
     self.dataSource = self;
     
-    self.pageHeaders = @[@"Nickname Generator",
+    self.pageHeaders = @[@"MyNames",
                          @"Удобный интерфейс",
                          @"Избранное",
                          @"Гибкие настройки",

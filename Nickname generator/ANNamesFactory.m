@@ -14,9 +14,6 @@
 @implementation ANNamesFactory
 
 
-
-
-
 + (ANNamesFactory*) sharedFactory {
     
     static ANNamesFactory* sharedFactory = nil;

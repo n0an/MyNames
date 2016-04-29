@@ -138,7 +138,7 @@
 		18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDescriptioinVC.h; sourceTree = "<group>"; };
 		18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDescriptioinVC.m; sourceTree = "<group>"; };
 		18F1ADEA1CB8159C007D00C4 /* MythGreekMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythGreekMascImages.xcassets; sourceTree = "<group>"; };
-		18F1B9711C8F43C1001A3B25 /* Nickname generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nickname generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F1B9711C8F43C1001A3B25 /* MyNames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F1B9751C8F43C1001A3B25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18F1B9771C8F43C1001A3B25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18F1B9781C8F43C1001A3B25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -322,7 +322,7 @@
 		18F1B9721C8F43C1001A3B25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18F1B9711C8F43C1001A3B25 /* Nickname generator.app */,
+				18F1B9711C8F43C1001A3B25 /* MyNames.app */,
 				18F1B98A1C8F43C1001A3B25 /* Nickname generatorTests.xctest */,
 				18F1B9951C8F43C1001A3B25 /* Nickname generatorUITests.xctest */,
 			);
@@ -399,7 +399,7 @@
 			);
 			name = "Nickname generator";
 			productName = "Nickname generator";
-			productReference = 18F1B9711C8F43C1001A3B25 /* Nickname generator.app */;
+			productReference = 18F1B9711C8F43C1001A3B25 /* MyNames.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18F1B9891C8F43C1001A3B25 /* Nickname generatorTests */ = {
@@ -705,11 +705,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: nantog@gmail.com (T9AJNB68MF)";
 				INFOPLIST_FILE = "Nickname generator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antonnovoselov.Nickname-generator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "25e1ad3e-e0fd-43ee-b7f4-076859f2223a";
+				PRODUCT_NAME = MyNames;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -717,11 +718,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Anton Novoselov (358V8FBM3U)";
 				INFOPLIST_FILE = "Nickname generator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antonnovoselov.Nickname-generator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "25e1ad3e-e0fd-43ee-b7f4-076859f2223a";
+				PRODUCT_NAME = MyNames;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

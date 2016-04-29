@@ -67,10 +67,8 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
     
-    // Choose MythGreek Category for default
     self.selectedCategory = [self.sharedNamesFactory.namesCategories objectAtIndex:0];
     
     self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;
@@ -79,10 +77,8 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
     
     self.selectedGender = ANGenderMasculine;
 
-    
     self.isDescriptionAvailable = NO;
     self.isSettingsActive = NO;
-    
     
     NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
     
@@ -112,8 +108,6 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
     self.blurEffectView1 = lightBlurEffectView1;
     
     
-    
-    // Initial Animation State of Generate Button
     self.generateButton.transform = CGAffineTransformMakeScale(0.f, 0.f);
     
     self.likeNonSetImage = [UIImage imageNamed:@"like1"];
@@ -133,8 +127,6 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-
     
     [self animateGenerateButton];
     
@@ -164,13 +156,9 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:firstName];
     [self refreshLikeButton];
     
-    
-    
     UITapGestureRecognizer* tapGestureOnWheelView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnWheelView:)];
     
     [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
-    
-
     
 }
 
@@ -208,11 +196,9 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
                              self.generateButton.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
                          }];
                          
-                         
-
-                         
                      }];
 }
+
 
 - (void) animateWheelRotating {
     
@@ -277,12 +263,8 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
         [self presentViewController:pageVC animated:YES completion:nil];
     }
     
-//    ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
-//    
-//    [self presentViewController:pageVC animated:YES completion:nil];
-    
-    
 }
+
 
 - (NSString*) getNamesStringForNamesCount:(NSInteger) count {
     
@@ -337,8 +319,6 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
 
 - (void) refreshLikeButton {
     
-    NSLog(@"firstName = %d", self.isNameFavorite);
-    
     if (self.isNameFavorite) {
         
         [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
@@ -348,7 +328,6 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
         [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
     }
 
-    
 }
 
 
@@ -397,8 +376,6 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
                          
                      }];
     
-    
-
 }
 
 
@@ -415,15 +392,9 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
         
         [[ANDataManager sharedManager] deleteFavoriteName:currentName];
         
-        ANLog(@"\n=========== LIKE PRESSED . FAVORITE DELETED ===========");
-        [[ANDataManager sharedManager] showAllNames];
-        
     } else {
         
         [[ANDataManager sharedManager] addFavoriteName:currentName];
-        
-        ANLog(@"\n=========== LIKE PRESSED . FAVORITE ADDED ===========");
-        [[ANDataManager sharedManager] showAllNames];
         
     }
     
@@ -564,7 +535,6 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
         
         vc.namesArray = self.namesWithDescriptions;
-        vc.isCustomNavigationBar = YES;
         
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
         
@@ -592,13 +562,10 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
     
     ANLog(@"selectedCategory = %@", vc.selectedCategory);
     
-    
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self presentViewController:nav animated:YES completion:nil];
 
-    
-    
 }
 
 

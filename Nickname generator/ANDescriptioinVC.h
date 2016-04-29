@@ -38,8 +38,6 @@ typedef enum {
 
 @property (strong, nonatomic) NSArray* namesArray;
 
-@property (assign, nonatomic) BOOL isCustomNavigationBar;
-
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender;
 
 

@@ -28,7 +28,6 @@
     
     [self refreshButtons];
     
-    NSLog(@"toolbar height = %f", self.toolBar.frame.size.height);
     
 }
 
@@ -82,8 +81,6 @@
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    
-    NSLog(@"shouldStartLoadWithRequest %@", [request debugDescription]);
     
     return YES;
 }

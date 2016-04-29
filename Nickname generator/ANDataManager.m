@@ -37,15 +37,15 @@
         
         if ([object isKindOfClass:[ANFavoriteName class]]) {
             ANFavoriteName* favoriteName = (ANFavoriteName*) object;
-            NSLog(@"NAME: %@ %@", favoriteName.nameFirstName, favoriteName.nameID);
+            ANLog(@"NAME: %@ %@", favoriteName.nameFirstName, favoriteName.nameID);
             
         } else {
-            NSLog(@"!!! UNKNOWN OBJECT !!!");
+            ANLog(@"!!! UNKNOWN OBJECT !!!");
         }
         
     }
     
-    NSLog(@"TOTAL COUNT = %lu", (unsigned long)[array count]);
+    ANLog(@"TOTAL COUNT = %lu", (unsigned long)[array count]);
     
 }
 
@@ -95,10 +95,10 @@
     NSArray* allObjects = [self getAllObjectsForName:name];
     
     for (id object in allObjects) {
-        NSLog(@"Mark for delete: %@", object);
-        [self.managedObjectContext deleteObject:object]; // Marking in Context object to delete
+        ANLog(@"Mark for delete: %@", object);
+        [self.managedObjectContext deleteObject:object];
     }
-    [self.managedObjectContext save:nil]; // Saving context, and deleting marked objects
+    [self.managedObjectContext save:nil];
 }
 
 
@@ -127,7 +127,7 @@
     
     favoriteName.nameFirstName = name.firstName;
     favoriteName.nameID = name.nameID;
-    NSLog(@"favoriteName.nameGender = %@", [NSNumber numberWithBool:name.nameGender]);
+    ANLog(@"favoriteName.nameGender = %@", [NSNumber numberWithBool:name.nameGender]);
     favoriteName.nameGender = [NSNumber numberWithBool:name.nameGender];
     favoriteName.nameDescription = name.nameDescription;
     favoriteName.nameURL = name.nameURL;
@@ -171,7 +171,7 @@
 
 
 - (void) showAllNames {
-    NSLog(@"===== showAllNames =====");
+    ANLog(@"===== showAllNames =====");
     [self printArray:[self getAllObjectsForName:ANCDMFavoriteName]];
 }
 
@@ -202,7 +202,7 @@
         NSLog(@"requestError = %@", [reqestError localizedDescription]);
     }
     
-    NSLog(@"[resultArray count] == %lu", (unsigned long)[resultArray count]);
+    ANLog(@"[resultArray count] == %lu", (unsigned long)[resultArray count]);
     
     
     
@@ -289,7 +289,7 @@
             abort();
         }
     }
-    NSLog(@"saveContext");
+    ANLog(@"saveContext");
     
 }
 

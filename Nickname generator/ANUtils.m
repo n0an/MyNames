@@ -63,18 +63,6 @@ UIColor* randomColor() {
 
 
 
-NSString* NSStringFromANProgrammerType(ANProgrammerType type) {
-    
-    switch (type) {
-        case ANProgrammerTypeJunior:    return @"ANProgrammerTypeJunior";
-        case ANProgrammerTypeMid:       return @"ANProgrammerTypeMid";
-        case ANProgrammerTypeSenior:    return @"ANProgrammerTypeSenior";
-            
-        default:                        return nil;
-    }
-    
-}
-
 
 
 void ANLog(NSString* format, ...) {
@@ -89,12 +77,7 @@ void ANLog(NSString* format, ...) {
     
 #if LOGS_NOTIFICATION_ENABLED
     
-    
-//    NSString* log = [[NSString alloc] initWithFormat:format arguments:argumentList];
-//    
-//    [[NSNotificationCenter defaultCenter] postNotificationName:ANLogNotification
-//                                                        object:nil
-//                                                      userInfo:@{ANLogNotificationTextUserInfoKey: log}];
+
     
 #endif
     

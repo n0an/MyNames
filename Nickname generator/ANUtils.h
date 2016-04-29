@@ -15,12 +15,12 @@
 
 //#define PRODUCTION_BUILD
 
-#define LOGS_ENABLED 1
+#define LOGS_ENABLED 0
 
-#define LOGS_NOTIFICATION_ENABLED 1
+#define LOGS_NOTIFICATION_ENABLED 0
 
 
-#define APP_SHORT_NAME @"NicknameGen"
+#define APP_SHORT_NAME @"MyNames"
 
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a/255.f];
 
@@ -32,18 +32,7 @@ extern NSString* const ANCDMFavoriteName;
 
 
 
-typedef enum {
-    ANProgrammerTypeJunior,
-    ANProgrammerTypeMid,
-    ANProgrammerTypeSenior
-    
-} ANProgrammerType;
-
-
-
-
 NSString* fancyDateStringFromDate(NSDate* date);
-
 
 
 BOOL iPad();
@@ -55,8 +44,6 @@ BOOL isOrientationLandscape();
 
 UIColor* randomColor();
 
-
-NSString* NSStringFromANProgrammerType(ANProgrammerType type);
 
 
 void ANLog(NSString* format, ...);
