@@ -37,6 +37,7 @@
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
+		18A959F11CD4BCCC00AA02AC /* Stripes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A959F01CD4BCCC00AA02AC /* Stripes.xcassets */; };
 		18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */; };
 		18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */; };
 		18B35E111CB4475400CDABF9 /* ANWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E101CB4475400CDABF9 /* ANWebViewVC.m */; };
@@ -121,6 +122,7 @@
 		1893C0231C94A92700D17DA5 /* ANUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUtils.m; sourceTree = "<group>"; };
 		189C8EA21CA717C3002414AE /* ANCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryCell.h; sourceTree = "<group>"; };
 		189C8EA31CA717C3002414AE /* ANCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCategoryCell.m; sourceTree = "<group>"; };
+		18A959F01CD4BCCC00AA02AC /* Stripes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stripes.xcassets; sourceTree = "<group>"; };
 		18B35E091CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavoriteName+CoreDataProperties.h"; path = "../ANFavoriteName+CoreDataProperties.h"; sourceTree = "<group>"; };
 		18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
 		18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavoriteName.h; path = ../ANFavoriteName.h; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */,
 				18267E271CB132B800AB130B /* MythVedicFemImages.xcassets */,
 				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
+				18A959F01CD4BCCC00AA02AC /* Stripes.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				188F87921CCA83ED007A34A4 /* MythCelticMascImages.xcassets in Resources */,
 				18C7763E1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets in Resources */,
 				18F1ADEB1CB8159C007D00C4 /* MythGreekMascImages.xcassets in Resources */,
+				18A959F11CD4BCCC00AA02AC /* Stripes.xcassets in Resources */,
 				18C776301CC9461300F5FFFF /* MythNorseMasc.plist in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,
 				188F878C1CCA6778007A34A4 /* MythPersianFemImages.xcassets in Resources */,
