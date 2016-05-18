@@ -64,7 +64,7 @@
         
         if ([tempNameID isEqualToString:nameID]) {
             
-            NSLog(@"WE FOUND IT!!");
+            ANLog(@"WE FOUND IT!!");
             
             resultKey = tempNameKey;
             

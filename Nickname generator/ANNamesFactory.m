@@ -22,21 +22,21 @@
     dispatch_once(&onceToken, ^{
         sharedFactory = [[ANNamesFactory alloc] init];
         
-        ANNameCategory* randomCategory = [[ANNameCategory alloc] initWithCategoryID:@"00.00" andCategoryTitle:@"Случайное имя" andCategoryImageName:@"diceBG01_3840" andCategoryBackgroundImageName:@"diceBG03_1920" andAlias:@"RandomCat"];
+        ANNameCategory* randomCategory = [[ANNameCategory alloc] initWithCategoryID:@"00.00" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0000", nil) andCategoryImageName:@"diceBG01_3840" andCategoryBackgroundImageName:@"diceBG03_1920" andAlias:@"RandomCat"];
 
-        ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:@"Греческая мифология" andCategoryImageName:@"medusa-bronze" andCategoryBackgroundImageName:@"bg03" andAlias:@"MythGreek"];
+        ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0001", nil) andCategoryImageName:@"medusa-bronze" andCategoryBackgroundImageName:@"bg03" andAlias:@"MythGreek"];
         
-        ANNameCategory* area01cat02 = [[ANNameCategory alloc] initWithCategoryID:@"01.02" andCategoryTitle:@"Ведическая мифология" andCategoryImageName:@"vedicBg21_1920" andCategoryBackgroundImageName:@"vedicBg10_2437" andAlias:@"MythVedic"];
+        ANNameCategory* area01cat02 = [[ANNameCategory alloc] initWithCategoryID:@"01.02" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0002", nil) andCategoryImageName:@"vedicBg21_1920" andCategoryBackgroundImageName:@"vedicBg10_2437" andAlias:@"MythVedic"];
         
-        ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryID:@"01.03" andCategoryTitle:@"Римская мифология" andCategoryImageName:@"romanBg14_4592" andCategoryBackgroundImageName:@"romanBg07_7784" andAlias:@"MythRoman"];
+        ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryID:@"01.03" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0003", nil) andCategoryImageName:@"romanBg14_4592" andCategoryBackgroundImageName:@"romanBg07_7784" andAlias:@"MythRoman"];
         
-        ANNameCategory* area01cat04 = [[ANNameCategory alloc] initWithCategoryID:@"01.04" andCategoryTitle:@"Скандинавская мифология" andCategoryImageName:@"norseBG05_2329" andCategoryBackgroundImageName:@"norseBG07_5713" andAlias:@"MythNorse"];
+        ANNameCategory* area01cat04 = [[ANNameCategory alloc] initWithCategoryID:@"01.04" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0004", nil) andCategoryImageName:@"norseBG05_2329" andCategoryBackgroundImageName:@"norseBG07_5713" andAlias:@"MythNorse"];
         
-        ANNameCategory* area01cat05 = [[ANNameCategory alloc] initWithCategoryID:@"01.05" andCategoryTitle:@"Египетская мифология" andCategoryImageName:@"egyptBG15_1923" andCategoryBackgroundImageName:@"egyptBG01_1936" andAlias:@"MythEgypt"];
+        ANNameCategory* area01cat05 = [[ANNameCategory alloc] initWithCategoryID:@"01.05" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0005", nil) andCategoryImageName:@"egyptBG15_1923" andCategoryBackgroundImageName:@"egyptBG01_1936" andAlias:@"MythEgypt"];
         
-        ANNameCategory* area01cat06 = [[ANNameCategory alloc] initWithCategoryID:@"01.06" andCategoryTitle:@"Персидская мифология" andCategoryImageName:@"persianBG05_3627" andCategoryBackgroundImageName:@"persianBG03_5615" andAlias:@"MythPersian"];
+        ANNameCategory* area01cat06 = [[ANNameCategory alloc] initWithCategoryID:@"01.06" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0006", nil) andCategoryImageName:@"persianBG05_3627" andCategoryBackgroundImageName:@"persianBG03_5615" andAlias:@"MythPersian"];
         
-        ANNameCategory* area01cat07 = [[ANNameCategory alloc] initWithCategoryID:@"01.07" andCategoryTitle:@"Кельтская мифология" andCategoryImageName:@"celticBG05_1990" andCategoryBackgroundImageName:@"celticBG06_1280" andAlias:@"MythCeltic"];
+        ANNameCategory* area01cat07 = [[ANNameCategory alloc] initWithCategoryID:@"01.07" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0007", nil) andCategoryImageName:@"celticBG05_1990" andCategoryBackgroundImageName:@"celticBG06_1280" andAlias:@"MythCeltic"];
    
         sharedFactory.namesCategories = @[randomCategory, area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
         

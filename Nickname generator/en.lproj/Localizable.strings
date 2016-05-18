@@ -13,7 +13,14 @@ AFFIRM_CLEAR = "OK";
 CANCEL_CLEAR = "Cancel";
 
 
-
+NAMECATEGORY0000 = "Random";
+NAMECATEGORY0001 = "Greek mythology";
+NAMECATEGORY0002 = "Vedic mythology";
+NAMECATEGORY0003 = "Roman mythology";
+NAMECATEGORY0004 = "Norse mythology";
+NAMECATEGORY0005 = "Egyptian mythology";
+NAMECATEGORY0006 = "Persian mythology";
+NAMECATEGORY0007 = "Celtic mythology";
 
 
 

@@ -157,25 +157,7 @@
 
 - (void) actionClear:(UIBarButtonItem*) sender {
     
-//    
-//    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Подтвердите удаление" message:@"Очистить избранное? Все избранные имена будут удалены" preferredStyle:UIAlertControllerStyleAlert];
-//    
-//    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        [[ANDataManager sharedManager] clearFavoriteNamesDB];
-//        
-//    }];
-//    
-//    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleCancel handler:nil];
-//    
-//    [alertController addAction:cancelAction];
-//    [alertController addAction:okAction];
-//    
-//    
-//    [self presentViewController:alertController animated:YES completion:nil];
-    
-    
-    
-    
+
     UIAlertController* alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"TITLE_CLEAR", nil) message:NSLocalizedString(@"MESSAGE_CLEAR", nil) preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"AFFIRM_CLEAR", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
