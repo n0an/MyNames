@@ -37,6 +37,7 @@
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
 		1893C0241C94A92700D17DA5 /* ANUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0231C94A92700D17DA5 /* ANUtils.m */; };
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
+		18A578331CECD9CA00A10BB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A578321CECD9CA00A10BB1 /* Localizable.strings */; };
 		18A959F11CD4BCCC00AA02AC /* Stripes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A959F01CD4BCCC00AA02AC /* Stripes.xcassets */; };
 		18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */; };
 		18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */; };
@@ -122,6 +123,7 @@
 		1893C0231C94A92700D17DA5 /* ANUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUtils.m; sourceTree = "<group>"; };
 		189C8EA21CA717C3002414AE /* ANCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryCell.h; sourceTree = "<group>"; };
 		189C8EA31CA717C3002414AE /* ANCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCategoryCell.m; sourceTree = "<group>"; };
+		18A578321CECD9CA00A10BB1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		18A959F01CD4BCCC00AA02AC /* Stripes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stripes.xcassets; sourceTree = "<group>"; };
 		18B35E091CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavoriteName+CoreDataProperties.h"; path = "../ANFavoriteName+CoreDataProperties.h"; sourceTree = "<group>"; };
 		18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
 				18F1B9851C8F43C1001A3B25 /* Info.plist */,
 				18F1B9741C8F43C1001A3B25 /* Supporting Files */,
+				18A578321CECD9CA00A10BB1 /* Localizable.strings */,
 			);
 			path = "Nickname generator";
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				180044961CB16CBA0038206F /* MythRomanMascImages.xcassets in Resources */,
 				188F878E1CCA835A007A34A4 /* MythCelticMasc.plist in Resources */,
 				188F878A1CCA6764007A34A4 /* MythPersianMascImages.xcassets in Resources */,
+				18A578331CECD9CA00A10BB1 /* Localizable.strings in Resources */,
 				18FE1A711CAFCA0A004B5101 /* MythGreekFemImages.xcassets in Resources */,
 				180044941CB16C920038206F /* MythRomanFem.plist in Resources */,
 				18267E261CB1323A00AB130B /* MythVedicFem.plist in Resources */,
