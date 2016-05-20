@@ -13,7 +13,6 @@
 		180044981CB16CD60038206F /* MythRomanFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180044971CB16CD60038206F /* MythRomanFemImages.xcassets */; };
 		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
 		1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */; };
-		1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1810F9741CA816F500D7D00A /* MythGreekFem.plist */; };
 		182546401CA55A44006293A6 /* ANName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463F1CA55A44006293A6 /* ANName.m */; };
 		182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546461CA5659F006293A6 /* ANCategoryVC.m */; };
 		1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546491CA57701006293A6 /* ANNamesFactory.m */; };
@@ -23,7 +22,6 @@
 		18267E2D1CB136C400AB130B /* MythVedicMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */; };
 		183410751CCE764000C19817 /* ANPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410741CCE764000C19817 /* ANPageViewController.m */; };
 		183410791CCE7A5900C19817 /* ANContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410781CCE7A5900C19817 /* ANContentPageViewController.m */; };
-		18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18349C231CA9413300A2A68E /* MythGreekMasc.plist */; };
 		184A13B41CC160C20031F217 /* ANFavouriteNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */; };
 		186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186D62201CBC25C60094E885 /* Backgrounds.xcassets */; };
 		188F87861CCA6705007A34A4 /* MythPersianMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188F87851CCA6705007A34A4 /* MythPersianMasc.plist */; };
@@ -41,6 +39,8 @@
 		18AF09C21CEF6E410061B497 /* MythEgyptMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09C41CEF6E410061B497 /* MythEgyptMasc.plist */; };
 		18AF09C61CEF6E830061B497 /* MythEgyptFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09C81CEF6E830061B497 /* MythEgyptFem.plist */; };
 		18AF09CC1CEF6F710061B497 /* MythCelticFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09CE1CEF6F710061B497 /* MythCelticFem.plist */; };
+		18AF09D01CEF711E0061B497 /* MythGreekFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09D21CEF711E0061B497 /* MythGreekFem.plist */; };
+		18AF09D41CEF71860061B497 /* MythGreekMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09D61CEF71860061B497 /* MythGreekMasc.plist */; };
 		18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */; };
 		18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */; };
 		18B35E111CB4475400CDABF9 /* ANWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E101CB4475400CDABF9 /* ANWebViewVC.m */; };
@@ -90,7 +90,6 @@
 		18100DAC1CB248C400508F1D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNameCategory.h; sourceTree = "<group>"; };
 		1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNameCategory.m; sourceTree = "<group>"; };
-		1810F9741CA816F500D7D00A /* MythGreekFem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekFem.plist; sourceTree = "<group>"; };
 		1825463E1CA55A44006293A6 /* ANName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANName.h; sourceTree = "<group>"; };
 		1825463F1CA55A44006293A6 /* ANName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANName.m; sourceTree = "<group>"; };
 		182546451CA5659F006293A6 /* ANCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCategoryVC.h; sourceTree = "<group>"; };
@@ -105,7 +104,6 @@
 		183410741CCE764000C19817 /* ANPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPageViewController.m; sourceTree = "<group>"; };
 		183410771CCE7A5900C19817 /* ANContentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANContentPageViewController.h; sourceTree = "<group>"; };
 		183410781CCE7A5900C19817 /* ANContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANContentPageViewController.m; sourceTree = "<group>"; };
-		18349C231CA9413300A2A68E /* MythGreekMasc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MythGreekMasc.plist; sourceTree = "<group>"; };
 		184A13B21CC160C20031F217 /* ANFavouriteNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavouriteNameCell.h; sourceTree = "<group>"; };
 		184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavouriteNameCell.m; sourceTree = "<group>"; };
 		186D62201CBC25C60094E885 /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
@@ -134,6 +132,10 @@
 		18AF09C91CEF6E960061B497 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/MythEgyptFem.plist; sourceTree = "<group>"; };
 		18AF09CD1CEF6F710061B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MythCelticFem.plist; sourceTree = "<group>"; };
 		18AF09CF1CEF6F730061B497 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/MythCelticFem.plist; sourceTree = "<group>"; };
+		18AF09D11CEF711E0061B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MythGreekFem.plist; sourceTree = "<group>"; };
+		18AF09D31CEF711F0061B497 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/MythGreekFem.plist; sourceTree = "<group>"; };
+		18AF09D51CEF71860061B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MythGreekMasc.plist; sourceTree = "<group>"; };
+		18AF09D71CEF71880061B497 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/MythGreekMasc.plist; sourceTree = "<group>"; };
 		18B35E091CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavoriteName+CoreDataProperties.h"; path = "../ANFavoriteName+CoreDataProperties.h"; sourceTree = "<group>"; };
 		18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
 		18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavoriteName.h; path = ../ANFavoriteName.h; sourceTree = "<group>"; };
@@ -285,8 +287,8 @@
 				18A578511CECF47900A10BB1 /* MythCelticMasc.plist */,
 				18AF09C81CEF6E830061B497 /* MythEgyptFem.plist */,
 				18AF09C41CEF6E410061B497 /* MythEgyptMasc.plist */,
-				1810F9741CA816F500D7D00A /* MythGreekFem.plist */,
-				18349C231CA9413300A2A68E /* MythGreekMasc.plist */,
+				18AF09D21CEF711E0061B497 /* MythGreekFem.plist */,
+				18AF09D61CEF71860061B497 /* MythGreekMasc.plist */,
 				18C776311CC946BC00F5FFFF /* MythNorseFem.plist */,
 				18C7762F1CC9461300F5FFFF /* MythNorseMasc.plist */,
 				188F87871CCA6749007A34A4 /* MythPersianFem.plist */,
@@ -504,10 +506,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				188F87881CCA6749007A34A4 /* MythPersianFem.plist in Resources */,
-				18349C241CA9413300A2A68E /* MythGreekMasc.plist in Resources */,
+				18AF09D41CEF71860061B497 /* MythGreekMasc.plist in Resources */,
 				188F87861CCA6705007A34A4 /* MythPersianMasc.plist in Resources */,
 				18C776321CC946BC00F5FFFF /* MythNorseFem.plist in Resources */,
-				1810F9751CA816F500D7D00A /* MythGreekFem.plist in Resources */,
+				18AF09D01CEF711E0061B497 /* MythGreekFem.plist in Resources */,
 				18AF09CC1CEF6F710061B497 /* MythCelticFem.plist in Resources */,
 				18267E281CB132B800AB130B /* MythVedicFemImages.xcassets in Resources */,
 				186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */,
@@ -659,6 +661,24 @@
 				18AF09CF1CEF6F730061B497 /* ru */,
 			);
 			name = MythCelticFem.plist;
+			sourceTree = "<group>";
+		};
+		18AF09D21CEF711E0061B497 /* MythGreekFem.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18AF09D11CEF711E0061B497 /* en */,
+				18AF09D31CEF711F0061B497 /* ru */,
+			);
+			name = MythGreekFem.plist;
+			sourceTree = "<group>";
+		};
+		18AF09D61CEF71860061B497 /* MythGreekMasc.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18AF09D51CEF71860061B497 /* en */,
+				18AF09D71CEF71880061B497 /* ru */,
+			);
+			name = MythGreekMasc.plist;
 			sourceTree = "<group>";
 		};
 		18F1B97D1C8F43C1001A3B25 /* Main.storyboard */ = {
