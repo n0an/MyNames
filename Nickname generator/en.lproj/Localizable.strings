@@ -1,0 +1,49 @@
+/* 
+  Localizable.strings
+  Nickname generator
+
+  Created by Anton Novoselov on 18/05/16.
+  Copyright © 2016 Anton Novoselov. All rights reserved.
+*/
+
+
+TITLE_CLEAR = "Confirm please";
+MESSAGE_CLEAR = "Delete favorite names? All favorite names will be cleared";
+AFFIRM_CLEAR = "OK";
+CANCEL_CLEAR = "Cancel";
+
+
+NAMECATEGORY0000 = "Random";
+NAMECATEGORY0001 = "Greek mythology";
+NAMECATEGORY0002 = "Vedic mythology";
+NAMECATEGORY0003 = "Roman mythology";
+NAMECATEGORY0004 = "Norse mythology";
+NAMECATEGORY0005 = "Egyptian mythology";
+NAMECATEGORY0006 = "Persian mythology";
+NAMECATEGORY0007 = "Celtic mythology";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

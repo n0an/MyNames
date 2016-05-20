@@ -17,7 +17,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Новое имя-->
+        <!--New name-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ANViewController" sceneMemberID="viewController">
@@ -44,19 +44,19 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6JV-fA-Vq0" userLabel="settingsLabels Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="86" height="106"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Пол:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fN-WY-lq8">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fN-WY-lq8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="86" height="22"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категория:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-Uw-2Ih">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-Uw-2Ih">
                                                                 <rect key="frame" x="0.0" y="42" width="86" height="22"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имен:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQx-4E-WZK">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Names:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQx-4E-WZK">
                                                                 <rect key="frame" x="0.0" y="84" width="86" height="22"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -397,7 +397,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Новое имя" image="shapes" id="O5p-v6-RQs"/>
+                    <tabBarItem key="tabBarItem" title="New name" image="shapes" id="O5p-v6-RQs"/>
                     <connections>
                         <outlet property="bgImageView" destination="t6e-XU-g0u" id="er7-Ow-ZnY"/>
                         <outlet property="controlsView" destination="Dwy-Pv-6gN" id="yoV-Hq-djy"/>
@@ -420,7 +420,7 @@
             </objects>
             <point key="canvasLocation" x="1271" y="504"/>
         </scene>
-        <!--Избранное-->
+        <!--Favorites-->
         <scene sceneID="2jh-nG-ilb">
             <objects>
                 <tableViewController id="Z8D-J2-Jdx" customClass="ANFavoriteNamesVC" sceneMemberID="viewController">
@@ -606,7 +606,7 @@
                             <outlet property="delegate" destination="Z8D-J2-Jdx" id="aK8-fy-kqE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Избранное" id="5R3-fs-Bra"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="5R3-fs-Bra"/>
                     <connections>
                         <outlet property="genderButtonFem" destination="3tm-FA-BmH" id="ziM-jY-FTB"/>
                         <outlet property="genderButtonMasc" destination="IMy-xo-2je" id="glL-vV-RjC"/>
@@ -1093,7 +1093,7 @@
                                     <constraint firstAttribute="width" constant="100" id="wGK-45-8ys"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                <state key="normal" title="Приступить">
+                                <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1518,11 +1518,11 @@
             </objects>
             <point key="canvasLocation" x="319" y="1337"/>
         </scene>
-        <!--Избранное-->
+        <!--Favorites-->
         <scene sceneID="f4i-lE-QAa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oTK-J9-LqI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Избранное" image="top_charts" id="3O2-CT-aGS"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="top_charts" id="3O2-CT-aGS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b0K-XM-HZe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1554,8 +1554,8 @@
         <image name="masc01" width="60" height="60"/>
         <image name="masc02" width="60" height="60"/>
         <image name="nextSlide" width="88" height="35"/>
-        <image name="norseBG05_2329" width="250" height="776"/>
-        <image name="norseBG07_5713" width="858" height="1269"/>
+        <image name="norseBG05_2329" width="517" height="150"/>
+        <image name="norseBG07_5713" width="572" height="846"/>
         <image name="refresh02" width="25" height="24"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shake" width="158" height="120"/>

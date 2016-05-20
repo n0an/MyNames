@@ -128,6 +128,34 @@
 }
 
 
+- (NSString*) adoptToLocalizationString:(NSString*) string {
+    
+    NSString* adaptedCategory;
+    
+    if ([string isEqualToString:@"Greek mythology"] || [string isEqualToString:@"Греческая мифология"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0001", nil);
+    } else if ([string isEqualToString:@"Vedic mythology"] || [string isEqualToString:@"Ведическая мифология"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0002", nil);
+    } else if ([string isEqualToString:@"Roman mythology"] || [string isEqualToString:@"Римская мифология"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0003", nil);
+    } else if ([string isEqualToString:@"Norse mythology"] || [string isEqualToString:@"Скандинавская мифология"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0004", nil);
+    } else if ([string isEqualToString:@"Egyptian mythology"] || [string isEqualToString:@"Египетская мифология"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0005", nil);
+    } else if ([string isEqualToString:@"Persian mythology"] || [string isEqualToString:@"Персидская мифология"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0006", nil);
+    } else if ([string isEqualToString:@"Celtic mythology"] || [string isEqualToString:@"Кельтская мифология"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0007", nil);
+    } else {
+        adaptedCategory = @"";
+    }
+
+    return adaptedCategory;
+    
+    
+}
+
+
 
 
 #pragma mark - Actions
@@ -157,15 +185,15 @@
 
 - (void) actionClear:(UIBarButtonItem*) sender {
     
+
+    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"TITLE_CLEAR", nil) message:NSLocalizedString(@"MESSAGE_CLEAR", nil) preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Подтвердите удаление" message:@"Очистить избранное? Все избранные имена будут удалены" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"AFFIRM_CLEAR", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [[ANDataManager sharedManager] clearFavoriteNamesDB];
         
     }];
     
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL_CLEAR", nil) style:UIAlertActionStyleCancel handler:nil];
     
     [alertController addAction:cancelAction];
     [alertController addAction:okAction];
@@ -259,7 +287,12 @@
 
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo name];
+    
+    NSString* sectionName = sectionInfo.name;
+    
+    NSString* adaptedCategory = [self adoptToLocalizationString:sectionName];
+    
+    return adaptedCategory;
 }
 
 
@@ -277,7 +310,11 @@
     
     cell.genderImageView.image = [UIImage imageNamed:genderImage];
     
-    cell.nameCategoryLabel.text = favoriteName.nameCategoryTitle;
+    
+    NSString* adaptedCategory = [self adoptToLocalizationString:favoriteName.nameCategoryTitle];
+    
+
+    cell.nameCategoryLabel.text = adaptedCategory;
     
     
     UIImage* imageName = [UIImage imageNamed:favoriteName.nameImageName];

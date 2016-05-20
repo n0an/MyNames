@@ -48,7 +48,7 @@
     
     NSInteger nameIDInPList = [[nameAttributes objectAtIndex:3] integerValue];
     
-    NSLog(@"nameIDInPList = %ld", (long)nameIDInPList);
+    ANLog(@"nameIDInPList = %ld", (long)nameIDInPList);
     
     NSDictionary *dict = [self getNamesDictionaryforCategory:nameCategory andGender:nameGender];
     
@@ -64,7 +64,7 @@
         
         if ([tempNameID isEqualToString:nameID]) {
             
-            NSLog(@"WE FOUND IT!!");
+            ANLog(@"WE FOUND IT!!");
             
             resultKey = tempNameKey;
             
