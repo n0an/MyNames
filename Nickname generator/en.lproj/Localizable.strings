@@ -22,10 +22,23 @@ NAMECATEGORY0005 = "Egyptian mythology";
 NAMECATEGORY0006 = "Persian mythology";
 NAMECATEGORY0007 = "Celtic mythology";
 
+PAGEHEADERS01 = "MyNames";
+PAGEHEADERS02 = "Easy to use";
+PAGEHEADERS03 = "Favorites";
+PAGEHEADERS04 = "Flexible settings";
+PAGEHEADERS05 = "More info";
 
+PAGESUBHEADERS01 = "Generate a new name, pressing the button";
+PAGESUBHEADERS02 = "or by shaking phone";
+PAGESUBHEADERS03 = "Add names you like to Favorites";
+PAGESUBHEADERS04 = "Configure generator as you wish";
+PAGESUBHEADERS05 = "Get more info about name by clicking it";
 
-
-
+PAGEIMAGECONTENTS01 = "diceBG03_1920";
+PAGEIMAGECONTENTS02 = "celticBG03_1200";
+PAGEIMAGECONTENTS03 = "egyptBG14_1030";
+PAGEIMAGECONTENTS04 = "bg14";
+PAGEIMAGECONTENTS05 = "descrEn";
 
 
 

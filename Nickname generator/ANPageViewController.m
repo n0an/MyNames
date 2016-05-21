@@ -28,24 +28,27 @@
     
     self.dataSource = self;
     
-    self.pageHeaders = @[@"MyNames",
-                         @"Удобный интерфейс",
-                         @"Избранное",
-                         @"Гибкие настройки",
-                         @"Больше информации"];
+
+    
+    self.pageHeaders = @[NSLocalizedString(@"PAGEHEADERS01", nil),
+                         NSLocalizedString(@"PAGEHEADERS02", nil),
+                         NSLocalizedString(@"PAGEHEADERS03", nil),
+                         NSLocalizedString(@"PAGEHEADERS04", nil),
+                         NSLocalizedString(@"PAGEHEADERS05", nil)];
     
     
-    self.pageSubHeaders = @[@"Генерируйте имена, нажимая на кнопку",
-                            @"или встряхивая телефон",
-                            @"Добавляйте понравившиеся имена в Избранное",
-                            @"Сконфигурируйте генератор по своему желанию",
-                            @"Узнайте больше об имени в каталоге имен"];
+    self.pageSubHeaders = @[NSLocalizedString(@"PAGESUBHEADERS01", nil),
+                            NSLocalizedString(@"PAGESUBHEADERS02", nil),
+                            NSLocalizedString(@"PAGESUBHEADERS03", nil),
+                            NSLocalizedString(@"PAGESUBHEADERS04", nil),
+                            NSLocalizedString(@"PAGESUBHEADERS05", nil)];
     
-    self.pageImageContents = @[@"diceBG03_1920",
-                               @"celticBG03_1200",
-                               @"egyptBG14_1030",
-                               @"bg14",
-                               @"descr"];
+    self.pageImageContents = @[NSLocalizedString(@"PAGEIMAGECONTENTS01", nil),
+                               NSLocalizedString(@"PAGEIMAGECONTENTS02", nil),
+                               NSLocalizedString(@"PAGEIMAGECONTENTS03", nil),
+                               NSLocalizedString(@"PAGEIMAGECONTENTS04", nil),
+                               NSLocalizedString(@"PAGEIMAGECONTENTS05", nil)];
+
     
     
     ANContentPageViewController* firstVC = [self showViewControllerAtIndex:0];

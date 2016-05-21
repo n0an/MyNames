@@ -24,11 +24,23 @@ NAMECATEGORY0007 = "Кельтская мифология";
 
 
 
+PAGEHEADERS01 = "MyNames";
+PAGEHEADERS02 = "Удобный интерфейс";
+PAGEHEADERS03 = "Избранное";
+PAGEHEADERS04 = "Гибкие настройки";
+PAGEHEADERS05 = "Больше информации";
 
+PAGESUBHEADERS01 = "Генерируйте имена, нажимая на кнопку";
+PAGESUBHEADERS02 = "или встряхивая телефон";
+PAGESUBHEADERS03 = "Добавляйте понравившиеся имена в Избранное";
+PAGESUBHEADERS04 = "Сконфигурируйте генератор по своему желанию";
+PAGESUBHEADERS05 = "Узнайте больше об имени в каталоге имен";
 
-
-
-
+PAGEIMAGECONTENTS01 = "diceBG03_1920";
+PAGEIMAGECONTENTS02 = "celticBG03_1200";
+PAGEIMAGECONTENTS03 = "egyptBG14_1030";
+PAGEIMAGECONTENTS04 = "bg14";
+PAGEIMAGECONTENTS05 = "descr";
 
 
 
