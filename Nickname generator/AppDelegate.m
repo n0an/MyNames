@@ -29,8 +29,8 @@
     
     
     // Fabric. Answers Debugging mode.
-    [[Fabric sharedSDK] setDebug: YES];
-    [Fabric with:@[CrashlyticsKit]];
+    //[[Fabric sharedSDK] setDebug: YES];
+    //[Fabric with:@[CrashlyticsKit]];
 
     
     UIColor *tabBarColor = RGBA(201, 81, 0, 255);
