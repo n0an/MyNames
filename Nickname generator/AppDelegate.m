@@ -10,6 +10,10 @@
 #import "ANDataManager.h"
 #import "ANUtils.h"
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
+
 @interface AppDelegate ()
 
 @end
@@ -19,6 +23,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    [Fabric with:@[[Crashlytics class]]];
+    
+    
+    // Fabric. Answers Debugging mode.
+    [[Fabric sharedSDK] setDebug: YES];
+    [Fabric with:@[CrashlyticsKit]];
+
     
     UIColor *tabBarColor = RGBA(201, 81, 0, 255);
     [[UITabBar appearance] setTintColor:tabBarColor];

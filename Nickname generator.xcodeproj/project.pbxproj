@@ -43,6 +43,8 @@
 		18AF09EC1CEF74660061B497 /* MythRomanMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09EE1CEF74660061B497 /* MythRomanMasc.plist */; };
 		18AF09F01CEF75180061B497 /* MythVedicFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09F21CEF75180061B497 /* MythVedicFem.plist */; };
 		18AF09F41CEF75480061B497 /* MythVedicMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09F61CEF75480061B497 /* MythVedicMasc.plist */; };
+		18AF0AB71CF0C1570061B497 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18AF0AB51CF0C1570061B497 /* Fabric.framework */; };
+		18AF0AB81CF0C1570061B497 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18AF0AB61CF0C1570061B497 /* Crashlytics.framework */; };
 		18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */; };
 		18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */; };
 		18B35E111CB4475400CDABF9 /* ANWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E101CB4475400CDABF9 /* ANWebViewVC.m */; };
@@ -147,6 +149,8 @@
 		18AF09F71CEF75490061B497 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/MythVedicMasc.plist; sourceTree = "<group>"; };
 		18AF0AB21CF0BE3C0061B497 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18AF0AB31CF0BE3C0061B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18AF0AB51CF0C1570061B497 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		18AF0AB61CF0C1570061B497 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		18B35E091CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANFavoriteName+CoreDataProperties.h"; path = "../ANFavoriteName+CoreDataProperties.h"; sourceTree = "<group>"; };
 		18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
 		18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavoriteName.h; path = ../ANFavoriteName.h; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AF0AB81CF0C1570061B497 /* Crashlytics.framework in Frameworks */,
+				18AF0AB71CF0C1570061B497 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +344,8 @@
 				18F1B98D1C8F43C1001A3B25 /* Nickname generatorTests */,
 				18F1B9981C8F43C1001A3B25 /* Nickname generatorUITests */,
 				18F1B9721C8F43C1001A3B25 /* Products */,
+				18AF0AB51CF0C1570061B497 /* Fabric.framework */,
+				18AF0AB61CF0C1570061B497 /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -415,6 +423,7 @@
 				18F1B96D1C8F43C1001A3B25 /* Sources */,
 				18F1B96E1C8F43C1001A3B25 /* Frameworks */,
 				18F1B96F1C8F43C1001A3B25 /* Resources */,
+				18AF0AB41CF0C10D0061B497 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -565,6 +574,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18AF0AB41CF0C10D0061B497 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2342fff18263bccec612d2b7cb71b96ae031a1cd 83ffef7c03e06b05b58b9cb24dc8f4d41dc68d0128eb4cb32b5421d9faebbcfb";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18F1B96D1C8F43C1001A3B25 /* Sources */ = {
@@ -870,7 +895,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: nantog@gmail.com (T9AJNB68MF)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Nickname generator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antonnovoselov.Nickname-generator";
 				PRODUCT_NAME = MyNames;
@@ -884,7 +914,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Anton Novoselov (358V8FBM3U)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Nickname generator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antonnovoselov.Nickname-generator";
 				PRODUCT_NAME = MyNames;
