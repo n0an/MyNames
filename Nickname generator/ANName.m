@@ -93,7 +93,7 @@
     } else {
         pathName = [category.alias stringByAppendingString:@"Fem"];
     }
-    
+
     NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     

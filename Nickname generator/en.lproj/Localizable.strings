@@ -22,6 +22,8 @@ NAMECATEGORY0005 = "Egyptian mythology";
 NAMECATEGORY0006 = "Persian mythology";
 NAMECATEGORY0007 = "Celtic mythology";
 
+NAMECATEGORY0201 = "Dune";
+
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Easy to use";
 PAGEHEADERS03 = "Favorites";

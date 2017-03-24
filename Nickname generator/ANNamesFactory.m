@@ -23,6 +23,8 @@
         sharedFactory = [[ANNamesFactory alloc] init];
         
         ANNameCategory* randomCategory = [[ANNameCategory alloc] initWithCategoryID:@"00.00" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0000", nil) andCategoryImageName:@"diceBG01_3840" andCategoryBackgroundImageName:@"diceBG03_1920" andAlias:@"RandomCat"];
+        
+        ANNameCategory* area02cat01 = [[ANNameCategory alloc] initWithCategoryID:@"02.01" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0201", NIL) andCategoryImageName:@"fictionDuneBg01" andCategoryBackgroundImageName:@"fictionDuneBg02" andAlias:@"FictionDune"];
 
         ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0001", nil) andCategoryImageName:@"medusa-bronze" andCategoryBackgroundImageName:@"bg03" andAlias:@"MythGreek"];
         
@@ -38,7 +40,7 @@
         
         ANNameCategory* area01cat07 = [[ANNameCategory alloc] initWithCategoryID:@"01.07" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0007", nil) andCategoryImageName:@"celticBG05_1990" andCategoryBackgroundImageName:@"celticBG06_1280" andAlias:@"MythCeltic"];
    
-        sharedFactory.namesCategories = @[randomCategory, area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
+        sharedFactory.namesCategories = @[randomCategory, area02cat01, area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
         
     });
     
