@@ -10,6 +10,8 @@
 
 #import "ANNameCategory.h"
 
+extern NSString* const kAppLaunchesCount;
+
 @implementation ANCategoryCell
 
 
@@ -18,7 +20,7 @@
     if ([nameCategory.nameCategoryID isEqualToString:@"02.01"]) {
         
         NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-        NSInteger appLaunchesCount = [userDefaults integerForKey:@"kAppLaunchesCount"];
+        NSInteger appLaunchesCount = [userDefaults integerForKey:kAppLaunchesCount];
         
         if (appLaunchesCount < 10) {
             [self.categoryNewBadge setHidden:NO];
