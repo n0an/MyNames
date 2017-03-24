@@ -8,16 +8,26 @@
 
 #import "ANCategoryCell.h"
 
+#import "ANNameCategory.h"
+
 @implementation ANCategoryCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void) configureCellWithNameCategory:(ANNameCategory*) nameCategory {
+    
+    if ([nameCategory.nameCategoryID isEqualToString:@"02.01"]) {
+        
+        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+        NSInteger appLaunchesCount = [userDefaults integerForKey:@"kAppLaunchesCount"];
+        
+        if (appLaunchesCount < 10) {
+            [self.categoryNewBadge setHidden:NO];
+        } else {
+            [self.categoryNewBadge setHidden:YES];
+        }
+    }
+    
+    
 }
 
 @end

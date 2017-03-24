@@ -56,6 +56,7 @@ typedef enum {
 
 
 NSString* const kAppAlreadySeen = @"appAlreadySeen";
+NSString* const kAppLaunchesCount = @"kAppLaunchesCount";
 
 
 @implementation ANViewController
@@ -261,7 +262,19 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
         ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
         
         [self presentViewController:pageVC animated:YES completion:nil];
+        
+    } else {
+        
+        NSInteger appLaunchesCount = [userDefaults integerForKey:kAppLaunchesCount];
+        appLaunchesCount++;
+        
+        [userDefaults setInteger:appLaunchesCount forKey:kAppLaunchesCount];
+        [userDefaults synchronize];
     }
+    
+    
+    
+    
     
 }
 

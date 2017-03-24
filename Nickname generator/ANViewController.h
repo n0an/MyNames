@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface ANViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView* bgImageView;

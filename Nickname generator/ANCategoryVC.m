@@ -7,15 +7,16 @@
 //
 
 #import "ANCategoryVC.h"
-
 #import "ANCategoryCell.h"
-
 #import "ANNameCategory.h"
+
 
 @interface ANCategoryVC ()
 
 
 @end
+
+
 
 @implementation ANCategoryVC
 
@@ -109,6 +110,8 @@
 
         
     }
+    
+    [cell configureCellWithNameCategory:currentCategory];
     
     return cell;
 }
