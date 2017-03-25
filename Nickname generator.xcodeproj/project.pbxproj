@@ -48,7 +48,6 @@
 		18AF09F41CEF75480061B497 /* MythVedicMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09F61CEF75480061B497 /* MythVedicMasc.plist */; };
 		18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */; };
 		18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */; };
-		18B35E111CB4475400CDABF9 /* ANWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35E101CB4475400CDABF9 /* ANWebViewVC.m */; };
 		18C03C1A1E8447A00050773D /* FictionDuneMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C03C1C1E8447A00050773D /* FictionDuneMasc.plist */; };
 		18C03C201E84496F0050773D /* FictionDuneFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C03C221E84496F0050773D /* FictionDuneFem.plist */; };
 		18C776341CC9514F00F5FFFF /* MythNorseMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C776331CC9514F00F5FFFF /* MythNorseMascImages.xcassets */; };
@@ -162,8 +161,6 @@
 		18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ANFavoriteName+CoreDataProperties.m"; path = "../ANFavoriteName+CoreDataProperties.m"; sourceTree = "<group>"; };
 		18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANFavoriteName.h; path = ../ANFavoriteName.h; sourceTree = "<group>"; };
 		18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANFavoriteName.m; path = ../ANFavoriteName.m; sourceTree = "<group>"; };
-		18B35E0F1CB4475400CDABF9 /* ANWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWebViewVC.h; sourceTree = "<group>"; };
-		18B35E101CB4475400CDABF9 /* ANWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWebViewVC.m; sourceTree = "<group>"; };
 		18C03C1B1E8447A00050773D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionDuneMasc.plist; sourceTree = "<group>"; };
 		18C03C1D1E8447A10050773D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionDuneMasc.plist; sourceTree = "<group>"; };
 		18C03C211E84496F0050773D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionDuneFem.plist; sourceTree = "<group>"; };
@@ -308,8 +305,6 @@
 				18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */,
 				182546451CA5659F006293A6 /* ANCategoryVC.h */,
 				182546461CA5659F006293A6 /* ANCategoryVC.m */,
-				18B35E0F1CB4475400CDABF9 /* ANWebViewVC.h */,
-				18B35E101CB4475400CDABF9 /* ANWebViewVC.m */,
 				1893C01F1C94A6A100D17DA5 /* ANViewController.h */,
 				1893C0201C94A6A100D17DA5 /* ANViewController.m */,
 				189C8EA51CA717CA002414AE /* Cells */,
@@ -811,7 +806,6 @@
 				18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */,
 				183410751CCE764000C19817 /* ANPageViewController.m in Sources */,
 				1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */,
-				18B35E111CB4475400CDABF9 /* ANWebViewVC.m in Sources */,
 				182546401CA55A44006293A6 /* ANName.m in Sources */,
 				182546471CA5659F006293A6 /* ANCategoryVC.m in Sources */,
 				18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */,

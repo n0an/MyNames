@@ -688,7 +688,7 @@
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="pZ7-Am-sbg" kind="show" identifier="showANWebViewVC" id="iiQ-yQ-MiU"/>
+                                                    <action selector="actionWebButtonPressed:" destination="WUg-cz-UtD" eventType="touchUpInside" id="6wt-7w-0qV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXY-de-x5m">
@@ -860,77 +860,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4S-Ei-Jxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1271" y="-204"/>
-        </scene>
-        <!--Web ViewVC-->
-        <scene sceneID="n2n-V3-SD1">
-            <objects>
-                <viewController id="pZ7-Am-sbg" customClass="ANWebViewVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="37h-IG-2Kq"/>
-                        <viewControllerLayoutGuide type="bottom" id="9n1-bg-acI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wF0-oP-ipH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rw-FY-0ZD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                                <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="pZ7-Am-sbg" id="viK-Wk-aBh"/>
-                                </connections>
-                            </webView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RdK-bG-XmU">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <color key="color" red="0.081993646919727325" green="0.52760791778564453" blue="0.89557850360870361" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FO-OA-9vh">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="arrowLeft03" id="x7w-Tg-EPn">
-                                        <connections>
-                                            <action selector="actionBack:" destination="pZ7-Am-sbg" id="9ND-SL-DL8"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="47" systemItem="fixedSpace" id="UL0-nP-Os1"/>
-                                    <barButtonItem image="arrowRight03" id="se5-1o-NLK">
-                                        <connections>
-                                            <action selector="actionForward:" destination="pZ7-Am-sbg" id="yaB-Lx-gAc"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="MAz-A1-ThL"/>
-                                    <barButtonItem image="refresh02" id="Gux-mK-jkX">
-                                        <connections>
-                                            <action selector="actionRefresh:" destination="pZ7-Am-sbg" id="0KZ-ZR-iwl"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="9n1-bg-acI" firstAttribute="top" secondItem="0rw-FY-0ZD" secondAttribute="bottom" constant="44" id="01E-oJ-6f7"/>
-                            <constraint firstItem="0rw-FY-0ZD" firstAttribute="top" secondItem="wF0-oP-ipH" secondAttribute="top" id="GPm-RA-FpT"/>
-                            <constraint firstItem="RdK-bG-XmU" firstAttribute="centerX" secondItem="wF0-oP-ipH" secondAttribute="centerX" id="I1K-EW-5ef"/>
-                            <constraint firstItem="9n1-bg-acI" firstAttribute="top" secondItem="1FO-OA-9vh" secondAttribute="bottom" id="XOT-VB-2AV"/>
-                            <constraint firstAttribute="trailing" secondItem="1FO-OA-9vh" secondAttribute="trailing" id="Zc9-ce-l6Z"/>
-                            <constraint firstItem="RdK-bG-XmU" firstAttribute="centerY" secondItem="wF0-oP-ipH" secondAttribute="centerY" id="f3h-lS-zDE"/>
-                            <constraint firstItem="0rw-FY-0ZD" firstAttribute="leading" secondItem="wF0-oP-ipH" secondAttribute="leading" id="fii-Hr-yDI"/>
-                            <constraint firstAttribute="trailing" secondItem="0rw-FY-0ZD" secondAttribute="trailing" id="rz2-A2-Xfm"/>
-                            <constraint firstItem="1FO-OA-9vh" firstAttribute="leading" secondItem="wF0-oP-ipH" secondAttribute="leading" id="wGd-q3-4et"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="activityIndicator" destination="RdK-bG-XmU" id="0bU-x8-JIu"/>
-                        <outlet property="backButtonItem" destination="x7w-Tg-EPn" id="EXf-0D-P4K"/>
-                        <outlet property="forwardButtonItem" destination="se5-1o-NLK" id="TvP-cc-mdU"/>
-                        <outlet property="toolBar" destination="1FO-OA-9vh" id="4dZ-HW-ahT"/>
-                        <outlet property="webView" destination="0rw-FY-0ZD" id="bq6-DX-eHr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aHa-cx-I8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1992" y="-203"/>
         </scene>
         <!--CategoryVC-->
         <scene sceneID="YO9-G2-aNr">
@@ -1546,8 +1475,6 @@
         <image name="NewCategoryBadge" width="60" height="60"/>
         <image name="Settings01" width="209" height="215"/>
         <image name="WhiteTransparentFade" width="375" height="150"/>
-        <image name="arrowLeft03" width="14" height="24"/>
-        <image name="arrowRight03" width="14" height="24"/>
         <image name="click" width="48" height="70"/>
         <image name="diceBG03_1920" width="640" height="400"/>
         <image name="drag" width="56" height="63"/>
@@ -1561,7 +1488,6 @@
         <image name="nextSlide" width="88" height="35"/>
         <image name="norseBG05_2329" width="517" height="150"/>
         <image name="norseBG07_5713" width="572" height="846"/>
-        <image name="refresh02" width="25" height="24"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shake" width="158" height="120"/>
         <image name="shapes" width="21" height="21"/>

@@ -12,9 +12,10 @@
 #import "ANName.h"
 #import "ANUtils.h"
 
-#import "ANWebViewVC.h"
 
 #import "ANNameCategory.h"
+
+#import <SafariServices/SafariServices.h>
 
 
 @interface ANDescriptioinVC ()
@@ -237,6 +238,8 @@
     [self iterateNameWithDirection:ANNameIterationDirectionNext];
     
 }
+    
+
 
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
     // *** Saving choosen names to CoreData
@@ -256,18 +259,27 @@
 
     [self refreshLikeButton];
 }
-
-
-
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"showANWebViewVC"]) {
+- (IBAction)actionWebButtonPressed:(UIButton*)sender {
+    
+    NSString *urlString = self.currentName.nameURL;
+    
+    NSURL* url = [NSURL URLWithString:urlString];
+    
+    if (url != nil) {
         
-        ANWebViewVC* vc = segue.destinationViewController;
-        vc.nameURL = self.currentName.nameURL;
+        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+        
+        [self presentViewController:safariVC animated:true completion:nil];
+        
+        
+        
     }
+    
+    
 }
+
+
 
 
 
