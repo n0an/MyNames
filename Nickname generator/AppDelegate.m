@@ -19,6 +19,8 @@
 
 @end
 
+extern NSString* const ANManagedObjectContextSaveDidFailNotification;
+
 @implementation AppDelegate
 
 
@@ -40,9 +42,63 @@
     
     [FIRApp configure];
     
+    [self listenForFatalCoreDataNotifications];
+    
     
     return YES;
 }
+    
+/*
+- (void) postNotificationFatalCoreDataError {
+    
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+    
+    [center postNotificationName:ANManagedObjectContextSaveDidFailNotification object:nil];
+    
+}
+*/
+    
+- (void) listenForFatalCoreDataNotifications {
+    
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter]
+    ;
+    
+    [center addObserverForName:ANManagedObjectContextSaveDidFailNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Internal Error" message:@"There was a fatal error in the app and it cannot continue.\n\nPress OK to terminate the app. Sorry for the inconvenience." preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            NSException *exception = [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Fatal Core Data Error" userInfo:nil];
+            
+            [exception raise];
+            
+        }];
+        
+        [alert addAction:action];
+        
+        UIViewController *vc = [self viewControllerForShowingAlert];
+        
+        [vc presentViewController:alert animated:true completion:nil];
+        
+        
+    }];
+    
+}
+    
+- (UIViewController*) viewControllerForShowingAlert {
+    
+    UIViewController *rootVC = self.window.rootViewController;
+    
+    if (rootVC.presentedViewController != nil) {
+        
+        return rootVC.presentedViewController;
+        
+    } else {
+        return rootVC;
+    }
+}
+    
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

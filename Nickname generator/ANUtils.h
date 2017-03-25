@@ -48,7 +48,7 @@ UIColor* randomColor();
 
 void ANLog(NSString* format, ...);
 
-
+void postNotificationFatalCoreDataError();
 
 
 

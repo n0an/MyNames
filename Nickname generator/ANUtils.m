@@ -21,6 +21,7 @@ NSString* const kAppAlreadySeen = @"appAlreadySeen";
 NSString* const kAppLaunchesCount = @"kAppLaunchesCount";
 
 
+NSString* const ANManagedObjectContextSaveDidFailNotification = @"ANManagedObjectContextSaveDidFailNotification";
 
 
 NSString* fancyDateStringFromDate(NSDate* date) {
@@ -33,6 +34,14 @@ NSString* fancyDateStringFromDate(NSDate* date) {
     }
     
     return [formatter stringFromDate:date];
+    
+}
+
+void postNotificationFatalCoreDataError() {
+    
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+    
+    [center postNotificationName:ANManagedObjectContextSaveDidFailNotification object:nil];
     
 }
 

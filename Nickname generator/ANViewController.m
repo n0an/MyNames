@@ -24,8 +24,8 @@ typedef enum {
     ANMenuConstantStateOpened = 1
 } ANMenuConstantState;
 
-extern NSString* kAppAlreadySeen;
-extern NSString* kAppLaunchesCount;
+extern NSString* const kAppAlreadySeen;
+extern NSString* const kAppLaunchesCount;
 
 @interface ANViewController () <ANCategorySelectionDelegate>
     
