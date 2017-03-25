@@ -26,12 +26,15 @@
 		<string>2342fff18263bccec612d2b7cb71b96ae031a1cd</string>
 		<key>Kits</key>
 		<array>
+            
 			<dict>
 				<key>KitInfo</key>
 				<dict/>
 				<key>KitName</key>
 				<string>Crashlytics</string>
 			</dict>
+            
+            
 		</array>
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
