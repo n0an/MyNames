@@ -36,8 +36,18 @@ extern NSString* const ANManagedObjectContextSaveDidFailNotification;
     //[Fabric with:@[CrashlyticsKit]];
 
     
-    UIColor *tabBarColor = RGBA(201, 81, 0, 255);
-    [[UITabBar appearance] setTintColor:tabBarColor];
+    //UIColor *tabBarColor = RGBA(201, 81, 0, 255);
+    //[[UITabBar appearance] setTintColor:tabBarColor];
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    UIColor *tabBarTintColor = RGBA(236, 240, 241, 1.0);
+    
+    [[UITabBar appearance] setBarTintColor:tabBarTintColor];
+    
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabitem-selected"]];
+    
+    
     
     
     [FIRApp configure];

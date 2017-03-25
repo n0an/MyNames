@@ -105,7 +105,7 @@
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:self.managedObjectContext
                                           sectionNameKeyPath:@"nameCategoryTitle"
-                                                   cacheName:@"favoriteNamesCache"];
+                                                   cacheName:nil];
     
     
     aFetchedResultsController.delegate = self;
