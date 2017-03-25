@@ -32,7 +32,7 @@
         
         ANNameCategory* area01cat03 = [[ANNameCategory alloc] initWithCategoryID:@"01.03" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0003", nil) andCategoryImageName:@"romanBg14_4592" andCategoryBackgroundImageName:@"romanBg07_7784" andAlias:@"MythRoman"];
         
-        ANNameCategory* area01cat04 = [[ANNameCategory alloc] initWithCategoryID:@"01.04" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0004", nil) andCategoryImageName:@"norseBG05_2329" andCategoryBackgroundImageName:@"norseBG07_5713" andAlias:@"MythNorse"];
+        ANNameCategory* area01cat04 = [[ANNameCategory alloc] initWithCategoryID:@"01.04" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0004", nil) andCategoryImageName:@"norseBG05_2329" andCategoryBackgroundImageName:@"norseBG07_1900" andAlias:@"MythNorse"];
         
         ANNameCategory* area01cat05 = [[ANNameCategory alloc] initWithCategoryID:@"01.05" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0005", nil) andCategoryImageName:@"egyptBG15_1923" andCategoryBackgroundImageName:@"egyptBG01_1936" andAlias:@"MythEgypt"];
         
