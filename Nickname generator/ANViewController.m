@@ -24,48 +24,54 @@ typedef enum {
     ANMenuConstantStateOpened = 1
 } ANMenuConstantState;
 
-@interface ANViewController () <ANCategorySelectionDelegate>
-
-@property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
-
-@property (assign, nonatomic) BOOL isDescriptionAvailable;
-@property (assign, nonatomic) BOOL isNameFavorite;
-
-@property (assign, nonatomic) BOOL isSettingsActive;
-@property (assign, nonatomic) BOOL settingsViewPickedUp;
-
-@property (assign, nonatomic) NSInteger namesCount;
-@property (assign, nonatomic) ANGender selectedGender;
-@property (strong, nonatomic) ANNameCategory* selectedCategory;
-
-@property (strong, nonatomic) NSArray* displayedNames;
-@property (strong, nonatomic) NSArray* namesWithDescriptions;
-
-@property (strong, nonatomic) UIImage* likeNonSetImage;
-@property (strong, nonatomic) UIImage* likeSetImage;
-
-@property (strong, nonatomic) UIVisualEffectView* blurEffectView1;
-
-@property (strong, nonatomic) UIView* draggingView;
-
-@property (assign, nonatomic) CGPoint touchOffset;
-@property (assign, nonatomic) CGPoint lastLocation;
-
-
-@end
-
 extern NSString* kAppAlreadySeen;
 extern NSString* kAppLaunchesCount;
 
+@interface ANViewController () <ANCategorySelectionDelegate>
+    
+    @property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
+    
+    @property (assign, nonatomic) BOOL isDescriptionAvailable;
+    @property (assign, nonatomic) BOOL isNameFavorite;
+    
+    @property (assign, nonatomic) BOOL isSettingsActive;
+    @property (assign, nonatomic) BOOL settingsViewPickedUp;
+    
+    @property (assign, nonatomic) NSInteger namesCount;
+    @property (assign, nonatomic) ANGender selectedGender;
+    @property (strong, nonatomic) ANNameCategory* selectedCategory;
+    
+    @property (strong, nonatomic) NSArray* displayedNames;
+    @property (strong, nonatomic) NSArray* namesWithDescriptions;
+    
+    @property (strong, nonatomic) UIImage* likeNonSetImage;
+    @property (strong, nonatomic) UIImage* likeSetImage;
+    
+    @property (strong, nonatomic) UIVisualEffectView* blurEffectView1;
+    
+    @property (strong, nonatomic) UIView* draggingView;
+    
+    @property (assign, nonatomic) CGPoint touchOffset;
+    @property (assign, nonatomic) CGPoint lastLocation;
+    
+    @property (strong, nonatomic) id observer;
+    
+    
+@end
+
+
+
 
 @implementation ANViewController
-
+    
 - (BOOL)canBecomeFirstResponder {
     return YES;
 }
-
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self listenForGoingBackgroundNotification];
     
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
     
@@ -76,7 +82,7 @@ extern NSString* kAppLaunchesCount;
     self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
     
     self.selectedGender = ANGenderMasculine;
-
+    
     self.isDescriptionAvailable = NO;
     self.isSettingsActive = NO;
     
@@ -96,7 +102,7 @@ extern NSString* kAppLaunchesCount;
     
     self.controlsView.clipsToBounds = YES;
     self.controlsView.layer.cornerRadius = 10.f;
-
+    
     
     UIBlurEffect *lightBlurEffect1 = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView1 = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect1];
@@ -114,17 +120,17 @@ extern NSString* kAppLaunchesCount;
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
     
     [self animateWheelRotating];
-
+    
     
 }
-
+    
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     
     [self checkUserDefaults];
-
+    
 }
-
+    
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -161,10 +167,20 @@ extern NSString* kAppLaunchesCount;
     [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
     
 }
-
-
+    
+- (void) deinit {
+    
+    if (self.observer != nil) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self.observer];
+    }
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+    
+    
 #pragma mark - Animations
-
+    
 - (void) animateGenerateButton {
     
     [UIView animateWithDuration:0.7f
@@ -181,8 +197,8 @@ extern NSString* kAppLaunchesCount;
                          
                      }];
 }
-
-
+    
+    
 - (void) animateGenerateButtonOnClick {
     
     [UIView animateWithDuration:0.15f
@@ -198,8 +214,8 @@ extern NSString* kAppLaunchesCount;
                          
                      }];
 }
-
-
+    
+    
 - (void) animateWheelRotating {
     
     [UIView animateWithDuration:0.3f
@@ -208,7 +224,7 @@ extern NSString* kAppLaunchesCount;
                      animations:^{
                          
                          self.wheelView.transform = CGAffineTransformMakeRotation(M_PI/2);
-                        
+                         
                          
                      } completion:^(BOOL finished) {
                          self.wheelView.transform = CGAffineTransformIdentity;
@@ -218,12 +234,12 @@ extern NSString* kAppLaunchesCount;
                      }];
     
 }
-
+    
 - (void) animateWheelFlapOnLaunch {
     
     
     [UIView animateKeyframesWithDuration:1.0 delay:0.0 options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
-
+        
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
             self.settingsViewLeadingConstraint.constant = -270;
             [self.view layoutIfNeeded];
@@ -246,11 +262,11 @@ extern NSString* kAppLaunchesCount;
     
     
 }
-
-
-
+    
+    
+    
 #pragma mark - Helper Methods
-
+    
 - (void) checkUserDefaults {
     
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
@@ -272,12 +288,11 @@ extern NSString* kAppLaunchesCount;
     }
     
     
-    
-    
-    
 }
-
-
+    
+    
+    
+    
 - (NSString*) getNamesStringForNamesCount:(NSInteger) count {
     
     NSMutableArray* array = [NSMutableArray array];
@@ -299,14 +314,14 @@ extern NSString* kAppLaunchesCount;
     self.namesWithDescriptions = [self getNamesWithDescriptions];
     return resultString;
 }
-
-
+    
+    
 - (NSArray*) getNamesWithDescriptions {
     
     NSMutableArray* cleanArray = [NSMutableArray array];
     
     for (ANName* name in self.displayedNames) {
-
+        
         if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
             [cleanArray addObject:name];
         }
@@ -320,15 +335,15 @@ extern NSString* kAppLaunchesCount;
         self.isDescriptionAvailable = NO;
         self.nameResultLabel.userInteractionEnabled = NO;
         self.infoImageView.hidden = YES;
-
+        
     }
     
     NSArray* resArray = cleanArray;
     
     return resArray;
 }
-
-
+    
+    
 - (void) refreshLikeButton {
     
     if (self.isNameFavorite) {
@@ -339,14 +354,29 @@ extern NSString* kAppLaunchesCount;
         
         [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
     }
-
+    
 }
+    
 
-
-
+- (void) listenForGoingBackgroundNotification {
+    
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+    
+    self.observer = [center addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        
+        if (self.presentedViewController != nil) {
+            [self dismissViewControllerAnimated:false completion:nil];
+        }
+        
+        
+    }];
+}
+    
+    
+    
 #pragma mark - Actions
-
-
+    
+    
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (UIEventSubtypeMotionShake) {
         
@@ -357,8 +387,8 @@ extern NSString* kAppLaunchesCount;
         self.nameResultLabel.text = currentNamesLabel;
     }
 }
-
-
+    
+    
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender {
     
     [self animateGenerateButtonOnClick];
@@ -389,11 +419,11 @@ extern NSString* kAppLaunchesCount;
                      }];
     
 }
-
-
-
+    
+    
+    
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
-  
+    
     // *** Saving choosen names to CoreData
     
     NSArray* arr = self.displayedNames;
@@ -413,11 +443,11 @@ extern NSString* kAppLaunchesCount;
     self.isNameFavorite = !self.isNameFavorite;
     
     [self refreshLikeButton];
-
+    
     
 }
-
-
+    
+    
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender {
     
     ANLog(@"New value is = %d", sender.selectedSegmentIndex);
@@ -425,7 +455,7 @@ extern NSString* kAppLaunchesCount;
     self.namesCount = sender.selectedSegmentIndex + 1;
     
 }
-
+    
 - (IBAction)actionGndrBtnPressed:(id)sender {
     
     UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
@@ -433,12 +463,12 @@ extern NSString* kAppLaunchesCount;
     
     UIImage* femActiveImage = [UIImage imageNamed:@"fem01"];
     UIImage* femNonactiveImage = [UIImage imageNamed:@"fem02"];
-
+    
     
     if ([sender isEqual:self.genderButtonMasc]) {
         
         self.selectedGender = ANGenderMasculine;
-
+        
         self.imgViewGenderMasc.image = mascActiveImage;
         self.imgViewGenderFem.image = femNonactiveImage;
         
@@ -446,18 +476,18 @@ extern NSString* kAppLaunchesCount;
     } else if ([sender isEqual:self.genderButtonFem]) {
         
         self.selectedGender = ANGenderFeminine;
-
+        
         self.imgViewGenderMasc.image = mascNonactiveImage;
         self.imgViewGenderFem.image = femActiveImage;
     }
     
     
 }
-
-
-
+    
+    
+    
 #pragma mark - Touches
-
+    
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     UITouch* touch = [touches anyObject];
@@ -480,8 +510,8 @@ extern NSString* kAppLaunchesCount;
     }
     
 }
-
-
+    
+    
 - (void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     if (self.settingsViewPickedUp) {
@@ -507,7 +537,7 @@ extern NSString* kAppLaunchesCount;
                 self.settingsViewLeadingConstraint.constant = ANMenuConstantStateOpened;
                 self.isSettingsActive = YES;
             }
-  
+            
             self.settingsViewPickedUp = NO;
             
         }
@@ -518,25 +548,25 @@ extern NSString* kAppLaunchesCount;
     }
     
 }
-
+    
 - (void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     [UIView animateWithDuration:0.1f animations:^{
         self.wheelView.transform = CGAffineTransformIdentity;
         self.wheelView.alpha = 1.f;
     }];
-
+    
     
     self.settingsViewPickedUp = NO;
-
+    
 }
-
+    
 - (void) touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.settingsViewPickedUp = NO;
 }
-
+    
 #pragma mark - Gestures
-
+    
 - (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
     
     ANLog(@"actionTapOnNameLabel");
@@ -558,10 +588,10 @@ extern NSString* kAppLaunchesCount;
     }
     
 }
-
-
-
-
+    
+    
+    
+    
 - (void) actionTapOnCategoryLabel:(UITapGestureRecognizer*) recognizer {
     
     ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
@@ -577,11 +607,11 @@ extern NSString* kAppLaunchesCount;
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self presentViewController:nav animated:YES completion:nil];
-
+    
 }
-
-
-
+    
+    
+    
 - (void) actionTapOnWheelView:(UITapGestureRecognizer*) recognizer {
     ANLog(@"actionTapOnWheelView");
     
@@ -613,16 +643,16 @@ extern NSString* kAppLaunchesCount;
                          [self.view layoutIfNeeded];
                      }
                      completion:nil];
-
+    
     
     self.isSettingsActive = !self.isSettingsActive;
     
 }
-
-
-
+    
+    
+    
 #pragma mark - +++ ANCategorySelectionDelegate +++
-
+    
 - (void) categoryDidSelect:(ANNameCategory*) category {
     
     self.selectedCategory = category;
@@ -634,13 +664,13 @@ extern NSString* kAppLaunchesCount;
     self.nameResultLabel.text = currentNamesLabel;
     
     self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;
-
+    
 }
-
-
-
-
-
+    
+    
+    
+    
+    
 @end
 
 
