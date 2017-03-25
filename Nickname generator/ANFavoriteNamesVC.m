@@ -21,12 +21,15 @@
 
 #import "ANNameCategory.h"
 
+#import "ANRotateTransitionAnimator.h"
 
 @interface ANFavoriteNamesVC ()
 
 @property (strong, nonatomic) NSString* searchPredicateString;
 
 @property (assign, nonatomic) ANGender selectedGender;
+    
+@property (strong, nonatomic) id rotateTransition;
 
 @end
 
@@ -38,6 +41,9 @@
     [super viewDidLoad];
     
     self.selectedGender = ANGenderAll;
+    
+    self.rotateTransition = [[ANRotateTransitionAnimator alloc] init];
+
     
     UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
     UIBarButtonItem* clearButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"clear32"] landscapeImagePhone:[UIImage imageNamed:@"clear24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionClear:)];
@@ -346,6 +352,31 @@
 }
 
 
+#pragma mark - Navigation
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showDescriptionVC"]) {
+        
+        UINavigationController *destinationNavVC = segue.destinationViewController;
+        
+        ANDescriptioinVC *destinationVC = (ANDescriptioinVC*) destinationNavVC.topViewController;
+        
+        ANFavoriteName* selectedFavoriteName = sender;
+        
+        NSString* nameID = selectedFavoriteName.nameID;
+        
+        ANName* originName = [[ANNamesFactory sharedFactory] getNameForID:nameID];
+        
+        destinationVC.namesArray = @[originName];
+        
+        
+        destinationNavVC.transitioningDelegate = self.rotateTransition;
+
+        
+        
+    }
+    
+}
 
 
 #pragma mark - UITableViewDelegate
@@ -360,6 +391,10 @@
     
     if ([self isDescriptionAvailable:name]) {
         
+        
+        [self performSegueWithIdentifier:@"showDescriptionVC" sender:name];
+        
+        /*
         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
         
         NSString* nameID = name.nameID;
@@ -375,6 +410,7 @@
         nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
         [self presentViewController:nav animated:YES completion:nil];
+        */
         
     }
     

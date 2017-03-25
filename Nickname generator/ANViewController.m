@@ -19,6 +19,8 @@
 
 #import "ANPageViewController.h"
 
+#import "ANRotateTransitionAnimator.h"
+
 typedef enum {
     ANMenuConstantStateClosed = -321,
     ANMenuConstantStateOpened = 1
@@ -56,6 +58,8 @@ extern NSString* const kAppLaunchesCount;
     
     @property (strong, nonatomic) id observer;
     
+    @property (strong, nonatomic) id rotateTransition;
+    
     
 @end
 
@@ -72,6 +76,8 @@ extern NSString* const kAppLaunchesCount;
     [super viewDidLoad];
     
     [self listenForGoingBackgroundNotification];
+    
+    self.rotateTransition = [[ANRotateTransitionAnimator alloc] init];
     
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
     
@@ -565,15 +571,45 @@ extern NSString* const kAppLaunchesCount;
     self.settingsViewPickedUp = NO;
 }
     
+    
+#pragma mark - Navigation
+    
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showDescriptionVC"]) {
+        
+        UINavigationController *destinationNavVC = segue.destinationViewController;
+        
+        ANDescriptioinVC *destinationVC = (ANDescriptioinVC*) destinationNavVC.topViewController;
+        
+        destinationVC.namesArray = self.namesWithDescriptions;
+        
+        
+        
+        destinationNavVC.transitioningDelegate = self.rotateTransition;
+        
+        
+        
+    }
+    
+}
+    
+    
 #pragma mark - Gestures
     
 - (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
     
     ANLog(@"actionTapOnNameLabel");
     
+    
+    
     // *** If there're names in array of names with descriptions - initializate ANDescriptionVC and transfer names array to it.
     
     if (self.isDescriptionAvailable) {
+        
+        [self performSegueWithIdentifier:@"showDescriptionVC" sender:nil];
+        
+        /*
         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
         
         vc.namesArray = self.namesWithDescriptions;
@@ -582,8 +618,13 @@ extern NSString* const kAppLaunchesCount;
         
         nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
-        [self presentViewController:nav animated:YES completion:nil];
         
+        
+        
+        //nav.transitioningDelegate = self.rotateTransition;
+        
+        [self presentViewController:nav animated:YES completion:nil];
+        */
         
     }
     

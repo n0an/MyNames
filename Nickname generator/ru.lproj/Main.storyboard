@@ -413,6 +413,7 @@
                         <outlet property="settingsViewLeadingConstraint" destination="7wP-BJ-bZr" id="DM0-6Q-NVM"/>
                         <outlet property="wheelImageView" destination="Shk-fv-y1H" id="dNI-Dw-Oqu"/>
                         <outlet property="wheelView" destination="qpY-cl-1fJ" id="Rft-BP-hVx"/>
+                        <segue destination="ss8-J9-LyB" kind="presentation" identifier="showDescriptionVC" id="hka-Se-WNc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -612,6 +613,7 @@
                         <outlet property="imgViewGenderFem" destination="O5r-23-1zY" id="FhS-h8-9B4"/>
                         <outlet property="imgViewGenderMasc" destination="9kO-ZX-izT" id="Cp8-iD-uGP"/>
                         <outlet property="searchBar" destination="UGy-1T-Vn3" id="agc-wV-z5B"/>
+                        <segue destination="ss8-J9-LyB" kind="presentation" identifier="showDescriptionVC" id="gJs-Cs-isv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5A2-Hf-qey" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -845,6 +847,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Cif-Nr-Tj9"/>
                     <connections>
                         <outlet property="contenView" destination="wNp-yE-vGl" id="LF3-hk-0QO"/>
                         <outlet property="descriptionLabel" destination="Ec4-dq-fkA" id="BvK-f9-J4A"/>
@@ -859,7 +862,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4S-Ei-Jxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="-204"/>
+            <point key="canvasLocation" x="2711" y="503"/>
         </scene>
         <!--CategoryVC-->
         <scene sceneID="YO9-G2-aNr">
@@ -974,7 +977,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JO8-DY-gjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991.2" y="503.29835082458777"/>
+            <point key="canvasLocation" x="458" y="-205"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kPd-W0-pZl">
@@ -1470,6 +1473,24 @@
             </objects>
             <point key="canvasLocation" x="1271" y="1337"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O9m-Rq-Cq0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ss8-J9-LyB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BBU-by-prz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WUg-cz-UtD" kind="relationship" relationship="rootViewController" id="34O-Td-vPr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjA-NB-kl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1991" y="504"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NewCategoryBadge" width="60" height="60"/>
@@ -1494,4 +1515,7 @@
         <image name="top_charts" width="22" height="22"/>
         <image name="wiki01" width="498" height="498"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gJs-Cs-isv"/>
+    </inferredMetricsTieBreakers>
 </document>

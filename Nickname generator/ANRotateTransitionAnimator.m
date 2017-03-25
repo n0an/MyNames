@@ -39,9 +39,9 @@ CGFloat const duration = 0.5f;
     
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     
-    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewControllerKey];
+    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     
-    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewControllerKey];
+    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     
     if ((fromView == nil) && (toView == nil)) {
         return;
