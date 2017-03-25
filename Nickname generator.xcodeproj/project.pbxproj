@@ -23,6 +23,7 @@
 		184A13B41CC160C20031F217 /* ANFavouriteNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */; };
 		186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186D62201CBC25C60094E885 /* Backgrounds.xcassets */; };
 		188E72341E865235006A8CBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188E72331E865235006A8CBA /* GoogleService-Info.plist */; };
+		188E723A1E86812D006A8CBA /* ANRotateTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */; };
 		188F878A1CCA6764007A34A4 /* MythPersianMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F87891CCA6764007A34A4 /* MythPersianMascImages.xcassets */; };
 		188F878C1CCA6778007A34A4 /* MythPersianFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F878B1CCA6778007A34A4 /* MythPersianFemImages.xcassets */; };
 		188F87921CCA83ED007A34A4 /* MythCelticMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F87911CCA83ED007A34A4 /* MythCelticMascImages.xcassets */; };
@@ -113,6 +114,8 @@
 		184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavouriteNameCell.m; sourceTree = "<group>"; };
 		186D62201CBC25C60094E885 /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
 		188E72331E865235006A8CBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		188E72381E86812D006A8CBA /* ANRotateTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRotateTransitionAnimator.h; sourceTree = "<group>"; };
+		188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRotateTransitionAnimator.m; sourceTree = "<group>"; };
 		188F87891CCA6764007A34A4 /* MythPersianMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythPersianMascImages.xcassets; sourceTree = "<group>"; };
 		188F878B1CCA6778007A34A4 /* MythPersianFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythPersianFemImages.xcassets; sourceTree = "<group>"; };
 		188F87911CCA83ED007A34A4 /* MythCelticMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythCelticMascImages.xcassets; sourceTree = "<group>"; };
@@ -395,6 +398,8 @@
 				188E72331E865235006A8CBA /* GoogleService-Info.plist */,
 				18F1B9741C8F43C1001A3B25 /* Supporting Files */,
 				18A578401CECE0A300A10BB1 /* Localizable.strings */,
+				188E72381E86812D006A8CBA /* ANRotateTransitionAnimator.h */,
+				188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */,
 			);
 			path = "Nickname generator";
 			sourceTree = "<group>";
@@ -797,6 +802,7 @@
 				1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */,
 				184A13B41CC160C20031F217 /* ANFavouriteNameCell.m in Sources */,
 				183410791CCE7A5900C19817 /* ANContentPageViewController.m in Sources */,
+				188E723A1E86812D006A8CBA /* ANRotateTransitionAnimator.m in Sources */,
 				18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
