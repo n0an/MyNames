@@ -6,6 +6,9 @@ target 'Nickname generator' do
   # use_frameworks!
 
   # Pods for Nickname generator
+  
+  # Firebase
+  pod 'Firebase/Core'
 
   # Fabric
   pod 'Fabric'

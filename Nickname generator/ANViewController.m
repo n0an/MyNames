@@ -54,9 +54,8 @@ typedef enum {
 
 @end
 
-
-NSString* const kAppAlreadySeen = @"appAlreadySeen";
-NSString* const kAppLaunchesCount = @"kAppLaunchesCount";
+extern NSString* kAppAlreadySeen;
+extern NSString* kAppLaunchesCount;
 
 
 @implementation ANViewController

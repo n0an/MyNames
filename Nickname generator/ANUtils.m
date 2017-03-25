@@ -16,6 +16,13 @@ NSString* const ANLogNotificationTextUserInfoKey = @"com.anovoselov.ANLogNotific
 
 NSString* const ANCDMFavoriteName = @"ANFavoriteName";
 
+
+NSString* const kAppAlreadySeen = @"appAlreadySeen";
+NSString* const kAppLaunchesCount = @"kAppLaunchesCount";
+
+
+
+
 NSString* fancyDateStringFromDate(NSDate* date) {
     
     static NSDateFormatter* formatter = nil;

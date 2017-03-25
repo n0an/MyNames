@@ -22,6 +22,7 @@
 		183410791CCE7A5900C19817 /* ANContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410781CCE7A5900C19817 /* ANContentPageViewController.m */; };
 		184A13B41CC160C20031F217 /* ANFavouriteNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */; };
 		186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186D62201CBC25C60094E885 /* Backgrounds.xcassets */; };
+		188E72341E865235006A8CBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188E72331E865235006A8CBA /* GoogleService-Info.plist */; };
 		188F878A1CCA6764007A34A4 /* MythPersianMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F87891CCA6764007A34A4 /* MythPersianMascImages.xcassets */; };
 		188F878C1CCA6778007A34A4 /* MythPersianFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F878B1CCA6778007A34A4 /* MythPersianFemImages.xcassets */; };
 		188F87921CCA83ED007A34A4 /* MythCelticMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F87911CCA83ED007A34A4 /* MythCelticMascImages.xcassets */; };
@@ -112,6 +113,7 @@
 		184A13B21CC160C20031F217 /* ANFavouriteNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavouriteNameCell.h; sourceTree = "<group>"; };
 		184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavouriteNameCell.m; sourceTree = "<group>"; };
 		186D62201CBC25C60094E885 /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
+		188E72331E865235006A8CBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		188F87891CCA6764007A34A4 /* MythPersianMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythPersianMascImages.xcassets; sourceTree = "<group>"; };
 		188F878B1CCA6778007A34A4 /* MythPersianFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythPersianFemImages.xcassets; sourceTree = "<group>"; };
 		188F87911CCA83ED007A34A4 /* MythCelticMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythCelticMascImages.xcassets; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				18100DA71CB23EAF00508F1D /* Assets */,
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
 				18F1B9851C8F43C1001A3B25 /* Info.plist */,
+				188E72331E865235006A8CBA /* GoogleService-Info.plist */,
 				18F1B9741C8F43C1001A3B25 /* Supporting Files */,
 				18A578401CECE0A300A10BB1 /* Localizable.strings */,
 			);
@@ -538,6 +541,7 @@
 					18F1B9701C8F43C1001A3B25 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 358V8FBM3U;
+						ProvisioningStyle = Automatic;
 					};
 					18F1B9891C8F43C1001A3B25 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -603,6 +607,7 @@
 				18AF09F01CEF75180061B497 /* MythVedicFem.plist in Resources */,
 				18C776341CC9514F00F5FFFF /* MythNorseMascImages.xcassets in Resources */,
 				188F87921CCA83ED007A34A4 /* MythCelticMascImages.xcassets in Resources */,
+				188E72341E865235006A8CBA /* GoogleService-Info.plist in Resources */,
 				18C7763E1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets in Resources */,
 				18F1ADEB1CB8159C007D00C4 /* MythGreekMascImages.xcassets in Resources */,
 				18A959F11CD4BCCC00AA02AC /* Stripes.xcassets in Resources */,
@@ -1107,7 +1112,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: nantog@gmail.com (T9AJNB68MF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 358V8FBM3U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1128,7 +1135,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Anton Novoselov (358V8FBM3U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 358V8FBM3U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -431,8 +431,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" misplaced="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-1T-Vn3">
-                                    <rect key="frame" x="0.0" y="36" width="600" height="44"/>
+                                <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-1T-Vn3">
+                                    <rect key="frame" x="0.0" y="36" width="375" height="44"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
                                         <outlet property="delegate" destination="Z8D-J2-Jdx" id="ZYB-2U-HAc"/>
@@ -1053,6 +1053,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WSn-gb-sgd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Z8h-xj-kWa">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -1138,7 +1139,7 @@
                                 </variation>
                             </label>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-Jv-v4C">
-                                <rect key="frame" x="165.5" y="540" width="43" height="40.5"/>
+                                <rect key="frame" x="165" y="539.5" width="44" height="41.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NR3-Jv-v4C" secondAttribute="height" multiplier="44:41" id="FFE-2A-D7r"/>
                                 </constraints>
@@ -1492,10 +1493,10 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="YZB-rr-ET6"/>
-                                <exclude reference="JCT-De-IXT"/>
                                 <exclude reference="48Q-I3-Tix"/>
                                 <exclude reference="5O7-66-wRn"/>
                                 <exclude reference="lue-A9-F6E"/>
+                                <exclude reference="JCT-De-IXT"/>
                             </mask>
                         </variation>
                     </view>

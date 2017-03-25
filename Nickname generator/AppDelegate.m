@@ -13,6 +13,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
+#import <Firebase.h>
 
 @interface AppDelegate ()
 
@@ -36,6 +37,8 @@
     UIColor *tabBarColor = RGBA(201, 81, 0, 255);
     [[UITabBar appearance] setTintColor:tabBarColor];
     
+    
+    [FIRApp configure];
     
     
     return YES;
