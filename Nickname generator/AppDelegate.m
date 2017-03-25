@@ -57,16 +57,7 @@ extern NSString* const ANManagedObjectContextSaveDidFailNotification;
     
     return YES;
 }
-    
-/*
-- (void) postNotificationFatalCoreDataError {
-    
-    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
-    
-    [center postNotificationName:ANManagedObjectContextSaveDidFailNotification object:nil];
-    
-}
-*/
+
     
 - (void) listenForFatalCoreDataNotifications {
     
