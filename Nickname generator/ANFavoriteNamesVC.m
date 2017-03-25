@@ -186,17 +186,19 @@
 - (void) actionClear:(UIBarButtonItem*) sender {
     
 
-    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"TITLE_CLEAR", nil) message:NSLocalizedString(@"MESSAGE_CLEAR", nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"TITLE_CLEAR", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"AFFIRM_CLEAR", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"AFFIRM_CLEAR", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [[ANDataManager sharedManager] clearFavoriteNamesDB];
         
     }];
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL_CLEAR", nil) style:UIAlertActionStyleCancel handler:nil];
     
-    [alertController addAction:cancelAction];
     [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    
+    alertController.popoverPresentationController.sourceView = self.view;
     
     
     [self presentViewController:alertController animated:YES completion:nil];

@@ -7,8 +7,8 @@
 */
 
 
-TITLE_CLEAR = "Confirm please";
-MESSAGE_CLEAR = "Delete favorite names? All favorite names will be cleared";
+TITLE_CLEAR = "Delete favorite names?";
+//MESSAGE_CLEAR = "Delete favorite names? All favorite names will be cleared";
 AFFIRM_CLEAR = "OK";
 CANCEL_CLEAR = "Cancel";
 
@@ -31,7 +31,7 @@ PAGEHEADERS04 = "Flexible settings";
 PAGEHEADERS05 = "More info";
 
 PAGESUBHEADERS01 = "Generate a new name, pressing the button";
-PAGESUBHEADERS02 = "or by shaking phone";
+PAGESUBHEADERS02 = "or by shaking device";
 PAGESUBHEADERS03 = "Add names you like to Favorites";
 PAGESUBHEADERS04 = "Configure generator as you wish";
 PAGESUBHEADERS05 = "Get more info about name by clicking it";
