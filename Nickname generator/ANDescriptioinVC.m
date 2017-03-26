@@ -17,6 +17,7 @@
 
 #import <SafariServices/SafariServices.h>
 
+#import <Social/Social.h>
 
 @interface ANDescriptioinVC ()
 
@@ -26,6 +27,7 @@
 @property (strong, nonatomic) UIImage* likeNonSetImage;
 @property (strong, nonatomic) UIImage* likeSetImage;
 
+@property (strong, nonatomic) UIBarButtonItem* shareButton;
 
 @end
 
@@ -55,17 +57,33 @@
     
     self.navigationItem.leftBarButtonItem = cancel;
     
+    NSMutableArray* rightBarButtonItems = [NSMutableArray array];
+    
+    UIBarButtonItem* shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionShareButtonPressed:)];
+    
+    self.shareButton = shareButton;
+    
+    [rightBarButtonItems addObject:shareButton];
+    
     if ([self.namesArray count] > 1) {
+        
+        UIBarButtonItem* fixedSpaceFirst = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
+        fixedSpaceFirst.width = 10;
         
         UIBarButtonItem* nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowDescRight32"] landscapeImagePhone:[UIImage imageNamed:@"arrowDescRight24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionNextPressed:)];
         
         UIBarButtonItem* previousButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowDescLeft32"] landscapeImagePhone:[UIImage imageNamed:@"arrowDescLeft24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionPreviousPressed:)];
 
-        UIBarButtonItem* fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
-        fixedSpace.width = 4;
+        UIBarButtonItem* fixedSpaceBetween = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
+        fixedSpaceBetween.width = 4;
         
-        self.navigationItem.rightBarButtonItems = @[nextButton, fixedSpace, previousButton];
+        [rightBarButtonItems addObjectsFromArray:@[fixedSpaceFirst, nextButton, fixedSpaceBetween, previousButton]];
+        
     }
+    
+    
+    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+    
     
     
     UISwipeGestureRecognizer* rightSwipeGesture =
@@ -207,6 +225,29 @@
 }
 
 
+- (void) showActivityVCWithItems:(NSArray *)items {
+    
+    UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    
+    activityVC.popoverPresentationController.barButtonItem = self.shareButton;
+    
+    [self presentViewController:activityVC animated:true completion:nil];
+    
+}
+
+- (void) showAlertShareErrorWithTitle:(NSString *)title andMessage:(NSString *) message {
+    
+    UIAlertController* errorAlertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [errorAlertController addAction:okAction];
+    
+    [self presentViewController:errorAlertController animated:true completion:nil];
+    
+    
+}
+
 
 #pragma mark - Actions
 
@@ -223,6 +264,108 @@
 - (void) actionPreviousPressed:(UIBarButtonItem*) sender {
 
     [self iterateNameWithDirection:ANNameIterationDirectionPrevious];
+    
+}
+
+- (void) actionShareButtonPressed:(UIBarButtonItem*) sender {
+    
+    
+    ANName* firstName = self.currentName;
+    
+    NSString* introTextToShare = NSLocalizedString(@"SHARE_TEXT", nil);
+    
+    NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", firstName.firstName, introTextToShare];
+    
+    UIImage* imageToShare = [UIImage imageNamed:firstName.nameImageName];
+    
+    // Presenting action sheet with share options - Facebook, Twitter, UIActivityVC
+    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"SHARE_MESSAGE", nil) preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    // TWITTER ACTION
+    UIAlertAction* twitterAction = [UIAlertAction actionWithTitle:@"Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        // Check if Twitter is available. Otherwise, display an error message
+        
+        if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+            
+            [self showAlertShareErrorWithTitle:NSLocalizedString(@"SHARE_TWITTER_UNAVAILABLE_TITLE", nil) andMessage:NSLocalizedString(@"SHARE_TWITTER_UNAVAILABLE_MESSAGE", nil)];
+            
+            return;
+            
+        }
+        
+        // Display Tweet Composer
+        SLComposeViewController* tweetComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        [tweetComposer setInitialText:fullTextToShare];
+        [tweetComposer addImage:imageToShare];
+        
+        //[tweetComposer addURL:shareUrl];
+        
+        [self presentViewController:tweetComposer animated:true completion:nil];
+        
+        
+    }];
+    
+    // FACEBOOK ACTION
+    UIAlertAction* facebookAction = [UIAlertAction actionWithTitle:@"Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        // Check if Facebook is available. Otherwise, display an error message
+        
+        if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+            
+            [self showAlertShareErrorWithTitle:NSLocalizedString(@"SHARE_FACEBOOK_UNAVAILABLE_TITLE", nil) andMessage:NSLocalizedString(@"SHARE_FACEBOOK_UNAVAILABLE_MESSAGE", nil)];
+            
+            return;
+            
+        }
+        
+        // Display Facebook Composer
+        SLComposeViewController* facebookComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [facebookComposer setInitialText:fullTextToShare];
+        [facebookComposer addImage:imageToShare];
+        
+        //[facebookComposer addURL:shareUrl];
+        
+        [self presentViewController:facebookComposer animated:true completion:nil];
+        
+    }];
+    
+    // OTHER ACTION - UIActivityVC
+    UIAlertAction* otherAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"SHARE_ACTION_OTHER", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSString* textToShare = firstName.firstName;
+        
+        NSArray* shareItems;
+        
+        if (imageToShare != nil) {
+            shareItems = @[textToShare, imageToShare];
+        } else {
+            shareItems = @[textToShare];
+        }
+        
+        [self showActivityVCWithItems:shareItems];
+        
+    }];
+    
+    // CANCEL ACTION
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL_CLEAR", nil) style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertController addAction:facebookAction];
+    [alertController addAction:twitterAction];
+    [alertController addAction:otherAction];
+    [alertController addAction:cancelAction];
+    
+    alertController.popoverPresentationController.sourceView = self.view;
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+    
+
+    
+    
     
 }
 
