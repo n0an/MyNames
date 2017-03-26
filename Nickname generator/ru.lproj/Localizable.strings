@@ -24,7 +24,6 @@ NAMECATEGORY0007 = "Кельтская мифология";
 
 NAMECATEGORY0201 = "Дюна";
 
-
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Удобный интерфейс";
 PAGEHEADERS03 = "Избранное";
@@ -43,7 +42,17 @@ PAGEIMAGECONTENTS03 = "egyptBG14_1030";
 PAGEIMAGECONTENTS04 = "bg14";
 PAGEIMAGECONTENTS05 = "descr";
 
+// Share menu
+SHARE_TEXT      = "Сгенерированный никнейм";
+SHARE_MESSAGE   = "Поделиться с помощью";
 
+SHARE_TWITTER_UNAVAILABLE_TITLE     = "Twitter недоступен";
+SHARE_TWITTER_UNAVAILABLE_MESSAGE   = "Вы не вошли в учетную запись Twitter. Пожалуйста, войдите в свою учетную запись в Настройки > Twitter";
+
+SHARE_FACEBOOK_UNAVAILABLE_TITLE    = "Facebook недоступен";
+SHARE_FACEBOOK_UNAVAILABLE_MESSAGE  = "Вы не вошли в учетную запись Facebook. Пожалуйста, войдите в свою учетную запись в Настройки > Facebook";
+
+SHARE_ACTION_OTHER = "Другое";
 
 
 

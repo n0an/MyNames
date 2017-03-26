@@ -42,10 +42,17 @@ PAGEIMAGECONTENTS03 = "egyptBG14_1030";
 PAGEIMAGECONTENTS04 = "bg14";
 PAGEIMAGECONTENTS05 = "descrEn";
 
+// Share menu
+SHARE_TEXT      = "Just generated nickname";
+SHARE_MESSAGE   = "Share using";
 
+SHARE_TWITTER_UNAVAILABLE_TITLE     = "Twitter Unavailable";
+SHARE_TWITTER_UNAVAILABLE_MESSAGE   = "You haven't registered your Twitter account. Please go to Settings > Twitter to create one.";
 
+SHARE_FACEBOOK_UNAVAILABLE_TITLE    = "Facebook Unavailable";
+SHARE_FACEBOOK_UNAVAILABLE_MESSAGE  = "You haven't registered your Facebook account. Please go to Settings > Facebook to create one.";
 
-
+SHARE_ACTION_OTHER = "Other";
 
 
 

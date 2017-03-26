@@ -21,6 +21,8 @@
 
 #import "ANRotateTransitionAnimator.h"
 
+#import <Social/Social.h>
+
 typedef enum {
     ANMenuConstantStateClosed = -321,
     ANMenuConstantStateOpened = 1
@@ -30,48 +32,48 @@ extern NSString* const kAppAlreadySeen;
 extern NSString* const kAppLaunchesCount;
 
 @interface ANViewController () <ANCategorySelectionDelegate>
-    
-    @property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
-    
-    @property (assign, nonatomic) BOOL isDescriptionAvailable;
-    @property (assign, nonatomic) BOOL isNameFavorite;
-    
-    @property (assign, nonatomic) BOOL isSettingsActive;
-    @property (assign, nonatomic) BOOL settingsViewPickedUp;
-    
-    @property (assign, nonatomic) NSInteger namesCount;
-    @property (assign, nonatomic) ANGender selectedGender;
-    @property (strong, nonatomic) ANNameCategory* selectedCategory;
-    
-    @property (strong, nonatomic) NSArray* displayedNames;
-    @property (strong, nonatomic) NSArray* namesWithDescriptions;
-    
-    @property (strong, nonatomic) UIImage* likeNonSetImage;
-    @property (strong, nonatomic) UIImage* likeSetImage;
-    
-    @property (strong, nonatomic) UIVisualEffectView* blurEffectView1;
-    
-    @property (strong, nonatomic) UIView* draggingView;
-    
-    @property (assign, nonatomic) CGPoint touchOffset;
-    @property (assign, nonatomic) CGPoint lastLocation;
-    
-    @property (strong, nonatomic) id observer;
-    
-    @property (strong, nonatomic) id rotateTransition;
-    
-    
+
+@property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
+
+@property (assign, nonatomic) BOOL isDescriptionAvailable;
+@property (assign, nonatomic) BOOL isNameFavorite;
+
+@property (assign, nonatomic) BOOL isSettingsActive;
+@property (assign, nonatomic) BOOL settingsViewPickedUp;
+
+@property (assign, nonatomic) NSInteger namesCount;
+@property (assign, nonatomic) ANGender selectedGender;
+@property (strong, nonatomic) ANNameCategory* selectedCategory;
+
+@property (strong, nonatomic) NSArray* displayedNames;
+@property (strong, nonatomic) NSArray* namesWithDescriptions;
+
+@property (strong, nonatomic) UIImage* likeNonSetImage;
+@property (strong, nonatomic) UIImage* likeSetImage;
+
+@property (strong, nonatomic) UIVisualEffectView* blurEffectView1;
+
+@property (strong, nonatomic) UIView* draggingView;
+
+@property (assign, nonatomic) CGPoint touchOffset;
+@property (assign, nonatomic) CGPoint lastLocation;
+
+@property (strong, nonatomic) id observer;
+
+@property (strong, nonatomic) id rotateTransition;
+
+
 @end
 
 
 
 
 @implementation ANViewController
-    
+
 - (BOOL)canBecomeFirstResponder {
     return YES;
 }
-    
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -129,14 +131,14 @@ extern NSString* const kAppLaunchesCount;
     
     
 }
-    
+
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     
     [self checkUserDefaults];
     
 }
-    
+
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -173,7 +175,7 @@ extern NSString* const kAppLaunchesCount;
     [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
     
 }
-    
+
 - (void) deinit {
     
     if (self.observer != nil) {
@@ -183,10 +185,10 @@ extern NSString* const kAppLaunchesCount;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
-    
-    
+
+
 #pragma mark - Animations
-    
+
 - (void) animateGenerateButton {
     
     [UIView animateWithDuration:0.7f
@@ -203,8 +205,8 @@ extern NSString* const kAppLaunchesCount;
                          
                      }];
 }
-    
-    
+
+
 - (void) animateGenerateButtonOnClick {
     
     [UIView animateWithDuration:0.15f
@@ -220,8 +222,8 @@ extern NSString* const kAppLaunchesCount;
                          
                      }];
 }
-    
-    
+
+
 - (void) animateWheelRotating {
     
     [UIView animateWithDuration:0.3f
@@ -240,7 +242,7 @@ extern NSString* const kAppLaunchesCount;
                      }];
     
 }
-    
+
 - (void) animateWheelFlapOnLaunch {
     
     
@@ -268,11 +270,11 @@ extern NSString* const kAppLaunchesCount;
     
     
 }
-    
-    
-    
+
+
+
 #pragma mark - Helper Methods
-    
+
 - (void) checkUserDefaults {
     
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
@@ -295,10 +297,10 @@ extern NSString* const kAppLaunchesCount;
     
     
 }
-    
-    
-    
-    
+
+
+
+
 - (NSString*) getNamesStringForNamesCount:(NSInteger) count {
     
     NSMutableArray* array = [NSMutableArray array];
@@ -320,8 +322,8 @@ extern NSString* const kAppLaunchesCount;
     self.namesWithDescriptions = [self getNamesWithDescriptions];
     return resultString;
 }
-    
-    
+
+
 - (NSArray*) getNamesWithDescriptions {
     
     NSMutableArray* cleanArray = [NSMutableArray array];
@@ -348,8 +350,8 @@ extern NSString* const kAppLaunchesCount;
     
     return resArray;
 }
-    
-    
+
+
 - (void) refreshLikeButton {
     
     if (self.isNameFavorite) {
@@ -362,7 +364,7 @@ extern NSString* const kAppLaunchesCount;
     }
     
 }
-    
+
 
 - (void) listenForGoingBackgroundNotification {
     
@@ -377,12 +379,24 @@ extern NSString* const kAppLaunchesCount;
         
     }];
 }
+
+- (void) showActivityVCWithItems:(NSArray *)items {
     
+    UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
     
+    activityVC.popoverPresentationController.sourceView = self.view;
     
+    [self presentViewController:activityVC animated:true completion:nil];
+    
+}
+
+
+
+
+
 #pragma mark - Actions
-    
-    
+
+
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (UIEventSubtypeMotionShake) {
         
@@ -393,8 +407,8 @@ extern NSString* const kAppLaunchesCount;
         self.nameResultLabel.text = currentNamesLabel;
     }
 }
-    
-    
+
+
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender {
     
     [self animateGenerateButtonOnClick];
@@ -425,9 +439,9 @@ extern NSString* const kAppLaunchesCount;
                      }];
     
 }
-    
-    
-    
+
+
+
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
     
     // *** Saving choosen names to CoreData
@@ -452,8 +466,118 @@ extern NSString* const kAppLaunchesCount;
     
     
 }
+
+
+- (void) showAlertShareErrorWithTitle:(NSString *)title andMessage:(NSString *) message {
+    
+    UIAlertController* errorAlertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [errorAlertController addAction:okAction];
+    
+    [self presentViewController:errorAlertController animated:true completion:nil];
     
     
+}
+
+
+- (IBAction)actionShareButtonPressed:(UIButton*)sender {
+    
+    ANName* firstName = [self.displayedNames objectAtIndex:0];
+    
+    NSString* introTextToShare = NSLocalizedString(@"SHARE_TEXT", nil);
+    
+    NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", introTextToShare, firstName.firstName];
+    
+    UIImage* imageToShare = [UIImage imageNamed:firstName.nameImageName];
+    
+    // Presenting action sheet with share options - Facebook, Twitter, UIActivityVC
+    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"SHARE_MESSAGE", nil) preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    // TWITTER ACTION
+    UIAlertAction* twitterAction = [UIAlertAction actionWithTitle:@"Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        // Check if Twitter is available. Otherwise, display an error message
+        
+        if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+            
+            [self showAlertShareErrorWithTitle:NSLocalizedString(@"SHARE_TWITTER_UNAVAILABLE_TITLE", nil) andMessage:NSLocalizedString(@"SHARE_TWITTER_UNAVAILABLE_MESSAGE", nil)];
+            
+            return;
+            
+        }
+        
+        // Display Tweet Composer
+        SLComposeViewController* tweetComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        [tweetComposer setInitialText:fullTextToShare];
+        [tweetComposer addImage:imageToShare];
+        
+        [self presentViewController:tweetComposer animated:true completion:nil];
+        
+        
+    }];
+    
+    // FACEBOOK ACTION
+    UIAlertAction* facebookAction = [UIAlertAction actionWithTitle:@"Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        // Check if Facebook is available. Otherwise, display an error message
+        
+        if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+            
+            [self showAlertShareErrorWithTitle:NSLocalizedString(@"SHARE_FACEBOOK_UNAVAILABLE_TITLE", nil) andMessage:NSLocalizedString(@"SHARE_FACEBOOK_UNAVAILABLE_MESSAGE", nil)];
+            
+            return;
+            
+        }
+        
+        // Display Facebook Composer
+        SLComposeViewController* facebookComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [facebookComposer setInitialText:fullTextToShare];
+        [facebookComposer addImage:imageToShare];
+        
+        [self presentViewController:facebookComposer animated:true completion:nil];
+        
+    }];
+    
+    // OTHER ACTION - UIActivityVC
+    UIAlertAction* otherAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"SHARE_ACTION_OTHER", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSString* textToShare = firstName.firstName;
+        
+        NSArray* shareItems;
+        
+        if (imageToShare != nil) {
+            shareItems = @[textToShare, imageToShare];
+        } else {
+            shareItems = @[textToShare];
+        }
+        
+        [self showActivityVCWithItems:shareItems];
+        
+    }];
+    
+    // CANCEL ACTION
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL_CLEAR", nil) style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertController addAction:facebookAction];
+    [alertController addAction:twitterAction];
+    [alertController addAction:otherAction];
+    [alertController addAction:cancelAction];
+    
+    alertController.popoverPresentationController.sourceView = self.view;
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+    
+    
+    
+}
+
+
 - (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender {
     
     ANLog(@"New value is = %d", sender.selectedSegmentIndex);
@@ -461,7 +585,7 @@ extern NSString* const kAppLaunchesCount;
     self.namesCount = sender.selectedSegmentIndex + 1;
     
 }
-    
+
 - (IBAction)actionGndrBtnPressed:(id)sender {
     
     UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
@@ -489,11 +613,11 @@ extern NSString* const kAppLaunchesCount;
     
     
 }
-    
-    
-    
+
+
+
 #pragma mark - Touches
-    
+
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     UITouch* touch = [touches anyObject];
@@ -516,8 +640,8 @@ extern NSString* const kAppLaunchesCount;
     }
     
 }
-    
-    
+
+
 - (void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     if (self.settingsViewPickedUp) {
@@ -554,7 +678,7 @@ extern NSString* const kAppLaunchesCount;
     }
     
 }
-    
+
 - (void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     [UIView animateWithDuration:0.1f animations:^{
@@ -566,14 +690,14 @@ extern NSString* const kAppLaunchesCount;
     self.settingsViewPickedUp = NO;
     
 }
-    
+
 - (void) touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.settingsViewPickedUp = NO;
 }
-    
-    
+
+
 #pragma mark - Navigation
-    
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"showDescriptionVC"]) {
@@ -593,10 +717,10 @@ extern NSString* const kAppLaunchesCount;
     }
     
 }
-    
-    
+
+
 #pragma mark - Gestures
-    
+
 - (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
     
     ANLog(@"actionTapOnNameLabel");
@@ -610,29 +734,29 @@ extern NSString* const kAppLaunchesCount;
         [self performSegueWithIdentifier:@"showDescriptionVC" sender:nil];
         
         /*
-        ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
-        
-        vc.namesArray = self.namesWithDescriptions;
-        
-        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        
-        nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        
-        
-        
-        
-        //nav.transitioningDelegate = self.rotateTransition;
-        
-        [self presentViewController:nav animated:YES completion:nil];
-        */
+         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
+         
+         vc.namesArray = self.namesWithDescriptions;
+         
+         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+         
+         nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+         
+         
+         
+         
+         //nav.transitioningDelegate = self.rotateTransition;
+         
+         [self presentViewController:nav animated:YES completion:nil];
+         */
         
     }
     
 }
-    
-    
-    
-    
+
+
+
+
 - (void) actionTapOnCategoryLabel:(UITapGestureRecognizer*) recognizer {
     
     ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
@@ -650,9 +774,9 @@ extern NSString* const kAppLaunchesCount;
     [self presentViewController:nav animated:YES completion:nil];
     
 }
-    
-    
-    
+
+
+
 - (void) actionTapOnWheelView:(UITapGestureRecognizer*) recognizer {
     ANLog(@"actionTapOnWheelView");
     
@@ -689,11 +813,11 @@ extern NSString* const kAppLaunchesCount;
     self.isSettingsActive = !self.isSettingsActive;
     
 }
-    
-    
-    
+
+
+
 #pragma mark - +++ ANCategorySelectionDelegate +++
-    
+
 - (void) categoryDidSelect:(ANNameCategory*) category {
     
     self.selectedCategory = category;
@@ -707,11 +831,11 @@ extern NSString* const kAppLaunchesCount;
     self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;
     
 }
-    
-    
-    
-    
-    
+
+
+
+
+
 @end
 
 
