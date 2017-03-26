@@ -43,7 +43,7 @@ PAGEIMAGECONTENTS04 = "bg14";
 PAGEIMAGECONTENTS05 = "descrEn";
 
 // Share menu
-SHARE_TEXT      = "Just generated nickname";
+SHARE_TEXT      = "generated with MyNames (https://appsto.re/us/HZhdcb.i)";
 SHARE_MESSAGE   = "Share using";
 
 SHARE_TWITTER_UNAVAILABLE_TITLE     = "Twitter Unavailable";

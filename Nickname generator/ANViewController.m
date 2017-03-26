@@ -488,7 +488,9 @@ extern NSString* const kAppLaunchesCount;
     
     NSString* introTextToShare = NSLocalizedString(@"SHARE_TEXT", nil);
     
-    NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", introTextToShare, firstName.firstName];
+    NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", firstName.firstName, introTextToShare];
+    
+    NSURL* shareUrl = [NSURL URLWithString:@"https://appsto.re/ru/HZhdcb.i"];
     
     UIImage* imageToShare = [UIImage imageNamed:firstName.nameImageName];
     
@@ -514,6 +516,8 @@ extern NSString* const kAppLaunchesCount;
         [tweetComposer setInitialText:fullTextToShare];
         [tweetComposer addImage:imageToShare];
         
+        //[tweetComposer addURL:shareUrl];
+        
         [self presentViewController:tweetComposer animated:true completion:nil];
         
         
@@ -537,6 +541,8 @@ extern NSString* const kAppLaunchesCount;
         
         [facebookComposer setInitialText:fullTextToShare];
         [facebookComposer addImage:imageToShare];
+        
+        //[facebookComposer addURL:shareUrl];
         
         [self presentViewController:facebookComposer animated:true completion:nil];
         

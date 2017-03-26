@@ -173,7 +173,7 @@
 		18C7763D1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythEgyptFemImages.xcassets; sourceTree = "<group>"; };
 		18E22BDA1CA6BF44007EDD8F /* ANDescriptioinVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDescriptioinVC.h; sourceTree = "<group>"; };
 		18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDescriptioinVC.m; sourceTree = "<group>"; };
-		18E6D00D1E87C0AB005D7867 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		18E6D00E1E87E938005D7867 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18F1ADEA1CB8159C007D00C4 /* MythGreekMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythGreekMascImages.xcassets; sourceTree = "<group>"; };
 		18F1B9711C8F43C1001A3B25 /* MyNames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F1B9751C8F43C1001A3B25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1007,7 +1007,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				18AF0AB31CF0BE3C0061B497 /* en */,
-				18E6D00D1E87C0AB005D7867 /* ru */,
+				18E6D00E1E87E938005D7867 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

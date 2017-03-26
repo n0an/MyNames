@@ -43,7 +43,7 @@ PAGEIMAGECONTENTS04 = "bg14";
 PAGEIMAGECONTENTS05 = "descr";
 
 // Share menu
-SHARE_TEXT      = "Сгенерированный никнейм";
+SHARE_TEXT      = "сгенерировано в МоиИмена (https://appsto.re/ru/HZhdcb.i)";
 SHARE_MESSAGE   = "Поделиться с помощью";
 
 SHARE_TWITTER_UNAVAILABLE_TITLE     = "Twitter недоступен";
