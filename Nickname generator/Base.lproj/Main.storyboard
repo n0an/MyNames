@@ -379,13 +379,13 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="K51-XV-aSg"/>
-                                <exclude reference="TcT-56-HBU"/>
                                 <exclude reference="5mJ-vo-BRK"/>
-                                <exclude reference="Ddq-Ym-0Yo"/>
                                 <exclude reference="2g6-pU-8cq"/>
                                 <exclude reference="Urt-M7-LHS"/>
                                 <exclude reference="ZBZ-Ts-L1J"/>
                                 <exclude reference="nQW-S8-QEt"/>
+                                <exclude reference="Ddq-Ym-0Yo"/>
+                                <exclude reference="TcT-56-HBU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -400,18 +400,11 @@
                                 <include reference="MOM-85-fTa"/>
                                 <include reference="OED-sb-UGV"/>
                                 <include reference="fxT-wC-atl"/>
-                                <include reference="TcT-56-HBU"/>
-                                <include reference="yOu-As-jbh"/>
-                                <include reference="7wP-BJ-bZr"/>
-                                <exclude reference="crj-CY-DWT"/>
                                 <exclude reference="3Hs-6Q-uWE"/>
                                 <include reference="5mJ-vo-BRK"/>
                                 <exclude reference="DmW-lx-BE4"/>
                                 <exclude reference="Vrw-Wz-Lck"/>
                                 <exclude reference="wy4-VJ-Mve"/>
-                                <include reference="Ddq-Ym-0Yo"/>
-                                <exclude reference="G7n-8U-hwE"/>
-                                <exclude reference="mkn-cc-Cze"/>
                                 <include reference="2g6-pU-8cq"/>
                                 <include reference="3kU-4Y-8E1"/>
                                 <exclude reference="Abk-C5-jjP"/>
@@ -419,6 +412,13 @@
                                 <exclude reference="Yiy-YL-yiU"/>
                                 <include reference="ZBZ-Ts-L1J"/>
                                 <include reference="nQW-S8-QEt"/>
+                                <include reference="Ddq-Ym-0Yo"/>
+                                <exclude reference="G7n-8U-hwE"/>
+                                <exclude reference="mkn-cc-Cze"/>
+                                <include reference="7wP-BJ-bZr"/>
+                                <exclude reference="crj-CY-DWT"/>
+                                <include reference="TcT-56-HBU"/>
+                                <include reference="yOu-As-jbh"/>
                             </mask>
                         </variation>
                     </view>
@@ -935,6 +935,13 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewCategoryBadge" translatesAutoresizingMaskIntoConstraints="NO" id="Bm5-Bj-EzU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="AEv-P9-wVI"/>
+                                                        <constraint firstAttribute="width" constant="60" id="mpK-xa-1eg"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="WjR-2o-er7" secondAttribute="trailing" id="0DA-dU-iOe"/>
@@ -951,7 +958,9 @@
                                                 <constraint firstItem="qg4-Z5-OJ4" firstAttribute="leading" secondItem="Ic8-d2-7si" secondAttribute="leading" id="Xi5-1a-I04"/>
                                                 <constraint firstItem="pb4-UQ-f4N" firstAttribute="top" secondItem="Ic8-d2-7si" secondAttribute="top" id="fwI-Fz-HjN"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZCT-D7-8rh" secondAttribute="bottom" id="hSI-0G-TWq"/>
+                                                <constraint firstItem="Bm5-Bj-EzU" firstAttribute="top" secondItem="Ic8-d2-7si" secondAttribute="top" id="iVp-ra-NZ6"/>
                                                 <constraint firstItem="ZCT-D7-8rh" firstAttribute="centerY" secondItem="Ic8-d2-7si" secondAttribute="centerY" id="ict-ZH-sce"/>
+                                                <constraint firstItem="Bm5-Bj-EzU" firstAttribute="leading" secondItem="Ic8-d2-7si" secondAttribute="leading" id="laE-oB-J7b"/>
                                                 <constraint firstAttribute="bottom" secondItem="WjR-2o-er7" secondAttribute="bottom" id="t4P-Wr-GmT"/>
                                                 <constraint firstAttribute="bottom" secondItem="pb4-UQ-f4N" secondAttribute="bottom" id="xat-XH-qnk"/>
                                                 <constraint firstItem="WjR-2o-er7" firstAttribute="leading" secondItem="Ic8-d2-7si" secondAttribute="leading" id="xsa-kj-l0C"/>
@@ -968,6 +977,7 @@
                                         <connections>
                                             <outlet property="categoryImageView" destination="qg4-Z5-OJ4" id="97v-Ui-Rhb"/>
                                             <outlet property="categoryName" destination="ZCT-D7-8rh" id="tHr-vz-kYr"/>
+                                            <outlet property="categoryNewBadge" destination="Bm5-Bj-EzU" id="LIN-WH-cOk"/>
                                             <outlet property="fadeView" destination="WjR-2o-er7" id="K86-IP-4ZJ"/>
                                             <outlet property="whiteBoxLeftConstraint" destination="Mdj-c1-vsY" id="vOj-kJ-Ryx"/>
                                             <outlet property="whiteTransparentView" destination="pb4-UQ-f4N" id="K1I-UZ-vtJ"/>
@@ -1511,6 +1521,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NewCategoryBadge" width="60" height="60"/>
         <image name="Settings01" width="209" height="215"/>
         <image name="WhiteTransparentFade" width="375" height="150"/>
         <image name="click" width="48" height="70"/>
