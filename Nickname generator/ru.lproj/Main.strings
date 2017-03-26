@@ -1,0 +1,87 @@
+
+/* Class = "UILabel"; text = "Скандинавская мифология"; ObjectID = "14O-Tw-Ulw"; */
+"14O-Tw-Ulw.text" = "Скандинавская мифология";
+
+/* Class = "UILabel"; text = "Oceanus"; ObjectID = "3HY-5N-HsF"; */
+"3HY-5N-HsF.text" = "Oceanus";
+
+/* Class = "UITabBarItem"; title = "Избранное"; ObjectID = "3O2-CT-aGS"; */
+"3O2-CT-aGS.title" = "Избранное";
+
+/* Class = "UILabel"; text = "Пол:"; ObjectID = "3fN-WY-lq8"; */
+"3fN-WY-lq8.text" = "Пол:";
+
+/* Class = "UILabel"; text = "Names:"; ObjectID = "4Ug-lR-R6E"; */
+"4Ug-lR-R6E.text" = "Names:";
+
+/* Class = "UINavigationItem"; title = "Favorites"; ObjectID = "5R3-fs-Bra"; */
+"5R3-fs-Bra.title" = "Favorites";
+
+/* Class = "UILabel"; text = "Скандинавская мифология"; ObjectID = "9jK-zD-VsN"; */
+"9jK-zD-VsN.text" = "Скандинавская мифология";
+
+/* Class = "UILabel"; text = "Header"; ObjectID = "BeS-aN-aYZ"; */
+"BeS-aN-aYZ.text" = "Header";
+
+/* Class = "UILabel"; text = "Category:"; ObjectID = "DFW-R2-qlE"; */
+"DFW-R2-qlE.text" = "Category:";
+
+/* Class = "UILabel"; text = "Name Description"; ObjectID = "Ec4-dq-fkA"; */
+"Ec4-dq-fkA.text" = "Name Description";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HXY-de-x5m"; */
+"HXY-de-x5m.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Like"; ObjectID = "NR3-Jv-v4C"; */
+"NR3-Jv-v4C.normalTitle" = "Like";
+
+/* Class = "UITabBarItem"; title = "Новое имя"; ObjectID = "O5p-v6-RQs"; */
+"O5p-v6-RQs.title" = "Новое имя";
+
+/* Class = "UILabel"; text = "Имен:"; ObjectID = "SQx-4E-WZK"; */
+"SQx-4E-WZK.text" = "Имен:";
+
+/* Class = "UILabel"; text = "Категория:"; ObjectID = "Swh-Uw-2Ih"; */
+"Swh-Uw-2Ih.text" = "Категория:";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "UP2-dN-n9I"; */
+"UP2-dN-n9I.normalTitle" = "Start";
+
+/* Class = "UILabel"; text = "Gender:"; ObjectID = "Vrj-4I-EFG"; */
+"Vrj-4I-EFG.text" = "Gender:";
+
+/* Class = "UILabel"; text = "Скандинавская мифология"; ObjectID = "WOr-9h-Bjz"; */
+"WOr-9h-Bjz.text" = "Скандинавская мифология";
+
+/* Class = "UILabel"; text = "Category Name"; ObjectID = "ZCT-D7-8rh"; */
+"ZCT-D7-8rh.text" = "Category Name";
+
+/* Class = "UILabel"; text = "SubHeader"; ObjectID = "ZEg-LV-0OF"; */
+"ZEg-LV-0OF.text" = "SubHeader";
+
+/* Class = "UILabel"; text = "Amon Ra"; ObjectID = "gdK-oS-xiI"; */
+"gdK-oS-xiI.text" = "Amon Ra";
+
+/* Class = "UILabel"; text = "Gaia Eos"; ObjectID = "uay-78-7I1"; */
+"uay-78-7I1.text" = "Gaia Eos";
+
+/* Class = "UISegmentedControl"; udp-kH-BYI.segmentTitles[0] = "1"; ObjectID = "udp-kH-BYI"; */
+"udp-kH-BYI.segmentTitles[0]" = "1";
+
+/* Class = "UISegmentedControl"; udp-kH-BYI.segmentTitles[1] = "2"; ObjectID = "udp-kH-BYI"; */
+"udp-kH-BYI.segmentTitles[1]" = "2";
+
+/* Class = "UISegmentedControl"; udp-kH-BYI.segmentTitles[2] = "3"; ObjectID = "udp-kH-BYI"; */
+"udp-kH-BYI.segmentTitles[2]" = "3";
+
+/* Class = "UISegmentedControl"; xd9-cr-fGs.segmentTitles[0] = "1"; ObjectID = "xd9-cr-fGs"; */
+"xd9-cr-fGs.segmentTitles[0]" = "1";
+
+/* Class = "UISegmentedControl"; xd9-cr-fGs.segmentTitles[1] = "2"; ObjectID = "xd9-cr-fGs"; */
+"xd9-cr-fGs.segmentTitles[1]" = "2";
+
+/* Class = "UISegmentedControl"; xd9-cr-fGs.segmentTitles[2] = "3"; ObjectID = "xd9-cr-fGs"; */
+"xd9-cr-fGs.segmentTitles[2]" = "3";
+
+/* Class = "UILabel"; text = "Norse mythology"; ObjectID = "zCA-sY-RVN"; */
+"zCA-sY-RVN.text" = "Norse mythology";
