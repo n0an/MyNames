@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  Nickname generator
+
+  Created by Anton Novoselov on 26/03/2017.
+  Copyright © 2017 Anton Novoselov. All rights reserved.
+*/
+"NSPhotoLibraryUsageDescription" = "Need access to photo library to save name image";

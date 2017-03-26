@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Nickname generator
+
+  Created by Anton Novoselov on 26/03/2017.
+  Copyright © 2017 Anton Novoselov. All rights reserved.
+*/
+
+"NSPhotoLibraryUsageDescription" = "Приложению необходим доступ к библиотеке фотографий для сохранения изображения имени";
