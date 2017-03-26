@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norseBG07_5713" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norseBG07_1900" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-5n-4AZ" userLabel="ViewWithControls">
@@ -537,7 +537,7 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qUo-SD-CEq" id="Kjn-Fo-lGw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vt2-E6-tus">
@@ -1508,7 +1508,7 @@
         <image name="masc02" width="60" height="60"/>
         <image name="nextSlide" width="88" height="35"/>
         <image name="norseBG05_2329" width="517" height="150"/>
-        <image name="norseBG07_5713" width="572" height="846"/>
+        <image name="norseBG07_1900" width="429" height="634"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shake" width="158" height="120"/>
         <image name="shapes" width="21" height="21"/>
@@ -1516,6 +1516,6 @@
         <image name="wiki01" width="498" height="498"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gJs-Cs-isv"/>
+        <segue reference="hka-Se-WNc"/>
     </inferredMetricsTieBreakers>
 </document>
