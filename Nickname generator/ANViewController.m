@@ -496,8 +496,6 @@ extern NSString* const kAppLaunchesCount;
     
     NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", firstName.firstName, introTextToShare];
     
-    NSURL* shareUrl = [NSURL URLWithString:@"https://appsto.re/ru/HZhdcb.i"];
-    
     UIImage* imageToShare = [UIImage imageNamed:firstName.nameImageName];
     
     // Presenting action sheet with share options - Facebook, Twitter, UIActivityVC

@@ -294,6 +294,8 @@
 		1825463A1CA55977006293A6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				188E72381E86812D006A8CBA /* ANRotateTransitionAnimator.h */,
+				188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */,
 				1893C0221C94A92700D17DA5 /* ANUtils.h */,
 				1893C0231C94A92700D17DA5 /* ANUtils.m */,
 			);
@@ -388,11 +390,11 @@
 		18F1B9731C8F43C1001A3B25 /* Nickname generator */ = {
 			isa = PBXGroup;
 			children = (
+				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
+				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
 				1825463A1CA55977006293A6 /* Utils */,
 				182546391CA5596C006293A6 /* Models */,
 				182546411CA56483006293A6 /* Controllers */,
-				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
-				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
 				18100DBA1CB249E800508F1D /* CoreData */,
 				18100DA71CB23EAF00508F1D /* Assets */,
@@ -400,10 +402,8 @@
 				18F1B9851C8F43C1001A3B25 /* Info.plist */,
 				18E6D01F1E87EFBC005D7867 /* InfoPlist.strings */,
 				188E72331E865235006A8CBA /* GoogleService-Info.plist */,
-				18F1B9741C8F43C1001A3B25 /* Supporting Files */,
 				18A578401CECE0A300A10BB1 /* Localizable.strings */,
-				188E72381E86812D006A8CBA /* ANRotateTransitionAnimator.h */,
-				188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */,
+				18F1B9741C8F43C1001A3B25 /* Supporting Files */,
 			);
 			path = "Nickname generator";
 			sourceTree = "<group>";
