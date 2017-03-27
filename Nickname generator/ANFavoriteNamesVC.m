@@ -187,8 +187,19 @@
 
 - (void) actionDeleteSelectedNames:(id) sender {
     
+    NSMutableArray* namesToDelete = [NSMutableArray array];
     
+    for (NSIndexPath *indexPath in self.selectedIndexPaths) {
+        
+        ANLog(@"indexPath = %@", indexPath);
+        
+        ANFavoriteName* favoriteName = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+        [namesToDelete addObject:favoriteName];
+        
+    }
     
+    [[ANDataManager sharedManager] deleteObjects:namesToDelete];
     
 }
 
@@ -214,7 +225,6 @@
         [self.editButton setTitle:NSLocalizedString(@"BARBUTTON_EDIT", nil)];
         [self.editButton setStyle:UIBarButtonItemStylePlain];
 
-        
         [self.selectedIndexPaths removeAllObjects];
         
         [self.navigationItem setLeftBarButtonItems:@[self.editButton] animated:YES];

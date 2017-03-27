@@ -35,6 +35,7 @@
 - (void) deleteFavoriteName:(ANName*) name;
 
 - (void) clearFavoriteNamesDB;
+- (void) deleteObjects:(NSArray*) objects;
 
 - (void) showAllNames;
 

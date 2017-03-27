@@ -7,7 +7,7 @@
 */
 
 
-TITLE_CLEAR = "Delete favorite names?";
+TITLE_CLEAR = "Delete ALL favorite names?";
 //MESSAGE_CLEAR = "Delete favorite names? All favorite names will be cleared";
 AFFIRM_CLEAR = "OK";
 CANCEL_CLEAR = "Cancel";

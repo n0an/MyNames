@@ -95,11 +95,21 @@
     NSArray* allObjects = [self getAllObjectsForName:name];
     
     for (id object in allObjects) {
-        ANLog(@"Mark for delete: %@", object);
+        
         [self.managedObjectContext deleteObject:object];
     }
     [self.managedObjectContext save:nil];
     
+    
+}
+
+- (void) deleteObjects:(NSArray*) objects {
+    
+    for (id object in objects) {
+        
+        [self.managedObjectContext deleteObject:object];
+    }
+    [self.managedObjectContext save:nil];
     
 }
 
