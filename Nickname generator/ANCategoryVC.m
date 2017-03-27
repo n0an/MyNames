@@ -13,6 +13,8 @@
 
 @interface ANCategoryVC ()
 
+@property (strong, nonatomic) NSIndexPath *selectedIndexPath;
+
 
 @end
 
@@ -26,11 +28,10 @@
     UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionDone:)];
     self.navigationItem.rightBarButtonItem = doneButton;
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-
+    
+    
+    
+    //self.selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     
 }
 
@@ -60,58 +61,28 @@
     cell.categoryImageView.image = [UIImage imageNamed:currentCategory.nameCategoryImageName];
     cell.categoryImageView.contentMode = UIViewContentModeScaleAspectFill;
     
-    cell.categoryName.alpha = 0;
-    
     
     if ([currentCategory isEqual:self.selectedCategory]) {
-
-        [UIView animateWithDuration:0.3f
-                              delay:0.f
-                            options:UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             cell.categoryName.alpha = 1;
-                             cell.fadeView.alpha = 0;
-                         } completion:^(BOOL finished) {
-
-                         }];
         
-        [UIView animateWithDuration:0.2f
-                              delay:0.1f
-                            options:UIViewAnimationOptionCurveEaseOut
-                         animations:^{
-                             cell.whiteBoxLeftConstraint.constant = 0;
-                             [cell layoutIfNeeded];
-                         } completion:nil];
-
+        self.selectedIndexPath = indexPath;
+        
+        cell.categoryName.alpha = 1;
+        cell.fadeView.alpha = 0;
+        
+        cell.whiteBoxLeftConstraint.constant = 0;
+    
     } else {
         
-        [UIView animateWithDuration:0.3f
-                              delay:0.f
-                            options:UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             
-                             cell.categoryName.alpha = 0;
-                             cell.fadeView.alpha = 0.5;
-
-                         } completion:^(BOOL finished) {
-                             
-                         }];
+        cell.categoryName.alpha = 0;
+        cell.fadeView.alpha = 0.5;
         
-        [UIView animateWithDuration:0.2f
-                              delay:0.1f
-                            options:UIViewAnimationOptionCurveEaseIn
-                         animations:^{
-                             
-                             CGFloat cellWidth = CGRectGetWidth(cell.frame);
-                             cell.whiteBoxLeftConstraint.constant = cellWidth * 2;
-                             
-                             [cell layoutIfNeeded];
-                         } completion:nil];
-
-        
+        CGFloat cellWidth = CGRectGetWidth(cell.frame);
+        cell.whiteBoxLeftConstraint.constant = cellWidth * 2;
     }
     
     [cell configureCellWithNameCategory:currentCategory];
+    
+    [cell layoutIfNeeded];
     
     return cell;
 }
@@ -121,15 +92,71 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     ANNameCategory* currentCategory = [self.categories objectAtIndex:indexPath.row];
     
     if (![currentCategory isEqual:self.selectedCategory]) {
         self.selectedCategory = currentCategory;
- 
+        
         [self.delegate categoryDidSelect:self.selectedCategory];
     }
     
-    [self.tableView reloadData];
+    if (![self.selectedIndexPath isEqual:indexPath]) {
+        
+        ANCategoryCell* lastSelectedCell = [tableView cellForRowAtIndexPath:self.selectedIndexPath];
+        
+        [UIView animateWithDuration:0.3f
+                              delay:0.f
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             
+                             lastSelectedCell.categoryName.alpha = 0;
+                             lastSelectedCell.fadeView.alpha = 0.5;
+                             
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+        
+        [UIView animateWithDuration:0.2f
+                              delay:0.1f
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             
+                             CGFloat cellWidth = CGRectGetWidth(lastSelectedCell.frame);
+                             lastSelectedCell.whiteBoxLeftConstraint.constant = cellWidth * 2;
+                             
+                             [lastSelectedCell layoutIfNeeded];
+                         } completion:nil];
+        
+        
+        
+        ANCategoryCell* newSelectedCell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        [UIView animateWithDuration:0.3f
+                              delay:0.f
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             newSelectedCell.categoryName.alpha = 1;
+                             newSelectedCell.fadeView.alpha = 0;
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+        
+        [UIView animateWithDuration:0.2f
+                              delay:0.1f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             newSelectedCell.whiteBoxLeftConstraint.constant = 0;
+                             [newSelectedCell layoutIfNeeded];
+                         } completion:nil];
+        
+        self.selectedIndexPath = indexPath;
+        
+        
+    }
+    
+    
+    //[self.tableView reloadData];
     
 }
 

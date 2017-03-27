@@ -20,6 +20,7 @@
 @end
 
 extern NSString* const ANManagedObjectContextSaveDidFailNotification;
+extern NSString* const kAppLaunchesCount;
 
 @implementation AppDelegate
 
@@ -39,6 +40,14 @@ extern NSString* const ANManagedObjectContextSaveDidFailNotification;
     [FIRApp configure];
     
     [self listenForFatalCoreDataNotifications];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger appLaunchesCount = [userDefaults integerForKey:kAppLaunchesCount];
+    appLaunchesCount++;
+    
+    [userDefaults setInteger:appLaunchesCount forKey:kAppLaunchesCount];
+    
     
     return YES;
 }

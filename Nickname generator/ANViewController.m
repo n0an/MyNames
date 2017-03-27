@@ -292,13 +292,6 @@ extern NSString* const kAppLaunchesCount;
         
         [self presentViewController:pageVC animated:YES completion:nil];
         
-    } else {
-        
-        NSInteger appLaunchesCount = [userDefaults integerForKey:kAppLaunchesCount];
-        appLaunchesCount++;
-        
-        [userDefaults setInteger:appLaunchesCount forKey:kAppLaunchesCount];
-        [userDefaults synchronize];
     }
     
     
