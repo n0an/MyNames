@@ -38,6 +38,8 @@
 @property (strong, nonatomic) NSMutableArray* selectedIndexPaths;
 
 @property (weak, nonatomic) UIBarButtonItem *editButton;
+@property (weak, nonatomic) UIBarButtonItem *deleteButton;
+
 
 @end
 
@@ -55,15 +57,12 @@
     self.rotateTransition = [[ANRotateTransitionAnimator alloc] init];
     
     self.selectedIndexPaths = [NSMutableArray array];
-
-    //UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionEdit:)];
     
     UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BARBUTTON_EDIT", nil) style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
     
     self.navigationItem.leftBarButtonItem = editButton;
     
     self.editButton = editButton;
-    
     
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
 }
@@ -73,7 +72,6 @@
     [super viewDidAppear:animated];
     
     self.editButton.enabled = ([self.fetchedResultsController.sections count] != 0);
-    
     
 }
 
@@ -199,6 +197,11 @@
         
     }
     
+    [self.selectedIndexPaths removeAllObjects];
+    
+    self.deleteButton.enabled = NO;
+
+    
     [[ANDataManager sharedManager] deleteObjects:namesToDelete];
     
 }
@@ -210,6 +213,9 @@
     if (self.isEditingMode) {
         
         UIBarButtonItem* deleteButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"ROW_ACTION_DELETE", nil) style:UIBarButtonItemStylePlain target:self action:@selector(actionDeleteSelectedNames:)];
+        
+        self.deleteButton = deleteButton;
+        self.deleteButton.enabled = NO;
         
         UIBarButtonItem *deleteAllButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(actionClear:)];
         
@@ -231,6 +237,9 @@
 
         self.navigationItem.rightBarButtonItem = nil;
         
+        self.editButton.enabled = ([self.fetchedResultsController.sections count] != 0);
+
+        
     }
     
     [self.tableView reloadData];
@@ -250,7 +259,6 @@
         
         [self actionEdit:nil];
         
-        self.editButton.enabled = ([self.fetchedResultsController.sections count] != 0);
 
     }];
     
@@ -407,8 +415,20 @@
     cell.checkBoxImageView.hidden = !self.isEditingMode;
     cell.infoImageView.hidden = self.isEditingMode;
     
+    if (self.isEditingMode) {
+        
+        if ([self.selectedIndexPaths containsObject:indexPath]) {
+            
+            [cell.checkBoxImageView setImage:[UIImage imageNamed:@"box_set"]];
+            
+        } else {
+            
+            [cell.checkBoxImageView setImage:[UIImage imageNamed:@"box_empty"]];
+        }
+    }
     
     
+
     
     return cell;
 }
@@ -475,12 +495,16 @@
         
         if ([self.selectedIndexPaths containsObject:indexPath]) {
             [self.selectedIndexPaths removeObject:indexPath];
+            
             [selectedCell.checkBoxImageView setImage:[UIImage imageNamed:@"box_empty"]];
             
         } else {
             [self.selectedIndexPaths addObject:indexPath];
+            
             [selectedCell.checkBoxImageView setImage:[UIImage imageNamed:@"box_set"]];
         }
+        
+        self.deleteButton.enabled = ([self.selectedIndexPaths count] != 0);
         
     } else {
         
