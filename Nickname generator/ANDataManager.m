@@ -99,8 +99,9 @@
         [self.managedObjectContext deleteObject:object];
     }
     [self.managedObjectContext save:nil];
+    
+    
 }
-
 
 
 
@@ -180,6 +181,7 @@
     [self deleteAllObjectsForName:ANCDMFavoriteName];
     
 }
+
 
 - (BOOL) isNameFavorite:(ANName*) name {
     

@@ -37,6 +37,8 @@
 
 @property (strong, nonatomic) NSMutableArray* selectedIndexPaths;
 
+@property (weak, nonatomic) UIBarButtonItem *editButton;
+
 @end
 
 @implementation ANFavoriteNamesVC
@@ -54,24 +56,25 @@
     
     self.selectedIndexPaths = [NSMutableArray array];
 
-    
-    //UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
-    UIBarButtonItem* clearButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"clear32"] landscapeImagePhone:[UIImage imageNamed:@"clear24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionClear:)];
-    
-    
-
-    
     UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionEdit:)];
     
     self.navigationItem.leftBarButtonItem = editButton;
-    //self.navigationItem.rightBarButtonItem = clearButton;
     
-
+    self.editButton = editButton;
+    
+    
+    
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-    
 }
 
-
+- (void) viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    self.editButton.enabled = ([self.fetchedResultsController.sections count] != 0);
+    
+    
+}
 
 #pragma mark - Helper Methods
 
@@ -218,7 +221,6 @@
 
         self.navigationItem.rightBarButtonItem = nil;
         
-        
     }
     
     [self.tableView reloadData];
@@ -252,6 +254,8 @@
         [[ANDataManager sharedManager] clearFavoriteNamesDB];
         
         [self actionEdit:nil];
+        
+        
     }];
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL_CLEAR", nil) style:UIAlertActionStyleCancel handler:nil];
