@@ -13,43 +13,32 @@
 
 @implementation ANName
 
+#pragma mark - PUBLIC METHODS
 + (ANName*) randomNameforCategory:(ANNameCategory*)category andGender:(ANGender) gender {
-    
     ANName* name = [[ANName alloc] init];
     
-    NSInteger totalNames;
-    
     NSDictionary* dict = [self getNamesDictionaryforCategory:category andGender:gender];
-    
     NSArray* namesArr = [dict allKeys];
     
-    totalNames = [dict count];
-    
+    NSInteger totalNames = [dict count];
     NSInteger randIndex = [self getRandomForCount:totalNames];
-    
     NSString* tmpStr = [namesArr objectAtIndex:randIndex];
     
     [self fillName:name withParams:dict andKey:tmpStr andGender:gender andCategory:category];
     
     return name;
-    
 }
 
-
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory {
-
-    // 01.02.0.15 - EXAMPLE OF ID
+    // 01.02.0.15 - EXAMPLE OF ID (Mythology, Vedic, Masc, id15)
     
     ANName* name = [[ANName alloc] init];
 
     NSArray* nameAttributes = [nameID componentsSeparatedByString:@"."];
-
     ANGender nameGender = (ANGender)[[nameAttributes objectAtIndex:2] integerValue];
-    
     NSInteger nameIDInPList = [[nameAttributes objectAtIndex:3] integerValue];
     
     ANLog(@"nameIDInPList = %ld", (long)nameIDInPList);
-    
     NSDictionary *dict = [self getNamesDictionaryforCategory:nameCategory andGender:nameGender];
     
     NSArray* namesArr = [dict allKeys];
@@ -57,39 +46,25 @@
     NSString* resultKey;
     
     for (NSString* tempNameKey in namesArr) {
-        
         NSDictionary* value = [dict objectForKey:tempNameKey];
         
         NSString* tempNameID = [value objectForKey:@"nameID"];
         
         if ([tempNameID isEqualToString:nameID]) {
-            
-            ANLog(@"WE FOUND IT!!");
-            
             resultKey = tempNameKey;
-            
         }
-        
     }
     
     [self fillName:name withParams:dict andKey:resultKey andGender:nameGender andCategory:nameCategory];
-
     return name;
-    
 }
 
-
-
-
-#pragma mark - Helper Methods
-
+#pragma mark - HELPER METHODS
 + (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*)category andGender:(ANGender) gender {
-    
     NSString* pathName;
     
     if (gender == ANGenderMasculine) {
         pathName = [category.alias stringByAppendingString:@"Masc"];
-        
     } else {
         pathName = [category.alias stringByAppendingString:@"Fem"];
     }
@@ -98,21 +73,16 @@
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     
     return dict;
-    
 }
-
 
 + (void) fillName:(ANName*)inputName withParams:(NSDictionary*) params andKey:(NSString*) key andGender:(ANGender) gender andCategory:(ANNameCategory*) category {
     
     NSString* firstNameStr = key.lowercaseString.capitalizedString;
-    
     NSDictionary* nameParams = [params objectForKey:key];
-    
     NSString* nameID = [nameParams objectForKey:@"nameID"];
     
     NSString* nameDesc = [nameParams objectForKey:@"nameDescription"];
     NSString* cleanedDesc = [self stringWithoutBrackets:nameDesc];
-    
     
     NSString* nameURL = [nameParams objectForKey:@"nameURL"];
     NSString* nameImageName = [nameParams objectForKey:@"nameImageName"];
@@ -124,17 +94,12 @@
     inputName.nameImageName      = nameImageName;
     inputName.nameCategory       = category;
     inputName.nameGender         = gender;
-    
 }
 
 + (NSInteger) getRandomForCount:(NSInteger) totalCount {
-    
-    NSInteger randomIndex = arc4random() % totalCount;
-    
+    NSInteger randomIndex = arc4random_uniform((uint32_t)totalCount);
     return randomIndex;
 }
-
-
 
 + (NSString *)stringWithoutBrackets:(NSString *)input{
     NSString *expression = @"\\[[\\w]+\\]";

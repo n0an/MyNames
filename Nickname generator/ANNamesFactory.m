@@ -7,13 +7,11 @@
 //
 
 #import "ANNamesFactory.h"
-
 #import "ANNameCategory.h"
-
 
 @implementation ANNamesFactory
 
-
+#pragma mark - SINGLETON
 + (ANNamesFactory*) sharedFactory {
     
     static ANNamesFactory* sharedFactory = nil;
@@ -41,53 +39,14 @@
         ANNameCategory* area01cat07 = [[ANNameCategory alloc] initWithCategoryID:@"01.07" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0007", nil) andCategoryImageName:@"celticBG05_1990" andCategoryBackgroundImageName:@"celticBG06_1280" andAlias:@"MythCeltic"];
    
         sharedFactory.namesCategories = @[randomCategory, area02cat01, area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
-        
     });
     
     return sharedFactory;
-    
 }
 
-- (ANNameCategory*) getRandomCategory {
-    
-    ANNameCategory* resultCategory;
-    
-    NSMutableArray* tmpArr = [NSMutableArray arrayWithArray:self.namesCategories];
-    [tmpArr removeObjectAtIndex:0];
-    
-    NSInteger categoriesCount = [tmpArr count];
-    
-    NSInteger randomInd = arc4random_uniform((unsigned int)categoriesCount * 1000) / 1000;
-    
-    resultCategory = [tmpArr objectAtIndex:randomInd];
-    
-    return resultCategory;
-    
-}
-
-
-- (ANNameCategory*) getCategoryForID:(NSString*) categoryID {
-
-    ANNameCategory* resultCategory;
-    
-    for (ANNameCategory* category in self.namesCategories) {
-        
-        if ([category.nameCategoryID isEqualToString:categoryID]) {
-            
-            
-            resultCategory = category;
-            break;
-        }
-        
-    }
-    
-    return resultCategory;
-}
-
-
+#pragma mark - PUBLIC METHODS
 - (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
     
-    ANName* result;
     ANNameCategory* queryCategory;
     
     if ([category.nameCategoryID isEqualToString:@"00.00"]) {
@@ -97,27 +56,48 @@
         queryCategory = category;
     }
     
-    result = [ANName randomNameforCategory:queryCategory andGender:gender];
+    ANName* result = [ANName randomNameforCategory:queryCategory andGender:gender];
     
     return result;
 }
-
-
 
 - (ANName*) getNameForID:(NSString*) nameID {
-    
     NSString* nameCategoryID = [nameID substringToIndex:5];
-    
     ANNameCategory* category = [self getCategoryForID:nameCategoryID];
-
-    ANName* result = [ANName getNameForID:nameID andCategory:category];
-
-    return result;
     
+    ANName* result = [ANName getNameForID:nameID andCategory:category];
+    return result;
 }
 
+#pragma mark - HELPER METHODS
+- (ANNameCategory *) getRandomCategory {
+    
+    NSMutableArray *tmpArr = [NSMutableArray arrayWithArray:self.namesCategories];
+    [tmpArr removeObjectAtIndex:0];
+    
+    NSInteger categoriesCount = [tmpArr count];
+    
+    NSInteger randomInd = arc4random_uniform((uint32_t)categoriesCount);
+    
+    ANNameCategory* resultCategory = [tmpArr objectAtIndex:randomInd];
+    
+    return resultCategory;
+}
 
+- (ANNameCategory*) getCategoryForID:(NSString*) categoryID {
 
+    ANNameCategory* resultCategory;
+    
+    for (ANNameCategory* category in self.namesCategories) {
+        
+        if ([category.nameCategoryID isEqualToString:categoryID]) {
+            resultCategory = category;
+            break;
+        }
+    }
+    
+    return resultCategory;
+}
 
 
 
