@@ -604,6 +604,13 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box_empty" translatesAutoresizingMaskIntoConstraints="NO" id="Bug-Rr-0tb">
+                                            <rect key="frame" x="347" y="8" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="Vze-L6-RQH"/>
+                                                <constraint firstAttribute="height" constant="20" id="wU2-s9-SkK"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Edx-2F-ZNQ" firstAttribute="leading" secondItem="vt2-E6-tus" secondAttribute="trailing" constant="8" id="0L1-dc-hrU"/>
@@ -613,14 +620,17 @@
                                         <constraint firstItem="vt2-E6-tus" firstAttribute="top" secondItem="Kjn-Fo-lGw" secondAttribute="topMargin" constant="2" id="BJJ-41-EZr"/>
                                         <constraint firstItem="C1B-HP-7B9" firstAttribute="leading" secondItem="3HY-5N-HsF" secondAttribute="trailing" constant="8" id="Hbk-AZ-mrx"/>
                                         <constraint firstItem="WOr-9h-Bjz" firstAttribute="leading" secondItem="Edx-2F-ZNQ" secondAttribute="trailing" constant="8" id="UzY-WO-jtx"/>
+                                        <constraint firstItem="Bug-Rr-0tb" firstAttribute="trailing" secondItem="Kjn-Fo-lGw" secondAttribute="trailingMargin" id="Z8Z-qo-W7l"/>
                                         <constraint firstAttribute="trailing" secondItem="C1B-HP-7B9" secondAttribute="trailing" constant="8" id="c2o-mT-3Eh"/>
                                         <constraint firstItem="3HY-5N-HsF" firstAttribute="top" secondItem="vt2-E6-tus" secondAttribute="top" id="lSG-kz-oJI"/>
+                                        <constraint firstItem="Bug-Rr-0tb" firstAttribute="top" secondItem="Kjn-Fo-lGw" secondAttribute="topMargin" id="mzU-pb-Xqy"/>
                                         <constraint firstItem="vt2-E6-tus" firstAttribute="leading" secondItem="Kjn-Fo-lGw" secondAttribute="leadingMargin" constant="2" id="t5X-01-cUc"/>
                                         <constraint firstItem="Edx-2F-ZNQ" firstAttribute="bottom" secondItem="vt2-E6-tus" secondAttribute="bottom" id="tvm-E0-6wd"/>
                                         <constraint firstAttribute="trailing" secondItem="WOr-9h-Bjz" secondAttribute="trailing" constant="8" id="vLn-o4-8WM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="checkBoxImageView" destination="Bug-Rr-0tb" id="SHR-lp-sed"/>
                                     <outlet property="genderImageView" destination="Edx-2F-ZNQ" id="yxn-Dy-a7a"/>
                                     <outlet property="infoImageView" destination="C1B-HP-7B9" id="NdD-bA-kwV"/>
                                     <outlet property="nameCategoryLabel" destination="WOr-9h-Bjz" id="fNu-Py-sfy"/>
@@ -646,7 +656,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5A2-Hf-qey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2113" y="1336"/>
+            <point key="canvasLocation" x="2112.8000000000002" y="1335.3823088455774"/>
         </scene>
         <!--DescriptioinVC-->
         <scene sceneID="3mx-J1-CDp">
@@ -1535,6 +1545,7 @@
         <image name="NewCategoryBadge" width="60" height="60"/>
         <image name="Settings01" width="209" height="215"/>
         <image name="WhiteTransparentFade" width="375" height="150"/>
+        <image name="box_empty" width="54" height="54"/>
         <image name="click" width="48" height="70"/>
         <image name="diceBG03_1920" width="640" height="400"/>
         <image name="drag" width="56" height="63"/>
@@ -1556,6 +1567,6 @@
         <image name="wiki01" width="498" height="498"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="882-AM-8Gt"/>
+        <segue reference="c9q-9P-Jem"/>
     </inferredMetricsTieBreakers>
 </document>

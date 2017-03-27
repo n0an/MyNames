@@ -33,6 +33,10 @@
     
 @property (strong, nonatomic) id rotateTransition;
 
+@property (assign, nonatomic) BOOL isEditingMode;
+
+@property (strong, nonatomic) NSMutableArray* selectedIndexPaths;
+
 @end
 
 @implementation ANFavoriteNamesVC
@@ -42,16 +46,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.isEditingMode = false;
+    
     self.selectedGender = ANGenderAll;
     
     self.rotateTransition = [[ANRotateTransitionAnimator alloc] init];
+    
+    self.selectedIndexPaths = [NSMutableArray array];
 
     
     //UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
     UIBarButtonItem* clearButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"clear32"] landscapeImagePhone:[UIImage imageNamed:@"clear24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionClear:)];
+    
+    
 
-    //self.navigationItem.leftBarButtonItem = editButton;
-    self.navigationItem.rightBarButtonItem = clearButton;
+    
+    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionEdit:)];
+    
+    self.navigationItem.leftBarButtonItem = editButton;
+    //self.navigationItem.rightBarButtonItem = clearButton;
     
 
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
@@ -168,13 +181,51 @@
 
 #pragma mark - Actions
 
+- (void) actionDeleteSelectedNames:(id) sender {
+    
+    
+    
+    
+}
+
 - (void) actionEdit:(UIBarButtonItem*) sender {
     
-    BOOL isEditing = self.tableView.editing;
+    //BOOL isEditing = self.tableView.editing;
     
-    [self.tableView setEditing:!isEditing animated:YES];
+    //[self.tableView setEditing:!isEditing animated:YES];
+    
+    self.isEditingMode = !self.isEditingMode;
+    
+    UIBarButtonItem* editButton;
+
+    if (self.isEditingMode) {
+        editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionEdit:)];
+        
+        UIBarButtonItem* deleteButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"ROW_ACTION_DELETE", nil) style:UIBarButtonItemStyleDone target:self action:@selector(actionDeleteSelectedNames:)];
+        
+        UIBarButtonItem *deleteAllButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(actionClear:)];
+        
+        [self.navigationItem setLeftBarButtonItems:@[editButton, deleteButton] animated:YES];
+        
+        [self.navigationItem setRightBarButtonItem:deleteAllButton];
+        
+    } else {
+        editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionEdit:)];
+        
+        [self.selectedIndexPaths removeAllObjects];
+        
+        [self.navigationItem setLeftBarButtonItems:@[editButton] animated:YES];
+
+        self.navigationItem.rightBarButtonItem = nil;
+        
+        
+    }
+    
+    [self.tableView reloadData];
     
     
+    
+    /*
     UIBarButtonItem* editButton;
     
     if (self.tableView.editing) {
@@ -187,6 +238,7 @@
     
     
     [self.navigationItem setLeftBarButtonItem:editButton animated:YES];
+    */
     
 }
 
@@ -199,6 +251,7 @@
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"AFFIRM_CLEAR", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [[ANDataManager sharedManager] clearFavoriteNamesDB];
         
+        [self actionEdit:nil];
     }];
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL_CLEAR", nil) style:UIAlertActionStyleCancel handler:nil];
@@ -329,6 +382,8 @@
     
     UIImage* imageName = [UIImage imageNamed:favoriteName.nameImageName];
     
+    
+    
     if (!imageName) {
         
         cell.nameImageView.image = [UIImage imageNamed:@"eye"];
@@ -348,6 +403,11 @@
     } else {
         cell.infoImageView.hidden = YES;
     }
+    
+    cell.checkBoxImageView.hidden = !self.isEditingMode;
+    cell.infoImageView.hidden = self.isEditingMode;
+    
+    
     
     
     return cell;
@@ -405,23 +465,30 @@
 }
 
 #pragma mark - UITableViewDelegate
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ANLog(@"didSelectRowAtIndexPath: %ld", (long)indexPath.row);
     
-    ANFavoriteName* name = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ANFavouriteNameCell* selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     
-    ANLog(@"selected name = %@", name.nameFirstName);
-    
-    if ([self isDescriptionAvailable:name]) {
+    if (self.isEditingMode) {
         
+        if ([self.selectedIndexPaths containsObject:indexPath]) {
+            [self.selectedIndexPaths removeObject:indexPath];
+            [selectedCell.checkBoxImageView setImage:[UIImage imageNamed:@"box_empty"]];
+            
+        } else {
+            [self.selectedIndexPaths addObject:indexPath];
+            [selectedCell.checkBoxImageView setImage:[UIImage imageNamed:@"box_set"]];
+        }
         
-        [self performSegueWithIdentifier:@"showDescriptionVC" sender:name];
+    } else {
         
-        
-        
+        ANFavoriteName* name = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        ANLog(@"selected name = %@", name.nameFirstName);
+        if ([self isDescriptionAvailable:name]) {
+            [self performSegueWithIdentifier:@"showDescriptionVC" sender:name];
+        }
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
