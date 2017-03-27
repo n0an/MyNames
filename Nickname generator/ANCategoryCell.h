@@ -13,20 +13,16 @@
 @interface ANCategoryCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView* categoryImageView;
+@property (weak, nonatomic) IBOutlet UIImageView* categoryNewBadge;
 @property (weak, nonatomic) IBOutlet UILabel* categoryName;
 
 @property (weak, nonatomic) IBOutlet UIView* fadeView;
 @property (weak, nonatomic) IBOutlet UIView* whiteTransparentView;
 
-@property (weak, nonatomic) IBOutlet UIImageView* categoryNewBadge;
-
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* whiteBoxLeftConstraint;
 
-- (void) configureCellWithNameCategory:(ANNameCategory*) nameCategory;
-
+- (void) configureCellWithNameCategory:(ANNameCategory*) nameCategory selected:(BOOL) selected;
 - (void) animateDeselection;
 - (void) animateSelection;
-
 
 @end

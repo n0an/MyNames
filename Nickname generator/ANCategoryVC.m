@@ -27,9 +27,6 @@
     self.navigationItem.rightBarButtonItem = doneButton;
 }
 
-
-
-
 #pragma mark - ACTIONS
 - (void) actionDone:(UIBarButtonItem*) sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -48,27 +45,15 @@
     
     ANNameCategory* currentCategory = [self.categories objectAtIndex:indexPath.row];
     
-    cell.categoryName.text = currentCategory.nameCategoryTitle;
-    cell.categoryImageView.image = [UIImage imageNamed:currentCategory.nameCategoryImageName];
-    cell.categoryImageView.contentMode = UIViewContentModeScaleAspectFill;
-    
     if ([currentCategory isEqual:self.selectedCategory]) {
         self.selectedIndexPath = indexPath;
-        cell.categoryName.alpha = 1;
-        cell.fadeView.alpha = 0;
-        cell.whiteBoxLeftConstraint.constant = 0;
-    
+        [cell configureCellWithNameCategory:currentCategory selected:YES];
+        
     } else {
-        cell.categoryName.alpha = 0;
-        cell.fadeView.alpha = 0.5;
-        CGFloat cellWidth = CGRectGetWidth(cell.frame);
-        cell.whiteBoxLeftConstraint.constant = cellWidth * 2;
+        
+        [cell configureCellWithNameCategory:currentCategory selected:NO];
+
     }
-    
-    [cell configureCellWithNameCategory:currentCategory];
-    
-    [cell layoutIfNeeded];
-    
     return cell;
 }
 

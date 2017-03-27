@@ -277,7 +277,7 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
-		182546391CA5596C006293A6 /* Models */ = {
+		182546391CA5596C006293A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				18267E291CB132E600AB130B /* Names Plists */,
@@ -288,7 +288,7 @@
 				182546481CA57701006293A6 /* ANNamesFactory.h */,
 				182546491CA57701006293A6 /* ANNamesFactory.m */,
 			);
-			name = Models;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		1825463A1CA55977006293A6 /* Utils */ = {
@@ -302,7 +302,7 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		182546411CA56483006293A6 /* Controllers */ = {
+		182546411CA56483006293A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				18FECE451CB258090003CED4 /* Abstract ViewControllers */,
@@ -315,9 +315,8 @@
 				182546461CA5659F006293A6 /* ANCategoryVC.m */,
 				1893C01F1C94A6A100D17DA5 /* ANViewController.h */,
 				1893C0201C94A6A100D17DA5 /* ANViewController.m */,
-				189C8EA51CA717CA002414AE /* Cells */,
 			);
-			name = Controllers;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		18267E291CB132E600AB130B /* Names Plists */ = {
@@ -354,7 +353,7 @@
 			name = PageViewController;
 			sourceTree = "<group>";
 		};
-		189C8EA51CA717CA002414AE /* Cells */ = {
+		189C8EA51CA717CA002414AE /* View */ = {
 			isa = PBXGroup;
 			children = (
 				189C8EA21CA717C3002414AE /* ANCategoryCell.h */,
@@ -362,7 +361,7 @@
 				184A13B21CC160C20031F217 /* ANFavouriteNameCell.h */,
 				184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */,
 			);
-			name = Cells;
+			name = View;
 			sourceTree = "<group>";
 		};
 		18F1B9681C8F43C1001A3B25 = {
@@ -393,8 +392,9 @@
 				18F1B9771C8F43C1001A3B25 /* AppDelegate.h */,
 				18F1B9781C8F43C1001A3B25 /* AppDelegate.m */,
 				1825463A1CA55977006293A6 /* Utils */,
-				182546391CA5596C006293A6 /* Models */,
-				182546411CA56483006293A6 /* Controllers */,
+				182546391CA5596C006293A6 /* Model */,
+				189C8EA51CA717CA002414AE /* View */,
+				182546411CA56483006293A6 /* Controller */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
 				18100DBA1CB249E800508F1D /* CoreData */,
 				18100DA71CB23EAF00508F1D /* Assets */,

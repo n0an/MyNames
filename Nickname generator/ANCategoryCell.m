@@ -7,7 +7,6 @@
 //
 
 #import "ANCategoryCell.h"
-
 #import "ANNameCategory.h"
 #import "ANUtils.h"
 
@@ -15,10 +14,26 @@ extern NSString* const kAppLaunchesCount;
 
 @implementation ANCategoryCell
 
-
-- (void) configureCellWithNameCategory:(ANNameCategory*) nameCategory {
+#pragma mark - CONFIGURATION METHODS
+- (void) configureCellWithNameCategory:(ANNameCategory*) nameCategory selected:(BOOL) selected {
     
     [self.categoryNewBadge setHidden:YES];
+    
+    self.categoryName.text = nameCategory.nameCategoryTitle;
+    self.categoryImageView.image = [UIImage imageNamed:nameCategory.nameCategoryImageName];
+    self.categoryImageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    if (selected) {
+        self.categoryName.alpha = 1;
+        self.fadeView.alpha = 0;
+        self.whiteBoxLeftConstraint.constant = 0;
+        
+    } else {
+        self.categoryName.alpha = 0;
+        self.fadeView.alpha = 0.5;
+        CGFloat cellWidth = CGRectGetWidth(self.frame);
+        self.whiteBoxLeftConstraint.constant = cellWidth * 2;
+    }
     
     if ([nameCategory.nameCategoryID isEqualToString:@"02.01"]) {
         
@@ -34,9 +49,8 @@ extern NSString* const kAppLaunchesCount;
         }
     }
     
-    
+    [self layoutIfNeeded];
 }
-
 
 #pragma mark - ANIMATIONS
 - (void) animateDeselection {
@@ -85,8 +99,6 @@ extern NSString* const kAppLaunchesCount;
                          self.whiteBoxLeftConstraint.constant = 0;
                          [self layoutIfNeeded];
                      } completion:nil];
-    
 }
-
 
 @end
