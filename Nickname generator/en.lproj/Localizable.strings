@@ -55,8 +55,8 @@ SHARE_FACEBOOK_UNAVAILABLE_MESSAGE  = "You haven't registered your Facebook acco
 SHARE_ACTION_OTHER = "Other";
 
 
-
-
+ROW_ACTION_SHARE = "Share";
+ROW_ACTION_DELETE = "Delete";
 
 
 

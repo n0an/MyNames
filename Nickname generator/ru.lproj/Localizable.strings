@@ -54,7 +54,8 @@ SHARE_FACEBOOK_UNAVAILABLE_MESSAGE  = "Вы не вошли в учетную з
 
 SHARE_ACTION_OTHER = "Другое";
 
-
+ROW_ACTION_SHARE = "Поделиться";
+ROW_ACTION_DELETE = "Удалить";
 
 
 
