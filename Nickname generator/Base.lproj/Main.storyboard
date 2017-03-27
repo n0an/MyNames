@@ -434,6 +434,7 @@
                         <outlet property="infoImageView" destination="Wsg-y9-3h0" id="DvV-ya-d7I"/>
                         <outlet property="likeButton" destination="igX-WN-kk6" id="Q2Z-mT-iZR"/>
                         <outlet property="nameCategoryLabel" destination="14O-Tw-Ulw" id="uOU-3b-Tw3"/>
+                        <outlet property="nameCategoryLabelTag" destination="Swh-Uw-2Ih" id="203-DY-Gym"/>
                         <outlet property="nameCountControl" destination="udp-kH-BYI" id="LTf-To-pCj"/>
                         <outlet property="nameResultLabel" destination="uay-78-7I1" id="fhS-9M-Vhh"/>
                         <outlet property="settingsViewLeadingConstraint" destination="7wP-BJ-bZr" id="DM0-6Q-NVM"/>

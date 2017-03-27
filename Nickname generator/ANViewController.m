@@ -145,9 +145,15 @@ extern NSString* const kAppLaunchesCount;
     [self animateGenerateButton];
     
     self.nameCategoryLabel.userInteractionEnabled = YES;
-    UITapGestureRecognizer* tapCategoryGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
-    [self.nameCategoryLabel addGestureRecognizer:tapCategoryGesture];
+    self.nameCategoryLabelTag.userInteractionEnabled = YES;
     
+    UITapGestureRecognizer* tapCategoryGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
+    
+    UITapGestureRecognizer* tapCategoryGestureTag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
+
+    
+    [self.nameCategoryLabel addGestureRecognizer:tapCategoryGesture];
+    [self.nameCategoryLabelTag addGestureRecognizer:tapCategoryGestureTag];
     
     // Setting gesture recognizer for main label
     
