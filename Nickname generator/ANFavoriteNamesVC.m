@@ -47,10 +47,10 @@
     self.rotateTransition = [[ANRotateTransitionAnimator alloc] init];
 
     
-    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
+    //UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
     UIBarButtonItem* clearButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"clear32"] landscapeImagePhone:[UIImage imageNamed:@"clear24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionClear:)];
 
-    self.navigationItem.leftBarButtonItem = editButton;
+    //self.navigationItem.leftBarButtonItem = editButton;
     self.navigationItem.rightBarButtonItem = clearButton;
     
 

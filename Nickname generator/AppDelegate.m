@@ -23,42 +23,40 @@ extern NSString* const ANManagedObjectContextSaveDidFailNotification;
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
     [Fabric with:@[[Crashlytics class]]];
-    
-    
-    // Fabric. Answers Debugging mode.
-    //[[Fabric sharedSDK] setDebug: YES];
-    //[Fabric with:@[CrashlyticsKit]];
-
     
     //UIColor *tabBarColor = RGBA(201, 81, 0, 255);
     //[[UITabBar appearance] setTintColor:tabBarColor];
     
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-    
     UIColor *tabBarTintColor = RGBA(236, 240, 241, 1.0);
-    
     [[UITabBar appearance] setBarTintColor:tabBarTintColor];
-    
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabitem-selected"]];
-    
-    
-    
     
     [FIRApp configure];
     
     [self listenForFatalCoreDataNotifications];
     
-    
     return YES;
 }
 
+#pragma mark - HELPER METHODS
+- (UIViewController*) viewControllerForShowingAlert {
     
+    UIViewController *rootVC = self.window.rootViewController;
+    
+    if (rootVC.presentedViewController != nil) {
+        return rootVC.presentedViewController;
+        
+    } else {
+        return rootVC;
+    }
+}
+
+#pragma mark - NOTIFICATIONS
 - (void) listenForFatalCoreDataNotifications {
     
     NSNotificationCenter* center = [NSNotificationCenter defaultCenter]
@@ -71,33 +69,13 @@ extern NSString* const ANManagedObjectContextSaveDidFailNotification;
         UIAlertAction* action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             NSException *exception = [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Fatal Core Data Error" userInfo:nil];
-            
             [exception raise];
-            
         }];
         
         [alert addAction:action];
-        
         UIViewController *vc = [self viewControllerForShowingAlert];
-        
         [vc presentViewController:alert animated:true completion:nil];
-        
-        
     }];
-    
-}
-    
-- (UIViewController*) viewControllerForShowingAlert {
-    
-    UIViewController *rootVC = self.window.rootViewController;
-    
-    if (rootVC.presentedViewController != nil) {
-        
-        return rootVC.presentedViewController;
-        
-    } else {
-        return rootVC;
-    }
 }
     
 
@@ -122,7 +100,7 @@ extern NSString* const ANManagedObjectContextSaveDidFailNotification;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
     [[ANDataManager sharedManager] saveContext];
 }
 
