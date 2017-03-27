@@ -726,33 +726,9 @@ extern NSString* const kAppLaunchesCount;
 
 - (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
     
-    ANLog(@"actionTapOnNameLabel");
-    
-    
-    
-    // *** If there're names in array of names with descriptions - initializate ANDescriptionVC and transfer names array to it.
-    
     if (self.isDescriptionAvailable) {
         
         [self performSegueWithIdentifier:@"showDescriptionVC" sender:nil];
-        
-        /*
-         ANDescriptioinVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANDescriptioinVC"];
-         
-         vc.namesArray = self.namesWithDescriptions;
-         
-         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
-         
-         nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-         
-         
-         
-         
-         //nav.transitioningDelegate = self.rotateTransition;
-         
-         [self presentViewController:nav animated:YES completion:nil];
-         */
-        
     }
     
 }

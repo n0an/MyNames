@@ -38,4 +38,55 @@ extern NSString* const kAppLaunchesCount;
 }
 
 
+#pragma mark - ANIMATIONS
+- (void) animateDeselection {
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         
+                         self.categoryName.alpha = 0;
+                         self.fadeView.alpha = 0.5;
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+    
+    [UIView animateWithDuration:0.2f
+                          delay:0.1f
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         CGFloat cellWidth = CGRectGetWidth(self.frame);
+                         self.whiteBoxLeftConstraint.constant = cellWidth * 2;
+                         
+                         [self layoutIfNeeded];
+                     } completion:nil];
+    
+}
+
+- (void) animateSelection {
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.categoryName.alpha = 1;
+                         self.fadeView.alpha = 0;
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+    
+    [UIView animateWithDuration:0.2f
+                          delay:0.1f
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.whiteBoxLeftConstraint.constant = 0;
+                         [self layoutIfNeeded];
+                     } completion:nil];
+    
+}
+
+
 @end

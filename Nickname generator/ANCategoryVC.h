@@ -14,17 +14,17 @@
 
 @interface ANCategoryVC : UIViewController
 
+#pragma mark - OUTLETS
 @property (strong, nonatomic) IBOutlet UITableView* tableView;
 
+#pragma mark - PROPERTIES
 @property (strong, nonatomic) NSArray* categories;
-
 @property (strong, nonatomic) ANNameCategory* selectedCategory;
-
 @property (weak, nonatomic) id <ANCategorySelectionDelegate> delegate;
-
 
 @end
 
+#pragma mark - DELEGATE PROTOCOL
 @protocol ANCategorySelectionDelegate <NSObject>
 
 @required

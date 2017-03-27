@@ -25,4 +25,8 @@
 
 - (void) configureCellWithNameCategory:(ANNameCategory*) nameCategory;
 
+- (void) animateDeselection;
+- (void) animateSelection;
+
+
 @end
