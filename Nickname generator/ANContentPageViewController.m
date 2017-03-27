@@ -13,9 +13,12 @@
 
 @end
 
+#pragma mark - CONSTANTS
 extern NSString* const kAppAlreadySeen;
 
 @implementation ANContentPageViewController
+
+#pragma mark - viewDidLoad
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,13 +27,10 @@ extern NSString* const kAppAlreadySeen;
     self.subHeaderLabel.text = self.subHeader;
     self.contentImageView.image = [UIImage imageNamed:self.imageFile];
     
-    
     self.pageControl.currentPage = self.index;
     
     self.nextButton.hidden = (self.index == 4) ? YES : NO;
-    
     self.startButton.hidden = (self.index == 4) ? NO : YES;
-    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -60,26 +60,28 @@ extern NSString* const kAppAlreadySeen;
         default:
             break;
     }
-    
-    
-    
-    
 }
 
+#pragma mark - HELPER METHODS
+- (void) finishPreview {
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:YES forKey:kAppAlreadySeen];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - SCENES
 
 - (void) scene01 {
     
     self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
     
-    
-
-    
     self.likeButton.hidden = NO;
     self.generateButton.hidden = NO;
-    
     self.clickImageView.hidden = NO;
-    
     self.firstDimView.hidden = NO;
+    self.skipButton.hidden = NO;
+
     self.firstDimView.backgroundColor = [UIColor whiteColor];
     self.firstDimView.alpha = 0;
     
@@ -98,21 +100,16 @@ extern NSString* const kAppAlreadySeen;
                                                delay:0.f
                                              options:UIViewAnimationOptionCurveEaseIn
                                           animations:^{
-                                              
                                               self.firstDimView.alpha = 0.8f;
+                                              
                                           } completion:^(BOOL finished) {
                                               [self translateView:self.clickImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
                                               
                                                   [self animateBlinkButton:self.generateButton withDelay:0.f];
-                                              
                                               }];
                                           }];
-                         
                      }];
-    
-    
 }
-
 
 - (void) scene02 {
     
@@ -121,11 +118,11 @@ extern NSString* const kAppAlreadySeen;
     [self animateNextSlideButton];
     
     self.shakeImageView.hidden = NO;
-    
     self.secondDimView.hidden = NO;
+    self.skipButton.hidden = NO;
+
     self.secondDimView.backgroundColor = [UIColor whiteColor];
     self.secondDimView.alpha = 0;
-    
     
     [UIView transitionWithView:self.secondDimView
                       duration:1.0f
@@ -135,10 +132,6 @@ extern NSString* const kAppAlreadySeen;
                     } completion:^(BOOL finished) {
                         [self animateShake];
                     }];
-    
-    
-    
-    
 }
 
 - (void) scene03 {
@@ -149,7 +142,8 @@ extern NSString* const kAppAlreadySeen;
     
     self.likeButton.hidden = NO;
     self.generateButton.hidden = NO;
-    
+    self.skipButton.hidden = NO;
+
     self.clickImageView.hidden = NO;
     
     self.secondDimView.hidden = NO;
@@ -172,12 +166,8 @@ extern NSString* const kAppAlreadySeen;
                         [self translateView:self.clickImageView toPoint:CGPointMake(0, diff) completion:^(BOOL finished) {
                             
                             [self.likeButton setImage:[UIImage imageNamed:@"like1set"] forState:UIControlStateNormal];
-                            
                         }];
-
-
                     }];
- 
 }
 
 - (void) scene04 {
@@ -188,6 +178,7 @@ extern NSString* const kAppAlreadySeen;
     
     self.viewWithControls.hidden = NO;
     self.dragImageView.hidden = NO;
+    self.skipButton.hidden = NO;
     
     self.dragImageView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.viewWithControls.bounds));
     
@@ -198,7 +189,6 @@ extern NSString* const kAppAlreadySeen;
     self.settingsViewLeadingConstraint.constant = -321;
     [self.view layoutIfNeeded];
 
-    
     [UIView transitionWithView:self.secondDimView
                       duration:1.0f
                        options:UIViewAnimationOptionCurveEaseIn
@@ -209,38 +199,21 @@ extern NSString* const kAppAlreadySeen;
                         [self translateView:self.dragImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
                             [self animateViewWithControls];
                         }];
-                        
-                        
-
                     }];
-
-    
-    
 }
 
 - (void) scene05 {
-    
-    
+    self.skipButton.hidden = YES;
     [self animateBlinkButton:self.startButton withDelay:0.7f];
-
-    
 }
 
-
-
-#pragma mark - Helper methods
-
-
+#pragma mark - ANIMATIONS
 - (void) translateView:(UIView*) view toPoint:(CGPoint) dstPoint completion:(void (^)(BOOL finished))completion {
-    
     [UIView animateWithDuration:1.f
                      animations:^{
                          view.transform = CGAffineTransformMakeTranslation(dstPoint.x, dstPoint.y);
-                         
                      } completion: completion];
-    
 }
-
 
 - (void) animateShake {
     
@@ -249,41 +222,31 @@ extern NSString* const kAppAlreadySeen;
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
             self.shakeImageView.transform = CGAffineTransformMakeTranslation(-100, 0);
             [self.view layoutIfNeeded];
-            
         }];
+        
         [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:0.25 animations:^{
             self.shakeImageView.transform = CGAffineTransformMakeTranslation(100, 0);
             [self.view layoutIfNeeded];
-
         }];
         
         [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:0.125 animations:^{
             self.shakeImageView.transform = CGAffineTransformMakeTranslation(-50, 0);
             [self.view layoutIfNeeded];
-
         }];
         
         [UIView addKeyframeWithRelativeStartTime:0.875 relativeDuration:0.0625 animations:^{
             self.shakeImageView.transform = CGAffineTransformMakeTranslation(50, 0);
             [self.view layoutIfNeeded];
-
         }];
         
         [UIView addKeyframeWithRelativeStartTime:0.9375 relativeDuration:0.0625 animations:^{
             self.shakeImageView.transform = CGAffineTransformMakeTranslation(0, 0);
             [self.view layoutIfNeeded];
-
         }];
-        
     } completion:nil];
-    
-    
 }
 
-
 - (void) animateViewWithControls {
-    
-    
     [UIView animateWithDuration:1.5f
                           delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -291,13 +254,9 @@ extern NSString* const kAppAlreadySeen;
                          self.settingsViewLeadingConstraint.constant = -10;
                          [self.view layoutIfNeeded];
                      } completion:nil];
-    
-    
 }
 
-
 - (void) animateBlinkButton:(UIButton*) button withDelay:(CGFloat) delay {
-    
     [UIView animateWithDuration:0.15f
                           delay:delay
                         options:UIViewAnimationOptionCurveLinear
@@ -308,17 +267,10 @@ extern NSString* const kAppAlreadySeen;
                          [UIView animateWithDuration:0.15f animations:^{
                              button.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
                          }];
-                         
-                         
-                         
-                         
                      }];
 }
 
-
-
 - (void) animateNextSlideButton {
-    
     [UIView animateWithDuration:0.3f
                           delay:0.6f
          usingSpringWithDamping:0.5f
@@ -328,35 +280,22 @@ extern NSString* const kAppAlreadySeen;
                          self.nextButton.transform = CGAffineTransformMakeTranslation(0, 0);
                          
                      } completion:^(BOOL finished) {
-                         
+ 
                      }];
-
-    
 }
 
-
-
-
-#pragma mark - Actions
+#pragma mark - ACTIONS
+- (IBAction)actionNextScreen:(UIButton *)sender {
+    ANPageViewController* pageVC = (ANPageViewController*) self.parentViewController;
+    [pageVC nextPage:self.index];
+}
 
 - (IBAction)actionClose:(UIButton *)sender {
-    
-    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    [userDefaults setBool:YES forKey:kAppAlreadySeen];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+    [self finishPreview];
 }
 
-
-
-- (IBAction)actionNextScreen:(UIButton *)sender {
-    
-    ANPageViewController* pageVC = (ANPageViewController*) self.parentViewController;
-    
-    [pageVC nextPage:self.index];
-    
+- (IBAction)actionSkipPressed:(id)sender {
+    [self finishPreview];
 }
 
 

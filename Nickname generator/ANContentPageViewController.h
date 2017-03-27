@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *subHeaderLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *skipButton;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIImageView *contentImageView;
@@ -44,7 +46,6 @@
 
 - (IBAction)actionClose:(UIButton *)sender;
 - (IBAction)actionNextScreen:(UIButton *)sender;
-
 
 
 @property (assign, nonatomic) NSInteger index;

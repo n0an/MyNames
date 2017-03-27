@@ -1405,10 +1405,18 @@
                                     <action selector="actionNextScreen:" destination="Tkg-rQ-y2R" eventType="touchUpInside" id="wd3-XA-QK8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjS-m7-8hp">
+                                <rect key="frame" x="16" y="15" width="30" height="30"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="actionSkipPressed:" destination="Tkg-rQ-y2R" eventType="touchUpInside" id="oGS-4C-N5Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZEg-LV-0OF" firstAttribute="leading" secondItem="gH0-Qb-BGd" secondAttribute="leading" constant="20" id="08c-Sq-cTp"/>
+                            <constraint firstItem="jjS-m7-8hp" firstAttribute="centerY" secondItem="W0T-eK-OBu" secondAttribute="centerY" id="2KD-3B-Cw6"/>
                             <constraint firstItem="tCF-Q2-S80" firstAttribute="centerX" secondItem="rV6-2H-9vh" secondAttribute="centerX" id="2UW-ul-ir1"/>
                             <constraint firstAttribute="trailing" secondItem="rV6-2H-9vh" secondAttribute="trailing" id="2ap-cH-DkU"/>
                             <constraint firstItem="Scq-Uo-vdL" firstAttribute="centerX" secondItem="rV6-2H-9vh" secondAttribute="centerX" id="3gX-e3-jpd"/>
@@ -1448,6 +1456,7 @@
                             <constraint firstItem="rV6-2H-9vh" firstAttribute="leading" secondItem="gH0-Qb-BGd" secondAttribute="leading" id="fEI-N9-CpA"/>
                             <constraint firstItem="PCQ-Du-tNg" firstAttribute="bottom" secondItem="rV6-2H-9vh" secondAttribute="bottom" id="hfo-yb-tm3"/>
                             <constraint firstItem="LsZ-lM-DEw" firstAttribute="centerX" secondItem="UP2-dN-n9I" secondAttribute="centerX" id="lue-A9-F6E"/>
+                            <constraint firstItem="jjS-m7-8hp" firstAttribute="leading" secondItem="gH0-Qb-BGd" secondAttribute="leadingMargin" id="mre-bS-o26"/>
                             <constraint firstItem="cDo-vA-Rv8" firstAttribute="leading" secondItem="rV6-2H-9vh" secondAttribute="leading" id="mz3-xc-dYe"/>
                             <constraint firstAttribute="trailing" secondItem="ZEg-LV-0OF" secondAttribute="trailing" constant="20" id="uer-g6-dbp"/>
                         </constraints>
@@ -1474,6 +1483,7 @@
                         <outlet property="secondDimView" destination="cDo-vA-Rv8" id="okV-PB-Fws"/>
                         <outlet property="settingsViewLeadingConstraint" destination="HOo-HU-bJt" id="nyC-5X-Yej"/>
                         <outlet property="shakeImageView" destination="Scq-Uo-vdL" id="GXJ-Hu-5Qi"/>
+                        <outlet property="skipButton" destination="jjS-m7-8hp" id="Hh6-27-0PB"/>
                         <outlet property="startButton" destination="UP2-dN-n9I" id="Dnn-fC-5Mh"/>
                         <outlet property="subHeaderLabel" destination="ZEg-LV-0OF" id="yeO-Ae-BhD"/>
                         <outlet property="viewWithControls" destination="yca-B2-JhX" id="bhG-26-Wmb"/>

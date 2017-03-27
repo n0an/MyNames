@@ -45,7 +45,7 @@
 "Swh-Uw-2Ih.text" = "Категория:";
 
 /* Class = "UIButton"; normalTitle = "Start"; ObjectID = "UP2-dN-n9I"; */
-"UP2-dN-n9I.normalTitle" = "Start";
+"UP2-dN-n9I.normalTitle" = "Старт";
 
 /* Class = "UILabel"; text = "Gender:"; ObjectID = "Vrj-4I-EFG"; */
 "Vrj-4I-EFG.text" = "Gender:";
@@ -85,3 +85,7 @@
 
 /* Class = "UILabel"; text = "Norse mythology"; ObjectID = "zCA-sY-RVN"; */
 "zCA-sY-RVN.text" = "Norse mythology";
+
+"jjS-m7-8hp.normalTitle" = "Пропустить";
+
+
