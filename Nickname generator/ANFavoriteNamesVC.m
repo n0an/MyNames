@@ -56,12 +56,13 @@
     
     self.selectedIndexPaths = [NSMutableArray array];
 
-    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionEdit:)];
+    //UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionEdit:)];
+    
+    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BARBUTTON_EDIT", nil) style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
     
     self.navigationItem.leftBarButtonItem = editButton;
     
     self.editButton = editButton;
-    
     
     
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
@@ -193,31 +194,30 @@
 
 - (void) actionEdit:(UIBarButtonItem*) sender {
     
-    //BOOL isEditing = self.tableView.editing;
-    
-    //[self.tableView setEditing:!isEditing animated:YES];
-    
     self.isEditingMode = !self.isEditingMode;
     
-    UIBarButtonItem* editButton;
-
     if (self.isEditingMode) {
-        editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionEdit:)];
         
-        UIBarButtonItem* deleteButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"ROW_ACTION_DELETE", nil) style:UIBarButtonItemStyleDone target:self action:@selector(actionDeleteSelectedNames:)];
+        UIBarButtonItem* deleteButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"ROW_ACTION_DELETE", nil) style:UIBarButtonItemStylePlain target:self action:@selector(actionDeleteSelectedNames:)];
         
         UIBarButtonItem *deleteAllButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(actionClear:)];
         
-        [self.navigationItem setLeftBarButtonItems:@[editButton, deleteButton] animated:YES];
+        [self.editButton setTitle:NSLocalizedString(@"BARBUTTON_DONE", nil)];
+        [self.editButton setStyle:UIBarButtonItemStyleDone];
+        
+        [self.navigationItem setLeftBarButtonItems:@[self.editButton, deleteButton] animated:YES];
         
         [self.navigationItem setRightBarButtonItem:deleteAllButton];
         
     } else {
-        editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(actionEdit:)];
+        
+        [self.editButton setTitle:NSLocalizedString(@"BARBUTTON_EDIT", nil)];
+        [self.editButton setStyle:UIBarButtonItemStylePlain];
+
         
         [self.selectedIndexPaths removeAllObjects];
         
-        [self.navigationItem setLeftBarButtonItems:@[editButton] animated:YES];
+        [self.navigationItem setLeftBarButtonItems:@[self.editButton] animated:YES];
 
         self.navigationItem.rightBarButtonItem = nil;
         
@@ -226,21 +226,6 @@
     [self.tableView reloadData];
     
     
-    
-    /*
-    UIBarButtonItem* editButton;
-    
-    if (self.tableView.editing) {
-        editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"affirm_3_32"] landscapeImagePhone:[UIImage imageNamed:@"affirm_3_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
-
-    } else {
-        editButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"edit_2_32"] landscapeImagePhone:[UIImage imageNamed:@"edit_2_24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
-
-    }
-    
-    
-    [self.navigationItem setLeftBarButtonItem:editButton animated:YES];
-    */
     
 }
 
@@ -255,7 +240,8 @@
         
         [self actionEdit:nil];
         
-        
+        self.editButton.enabled = ([self.fetchedResultsController.sections count] != 0);
+
     }];
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL_CLEAR", nil) style:UIAlertActionStyleCancel handler:nil];

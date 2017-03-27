@@ -57,7 +57,8 @@ SHARE_ACTION_OTHER = "Другое";
 ROW_ACTION_SHARE = "Поделиться";
 ROW_ACTION_DELETE = "Удалить";
 
-
+BARBUTTON_DONE = "Готово";
+BARBUTTON_EDIT = "Изменить";
 
 
 
