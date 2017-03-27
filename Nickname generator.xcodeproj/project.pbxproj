@@ -294,10 +294,10 @@
 		1825463A1CA55977006293A6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				188E72381E86812D006A8CBA /* ANRotateTransitionAnimator.h */,
-				188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */,
 				1893C0221C94A92700D17DA5 /* ANUtils.h */,
 				1893C0231C94A92700D17DA5 /* ANUtils.m */,
+				188E72381E86812D006A8CBA /* ANRotateTransitionAnimator.h */,
+				188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";

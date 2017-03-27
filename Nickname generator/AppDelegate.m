@@ -19,13 +19,14 @@
 
 @end
 
+#pragma mark - CONSTANTS
 extern NSString* const ANManagedObjectContextSaveDidFailNotification;
 extern NSString* const kAppLaunchesCount;
 
 @implementation AppDelegate
 
+#pragma mark - didFinishLaunchingWithOptions
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     [Fabric with:@[[Crashlytics class]]];
     
@@ -47,7 +48,6 @@ extern NSString* const kAppLaunchesCount;
     appLaunchesCount++;
     
     [userDefaults setInteger:appLaunchesCount forKey:kAppLaunchesCount];
-    
     
     return YES;
 }

@@ -9,9 +9,6 @@
 #import "ANRotateTransitionAnimator.h"
 
 @interface ANRotateTransitionAnimator ()
-    
-
-    
 
 @end
 
@@ -90,19 +87,6 @@ CGFloat const duration = 0.5f;
     
 }
 
-    
-    
-    
-    
-    
-    
-    
-    
+
 @end
-
-
-
-
-
-
 
