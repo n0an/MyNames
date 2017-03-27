@@ -16,6 +16,7 @@
 
 @implementation ANCoreDataVC
 
+#pragma mark - INITIALIZER
 - (instancetype)init
 {
     self = [super initWithStyle:UITableViewStylePlain];
@@ -25,26 +26,21 @@
     return self;
 }
 
+#pragma mark - HELPER METHODS
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
 }
 
-
-
-
-#pragma mark - CoreData
-
+#pragma mark - CoreData managedObjectContext
 - (NSManagedObjectContext*) managedObjectContext {
     if (!_managedObjectContext) {
         _managedObjectContext = [[ANDataManager sharedManager] managedObjectContext];
     }
     
     return _managedObjectContext;
-    
 }
 
 #pragma mark - NSFetchedResultsController
-
 -(NSFetchedResultsController*) fetchedResultsController {
     return nil;
 }
@@ -53,7 +49,6 @@
 {
     [self.tableView beginUpdates];
 }
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
@@ -71,7 +66,6 @@
             return;
     }
 }
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
@@ -99,26 +93,19 @@
     }
 }
 
-
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
 }
 
 
-
-
-
 #pragma mark - UITableViewDataSource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-
     return [sectionInfo numberOfObjects];
 }
 
@@ -129,7 +116,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     [self configureCell:cell atIndexPath:indexPath];
@@ -138,38 +125,24 @@
 }
 
 
-
 #pragma mark - UITableViewDelegate
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        
-        
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
         
         NSError *error = nil;
         if (![context save:&error]) {
-            
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             postNotificationFatalCoreDataError();
         }
-        
-        
     }
-    
 }
-
-
-
-
-
-
 
 @end

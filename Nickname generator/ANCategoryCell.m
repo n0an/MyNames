@@ -64,7 +64,6 @@ extern NSString* const kAppLaunchesCount;
                          self.fadeView.alpha = 0.5;
                          
                      } completion:^(BOOL finished) {
-                         
                      }];
     
     [UIView animateWithDuration:0.2f
@@ -77,7 +76,6 @@ extern NSString* const kAppLaunchesCount;
                          
                          [self layoutIfNeeded];
                      } completion:nil];
-    
 }
 
 - (void) animateSelection {
@@ -89,7 +87,6 @@ extern NSString* const kAppLaunchesCount;
                          self.categoryName.alpha = 1;
                          self.fadeView.alpha = 0;
                      } completion:^(BOOL finished) {
-                         
                      }];
     
     [UIView animateWithDuration:0.2f

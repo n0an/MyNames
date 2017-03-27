@@ -11,14 +11,9 @@
 
 @interface ANCoreDataVC : UITableViewController <NSFetchedResultsControllerDelegate>
 
-
 @property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
-
-
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
-
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-
 
 @end
