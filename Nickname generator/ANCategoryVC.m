@@ -27,6 +27,10 @@
     self.navigationItem.rightBarButtonItem = doneButton;
 }
 
+- (BOOL) shouldAutorotate {
+    return NO;
+}
+
 #pragma mark - ACTIONS
 - (void) actionDone:(UIBarButtonItem*) sender {
     [self dismissViewControllerAnimated:YES completion:nil];

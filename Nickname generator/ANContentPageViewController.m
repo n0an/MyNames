@@ -19,18 +19,18 @@ extern NSString* const kAppAlreadySeen;
 @implementation ANContentPageViewController
 
 #pragma mark - viewDidLoad
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.headerLabel.text = self.header;
-    self.subHeaderLabel.text = self.subHeader;
+    self.headerLabel.text       = self.header;
+    self.subHeaderLabel.text    = self.subHeader;
     self.contentImageView.image = [UIImage imageNamed:self.imageFile];
     
     self.pageControl.currentPage = self.index;
     
     self.nextButton.hidden = (self.index == 4) ? YES : NO;
     self.startButton.hidden = (self.index == 4) ? NO : YES;
+    self.skipButton.hidden = !self.startButton.hidden;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -70,18 +70,15 @@ extern NSString* const kAppAlreadySeen;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - SCENES
-
+#pragma mark - SCENES ANIMATIONS
 - (void) scene01 {
-    
     self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
     
     self.likeButton.hidden = NO;
     self.generateButton.hidden = NO;
     self.clickImageView.hidden = NO;
     self.firstDimView.hidden = NO;
-    self.skipButton.hidden = NO;
-
+    
     self.firstDimView.backgroundColor = [UIColor whiteColor];
     self.firstDimView.alpha = 0;
     
@@ -112,14 +109,13 @@ extern NSString* const kAppAlreadySeen;
 }
 
 - (void) scene02 {
-    
     self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
     
     [self animateNextSlideButton];
     
     self.shakeImageView.hidden = NO;
     self.secondDimView.hidden = NO;
-    self.skipButton.hidden = NO;
+    
 
     self.secondDimView.backgroundColor = [UIColor whiteColor];
     self.secondDimView.alpha = 0;
@@ -135,14 +131,13 @@ extern NSString* const kAppAlreadySeen;
 }
 
 - (void) scene03 {
-    
     self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
     
     [self animateNextSlideButton];
     
     self.likeButton.hidden = NO;
     self.generateButton.hidden = NO;
-    self.skipButton.hidden = NO;
+    
 
     self.clickImageView.hidden = NO;
     
@@ -171,14 +166,13 @@ extern NSString* const kAppAlreadySeen;
 }
 
 - (void) scene04 {
-    
     self.nextButton.transform = CGAffineTransformMakeTranslation(200, 0);
     
     [self animateNextSlideButton];
     
     self.viewWithControls.hidden = NO;
     self.dragImageView.hidden = NO;
-    self.skipButton.hidden = NO;
+    
     
     self.dragImageView.transform = CGAffineTransformMakeTranslation(0, CGRectGetHeight(self.viewWithControls.bounds));
     
@@ -203,11 +197,10 @@ extern NSString* const kAppAlreadySeen;
 }
 
 - (void) scene05 {
-    self.skipButton.hidden = YES;
     [self animateBlinkButton:self.startButton withDelay:0.7f];
 }
 
-#pragma mark - ANIMATIONS
+#pragma mark - GENERAL ANIMATIONS
 - (void) translateView:(UIView*) view toPoint:(CGPoint) dstPoint completion:(void (^)(BOOL finished))completion {
     [UIView animateWithDuration:1.f
                      animations:^{
@@ -216,7 +209,6 @@ extern NSString* const kAppAlreadySeen;
 }
 
 - (void) animateShake {
-    
     [UIView animateKeyframesWithDuration:1.0 delay:0.0 options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
         
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{

@@ -12,7 +12,4 @@
 
 - (void) nextPage:(NSInteger) index;
 
-
-
-
 @end
