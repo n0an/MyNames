@@ -8,6 +8,7 @@
 
 #import "ANContentPageViewController.h"
 #import "ANPageViewController.h"
+#import "ANAnimationHelper.h"
 
 @interface ANContentPageViewController ()
 
@@ -100,10 +101,13 @@ extern NSString* const kAppAlreadySeen;
                                               self.firstDimView.alpha = 0.8f;
                                               
                                           } completion:^(BOOL finished) {
-                                              [self translateView:self.clickImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
                                               
-                                                  [self animateBlinkButton:self.generateButton withDelay:0.f];
+                                              [[ANAnimationHelper sharedHelper] translateView:self.clickImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
+                                                  
+                                                  [[ANAnimationHelper sharedHelper] animateBlinkButton:self.generateButton withDelay:0.f];
+                                                  
                                               }];
+                                              
                                           }];
                      }];
 }
@@ -126,7 +130,7 @@ extern NSString* const kAppAlreadySeen;
                     animations:^{
                         self.secondDimView.alpha = 0.9f;
                     } completion:^(BOOL finished) {
-                        [self animateShake];
+                        [[ANAnimationHelper sharedHelper] animateShakeForView:self.shakeImageView];
                     }];
 }
 
@@ -158,10 +162,10 @@ extern NSString* const kAppAlreadySeen;
                         
                         CGFloat diff = self.likeButton.center.y - self.generateButton.center.y;
                         
-                        [self translateView:self.clickImageView toPoint:CGPointMake(0, diff) completion:^(BOOL finished) {
-                            
+                        [[ANAnimationHelper sharedHelper] translateView:self.clickImageView toPoint:CGPointMake(0, diff) completion:^(BOOL finished) {
                             [self.likeButton setImage:[UIImage imageNamed:@"like1set"] forState:UIControlStateNormal];
                         }];
+                        
                     }];
 }
 
@@ -190,53 +194,18 @@ extern NSString* const kAppAlreadySeen;
                         self.secondDimView.alpha = 0.9f;
                     } completion:^(BOOL finished) {
                         
-                        [self translateView:self.dragImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
+                        [[ANAnimationHelper sharedHelper] translateView:self.dragImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
                             [self animateViewWithControls];
                         }];
+                        
                     }];
 }
 
 - (void) scene05 {
-    [self animateBlinkButton:self.startButton withDelay:0.7f];
+    [[ANAnimationHelper sharedHelper] animateBlinkButton:self.startButton withDelay:0.4f];
 }
 
 #pragma mark - GENERAL ANIMATIONS
-- (void) translateView:(UIView*) view toPoint:(CGPoint) dstPoint completion:(void (^)(BOOL finished))completion {
-    [UIView animateWithDuration:1.f
-                     animations:^{
-                         view.transform = CGAffineTransformMakeTranslation(dstPoint.x, dstPoint.y);
-                     } completion: completion];
-}
-
-- (void) animateShake {
-    [UIView animateKeyframesWithDuration:1.0 delay:0.0 options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
-        
-        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
-            self.shakeImageView.transform = CGAffineTransformMakeTranslation(-100, 0);
-            [self.view layoutIfNeeded];
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:0.25 animations:^{
-            self.shakeImageView.transform = CGAffineTransformMakeTranslation(100, 0);
-            [self.view layoutIfNeeded];
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:0.125 animations:^{
-            self.shakeImageView.transform = CGAffineTransformMakeTranslation(-50, 0);
-            [self.view layoutIfNeeded];
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:0.875 relativeDuration:0.0625 animations:^{
-            self.shakeImageView.transform = CGAffineTransformMakeTranslation(50, 0);
-            [self.view layoutIfNeeded];
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:0.9375 relativeDuration:0.0625 animations:^{
-            self.shakeImageView.transform = CGAffineTransformMakeTranslation(0, 0);
-            [self.view layoutIfNeeded];
-        }];
-    } completion:nil];
-}
 
 - (void) animateViewWithControls {
     [UIView animateWithDuration:1.5f
@@ -248,20 +217,6 @@ extern NSString* const kAppAlreadySeen;
                      } completion:nil];
 }
 
-- (void) animateBlinkButton:(UIButton*) button withDelay:(CGFloat) delay {
-    [UIView animateWithDuration:0.15f
-                          delay:delay
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         button.transform = CGAffineTransformMakeScale(1.2f, 1.2f);
-                     } completion:^(BOOL finished) {
-                         
-                         [UIView animateWithDuration:0.15f animations:^{
-                             button.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
-                         }];
-                     }];
-}
-
 - (void) animateNextSlideButton {
     [UIView animateWithDuration:0.3f
                           delay:0.6f
@@ -271,9 +226,7 @@ extern NSString* const kAppAlreadySeen;
                      animations:^{
                          self.nextButton.transform = CGAffineTransformMakeTranslation(0, 0);
                          
-                     } completion:^(BOOL finished) {
- 
-                     }];
+                     } completion:nil];
 }
 
 #pragma mark - ACTIONS
@@ -289,8 +242,6 @@ extern NSString* const kAppAlreadySeen;
 - (IBAction)actionSkipPressed:(id)sender {
     [self finishPreview];
 }
-
-
 
 
 

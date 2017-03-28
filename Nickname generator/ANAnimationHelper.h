@@ -6,8 +6,16 @@
 //  Copyright © 2017 Anton Novoselov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ANAnimationHelper : NSObject
+
++ (ANAnimationHelper *) sharedHelper;
+
+- (void) animateShakeForView:(UIView *) view;
+
+- (void) translateView:(UIView*) view toPoint:(CGPoint) dstPoint completion:(void (^)(BOOL finished))completion;
+
+- (void) animateBlinkButton:(UIButton*) button withDelay:(CGFloat) delay;
 
 @end
