@@ -10,14 +10,15 @@
 
 @interface ANFavoriteNamesVC : ANCoreDataVC
 
+#pragma mark - OUTLETS
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-
 
 @property (weak, nonatomic) IBOutlet UIButton *genderButtonMasc;
 @property (weak, nonatomic) IBOutlet UIButton *genderButtonFem;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewGenderMasc;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewGenderFem;
-- (IBAction)actionGndrBtnPressed:(id)sender;
 
+#pragma mark - ACTIONS
+- (IBAction)actionGndrBtnPressed:(id)sender;
 
 @end

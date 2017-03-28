@@ -9,74 +9,54 @@
 #import "ANFavoriteNamesVC.h"
 #import "ANName.h"
 #import "ANUtils.h"
-
 #import "ANFavoriteName+CoreDataProperties.h"
 #import "ANDataManager.h"
-
 #import "ANFavouriteNameCell.h"
-
 #import "ANDescriptioinVC.h"
-
 #import "ANNamesFactory.h"
-
 #import "ANNameCategory.h"
-
 #import "ANRotateTransitionAnimator.h"
-
 #import <Social/Social.h>
 
 @interface ANFavoriteNamesVC ()
 
+#pragma mark - PRIVATE PROPERTIES
 @property (strong, nonatomic) NSString* searchPredicateString;
-
 @property (assign, nonatomic) ANGender selectedGender;
-    
 @property (strong, nonatomic) id rotateTransition;
-
 @property (assign, nonatomic) BOOL isEditingMode;
-
 @property (strong, nonatomic) NSMutableArray* selectedIndexPaths;
-
 @property (weak, nonatomic) UIBarButtonItem *editButton;
 @property (weak, nonatomic) UIBarButtonItem *deleteButton;
-
 
 @end
 
 @implementation ANFavoriteNamesVC
 @synthesize fetchedResultsController = _fetchedResultsController;
 
-
+#pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.isEditingMode = false;
-    
     self.selectedGender = ANGenderAll;
-    
     self.rotateTransition = [[ANRotateTransitionAnimator alloc] init];
-    
     self.selectedIndexPaths = [NSMutableArray array];
     
     UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BARBUTTON_EDIT", nil) style:UIBarButtonItemStylePlain target:self action:@selector(actionEdit:)];
     
     self.navigationItem.leftBarButtonItem = editButton;
-    
     self.editButton = editButton;
     
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    
     [super viewDidAppear:animated];
-    
     self.editButton.enabled = ([self.fetchedResultsController.sections count] != 0);
-    
 }
 
-#pragma mark - Helper Methods
-
+#pragma mark - HELPER METHODS
 - (void) configureFetchResultsController {
     NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
     
@@ -89,7 +69,6 @@
     NSSortDescriptor* nameCategoryTitleDescriptor =
     [[NSSortDescriptor alloc] initWithKey:@"nameCategoryTitle" ascending:YES];
     
-    
     NSSortDescriptor* firstNameDescriptor =
     [[NSSortDescriptor alloc] initWithKey:@"nameFirstName" ascending:YES];
     
@@ -98,9 +77,7 @@
     
     NSPredicate* predicate;
     
-    
     if (self.selectedGender != ANGenderAll) {
-        
         if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
             predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains[cd] %@ AND nameGender == %@", self.searchPredicateString, [NSNumber numberWithInteger:self.selectedGender]];
         } else {
@@ -108,20 +85,17 @@
         }
         
     } else {
-        
         if (self.searchPredicateString && ![self.searchPredicateString isEqualToString:@""]) {
             predicate = [NSPredicate predicateWithFormat:@"nameFirstName contains[cd] %@", self.searchPredicateString];
         } else {
             predicate = nil;
         }
-        
     }
 
     if (predicate) {
         [fetchRequest setPredicate:predicate];
     }
     
-
     [fetchRequest setSortDescriptors:@[nameCategoryTitleDescriptor, firstNameDescriptor, nameGenderDescriptor]];
     
     NSFetchedResultsController *aFetchedResultsController =
@@ -130,26 +104,20 @@
                                           sectionNameKeyPath:@"nameCategoryTitle"
                                                    cacheName:nil];
     
-    
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
-    
     
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
         
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        postNotificationFatalCoreDataError();
     }
-    
 }
-
 
 - (BOOL) isDescriptionAvailable: (ANFavoriteName*) name {
-    
     return name.nameDescription && ![name.nameDescription isEqualToString:@""];
 }
-
 
 - (NSString*) adoptToLocalizationString:(NSString*) string {
     
@@ -169,20 +137,16 @@
         adaptedCategory = NSLocalizedString(@"NAMECATEGORY0006", nil);
     } else if ([string isEqualToString:@"Celtic mythology"] || [string isEqualToString:@"Кельтская мифология"]) {
         adaptedCategory = NSLocalizedString(@"NAMECATEGORY0007", nil);
+    } else if ([string isEqualToString:@"Dune"] || [string isEqualToString:@"Дюна"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0201", nil);
     } else {
         adaptedCategory = @"";
     }
 
     return adaptedCategory;
-    
-    
 }
 
-
-
-
-#pragma mark - Actions
-
+#pragma mark - ACTIONS
 - (void) actionDeleteSelectedNames:(id) sender {
     
     NSMutableArray* namesToDelete = [NSMutableArray array];
