@@ -12,6 +12,7 @@
 
 @interface ANFavouriteNameCell : UITableViewCell
 
+#pragma mark - OUTLETS
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *genderImageView;
@@ -19,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *infoImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *checkBoxImageView;
 
+#pragma mark - HELPER METHODS
 - (void) configureCellForFavoriteName:(ANFavoriteName *) favoriteName descriptionAvailable:(BOOL) isDescriptionAvailable isEditingMode:(BOOL) isEditingMode;
-
 
 @end

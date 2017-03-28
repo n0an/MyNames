@@ -11,9 +11,11 @@
 
 @interface ANCoreDataVC : UITableViewController <NSFetchedResultsControllerDelegate>
 
+#pragma mark - PUBLIC PROPERTIES
 @property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+#pragma mark - HELPER METHODS
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end

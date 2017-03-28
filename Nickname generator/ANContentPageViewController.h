@@ -37,7 +37,7 @@
 - (IBAction)actionClose:(UIButton *)sender;
 - (IBAction)actionNextScreen:(UIButton *)sender;
 
-#pragma mark - PROPERTIES
+#pragma mark - PUBLIC PROPERTIES
 @property (assign, nonatomic) NSInteger index;
 @property (strong, nonatomic) NSString* header;
 @property (strong, nonatomic) NSString* subHeader;

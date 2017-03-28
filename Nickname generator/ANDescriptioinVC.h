@@ -8,20 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+#pragma mark - ENUM
 typedef enum {
     ANNameIterationDirectionNext,
     ANNameIterationDirectionPrevious
-
 } ANNameIterationDirection;
 
 @class ANName;
 
 @interface ANDescriptioinVC : UIViewController
+
+#pragma mark - OUTLETS
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
-
 
 @property (weak, nonatomic) IBOutlet UIImageView* nameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *genderImageView;
@@ -30,16 +30,13 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet UIView *contenView;
 
-
-
-
 @property (weak, nonatomic) IBOutlet UIButton* readMoreButton;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
+#pragma mark - PUBLIC PROPERTIES
 @property (strong, nonatomic) NSArray* namesArray;
 
+#pragma mark - ACTIONS
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender;
-
-
 
 @end

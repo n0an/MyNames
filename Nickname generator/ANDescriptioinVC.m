@@ -7,32 +7,27 @@
 //
 
 #import "ANDataManager.h"
-
 #import "ANDescriptioinVC.h"
 #import "ANName.h"
 #import "ANUtils.h"
-
-
 #import "ANNameCategory.h"
-
 #import <SafariServices/SafariServices.h>
-
 #import <Social/Social.h>
 
 @interface ANDescriptioinVC ()
 
+#pragma mark - PRIVATE PROPERTIES
 @property (strong, nonatomic) ANName* currentName;
-
 @property (assign, nonatomic) BOOL isNameFavorite;
 @property (strong, nonatomic) UIImage* likeNonSetImage;
 @property (strong, nonatomic) UIImage* likeSetImage;
-
 @property (strong, nonatomic) UIBarButtonItem* shareButton;
 
 @end
 
 @implementation ANDescriptioinVC
 
+#pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -50,9 +45,6 @@
     
     [self setImageAndImageHeight];
     
-    
-    // Navigation bar buttons
-        
     UIBarButtonItem* cancel = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close32"] landscapeImagePhone:[UIImage imageNamed:@"close24"] style:UIBarButtonItemStylePlain target:self action:@selector(actionCancel:)];
     
     self.navigationItem.leftBarButtonItem = cancel;
@@ -60,13 +52,10 @@
     NSMutableArray* rightBarButtonItems = [NSMutableArray array];
     
     UIBarButtonItem* shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionShareButtonPressed:)];
-    
     self.shareButton = shareButton;
-    
     [rightBarButtonItems addObject:shareButton];
     
     if ([self.namesArray count] > 1) {
-        
         UIBarButtonItem* fixedSpaceFirst = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
         fixedSpaceFirst.width = 10;
         
@@ -78,13 +67,9 @@
         fixedSpaceBetween.width = 4;
         
         [rightBarButtonItems addObjectsFromArray:@[fixedSpaceFirst, nextButton, fixedSpaceBetween, previousButton]];
-        
     }
     
-    
     self.navigationItem.rightBarButtonItems = rightBarButtonItems;
-    
-    
     
     UISwipeGestureRecognizer* rightSwipeGesture =
     [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleRightSwipe:)];
@@ -99,25 +84,17 @@
     
     self.likeNonSetImage = [UIImage imageNamed:@"like1"];
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
-    
-    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     [self setScrollViewContentSize];
-    
 }
-
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.currentName];
-    
     [self refreshLikeButton];
-    
 }
 
 

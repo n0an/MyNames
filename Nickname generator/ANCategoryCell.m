@@ -14,7 +14,7 @@ extern NSString* const kAppLaunchesCount;
 
 @implementation ANCategoryCell
 
-#pragma mark - CONFIGURATION METHODS
+#pragma mark - HELPER METHODS
 - (void) configureCellWithNameCategory:(ANNameCategory*) nameCategory selected:(BOOL) selected {
     
     [self.categoryNewBadge setHidden:YES];

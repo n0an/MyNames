@@ -12,16 +12,15 @@
 
 @implementation ANFavouriteNameCell
 
+#pragma mark - HELPER METHODS
 - (void) configureCellForFavoriteName:(ANFavoriteName *) favoriteName descriptionAvailable:(BOOL) isDescriptionAvailable isEditingMode:(BOOL) isEditingMode {
     
     self.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
     
     NSString* genderImage = !favoriteName.nameGender.boolValue ? @"masc02" : @"fem02";
-    
     self.genderImageView.image = [UIImage imageNamed:genderImage];
     
     NSString* adaptedCategory = [[ANNamesFactory sharedFactory] adoptToLocalizationString:favoriteName.nameCategoryTitle];
-    
     self.nameCategoryLabel.text = adaptedCategory;
     
     UIImage* imageName = [UIImage imageNamed:favoriteName.nameImageName];
@@ -43,7 +42,6 @@
     
     self.checkBoxImageView.hidden = !isEditingMode;
     self.infoImageView.hidden = isEditingMode;
-    
 }
 
 
