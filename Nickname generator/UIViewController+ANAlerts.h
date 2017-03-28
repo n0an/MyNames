@@ -11,10 +11,6 @@
 
 @interface UIViewController (ANAlerts)
 
-- (void) showAlertShareErrorWithTitle:(NSString *)title andMessage:(NSString *) message;
-
-- (void) showShareMenuActionSheetWithText:(NSString *) textToShare andImage:(UIImage*) imageToShare;
-
-- (void) showActivityVCWithItems:(NSArray *)items andSourceObject:(NSObject *) sourceObject;
+- (void) showShareMenuActionSheetWithText:(NSString *) textToShare Image:(UIImage*) imageToShare andSourceForActivityVC:(NSObject *) sourceObject;
 
 @end

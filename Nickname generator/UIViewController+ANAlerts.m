@@ -11,14 +11,8 @@
 
 @implementation UIViewController (ANAlerts)
 
-- (void) showAlertShareErrorWithTitle:(NSString *)title andMessage:(NSString *) message {
-    UIAlertController* errorAlertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [errorAlertController addAction:okAction];
-    [self presentViewController:errorAlertController animated:true completion:nil];
-}
-
-- (void) showShareMenuActionSheetWithText:(NSString *) textToShare andImage:(UIImage*) imageToShare {
+#pragma mark - PUBLIC METHODS
+- (void) showShareMenuActionSheetWithText:(NSString *) textToShare Image:(UIImage*) imageToShare andSourceForActivityVC:(NSObject *) sourceObject {
     NSString* introTextToShare = NSLocalizedString(@"SHARE_TEXT", nil);
     NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", textToShare, introTextToShare];
     
@@ -75,7 +69,7 @@
             shareItems = @[textToShare];
         }
         
-        [self showActivityVCWithItems:shareItems andSourceObject:self.view];
+        [self showActivityVCWithItems:shareItems andSourceObject:sourceObject];
     }];
     
     // CANCEL ACTION
@@ -89,6 +83,14 @@
     alertController.popoverPresentationController.sourceView = self.view;
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - HELPER METHODS
+- (void) showAlertShareErrorWithTitle:(NSString *)title andMessage:(NSString *) message {
+    UIAlertController* errorAlertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [errorAlertController addAction:okAction];
+    [self presentViewController:errorAlertController animated:true completion:nil];
 }
 
 - (void) showActivityVCWithItems:(NSArray *)items andSourceObject:(NSObject *) sourceObject {

@@ -16,7 +16,6 @@
 #import "ANNamesFactory.h"
 #import "ANNameCategory.h"
 #import "ANRotateTransitionAnimator.h"
-#import <Social/Social.h>
 #import "UIViewController+ANAlerts.m"
 
 @interface ANFavoriteNamesVC ()
@@ -328,7 +327,8 @@
         
         UIImage* imageToShare = [UIImage imageNamed:firstName.nameImageName];
         
-        [self showShareMenuActionSheetWithText: firstName.nameFirstName andImage:imageToShare];
+        [self showShareMenuActionSheetWithText:firstName.nameFirstName Image:imageToShare andSourceForActivityVC:self.view];
+        
         
         [tableView setEditing:NO animated:YES];
     }];
