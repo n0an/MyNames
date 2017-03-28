@@ -17,7 +17,7 @@
 #pragma mark - OUTLETS
 @property (strong, nonatomic) IBOutlet UITableView* tableView;
 
-#pragma mark - PROPERTIES
+#pragma mark - PUBLIC PROPERTIES
 @property (strong, nonatomic) NSArray* categories;
 @property (strong, nonatomic) ANNameCategory* selectedCategory;
 @property (weak, nonatomic) id <ANCategorySelectionDelegate> delegate;

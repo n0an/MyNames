@@ -12,7 +12,7 @@
 
 @interface ANCategoryVC ()
 
-#pragma mark - PROPERTIES
+#pragma mark - PRIVATE ROPERTIES
 @property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 
 @end
@@ -27,10 +27,6 @@
     self.navigationItem.rightBarButtonItem = doneButton;
 }
 
-- (BOOL) shouldAutorotate {
-    return NO;
-}
-
 #pragma mark - ACTIONS
 - (void) actionDone:(UIBarButtonItem*) sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -42,7 +38,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString* cellIdentifier = @"CategoryCell";
     
     ANCategoryCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -52,12 +47,10 @@
     if ([currentCategory isEqual:self.selectedCategory]) {
         self.selectedIndexPath = indexPath;
         [cell configureCellWithNameCategory:currentCategory selected:YES];
-        
     } else {
-        
         [cell configureCellWithNameCategory:currentCategory selected:NO];
-
     }
+    
     return cell;
 }
 
@@ -86,6 +79,5 @@
         self.selectedIndexPath = indexPath;
     }
 }
-
 
 @end

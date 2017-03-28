@@ -41,5 +41,4 @@
 
 - (BOOL) isNameFavorite:(ANName*) name;
 
-
 @end
