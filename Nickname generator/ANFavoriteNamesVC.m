@@ -17,6 +17,7 @@
 #import "ANNameCategory.h"
 #import "ANRotateTransitionAnimator.h"
 #import <Social/Social.h>
+#import "UIViewController+ANAlerts.m"
 
 @interface ANFavoriteNamesVC ()
 
@@ -57,6 +58,17 @@
 }
 
 #pragma mark - HELPER METHODS
+/*
+- (void) showActivityVCWithItems:(NSArray *)items {
+    
+    UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    
+    activityVC.popoverPresentationController.sourceView = self.view;
+    
+    [self presentViewController:activityVC animated:true completion:nil];
+}
+*/
+
 - (void) configureFetchResultsController {
     NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
     
@@ -119,32 +131,7 @@
     return name.nameDescription && ![name.nameDescription isEqualToString:@""];
 }
 
-- (NSString*) adoptToLocalizationString:(NSString*) string {
-    
-    NSString* adaptedCategory;
-    
-    if ([string isEqualToString:@"Greek mythology"] || [string isEqualToString:@"Греческая мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0001", nil);
-    } else if ([string isEqualToString:@"Vedic mythology"] || [string isEqualToString:@"Ведическая мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0002", nil);
-    } else if ([string isEqualToString:@"Roman mythology"] || [string isEqualToString:@"Римская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0003", nil);
-    } else if ([string isEqualToString:@"Norse mythology"] || [string isEqualToString:@"Скандинавская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0004", nil);
-    } else if ([string isEqualToString:@"Egyptian mythology"] || [string isEqualToString:@"Египетская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0005", nil);
-    } else if ([string isEqualToString:@"Persian mythology"] || [string isEqualToString:@"Персидская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0006", nil);
-    } else if ([string isEqualToString:@"Celtic mythology"] || [string isEqualToString:@"Кельтская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0007", nil);
-    } else if ([string isEqualToString:@"Dune"] || [string isEqualToString:@"Дюна"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0201", nil);
-    } else {
-        adaptedCategory = @"";
-    }
 
-    return adaptedCategory;
-}
 
 #pragma mark - ACTIONS
 - (void) actionDeleteSelectedNames:(id) sender {
@@ -152,22 +139,14 @@
     NSMutableArray* namesToDelete = [NSMutableArray array];
     
     for (NSIndexPath *indexPath in self.selectedIndexPaths) {
-        
-        ANLog(@"indexPath = %@", indexPath);
-        
         ANFavoriteName* favoriteName = [self.fetchedResultsController objectAtIndexPath:indexPath];
-
         [namesToDelete addObject:favoriteName];
-        
     }
     
     [self.selectedIndexPaths removeAllObjects];
-    
     self.deleteButton.enabled = NO;
 
-    
     [[ANDataManager sharedManager] deleteObjects:namesToDelete];
-    
 }
 
 - (void) actionEdit:(UIBarButtonItem*) sender {
@@ -175,7 +154,7 @@
     self.isEditingMode = !self.isEditingMode;
     
     if (self.isEditingMode) {
-        
+
         UIBarButtonItem* deleteButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"ROW_ACTION_DELETE", nil) style:UIBarButtonItemStylePlain target:self action:@selector(actionDeleteSelectedNames:)];
         
         self.deleteButton = deleteButton;
@@ -187,43 +166,30 @@
         [self.editButton setStyle:UIBarButtonItemStyleDone];
         
         [self.navigationItem setLeftBarButtonItems:@[self.editButton, deleteButton] animated:YES];
-        
         [self.navigationItem setRightBarButtonItem:deleteAllButton];
         
     } else {
-        
         [self.editButton setTitle:NSLocalizedString(@"BARBUTTON_EDIT", nil)];
         [self.editButton setStyle:UIBarButtonItemStylePlain];
 
         [self.selectedIndexPaths removeAllObjects];
         
         [self.navigationItem setLeftBarButtonItems:@[self.editButton] animated:YES];
-
         self.navigationItem.rightBarButtonItem = nil;
         
         self.editButton.enabled = ([self.fetchedResultsController.sections count] != 0);
-
-        
     }
     
     [self.tableView reloadData];
-    
-    
-    
 }
 
-
 - (void) actionClear:(UIBarButtonItem*) sender {
-    
-
     UIAlertController* alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"TITLE_CLEAR", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"AFFIRM_CLEAR", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [[ANDataManager sharedManager] clearFavoriteNamesDB];
         
         [self actionEdit:nil];
-        
-
     }];
     
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL_CLEAR", nil) style:UIAlertActionStyleCancel handler:nil];
@@ -233,78 +199,69 @@
     
     alertController.popoverPresentationController.sourceView = self.view;
     
-    
     [self presentViewController:alertController animated:YES completion:nil];
-    
 }
-
 
 - (IBAction)actionGndrBtnPressed:(id)sender {
     
-    UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
+    UIImage* mascActiveImage    = [UIImage imageNamed:@"masc01"];
     UIImage* mascNonactiveImage = [UIImage imageNamed:@"masc02"];
     
-    UIImage* femActiveImage = [UIImage imageNamed:@"fem01"];
-    UIImage* femNonactiveImage = [UIImage imageNamed:@"fem02"];
-    
+    UIImage* femActiveImage     = [UIImage imageNamed:@"fem01"];
+    UIImage* femNonactiveImage  = [UIImage imageNamed:@"fem02"];
     
     if ([sender isEqual:self.genderButtonMasc]) {
         
         if (self.selectedGender == ANGenderAll || self.selectedGender == ANGenderFeminine) {
-            
-            NSLog(@"Masc selected");
-            
             self.selectedGender = ANGenderMasculine;
             
             self.imgViewGenderMasc.image = mascActiveImage;
             self.imgViewGenderFem.image = femNonactiveImage;
 
         } else if (self.selectedGender == ANGenderMasculine) {
-            
-            NSLog(@"All selected");
-            
             self.selectedGender = ANGenderAll;
             
             self.imgViewGenderMasc.image = mascNonactiveImage;
             self.imgViewGenderFem.image = femNonactiveImage;
         }
         
-        
     } else if ([sender isEqual:self.genderButtonFem]) {
         
         if (self.selectedGender == ANGenderAll || self.selectedGender == ANGenderMasculine) {
-            
-            NSLog(@"Fem selected");
-            
             self.selectedGender = ANGenderFeminine;
             
             self.imgViewGenderMasc.image = mascNonactiveImage;
             self.imgViewGenderFem.image = femActiveImage;
             
         } else if (self.selectedGender == ANGenderFeminine) {
-            
-            NSLog(@"All selected");
-            
             self.selectedGender = ANGenderAll;
             
             self.imgViewGenderMasc.image = mascNonactiveImage;
             self.imgViewGenderFem.image = femNonactiveImage;
         }
-        
-        
     }
     
     [self configureFetchResultsController];
     [self.tableView reloadData];
-
-    
-    
 }
 
-
+#pragma mark - NAVIGATION
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showDescriptionVC"]) {
+        UINavigationController *destinationNavVC = segue.destinationViewController;
+        ANDescriptioinVC *destinationVC = (ANDescriptioinVC*) destinationNavVC.topViewController;
+        
+        ANFavoriteName* selectedFavoriteName = sender;
+        NSString* nameID = selectedFavoriteName.nameID;
+        ANName* originName = [[ANNamesFactory sharedFactory] getNameForID:nameID];
+        
+        destinationVC.namesArray = @[originName];
+        destinationNavVC.transitioningDelegate = self.rotateTransition;
+    }
+}
 
 #pragma mark - NSFetchedResultsController
-
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (_fetchedResultsController != nil) {
@@ -313,23 +270,18 @@
     
     [self configureFetchResultsController];
     
-    
     return _fetchedResultsController;
 }
 
-
 #pragma mark - UITableViewDataSource
-
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     
     NSString* sectionName = sectionInfo.name;
-    
-    NSString* adaptedCategory = [self adoptToLocalizationString:sectionName];
+    NSString* adaptedCategory = [[ANNamesFactory sharedFactory] adoptToLocalizationString:sectionName];
     
     return adaptedCategory;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -339,141 +291,39 @@
     
     ANFavouriteNameCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
-    cell.nameLabel.text = [NSString stringWithFormat:@"%@", favoriteName.nameFirstName];
-    
-    NSString* genderImage = !favoriteName.nameGender.boolValue ? @"masc02" : @"fem02";
-    
-    cell.genderImageView.image = [UIImage imageNamed:genderImage];
-    
-    
-    NSString* adaptedCategory = [self adoptToLocalizationString:favoriteName.nameCategoryTitle];
-    
-
-    cell.nameCategoryLabel.text = adaptedCategory;
-    
-    
-    UIImage* imageName = [UIImage imageNamed:favoriteName.nameImageName];
-    
-    
-    
-    if (!imageName) {
-        
-        cell.nameImageView.image = [UIImage imageNamed:@"eye"];
-        
-        [cell.nameImageView setContentMode:UIViewContentModeCenter];
-        
-
-    } else {
-        cell.nameImageView.image = [UIImage imageNamed:favoriteName.nameImageName];
-
-        [cell.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
-
-    }
-    
-    if ([self isDescriptionAvailable:favoriteName]) {
-        cell.infoImageView.hidden = NO;
-    } else {
-        cell.infoImageView.hidden = YES;
-    }
-    
-    cell.checkBoxImageView.hidden = !self.isEditingMode;
-    cell.infoImageView.hidden = self.isEditingMode;
+    [cell configureCellForFavoriteName:favoriteName descriptionAvailable:[self isDescriptionAvailable:favoriteName] isEditingMode:self.isEditingMode];
     
     if (self.isEditingMode) {
-        
         if ([self.selectedIndexPaths containsObject:indexPath]) {
-            
             [cell.checkBoxImageView setImage:[UIImage imageNamed:@"box_set"]];
-            
         } else {
-            
             [cell.checkBoxImageView setImage:[UIImage imageNamed:@"box_empty"]];
         }
     }
     
-    
-
-    
     return cell;
-}
-
-
-#pragma mark - Navigation
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"showDescriptionVC"]) {
-        
-        UINavigationController *destinationNavVC = segue.destinationViewController;
-        
-        ANDescriptioinVC *destinationVC = (ANDescriptioinVC*) destinationNavVC.topViewController;
-        
-        ANFavoriteName* selectedFavoriteName = sender;
-        
-        NSString* nameID = selectedFavoriteName.nameID;
-        
-        ANName* originName = [[ANNamesFactory sharedFactory] getNameForID:nameID];
-        
-        destinationVC.namesArray = @[originName];
-        
-        
-        destinationNavVC.transitioningDelegate = self.rotateTransition;
-
-        
-        
-    }
-    
-}
-
-- (void) showAlertShareErrorWithTitle:(NSString *)title andMessage:(NSString *) message {
-    
-    UIAlertController* errorAlertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    
-    [errorAlertController addAction:okAction];
-    
-    [self presentViewController:errorAlertController animated:true completion:nil];
-    
-    
-}
-
-
-- (void) showActivityVCWithItems:(NSArray *)items {
-    
-    UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
-    
-    activityVC.popoverPresentationController.sourceView = self.view;
-    
-    [self presentViewController:activityVC animated:true completion:nil];
-    
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ANLog(@"didSelectRowAtIndexPath: %ld", (long)indexPath.row);
-    
     ANFavouriteNameCell* selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     
     if (self.isEditingMode) {
-        
         if ([self.selectedIndexPaths containsObject:indexPath]) {
             [self.selectedIndexPaths removeObject:indexPath];
-            
             [selectedCell.checkBoxImageView setImage:[UIImage imageNamed:@"box_empty"]];
             
         } else {
             [self.selectedIndexPaths addObject:indexPath];
-            
             [selectedCell.checkBoxImageView setImage:[UIImage imageNamed:@"box_set"]];
         }
         
         self.deleteButton.enabled = ([self.selectedIndexPaths count] != 0);
         
     } else {
-        
         ANFavoriteName* name = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        ANLog(@"selected name = %@", name.nameFirstName);
+        
         if ([self isDescriptionAvailable:name]) {
             [self performSegueWithIdentifier:@"showDescriptionVC" sender:name];
         }
@@ -482,7 +332,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
 - (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewRowAction *shareAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:NSLocalizedString(@"ROW_ACTION_SHARE", nil) handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
@@ -490,12 +339,16 @@
         ANFavoriteName* firstName = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
         
-        NSString* introTextToShare = NSLocalizedString(@"SHARE_TEXT", nil);
+        //NSString* introTextToShare = NSLocalizedString(@"SHARE_TEXT", nil);
         
-        NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", firstName.nameFirstName, introTextToShare];
+        //NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", firstName.nameFirstName, introTextToShare];
+        
         
         UIImage* imageToShare = [UIImage imageNamed:firstName.nameImageName];
         
+        
+        
+        /*
         // Presenting action sheet with share options - Facebook, Twitter, UIActivityVC
         UIAlertController* alertController = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"SHARE_MESSAGE", nil) preferredStyle:UIAlertControllerStyleActionSheet];
         
@@ -578,7 +431,7 @@
         alertController.popoverPresentationController.sourceView = self.view;
         
         [self presentViewController:alertController animated:YES completion:nil];
-        
+        */
        
         
     }];

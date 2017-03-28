@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ANFavoriteName;
+
 @interface ANFavouriteNameCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -16,5 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *nameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *infoImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *checkBoxImageView;
+
+- (void) configureCellForFavoriteName:(ANFavoriteName *) favoriteName descriptionAvailable:(BOOL) isDescriptionAvailable isEditingMode:(BOOL) isEditingMode;
+
 
 @end

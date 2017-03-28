@@ -17,5 +17,7 @@
 
 - (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender;
 - (ANName*) getNameForID:(NSString*) nameID;
+- (NSString*) adoptToLocalizationString:(NSString*) string;
+
 
 @end
