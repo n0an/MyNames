@@ -13,4 +13,8 @@
 
 - (void) showAlertShareErrorWithTitle:(NSString *)title andMessage:(NSString *) message;
 
+- (void) showShareMenuActionSheetWithText:(NSString *) textToShare andImage:(UIImage*) imageToShare;
+
+- (void) showActivityVCWithItems:(NSArray *)items andSourceObject:(NSObject *) sourceObject;
+
 @end

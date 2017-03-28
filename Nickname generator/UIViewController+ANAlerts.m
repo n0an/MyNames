@@ -12,20 +12,14 @@
 @implementation UIViewController (ANAlerts)
 
 - (void) showAlertShareErrorWithTitle:(NSString *)title andMessage:(NSString *) message {
-    
     UIAlertController* errorAlertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    
     [errorAlertController addAction:okAction];
-    
     [self presentViewController:errorAlertController animated:true completion:nil];
 }
 
-- (void) showShareMenuActionSheetWithText:(NSString *) textToShare andImage:(UIImage*) imageToShare andSource:(NSObject *) sourceObject {
-    
+- (void) showShareMenuActionSheetWithText:(NSString *) textToShare andImage:(UIImage*) imageToShare {
     NSString* introTextToShare = NSLocalizedString(@"SHARE_TEXT", nil);
-    
     NSString* fullTextToShare = [NSString stringWithFormat:@"%@ - %@", textToShare, introTextToShare];
     
     // Presenting action sheet with share options - Facebook, Twitter, UIActivityVC
@@ -35,13 +29,9 @@
     UIAlertAction* twitterAction = [UIAlertAction actionWithTitle:@"Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         // Check if Twitter is available. Otherwise, display an error message
-        
         if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-            
             [self showAlertShareErrorWithTitle:NSLocalizedString(@"SHARE_TWITTER_UNAVAILABLE_TITLE", nil) andMessage:NSLocalizedString(@"SHARE_TWITTER_UNAVAILABLE_MESSAGE", nil)];
-            
             return;
-            
         }
         
         // Display Tweet Composer
@@ -51,23 +41,16 @@
         [tweetComposer addImage:imageToShare];
         
         //[tweetComposer addURL:shareUrl];
-        
         [self presentViewController:tweetComposer animated:true completion:nil];
-        
-        
     }];
     
     // FACEBOOK ACTION
     UIAlertAction* facebookAction = [UIAlertAction actionWithTitle:@"Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         // Check if Facebook is available. Otherwise, display an error message
-        
         if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-            
             [self showAlertShareErrorWithTitle:NSLocalizedString(@"SHARE_FACEBOOK_UNAVAILABLE_TITLE", nil) andMessage:NSLocalizedString(@"SHARE_FACEBOOK_UNAVAILABLE_MESSAGE", nil)];
-            
             return;
-            
         }
         
         // Display Facebook Composer
@@ -79,7 +62,6 @@
         //[facebookComposer addURL:shareUrl];
         
         [self presentViewController:facebookComposer animated:true completion:nil];
-        
     }];
     
     // OTHER ACTION - UIActivityVC
@@ -93,8 +75,7 @@
             shareItems = @[textToShare];
         }
         
-        [self showActivityVCWithItems:shareItems];
-        
+        [self showActivityVCWithItems:shareItems andSourceObject:self.view];
     }];
     
     // CANCEL ACTION
@@ -108,15 +89,17 @@
     alertController.popoverPresentationController.sourceView = self.view;
     
     [self presentViewController:alertController animated:YES completion:nil];
-    
 }
 
-
-- (void) showActivityVCWithItems:(NSArray *)items {
+- (void) showActivityVCWithItems:(NSArray *)items andSourceObject:(NSObject *) sourceObject {
     
     UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
     
-    activityVC.popoverPresentationController.sourceView = self.view;
+    if ([sourceObject isKindOfClass:[UIBarButtonItem class]]) {
+        activityVC.popoverPresentationController.barButtonItem = (UIBarButtonItem *)sourceObject;
+    } else {
+        activityVC.popoverPresentationController.sourceView = self.view;
+    }
     
     [self presentViewController:activityVC animated:true completion:nil];
 }
