@@ -329,6 +329,8 @@
         UIImage* imageToShare = [UIImage imageNamed:firstName.nameImageName];
         
         [self showShareMenuActionSheetWithText: firstName.nameFirstName andImage:imageToShare];
+        
+        [tableView setEditing:NO animated:YES];
     }];
     
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:NSLocalizedString(@"ROW_ACTION_DELETE", nil) handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
@@ -338,7 +340,6 @@
         
         NSError *error = nil;
         if (![context save:&error]) {
-            
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             postNotificationFatalCoreDataError();
         }
@@ -351,8 +352,6 @@
 }
 
 #pragma mark - UISearchBarDelegate
-
-
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     [searchBar setShowsCancelButton:YES animated:YES];
 }
@@ -364,16 +363,10 @@
 
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
     self.searchPredicateString = searchText;
-    
     [self configureFetchResultsController];
-    
     [self.tableView reloadData];
-    
 }
-
-
 
 
 @end
