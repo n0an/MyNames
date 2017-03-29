@@ -26,67 +26,11 @@
     return manager;
 }
 
-- (BOOL) checkIfExistName:(ANName*) name {
-    // Checking for doubles. If there's such name in DB - return from method
-    NSArray* addedNames = [self getAllObjectsForName:ANCDMFavoriteName];
-    
-    // If there're names already - check for coincidence
-    BOOL isArrEmpty = [addedNames count] == 0;
-    
-    if (!isArrEmpty) {
-        // If there's already added name with such nameID - stop execution
-        for (ANFavoriteName* favName in addedNames) {
-            if ([favName.nameID isEqualToString:name.nameID]) {
-                return YES;
-            }
-        }
-    }
-    
-    return NO;
-}
 
-- (ANFavoriteName *) findFavoriteNameFor:(ANName*) name {
-    // Checking for doubles. If there's such name in DB - return from method
-    NSArray* addedNames = [self getAllObjectsForName:ANCDMFavoriteName];
-    
-    // If there're names already - check for coincidence
-    BOOL isArrEmpty = [addedNames count] == 0;
-    
-    if (!isArrEmpty) {
-        // If there's already added name with such nameID - stop execution
-        for (ANFavoriteName* favName in addedNames) {
-            if ([favName.nameID isEqualToString:name.nameID]) {
-                return favName;
-            }
-        }
-    }
-    
-    return nil;
-}
 
 #pragma mark - PUBLIC METHODS
 - (void) addFavoriteName:(ANName*) name {
-    
-//    // Checking for doubles. If there's such name in DB - return from method
-//    NSArray* addedNames = [self getAllObjectsForName:ANCDMFavoriteName];
-//    
-//    // If there're names already - check for coincidence
-//    BOOL isArrEmpty = [addedNames count] == 0;
-//    
-//    if (!isArrEmpty) {
-//        // If there's already added name with such nameID - stop execution
-//        for (ANFavoriteName* favName in addedNames) {
-//            if ([favName.nameID isEqualToString:name.nameID]) {
-//                return;
-//            }
-//        }
-//    }
-    
-    
-//    if ([self checkIfExistName:name]) {
-//        return;
-//    }
-    
+  
     if ([self findFavoriteNameFor:name]) {
         return;
     }
@@ -112,21 +56,6 @@
 
 - (void) deleteFavoriteName:(ANName*) name {
     
-//    NSArray* addedNames = [self getAllObjectsForName:ANCDMFavoriteName];
-//    
-//    // If there're names already - check for coincidence
-//    BOOL isArrEmpty = [addedNames count] == 0;
-//    
-//    if (!isArrEmpty) {
-//        // If there's already added name with such nameID - stop execution
-//        for (ANFavoriteName* favName in addedNames) {
-//            if ([favName.nameID isEqualToString:name.nameID]) {
-//                [self.managedObjectContext deleteObject:favName];
-//                break;
-//            }
-//        }
-//    }
-    
     ANFavoriteName *favNameToDelete = [self findFavoriteNameFor:name];
     
     if (favNameToDelete) {
@@ -135,17 +64,13 @@
     }
 }
 
-
 - (void) showAllNames {
-    ANLog(@"===== showAllNames =====");
     [self printArray:[self getAllObjectsForName:ANCDMFavoriteName]];
 }
-
 
 - (void) clearFavoriteNamesDB {
     [self deleteAllObjectsForName:ANCDMFavoriteName];
 }
-
 
 - (BOOL) isNameFavorite:(ANName*) name {
     
@@ -173,13 +98,29 @@
     return [resultArray count];
 }
 
-
 #pragma mark - PRIVATE METHODS
+- (ANFavoriteName *) findFavoriteNameFor:(ANName*) name {
+    // Checking for doubles. If there's such name in DB - return from method
+    NSArray* addedNames = [self getAllObjectsForName:ANCDMFavoriteName];
+    
+    // If there're names already - check for coincidence
+    BOOL isArrEmpty = [addedNames count] == 0;
+    
+    if (!isArrEmpty) {
+        // If there's already added name with such nameID - stop execution
+        for (ANFavoriteName* favName in addedNames) {
+            if ([favName.nameID isEqualToString:name.nameID]) {
+                return favName;
+            }
+        }
+    }
+    
+    return nil;
+}
 
 - (void) printArray:(NSArray*) array {
     
     for (id object in array) {
-        
         if ([object isKindOfClass:[ANFavoriteName class]]) {
             ANFavoriteName* favoriteName = (ANFavoriteName*) object;
             ANLog(@"NAME: %@ %@", favoriteName.nameFirstName, favoriteName.nameID);
@@ -187,11 +128,9 @@
         } else {
             ANLog(@"!!! UNKNOWN OBJECT !!!");
         }
-        
     }
     
     ANLog(@"TOTAL COUNT = %lu", (unsigned long)[array count]);
-    
 }
 
 - (NSArray*) getAllObjectsForName:(NSString*) name {
@@ -212,7 +151,6 @@
     
     return resultArray;
 }
-
 
 - (NSArray*) getAllObjectsForName:(NSString*) name andSortUsingDescriptors:(NSArray*) descriptors {
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
@@ -235,36 +173,29 @@
     return resultArray;
 }
 
-
 - (void) deleteAllObjectsForName:(NSString*) name {
     NSArray* allObjects = [self getAllObjectsForName:name];
     
     for (id object in allObjects) {
-        
         [self.managedObjectContext deleteObject:object];
     }
+    
     [self.managedObjectContext save:nil];
-    
-    
 }
 
 - (void) deleteObjects:(NSArray*) objects {
     
     for (id object in objects) {
-        
         [self.managedObjectContext deleteObject:object];
     }
-    [self.managedObjectContext save:nil];
     
+    [self.managedObjectContext save:nil];
 }
 
-
-
 #pragma mark - Core Data stack
-
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize managedObjectContext        = _managedObjectContext;
+@synthesize managedObjectModel          = _managedObjectModel;
+@synthesize persistentStoreCoordinator  = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "com.antonnovoselov._1_CoreDataHomeworkSuperman" in the application's documents directory.
@@ -288,7 +219,6 @@
     }
     
     // Create the coordinator and store
-    
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Model.sqlite"];
     NSError *error = nil;
@@ -309,7 +239,6 @@
     return _persistentStoreCoordinator;
 }
 
-
 - (NSManagedObjectContext *)managedObjectContext {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
     if (_managedObjectContext != nil) {
@@ -326,30 +255,18 @@
 }
 
 #pragma mark - Core Data Saving support
-
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    
     if (managedObjectContext != nil) {
         NSError *error = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            
             postNotificationFatalCoreDataError();
-            
         }
     }
     ANLog(@"saveContext");
     
 }
 
-
-
-
-
-
-
 @end
-
-
-
