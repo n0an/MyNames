@@ -273,6 +273,9 @@ extern NSString* const kAppLaunchesCount;
                          }];
                      }];
     
+}
+
+- (void) animateResultsLabelUpdate {
     [UIView animateWithDuration:0.2f
                           delay:0.f
                         options:UIViewAnimationOptionCurveLinear
@@ -340,15 +343,14 @@ extern NSString* const kAppLaunchesCount;
     if (UIEventSubtypeMotionShake) {
         
         ANLog(@"I'm shaking!");
-        
-        NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
-        
-        self.nameResultLabel.text = currentNamesLabel;
+       
+        [self animateResultsLabelUpdate];
     }
 }
 
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender {
     [self animateGenerateButtonOnClick];
+    [self animateResultsLabelUpdate];
 }
 
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {

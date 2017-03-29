@@ -10,7 +10,6 @@
 
 @implementation ANNameCategory
 
-
 - (instancetype)initWithCategoryID:(NSString*) nameCategoryID andCategoryTitle:(NSString*) title andCategoryImageName:(NSString*) categoryImageName andCategoryBackgroundImageName:(NSString*) nameCategoryBackgroundImageName andAlias:(NSString*) alias
 {
     self = [super init];
@@ -23,7 +22,5 @@
     }
     return self;
 }
-
-
 
 @end
