@@ -68,6 +68,10 @@ extern NSString* const kAppLaunchesCount;
     return YES;
 }
 
+- (BOOL) prefersStatusBarHidden {
+    return YES;
+}
+
 #pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -114,13 +118,17 @@ extern NSString* const kAppLaunchesCount;
     self.likeNonSetImage = [UIImage imageNamed:@"like1"];
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
     
-    [self animateWheelRotating];
+    
+    
+//    [self animateWheelRotating];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     
     [self checkUserDefaults];
+    
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -177,6 +185,16 @@ extern NSString* const kAppLaunchesCount;
         ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
         
         [self presentViewController:pageVC animated:YES completion:nil];
+    } else {
+        
+        NSInteger appLaunchesCount = [userDefaults integerForKey:kAppLaunchesCount];
+        
+        ANLog(@"appLaunchesCount = %d", appLaunchesCount);
+        
+        if (appLaunchesCount < 10) {
+            [self animateWheelRotating];
+        }
+        
     }
 }
 
@@ -422,6 +440,7 @@ extern NSString* const kAppLaunchesCount;
     vc.categories = self.sharedNamesFactory.namesCategories;
     vc.selectedCategory = self.selectedCategory;
     vc.delegate = self;
+    
     
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
