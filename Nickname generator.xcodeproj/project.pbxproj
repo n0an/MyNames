@@ -276,9 +276,9 @@
 				18B35E0A1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m */,
 				18B35E0B1CB4408E00CDABF9 /* ANFavoriteName.h */,
 				18B35E0C1CB4408E00CDABF9 /* ANFavoriteName.m */,
-				18100DAB1CB248C400508F1D /* Model.xcdatamodeld */,
 				18FECE3F1CB252520003CED4 /* ANDataManager.h */,
 				18FECE401CB252520003CED4 /* ANDataManager.m */,
+				18100DAB1CB248C400508F1D /* Model.xcdatamodeld */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";

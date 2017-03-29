@@ -13,9 +13,7 @@
 + (ANAnimationHelper *) sharedHelper;
 
 - (void) animateShakeForView:(UIView *) view;
-
 - (void) translateView:(UIView*) view toPoint:(CGPoint) dstPoint completion:(void (^)(BOOL finished))completion;
-
 - (void) animateBlinkButton:(UIButton*) button withDelay:(CGFloat) delay;
 
 @end
