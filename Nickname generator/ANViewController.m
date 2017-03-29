@@ -118,9 +118,6 @@ extern NSString* const kAppLaunchesCount;
     self.likeNonSetImage = [UIImage imageNamed:@"like1"];
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
     
-    
-    
-//    [self animateWheelRotating];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
