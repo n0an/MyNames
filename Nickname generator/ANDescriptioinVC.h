@@ -21,14 +21,16 @@ typedef enum {
 #pragma mark - OUTLETS
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
-@property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
+//@property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UITextView* descriptionTextView;
 
 @property (weak, nonatomic) IBOutlet UIImageView* nameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *genderImageView;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+//@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (weak, nonatomic) IBOutlet UIView *contenView;
+//@property (weak, nonatomic) IBOutlet UIView *contenView;
 
 @property (weak, nonatomic) IBOutlet UIButton* readMoreButton;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
