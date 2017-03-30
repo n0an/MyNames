@@ -88,7 +88,6 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    [self setScrollViewContentSize];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -101,7 +100,7 @@
 - (void) refreshLabels {
     self.firstNameLabel.text = self.currentName.firstName;
     self.nameCategoryLabel.text = self.currentName.nameCategory.nameCategoryTitle;
-//    self.descriptionLabel.text = self.currentName.nameDescription;
+
     self.descriptionTextView.text = self.currentName.nameDescription;
     NSString* genderImage = !self.currentName.nameGender ? @"masc02" : @"fem02";
     
@@ -109,20 +108,10 @@
     
     [self.firstNameLabel sizeToFit];
     [self.nameCategoryLabel sizeToFit];
-//    [self.descriptionLabel sizeToFit];
     
     self.navigationItem.title = self.currentName.firstName;
 }
 
-//- (void) setScrollViewContentSize {
-//    CGRect contentRect = CGRectZero;
-//    
-//    for (UIView *view in self.contenView.subviews) {
-//        contentRect = CGRectUnion(contentRect, view.frame);
-//    }
-//    
-//    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(contentRect));
-//}
 
 - (void) iterateNameWithDirection:(ANNameIterationDirection) iterationDirection {
     
@@ -156,8 +145,6 @@
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.currentName];
     
     [self refreshLikeButton];
-    
-//    [self setScrollViewContentSize];
 }
 
 - (void) setImageAndImageHeight {
