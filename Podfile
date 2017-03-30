@@ -9,6 +9,7 @@ target 'Nickname generator' do
   
   # Firebase
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
 
   # Fabric
   pod 'Fabric'

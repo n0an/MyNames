@@ -55,6 +55,7 @@
 		18C776361CC9517000F5FFFF /* MythNorseFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C776351CC9517000F5FFFF /* MythNorseFemImages.xcassets */; };
 		18C7763C1CC960B300F5FFFF /* MythEgyptMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C7763B1CC960B300F5FFFF /* MythEgyptMascImages.xcassets */; };
 		18C7763E1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C7763D1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets */; };
+		18D12DB61E8D92CA003A62AF /* ANFBStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D12DB51E8D92CA003A62AF /* ANFBStorageManager.m */; };
 		18D62F531E8ADC4700EC2882 /* ANAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D62F521E8ADC4700EC2882 /* ANAnimationHelper.m */; };
 		18D62F561E8AEA2B00EC2882 /* UIViewController+ANAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D62F551E8AEA2B00EC2882 /* UIViewController+ANAlerts.m */; };
 		18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */; };
@@ -173,6 +174,8 @@
 		18C776351CC9517000F5FFFF /* MythNorseFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythNorseFemImages.xcassets; sourceTree = "<group>"; };
 		18C7763B1CC960B300F5FFFF /* MythEgyptMascImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythEgyptMascImages.xcassets; sourceTree = "<group>"; };
 		18C7763D1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythEgyptFemImages.xcassets; sourceTree = "<group>"; };
+		18D12DB41E8D92CA003A62AF /* ANFBStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFBStorageManager.h; sourceTree = "<group>"; };
+		18D12DB51E8D92CA003A62AF /* ANFBStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFBStorageManager.m; sourceTree = "<group>"; };
 		18D62F511E8ADC4700EC2882 /* ANAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAnimationHelper.h; sourceTree = "<group>"; };
 		18D62F521E8ADC4700EC2882 /* ANAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAnimationHelper.m; sourceTree = "<group>"; };
 		18D62F541E8AEA2B00EC2882 /* UIViewController+ANAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ANAlerts.h"; sourceTree = "<group>"; };
@@ -374,6 +377,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		18D12DB71E8D92D2003A62AF /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				18D12DB41E8D92CA003A62AF /* ANFBStorageManager.h */,
+				18D12DB51E8D92CA003A62AF /* ANFBStorageManager.m */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
 		18F1B9681C8F43C1001A3B25 = {
 			isa = PBXGroup;
 			children = (
@@ -407,12 +419,13 @@
 				182546411CA56483006293A6 /* Controller */,
 				18F1B97D1C8F43C1001A3B25 /* Main.storyboard */,
 				18100DBA1CB249E800508F1D /* CoreData */,
-				18100DA71CB23EAF00508F1D /* Assets */,
+				18D12DB71E8D92D2003A62AF /* Firebase */,
 				18F1B9821C8F43C1001A3B25 /* LaunchScreen.storyboard */,
 				18F1B9851C8F43C1001A3B25 /* Info.plist */,
 				18E6D01F1E87EFBC005D7867 /* InfoPlist.strings */,
 				188E72331E865235006A8CBA /* GoogleService-Info.plist */,
 				18A578401CECE0A300A10BB1 /* Localizable.strings */,
+				18100DA71CB23EAF00508F1D /* Assets */,
 				18F1B9741C8F43C1001A3B25 /* Supporting Files */,
 			);
 			path = "Nickname generator";
@@ -818,6 +831,7 @@
 				184A13B41CC160C20031F217 /* ANFavouriteNameCell.m in Sources */,
 				183410791CCE7A5900C19817 /* ANContentPageViewController.m in Sources */,
 				188E723A1E86812D006A8CBA /* ANRotateTransitionAnimator.m in Sources */,
+				18D12DB61E8D92CA003A62AF /* ANFBStorageManager.m in Sources */,
 				18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */,
 				18F1B9791C8F43C1001A3B25 /* AppDelegate.m in Sources */,
 				18F1B9761C8F43C1001A3B25 /* main.m in Sources */,
