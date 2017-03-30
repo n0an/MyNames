@@ -17,6 +17,8 @@
 #import "ANPageViewController.h"
 #import "ANRotateTransitionAnimator.h"
 #import "UIViewController+ANAlerts.h"
+#import "ANFBStorageManager.h"
+#import "ANFRImage.h"
 
 #pragma mark - ENUM
 typedef enum {
@@ -563,7 +565,41 @@ extern NSString* const kAppLaunchesCount;
     
     self.selectedCategory = category;
     
-    [self.bgImageView setImage:[UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName]];
+    UIImage* bgImage = [UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName];
+    
+    if (bgImage == nil) {
+        // Download from Firebase
+        
+        FIRStorageReference *bgRef = [[[ANFBStorageManager sharedManager] getReferenceForBackground] child:@"persianBG.jpg"];
+        
+        
+        [bgRef dataWithMaxSize:1 * 1024 * 1024 completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+            
+            if (data) {
+                
+                UIImage* bgImage = [UIImage imageWithData:data];
+                
+                
+                
+                NSLog(@"bgImage = %@", bgImage);
+                
+                [self.bgImageView setImage:bgImage];
+                
+            } else {
+                NSLog(@"error occured - %@", error);
+            }
+            
+        }];
+        
+        
+    } else {
+        
+        [self.bgImageView setImage:[UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName]];
+    }
+    
+    
+    
+    
     self.nameResultLabel.text = [self getNamesStringForNamesCount:self.namesCount];
     self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;
 }

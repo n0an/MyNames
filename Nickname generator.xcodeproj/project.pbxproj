@@ -56,6 +56,7 @@
 		18C7763C1CC960B300F5FFFF /* MythEgyptMascImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C7763B1CC960B300F5FFFF /* MythEgyptMascImages.xcassets */; };
 		18C7763E1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C7763D1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets */; };
 		18D12DB61E8D92CA003A62AF /* ANFBStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D12DB51E8D92CA003A62AF /* ANFBStorageManager.m */; };
+		18D12DBA1E8D9573003A62AF /* ANFRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D12DB91E8D9573003A62AF /* ANFRImage.m */; };
 		18D62F531E8ADC4700EC2882 /* ANAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D62F521E8ADC4700EC2882 /* ANAnimationHelper.m */; };
 		18D62F561E8AEA2B00EC2882 /* UIViewController+ANAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D62F551E8AEA2B00EC2882 /* UIViewController+ANAlerts.m */; };
 		18E22BDC1CA6BF44007EDD8F /* ANDescriptioinVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E22BDB1CA6BF44007EDD8F /* ANDescriptioinVC.m */; };
@@ -176,6 +177,8 @@
 		18C7763D1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MythEgyptFemImages.xcassets; sourceTree = "<group>"; };
 		18D12DB41E8D92CA003A62AF /* ANFBStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFBStorageManager.h; sourceTree = "<group>"; };
 		18D12DB51E8D92CA003A62AF /* ANFBStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFBStorageManager.m; sourceTree = "<group>"; };
+		18D12DB81E8D9573003A62AF /* ANFRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFRImage.h; sourceTree = "<group>"; };
+		18D12DB91E8D9573003A62AF /* ANFRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFRImage.m; sourceTree = "<group>"; };
 		18D62F511E8ADC4700EC2882 /* ANAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAnimationHelper.h; sourceTree = "<group>"; };
 		18D62F521E8ADC4700EC2882 /* ANAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAnimationHelper.m; sourceTree = "<group>"; };
 		18D62F541E8AEA2B00EC2882 /* UIViewController+ANAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ANAlerts.h"; sourceTree = "<group>"; };
@@ -382,6 +385,8 @@
 			children = (
 				18D12DB41E8D92CA003A62AF /* ANFBStorageManager.h */,
 				18D12DB51E8D92CA003A62AF /* ANFBStorageManager.m */,
+				18D12DB81E8D9573003A62AF /* ANFRImage.h */,
+				18D12DB91E8D9573003A62AF /* ANFRImage.m */,
 			);
 			name = Firebase;
 			sourceTree = "<group>";
@@ -839,6 +844,7 @@
 				18D62F561E8AEA2B00EC2882 /* UIViewController+ANAlerts.m in Sources */,
 				18B35E0D1CB4408E00CDABF9 /* ANFavoriteName+CoreDataProperties.m in Sources */,
 				18FECE411CB252520003CED4 /* ANDataManager.m in Sources */,
+				18D12DBA1E8D9573003A62AF /* ANFRImage.m in Sources */,
 				18B35E0E1CB4408E00CDABF9 /* ANFavoriteName.m in Sources */,
 				183410751CCE764000C19817 /* ANPageViewController.m in Sources */,
 				1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */,

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Firebase.h>
 
 @interface ANFBStorageManager : NSObject
+
++ (ANFBStorageManager*) sharedManager;
+- (FIRStorageReference *) getReferenceForBackground;
 
 @end
