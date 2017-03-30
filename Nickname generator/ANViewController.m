@@ -253,6 +253,14 @@ extern NSString* const kAppLaunchesCount;
     }
 }
 
+- (NSURL*) getDocumentsDirectory {
+    
+    NSArray* paths = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    
+    return [paths firstObject];
+    
+}
+
 #pragma mark - NOTIFICATIONS
 - (void) listenForGoingBackgroundNotification {
     NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
@@ -565,36 +573,42 @@ extern NSString* const kAppLaunchesCount;
     
     self.selectedCategory = category;
     
-    UIImage* bgImage = [UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName];
-    
-    if (bgImage == nil) {
-        // Download from Firebase
+    if ([category.nameCategoryID isEqualToString:@"01.06"]) {
         
-        FIRStorageReference *bgRef = [[[ANFBStorageManager sharedManager] getReferenceForBackground] child:@"persianBG.jpg"];
+        NSURL* bgImageFileURL = [[self getDocumentsDirectory] URLByAppendingPathComponent:@"persianBG.jpg"];
+
+        UIImage* bgImage = [UIImage imageWithContentsOfFile:[bgImageFileURL path]];
         
-        
-        [bgRef dataWithMaxSize:1 * 1024 * 1024 completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!bgImage) {
             
-            if (data) {
-                
-                UIImage* bgImage = [UIImage imageWithData:data];
-                
-                
-                
-                NSLog(@"bgImage = %@", bgImage);
-                
-                [self.bgImageView setImage:bgImage];
-                
-            } else {
-                NSLog(@"error occured - %@", error);
-            }
+            FIRStorageReference *bgRef = [[[ANFBStorageManager sharedManager] getReferenceForBackground] child:@"persianBG.jpg"];
             
-        }];
-        
+            FIRStorageDownloadTask *downloadTask = [bgRef writeToFile:bgImageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
+                
+                if (error) {
+                    NSLog(@"error occured = %@", error);
+                } else {
+                    
+                    NSString* filePath = [bgImageFileURL path];
+                    
+                    UIImage* bgImage = [UIImage imageWithContentsOfFile:filePath];
+                    
+                    [self.bgImageView setImage:bgImage];
+                }
+                
+            }];
+            
+        } else {
+            UIImage* bgImage = [UIImage imageWithContentsOfFile:[bgImageFileURL path]];
+            
+            [self.bgImageView setImage:bgImage];
+
+        }
         
     } else {
         
-        [self.bgImageView setImage:[UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName]];
+        UIImage* bgImage = [UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName];
+        [self.bgImageView setImage:bgImage];
     }
     
     
