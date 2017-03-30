@@ -575,13 +575,15 @@ extern NSString* const kAppLaunchesCount;
     
     if ([category.nameCategoryID isEqualToString:@"01.06"]) {
         
-        NSURL* bgImageFileURL = [[self getDocumentsDirectory] URLByAppendingPathComponent:@"persianBG.jpg"];
+        NSString* bgFileName = [NSString stringWithFormat:@"%@.jpg", category.alias];
+        
+        NSURL* bgImageFileURL = [[self getDocumentsDirectory] URLByAppendingPathComponent:bgFileName];
 
         UIImage* bgImage = [UIImage imageWithContentsOfFile:[bgImageFileURL path]];
         
         if (!bgImage) {
             
-            FIRStorageReference *bgRef = [[[ANFBStorageManager sharedManager] getReferenceForBackground] child:@"persianBG.jpg"];
+            FIRStorageReference *bgRef = [[[ANFBStorageManager sharedManager] getReferenceForBackground] child:bgFileName];
             
             FIRStorageDownloadTask *downloadTask = [bgRef writeToFile:bgImageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
                 
