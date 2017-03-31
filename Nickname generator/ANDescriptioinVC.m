@@ -13,6 +13,8 @@
 #import "ANNameCategory.h"
 #import <SafariServices/SafariServices.h>
 #import "UIViewController+ANAlerts.h"
+#import <Firebase.h>
+#import "ANFBStorageManager.h"
 
 @interface ANDescriptioinVC ()
 
@@ -149,13 +151,59 @@
 
 - (void) setImageAndImageHeight {
 
-    UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
+
+    NSString *categoryAlias = self.currentName.nameCategory.alias;
     
-    if (!imageName) {
-        self.nameImageView.image = [UIImage imageNamed:@"Placeholder"];
+    NSString* pathName;
+    
+    if (self.currentName.nameGender == ANGenderMasculine) {
+        pathName = [categoryAlias stringByAppendingString:@"MascImages"];
     } else {
-        self.nameImageView.image = imageName;
+        pathName = [categoryAlias stringByAppendingString:@"FemImages"];
     }
+    
+    NSString *imageFileName = [NSString stringWithFormat:@"%@/%@", pathName, self.currentName.nameImageName];
+    
+    NSURL *imageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:imageFileName];
+    
+    UIImage *nameImage = [UIImage imageWithContentsOfFile:[imageFileURL path]];
+    
+    if (!nameImage) {
+        
+        self.nameImageView.image = [UIImage imageNamed:@"Placeholder"];
+
+        FIRStorageReference *imageNameRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:imageFileName];
+        
+        FIRStorageDownloadTask *downloadTask = [imageNameRef writeToFile:imageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
+            
+            if (error) {
+                NSLog(@"error occured = %@", error);
+                
+            } else {
+                UIImage* nameImage = [UIImage imageWithContentsOfFile:[imageFileURL path]];
+                [self.nameImageView setImage:nameImage];
+            }
+        }];
+        
+        
+    } else {
+        
+        self.nameImageView.image = nameImage;
+        
+    }
+    
+    
+    
+    
+    
+//    UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
+//
+//    
+//    if (!imageName) {
+//        self.nameImageView.image = [UIImage imageNamed:@"Placeholder"];
+//    } else {
+//        self.nameImageView.image = imageName;
+//    }
 }
 
 - (void) refreshLikeButton {
