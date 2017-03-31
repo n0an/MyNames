@@ -23,9 +23,8 @@ extern NSString* const kAppLaunchesCount;
     
     self.categoryName.text = nameCategory.nameCategoryTitle;
     
-    
-    if ([nameCategory.nameCategoryID isEqualToString:@"01.06"]) {
-        
+    if (![nameCategory.nameCategoryID isEqualToString:@"00.00"]) {
+
         NSString* stripeFileName = [NSString stringWithFormat:@"Stripes/%@.jpg", nameCategory.alias];
         
         NSURL* stripeImageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:stripeFileName];
@@ -56,13 +55,9 @@ extern NSString* const kAppLaunchesCount;
             [self.categoryImageView setImage:stripeImage];
         }
         
-        
     } else {
         self.categoryImageView.image = [UIImage imageNamed:nameCategory.nameCategoryImageName];
-        
     }
-    
-    
     
     
     self.categoryImageView.contentMode = UIViewContentModeScaleAspectFill;

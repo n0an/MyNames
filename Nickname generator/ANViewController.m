@@ -152,7 +152,7 @@ extern NSString* const kAppLaunchesCount;
     
     UITapGestureRecognizer* tapCategoryGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
     UITapGestureRecognizer* tapCategoryGestureTag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
-
+    
     [self.nameCategoryLabel addGestureRecognizer:tapCategoryGesture];
     [self.nameCategoryLabelTag addGestureRecognizer:tapCategoryGestureTag];
     
@@ -334,7 +334,7 @@ extern NSString* const kAppLaunchesCount;
 }
 
 - (void) animateWheelFlapOnLaunch {
-
+    
     [UIView animateKeyframesWithDuration:1.0 delay:0.0 options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
         
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
@@ -363,7 +363,7 @@ extern NSString* const kAppLaunchesCount;
     if (UIEventSubtypeMotionShake) {
         
         ANLog(@"I'm shaking!");
-       
+        
         [self animateResultsLabelUpdate];
     }
 }
@@ -566,12 +566,12 @@ extern NSString* const kAppLaunchesCount;
     
     self.selectedCategory = category;
     
-    if ([category.nameCategoryID isEqualToString:@"01.06"]) {
+    if (![category.nameCategoryID isEqualToString:@"00.00"]) {
         
         NSString* bgFileName = [NSString stringWithFormat:@"Backgrounds/%@.jpg", category.alias];
         
         NSURL* bgImageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:bgFileName];
-
+        
         UIImage* bgImage = [UIImage imageWithContentsOfFile:[bgImageFileURL path]];
         
         if (!bgImage) {
@@ -596,7 +596,7 @@ extern NSString* const kAppLaunchesCount;
         } else {
             
             [self.bgImageView setImage:bgImage];
-
+            
         }
         
     } else {
