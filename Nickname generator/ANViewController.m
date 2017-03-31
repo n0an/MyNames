@@ -484,6 +484,130 @@ extern NSString* const kAppLaunchesCount;
     self.isSettingsActive = !self.isSettingsActive;
 }
 
+- (IBAction) uploadPressed {
+    
+    ANNameCategory* category = [[ANNamesFactory sharedFactory] getCategoryForID:@"01.07"];
+    
+    NSString* gender = ANGenderMasculine;
+    
+    NSString* pathName;
+    
+    if (gender == ANGenderMasculine) {
+        pathName = [category.alias stringByAppendingString:@"Masc"];
+    } else {
+        pathName = [category.alias stringByAppendingString:@"Fem"];
+    }
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    NSArray* namesArr = [dict allKeys];
+    
+    NSInteger totalNames = [dict count];
+    NSInteger randIndex = arc4random_uniform((uint32_t)totalNames);
+    NSString* tmpStr = [namesArr objectAtIndex:randIndex];
+    
+    for (NSString *name in namesArr) {
+        
+        NSDictionary *nameParams = [dict objectForKey:name];
+        
+        NSString *nameImageName = [nameParams objectForKey:@"nameImageName"];
+        
+//        NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:nameImageName ofType:nil inDirectory:@"MythCelticMascImages.xcassets"];
+        
+        
+        
+        
+//        UIImage *imageToUpload = [UIImage imageNamed:nameImageName];
+        
+        NSURL* documentsURL = [[ANFBStorageManager sharedManager] getDocumentsDirectory];
+        
+        NSString *documentsURLPath = [documentsURL path];
+        
+//        NSString *fileNamePath = [documentsURLPath stringByAppendingString:nameImageName];
+        
+        NSString *fileNamePath = [NSString stringWithFormat:@"/%@%@.jpg",documentsURLPath ,nameImageName];
+        
+//        NSURL* imageFileURL = [NSURL URLWithString:imageFilePath];
+        
+//        NSURL* imageFileURL = [NSURL URLWithString:fileNamePath];
+        
+        NSString *fileNameWithExt = [nameImageName stringByAppendingString:@".jpg"];
+        
+        NSURL *imageFileURL = [documentsURL URLByAppendingPathComponent:fileNameWithExt];
+        
+//        NSError *err;
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[imageFileURL path]]) {
+            
+            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@", pathName, nameImageName];
+            
+            FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
+            
+            FIRStorageUploadTask *uploadTask = [dirRef putFile:imageFileURL metadata:nil completion:^(FIRStorageMetadata *metadata, NSError *error) {
+                
+                if (error != nil) {
+                    // Uh-oh, an error occurred!
+                } else {
+                    // Metadata contains file metadata such as size, content-type, and download URL.
+                    NSURL *downloadURL = metadata.downloadURL;
+                }
+            }];
+
+            
+        }
+        
+        
+//        if (imageFileURL) {
+//            
+//            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@", pathName, nameImageName];
+//            
+//            FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
+//            
+//            FIRStorageUploadTask *uploadTask = [dirRef putFile:imageFileURL metadata:nil completion:^(FIRStorageMetadata *metadata, NSError *error) {
+//                
+//                if (error != nil) {
+//                    // Uh-oh, an error occurred!
+//                } else {
+//                    // Metadata contains file metadata such as size, content-type, and download URL.
+//                    NSURL *downloadURL = metadata.downloadURL;
+//                }
+//            }];
+//            
+//        }
+        
+        
+//        UIImage *imageToUpload = [UIImage imageNamed:nameImageName];
+//        
+//        if (imageToUpload) {
+//            
+//            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@", pathName, nameImageName];
+//            
+//            FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
+//            
+////            NSData *imageData = [UIImageJPEGRepresentation(imageToUpload, 1.0)];
+//            
+//            FIRStorageDownloadTask *downloadTask = [bgRef writeToFile:bgImageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
+//                
+//                if (error) {
+//                    NSLog(@"error occured = %@", error);
+//                    
+//                } else {
+//                    NSString* filePath = [bgImageFileURL path];
+//                    UIImage* bgImage = [UIImage imageWithContentsOfFile:filePath];
+//                    [self.bgImageView setImage:bgImage];
+//                }
+//            }];
+//            
+//            
+//        }
+        
+        
+    }
+    
+    
+}
+
 #pragma mark - TOUCHES
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch* touch = [touches anyObject];
@@ -548,6 +672,8 @@ extern NSString* const kAppLaunchesCount;
 - (void) touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.settingsViewPickedUp = NO;
 }
+
+
 
 #pragma mark - NAVIGATION
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norseBG07_1900" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg04" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-5n-4AZ" userLabel="ViewWithControls">
@@ -340,11 +340,20 @@
                                     <action selector="actionShareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aN7-ms-8Wb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9Q-U9-CyW">
+                                <rect key="frame" x="164" y="462" width="47" height="30"/>
+                                <state key="normal" title="upload"/>
+                                <connections>
+                                    <action selector="uploadPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="F5s-ej-s3h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="f9Q-U9-CyW" firstAttribute="centerX" secondItem="igX-WN-kk6" secondAttribute="centerX" id="15U-ua-6E7"/>
                             <constraint firstItem="igX-WN-kk6" firstAttribute="leading" secondItem="nl5-8s-DDE" secondAttribute="trailing" constant="20" id="2g6-pU-8cq"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:10" id="3Hs-6Q-uWE"/>
+                            <constraint firstItem="f9Q-U9-CyW" firstAttribute="top" secondItem="igX-WN-kk6" secondAttribute="bottom" constant="32" id="3WL-2C-k1M"/>
                             <constraint firstItem="igX-WN-kk6" firstAttribute="width" secondItem="nl5-8s-DDE" secondAttribute="width" multiplier="11:15" id="3kU-4Y-8E1"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:10" id="5mJ-vo-BRK"/>
                             <constraint firstItem="t6e-XU-g0u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5zP-lf-efC"/>
@@ -446,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="504"/>
+            <point key="canvasLocation" x="1270" y="510"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="2jh-nG-ilb">
@@ -1044,17 +1053,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norseBG05_2329" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Z5-OJ4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="667" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 </imageView>
                                                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjR-2o-er7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="667" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteTransparentFade" translatesAutoresizingMaskIntoConstraints="NO" id="pb4-UQ-f4N">
-                                                    <rect key="frame" x="0.0" y="0.0" width="667" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCT-D7-8rh">
-                                                    <rect key="frame" x="499" y="111" width="160" height="31"/>
+                                                    <rect key="frame" x="207" y="111" width="160" height="31"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1664,6 +1673,7 @@
         <image name="Placeholder" width="150" height="150"/>
         <image name="Settings01" width="209" height="215"/>
         <image name="WhiteTransparentFade" width="375" height="150"/>
+        <image name="bg04" width="533" height="400"/>
         <image name="box_empty" width="54" height="54"/>
         <image name="click" width="48" height="70"/>
         <image name="diceBG03_1920" width="640" height="400"/>
@@ -1677,7 +1687,6 @@
         <image name="masc02" width="60" height="60"/>
         <image name="nextSlide" width="88" height="35"/>
         <image name="norseBG05_2329" width="517" height="150"/>
-        <image name="norseBG07_1900" width="429" height="634"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shake" width="158" height="120"/>
         <image name="shapes" width="21" height="21"/>
@@ -1686,6 +1695,6 @@
         <image name="wiki01" width="498" height="498"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c9q-9P-Jem"/>
+        <segue reference="882-AM-8Gt"/>
     </inferredMetricsTieBreakers>
 </document>
