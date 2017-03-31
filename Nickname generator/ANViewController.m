@@ -262,6 +262,10 @@ extern NSString* const kAppLaunchesCount;
     ANNameCategory* category = self.selectedCategory;
     ANGender gender = self.selectedGender;
     
+    if ([category.nameCategoryID isEqualToString:@"00.00"]) {
+        return;
+    }
+    
     // ** Contents of !ToUpload directory
     NSURL *documentsURL = [[ANFBStorageManager sharedManager] getDocumentsDirectory];
     
@@ -285,6 +289,10 @@ extern NSString* const kAppLaunchesCount;
     
     // ** Main cycle
     for (NSString *fullFileName in fileList) {
+        
+        if (![fullFileName hasPrefix:pathName]) {
+            continue;
+        }
         
         NSArray *fileNameComponents = [fullFileName componentsSeparatedByString:@"."];
         
