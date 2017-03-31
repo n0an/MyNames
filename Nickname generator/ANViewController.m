@@ -122,24 +122,14 @@ extern NSString* const kAppLaunchesCount;
     self.likeNonSetImage = [UIImage imageNamed:@"like1"];
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
     
-    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    NSInteger appLaunchesCount = [userDefaults integerForKey:kAppLaunchesCount];
-    
-    ANLog(@"appLaunchesCount = %d", appLaunchesCount);
-    
-    if (appLaunchesCount < 10) {
-        [self animateWheelRotating];
-    }
+    [self checkUserDefaultsLaunchesCount];
     
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
     
-    [self checkUserDefaults];
-    
-    
+    [self checkUserDefaultsFirstLaunch];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -186,7 +176,7 @@ extern NSString* const kAppLaunchesCount;
 }
 
 #pragma mark - HELPER METHODS
-- (void) checkUserDefaults {
+- (void) checkUserDefaultsFirstLaunch {
     
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL appAlreadySeen = [userDefaults boolForKey:kAppAlreadySeen];
@@ -196,6 +186,18 @@ extern NSString* const kAppLaunchesCount;
         ANPageViewController* pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ANPageViewController"];
         
         [self presentViewController:pageVC animated:YES completion:nil];
+    }
+}
+
+- (void) checkUserDefaultsLaunchesCount {
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger appLaunchesCount = [userDefaults integerForKey:kAppLaunchesCount];
+    
+    ANLog(@"appLaunchesCount = %d", appLaunchesCount);
+    
+    if (appLaunchesCount < 10) {
+        [self animateWheelRotating];
     }
 }
 
@@ -582,31 +584,23 @@ extern NSString* const kAppLaunchesCount;
                 
                 if (error) {
                     NSLog(@"error occured = %@", error);
+                    
                 } else {
-                    
                     NSString* filePath = [bgImageFileURL path];
-                    
                     UIImage* bgImage = [UIImage imageWithContentsOfFile:filePath];
-                    
                     [self.bgImageView setImage:bgImage];
                 }
-                
             }];
             
         } else {
             
             [self.bgImageView setImage:bgImage];
-            
         }
         
     } else {
-        
         UIImage* bgImage = [UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName];
         [self.bgImageView setImage:bgImage];
     }
-    
-    
-    
     
     self.nameResultLabel.text = [self getNamesStringForNamesCount:self.namesCount];
     self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;

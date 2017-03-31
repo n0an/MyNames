@@ -29,7 +29,6 @@ extern NSString* const kAppLaunchesCount;
         
         NSURL* stripeImageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:stripeFileName];
 
-        
         UIImage* stripeImage = [UIImage imageWithContentsOfFile:[stripeImageFileURL path]];
         
         if (!stripeImage) {
@@ -42,13 +41,11 @@ extern NSString* const kAppLaunchesCount;
                 
                 if (error) {
                     NSLog(@"error occured = %@", error);
+                    
                 } else {
-                    
                     UIImage* stripeImage = [UIImage imageWithContentsOfFile:[stripeImageFileURL path]];
-                    
                     [self.categoryImageView setImage:stripeImage];
                 }
-                
             }];
             
         } else {
@@ -58,7 +55,6 @@ extern NSString* const kAppLaunchesCount;
     } else {
         self.categoryImageView.image = [UIImage imageNamed:nameCategory.nameCategoryImageName];
     }
-    
     
     self.categoryImageView.contentMode = UIViewContentModeScaleAspectFill;
     
