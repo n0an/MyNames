@@ -14,4 +14,6 @@
 + (ANFBStorageManager*) sharedManager;
 - (FIRStorageReference *) getReferenceForBackground;
 
+- (FIRStorageReference *) getReferenceForFileName:(NSString *) fileName;
+
 @end

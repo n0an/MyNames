@@ -44,4 +44,8 @@ NSString* const STORAGE_BACKGROUNDS = @"Backgrounds";
     return [self.rootStorageRef child:STORAGE_BACKGROUNDS];
 }
 
+- (FIRStorageReference *) getReferenceForFileName:(NSString *) fileName {
+    return [self.rootStorageRef child:fileName];
+}
+
 @end

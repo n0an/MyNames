@@ -575,7 +575,7 @@ extern NSString* const kAppLaunchesCount;
     
     if ([category.nameCategoryID isEqualToString:@"01.06"]) {
         
-        NSString* bgFileName = [NSString stringWithFormat:@"%@.jpg", category.alias];
+        NSString* bgFileName = [NSString stringWithFormat:@"Backgrounds/%@.jpg", category.alias];
         
         NSURL* bgImageFileURL = [[self getDocumentsDirectory] URLByAppendingPathComponent:bgFileName];
 
@@ -583,7 +583,7 @@ extern NSString* const kAppLaunchesCount;
         
         if (!bgImage) {
             
-            FIRStorageReference *bgRef = [[[ANFBStorageManager sharedManager] getReferenceForBackground] child:bgFileName];
+            FIRStorageReference *bgRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:bgFileName];
             
             FIRStorageDownloadTask *downloadTask = [bgRef writeToFile:bgImageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
                 
