@@ -161,7 +161,7 @@
         pathName = [categoryAlias stringByAppendingString:@"FemImages"];
     }
     
-    NSString *imageFileName = [NSString stringWithFormat:@"%@/%@.jpg", pathName, self.currentName.nameImageName];
+    NSString *imageFileName = [NSString stringWithFormat:@"%@/%@", pathName, self.currentName.nameImageName];
     
     NSURL *imageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:imageFileName];
     

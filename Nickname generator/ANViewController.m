@@ -256,6 +256,116 @@ extern NSString* const kAppLaunchesCount;
     }
 }
 
+- (void) uploadUsingFileManager {
+    
+    // *** !!! SET THIS TWO PARAMETERS IN ACCORDANCE WITH CONTENTS OF !TOUPLOAD DIRECTORY !!!
+    ANNameCategory* category = self.selectedCategory;
+    ANGender gender = self.selectedGender;
+    
+    // ** Contents of !ToUpload directory
+    NSURL *documentsURL = [[ANFBStorageManager sharedManager] getDocumentsDirectory];
+    
+    NSURL *uploadFolderURL = [documentsURL URLByAppendingPathComponent:@"!ToUpload"];
+    
+    NSError *err;
+    
+    NSArray *fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[uploadFolderURL path] error:&err];
+    
+    // ** Getting pathName in accordance with category and gender
+    NSString* pathName;
+    
+    if (gender == ANGenderMasculine) {
+        pathName = [category.alias stringByAppendingString:@"Masc"];
+    } else {
+        pathName = [category.alias stringByAppendingString:@"Fem"];
+    }
+    
+    // ** Uploads counter
+    __block NSInteger imagesLoadedCount = 0;
+    
+    // ** Main cycle
+    for (NSString *fullFileName in fileList) {
+        
+        NSArray *fileNameComponents = [fullFileName componentsSeparatedByString:@"."];
+        
+        NSString *fileName = [fileNameComponents firstObject];
+        
+        NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@", pathName, fileName];
+        
+        FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
+        
+        NSURL* imageFileURL = [uploadFolderURL URLByAppendingPathComponent:fullFileName];
+        
+        FIRStorageUploadTask *uploadTask = [dirRef putFile:imageFileURL metadata:nil completion:^(FIRStorageMetadata *metadata, NSError *error) {
+            
+            if (error != nil) {
+                NSLog(@"Error Uploading: %@", error);
+            } else {
+                
+                imagesLoadedCount++;
+                NSLog(@"-- %ld. Uploaded: %@", (long)imagesLoadedCount, fileName);
+            }
+        }];
+        
+    }
+}
+
+- (void) uploadUsingRecodingToJPG {
+    
+    // *** !!! SET THIS TWO PARAMETERS IN ACCORDANCE WITH CONTENTS OF !TOUPLOAD DIRECTORY !!!
+    ANNameCategory* category = self.selectedCategory;
+    ANGender gender = self.selectedGender;
+    
+    // ** Getting pathName in accordance with category and gender
+    NSString* pathName;
+    
+    if (gender == ANGenderMasculine) {
+        pathName = [category.alias stringByAppendingString:@"Masc"];
+    } else {
+        pathName = [category.alias stringByAppendingString:@"Fem"];
+    }
+    
+    // *** CYCLING THROUGH ALL NAMES FROM PLIST FILE
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    NSArray* namesArr = [dict allKeys];
+    
+    __block NSInteger imagesLoadedCount = 0;
+    
+    for (NSString *name in namesArr) {
+        
+        NSDictionary *nameParams = [dict objectForKey:name];
+        
+        NSString *nameImageName = [nameParams objectForKey:@"nameImageName"];
+        
+        UIImage *imageToUpload = [UIImage imageNamed:nameImageName];
+        
+        if (imageToUpload) {
+            
+            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@.jpg", pathName, nameImageName];
+            
+            FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
+            
+            NSData* imageData = UIImageJPEGRepresentation(imageToUpload, 1.0);
+            
+            FIRStorageUploadTask *uploadTask = [dirRef putData:imageData metadata:nil completion:^(FIRStorageMetadata * _Nullable metadata, NSError * _Nullable error) {
+                
+                if (error != nil) {
+                    NSLog(@"Error Uploading: %@", error);
+                } else {
+                    imagesLoadedCount++;
+                    NSLog(@"-- %ld. Uploaded: %@", (long)imagesLoadedCount, nameImageName);
+                }
+            }];
+            
+        }
+        
+    }
+}
+
+
 
 #pragma mark - NOTIFICATIONS
 - (void) listenForGoingBackgroundNotification {
@@ -487,108 +597,10 @@ extern NSString* const kAppLaunchesCount;
 
 - (IBAction) uploadPressed {
     
-    ANNameCategory* category = [[ANNamesFactory sharedFactory] getCategoryForID:@"01.05"];
-    
-    ANGender* gender = ANGenderFeminine;
-    
-    NSString* pathName;
-    
-    if (gender == ANGenderMasculine) {
-        pathName = [category.alias stringByAppendingString:@"Masc"];
-    } else {
-        pathName = [category.alias stringByAppendingString:@"Fem"];
-    }
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
-    
-    NSArray* namesArr = [dict allKeys];
-    
-    __block NSInteger imagesLoadedCount = 0;
-    
-    for (NSString *name in namesArr) {
-        
-        NSDictionary *nameParams = [dict objectForKey:name];
-        
-        NSString *nameImageName = [nameParams objectForKey:@"nameImageName"];
-        
-        NSURL* documentsURL = [[ANFBStorageManager sharedManager] getDocumentsDirectory];
-        
-        NSString *fileNameWithExt = [nameImageName stringByAppendingString:@".jpg"];
-        
-        NSURL *imageFileURL = [documentsURL URLByAppendingPathComponent:fileNameWithExt];
-        
-        if ([[NSFileManager defaultManager] fileExistsAtPath:[imageFileURL path]]) {
-            
-            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@.jpg", pathName, nameImageName];
-            
-            FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
-            
-            FIRStorageUploadTask *uploadTask = [dirRef putFile:imageFileURL metadata:nil completion:^(FIRStorageMetadata *metadata, NSError *error) {
-                
-                if (error != nil) {
-                    NSLog(@"Error Uploading: %@", error);
-                } else {
-                    
-                    NSURL *downloadURL = metadata.downloadURL;
-                    imagesLoadedCount++;
-                    NSLog(@"-- %d. Uploaded: %@", imagesLoadedCount, nameImageName);
-                }
-            }];
-
-            
-        }
-        
-        
-//        if (imageFileURL) {
-//            
-//            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@", pathName, nameImageName];
-//            
-//            FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
-//            
-//            FIRStorageUploadTask *uploadTask = [dirRef putFile:imageFileURL metadata:nil completion:^(FIRStorageMetadata *metadata, NSError *error) {
-//                
-//                if (error != nil) {
-//                    // Uh-oh, an error occurred!
-//                } else {
-//                    // Metadata contains file metadata such as size, content-type, and download URL.
-//                    NSURL *downloadURL = metadata.downloadURL;
-//                }
-//            }];
-//            
-//        }
-        
-        
-//        UIImage *imageToUpload = [UIImage imageNamed:nameImageName];
-//        
-//        if (imageToUpload) {
-//            
-//            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@", pathName, nameImageName];
-//            
-//            FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
-//            
-////            NSData *imageData = [UIImageJPEGRepresentation(imageToUpload, 1.0)];
-//            
-//            FIRStorageDownloadTask *downloadTask = [bgRef writeToFile:bgImageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
-//                
-//                if (error) {
-//                    NSLog(@"error occured = %@", error);
-//                    
-//                } else {
-//                    NSString* filePath = [bgImageFileURL path];
-//                    UIImage* bgImage = [UIImage imageWithContentsOfFile:filePath];
-//                    [self.bgImageView setImage:bgImage];
-//                }
-//            }];
-//            
-//            
-//        }
-        
-        
-    }
-    
+    [self uploadUsingFileManager];
     
 }
+
 
 #pragma mark - TOUCHES
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
