@@ -18,6 +18,7 @@
 #import "ANRotateTransitionAnimator.h"
 #import "UIViewController+ANAlerts.h"
 #import "ANFBStorageManager.h"
+#import <FirebaseStorage/FirebaseStorage.h>
 #import "ANFRImage.h"
 
 #pragma mark - ENUM
@@ -486,9 +487,9 @@ extern NSString* const kAppLaunchesCount;
 
 - (IBAction) uploadPressed {
     
-    ANNameCategory* category = [[ANNamesFactory sharedFactory] getCategoryForID:@"01.07"];
+    ANNameCategory* category = [[ANNamesFactory sharedFactory] getCategoryForID:@"01.05"];
     
-    NSString* gender = ANGenderMasculine;
+    ANGender* gender = ANGenderFeminine;
     
     NSString* pathName;
     
@@ -503,9 +504,7 @@ extern NSString* const kAppLaunchesCount;
     
     NSArray* namesArr = [dict allKeys];
     
-    NSInteger totalNames = [dict count];
-    NSInteger randIndex = arc4random_uniform((uint32_t)totalNames);
-    NSString* tmpStr = [namesArr objectAtIndex:randIndex];
+    __block NSInteger imagesLoadedCount = 0;
     
     for (NSString *name in namesArr) {
         
@@ -513,44 +512,27 @@ extern NSString* const kAppLaunchesCount;
         
         NSString *nameImageName = [nameParams objectForKey:@"nameImageName"];
         
-//        NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:nameImageName ofType:nil inDirectory:@"MythCelticMascImages.xcassets"];
-        
-        
-        
-        
-//        UIImage *imageToUpload = [UIImage imageNamed:nameImageName];
-        
         NSURL* documentsURL = [[ANFBStorageManager sharedManager] getDocumentsDirectory];
-        
-        NSString *documentsURLPath = [documentsURL path];
-        
-//        NSString *fileNamePath = [documentsURLPath stringByAppendingString:nameImageName];
-        
-        NSString *fileNamePath = [NSString stringWithFormat:@"/%@%@.jpg",documentsURLPath ,nameImageName];
-        
-//        NSURL* imageFileURL = [NSURL URLWithString:imageFilePath];
-        
-//        NSURL* imageFileURL = [NSURL URLWithString:fileNamePath];
         
         NSString *fileNameWithExt = [nameImageName stringByAppendingString:@".jpg"];
         
         NSURL *imageFileURL = [documentsURL URLByAppendingPathComponent:fileNameWithExt];
         
-//        NSError *err;
-        
         if ([[NSFileManager defaultManager] fileExistsAtPath:[imageFileURL path]]) {
             
-            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@", pathName, nameImageName];
+            NSString *nameImageFileName = [NSString stringWithFormat:@"%@Images/%@.jpg", pathName, nameImageName];
             
             FIRStorageReference *dirRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:nameImageFileName];
             
             FIRStorageUploadTask *uploadTask = [dirRef putFile:imageFileURL metadata:nil completion:^(FIRStorageMetadata *metadata, NSError *error) {
                 
                 if (error != nil) {
-                    // Uh-oh, an error occurred!
+                    NSLog(@"Error Uploading: %@", error);
                 } else {
-                    // Metadata contains file metadata such as size, content-type, and download URL.
+                    
                     NSURL *downloadURL = metadata.downloadURL;
+                    imagesLoadedCount++;
+                    NSLog(@"-- %d. Uploaded: %@", imagesLoadedCount, nameImageName);
                 }
             }];
 

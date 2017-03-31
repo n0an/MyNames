@@ -10,7 +10,9 @@
 #import "ANNameCategory.h"
 #import "ANUtils.h"
 #import <Firebase.h>
+#import <FirebaseStorage/FirebaseStorage.h>
 #import "ANFBStorageManager.h"
+
 
 extern NSString* const kAppLaunchesCount;
 

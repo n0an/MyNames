@@ -14,6 +14,7 @@
 #import <SafariServices/SafariServices.h>
 #import "UIViewController+ANAlerts.h"
 #import <Firebase.h>
+#import <FirebaseStorage/FirebaseStorage.h>
 #import "ANFBStorageManager.h"
 
 @interface ANDescriptioinVC ()
@@ -114,7 +115,6 @@
     self.navigationItem.title = self.currentName.firstName;
 }
 
-
 - (void) iterateNameWithDirection:(ANNameIterationDirection) iterationDirection {
     
     NSInteger currInd = [self.namesArray indexOfObject:self.currentName];
@@ -151,7 +151,6 @@
 
 - (void) setImageAndImageHeight {
 
-
     NSString *categoryAlias = self.currentName.nameCategory.alias;
     
     NSString* pathName;
@@ -162,16 +161,19 @@
         pathName = [categoryAlias stringByAppendingString:@"FemImages"];
     }
     
-    NSString *imageFileName = [NSString stringWithFormat:@"%@/%@", pathName, self.currentName.nameImageName];
+    NSString *imageFileName = [NSString stringWithFormat:@"%@/%@.jpg", pathName, self.currentName.nameImageName];
     
     NSURL *imageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:imageFileName];
+    
+    
+    // *** DOWNLOAD FROM FIREBASE TO FILE AND STORE LOCALLY
     
     UIImage *nameImage = [UIImage imageWithContentsOfFile:[imageFileURL path]];
     
     if (!nameImage) {
         
         self.nameImageView.image = [UIImage imageNamed:@"Placeholder"];
-
+        
         FIRStorageReference *imageNameRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:imageFileName];
         
         FIRStorageDownloadTask *downloadTask = [imageNameRef writeToFile:imageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
@@ -185,25 +187,45 @@
             }
         }];
         
-        
     } else {
         
         self.nameImageView.image = nameImage;
         
     }
+
     
+    // *** DOWNLOAD FROM FIREBASE TO MEMORY
+/*
+    FIRStorageReference *imageNameRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:imageFileName];
+
     
+    FIRStorageDownloadTask *downloadTask = [imageNameRef dataWithMaxSize:1 * 1024 * 1024 completion:^(NSData *data, NSError *error){
+        if (error != nil) {
+            // Uh-oh, an error occurred!
+            NSLog(@"error = %@",error);
+        } else {
+            // Data for "images/island.jpg" is returned
+            UIImage *gotImage = [UIImage imageWithData:data];
+            
+            NSLog(@"gotImage = %@", gotImage);
+            
+            self.nameImageView.image = gotImage;
+        }
+    }];
+    */
+
     
+    // *** SET FROM APP BUNDLE ASSETS
+    /*
+    UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
+
     
-    
-//    UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
-//
-//    
-//    if (!imageName) {
-//        self.nameImageView.image = [UIImage imageNamed:@"Placeholder"];
-//    } else {
-//        self.nameImageView.image = imageName;
-//    }
+    if (!imageName) {
+        self.nameImageView.image = [UIImage imageNamed:@"Placeholder"];
+    } else {
+        self.nameImageView.image = imageName;
+    }
+    */
 }
 
 - (void) refreshLikeButton {
