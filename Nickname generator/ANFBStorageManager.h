@@ -16,4 +16,6 @@
 
 - (FIRStorageReference *) getReferenceForFileName:(NSString *) fileName;
 
+- (NSURL*) getDocumentsDirectory;
+
 @end

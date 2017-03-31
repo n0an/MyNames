@@ -253,13 +253,6 @@ extern NSString* const kAppLaunchesCount;
     }
 }
 
-- (NSURL*) getDocumentsDirectory {
-    
-    NSArray* paths = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-    
-    return [paths firstObject];
-    
-}
 
 #pragma mark - NOTIFICATIONS
 - (void) listenForGoingBackgroundNotification {
@@ -577,7 +570,7 @@ extern NSString* const kAppLaunchesCount;
         
         NSString* bgFileName = [NSString stringWithFormat:@"Backgrounds/%@.jpg", category.alias];
         
-        NSURL* bgImageFileURL = [[self getDocumentsDirectory] URLByAppendingPathComponent:bgFileName];
+        NSURL* bgImageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:bgFileName];
 
         UIImage* bgImage = [UIImage imageWithContentsOfFile:[bgImageFileURL path]];
         
@@ -601,7 +594,6 @@ extern NSString* const kAppLaunchesCount;
             }];
             
         } else {
-            UIImage* bgImage = [UIImage imageWithContentsOfFile:[bgImageFileURL path]];
             
             [self.bgImageView setImage:bgImage];
 

@@ -48,4 +48,13 @@ NSString* const STORAGE_BACKGROUNDS = @"Backgrounds";
     return [self.rootStorageRef child:fileName];
 }
 
+- (NSURL*) getDocumentsDirectory {
+    
+    NSArray* paths = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    
+    return [paths firstObject];
+    
+}
+
+
 @end
