@@ -33,7 +33,6 @@
 		189C8EA41CA717C3002414AE /* ANCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C8EA31CA717C3002414AE /* ANCategoryCell.m */; };
 		18A5783E1CECE0A300A10BB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A578401CECE0A300A10BB1 /* Localizable.strings */; };
 		18A5784F1CECF47900A10BB1 /* MythCelticMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A578511CECF47900A10BB1 /* MythCelticMasc.plist */; };
-		18A959F11CD4BCCC00AA02AC /* Stripes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A959F01CD4BCCC00AA02AC /* Stripes.xcassets */; };
 		18AF09C21CEF6E410061B497 /* MythEgyptMasc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09C41CEF6E410061B497 /* MythEgyptMasc.plist */; };
 		18AF09C61CEF6E830061B497 /* MythEgyptFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09C81CEF6E830061B497 /* MythEgyptFem.plist */; };
 		18AF09CC1CEF6F710061B497 /* MythCelticFem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AF09CE1CEF6F710061B497 /* MythCelticFem.plist */; };
@@ -136,7 +135,6 @@
 		18A578411CECE0A500A10BB1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18A578501CECF47900A10BB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MythCelticMasc.plist; sourceTree = "<group>"; };
 		18A578521CECF48000A10BB1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/MythCelticMasc.plist; sourceTree = "<group>"; };
-		18A959F01CD4BCCC00AA02AC /* Stripes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stripes.xcassets; sourceTree = "<group>"; };
 		18AF09C31CEF6E410061B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MythEgyptMasc.plist; sourceTree = "<group>"; };
 		18AF09C51CEF6E450061B497 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/MythEgyptMasc.plist; sourceTree = "<group>"; };
 		18AF09C71CEF6E830061B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MythEgyptFem.plist; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 				18267E2C1CB136C400AB130B /* MythVedicMascImages.xcassets */,
 				18267E271CB132B800AB130B /* MythVedicFemImages.xcassets */,
 				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
-				18A959F01CD4BCCC00AA02AC /* Stripes.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -643,7 +640,6 @@
 				188E72341E865235006A8CBA /* GoogleService-Info.plist in Resources */,
 				18C7763E1CC960CF00F5FFFF /* MythEgyptFemImages.xcassets in Resources */,
 				18F1ADEB1CB8159C007D00C4 /* MythGreekMascImages.xcassets in Resources */,
-				18A959F11CD4BCCC00AA02AC /* Stripes.xcassets in Resources */,
 				18AF09DC1CEF72CA0061B497 /* MythNorseMasc.plist in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,
 				188F878C1CCA6778007A34A4 /* MythPersianFemImages.xcassets in Resources */,
