@@ -59,7 +59,7 @@
     </scenes>
     <resources>
         <image name="Eye_of_Horus" width="700" height="480"/>
-        <image name="WhiteEffect" width="375" height="667"/>
+        <image name="WhiteEffect" width="250" height="444"/>
         <image name="diceBG07_2560" width="853" height="533"/>
     </resources>
 </document>
