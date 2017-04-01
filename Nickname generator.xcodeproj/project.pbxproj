@@ -15,7 +15,6 @@
 		183410751CCE764000C19817 /* ANPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410741CCE764000C19817 /* ANPageViewController.m */; };
 		183410791CCE7A5900C19817 /* ANContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410781CCE7A5900C19817 /* ANContentPageViewController.m */; };
 		184A13B41CC160C20031F217 /* ANFavouriteNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */; };
-		186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186D62201CBC25C60094E885 /* Backgrounds.xcassets */; };
 		188E72341E865235006A8CBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188E72331E865235006A8CBA /* GoogleService-Info.plist */; };
 		188E723A1E86812D006A8CBA /* ANRotateTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */; };
 		1893C0211C94A6A100D17DA5 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893C0201C94A6A100D17DA5 /* ANViewController.m */; };
@@ -94,7 +93,6 @@
 		183410781CCE7A5900C19817 /* ANContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANContentPageViewController.m; sourceTree = "<group>"; };
 		184A13B21CC160C20031F217 /* ANFavouriteNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavouriteNameCell.h; sourceTree = "<group>"; };
 		184A13B31CC160C20031F217 /* ANFavouriteNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavouriteNameCell.m; sourceTree = "<group>"; };
-		186D62201CBC25C60094E885 /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
 		188E72331E865235006A8CBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		188E72381E86812D006A8CBA /* ANRotateTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRotateTransitionAnimator.h; sourceTree = "<group>"; };
 		188E72391E86812D006A8CBA /* ANRotateTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRotateTransitionAnimator.m; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 		18100DA71CB23EAF00508F1D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				186D62201CBC25C60094E885 /* Backgrounds.xcassets */,
 				18F1B9801C8F43C1001A3B25 /* Assets.xcassets */,
 			);
 			name = Assets;
@@ -570,7 +567,6 @@
 				18AF09D01CEF711E0061B497 /* MythGreekFem.plist in Resources */,
 				18AF09CC1CEF6F710061B497 /* MythCelticFem.plist in Resources */,
 				18E6D01D1E87EFBC005D7867 /* InfoPlist.strings in Resources */,
-				186D62211CBC25C60094E885 /* Backgrounds.xcassets in Resources */,
 				18AF09EC1CEF74660061B497 /* MythRomanMasc.plist in Resources */,
 				18F1B9841C8F43C1001A3B25 /* LaunchScreen.storyboard in Resources */,
 				18AF09C61CEF6E830061B497 /* MythEgyptFem.plist in Resources */,
