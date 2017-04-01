@@ -340,20 +340,11 @@
                                     <action selector="actionShareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aN7-ms-8Wb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9Q-U9-CyW">
-                                <rect key="frame" x="164" y="462" width="47" height="30"/>
-                                <state key="normal" title="upload"/>
-                                <connections>
-                                    <action selector="uploadPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="F5s-ej-s3h"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="f9Q-U9-CyW" firstAttribute="centerX" secondItem="igX-WN-kk6" secondAttribute="centerX" id="15U-ua-6E7"/>
                             <constraint firstItem="igX-WN-kk6" firstAttribute="leading" secondItem="nl5-8s-DDE" secondAttribute="trailing" constant="20" id="2g6-pU-8cq"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:10" id="3Hs-6Q-uWE"/>
-                            <constraint firstItem="f9Q-U9-CyW" firstAttribute="top" secondItem="igX-WN-kk6" secondAttribute="bottom" constant="32" id="3WL-2C-k1M"/>
                             <constraint firstItem="igX-WN-kk6" firstAttribute="width" secondItem="nl5-8s-DDE" secondAttribute="width" multiplier="11:15" id="3kU-4Y-8E1"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:10" id="5mJ-vo-BRK"/>
                             <constraint firstItem="t6e-XU-g0u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5zP-lf-efC"/>
@@ -1672,7 +1663,7 @@
         <image name="NewCategoryBadge" width="60" height="60"/>
         <image name="Placeholder" width="150" height="150"/>
         <image name="Settings01" width="209" height="215"/>
-        <image name="WhiteTransparentFade" width="375" height="150"/>
+        <image name="WhiteTransparentFade" width="250" height="100"/>
         <image name="bg04" width="533" height="400"/>
         <image name="box_empty" width="54" height="54"/>
         <image name="click" width="48" height="70"/>
