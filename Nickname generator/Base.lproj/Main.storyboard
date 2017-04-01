@@ -1043,7 +1043,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norseBG05_2329" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Z5-OJ4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg04" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-Z5-OJ4">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 </imageView>
                                                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjR-2o-er7">
@@ -1071,6 +1071,13 @@
                                                         <constraint firstAttribute="width" constant="60" id="mpK-xa-1eg"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGD-63-CRH">
+                                                    <rect key="frame" x="0.0" y="148" width="375" height="2"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="Izv-Cq-jP9"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="WjR-2o-er7" secondAttribute="trailing" id="0DA-dU-iOe"/>
@@ -1103,6 +1110,11 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="WGD-63-CRH" firstAttribute="width" secondItem="whI-KD-At2" secondAttribute="width" id="Wtz-Fk-Ld0"/>
+                                            <constraint firstAttribute="bottom" secondItem="WGD-63-CRH" secondAttribute="bottom" id="pRZ-GE-69j"/>
+                                            <constraint firstAttribute="trailing" secondItem="WGD-63-CRH" secondAttribute="trailing" id="pRh-L5-GlF"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="categoryImageView" destination="qg4-Z5-OJ4" id="97v-Ui-Rhb"/>
                                             <outlet property="categoryName" destination="ZCT-D7-8rh" id="tHr-vz-kYr"/>
@@ -1677,7 +1689,6 @@
         <image name="masc01" width="60" height="60"/>
         <image name="masc02" width="60" height="60"/>
         <image name="nextSlide" width="88" height="35"/>
-        <image name="norseBG05_2329" width="517" height="150"/>
         <image name="refresh22" width="497" height="497"/>
         <image name="shake" width="158" height="120"/>
         <image name="shapes" width="21" height="21"/>
