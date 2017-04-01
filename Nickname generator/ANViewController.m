@@ -687,7 +687,11 @@ extern NSString* const kAppLaunchesCount;
         
         destinationVC.namesArray = self.namesWithDescriptions;
         
-        destinationNavVC.transitioningDelegate = self.rotateTransition;
+        if (iPhone()) {
+            
+            destinationNavVC.transitioningDelegate = self.rotateTransition;
+        }
+        
     }
 }
 
