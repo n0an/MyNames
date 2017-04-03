@@ -16,6 +16,22 @@ typedef enum {
     
 } ANGender;
 
+typedef enum {
+    
+    ANTolkienRaceAll = 0,
+    ANTolkienRaceElves = 1,
+    ANTolkienRaceMen = 2,
+    ANTolkienRaceHobbits = 3,
+    ANTolkienRaceDwarves = 4,
+    ANTolkienRaceAinur = 5,
+    ANTolkienRaceOrcs = 6,
+    ANTolkienRaceEnts = 7,
+    ANTolkienRaceDragons = 8
+    
+} ANTolkienRace;
+
+
+
 @class ANNameCategory;
 
 @interface ANName : NSObject
@@ -31,6 +47,8 @@ typedef enum {
 
 + (ANName*) randomNameforCategory:(ANNameCategory*)category andGender:(ANGender) gender;
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory;
+
++ (ANName*) randomNameforCategory:(ANNameCategory*)category race:(ANTolkienRace)race andGender:(ANGender) gender;
 
 
 @end
