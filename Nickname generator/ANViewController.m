@@ -207,10 +207,35 @@ extern NSString* const kAppLaunchesCount;
     NSMutableArray* array = [NSMutableArray array];
     
     for (int nameIndex = 0; nameIndex < count; nameIndex++) {
-        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
+        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory race:ANTolkienRaceAll andGender:self.selectedGender];
         
         [array addObject:name];
     }
+    self.displayedNames = array;
+    
+    NSString* resultString = @"";
+    
+    for (ANName* name in array) {
+        resultString = [NSString stringWithFormat:@"%@ %@", resultString, name.firstName];
+    }
+    
+    self.namesWithDescriptions = [self getNamesWithDescriptions];
+    return resultString;
+}
+
+- (NSString*) getNamesTolkienName {
+    
+    NSMutableArray* array = [NSMutableArray array];
+    
+    for (int nameIndex = 0; nameIndex < 1; nameIndex++) {
+        
+        ANNameCategory *tolkienCategory = [[ANNamesFactory sharedFactory]  getCategoryForID:@"02.02"];
+        
+        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:tolkienCategory race:ANTolkienRaceMen andGender:self.selectedGender];
+        
+        [array addObject:name];
+    }
+    
     self.displayedNames = array;
     
     NSString* resultString = @"";
@@ -442,6 +467,34 @@ extern NSString* const kAppLaunchesCount;
                      }];
 }
 
+- (void) animateTolkienResultsLabelUpdate {
+    [UIView animateWithDuration:0.2f
+                          delay:0.f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.nameResultLabel.alpha = 0.f;
+                     } completion:^(BOOL finished) {
+                         
+                         
+                         NSString* currentNamesLabel = [self getNamesTolkienName];
+                         
+                         self.nameResultLabel.text = currentNamesLabel;
+                         
+                         NSArray* arr = self.displayedNames;
+                         
+                         ANName* firstName = [arr firstObject];
+                         
+                         self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:firstName];
+                         [self refreshLikeButton];
+                         
+                         [UIView animateWithDuration:0.5f
+                                          animations:^{
+                                              self.nameResultLabel.alpha = 1.f;
+                                          }];
+                     }];
+}
+
+
 - (void) animateWheelRotating {
     [UIView animateWithDuration:0.3f
                           delay:0.f
@@ -606,6 +659,13 @@ extern NSString* const kAppLaunchesCount;
 - (IBAction) uploadPressed {
     
     [self uploadUsingFileManager];
+    
+}
+
+- (IBAction) generateTolkienName {
+    
+    [self animateGenerateButtonOnClick];
+    [self animateTolkienResultsLabelUpdate];
     
 }
 

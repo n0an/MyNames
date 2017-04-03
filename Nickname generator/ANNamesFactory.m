@@ -49,21 +49,33 @@
 }
 
 #pragma mark - PUBLIC METHODS
-- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
+- (ANName*) getRandomNameForCategory:(ANNameCategory*) category race:(ANTolkienRace) race andGender:(ANGender) gender {
     
     ANNameCategory* queryCategory;
+    
+    ANName* result;
     
     if ([category.nameCategoryID isEqualToString:@"00.00"]) {
         queryCategory = [self getRandomCategory];
         
+        result = [ANName randomNameforCategory:queryCategory andGender:gender];
+        
+    } else if ([category.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        result = [ANName randomNameforCategory:category race:race andGender:gender];
+        
     } else {
         queryCategory = category;
+        
+        result = [ANName randomNameforCategory:queryCategory andGender:gender];
     }
     
-    ANName* result = [ANName randomNameforCategory:queryCategory andGender:gender];
+//    ANName* result = [ANName randomNameforCategory:queryCategory andGender:gender];
     
     return result;
 }
+
+
 
 - (ANName*) getNameForID:(NSString*) nameID {
     NSString* nameCategoryID = [nameID substringToIndex:5];
