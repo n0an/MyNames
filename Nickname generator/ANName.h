@@ -40,7 +40,7 @@ typedef enum {
 /**********************
  01.02.0.15 - Myth, Vedic, Masculine, 15th name in Plist
  
- XX.YY.Z.NN
+ XX.YY.Z.NN.RR
  
  XX - Area: Myth, Regular names, Ancient names, etc:
     01 - Myth
@@ -60,6 +60,18 @@ typedef enum {
     0 - Masculine
     1 - Feminine
  
- NN - Index of name in base
+ NN - Index of name in base:
+    01, 02, 03 etc.
+ 
+ RR - Race in selected category:
+    01 - Elves
+    02 - Men
+    03 - Hobbits
+    04 - Dwarves
+    05 - Ainur
+    06 - Orcs
+    07 - Ents
+    08 - Dragons
+
  
 */
