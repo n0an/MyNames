@@ -125,7 +125,20 @@ extern NSString* const kAppLaunchesCount;
     
     [self checkUserDefaultsLaunchesCount];
     
+    
+#if !PRODUCTION_BUILD
+    
+    [self addUploadButton];
+    
+    
+    
+#endif
+    
+    
 }
+    
+    
+    
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
@@ -280,6 +293,27 @@ extern NSString* const kAppLaunchesCount;
         [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
     }
 }
+    
+- (void) addUploadButton {
+    
+//    CGRect buttonRect = CGRectMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds), 100, 100);
+    //    UIButton *uploadButton = [[UIButton alloc] initWithFrame:buttonRect];
+    
+    UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [uploadButton setTitle:@"Upload" forState:UIControlStateNormal];
+    
+    [uploadButton sizeToFit];
+    
+    [uploadButton addTarget:self action:@selector(uploadPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:uploadButton];
+    
+    
+    
+    
+}
+
 
 - (void) uploadUsingFileManager {
     
@@ -303,11 +337,14 @@ extern NSString* const kAppLaunchesCount;
     // ** Getting pathName in accordance with category and gender
     NSString* pathName;
     
-    if (gender == ANGenderMasculine) {
-        pathName = [category.alias stringByAppendingString:@"Masc"];
-    } else {
-        pathName = [category.alias stringByAppendingString:@"Fem"];
-    }
+    
+//    if (gender == ANGenderMasculine) {
+//        pathName = [category.alias stringByAppendingString:@"Masc"];
+//    } else {
+//        pathName = [category.alias stringByAppendingString:@"Fem"];
+//    }
+//    
+    pathName = @"FictionTolkienFem";
     
     // ** Uploads counter
     __block NSInteger imagesLoadedCount = 0;
@@ -315,7 +352,12 @@ extern NSString* const kAppLaunchesCount;
     // ** Main cycle
     for (NSString *fullFileName in fileList) {
         
-        if (![fullFileName hasPrefix:pathName]) {
+        
+//        if (![fullFileName hasPrefix:pathName]) {
+//            continue;
+//        }
+        
+        if (![fullFileName hasPrefix:@"FictionTolkienMenFem"]) {
             continue;
         }
         

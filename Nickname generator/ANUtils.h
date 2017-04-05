@@ -12,7 +12,7 @@
 #ifndef UTILS
 #define UTILS
 
-//#define PRODUCTION_BUILD
+#define PRODUCTION_BUILD 0
 
 #define LOGS_ENABLED 1
 
