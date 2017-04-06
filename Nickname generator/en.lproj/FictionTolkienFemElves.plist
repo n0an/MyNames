@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Amarië</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.1.01</string>
+		<key>nameDescription</key>
+		<string>Amarië was a Vanyar Elf of Valinor in Aman.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Amari%C3%AB</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemAmarie</string>
+	</dict>
+	<key>Anairë</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.2.01</string>
+		<key>nameDescription</key>
+		<string>Anairë was an Elf of Valinor and the wife of Fingolfin.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Anair%C3%AB</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemAnaire</string>
+	</dict>
+	<key>Andriel</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.3.01</string>
+		<key>nameDescription</key>
+		<string>Andriel was one of the female Elves of Rivendell in the game The Lord of the Rings: War in the North.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Andriel</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemAndriel</string>
+	</dict>
+	<key>Aredhel</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.4.01</string>
+		<key>nameDescription</key>
+		<string>Aredhel, also known as Aredhel Ar-Feiniel,[2] the &apos;White Lady of the Ñoldor&apos;, was the only daughter and third child of the Noldorin High-prince Fingolfin and his wife Anairë. Aredhel was the sister of Fingon, Turgon and Argon, and the mother of Maeglin.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Aredhel</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemAredhel</string>
+	</dict>
+	<key>Eärwen</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.5.01</string>
+		<key>nameDescription</key>
+		<string>Eärwen was the daughter of Olwë and had several unnamed brothers. She was the wife of Finarfin, and mother of Finrod, Angrod, Aegnor, and Galadriel.[2]</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/E%C3%A4rwen</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemEarwen</string>
+	</dict>
+	<key>Eldalótë</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.6.01</string>
+		<key>nameDescription</key>
+		<string>Eldalótë was the wife of Angrod, the second son of Finarfin. She was also grandmother of Gil-galad and Finduilas.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Eldal%C3%B3t%C3%AB</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemEldalote</string>
+	</dict>
+	<key>Elenwë</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.7.01</string>
+		<key>nameDescription</key>
+		<string>Elenwë was a Vanyarin elf, the wife of Turgon and the mother of Idril, to whom she passed on the golden hair of her kindred.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Elenw%C3%AB</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemElenwe</string>
+	</dict>
+	<key>Evranin</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.8.01</string>
+		<key>nameDescription</key>
+		<string>Evranin was an Elf of the First Age, and a nurse of Elwing&apos;s who, in an early version of the tale of the Necklace of the Dwarves, helped steal the Necklace away from the reach of Feanor&apos;s sons, alongside one named Gereth.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Evranin</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemEvranin</string>
+	</dict>
+	<key>Findis</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.9.01</string>
+		<key>nameDescription</key>
+		<string>Findis was Ñoldor elf, the daughter of Finwë, the High King of the Ñoldor and Indis, sister of Fingolfin and Finarfin and half-sister of Fëanor.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Findis</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemFindis</string>
+	</dict>
+	<key>Finduilas</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.10.01</string>
+		<key>nameDescription</key>
+		<string>Finduilas was a Ñoldor Elf princess of the First Age, the daughter of Orodreth, ruler of the hidden realm of Nargothrond, and sister of Gil-galad.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Finduilas</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemFinduilas</string>
+	</dict>
+	<key>Galadriel</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.11.01</string>
+		<key>nameDescription</key>
+		<string>Galadriel was the co-ruler and Lady of Lothlórien alongside her husband, Lord Celeborn, however, neither took royal titles, as they only saw themselves as the Guardians of The Golden Wood.
+
+Galadriel was the co-ruler and Lady of Lothlórien alongside her husband, Lord Celeborn, however, neither took royal titles, as they only saw themselves as the Guardians of The Golden Wood.
+
+Galadriel was the co-ruler and Lady of Lothlórien alongside her husband, Lord Celeborn, however, neither took royal titles, as they only saw themselves as the Guardians of The Golden Wood.
+
+Galadriel was the co-ruler and Lady of Lothlórien alongside her husband, Lord Celeborn, however, neither took royal titles, as they only saw themselves as the Guardians of The Golden Wood.
+
+Galadriel was the co-ruler and Lady of Lothlórien alongside her husband, Lord Celeborn, however, neither took royal titles, as they only saw themselves as the Guardians of The Golden Wood.
+
+</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Galadriel</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemGaladriel</string>
+	</dict>
+	<key>Idril</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.12.01</string>
+		<key>nameDescription</key>
+		<string>Idril, also called Celebrindal, was a Ñoldorin Elf of Gondolin. She was the daughter of Turgon and Elenwë, wife of the Man Tuor, and mother of Eärendil the Mariner, a Half-elven.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Idril</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemIdril</string>
+	</dict>
+	<key>Indis</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.13.01</string>
+		<key>nameDescription</key>
+		<string>Indis was a Vanyar Elf of Valinor.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Indis</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemIndis</string>
+	</dict>
+	<key>Írimë</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.14.01</string>
+		<key>nameDescription</key>
+		<string>Írimë was a Ñoldor Elf, the daughter of Finwë, the High King of the Ñoldor and Indis, sister of Fingolfin, Finarfin, Findis, and half-sister of Fëanor.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/%C3%8Drim%C3%AB</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemIrime</string>
+	</dict>
+	<key>Lianna</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.15.01</string>
+		<key>nameDescription</key>
+		<string>Lianna was a Silvan elf who lived in the Halls of Thranduil of Mirkwood. She was tasked retrieving a healing draft until she was injured by three Stone-trolls, but she barely managed to escape into Troll Cave. Bilbo Baggins, a Hobbit from the Shire, found her injured and helps her recover from a mortal wound by retrieving her healing draught. Returning to the Woodland Realm, she eventually helps Bilbo escape from Thranduil&apos;s Hall. She is not featured in Tolkien&apos;s original legendarium. Lianna is seen as a blonde, green eyed elf who is ever grateful for Bilbo helping her and later assists him in the Elven Halls rescuing the dwarves.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Lianna</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemLianna</string>
+	</dict>
+	<key>Meril-i-Turinqi</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.16.01</string>
+		<key>nameDescription</key>
+		<string>Meril-i-Turinqi was the Queen of Tol Eressëa in the earlier forms of the legendarium.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Meril-i-Turinqi</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemMeriliTurinqi</string>
+	</dict>
+	<key>Míriel</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.17.01</string>
+		<key>nameDescription</key>
+		<string>Míriel Therindë [Quenya: Þerindë] or Míriel Serindë was the first wife of Finwë, the High King of the Ñoldor and the mother of Fëanor. Miriel&apos;s hair was described as being silver in appearance, an unusual color for one of the Ñoldor.[2] She was highly skilled in the art of weaving and needlework, and thus her amilessë (mother-name) was Þerindë, the Broideress.[4]</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/M%C3%ADriel</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemMiriel</string>
+	</dict>
+	<key>Mithrellas</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.18.01</string>
+		<key>nameDescription</key>
+		<string>Mithrellas was a Nandorin Elf, a companion of Nimrodel who fled from Lórien with her.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Mithrellas</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemMithrellas</string>
+	</dict>
+	<key>Nerdanel</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.19.01</string>
+		<key>nameDescription</key>
+		<string>Nerdanel, also known as Nerdanel the Wise, was the daughter of the Ñoldorin smith Mahtan and the wife of the infamous Fëanor the High Prince of the Noldor, and eldest son of Finwë.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Nerdanel</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemNerdanel</string>
+	</dict>
+	<key>Nimrodel</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.20.01</string>
+		<key>nameDescription</key>
+		<string>Nimrodel was an Nandorin Elf Maiden of Lórien of the Third Age.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Nimrodel</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemNimrodel</string>
+	</dict>
+	<key>Tauriel</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.21.01</string>
+		<key>nameDescription</key>
+		<string>Tauriel is a character of the The Hobbit film trilogy. She is a Silvan Wood-Elf of Mirkwood, as well as a captain of the Elven guard of Thranduil&apos;s Woodland Realm.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Tauriel</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemTauriel</string>
+	</dict>
+	<key>Vairë</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.22.01</string>
+		<key>nameDescription</key>
+		<string>Vairë was an Elf of Tol Eressëa and one of the keepers of the Cottage of Lost Play.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Vair%C3%AB_(Elf)</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemVaire</string>
+	</dict>
+	<key>Amanyar</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.23.01</string>
+		<key>nameDescription</key>
+		<string>Amanyar (Quenyan for &apos;Those of Aman&apos;) for is another name for the Calaquendi (&apos;Elves of Light&apos;) (with the exception of Thingol, who was not of the Amanyar) as opposed to the Úmanyar &apos;Not of Aman&apos;. Those kindreds who settled in Aman or descended from them were also referred to as High Elves, or &apos;Tareldar&apos;.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Amanyar</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemAmanyar</string>
+	</dict>
+	<key>Ausir</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.24.01</string>
+		<key>nameDescription</key>
+		<string>Ausir is one of the children in the Cottage of Lost Play when Ælfwine visited there in J. R. R. Tolkien&apos;s The Book of Lost Tales.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Ausir_(child)</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemAusir</string>
+	</dict>
+	<key>Calaquendi</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.25.01</string>
+		<key>nameDescription</key>
+		<string>The Calaquendi (singular Calaquendë) are the Elves of the Light, that reached Valinor and dwelt there ever after or for some time. They include the Vanyar, Ñoldor, and those Teleri who passed over Belegaer, as well as the Sindarin King Thingol alone of all his people. Another name for them is Amanyar (with the exception of Thingol, who was not of the Amanyar), &apos;Those of Aman&apos;. Those kindreds who settled in Aman or descended from them were also referred to as High Elves, or &apos;Tareldar&apos;.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Calaquendi</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemCalaquendi</string>
+	</dict>
+	<key>Hendor</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.26.01</string>
+		<key>nameDescription</key>
+		<string>Hendor was a house-carle and servant of Idril Celebrindal who in The Book of Lost Tales, part 2 carries Eärendil, as a child, from ruined Gondolin when they, Tuor, and others are attacked by wolf-riders.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Hendor</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemHendor</string>
+	</dict>
+	<key>Idrial</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.27.01</string>
+		<key>nameDescription</key>
+		<string></string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Idrial</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemIdrial</string>
+	</dict>
+	<key>Lambengolmor</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.28.01</string>
+		<key>nameDescription</key>
+		<string>The Lambengolmor were the Loremasters of the Elves in the First Age.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Lambengolmor</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemLambengolmor</string>
+	</dict>
+	<key>Littleheart</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.29.01</string>
+		<key>nameDescription</key>
+		<string>Littleheart, whose birthname was Ilfrin, was an Elf of Tol Eressëa who is mentioned only in earlier versions of the Middle-earth legendarium.[1]</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Littleheart</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemLittleheart</string>
+	</dict>
+	<key>Morwë</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.30.01</string>
+		<key>nameDescription</key>
+		<string>Morwë, along with Nurwë, refused the summons of the Valar to Aman.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Morw%C3%AB</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemMorwe</string>
+	</dict>
+	<key>Nurwë</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.31.01</string>
+		<key>nameDescription</key>
+		<string>Nurwë was an elf from Cuiviénen who refused the summons of the Valar.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Nurw%C3%AB</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemNurwe</string>
+	</dict>
+	<key>Quendi</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.32.01</string>
+		<key>nameDescription</key>
+		<string>The Elves named themselves Quendi (Quenya, IPA: [ˈkʷendi], &apos;the Speakers&apos;, singular Quendë, [ˈkʷende]), in honour of the fact that, when they were created, they were the only living things they knew of who were able to speak. (This name is no accident — Tolkien was a philologist.)</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Quendi</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemQuendi</string>
+	</dict>
+	<key>Uruviel</key>
+	<dict>
+		<key>nameID</key>
+		<string>02.02.1.33.01</string>
+		<key>nameDescription</key>
+		<string>Uruviel was a Silvan elf maid of Lothlorien during the Third Age.</string>
+		<key>nameURL</key>
+		<string>http://lotr.wikia.com/wiki/Uruviel</string>
+		<key>nameImageName</key>
+		<string>FictionTolkienElvesFemUruviel</string>
+	</dict>
+</dict>
+</plist>
