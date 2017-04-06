@@ -244,7 +244,7 @@ extern NSString* const kAppLaunchesCount;
         
         ANNameCategory *tolkienCategory = [[ANNamesFactory sharedFactory]  getCategoryForID:@"02.02"];
         
-        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:tolkienCategory race:ANTolkienRaceMen andGender:self.selectedGender];
+        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:tolkienCategory race:ANTolkienRaceAll andGender:self.selectedGender];
         
         [array addObject:name];
     }
@@ -357,7 +357,7 @@ extern NSString* const kAppLaunchesCount;
 //            continue;
 //        }
         
-        if (![fullFileName hasPrefix:@"FictionTolkienMenMasc"]) {
+        if (![fullFileName hasPrefix:@"FictionTolkienElvesMasc"]) {
             continue;
         }
         

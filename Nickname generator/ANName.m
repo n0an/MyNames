@@ -163,9 +163,9 @@
     NSString* pathName;
     
     if (gender == ANGenderMasculine) {
-        pathName = [@"02.02" stringByAppendingString:@"Masc"];
+        pathName = [@"FictionTolkien" stringByAppendingString:@"Masc"];
     } else {
-        pathName = [@"02.02" stringByAppendingString:@"Fem"];
+        pathName = [@"FictionTolkien" stringByAppendingString:@"Fem"];
     }
     
     NSString* pathNameElves = [pathName stringByAppendingString:@"Elves"];
