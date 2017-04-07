@@ -244,7 +244,7 @@ extern NSString* const kAppLaunchesCount;
         
         ANNameCategory *tolkienCategory = [[ANNamesFactory sharedFactory]  getCategoryForID:@"02.02"];
         
-        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:tolkienCategory race:ANTolkienRaceAll andGender:self.selectedGender];
+        ANName* name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:tolkienCategory race:ANTolkienRaceDwarves andGender:self.selectedGender];
         
         [array addObject:name];
     }
