@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *controlsView;
 @property (weak, nonatomic) IBOutlet UIView *wheelView;
 
+@property (weak, nonatomic) IBOutlet UIStackView *controlsStackView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *wheelImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *infoImageView;

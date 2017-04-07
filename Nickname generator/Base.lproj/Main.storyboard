@@ -37,8 +37,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSQ-G6-Rzv">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="133"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L0b-oT-oUU">
-                                                <rect key="frame" x="8" y="32.5" width="309" height="68"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="L0b-oT-oUU">
+                                                <rect key="frame" x="8" y="16.5" width="309" height="100"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YKa-yb-HS5">
                                                         <rect key="frame" x="0.0" y="0.0" width="145.5" height="30"/>
@@ -79,7 +79,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TqQ-eh-dUG">
-                                                        <rect key="frame" x="0.0" y="38" width="214" height="30"/>
+                                                        <rect key="frame" x="0.0" y="70" width="214" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSG-aa-tdh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
@@ -338,6 +338,7 @@
                     <tabBarItem key="tabBarItem" title="New name" image="shapes" id="O5p-v6-RQs"/>
                     <connections>
                         <outlet property="bgImageView" destination="t6e-XU-g0u" id="er7-Ow-ZnY"/>
+                        <outlet property="controlsStackView" destination="L0b-oT-oUU" id="Wps-7N-5KA"/>
                         <outlet property="controlsView" destination="iSQ-G6-Rzv" id="yzv-Sm-Pyy"/>
                         <outlet property="genderButtonFem" destination="mMH-na-Jzf" id="3zl-C2-hhC"/>
                         <outlet property="genderButtonMasc" destination="8o4-TK-VWv" id="rNC-aH-sbU"/>
