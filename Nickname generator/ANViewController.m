@@ -357,7 +357,7 @@ extern NSString* const kAppLaunchesCount;
 //            continue;
 //        }
         
-        if (![fullFileName hasPrefix:@"FictionTolkienEntsMasc"]) {
+        if (![fullFileName hasPrefix:@"FictionTolkienDragonsMasc"]) {
             continue;
         }
         

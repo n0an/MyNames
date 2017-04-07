@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   FictionTolkienMascDragons.plist
+   Nickname generator
+
+   Created by Anton Novoselov on 07/04/2017.
+   Copyright (c) 2017 Anton Novoselov. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+        <key>Smaug</key><dict><key>nameID</key><string>02.02.0.1.08</string><key>nameDescription</key><string>Smaug was a fire drake of the Third Age, considered to be the last "great" dragon to exist in Middle-earth. Smaug was drawn towards the enormous wealth amassed by the Dwarves of the Lonely Mountain during the reign of King Thror, and laid waste to the neighboring city of Dale and captured the Lonely Mountain, driving the surviving Dwarves into exile.
+            
+        </string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Smaug</string><key>nameImageName</key><string>FictionTolkienDragonsMascSmaug</string></dict>
+        <key>Scatha</key><dict><key>nameID</key><string>02.02.0.2.08</string><key>nameDescription</key><string>Scatha was one of the greatest of the Long-worms that infested the Grey Mountains in the north of Middle-earth.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Scatha</string><key>nameImageName</key><string>FictionTolkienDragonsMascScatha</string></dict>
+        <key>Gostir</key><dict><key>nameID</key><string>02.02.0.3.08</string><key>nameDescription</key><string>Gostir was the name of one of the Dragons of Morgoth about whom almost nothing is known.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Gostir</string><key>nameImageName</key><string>FictionTolkienDragonsMascGostir</string></dict>
+        <key>Glaurung</key><dict><key>nameID</key><string>02.02.0.4.08</string><key>nameDescription</key><string>Glaurung was the first terrestrial, fire-breathing Dragon in Middle-earth. He is known as the Father of Dragons.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Glaurung</string><key>nameImageName</key><string>FictionTolkienDragonsMascGlaurung</string></dict>
+        <key>Ancalagon</key><dict><key>nameID</key><string>02.02.0.5.08</string><key>nameDescription</key><string>Ancalagon, also known as Ancalagon the Black, was the greatest of all winged dragons, bred by Morgoth during the First Age, and the largest dragon to have ever existed.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Ancalagon</string><key>nameImageName</key><string>FictionTolkienDragonsMascAncalagon</string></dict>
+
+    
+    </dict>
+</plist>

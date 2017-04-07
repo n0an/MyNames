@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   FictionTolkienMascDragons.plist
+   Nickname generator
+
+   Created by Anton Novoselov on 07/04/2017.
+   Copyright (c) 2017 Anton Novoselov. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+        <key>Smaug</key><dict><key>nameID</key><string>02.02.0.1.08</string><key>nameDescription</key><string>Смауг Золотой (англ. Smaug The Golden, встречается вариант перевода Смог) — огнедышащий крылатый дракон. Был выведен Морготом, наряду с другими драконами, для устрашения населения Средиземья и подготовки к войне. Он уничтожил город Дейл и гномье королевство Эребор, а затем сам поселился в Одинокой горе, охраняя бесчисленные сокровища гномов.</string><key>nameURL</key><string>http://ru.lotr.wikia.com/wiki/%D0%A1%D0%BC%D0%B0%D1%83%D0%B3</string><key>nameImageName</key><string>FictionTolkienDragonsMascSmaug</string></dict>
+        <key>Scatha</key><dict><key>nameID</key><string>02.02.0.2.08</string><key>nameDescription</key><string>Ската (англ. Scatha) был могучим «длинночервём» (англ. Long-worm) Серых Гор. О нём известно мало: в основном у Толкина упоминается то, что он был холодным драконом и убит Фрамом, сыном Фрумгара (предком Эорла Юного) в ранние дни Эотеода.
+            
+        </string><key>nameURL</key><string>http://ru.lotr.wikia.com/wiki/%D0%A1%D0%BA%D0%B0%D1%82%D0%B0</string><key>nameImageName</key><string>FictionTolkienDragonsMascScatha</string></dict>
+        <key>Gostir</key><dict><key>nameID</key><string>02.02.0.3.08</string><key>nameDescription</key><string>Имя «Гостир» на синдарине означает «ужасный взгляд» и образовано от слов Gos (ужасный) и thîr (взгляд, выражение лица).</string><key>nameURL</key><string>http://ru.lotr.wikia.com/wiki/%D0%93%D0%BE%D1%81%D1%82%D0%B8%D1%80</string><key>nameImageName</key><string>FictionTolkienDragonsMascGostir</string></dict>
+        <key>Glaurung</key><dict><key>nameID</key><string>02.02.0.4.08</string><key>nameDescription</key><string>Глаурунг (англ. Glaurung) — первый из огнедышащих драконов Средиземья, предок всех остальных. Создан Морготом. В отличие от позднейших драконов, не умел летать.</string><key>nameURL</key><string>http://ru.lotr.wikia.com/wiki/%D0%93%D0%BB%D0%B0%D1%83%D1%80%D1%83%D0%BD%D0%B3</string><key>nameImageName</key><string>FictionTolkienDragonsMascGlaurung</string></dict>
+        <key>Ancalagon</key><dict><key>nameID</key><string>02.02.0.5.08</string><key>nameDescription</key><string>Анкалагон (англ. Ancalagon) — величайший из крылатых драконов Моргота и предводитель их стаи.</string><key>nameURL</key><string>http://ru.lotr.wikia.com/wiki/%D0%90%D0%BD%D0%BA%D0%B0%D0%BB%D0%B0%D0%B3%D0%BE%D0%BD</string><key>nameImageName</key><string>FictionTolkienDragonsMascAncalagon</string></dict>
+
+    
+    </dict>
+</plist>
