@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   FictionTolkienFemEnts.plist
+   Nickname generator
+
+   Created by Anton Novoselov on 07/04/2017.
+   Copyright (c) 2017 Anton Novoselov. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+        <key>Fimbrethil</key><dict><key>nameID</key><string>02.02.1.1.07</string><key>nameDescription</key><string>Древобород и Фимбретиль были вместе ещё до того, как Моргот набрал силу во время юности мира. Как и остальные Жёны энтов, Фимбретиль пропала без вести после того, как Саурон уничтожил сады Жён энтов на Бурых Равнинах во Вторую Эпоху. Ко времени Войны Кольца Древобород уже более 3000 лет не видел свою возлюбленную.</string><key>nameURL</key><string>http://ru.lotr.wikia.com/wiki/%D0%A4%D0%B8%D0%BC%D0%B1%D1%80%D0%B5%D1%82%D0%B8%D0%BB%D1%8C</string><key>nameImageName</key><string>FictionTolkienEntsFemFimbrethil</string></dict>
+        <key>Entwives</key><dict><key>nameID</key><string>02.02.1.2.07</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>FictionTolkienEntsFemEntwives</string></dict>
+        <key>Huorn</key><dict><key>nameID</key><string>02.02.1.3.07</string><key>nameDescription</key><string></string><key>nameURL</key><string></string><key>nameImageName</key><string>FictionTolkienEntsFemHuorn</string></dict>
+
+    
+    </dict>
+</plist>

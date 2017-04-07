@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   FictionTolkienMascEnts.plist
+   Nickname generator
+
+   Created by Anton Novoselov on 07/04/2017.
+   Copyright (c) 2017 Anton Novoselov. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+        <key>Treebeard</key><dict><key>nameID</key><string>02.02.0.1.07</string><key>nameDescription</key><string>Fangorn redirects here, for the forest, see Fangorn Forest</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Treebeard</string><key>nameImageName</key><string>FictionTolkienEntsMascTreebeard</string></dict>
+        <key>Fladrif</key><dict><key>nameID</key><string>02.02.0.2.07</string><key>nameDescription</key><string>Fladrif (Skinbark) is an ent of the Fangorn Forest, and was one of the first ents in Middle-earth. By the end of the Third Age, only he, Leaflock, and Treebeard remained of the original ents. [1]</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Fladrif</string><key>nameImageName</key><string>FictionTolkienEntsMascFladrif</string></dict>
+        <key>Finglas</key><dict><key>nameID</key><string>02.02.0.3.07</string><key>nameDescription</key><string>Finglas (Sindarin for 'hair-leaf'), also known in Westron as Leaflock, was an Ent of Fangorn Forest.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Finglas</string><key>nameImageName</key><string>FictionTolkienEntsMascFinglas</string></dict>
+        <key>Bregalad</key><dict><key>nameID</key><string>02.02.0.4.07</string><key>nameDescription</key><string>Bregalad, known mainly as Quickbeam, was a middle-aged Ent at the time of the War of the Ring. He wasn't as old as Treebeard, as he can be described as quite young. He guarded the Rowan trees, as he resembled as a rowan himself. He was one of Skinbark's people, and he made his home on the mountain-slopes at the west of Isengard until the Orcs cut down that forest, then he had no choice but moved to an ent-house near Derndingle in the area of Fangorn forest.
+            
+        </string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Bregalad</string><key>nameImageName</key><string>FictionTolkienEntsMascBregalad</string></dict>
+        <key>Beechbone</key><dict><key>nameID</key><string>02.02.0.5.07</string><key>nameDescription</key><string>Beechbone was one of the younger ents who lived in the Fangorn Forest in Middle-earth.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Beechbone</string><key>nameImageName</key><string>FictionTolkienEntsMascBeechbone</string></dict>
+        <key>Huorn</key><dict><key>nameID</key><string>02.02.0.6.07</string><key>nameDescription</key><string>In Middle-earth, they were known to dwell in the Old Forest and in Fangorn.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Huorn</string><key>nameImageName</key><string>FictionTolkienEntsMascHuorn</string></dict>
+
+    
+    </dict>
+</plist>
