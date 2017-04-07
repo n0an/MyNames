@@ -328,20 +328,7 @@
 			children = (
 				18C03C1C1E8447A00050773D /* FictionDuneMasc.plist */,
 				18C03C221E84496F0050773D /* FictionDuneFem.plist */,
-				1847EB111E96AC99002F80CC /* FictionTolkienMascElves.plist */,
-				1847EB0B1E96A9C3002F80CC /* FictionTolkienFemElves.plist */,
-				18D12DC71E92D968003A62AF /* FictionTolkienMascMen.plist */,
-				18D12DBF1E92D5BF003A62AF /* FictionTolkienFemMen.plist */,
-				1847EB171E96D122002F80CC /* FictionTolkienMascHobbits.plist */,
-				1847EB1D1E96D19A002F80CC /* FictionTolkienFemHobbits.plist */,
-				18FCA28C1E976AF4000FE44B /* FictionTolkienMascDwarves.plist */,
-				18FCA2901E976AFA000FE44B /* FictionTolkienFemDwarves.plist */,
-				18FCA2981E977D9F000FE44B /* FictionTolkienMascAinur.plist */,
-				18FCA29C1E977DA4000FE44B /* FictionTolkienFemAinur.plist */,
-				18FCA2A21E9783BB000FE44B /* FictionTolkienMascOrcs.plist */,
-				18FCA2AA1E9786BC000FE44B /* FictionTolkienMascEnts.plist */,
-				18FCA2AE1E9786C2000FE44B /* FictionTolkienFemEnts.plist */,
-				18FCA2B41E978926000FE44B /* FictionTolkienMascDragons.plist */,
+				18FCA2B61E978975000FE44B /* FictionTolkien */,
 				18AF09CE1CEF6F710061B497 /* MythCelticFem.plist */,
 				18A578511CECF47900A10BB1 /* MythCelticMasc.plist */,
 				18AF09C81CEF6E830061B497 /* MythEgyptFem.plist */,
@@ -462,6 +449,27 @@
 				18F1B99B1C8F43C1001A3B25 /* Info.plist */,
 			);
 			path = "Nickname generatorUITests";
+			sourceTree = "<group>";
+		};
+		18FCA2B61E978975000FE44B /* FictionTolkien */ = {
+			isa = PBXGroup;
+			children = (
+				1847EB111E96AC99002F80CC /* FictionTolkienMascElves.plist */,
+				1847EB0B1E96A9C3002F80CC /* FictionTolkienFemElves.plist */,
+				18D12DC71E92D968003A62AF /* FictionTolkienMascMen.plist */,
+				18D12DBF1E92D5BF003A62AF /* FictionTolkienFemMen.plist */,
+				1847EB171E96D122002F80CC /* FictionTolkienMascHobbits.plist */,
+				1847EB1D1E96D19A002F80CC /* FictionTolkienFemHobbits.plist */,
+				18FCA28C1E976AF4000FE44B /* FictionTolkienMascDwarves.plist */,
+				18FCA2901E976AFA000FE44B /* FictionTolkienFemDwarves.plist */,
+				18FCA2981E977D9F000FE44B /* FictionTolkienMascAinur.plist */,
+				18FCA29C1E977DA4000FE44B /* FictionTolkienFemAinur.plist */,
+				18FCA2A21E9783BB000FE44B /* FictionTolkienMascOrcs.plist */,
+				18FCA2AA1E9786BC000FE44B /* FictionTolkienMascEnts.plist */,
+				18FCA2AE1E9786C2000FE44B /* FictionTolkienFemEnts.plist */,
+				18FCA2B41E978926000FE44B /* FictionTolkienMascDragons.plist */,
+			);
+			name = FictionTolkien;
 			sourceTree = "<group>";
 		};
 		18FECE451CB258090003CED4 /* Abstract ViewControllers */ = {
