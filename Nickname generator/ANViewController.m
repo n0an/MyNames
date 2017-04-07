@@ -87,9 +87,10 @@ extern NSString* const kAppLaunchesCount;
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
     self.selectedCategory   = [self.sharedNamesFactory.namesCategories objectAtIndex:0];
     
-    self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;
     
-    self.namesCount = self.nameCountControl.selectedSegmentIndex + 1;
+    [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
+    
+    self.namesCount = 1;
     
     self.selectedGender = ANGenderMasculine;
     
@@ -151,14 +152,13 @@ extern NSString* const kAppLaunchesCount;
     
     [self animateGenerateButton];
     
-    self.nameCategoryLabel.userInteractionEnabled       = YES;
-    self.nameCategoryLabelTag.userInteractionEnabled    = YES;
+    
+    self.nameCategoryLabel.userInteractionEnabled    = YES;
     
     UITapGestureRecognizer* tapCategoryGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
-    UITapGestureRecognizer* tapCategoryGestureTag = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
+    
     
     [self.nameCategoryLabel addGestureRecognizer:tapCategoryGesture];
-    [self.nameCategoryLabelTag addGestureRecognizer:tapCategoryGestureTag];
     
     // Setting gesture recognizer for main label
     if (self.isDescriptionAvailable) {
@@ -576,10 +576,6 @@ extern NSString* const kAppLaunchesCount;
 }
 
 
-- (IBAction)actionNameCountControlValueChanged:(UISegmentedControl*)sender {
-    ANLog(@"New value is = %d", sender.selectedSegmentIndex);
-    self.namesCount = sender.selectedSegmentIndex + 1;
-}
 
 - (IBAction)actionGndrBtnPressed:(id)sender {
     UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
@@ -591,14 +587,20 @@ extern NSString* const kAppLaunchesCount;
     if ([sender isEqual:self.genderButtonMasc]) {
         self.selectedGender = ANGenderMasculine;
         
-        self.imgViewGenderMasc.image = mascActiveImage;
-        self.imgViewGenderFem.image = femNonactiveImage;
+        [self.genderButtonMasc setImage:mascActiveImage forState:UIControlStateNormal];
+        [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
+        
+//        self.imgViewGenderMasc.image = mascActiveImage;
+//        self.imgViewGenderFem.image = femNonactiveImage;
         
     } else if ([sender isEqual:self.genderButtonFem]) {
         self.selectedGender = ANGenderFeminine;
         
-        self.imgViewGenderMasc.image = mascNonactiveImage;
-        self.imgViewGenderFem.image = femActiveImage;
+        [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
+        [self.genderButtonFem setImage:femActiveImage forState:UIControlStateNormal];
+        
+//        self.imgViewGenderMasc.image = mascNonactiveImage;
+//        self.imgViewGenderFem.image = femActiveImage;
     }
 }
 
@@ -610,8 +612,8 @@ extern NSString* const kAppLaunchesCount;
     }
 }
 
-- (void) actionTapOnCategoryLabel:(UITapGestureRecognizer*) recognizer {
-    
+
+- (void) showCategorySelection {
     ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
     
     vc.categories = self.sharedNamesFactory.namesCategories;
@@ -622,6 +624,17 @@ extern NSString* const kAppLaunchesCount;
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self presentViewController:nav animated:YES completion:nil];
+
+}
+
+- (void) actionTapOnCategoryLabel:(UITapGestureRecognizer*) recognizer {
+    [self showCategorySelection];
+}
+
+
+- (IBAction)actionCategorySelectButtonPressed:(UIButton*)sender {
+    [self showCategorySelection];
+
 }
 
 - (void) actionTapOnWheelView:(UITapGestureRecognizer*) recognizer {
@@ -789,7 +802,8 @@ extern NSString* const kAppLaunchesCount;
     }
     
     self.nameResultLabel.text = [self getNamesStringForNamesCount:self.namesCount];
-    self.nameCategoryLabel.text = self.selectedCategory.nameCategoryTitle;
+    
+    [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
 }
 
 

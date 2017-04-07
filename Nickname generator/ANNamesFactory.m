@@ -41,7 +41,7 @@
         
         ANNameCategory* area01cat07 = [[ANNameCategory alloc] initWithCategoryID:@"01.07" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0007", nil) andCategoryImageName:@"celticBG05_1990" andCategoryBackgroundImageName:@"celticBG06_1280" andAlias:@"MythCeltic"];
    
-        sharedFactory.namesCategories = @[randomCategory, area02cat01, area01cat01, area01cat02, area02cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
+        sharedFactory.namesCategories = @[randomCategory, area02cat01, area02cat02, area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
     });
     
     return sharedFactory;
