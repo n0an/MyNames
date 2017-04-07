@@ -194,23 +194,31 @@
     NSString *pathAinur = [[NSBundle mainBundle] pathForResource:pathNameAinur ofType:@"plist"];
     NSDictionary *dictAinur = [NSDictionary dictionaryWithContentsOfFile:pathAinur];
     
-    NSString *pathOrcs = [[NSBundle mainBundle] pathForResource:pathNameOrcs ofType:@"plist"];
-    NSDictionary *dictOrcs = [NSDictionary dictionaryWithContentsOfFile:pathOrcs];
     
     NSString *pathEnts = [[NSBundle mainBundle] pathForResource:pathNameEnts ofType:@"plist"];
     NSDictionary *dictEnts = [NSDictionary dictionaryWithContentsOfFile:pathEnts];
     
-    NSString *pathDragons = [[NSBundle mainBundle] pathForResource:pathNameDragons ofType:@"plist"];
-    NSDictionary *dictDragons = [NSDictionary dictionaryWithContentsOfFile:pathDragons];
     
     [allTolkienNamesDict addEntriesFromDictionary:dictElves];
     [allTolkienNamesDict addEntriesFromDictionary:dictMen];
     [allTolkienNamesDict addEntriesFromDictionary:dictHobbits];
     [allTolkienNamesDict addEntriesFromDictionary:dictDwarves];
     [allTolkienNamesDict addEntriesFromDictionary:dictAinur];
-    [allTolkienNamesDict addEntriesFromDictionary:dictOrcs];
     [allTolkienNamesDict addEntriesFromDictionary:dictEnts];
-    [allTolkienNamesDict addEntriesFromDictionary:dictDragons];
+    
+    if (gender != ANGenderFeminine) {
+        NSString *pathOrcs = [[NSBundle mainBundle] pathForResource:pathNameOrcs ofType:@"plist"];
+        NSDictionary *dictOrcs = [NSDictionary dictionaryWithContentsOfFile:pathOrcs];
+        
+        NSString *pathDragons = [[NSBundle mainBundle] pathForResource:pathNameDragons ofType:@"plist"];
+        NSDictionary *dictDragons = [NSDictionary dictionaryWithContentsOfFile:pathDragons];
+        
+        [allTolkienNamesDict addEntriesFromDictionary:dictOrcs];
+        [allTolkienNamesDict addEntriesFromDictionary:dictDragons];
+
+    }
+
+    
     
     return allTolkienNamesDict;
 }

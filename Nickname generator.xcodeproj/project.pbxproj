@@ -66,6 +66,8 @@
 		18FCA2A81E9786BC000FE44B /* FictionTolkienMascEnts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA2AA1E9786BC000FE44B /* FictionTolkienMascEnts.plist */; };
 		18FCA2AC1E9786C2000FE44B /* FictionTolkienFemEnts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA2AE1E9786C2000FE44B /* FictionTolkienFemEnts.plist */; };
 		18FCA2B21E978926000FE44B /* FictionTolkienMascDragons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA2B41E978926000FE44B /* FictionTolkienMascDragons.plist */; };
+		18FCA2B91E97D740000FE44B /* FictionTolkienFemOrcs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA2BB1E97D740000FE44B /* FictionTolkienFemOrcs.plist */; };
+		18FCA2BF1E97D7EB000FE44B /* FictionTolkienFemDragons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FCA2C11E97D7EB000FE44B /* FictionTolkienFemDragons.plist */; };
 		18FECE411CB252520003CED4 /* ANDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE401CB252520003CED4 /* ANDataManager.m */; };
 		18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE431CB256700003CED4 /* ANCoreDataVC.m */; };
 		18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */; };
@@ -210,6 +212,10 @@
 		18FCA2AF1E9786C4000FE44B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionTolkienFemEnts.plist; sourceTree = "<group>"; };
 		18FCA2B31E978926000FE44B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionTolkienMascDragons.plist; sourceTree = "<group>"; };
 		18FCA2B51E978927000FE44B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionTolkienMascDragons.plist; sourceTree = "<group>"; };
+		18FCA2BA1E97D740000FE44B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionTolkienFemOrcs.plist; sourceTree = "<group>"; };
+		18FCA2BC1E97D741000FE44B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionTolkienFemOrcs.plist; sourceTree = "<group>"; };
+		18FCA2C01E97D7EB000FE44B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionTolkienFemDragons.plist; sourceTree = "<group>"; };
+		18FCA2C21E97D7EC000FE44B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionTolkienFemDragons.plist; sourceTree = "<group>"; };
 		18FECE3F1CB252520003CED4 /* ANDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDataManager.h; sourceTree = "<group>"; };
 		18FECE401CB252520003CED4 /* ANDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDataManager.m; sourceTree = "<group>"; };
 		18FECE421CB256700003CED4 /* ANCoreDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCoreDataVC.h; sourceTree = "<group>"; };
@@ -465,9 +471,11 @@
 				18FCA2981E977D9F000FE44B /* FictionTolkienMascAinur.plist */,
 				18FCA29C1E977DA4000FE44B /* FictionTolkienFemAinur.plist */,
 				18FCA2A21E9783BB000FE44B /* FictionTolkienMascOrcs.plist */,
+				18FCA2BB1E97D740000FE44B /* FictionTolkienFemOrcs.plist */,
 				18FCA2AA1E9786BC000FE44B /* FictionTolkienMascEnts.plist */,
 				18FCA2AE1E9786C2000FE44B /* FictionTolkienFemEnts.plist */,
 				18FCA2B41E978926000FE44B /* FictionTolkienMascDragons.plist */,
+				18FCA2C11E97D7EB000FE44B /* FictionTolkienFemDragons.plist */,
 			);
 			name = FictionTolkien;
 			sourceTree = "<group>";
@@ -653,8 +661,10 @@
 				18D12DC51E92D968003A62AF /* FictionTolkienMascMen.plist in Resources */,
 				1847EB0F1E96AC99002F80CC /* FictionTolkienMascElves.plist in Resources */,
 				18FCA28E1E976AFA000FE44B /* FictionTolkienFemDwarves.plist in Resources */,
+				18FCA2BF1E97D7EB000FE44B /* FictionTolkienFemDragons.plist in Resources */,
 				18AF09F41CEF75480061B497 /* MythVedicMasc.plist in Resources */,
 				1847EB091E96A9C3002F80CC /* FictionTolkienFemElves.plist in Resources */,
+				18FCA2B91E97D740000FE44B /* FictionTolkienFemOrcs.plist in Resources */,
 				18FCA2A01E9783BB000FE44B /* FictionTolkienMascOrcs.plist in Resources */,
 				18C03C1A1E8447A00050773D /* FictionDuneMasc.plist in Resources */,
 				18F1B97F1C8F43C1001A3B25 /* Main.storyboard in Resources */,
@@ -1197,6 +1207,24 @@
 				18FCA2B51E978927000FE44B /* ru */,
 			);
 			name = FictionTolkienMascDragons.plist;
+			sourceTree = "<group>";
+		};
+		18FCA2BB1E97D740000FE44B /* FictionTolkienFemOrcs.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18FCA2BA1E97D740000FE44B /* en */,
+				18FCA2BC1E97D741000FE44B /* ru */,
+			);
+			name = FictionTolkienFemOrcs.plist;
+			sourceTree = "<group>";
+		};
+		18FCA2C11E97D7EB000FE44B /* FictionTolkienFemDragons.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18FCA2C01E97D7EB000FE44B /* en */,
+				18FCA2C21E97D7EC000FE44B /* ru */,
+			);
+			name = FictionTolkienFemDragons.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -138,14 +138,9 @@ extern NSString* const kAppLaunchesCount;
     
     [self addUploadButton];
     
-    
-    
 #endif
     
-    
 }
-    
-    
     
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -289,25 +284,20 @@ extern NSString* const kAppLaunchesCount;
 }
     
 - (void) addUploadButton {
-    
-//    CGRect buttonRect = CGRectMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds), 100, 100);
-    //    UIButton *uploadButton = [[UIButton alloc] initWithFrame:buttonRect];
-    
+ 
     UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    [uploadButton setTitle:@"Upload" forState:UIControlStateNormal];
-    
-    [uploadButton sizeToFit];
-    
+    [uploadButton setTitle:@"!!!UPLOAD!!!" forState:UIControlStateNormal];
+    [uploadButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [uploadButton addTarget:self action:@selector(uploadPressed) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:uploadButton];
     
+    [uploadButton setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    
-    
+    [[uploadButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:0] setActive:YES];
+    [[uploadButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:0] setActive:YES];
 }
-
 
 - (void) uploadUsingFileManager {
     
@@ -597,18 +587,13 @@ extern NSString* const kAppLaunchesCount;
         
         [self.genderButtonMasc setImage:mascActiveImage forState:UIControlStateNormal];
         [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
-        
-//        self.imgViewGenderMasc.image = mascActiveImage;
-//        self.imgViewGenderFem.image = femNonactiveImage;
-        
+     
     } else if ([sender isEqual:self.genderButtonFem]) {
         self.selectedGender = ANGenderFeminine;
         
         [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
         [self.genderButtonFem setImage:femActiveImage forState:UIControlStateNormal];
         
-//        self.imgViewGenderMasc.image = mascNonactiveImage;
-//        self.imgViewGenderFem.image = femActiveImage;
     }
 }
 
@@ -780,7 +765,7 @@ extern NSString* const kAppLaunchesCount;
 
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 8;
+    return 9;
 }
 
 
