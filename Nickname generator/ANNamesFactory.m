@@ -54,36 +54,27 @@
     
     if ([category.nameCategoryID isEqualToString:@"00.00"]) {
         
-        ANNameCategory *queryCategory = [self getRandomCategory];
+        ANNameCategory *randomCategory = [self getRandomCategory];
         
-        if ([queryCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        if ([randomCategory.nameCategoryID isEqualToString:@"02.02"]) {
             result = [self getRandomTolkienForRace:ANTolkienRaceAll andGender:gender];
             
         } else {
-            result = [ANName randomNameforCategory:queryCategory andGender:gender];
+            result = [ANName randomNameforCategory:randomCategory andGender:gender];
         }
         
     } else {
-        
         result = [ANName randomNameforCategory:category andGender:gender];
     }
     
     return result;
 }
 
-
-
 - (ANName*) getRandomTolkienForRace:(ANTolkienRace) race andGender:(ANGender) gender {
-    
     ANNameCategory* tolkienCategory = [self getCategoryForID:@"02.02"];
-    
     ANName* result = [ANName randomNameforCategory:tolkienCategory race:race andGender:gender];
-    
     return result;
 }
-
-
-
 
 - (ANName*) getNameForID:(NSString*) nameID {
     NSString* nameCategoryID = [nameID substringToIndex:5];
