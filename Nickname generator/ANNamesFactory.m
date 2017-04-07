@@ -48,31 +48,40 @@
 }
 
 #pragma mark - PUBLIC METHODS
-- (ANName*) getRandomNameForCategory:(ANNameCategory*) category race:(ANTolkienRace) race andGender:(ANGender) gender {
-    
-    ANNameCategory* queryCategory;
+- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender {
     
     ANName* result;
     
     if ([category.nameCategoryID isEqualToString:@"00.00"]) {
-        queryCategory = [self getRandomCategory];
         
-        result = [ANName randomNameforCategory:queryCategory andGender:gender];
+        ANNameCategory *queryCategory = [self getRandomCategory];
         
-    } else if ([category.nameCategoryID isEqualToString:@"02.02"]) {
-        
-        result = [ANName randomNameforCategory:category race:race andGender:gender];
+        if ([queryCategory.nameCategoryID isEqualToString:@"02.02"]) {
+            result = [self getRandomTolkienForRace:ANTolkienRaceAll andGender:gender];
+            
+        } else {
+            result = [ANName randomNameforCategory:queryCategory andGender:gender];
+        }
         
     } else {
-        queryCategory = category;
         
-        result = [ANName randomNameforCategory:queryCategory andGender:gender];
+        result = [ANName randomNameforCategory:category andGender:gender];
     }
-    
-//    ANName* result = [ANName randomNameforCategory:queryCategory andGender:gender];
     
     return result;
 }
+
+
+
+- (ANName*) getRandomTolkienForRace:(ANTolkienRace) race andGender:(ANGender) gender {
+    
+    ANNameCategory* tolkienCategory = [self getCategoryForID:@"02.02"];
+    
+    ANName* result = [ANName randomNameforCategory:tolkienCategory race:race andGender:gender];
+    
+    return result;
+}
+
 
 
 

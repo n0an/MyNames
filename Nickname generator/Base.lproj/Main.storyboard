@@ -340,13 +340,6 @@
                                     <action selector="actionShareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aN7-ms-8Wb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQH-3T-pbe">
-                                <rect key="frame" x="164" y="465" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="generateTolkienName" destination="BYZ-38-t0r" eventType="touchUpInside" id="enO-PQ-8KE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -366,7 +359,6 @@
                             <constraint firstItem="yKj-8T-EF7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.35" priority="750" id="KPs-05-zkP"/>
                             <constraint firstItem="yKj-8T-EF7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="KkL-VT-iPb"/>
                             <constraint firstAttribute="trailing" secondItem="yKj-8T-EF7" secondAttribute="trailing" constant="20" id="MOM-85-fTa"/>
-                            <constraint firstItem="YQH-3T-pbe" firstAttribute="top" secondItem="igX-WN-kk6" secondAttribute="bottom" constant="35" id="O0x-oK-7jX"/>
                             <constraint firstItem="yKj-8T-EF7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="750" constant="10" id="OED-sb-UGV">
                                 <variation key="heightClass=compact" constant="10"/>
                             </constraint>
@@ -380,7 +372,6 @@
                             <constraint firstItem="yKj-8T-EF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fxT-wC-atl"/>
                             <constraint firstItem="uSb-Qd-GLU" firstAttribute="centerY" secondItem="igX-WN-kk6" secondAttribute="centerY" id="mkn-cc-Cze"/>
                             <constraint firstItem="igX-WN-kk6" firstAttribute="centerY" secondItem="nl5-8s-DDE" secondAttribute="centerY" id="nQW-S8-QEt"/>
-                            <constraint firstItem="YQH-3T-pbe" firstAttribute="centerX" secondItem="igX-WN-kk6" secondAttribute="centerX" id="w8n-RA-qnu"/>
                             <constraint firstItem="nl5-8s-DDE" firstAttribute="top" secondItem="yKj-8T-EF7" secondAttribute="bottom" constant="20" id="wy4-VJ-Mve"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QRe-5n-4AZ" secondAttribute="bottom" constant="8.5" id="yOu-As-jbh"/>
                             <constraint firstAttribute="bottom" secondItem="t6e-XU-g0u" secondAttribute="bottom" id="zEl-A1-NeC"/>

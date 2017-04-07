@@ -15,7 +15,11 @@
 
 + (ANNamesFactory*) sharedFactory;
 
-- (ANName*) getRandomNameForCategory:(ANNameCategory*) category race:(ANTolkienRace) race andGender:(ANGender) gender;
+- (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender;
+- (ANName*) getRandomTolkienForRace:(ANTolkienRace) race andGender:(ANGender) gender;
+
+
+
 - (ANName*) getNameForID:(NSString*) nameID;
 - (NSString*) adoptToLocalizationString:(NSString*) string;
 - (ANNameCategory*) getCategoryForID:(NSString*) categoryID;
