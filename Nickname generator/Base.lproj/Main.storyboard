@@ -34,34 +34,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-5n-4AZ" userLabel="ViewWithControls">
                                 <rect key="frame" x="0.0" y="476" width="366" height="133.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-cl-1fJ" userLabel="wheelView">
-                                        <rect key="frame" x="294" y="37" width="60" height="60"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings01" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-fv-y1H">
-                                                <rect key="frame" x="10" y="10" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Xkj-bH-lcv"/>
-                                                    <constraint firstAttribute="width" constant="40" id="tZz-of-u7k"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Shk-fv-y1H" firstAttribute="centerX" secondItem="qpY-cl-1fJ" secondAttribute="centerX" id="QuY-cS-JDx"/>
-                                            <constraint firstAttribute="width" constant="60" id="iCf-fR-LqD"/>
-                                            <constraint firstAttribute="height" constant="60" id="oz0-jP-uxB"/>
-                                            <constraint firstItem="Shk-fv-y1H" firstAttribute="centerY" secondItem="qpY-cl-1fJ" secondAttribute="centerY" id="qlC-y6-VTP"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSQ-G6-Rzv">
-                                        <rect key="frame" x="0.0" y="0.0" width="217" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="133"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L0b-oT-oUU">
-                                                <rect key="frame" x="8" y="8" width="201" height="117"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L0b-oT-oUU">
+                                                <rect key="frame" x="8" y="32.5" width="309" height="68"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YKa-yb-HS5">
                                                         <rect key="frame" x="0.0" y="0.0" width="145.5" height="30"/>
@@ -102,16 +79,20 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TqQ-eh-dUG">
-                                                        <rect key="frame" x="0.0" y="38" width="201" height="79"/>
+                                                        <rect key="frame" x="0.0" y="38" width="214" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSG-aa-tdh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="75" height="79"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="Y8f-Ib-kh4"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyD-sW-ScE">
-                                                                <rect key="frame" x="83" y="0.0" width="118" height="79"/>
+                                                                <rect key="frame" x="83" y="0.0" width="131" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <state key="normal" title="Norse Mythology">
                                                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
@@ -126,10 +107,9 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="L0b-oT-oUU" secondAttribute="trailing" constant="8" id="G4l-k7-VTV"/>
-                                            <constraint firstAttribute="bottom" secondItem="L0b-oT-oUU" secondAttribute="bottom" constant="8" id="JgI-C2-Guh"/>
                                             <constraint firstItem="L0b-oT-oUU" firstAttribute="centerX" secondItem="iSQ-G6-Rzv" secondAttribute="centerX" constant="-14.5" id="K7y-hK-o19"/>
                                             <constraint firstItem="L0b-oT-oUU" firstAttribute="leading" secondItem="iSQ-G6-Rzv" secondAttribute="leading" constant="8" id="cpe-wZ-DsK"/>
-                                            <constraint firstItem="L0b-oT-oUU" firstAttribute="top" secondItem="iSQ-G6-Rzv" secondAttribute="top" constant="8" id="rZR-yc-X05"/>
+                                            <constraint firstItem="L0b-oT-oUU" firstAttribute="centerY" secondItem="iSQ-G6-Rzv" secondAttribute="centerY" id="d7D-WI-dVE"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -137,12 +117,36 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-cl-1fJ" userLabel="wheelView">
+                                        <rect key="frame" x="294" y="37" width="60" height="60"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings01" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-fv-y1H">
+                                                <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Xkj-bH-lcv"/>
+                                                    <constraint firstAttribute="width" constant="40" id="tZz-of-u7k"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Shk-fv-y1H" firstAttribute="centerX" secondItem="qpY-cl-1fJ" secondAttribute="centerX" id="QuY-cS-JDx"/>
+                                            <constraint firstAttribute="width" constant="60" id="iCf-fR-LqD"/>
+                                            <constraint firstAttribute="height" constant="60" id="oz0-jP-uxB"/>
+                                            <constraint firstItem="Shk-fv-y1H" firstAttribute="centerY" secondItem="qpY-cl-1fJ" secondAttribute="centerY" id="qlC-y6-VTP"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="133.5" id="Gpo-bH-Apg"/>
                                     <constraint firstAttribute="width" constant="366" id="K65-zc-irR"/>
                                     <constraint firstItem="iSQ-G6-Rzv" firstAttribute="top" secondItem="QRe-5n-4AZ" secondAttribute="top" id="PDC-FZ-S7z"/>
                                     <constraint firstAttribute="bottom" secondItem="iSQ-G6-Rzv" secondAttribute="bottom" id="cP6-PP-IVG"/>
+                                    <constraint firstAttribute="trailing" secondItem="iSQ-G6-Rzv" secondAttribute="trailing" constant="41" id="lSK-SQ-FYb"/>
                                     <constraint firstItem="iSQ-G6-Rzv" firstAttribute="leading" secondItem="QRe-5n-4AZ" secondAttribute="leading" id="nCj-cn-XiA"/>
                                     <constraint firstAttribute="trailing" secondItem="qpY-cl-1fJ" secondAttribute="trailing" constant="12" id="pWe-lt-SPZ"/>
                                     <constraint firstItem="qpY-cl-1fJ" firstAttribute="centerY" secondItem="QRe-5n-4AZ" secondAttribute="centerY" id="qU0-UD-lNh"/>
@@ -352,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1270" y="510"/>
+            <point key="canvasLocation" x="1269.5999999999999" y="509.59520239880067"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="2jh-nG-ilb">
