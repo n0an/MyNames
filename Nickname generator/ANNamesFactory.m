@@ -22,10 +22,9 @@
         
         ANNameCategory* randomCategory = [[ANNameCategory alloc] initWithCategoryID:@"00.00" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0000", nil) andCategoryImageName:@"diceBG01_3840" andCategoryBackgroundImageName:@"diceBG03_1920" andAlias:@"RandomCat"];
         
-        ANNameCategory* area02cat01 = [[ANNameCategory alloc] initWithCategoryID:@"02.01" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0201", NIL) andCategoryImageName:@"fictionDuneBg01" andCategoryBackgroundImageName:@"fictionDuneBg02" andAlias:@"FictionDune"];
+        ANNameCategory* area02cat01 = [[ANNameCategory alloc] initWithCategoryID:@"02.01" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0201", nil) andCategoryImageName:@"fictionDuneBg01" andCategoryBackgroundImageName:@"fictionDuneBg02" andAlias:@"FictionDune"];
         
-#warning fix background images and NAMECATEGORY0202
-        ANNameCategory* area02cat02 = [[ANNameCategory alloc] initWithCategoryID:@"02.02" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0202", NIL) andCategoryImageName:@"fictionDuneBg01" andCategoryBackgroundImageName:@"fictionDuneBg02" andAlias:@"FictionTolkien"];
+        ANNameCategory* area02cat02 = [[ANNameCategory alloc] initWithCategoryID:@"02.02" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0202", nil) andCategoryImageName:@"fictionDuneBg01" andCategoryBackgroundImageName:@"fictionDuneBg02" andAlias:@"FictionTolkien"];
 
         ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0001", nil) andCategoryImageName:@"medusa-bronze" andCategoryBackgroundImageName:@"bg03" andAlias:@"MythGreek"];
         
@@ -105,6 +104,8 @@
         adaptedCategory = NSLocalizedString(@"NAMECATEGORY0007", nil);
     } else if ([string isEqualToString:@"Dune"] || [string isEqualToString:@"Дюна"]) {
         adaptedCategory = NSLocalizedString(@"NAMECATEGORY0201", nil);
+    } else if ([string isEqualToString:@"Tolkien"] || [string isEqualToString:@"Толкиен"]) {
+        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0202", nil);
     } else {
         adaptedCategory = @"";
     }
