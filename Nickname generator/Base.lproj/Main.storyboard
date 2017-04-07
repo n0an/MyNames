@@ -81,7 +81,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TqQ-eh-dUG">
                                                         <rect key="frame" x="0.0" y="70" width="214" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSG-aa-tdh">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSG-aa-tdh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="Y8f-Ib-kh4"/>
@@ -92,6 +92,9 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyD-sW-ScE">
                                                                 <rect key="frame" x="83" y="0.0" width="131" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="Li1-Nj-Zzi"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <state key="normal" title="Norse Mythology">
                                                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -348,6 +351,7 @@
                         <outlet property="nameCategoryLabel" destination="iSG-aa-tdh" id="uQV-VW-2Cg"/>
                         <outlet property="nameCategorySelectButton" destination="QyD-sW-ScE" id="Tw2-WU-6tq"/>
                         <outlet property="nameResultLabel" destination="uay-78-7I1" id="fhS-9M-Vhh"/>
+                        <outlet property="raceSelectionStackView" destination="JSv-95-3CZ" id="kqk-re-n3T"/>
                         <outlet property="settingsViewLeadingConstraint" destination="7wP-BJ-bZr" id="DM0-6Q-NVM"/>
                         <outlet property="shareButton" destination="uSb-Qd-GLU" id="3t6-jW-VrB"/>
                         <outlet property="wheelImageView" destination="Shk-fv-y1H" id="dNI-Dw-Oqu"/>
@@ -356,6 +360,31 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="30" id="JSv-95-3CZ">
+                    <rect key="frame" x="0.0" y="0.0" width="214" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Race:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpA-xT-Eu7">
+                            <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="tim-gm-lrg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE9-kL-bUY">
+                            <rect key="frame" x="73" y="0.0" width="141" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Elves">
+                                <color key="titleColor" red="0.039215686270000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionCategorySelectButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJb-d8-lSb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </objects>
             <point key="canvasLocation" x="1269.5999999999999" y="509.59520239880067"/>
         </scene>

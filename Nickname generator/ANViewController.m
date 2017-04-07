@@ -796,6 +796,9 @@ extern NSString* const kAppLaunchesCount;
             [self.bgImageView setImage:bgImage];
         }
         
+        
+        
+        
     } else {
         UIImage* bgImage = [UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName];
         [self.bgImageView setImage:bgImage];
@@ -804,6 +807,19 @@ extern NSString* const kAppLaunchesCount;
     self.nameResultLabel.text = [self getNamesStringForNamesCount:self.namesCount];
     
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
+    
+    
+    if ([category.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        [self.controlsStackView addArrangedSubview:self.raceSelectionStackView];
+        [self.controlsStackView setSpacing:8];
+        
+    } else {
+        if (self.controlsStackView.arrangedSubviews.count == 3) {
+            [self.controlsStackView removeArrangedSubview:self.raceSelectionStackView];
+            [self.controlsStackView setSpacing:40];
+        }
+    }
 }
 
 
