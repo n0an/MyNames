@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UIStackView *controlsStackView;
 @property (weak, nonatomic) IBOutlet UIStackView *raceSelectionStackView;
+@property (weak, nonatomic) IBOutlet UIPickerView *raceSelectionPickerView;
+
 
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *wheelImageView;
@@ -25,6 +27,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 @property (weak, nonatomic) IBOutlet UIButton* nameCategorySelectButton;
+@property (weak, nonatomic) IBOutlet UIButton* nameRaceSelectButton;
+
 
 //@property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabelTag;
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
@@ -46,6 +50,8 @@
 - (IBAction)actionGndrBtnPressed:(id)sender;
 
 - (IBAction)actionCategorySelectButtonPressed:(UIButton*)sender;
+
+- (IBAction)actionRaceSelectButtonPressed:(UIButton*)sender;
 
 
 @end

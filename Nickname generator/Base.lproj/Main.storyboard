@@ -350,7 +350,9 @@
                         <outlet property="likeButton" destination="igX-WN-kk6" id="Q2Z-mT-iZR"/>
                         <outlet property="nameCategoryLabel" destination="iSG-aa-tdh" id="uQV-VW-2Cg"/>
                         <outlet property="nameCategorySelectButton" destination="QyD-sW-ScE" id="Tw2-WU-6tq"/>
+                        <outlet property="nameRaceSelectButton" destination="aE9-kL-bUY" id="07r-Vx-Oar"/>
                         <outlet property="nameResultLabel" destination="uay-78-7I1" id="fhS-9M-Vhh"/>
+                        <outlet property="raceSelectionPickerView" destination="ktF-6u-lwU" id="59i-wl-tbX"/>
                         <outlet property="raceSelectionStackView" destination="JSv-95-3CZ" id="kqk-re-n3T"/>
                         <outlet property="settingsViewLeadingConstraint" destination="7wP-BJ-bZr" id="DM0-6Q-NVM"/>
                         <outlet property="shareButton" destination="uSb-Qd-GLU" id="3t6-jW-VrB"/>
@@ -380,11 +382,20 @@
                                 <color key="titleColor" red="0.039215686270000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="actionCategorySelectButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJb-d8-lSb"/>
+                                <action selector="actionRaceSelectButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bY-j4-cmp"/>
                             </connections>
                         </button>
                     </subviews>
                 </stackView>
+                <pickerView contentMode="scaleToFill" id="ktF-6u-lwU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.88490234374999999" green="0.88490234374999999" blue="0.88490234374999999" alpha="0.89914534395973156" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="BYZ-38-t0r" id="aYJ-dM-ina"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="E8D-S6-QuB"/>
+                    </connections>
+                </pickerView>
             </objects>
             <point key="canvasLocation" x="1269.5999999999999" y="509.59520239880067"/>
         </scene>

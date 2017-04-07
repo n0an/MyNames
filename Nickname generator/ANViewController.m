@@ -46,6 +46,7 @@ extern NSString* const kAppLaunchesCount;
 @property (assign, nonatomic) NSInteger namesCount;
 @property (assign, nonatomic) ANGender selectedGender;
 @property (strong, nonatomic) ANNameCategory* selectedCategory;
+@property (assign, nonatomic) ANTolkienRace selectedRace;
 
 @property (strong, nonatomic) NSArray* displayedNames;
 @property (strong, nonatomic) NSArray* namesWithDescriptions;
@@ -62,6 +63,8 @@ extern NSString* const kAppLaunchesCount;
 
 @property (strong, nonatomic) id observer;
 @property (strong, nonatomic) id rotateTransition;
+
+@property (strong, nonatomic) NSArray *racesTolkienArray;
 
 @end
 
@@ -81,11 +84,15 @@ extern NSString* const kAppLaunchesCount;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.racesTolkienArray = @[@"All", @"Elves", @"Men", @"Hobbits", @"Dwarves", @"Ainir", @"Orcs", @"Ents", @"Dragons"];
+    
     [self listenForGoingBackgroundNotification];
     
     self.rotateTransition   = [[ANRotateTransitionAnimator alloc] init];
     self.sharedNamesFactory = [ANNamesFactory sharedFactory];
     self.selectedCategory   = [self.sharedNamesFactory.namesCategories objectAtIndex:0];
+    
+    self.selectedRace = ANTolkienRaceAll;
     
     
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
@@ -225,7 +232,7 @@ extern NSString* const kAppLaunchesCount;
         
         if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
             
-            name = [[ANNamesFactory sharedFactory] getRandomTolkienForRace:ANTolkienRaceAll andGender:self.selectedGender];
+            name = [[ANNamesFactory sharedFactory] getRandomTolkienForRace:self.selectedRace andGender:self.selectedGender];
             
         } else {
             name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
@@ -234,6 +241,7 @@ extern NSString* const kAppLaunchesCount;
         
         [array addObject:name];
     }
+    
     self.displayedNames = array;
     
     NSString* resultString = @"";
@@ -671,9 +679,12 @@ extern NSString* const kAppLaunchesCount;
 }
 
 - (IBAction) uploadPressed {
-    
     [self uploadUsingFileManager];
-    
+}
+
+- (IBAction)actionRaceSelectButtonPressed:(UIButton*)sender {
+    [self.raceSelectionPickerView setFrame:self.controlsView.bounds];
+    [self.controlsView addSubview:self.raceSelectionPickerView];
 }
 
 
@@ -758,9 +769,38 @@ extern NSString* const kAppLaunchesCount;
             
             destinationNavVC.transitioningDelegate = self.rotateTransition;
         }
-        
     }
 }
+
+
+#pragma mark - UIPickerViewDataSource
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 8;
+}
+
+
+#pragma mark - UIPickerViewDelegate
+- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    NSString *title = self.racesTolkienArray[row];
+   
+    return title;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.selectedRace = (ANTolkienRace)row;
+    NSString *raceTitle = self.racesTolkienArray[row];
+    
+    [self.nameRaceSelectButton setTitle:raceTitle forState:UIControlStateNormal];
+    
+    [self.raceSelectionPickerView removeFromSuperview];
+}
+
 
 #pragma mark - +++ ANCategorySelectionDelegate +++
 - (void) categoryDidSelect:(ANNameCategory*) category {
@@ -813,6 +853,10 @@ extern NSString* const kAppLaunchesCount;
         
         [self.controlsStackView addArrangedSubview:self.raceSelectionStackView];
         [self.controlsStackView setSpacing:8];
+        
+        NSString *currentRaceTitle = self.racesTolkienArray[self.selectedRace];
+        
+        [self.nameRaceSelectButton setTitle:currentRaceTitle forState:UIControlStateNormal];
         
     } else {
         if (self.controlsStackView.arrangedSubviews.count == 3) {
