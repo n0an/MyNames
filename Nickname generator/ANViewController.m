@@ -344,7 +344,7 @@ extern NSString* const kAppLaunchesCount;
 //        pathName = [category.alias stringByAppendingString:@"Fem"];
 //    }
 //    
-    pathName = @"FictionTolkienMasc";
+    pathName = @"FictionTolkienFem";
     
     // ** Uploads counter
     __block NSInteger imagesLoadedCount = 0;
@@ -357,7 +357,7 @@ extern NSString* const kAppLaunchesCount;
 //            continue;
 //        }
         
-        if (![fullFileName hasPrefix:@"FictionTolkienElvesMasc"]) {
+        if (![fullFileName hasPrefix:@"FictionTolkienDwarvesFem"]) {
             continue;
         }
         

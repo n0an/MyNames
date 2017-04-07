@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   FictionTolkienFemDwarves.plist
+   Nickname generator
+
+   Created by Anton Novoselov on 07/04/2017.
+   Copyright (c) 2017 Anton Novoselov. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+        <key>Dís</key><dict><key>nameID</key><string>02.02.1.1.04</string><key>nameDescription</key><string>Dís was a Dwarf woman of Durin's Folk.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/D%C3%ADs</string><key>nameImageName</key><string></string></dict>
+        <key>Dourhands</key><dict><key>nameID</key><string>02.02.1.2.04</string><key>nameDescription</key><string>The Dourhands were an ancient clan of Dwarves that inhabited Eriador.</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Dourhands</string><key>nameImageName</key><string></string></dict>
+        <key>Nauglath</key><dict><key>nameID</key><string>02.02.1.3.04</string><key>nameDescription</key><string>The Nauglath (or Nautar) are one of two Wicked dwarf clans appearing in The Book of Lost Tales. They were ruled by Naugladur of Nogrod. They are the kins of the Indrafangs (Longbeards).</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Nauglath</string><key>nameImageName</key><string></string></dict>
+        <key>Stonefoots</key><dict><key>nameID</key><string>02.02.1.4.04</string><key>nameDescription</key><string>The Stonefoots were one of Houses of the seven Fathers of the Dwarves that dwelt in the mountains of the East. They were originally paired with the Blacklocks.[1]</string><key>nameURL</key><string>http://lotr.wikia.com/wiki/Stonefoots</string><key>nameImageName</key><string></string></dict>
+
+    
+    </dict>
+</plist>
