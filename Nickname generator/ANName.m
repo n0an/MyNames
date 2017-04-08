@@ -75,8 +75,19 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     ANGender nameGender = (ANGender)[[nameAttributes objectAtIndex:2] integerValue];
     NSInteger nameIDInPList = [[nameAttributes objectAtIndex:3] integerValue];
     
-    ANLog(@"nameIDInPList = %ld", (long)nameIDInPList);
-    NSDictionary *dict = [self getNamesDictionaryforCategory:nameCategory andGender:nameGender];
+    NSDictionary *dict;
+    
+    if ([nameCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        ANTolkienRace nameRace = (ANTolkienRace)[[nameAttributes objectAtIndex:4] integerValue];
+        
+        dict = [self getNamesDictionaryforCategory:nameCategory race:nameRace andGender:nameGender];
+        
+    } else {
+        
+        dict = [self getNamesDictionaryforCategory:nameCategory andGender:nameGender];
+    }
+    
     
     NSArray* namesArr = [dict allKeys];
     
