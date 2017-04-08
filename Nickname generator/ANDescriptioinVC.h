@@ -31,7 +31,6 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 #pragma mark - PUBLIC PROPERTIES
-@property (strong, nonatomic) NSArray* namesArray;
 @property (strong, nonatomic) ANName* selectedName;
 
 

@@ -22,7 +22,6 @@ NSString* const kRaceTokienEnts     = @"Ents";
 NSString* const kRaceTokienDragons  = @"Dragons";
 
 
-
 @implementation ANName
 
 #pragma mark - PUBLIC METHODS
@@ -65,8 +64,6 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     
     return name;
 }
-
-
 
 
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory {
@@ -179,43 +176,6 @@ NSString* const kRaceTokienDragons  = @"Dragons";
         pathName = [pathName stringByAppendingString:raceString];
     }
     
-//    switch (race) {
-//        case ANTolkienRaceMen:
-//            pathName = [pathName stringByAppendingString:@"Men"];
-//            break;
-//            
-//        case ANTolkienRaceElves:
-//            pathName = [pathName stringByAppendingString:@"Elves"];
-//            break;
-//            
-//        case ANTolkienRaceHobbits:
-//            pathName = [pathName stringByAppendingString:@"Hobbits"];
-//            break;
-//            
-//        case ANTolkienRaceDwarves:
-//            pathName = [pathName stringByAppendingString:@"Dwarves"];
-//            break;
-//            
-//        case ANTolkienRaceAinur:
-//            pathName = [pathName stringByAppendingString:@"Ainur"];
-//            break;
-//            
-//        case ANTolkienRaceOrcs:
-//            pathName = [pathName stringByAppendingString:@"Orcs"];
-//            break;
-//            
-//        case ANTolkienRaceEnts:
-//            pathName = [pathName stringByAppendingString:@"Ents"];
-//            break;
-//            
-//        case ANTolkienRaceDragons:
-//            pathName = [pathName stringByAppendingString:@"Dragons"];
-//            break;
-//            
-//        default:
-//            break;
-//    }
-    
     
     NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
@@ -283,8 +243,6 @@ NSString* const kRaceTokienDragons  = @"Dragons";
 
     }
 
-    
-    
     return allTolkienNamesDict;
 }
 

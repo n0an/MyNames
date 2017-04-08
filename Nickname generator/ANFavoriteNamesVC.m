@@ -243,7 +243,10 @@
         NSString* nameID = selectedFavoriteName.nameID;
         ANName* originName = [[ANNamesFactory sharedFactory] getNameForID:nameID];
         
-        destinationVC.namesArray = @[originName];
+//        destinationVC.namesArray = @[originName];
+        
+        destinationVC.selectedName = originName;
+        
         destinationNavVC.transitioningDelegate = self.rotateTransition;
     }
 }
