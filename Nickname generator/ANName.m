@@ -11,6 +11,18 @@
 
 #import "ANNameCategory.h"
 
+NSString* const kRaceTokienAll      = @"All";
+NSString* const kRaceTokienElves    = @"Elves";
+NSString* const kRaceTokienMen      = @"Men";
+NSString* const kRaceTokienHobbits  = @"Hobbits";
+NSString* const kRaceTokienDwarves  = @"Dwarves";
+NSString* const kRaceTokienAinur    = @"Ainur";
+NSString* const kRaceTokienOrcs     = @"Orcs";
+NSString* const kRaceTokienEnts     = @"Ents";
+NSString* const kRaceTokienDragons  = @"Dragons";
+
+
+
 @implementation ANName
 
 #pragma mark - PUBLIC METHODS
@@ -87,6 +99,53 @@
     return name;
 }
 
+
++ (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race {
+    
+    NSString *result;
+    
+    switch (race) {
+        case ANTolkienRaceMen:
+            result = kRaceTokienMen;
+            break;
+            
+        case ANTolkienRaceElves:
+            result = kRaceTokienElves;
+            break;
+            
+        case ANTolkienRaceHobbits:
+            result = kRaceTokienHobbits;
+            break;
+            
+        case ANTolkienRaceDwarves:
+            result = kRaceTokienDwarves;
+            break;
+            
+        case ANTolkienRaceAinur:
+            result = kRaceTokienAinur;
+            break;
+            
+        case ANTolkienRaceOrcs:
+            result = kRaceTokienOrcs;
+            break;
+            
+        case ANTolkienRaceEnts:
+            result = kRaceTokienEnts;
+            break;
+            
+        case ANTolkienRaceDragons:
+            result = kRaceTokienDragons;
+            break;
+            
+        default:
+            result = kRaceTokienAll;
+            break;
+    }
+    
+    return result;
+}
+
+
 #pragma mark - HELPER METHODS
 + (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*)category andGender:(ANGender) gender {
     NSString* pathName;
@@ -115,42 +174,48 @@
         pathName = [category.alias stringByAppendingString:@"Fem"];
     }
     
-    switch (race) {
-        case ANTolkienRaceMen:
-            pathName = [pathName stringByAppendingString:@"Men"];
-            break;
-            
-        case ANTolkienRaceElves:
-            pathName = [pathName stringByAppendingString:@"Elves"];
-            break;
-            
-        case ANTolkienRaceHobbits:
-            pathName = [pathName stringByAppendingString:@"Hobbits"];
-            break;
-            
-        case ANTolkienRaceDwarves:
-            pathName = [pathName stringByAppendingString:@"Dwarves"];
-            break;
-            
-        case ANTolkienRaceAinur:
-            pathName = [pathName stringByAppendingString:@"Ainur"];
-            break;
-            
-        case ANTolkienRaceOrcs:
-            pathName = [pathName stringByAppendingString:@"Orcs"];
-            break;
-            
-        case ANTolkienRaceEnts:
-            pathName = [pathName stringByAppendingString:@"Ents"];
-            break;
-            
-        case ANTolkienRaceDragons:
-            pathName = [pathName stringByAppendingString:@"Dragons"];
-            break;
-            
-        default:
-            break;
+    if (race !=  ANTolkienRaceAll) {
+        NSString *raceString = [self getTolkienRaceStringForRace:race];
+        pathName = [pathName stringByAppendingString:raceString];
     }
+    
+//    switch (race) {
+//        case ANTolkienRaceMen:
+//            pathName = [pathName stringByAppendingString:@"Men"];
+//            break;
+//            
+//        case ANTolkienRaceElves:
+//            pathName = [pathName stringByAppendingString:@"Elves"];
+//            break;
+//            
+//        case ANTolkienRaceHobbits:
+//            pathName = [pathName stringByAppendingString:@"Hobbits"];
+//            break;
+//            
+//        case ANTolkienRaceDwarves:
+//            pathName = [pathName stringByAppendingString:@"Dwarves"];
+//            break;
+//            
+//        case ANTolkienRaceAinur:
+//            pathName = [pathName stringByAppendingString:@"Ainur"];
+//            break;
+//            
+//        case ANTolkienRaceOrcs:
+//            pathName = [pathName stringByAppendingString:@"Orcs"];
+//            break;
+//            
+//        case ANTolkienRaceEnts:
+//            pathName = [pathName stringByAppendingString:@"Ents"];
+//            break;
+//            
+//        case ANTolkienRaceDragons:
+//            pathName = [pathName stringByAppendingString:@"Dragons"];
+//            break;
+//            
+//        default:
+//            break;
+//    }
+    
     
     NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
@@ -168,14 +233,14 @@
         pathName = [@"FictionTolkien" stringByAppendingString:@"Fem"];
     }
     
-    NSString* pathNameElves = [pathName stringByAppendingString:@"Elves"];
-    NSString* pathNameMen = [pathName stringByAppendingString:@"Men"];
-    NSString* pathNameHobbits = [pathName stringByAppendingString:@"Hobbits"];
-    NSString* pathNameDwarves = [pathName stringByAppendingString:@"Dwarves"];
-    NSString* pathNameAinur = [pathName stringByAppendingString:@"Ainur"];
-    NSString* pathNameOrcs = [pathName stringByAppendingString:@"Orcs"];
-    NSString* pathNameEnts = [pathName stringByAppendingString:@"Ents"];
-    NSString* pathNameDragons = [pathName stringByAppendingString:@"Dragons"];
+    NSString* pathNameElves = [pathName stringByAppendingString:kRaceTokienElves];
+    NSString* pathNameMen = [pathName stringByAppendingString:kRaceTokienMen];
+    NSString* pathNameHobbits = [pathName stringByAppendingString:kRaceTokienHobbits];
+    NSString* pathNameDwarves = [pathName stringByAppendingString:kRaceTokienDwarves];
+    NSString* pathNameAinur = [pathName stringByAppendingString:kRaceTokienAinur];
+    NSString* pathNameOrcs = [pathName stringByAppendingString:kRaceTokienOrcs];
+    NSString* pathNameEnts = [pathName stringByAppendingString:kRaceTokienEnts];
+    NSString* pathNameDragons = [pathName stringByAppendingString:kRaceTokienDragons];
     
     NSMutableDictionary* allTolkienNamesDict = [NSMutableDictionary dictionary];
     

@@ -32,6 +32,8 @@ typedef enum {
 
 #pragma mark - PUBLIC PROPERTIES
 @property (strong, nonatomic) NSArray* namesArray;
+@property (strong, nonatomic) ANName* selectedName;
+
 
 #pragma mark - ACTIONS
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender;

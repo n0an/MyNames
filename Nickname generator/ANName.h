@@ -32,6 +32,43 @@ typedef enum {
 
 
 
+//    switch (race) {
+//        case ANTolkienRaceMen:
+//            pathName = [pathName stringByAppendingString:@"Men"];
+//            break;
+//
+//        case ANTolkienRaceElves:
+//            pathName = [pathName stringByAppendingString:@"Elves"];
+//            break;
+//
+//        case ANTolkienRaceHobbits:
+//            pathName = [pathName stringByAppendingString:@"Hobbits"];
+//            break;
+//
+//        case ANTolkienRaceDwarves:
+//            pathName = [pathName stringByAppendingString:@"Dwarves"];
+//            break;
+//
+//        case ANTolkienRaceAinur:
+//            pathName = [pathName stringByAppendingString:@"Ainur"];
+//            break;
+//
+//        case ANTolkienRaceOrcs:
+//            pathName = [pathName stringByAppendingString:@"Orcs"];
+//            break;
+//
+//        case ANTolkienRaceEnts:
+//            pathName = [pathName stringByAppendingString:@"Ents"];
+//            break;
+//
+//        case ANTolkienRaceDragons:
+//            pathName = [pathName stringByAppendingString:@"Dragons"];
+//            break;
+//
+//        default:
+//            break;
+//    }
+
 @class ANNameCategory;
 
 @interface ANName : NSObject
@@ -50,7 +87,7 @@ typedef enum {
 
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory;
 
-
++ (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race;
 
 @end
 

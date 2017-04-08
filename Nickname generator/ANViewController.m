@@ -43,13 +43,11 @@ extern NSString* const kAppLaunchesCount;
 @property (assign, nonatomic) BOOL isSettingsActive;
 @property (assign, nonatomic) BOOL settingsViewPickedUp;
 
-@property (assign, nonatomic) NSInteger namesCount;
 @property (assign, nonatomic) ANGender selectedGender;
 @property (strong, nonatomic) ANNameCategory* selectedCategory;
 @property (assign, nonatomic) ANTolkienRace selectedRace;
 
-@property (strong, nonatomic) NSArray* displayedNames;
-@property (strong, nonatomic) NSArray* namesWithDescriptions;
+@property (strong, nonatomic) ANName* displayedName;
 
 @property (strong, nonatomic) UIImage* likeNonSetImage;
 @property (strong, nonatomic) UIImage* likeSetImage;
@@ -94,17 +92,14 @@ extern NSString* const kAppLaunchesCount;
     
     self.selectedRace = ANTolkienRaceAll;
     
-    
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
-    
-    self.namesCount = 1;
     
     self.selectedGender = ANGenderMasculine;
     
     self.isDescriptionAvailable = NO;
     self.isSettingsActive = NO;
     
-    self.nameResultLabel.text = [self getNamesStringForNamesCount:self.namesCount];
+    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
     
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
@@ -175,9 +170,8 @@ extern NSString* const kAppLaunchesCount;
     
     [self.nameResultLabel addGestureRecognizer:tapGesture];
     
-    ANName* firstName = [self.displayedNames firstObject];
     
-    self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:firstName];
+    self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.displayedName];
     [self refreshLikeButton];
     
     UITapGestureRecognizer* tapGestureOnWheelView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnWheelView:)];
@@ -217,50 +211,20 @@ extern NSString* const kAppLaunchesCount;
     }
 }
 
-- (NSString*) getNamesStringForNamesCount:(NSInteger) count {
-    
-    NSMutableArray* array = [NSMutableArray array];
-    
-    for (int nameIndex = 0; nameIndex < count; nameIndex++) {
-        
-        ANName *name;
-        
-        if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
-            
-            name = [[ANNamesFactory sharedFactory] getRandomTolkienForRace:self.selectedRace andGender:self.selectedGender];
-            
-        } else {
-            name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
-        }
-        
-        
-        [array addObject:name];
-    }
-    
-    self.displayedNames = array;
-    
-    NSString* resultString = @"";
-    
-    for (ANName* name in array) {
-        resultString = [NSString stringWithFormat:@"%@ %@", resultString, name.firstName];
-    }
-    
-    self.namesWithDescriptions = [self getNamesWithDescriptions];
-    return resultString;
-}
 
-
-- (NSArray*) getNamesWithDescriptions {
+- (NSString *) getNewNameAndSetInfoButton {
     
-    NSMutableArray* cleanArray = [NSMutableArray array];
+    ANName *name;
     
-    for (ANName* name in self.displayedNames) {
-        if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
-            [cleanArray addObject:name];
-        }
+    if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        name = [[ANNamesFactory sharedFactory] getRandomTolkienForRace:self.selectedRace andGender:self.selectedGender];
+        
+    } else {
+        name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
     }
     
-    if ([cleanArray count] > 0) {
+    if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
         self.isDescriptionAvailable = YES;
         self.nameResultLabel.userInteractionEnabled = YES;
         self.infoImageView.hidden = NO;
@@ -270,9 +234,9 @@ extern NSString* const kAppLaunchesCount;
         self.infoImageView.hidden = YES;
     }
     
-    NSArray* resArray = cleanArray;
+    self.displayedName = name;
     
-    return resArray;
+    return name.firstName;
 }
 
 - (void) refreshLikeButton {
@@ -319,16 +283,28 @@ extern NSString* const kAppLaunchesCount;
     NSArray *fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[uploadFolderURL path] error:&err];
     
     // ** Getting pathName in accordance with category and gender
-    NSString* pathName;
+    NSString *genderString;
+    
+    if (gender == ANGenderMasculine) {
+        genderString = @"Masc";
+    } else {
+        genderString = @"Fem";
+    }
+    
+    NSString* pathName = [category.alias stringByAppendingString:genderString];
     
     
-//    if (gender == ANGenderMasculine) {
-//        pathName = [category.alias stringByAppendingString:@"Masc"];
-//    } else {
-//        pathName = [category.alias stringByAppendingString:@"Fem"];
-//    }
-//    
-    pathName = @"FictionTolkienMasc";
+    // ** Getting checking prefix
+    
+    NSString *checkingPrefix;
+    
+    if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        NSString *raceString = [ANName getTolkienRaceStringForRace:self.selectedRace];
+        checkingPrefix = [NSString stringWithFormat:@"%@%@%@", category.alias, raceString, genderString];
+        
+    } else {
+        checkingPrefix = pathName;
+    }
     
     // ** Uploads counter
     __block NSInteger imagesLoadedCount = 0;
@@ -336,12 +312,7 @@ extern NSString* const kAppLaunchesCount;
     // ** Main cycle
     for (NSString *fullFileName in fileList) {
         
-        
-//        if (![fullFileName hasPrefix:pathName]) {
-//            continue;
-//        }
-        
-        if (![fullFileName hasPrefix:@"FictionTolkienDragonsMasc"]) {
+        if (![fullFileName hasPrefix:checkingPrefix]) {
             continue;
         }
         
@@ -359,13 +330,12 @@ extern NSString* const kAppLaunchesCount;
             
             if (error != nil) {
                 NSLog(@"Error Uploading: %@", error);
-            } else {
                 
+            } else {
                 imagesLoadedCount++;
                 NSLog(@"-- %ld. Uploaded: %@", (long)imagesLoadedCount, fileName);
             }
         }];
-        
     }
 }
 
@@ -418,13 +388,9 @@ extern NSString* const kAppLaunchesCount;
                     NSLog(@"-- %ld. Uploaded: %@", (long)imagesLoadedCount, nameImageName);
                 }
             }];
-            
         }
-        
     }
 }
-
-
 
 #pragma mark - NOTIFICATIONS
 - (void) listenForGoingBackgroundNotification {
@@ -438,7 +404,6 @@ extern NSString* const kAppLaunchesCount;
 }
 
 #pragma mark - ANIMATIONS
-
 - (void) animateGenerateButton {
     
     [UIView animateWithDuration:0.7f
@@ -475,15 +440,9 @@ extern NSString* const kAppLaunchesCount;
                          self.nameResultLabel.alpha = 0.f;
                      } completion:^(BOOL finished) {
                          
-                         NSString* currentNamesLabel = [self getNamesStringForNamesCount:self.namesCount];
+                         self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
                          
-                         self.nameResultLabel.text = currentNamesLabel;
-                         
-                         NSArray* arr = self.displayedNames;
-                         
-                         ANName* firstName = [arr firstObject];
-                         
-                         self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:firstName];
+                         self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.displayedName];
                          [self refreshLikeButton];
                          
                          [UIView animateWithDuration:0.5f
@@ -492,7 +451,6 @@ extern NSString* const kAppLaunchesCount;
                                           }];
                      }];
 }
-
 
 - (void) animateWheelRotating {
     [UIView animateWithDuration:0.3f
@@ -549,9 +507,8 @@ extern NSString* const kAppLaunchesCount;
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
     
     // *** Saving choosen names to CoreData
-    NSArray* arr = self.displayedNames;
     
-    ANName* currentName = [arr firstObject];
+    ANName* currentName = self.displayedName;
     
     if (self.isNameFavorite) {
         [[ANDataManager sharedManager] deleteFavoriteName:currentName];
@@ -566,11 +523,11 @@ extern NSString* const kAppLaunchesCount;
 
 - (IBAction)actionShareButtonPressed:(UIButton*)sender {
     
-    ANName* firstName = [self.displayedNames objectAtIndex:0];
+    ANName* currentName = self.displayedName;
     
-    UIImage* imageToShare = [UIImage imageNamed:firstName.nameImageName];
+    UIImage* imageToShare = [UIImage imageNamed:currentName.nameImageName];
     
-    [self showShareMenuActionSheetWithText:firstName.firstName Image:imageToShare andSourceForActivityVC:self.view];
+    [self showShareMenuActionSheetWithText:currentName.firstName Image:imageToShare andSourceForActivityVC:self.view];
 }
 
 
@@ -748,7 +705,7 @@ extern NSString* const kAppLaunchesCount;
         
         ANDescriptioinVC *destinationVC = (ANDescriptioinVC*) destinationNavVC.topViewController;
         
-        destinationVC.namesArray = self.namesWithDescriptions;
+        destinationVC.selectedName = self.displayedName;
         
         if (iPhone()) {
             
@@ -784,6 +741,8 @@ extern NSString* const kAppLaunchesCount;
     [self.nameRaceSelectButton setTitle:raceTitle forState:UIControlStateNormal];
     
     [self.raceSelectionPickerView removeFromSuperview];
+    
+    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
 }
 
 
@@ -822,14 +781,12 @@ extern NSString* const kAppLaunchesCount;
         }
         
         
-        
-        
     } else {
         UIImage* bgImage = [UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName];
         [self.bgImageView setImage:bgImage];
     }
     
-    self.nameResultLabel.text = [self getNamesStringForNamesCount:self.namesCount];
+    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
     
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
     
