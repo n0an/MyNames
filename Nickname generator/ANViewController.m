@@ -101,6 +101,11 @@ extern NSString* const kAppLaunchesCount;
     
     self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
     
+    self.infoButton.layer.cornerRadius = self.infoButton.bounds.size.width / 2.f;
+    
+    self.infoButton.layer.masksToBounds = YES;
+    
+    
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
     
@@ -160,10 +165,10 @@ extern NSString* const kAppLaunchesCount;
     // Setting gesture recognizer for main label
     if (self.isDescriptionAvailable) {
         self.nameResultLabel.userInteractionEnabled = YES;
-        self.infoImageView.hidden = NO;
+        self.infoButton.hidden = NO;
     } else {
         self.nameResultLabel.userInteractionEnabled = NO;
-        self.infoImageView.hidden = YES;
+        self.infoButton.hidden = YES;
     }
     
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnNameLabel:)];
@@ -227,11 +232,11 @@ extern NSString* const kAppLaunchesCount;
     if (name.nameDescription && ![name.nameDescription isEqualToString:@""]) {
         self.isDescriptionAvailable = YES;
         self.nameResultLabel.userInteractionEnabled = YES;
-        self.infoImageView.hidden = NO;
+        self.infoButton.hidden = NO;
     } else {
         self.isDescriptionAvailable = NO;
         self.nameResultLabel.userInteractionEnabled = NO;
-        self.infoImageView.hidden = YES;
+        self.infoButton.hidden = YES;
     }
     
     self.displayedName = name;

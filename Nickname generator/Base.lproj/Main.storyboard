@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WSn-gb-sgd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WSn-gb-sgd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -206,23 +206,25 @@
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info01" translatesAutoresizingMaskIntoConstraints="NO" id="Wsg-y9-3h0">
-                                        <rect key="frame" x="299" y="16" width="20" height="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCQ-u8-YSJ">
+                                        <rect key="frame" x="293" y="12" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="T79-MN-pTq"/>
-                                            <constraint firstAttribute="height" constant="20" id="a3C-Kw-Fst"/>
+                                            <constraint firstAttribute="height" constant="30" id="M4Y-4O-liT"/>
+                                            <constraint firstAttribute="width" constant="30" id="PZF-az-J6U"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="so-so"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.91764705882352937" blue="0.76078431372549016" alpha="0.721410472972973" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Wsg-y9-3h0" firstAttribute="top" secondItem="uay-78-7I1" secondAttribute="top" constant="8" id="H16-rS-qEf"/>
+                                    <constraint firstAttribute="trailing" secondItem="xCQ-u8-YSJ" secondAttribute="trailing" constant="12" id="3at-Cm-hlx"/>
                                     <constraint firstItem="uay-78-7I1" firstAttribute="centerY" secondItem="yKj-8T-EF7" secondAttribute="centerY" id="HFG-sD-ueu"/>
                                     <constraint firstAttribute="bottom" secondItem="uay-78-7I1" secondAttribute="bottom" constant="8" id="IC8-YU-NTu"/>
-                                    <constraint firstItem="Wsg-y9-3h0" firstAttribute="trailing" secondItem="uay-78-7I1" secondAttribute="trailing" constant="-8" id="UM7-CE-XQk"/>
                                     <constraint firstItem="uay-78-7I1" firstAttribute="centerX" secondItem="yKj-8T-EF7" secondAttribute="centerX" id="m66-FT-VPk"/>
                                     <constraint firstItem="uay-78-7I1" firstAttribute="top" secondItem="yKj-8T-EF7" secondAttribute="top" constant="8" id="n1w-MX-qKE"/>
                                     <constraint firstItem="uay-78-7I1" firstAttribute="leading" secondItem="yKj-8T-EF7" secondAttribute="leading" constant="8" id="p7u-J1-Zjf"/>
+                                    <constraint firstItem="xCQ-u8-YSJ" firstAttribute="top" secondItem="yKj-8T-EF7" secondAttribute="top" constant="12" id="rqt-de-fge"/>
                                     <constraint firstAttribute="trailing" secondItem="uay-78-7I1" secondAttribute="trailing" constant="8" id="yPo-Ou-Ubt"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -346,7 +348,7 @@
                         <outlet property="genderButtonFem" destination="mMH-na-Jzf" id="3zl-C2-hhC"/>
                         <outlet property="genderButtonMasc" destination="8o4-TK-VWv" id="rNC-aH-sbU"/>
                         <outlet property="generateButton" destination="nl5-8s-DDE" id="1Te-RW-NUq"/>
-                        <outlet property="infoImageView" destination="Wsg-y9-3h0" id="DvV-ya-d7I"/>
+                        <outlet property="infoButton" destination="xCQ-u8-YSJ" id="yhi-03-MW5"/>
                         <outlet property="likeButton" destination="igX-WN-kk6" id="Q2Z-mT-iZR"/>
                         <outlet property="nameCategoryLabel" destination="iSG-aa-tdh" id="uQV-VW-2Cg"/>
                         <outlet property="nameCategorySelectButton" destination="QyD-sW-ScE" id="Tw2-WU-6tq"/>
@@ -1626,6 +1628,7 @@
         <image name="shake" width="158" height="120"/>
         <image name="shapes" width="21" height="21"/>
         <image name="share-icon" width="498" height="498"/>
+        <image name="so-so" width="192" height="192"/>
         <image name="top_charts" width="22" height="22"/>
         <image name="wiki01" width="498" height="498"/>
     </resources>

@@ -21,13 +21,14 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *wheelImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *infoImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 @property (weak, nonatomic) IBOutlet UIButton* nameCategorySelectButton;
 @property (weak, nonatomic) IBOutlet UIButton* nameRaceSelectButton;
 
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
+
 
 @property (weak, nonatomic) IBOutlet UIButton* generateButton;
 @property (weak, nonatomic) IBOutlet UIButton* likeButton;
