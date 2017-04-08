@@ -25,6 +25,7 @@ NAMECATEGORY0007 = "Кельтская мифология";
 NAMECATEGORY0201 = "Дюна";
 NAMECATEGORY0202 = "Толкиен";
 
+NAMERACE020200 = "Все";
 NAMERACE020201 = "Эльфы";
 NAMERACE020202 = "Люди";
 NAMERACE020203 = "Хоббиты";

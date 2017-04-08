@@ -25,7 +25,7 @@ NAMECATEGORY0007 = "Celtic mythology";
 NAMECATEGORY0201 = "Dune";
 NAMECATEGORY0202 = "Tolkien";
 
-
+NAMERACE020200 = "All";
 NAMERACE020201 = "Elves";
 NAMERACE020202 = "Men";
 NAMERACE020203 = "Hobbits";
@@ -35,9 +35,6 @@ NAMERACE020206 = "Orcs";
 NAMERACE020207 = "Ents";
 NAMERACE020208 = "Dragons";
 
-
-
-
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Easy to use";
 PAGEHEADERS03 = "Favorites";
@@ -45,7 +42,7 @@ PAGEHEADERS04 = "Flexible settings";
 PAGEHEADERS05 = "More info";
 
 PAGESUBHEADERS01 = "Generate a new name, pressing the button";
-PAGESUBHEADERS02 = "or by shaking device";
+PAGESUBHEADERS02 = "or by shaking the device";
 PAGESUBHEADERS03 = "Add names you like to Favorites";
 PAGESUBHEADERS04 = "Configure generator as you wish";
 PAGESUBHEADERS05 = "Get more info about name by clicking it";

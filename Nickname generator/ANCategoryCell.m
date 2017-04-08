@@ -72,7 +72,7 @@ extern NSString* const kAppLaunchesCount;
         self.whiteBoxLeftConstraint.constant = cellWidth * 2;
     }
     
-    if ([nameCategory.nameCategoryID isEqualToString:@"02.01"]) {
+    if ([nameCategory.nameCategoryID isEqualToString:@"02.01"] || [nameCategory.nameCategoryID isEqualToString:@"02.02"]) {
         
         NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
         NSInteger appLaunchesCount = [userDefaults integerForKey:kAppLaunchesCount];

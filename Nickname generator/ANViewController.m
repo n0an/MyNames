@@ -82,7 +82,15 @@ extern NSString* const kAppLaunchesCount;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.racesTolkienArray = @[@"All", @"Elves", @"Men", @"Hobbits", @"Dwarves", @"Ainir", @"Orcs", @"Ents", @"Dragons"];
+    self.racesTolkienArray = @[NSLocalizedString(@"NAMERACE020200", nil),
+                               NSLocalizedString(@"NAMERACE020201", nil),
+                               NSLocalizedString(@"NAMERACE020202", nil),
+                               NSLocalizedString(@"NAMERACE020203", nil),
+                               NSLocalizedString(@"NAMERACE020204", nil),
+                               NSLocalizedString(@"NAMERACE020205", nil),
+                               NSLocalizedString(@"NAMERACE020206", nil),
+                               NSLocalizedString(@"NAMERACE020207", nil),
+                               NSLocalizedString(@"NAMERACE020208", nil)];
     
     [self listenForGoingBackgroundNotification];
     
