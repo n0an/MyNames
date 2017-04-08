@@ -153,6 +153,20 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     return result;
 }
 
+- (NSString*) getRace {
+    
+    if ([self.nameCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        NSArray *components = [self.nameID componentsSeparatedByString:@"."];
+        
+        ANTolkienRace nameRace = (ANTolkienRace)[[components objectAtIndex:4] integerValue];
+        
+        return [ANName getTolkienRaceStringForRace:nameRace];
+    }
+    
+    return nil;
+}
+
 
 #pragma mark - HELPER METHODS
 + (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*)category andGender:(ANGender) gender {

@@ -21,6 +21,8 @@ typedef enum {
 #pragma mark - OUTLETS
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameRaceLabel;
+
 
 @property (weak, nonatomic) IBOutlet UITextView* descriptionTextView;
 

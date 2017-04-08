@@ -44,6 +44,8 @@
         }
     }
     
+    
+    
 }
 
 
@@ -51,6 +53,16 @@
     
     ANName *originName = [[ANNamesFactory sharedFactory] getNameForID:name.nameID];
     ANNameCategory *originCategory = [[ANNamesFactory sharedFactory] getCategoryForID:originName.nameCategory.nameCategoryID];
+    
+    NSString *race = [originName getRace];
+    
+    if (race) {
+        self.nameRaceLabel.text = race;
+        self.nameRaceLabel.hidden = NO;
+    } else {
+        self.nameRaceLabel.hidden = YES;
+    }
+    
     
     
     NSString *categoryAlias = originCategory.alias;

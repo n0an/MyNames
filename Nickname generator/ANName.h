@@ -47,6 +47,8 @@ typedef enum {
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory;
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race;
 
+- (NSString*) getRace;
+
 @end
 
 

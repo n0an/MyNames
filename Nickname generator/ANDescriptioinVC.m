@@ -63,6 +63,9 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -85,6 +88,15 @@
     [self.nameCategoryLabel sizeToFit];
     
     self.navigationItem.title = self.selectedName.firstName;
+    
+    NSString *race = [self.selectedName getRace];
+    
+    if (race) {
+        self.nameRaceLabel.text = race;
+        self.nameRaceLabel.hidden = NO;
+    } else {
+        self.nameRaceLabel.hidden = YES;
+    }
 }
 
 - (void) setImageAndImageHeight {
