@@ -8,11 +8,13 @@
 /* Class = "UITabBarItem"; title = "Избранное"; ObjectID = "3O2-CT-aGS"; */
 "3O2-CT-aGS.title" = "Избранное";
 
-/* Class = "UILabel"; text = "Пол:"; ObjectID = "3fN-WY-lq8"; */
-"3fN-WY-lq8.text" = "Пол:";
+/* Class = "UILabel"; text = "Пол:"; ObjectID = "dw6-41-FtW"; */
+"dw6-41-FtW.text" = "Пол:";
 
-/* Class = "UILabel"; text = "Names:"; ObjectID = "4Ug-lR-R6E"; */
-"4Ug-lR-R6E.text" = "Names:";
+/* Class = "UILabel"; text = "Раса:"; ObjectID = "bpA-xT-Eu7"; */
+"bpA-xT-Eu7.text" = "Раса:";
+
+
 
 /* Class = "UINavigationItem"; title = "Favorites"; ObjectID = "5R3-fs-Bra"; */
 "5R3-fs-Bra.title" = "Favorites";
@@ -41,8 +43,9 @@
 /* Class = "UILabel"; text = "Имен:"; ObjectID = "SQx-4E-WZK"; */
 "SQx-4E-WZK.text" = "Имен:";
 
-/* Class = "UILabel"; text = "Категория:"; ObjectID = "Swh-Uw-2Ih"; */
-"Swh-Uw-2Ih.text" = "Категория:";
+
+/* Class = "UILabel"; text = "Категория:"; ObjectID = "iSG-aa-tdh"; */
+"iSG-aa-tdh.text" = "Категория:";
 
 /* Class = "UIButton"; normalTitle = "Start"; ObjectID = "UP2-dN-n9I"; */
 "UP2-dN-n9I.normalTitle" = "Старт";
