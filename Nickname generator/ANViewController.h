@@ -16,6 +16,12 @@
 
 @property (weak, nonatomic) IBOutlet UIStackView *controlsStackView;
 @property (weak, nonatomic) IBOutlet UIStackView *raceSelectionStackView;
+
+@property (weak, nonatomic) IBOutlet UIStackView *categoryRaceLabelsStackView;
+@property (weak, nonatomic) IBOutlet UIStackView *categoryRaceButtonsStackView;
+
+
+
 @property (weak, nonatomic) IBOutlet UIPickerView *raceSelectionPickerView;
 
 

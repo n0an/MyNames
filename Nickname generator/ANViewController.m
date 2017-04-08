@@ -35,7 +35,7 @@ extern NSString* const kAppLaunchesCount;
 @interface ANViewController () <ANCategorySelectionDelegate>
 
 #pragma mark - PRIVATE PROPERTIES
-@property (strong, nonatomic) ANNamesFactory* sharedNamesFactory;
+@property (strong, nonatomic) ANNamesFactory *sharedNamesFactory;
 
 @property (assign, nonatomic) BOOL isDescriptionAvailable;
 @property (assign, nonatomic) BOOL isNameFavorite;
@@ -44,17 +44,17 @@ extern NSString* const kAppLaunchesCount;
 @property (assign, nonatomic) BOOL settingsViewPickedUp;
 
 @property (assign, nonatomic) ANGender selectedGender;
-@property (strong, nonatomic) ANNameCategory* selectedCategory;
+@property (strong, nonatomic) ANNameCategory *selectedCategory;
 @property (assign, nonatomic) ANTolkienRace selectedRace;
 
-@property (strong, nonatomic) ANName* displayedName;
+@property (strong, nonatomic) ANName *displayedName;
 
-@property (strong, nonatomic) UIImage* likeNonSetImage;
-@property (strong, nonatomic) UIImage* likeSetImage;
+@property (strong, nonatomic) UIImage *likeNonSetImage;
+@property (strong, nonatomic) UIImage *likeSetImage;
 
-@property (strong, nonatomic) UIVisualEffectView* blurEffectView1;
+@property (strong, nonatomic) UIVisualEffectView *blurEffectView1;
 
-@property (strong, nonatomic) UIView* draggingView;
+@property (strong, nonatomic) UIView *draggingView;
 
 @property (assign, nonatomic) CGPoint touchOffset;
 @property (assign, nonatomic) CGPoint lastLocation;
@@ -63,6 +63,8 @@ extern NSString* const kAppLaunchesCount;
 @property (strong, nonatomic) id rotateTransition;
 
 @property (strong, nonatomic) NSArray *racesTolkienArray;
+
+@property (strong, nonatomic) UILabel *raceLabel;
 
 @end
 
@@ -75,7 +77,6 @@ extern NSString* const kAppLaunchesCount;
 - (BOOL) prefersStatusBarHidden {
     return YES;
 }
-
 
 
 #pragma mark - viewDidLoad
@@ -812,17 +813,33 @@ extern NSString* const kAppLaunchesCount;
     
     if ([category.nameCategoryID isEqualToString:@"02.02"]) {
         
-        [self.controlsStackView addArrangedSubview:self.raceSelectionStackView];
+//        [self.controlsStackView addArrangedSubview:self.raceSelectionStackView];
+        
         [self.controlsStackView setSpacing:8];
+        
+        CGRect raceLabelFrame = CGRectMake(0, 0, 80, 30);
+        UILabel *raceLabel = [[UILabel alloc] initWithFrame:raceLabelFrame];
+        raceLabel.text = @"Race";
+        
+        self.raceLabel = raceLabel;
+        
+        [self.categoryRaceLabelsStackView addArrangedSubview:raceLabel];
+        
+        [self.categoryRaceButtonsStackView addArrangedSubview:self.nameRaceSelectButton];
+        
         
         NSString *currentRaceTitle = self.racesTolkienArray[self.selectedRace];
         
         [self.nameRaceSelectButton setTitle:currentRaceTitle forState:UIControlStateNormal];
         
     } else {
-        if (self.controlsStackView.arrangedSubviews.count == 3) {
-            [self.controlsStackView removeArrangedSubview:self.raceSelectionStackView];
+        if (self.categoryRaceButtonsStackView.arrangedSubviews.count == 2) {
+//            [self.controlsStackView removeArrangedSubview:self.raceSelectionStackView];
             [self.controlsStackView setSpacing:40];
+            
+            [self.categoryRaceLabelsStackView removeArrangedSubview:self.raceLabel];
+            
+            [self.categoryRaceButtonsStackView removeArrangedSubview:self.nameRaceSelectButton];
         }
     }
 }
