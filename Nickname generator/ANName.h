@@ -46,6 +46,7 @@ typedef enum {
 + (ANName*) randomNameforCategory:(ANNameCategory*)category race:(ANTolkienRace)race andGender:(ANGender) gender;
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory;
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race;
++ (NSString *) adoptTolkienRaceForLocalizationForRace:(ANTolkienRace) race;
 
 - (NSString*) getRace;
 

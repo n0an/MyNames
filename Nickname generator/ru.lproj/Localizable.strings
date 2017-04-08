@@ -25,6 +25,15 @@ NAMECATEGORY0007 = "Кельтская мифология";
 NAMECATEGORY0201 = "Дюна";
 NAMECATEGORY0202 = "Толкиен";
 
+NAMERACE020201 = "Эльфы";
+NAMERACE020202 = "Люди";
+NAMERACE020203 = "Хоббиты";
+NAMERACE020204 = "Гномы";
+NAMERACE020205 = "Айнур";
+NAMERACE020206 = "Орки";
+NAMERACE020207 = "Энты";
+NAMERACE020208 = "Драконы";
+
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Удобный интерфейс";
 PAGEHEADERS03 = "Избранное";

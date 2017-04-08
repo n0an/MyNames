@@ -108,6 +108,52 @@ NSString* const kRaceTokienDragons  = @"Dragons";
 }
 
 
++ (NSString *) adoptTolkienRaceForLocalizationForRace:(ANTolkienRace) race {
+    
+    NSString *result;
+    
+    switch (race) {
+        case ANTolkienRaceMen:
+            result = NSLocalizedString(@"NAMERACE020202", nil);
+            break;
+            
+        case ANTolkienRaceElves:
+            result = NSLocalizedString(@"NAMERACE020201", nil);
+            break;
+            
+        case ANTolkienRaceHobbits:
+            result = NSLocalizedString(@"NAMERACE020203", nil);
+            break;
+            
+        case ANTolkienRaceDwarves:
+            result = NSLocalizedString(@"NAMERACE020204", nil);
+            break;
+            
+        case ANTolkienRaceAinur:
+            result = NSLocalizedString(@"NAMERACE020205", nil);
+            break;
+            
+        case ANTolkienRaceOrcs:
+            result = NSLocalizedString(@"NAMERACE020206", nil);
+            break;
+            
+        case ANTolkienRaceEnts:
+            result = NSLocalizedString(@"NAMERACE020207", nil);
+            break;
+            
+        case ANTolkienRaceDragons:
+            result = NSLocalizedString(@"NAMERACE020208", nil);
+            break;
+            
+        default:
+            result = nil;
+            break;
+    }
+    
+    return result;
+}
+
+
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race {
     
     NSString *result;
@@ -153,6 +199,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     return result;
 }
 
+
 - (NSString*) getRace {
     
     if ([self.nameCategory.nameCategoryID isEqualToString:@"02.02"]) {
@@ -161,7 +208,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
         
         ANTolkienRace nameRace = (ANTolkienRace)[[components objectAtIndex:4] integerValue];
         
-        return [ANName getTolkienRaceStringForRace:nameRace];
+        return [ANName adoptTolkienRaceForLocalizationForRace:nameRace];
     }
     
     return nil;

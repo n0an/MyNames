@@ -85,32 +85,35 @@
 
 - (NSString*) adoptToLocalizationString:(NSString*) string {
     
-    NSString* adaptedCategory;
+    NSString* adoptedCategory;
     
     if ([string isEqualToString:@"Greek mythology"] || [string isEqualToString:@"Греческая мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0001", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0001", nil);
     } else if ([string isEqualToString:@"Vedic mythology"] || [string isEqualToString:@"Ведическая мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0002", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0002", nil);
     } else if ([string isEqualToString:@"Roman mythology"] || [string isEqualToString:@"Римская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0003", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0003", nil);
     } else if ([string isEqualToString:@"Norse mythology"] || [string isEqualToString:@"Скандинавская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0004", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0004", nil);
     } else if ([string isEqualToString:@"Egyptian mythology"] || [string isEqualToString:@"Египетская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0005", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0005", nil);
     } else if ([string isEqualToString:@"Persian mythology"] || [string isEqualToString:@"Персидская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0006", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0006", nil);
     } else if ([string isEqualToString:@"Celtic mythology"] || [string isEqualToString:@"Кельтская мифология"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0007", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0007", nil);
     } else if ([string isEqualToString:@"Dune"] || [string isEqualToString:@"Дюна"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0201", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0201", nil);
     } else if ([string isEqualToString:@"Tolkien"] || [string isEqualToString:@"Толкиен"]) {
-        adaptedCategory = NSLocalizedString(@"NAMECATEGORY0202", nil);
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0202", nil);
     } else {
-        adaptedCategory = @"";
+        adoptedCategory = @"";
     }
     
-    return adaptedCategory;
+    return adoptedCategory;
 }
+
+
+
 
 #pragma mark - HELPER METHODS
 - (ANNameCategory *) getRandomCategory {
