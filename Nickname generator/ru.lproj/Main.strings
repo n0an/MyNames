@@ -8,8 +8,13 @@
 /* Class = "UITabBarItem"; title = "Избранное"; ObjectID = "3O2-CT-aGS"; */
 "3O2-CT-aGS.title" = "Избранное";
 
-/* Class = "UILabel"; text = "Пол:"; ObjectID = "dw6-41-FtW"; */
+/* Class = "UILabel"; text = "Gender:"; ObjectID = "dw6-41-FtW"; */
 "dw6-41-FtW.text" = "Пол:";
+
+/* Class = "UILabel"; text = "Gender:"; ObjectID = "LXk-GY-ek1"; */
+"LXk-GY-ek1.text" = "Пол:";
+
+
 
 /* Class = "UILabel"; text = "Раса:"; ObjectID = "bpA-xT-Eu7"; */
 "bpA-xT-Eu7.text" = "Раса:";
@@ -47,8 +52,15 @@
 /* Class = "UILabel"; text = "Категория:"; ObjectID = "iSG-aa-tdh"; */
 "iSG-aa-tdh.text" = "Категория:";
 
-/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "UP2-dN-n9I"; */
-"UP2-dN-n9I.normalTitle" = "Старт";
+/* Class = "UILabel"; text = "Категория:"; ObjectID = "Jx8-6l-dRG"; */
+"Jx8-6l-dRG.text" = "Категория:";
+
+
+
+
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "X5S-5s-7qg"; */
+"X5S-5s-7qg.normalTitle" = "Старт";
 
 /* Class = "UILabel"; text = "Gender:"; ObjectID = "Vrj-4I-EFG"; */
 "Vrj-4I-EFG.text" = "Gender:";
@@ -68,27 +80,12 @@
 /* Class = "UILabel"; text = "Gaia Eos"; ObjectID = "uay-78-7I1"; */
 "uay-78-7I1.text" = "Gaia Eos";
 
-/* Class = "UISegmentedControl"; udp-kH-BYI.segmentTitles[0] = "1"; ObjectID = "udp-kH-BYI"; */
-"udp-kH-BYI.segmentTitles[0]" = "1";
 
-/* Class = "UISegmentedControl"; udp-kH-BYI.segmentTitles[1] = "2"; ObjectID = "udp-kH-BYI"; */
-"udp-kH-BYI.segmentTitles[1]" = "2";
 
-/* Class = "UISegmentedControl"; udp-kH-BYI.segmentTitles[2] = "3"; ObjectID = "udp-kH-BYI"; */
-"udp-kH-BYI.segmentTitles[2]" = "3";
+"iae-9w-NMq.normalTitle" = "Греческая мифология";
 
-/* Class = "UISegmentedControl"; xd9-cr-fGs.segmentTitles[0] = "1"; ObjectID = "xd9-cr-fGs"; */
-"xd9-cr-fGs.segmentTitles[0]" = "1";
 
-/* Class = "UISegmentedControl"; xd9-cr-fGs.segmentTitles[1] = "2"; ObjectID = "xd9-cr-fGs"; */
-"xd9-cr-fGs.segmentTitles[1]" = "2";
 
-/* Class = "UISegmentedControl"; xd9-cr-fGs.segmentTitles[2] = "3"; ObjectID = "xd9-cr-fGs"; */
-"xd9-cr-fGs.segmentTitles[2]" = "3";
-
-/* Class = "UILabel"; text = "Norse mythology"; ObjectID = "zCA-sY-RVN"; */
-"zCA-sY-RVN.text" = "Norse mythology";
-
-"jjS-m7-8hp.normalTitle" = "Пропустить";
+"mp1-Mc-k0n.normalTitle" = "Пропустить";
 
 
