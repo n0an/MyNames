@@ -259,7 +259,18 @@ NSString* const kRaceTokienDragons  = @"Dragons";
 
 + (void) fillName:(ANName*)inputName withParams:(NSDictionary*) params andKey:(NSString*) key andGender:(ANGender) gender andCategory:(ANNameCategory*) category {
     
-    NSString* firstNameStr = key.lowercaseString.capitalizedString;
+    NSString* firstNameStr;
+    
+    NSArray *nameComponents = [key componentsSeparatedByString:@" "];
+    
+    if ([nameComponents count] > 1) {
+        
+        firstNameStr = [self handleRomanNumbersForNameComponents:nameComponents];
+        
+    } else {
+        firstNameStr = key.lowercaseString.capitalizedString;
+    }
+    
     NSDictionary* nameParams = [params objectForKey:key];
     NSString* nameID = [nameParams objectForKey:@"nameID"];
     
@@ -292,4 +303,55 @@ NSString* const kRaceTokienDragons  = @"Dragons";
 }
 
 
++ (BOOL) findRomanNumberForComponent:(NSString *) component {
+    NSArray *romanNumbers = @[@"II", @"III", @"IV", @"VI", @"VII", @"VIII", @"IX", @"XI", @"XII", @"XIII", @"XIV", @"XV", @"XVI", @"XVII", @"XVIII", @"XIX", @"XX"];
+    
+    for (NSString *romanNumber in romanNumbers) {
+        if ([[component uppercaseString] isEqualToString:romanNumber]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
++ (NSString *) handleRomanNumbersForNameComponents:(NSArray *) nameComponents {
+    
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    for (int index = 1; index < [nameComponents count]; index++) {
+        
+        NSString *component = nameComponents[index];
+        
+        if ([component length] == 1) {
+            [resultArray addObject:[component uppercaseString]];
+            continue;
+        }
+        
+        if ([self findRomanNumberForComponent:component]) {
+            [resultArray addObject:[component uppercaseString]];
+            
+        } else {
+            [resultArray addObject:[component capitalizedString]];
+        }
+    }
+    
+    NSString *firstComponent = [[nameComponents firstObject] capitalizedString];
+    [resultArray insertObject:firstComponent atIndex:0];
+    NSString *resultString = [resultArray componentsJoinedByString:@" "];
+    
+    return resultString;
+}
+
+
+
+
 @end
+
+
+
+
+
+
+
+
