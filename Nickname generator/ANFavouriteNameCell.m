@@ -9,6 +9,9 @@
 #import "ANFavouriteNameCell.h"
 #import "ANFavoriteName.h"
 #import "ANNamesFactory.h"
+#import "ANFBStorageManager.h"
+#import <FirebaseStorage/FirebaseStorage.h>
+#import "ANNameCategory.h"
 
 @implementation ANFavouriteNameCell
 
@@ -23,16 +26,8 @@
     NSString* adaptedCategory = [[ANNamesFactory sharedFactory] adoptToLocalizationString:favoriteName.nameCategoryTitle];
     self.nameCategoryLabel.text = adaptedCategory;
     
-    UIImage* imageName = [UIImage imageNamed:favoriteName.nameImageName];
-    
-    if (!imageName) {
-        self.nameImageView.image = [UIImage imageNamed:@"eye"];
-        [self.nameImageView setContentMode:UIViewContentModeCenter];
-        
-    } else {
-        self.nameImageView.image = [UIImage imageNamed:favoriteName.nameImageName];
-        [self.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
-    }
+
+    [self setImageAndImageHeightForName:favoriteName];
     
     if (isEditingMode) {
         
@@ -52,6 +47,61 @@
 }
 
 
+- (void) setImageAndImageHeightForName:(ANFavoriteName *) name {
+    
+    ANName *originName = [[ANNamesFactory sharedFactory] getNameForID:name.nameID];
+    ANNameCategory *originCategory = [[ANNamesFactory sharedFactory] getCategoryForID:originName.nameCategory.nameCategoryID];
+    
+    
+    NSString *categoryAlias = originCategory.alias;
+    
+    NSString* pathName;
+    
+    if (name.nameGender.boolValue == ANGenderMasculine) {
+        pathName = [categoryAlias stringByAppendingString:@"MascImages"];
+    } else {
+        pathName = [categoryAlias stringByAppendingString:@"FemImages"];
+    }
+    
+    NSString *imageFileName = [NSString stringWithFormat:@"%@/%@", pathName, name.nameImageName];
+    
+    NSURL *imageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:imageFileName];
+    
+    
+    // *** DOWNLOAD FROM FIREBASE TO FILE AND STORE LOCALLY
+    
+    UIImage *nameImage = [UIImage imageWithContentsOfFile:[imageFileURL path]];
+    
+    if (!nameImage) {
+        
+        self.nameImageView.image = [UIImage imageNamed:@"eye"];
+        [self.nameImageView setContentMode:UIViewContentModeCenter];
+        
+        
+        FIRStorageReference *imageNameRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:imageFileName];
+        
+        FIRStorageDownloadTask *downloadTask = [imageNameRef writeToFile:imageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
+            
+            if (error) {
+                NSLog(@"error occured = %@", error);
+                
+            } else {
+                UIImage* nameImage = [UIImage imageWithContentsOfFile:[imageFileURL path]];
+                [self.nameImageView setImage:nameImage];
+                [self.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
+
+            }
+        }];
+        
+    } else {
+        
+        self.nameImageView.image = nameImage;
+        [self.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
+        
+    }
+    
+    
+}
 
 
 @end

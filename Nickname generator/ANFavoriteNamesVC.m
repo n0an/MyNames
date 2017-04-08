@@ -117,16 +117,6 @@
 
 - (BOOL) isDescriptionAvailable: (ANFavoriteName*) name {
     
-    NSString *nameID = name.nameID;
-    NSString *firstName = name.nameFirstName;
-    NSString *nameDesc = name.nameDescription;
-    
-    NSLog(@"nameID = %@", nameID);
-    NSLog(@"firstName = %@", firstName);
-    NSLog(@"nameDesc = %@", nameDesc);
-    
-    NSLog(@"return = %d", name.nameDescription && ![name.nameDescription isEqualToString:@""]);
-
     return name.nameDescription && ![name.nameDescription isEqualToString:@""];
 }
 
@@ -306,6 +296,24 @@
 }
 
 #pragma mark - UITableViewDelegate
+- (nullable NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.isEditingMode) {
+        return indexPath;
+        
+    } else {
+        ANFavoriteName* name = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        if ([self isDescriptionAvailable:name]) {
+            return indexPath;
+        }
+    }
+    
+    return nil;
+    
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ANFavouriteNameCell* selectedCell = [tableView cellForRowAtIndexPath:indexPath];
