@@ -116,6 +116,17 @@
 }
 
 - (BOOL) isDescriptionAvailable: (ANFavoriteName*) name {
+    
+    NSString *nameID = name.nameID;
+    NSString *firstName = name.nameFirstName;
+    NSString *nameDesc = name.nameDescription;
+    
+    NSLog(@"nameID = %@", nameID);
+    NSLog(@"firstName = %@", firstName);
+    NSLog(@"nameDesc = %@", nameDesc);
+    
+    NSLog(@"return = %d", name.nameDescription && ![name.nameDescription isEqualToString:@""]);
+
     return name.nameDescription && ![name.nameDescription isEqualToString:@""];
 }
 

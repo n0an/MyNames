@@ -34,14 +34,21 @@
         [self.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
     }
     
-    if (isDescriptionAvailable) {
-        self.infoImageView.hidden = NO;
-    } else {
+    if (isEditingMode) {
+        
+        self.checkBoxImageView.hidden = NO;
         self.infoImageView.hidden = YES;
+        
+    } else {
+        self.checkBoxImageView.hidden = YES;
+        
+        if (isDescriptionAvailable) {
+            self.infoImageView.hidden = NO;
+        } else {
+            self.infoImageView.hidden = YES;
+        }
     }
     
-    self.checkBoxImageView.hidden = !isEditingMode;
-    self.infoImageView.hidden = isEditingMode;
 }
 
 
