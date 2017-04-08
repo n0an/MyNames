@@ -9,6 +9,9 @@
 #import "ANPageViewController.h"
 #import "ANContentPageViewController.h"
 
+#import "ANFBStorageManager.h"
+#import <FirebaseStorage/FirebaseStorage.h>
+
 @interface ANPageViewController () <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) NSArray* pageHeaders;
@@ -46,6 +49,8 @@
     ANContentPageViewController* firstVC = [self showViewControllerAtIndex:0];
     
     [self setViewControllers:@[firstVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    
+    [self loadAssets];
 }
 
 #pragma mark - HELPER METHODS
@@ -68,6 +73,50 @@
     ANContentPageViewController* nextVC = [self showViewControllerAtIndex:++index];
     
     [self setViewControllers:@[nextVC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+}
+
+- (void) loadAssets {
+    
+    [self loadAssetsWithPrefix:@"Stripes"];
+    [self loadAssetsWithPrefix:@"Backgrounds"];
+    
+}
+
+- (void) loadAssetsWithPrefix:(NSString *) prefix {
+    
+    NSArray *categoryAliasesArray = @[@"FictionDune",
+                                      @"FictionTolkien",
+                                      @"MythGreek",
+                                      @"MythVedic",
+                                      @"MythRoman",
+                                      @"MythNorse",
+                                      @"MythEgypt",
+                                      @"MythPersian",
+                                      @"MythCeltic"];
+    
+    for (NSString *categoryAlias in categoryAliasesArray) {
+        
+        NSString* imageFileName = [NSString stringWithFormat:@"%@/%@.jpg",prefix, categoryAlias];
+        
+        NSURL* stripeImageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:imageFileName];
+        
+        UIImage* stripeImage = [UIImage imageWithContentsOfFile:[stripeImageFileURL path]];
+        
+        if (!stripeImage) {
+            
+            FIRStorageReference *stripeRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:imageFileName];
+            
+            FIRStorageDownloadTask *downloadTask = [stripeRef writeToFile:stripeImageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
+                
+                if (error) {
+                    NSLog(@"error occured = %@", error);
+                    
+                } else {
+                    NSLog(@"image downloaded: %@", imageFileName);
+                }
+            }];
+        }
+    }
 }
 
 #pragma mark - UIPageViewControllerDataSource
