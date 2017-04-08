@@ -55,7 +55,7 @@ extern NSString* const kAppLaunchesCount;
         }
         
     } else {
-        self.categoryImageView.image = [UIImage imageNamed:nameCategory.nameCategoryImageName];
+        self.categoryImageView.image = [UIImage imageNamed:@"diceBG01_3840"];
     }
     
     self.categoryImageView.contentMode = UIViewContentModeScaleAspectFill;

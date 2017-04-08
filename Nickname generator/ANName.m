@@ -11,6 +11,7 @@
 
 #import "ANNameCategory.h"
 
+#pragma mark - CONSTANTS
 NSString* const kRaceTokienAll      = @"All";
 NSString* const kRaceTokienElves    = @"Elves";
 NSString* const kRaceTokienMen      = @"Men";
@@ -87,7 +88,6 @@ NSString* const kRaceTokienDragons  = @"Dragons";
         
         dict = [self getNamesDictionaryforCategory:nameCategory andGender:nameGender];
     }
-    
     
     NSArray* namesArr = [dict allKeys];
     

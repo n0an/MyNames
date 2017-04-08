@@ -10,11 +10,14 @@
 
 @interface ANNameCategory : NSObject
 
+#pragma mark - PROPERTIES
 @property (strong, nonatomic) NSString* nameCategoryTitle;
 @property (strong, nonatomic) NSString* nameCategoryImageName;
 @property (strong, nonatomic) NSString* nameCategoryBackgroundImageName;
 @property (strong, nonatomic) NSString* alias;
 @property (strong, nonatomic) NSString* nameCategoryID;
 
-- (instancetype)initWithCategoryID:(NSString*) nameCategoryID andCategoryTitle:(NSString*) title andCategoryImageName:(NSString*) categoryImageName andCategoryBackgroundImageName:(NSString*) nameCategoryBackgroundImageName andAlias:(NSString*) alias;
+#pragma mark - INITIALIZER
+- (instancetype)initWithCategoryID:(NSString*) nameCategoryID andCategoryTitle:(NSString*) title andAlias:(NSString*) alias;
+
 @end

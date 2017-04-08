@@ -109,7 +109,7 @@ extern NSString* const kAppLaunchesCount;
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
     
-    [self.bgImageView setImage:[UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName]];
+    [self.bgImageView setImage:[UIImage imageNamed:@"diceBG03_1920"]];
     
     lightBlurEffectView.frame = self.controlsView.bounds;
     [self.controlsView insertSubview:lightBlurEffectView atIndex:0];
@@ -793,7 +793,7 @@ extern NSString* const kAppLaunchesCount;
         
         
     } else {
-        UIImage* bgImage = [UIImage imageNamed:self.selectedCategory.nameCategoryBackgroundImageName];
+        UIImage* bgImage = [UIImage imageNamed:@"diceBG03_1920"];
         [self.bgImageView setImage:bgImage];
     }
     

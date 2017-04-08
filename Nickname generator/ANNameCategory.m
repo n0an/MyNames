@@ -10,14 +10,12 @@
 
 @implementation ANNameCategory
 
-- (instancetype)initWithCategoryID:(NSString*) nameCategoryID andCategoryTitle:(NSString*) title andCategoryImageName:(NSString*) categoryImageName andCategoryBackgroundImageName:(NSString*) nameCategoryBackgroundImageName andAlias:(NSString*) alias
+- (instancetype)initWithCategoryID:(NSString*) nameCategoryID andCategoryTitle:(NSString*) title andAlias:(NSString*) alias
 {
     self = [super init];
     if (self) {
         self.nameCategoryID = nameCategoryID;
         self.nameCategoryTitle = title;
-        self.nameCategoryImageName = categoryImageName;
-        self.nameCategoryBackgroundImageName = nameCategoryBackgroundImageName;
         self.alias = alias;
     }
     return self;

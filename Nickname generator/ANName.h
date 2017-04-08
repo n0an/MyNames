@@ -8,16 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#pragma mark - ENUMS
 typedef enum {
-    
     ANGenderAll = -1,
     ANGenderMasculine = 0,
     ANGenderFeminine = 1
-    
 } ANGender;
 
 typedef enum {
-    
     ANTolkienRaceAll = 0,
     ANTolkienRaceElves = 1,
     ANTolkienRaceMen = 2,
@@ -27,7 +25,6 @@ typedef enum {
     ANTolkienRaceOrcs = 6,
     ANTolkienRaceEnts = 7,
     ANTolkienRaceDragons = 8
-    
 } ANTolkienRace;
 
 
@@ -35,6 +32,7 @@ typedef enum {
 
 @interface ANName : NSObject
 
+#pragma mark - PROPERTIES
 @property (strong, nonatomic) NSString* nameID;
 @property (strong, nonatomic) NSString* firstName;
 @property (strong, nonatomic) ANNameCategory* nameCategory;
@@ -43,12 +41,10 @@ typedef enum {
 @property (strong, nonatomic) NSString* nameURL;
 @property (assign, nonatomic) ANGender  nameGender;
 
-
+#pragma mark - PUBLIC METHODS
 + (ANName*) randomNameforCategory:(ANNameCategory*)category andGender:(ANGender) gender;
 + (ANName*) randomNameforCategory:(ANNameCategory*)category race:(ANTolkienRace)race andGender:(ANGender) gender;
-
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory;
-
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race;
 
 @end

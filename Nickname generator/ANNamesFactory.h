@@ -13,11 +13,12 @@
 
 @property (strong, nonatomic) NSArray* namesCategories;
 
+#pragma mark - SINGLETON
 + (ANNamesFactory*) sharedFactory;
 
+#pragma mark - PUBLIC METHODS
 - (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender;
 - (ANName*) getRandomTolkienForRace:(ANTolkienRace) race andGender:(ANGender) gender;
-
 
 
 - (ANName*) getNameForID:(NSString*) nameID;
