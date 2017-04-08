@@ -559,6 +559,12 @@ extern NSString* const kAppLaunchesCount;
     }
 }
 
+- (IBAction)actionTapOnInfoButton:(id)sender {
+    if (self.isDescriptionAvailable) {
+        
+        [self performSegueWithIdentifier:@"showDescriptionVC" sender:nil];
+    }
+}
 
 - (void) actionTapOnNameLabel:(UITapGestureRecognizer*) recognizer {
     if (self.isDescriptionAvailable) {

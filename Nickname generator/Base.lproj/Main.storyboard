@@ -214,6 +214,9 @@
                                             <constraint firstAttribute="width" constant="30" id="PZF-az-J6U"/>
                                         </constraints>
                                         <state key="normal" image="so-so"/>
+                                        <connections>
+                                            <action selector="actionTapOnInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJQ-Az-XXy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.91764705882352937" blue="0.76078431372549016" alpha="0.721410472972973" colorSpace="custom" customColorSpace="sRGB"/>
