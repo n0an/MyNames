@@ -108,7 +108,8 @@ extern NSString* const kAppLaunchesCount;
     self.isDescriptionAvailable = NO;
     self.isSettingsActive = NO;
     
-    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
+//    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
+    [self animateResultsLabelUpdate];
     
     self.infoButton.layer.cornerRadius = self.infoButton.bounds.size.width / 2.f;
     
@@ -589,7 +590,8 @@ extern NSString* const kAppLaunchesCount;
         }
     }
     
-    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
+//    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
+    [self animateResultsLabelUpdate];
  
 }
 
@@ -789,7 +791,8 @@ extern NSString* const kAppLaunchesCount;
     
     [self.raceSelectionPickerView removeFromSuperview];
     
-    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
+//    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
+    [self animateResultsLabelUpdate];
 }
 
 

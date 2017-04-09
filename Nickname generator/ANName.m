@@ -302,12 +302,9 @@ NSString* const kRaceTokienDragons  = @"Dragons";
         pathName = [category.alias stringByAppendingString:@"Fem"];
     }
     
-#warning don't neet to check for !=All
-    if (race !=  ANTolkienRaceAll) {
-        NSString *raceString = [self getTolkienRaceStringForRace:race];
-        pathName = [pathName stringByAppendingString:raceString];
-        
-    }
+    NSString *raceString = [self getTolkienRaceStringForRace:race];
+    pathName = [pathName stringByAppendingString:raceString];
+    
     
     NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
@@ -405,14 +402,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     
     return allTolkienNamesDict;
     
-    
-    
 }
-
-
-
-
-
 
 
 + (void) fillName:(ANName*)inputName withParams:(NSDictionary*) params andKey:(NSString*) key andCategory:(ANNameCategory*) category {
