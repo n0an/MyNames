@@ -103,7 +103,7 @@ extern NSString* const kAppLaunchesCount;
     
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
     
-    self.selectedGender = ANGenderMasculine;
+    self.selectedGender = ANGenderAll;
     
     self.isDescriptionAvailable = NO;
     self.isSettingsActive = NO;
@@ -547,25 +547,63 @@ extern NSString* const kAppLaunchesCount;
 
 
 - (IBAction)actionGndrBtnPressed:(id)sender {
+    
     UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
     UIImage* mascNonactiveImage = [UIImage imageNamed:@"masc02"];
     
     UIImage* femActiveImage = [UIImage imageNamed:@"fem01"];
     UIImage* femNonactiveImage = [UIImage imageNamed:@"fem02"];
     
+    
     if ([sender isEqual:self.genderButtonMasc]) {
-        self.selectedGender = ANGenderMasculine;
         
-        [self.genderButtonMasc setImage:mascActiveImage forState:UIControlStateNormal];
-        [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
-     
+        if (self.selectedGender == ANGenderAll || self.selectedGender == ANGenderFeminine) {
+            self.selectedGender = ANGenderMasculine;
+            
+            [self.genderButtonMasc setImage:mascActiveImage forState:UIControlStateNormal];
+            [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
+            
+            
+        } else if (self.selectedGender == ANGenderMasculine) {
+            self.selectedGender = ANGenderAll;
+            
+            [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
+            [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
+            
+        }
+        
     } else if ([sender isEqual:self.genderButtonFem]) {
-        self.selectedGender = ANGenderFeminine;
         
-        [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
-        [self.genderButtonFem setImage:femActiveImage forState:UIControlStateNormal];
-        
+        if (self.selectedGender == ANGenderAll || self.selectedGender == ANGenderMasculine) {
+            self.selectedGender = ANGenderFeminine;
+            
+            [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
+            [self.genderButtonFem setImage:femActiveImage forState:UIControlStateNormal];
+            
+        } else if (self.selectedGender == ANGenderFeminine) {
+            self.selectedGender = ANGenderAll;
+            
+            [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
+            [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
+            
+        }
     }
+    
+    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
+    
+//    if ([sender isEqual:self.genderButtonMasc]) {
+//        self.selectedGender = ANGenderMasculine;
+//        
+//        [self.genderButtonMasc setImage:mascActiveImage forState:UIControlStateNormal];
+//        [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
+//     
+//    } else if ([sender isEqual:self.genderButtonFem]) {
+//        self.selectedGender = ANGenderFeminine;
+//        
+//        [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
+//        [self.genderButtonFem setImage:femActiveImage forState:UIControlStateNormal];
+//        
+//    }
 }
 
 - (IBAction)actionTapOnInfoButton:(id)sender {
@@ -648,6 +686,8 @@ extern NSString* const kAppLaunchesCount;
     [self.raceSelectionPickerView setFrame:self.controlsView.bounds];
     [self.controlsView addSubview:self.raceSelectionPickerView];
 }
+
+
 
 
 #pragma mark - TOUCHES

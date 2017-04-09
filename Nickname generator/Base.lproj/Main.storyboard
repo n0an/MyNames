@@ -58,7 +58,7 @@
                                                                             <constraint firstAttribute="height" constant="30" id="Q7U-h6-nfd"/>
                                                                             <constraint firstAttribute="width" constant="30" id="nOB-aS-qng"/>
                                                                         </constraints>
-                                                                        <state key="normal" image="masc01"/>
+                                                                        <state key="normal" image="masc02"/>
                                                                         <connections>
                                                                             <action selector="actionGndrBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1nz-bx-yb2"/>
                                                                         </connections>
@@ -352,11 +352,11 @@
                                 <exclude reference="Yiy-YL-yiU"/>
                                 <include reference="ZBZ-Ts-L1J"/>
                                 <include reference="nQW-S8-QEt"/>
+                                <include reference="7wP-BJ-bZr"/>
+                                <exclude reference="crj-CY-DWT"/>
                                 <include reference="Ddq-Ym-0Yo"/>
                                 <exclude reference="G7n-8U-hwE"/>
                                 <exclude reference="mkn-cc-Cze"/>
-                                <include reference="7wP-BJ-bZr"/>
-                                <exclude reference="crj-CY-DWT"/>
                                 <include reference="TcT-56-HBU"/>
                                 <include reference="yOu-As-jbh"/>
                             </mask>
