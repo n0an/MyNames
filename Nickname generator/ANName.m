@@ -216,6 +216,8 @@ NSString* const kRaceTokienDragons  = @"Dragons";
 
 
 #pragma mark - HELPER METHODS
+
+// ==== PLAIN NAMES
 + (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*)category andGender:(ANGender) gender {
     
     NSDictionary *resultDict;
@@ -257,7 +259,39 @@ NSString* const kRaceTokienDragons  = @"Dragons";
 
 
 
+// ==== RACE NAMES
+
 + (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*) category race:(ANTolkienRace) race andGender:(ANGender) gender {
+    
+    NSDictionary *resultDict;
+    
+    if (gender == ANGenderAll) {
+        NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
+        
+        NSDictionary* dictMasc = [self getTolkienDictMascOrFemForCategory:category race:race andGender:ANGenderMasculine];
+        
+        [tmpDict addEntriesFromDictionary:dictMasc];
+        
+        if (race != ANTolkienRaceOrcs && race != ANTolkienRaceDragons) {
+            
+            NSDictionary* dictFem = [self getTolkienDictMascOrFemForCategory:category race:race andGender:ANGenderFeminine];
+            
+            
+            [tmpDict addEntriesFromDictionary:dictFem];
+        }
+        
+        resultDict = tmpDict;
+        
+    } else {
+        resultDict = [self getTolkienDictMascOrFemForCategory:category race:race andGender:gender];
+    }
+    
+    return resultDict;
+    
+}
+
+
++ (NSDictionary *) getTolkienDictMascOrFemForCategory:(ANNameCategory*)category race:(ANTolkienRace) race andGender:(ANGender) gender {
     
     NSString* pathName;
     
@@ -269,17 +303,24 @@ NSString* const kRaceTokienDragons  = @"Dragons";
         pathName = [category.alias stringByAppendingString:@"Fem"];
     }
     
+#warning don't neet to check for !=All
     if (race !=  ANTolkienRaceAll) {
         NSString *raceString = [self getTolkienRaceStringForRace:race];
         pathName = [pathName stringByAppendingString:raceString];
+        
     }
-    
     
     NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     
     return dict;
+    
 }
+
+
+
+
+
 
 + (NSDictionary *) getAllTolkienNamesForGender:(ANGender) gender {
     
