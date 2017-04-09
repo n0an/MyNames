@@ -31,8 +31,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg04" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-XU-g0u">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-5n-4AZ" userLabel="ViewWithControls">
-                                <rect key="frame" x="0.0" y="289" width="366" height="133.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-5n-4AZ" userLabel="ViewWithControls">
+                                <rect key="frame" x="-321" y="289" width="366" height="133.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSQ-G6-Rzv">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="133"/>
@@ -237,12 +237,21 @@
                                             <action selector="actionTapOnInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJQ-Az-XXy"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="masc02" translatesAutoresizingMaskIntoConstraints="NO" id="535-hx-JKZ">
+                                        <rect key="frame" x="248" y="104" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="Ij3-J1-gJx"/>
+                                            <constraint firstAttribute="height" constant="20" id="vgH-D2-Ovo"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.91764705882352937" blue="0.76078431372549016" alpha="0.721410472972973" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="xCQ-u8-YSJ" secondAttribute="trailing" constant="12" id="3at-Cm-hlx"/>
+                                    <constraint firstAttribute="bottom" secondItem="535-hx-JKZ" secondAttribute="bottom" constant="12" id="864-3V-Gpg"/>
                                     <constraint firstItem="uay-78-7I1" firstAttribute="centerY" secondItem="yKj-8T-EF7" secondAttribute="centerY" id="HFG-sD-ueu"/>
                                     <constraint firstAttribute="bottom" secondItem="uay-78-7I1" secondAttribute="bottom" constant="8" id="IC8-YU-NTu"/>
+                                    <constraint firstAttribute="trailing" secondItem="535-hx-JKZ" secondAttribute="trailing" constant="12" id="KRJ-qW-Ozy"/>
                                     <constraint firstItem="uay-78-7I1" firstAttribute="centerX" secondItem="yKj-8T-EF7" secondAttribute="centerX" id="m66-FT-VPk"/>
                                     <constraint firstItem="uay-78-7I1" firstAttribute="top" secondItem="yKj-8T-EF7" secondAttribute="top" constant="8" id="n1w-MX-qKE"/>
                                     <constraint firstItem="uay-78-7I1" firstAttribute="leading" secondItem="yKj-8T-EF7" secondAttribute="leading" constant="8" id="p7u-J1-Zjf"/>
@@ -371,6 +380,7 @@
                         <outlet property="controlsView" destination="iSQ-G6-Rzv" id="yzv-Sm-Pyy"/>
                         <outlet property="genderButtonFem" destination="mMH-na-Jzf" id="3zl-C2-hhC"/>
                         <outlet property="genderButtonMasc" destination="8o4-TK-VWv" id="rNC-aH-sbU"/>
+                        <outlet property="genderImageView" destination="535-hx-JKZ" id="vs6-qU-dWd"/>
                         <outlet property="generateButton" destination="nl5-8s-DDE" id="1Te-RW-NUq"/>
                         <outlet property="infoButton" destination="xCQ-u8-YSJ" id="yhi-03-MW5"/>
                         <outlet property="likeButton" destination="igX-WN-kk6" id="Q2Z-mT-iZR"/>

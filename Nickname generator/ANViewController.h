@@ -20,13 +20,12 @@
 @property (weak, nonatomic) IBOutlet UIStackView *categoryRaceLabelsStackView;
 @property (weak, nonatomic) IBOutlet UIStackView *categoryRaceButtonsStackView;
 
-
-
 @property (weak, nonatomic) IBOutlet UIPickerView *raceSelectionPickerView;
-
 
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *wheelImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *genderImageView;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 @property (weak, nonatomic) IBOutlet UIButton* nameCategorySelectButton;

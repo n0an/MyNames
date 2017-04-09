@@ -249,6 +249,11 @@ extern NSString* const kAppLaunchesCount;
     
     self.displayedName = name;
     
+    NSString* genderImage = !name.nameGender ? @"masc02" : @"fem02";
+    
+    self.genderImageView.image = [UIImage imageNamed:genderImage];
+
+    
     return name.firstName;
 }
 
