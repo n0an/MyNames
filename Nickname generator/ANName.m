@@ -36,7 +36,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     NSInteger randIndex = [self getRandomForCount:totalNames];
     NSString* tmpStr = [namesArr objectAtIndex:randIndex];
     
-    [self fillName:name withParams:dict andKey:tmpStr andGender:gender andCategory:category];
+    [self fillName:name withParams:dict andKey:tmpStr andCategory:category];
     
     return name;
 }
@@ -61,7 +61,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     NSInteger randIndex = [self getRandomForCount:totalNames];
     NSString* tmpStr = [namesArr objectAtIndex:randIndex];
     
-    [self fillName:name withParams:dict andKey:tmpStr andGender:gender andCategory:category];
+    [self fillName:name withParams:dict andKey:tmpStr andCategory:category];
     
     return name;
 }
@@ -103,7 +103,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
         }
     }
     
-    [self fillName:name withParams:dict andKey:resultKey andGender:nameGender andCategory:nameCategory];
+    [self fillName:name withParams:dict andKey:resultKey andCategory:nameCategory];
     return name;
 }
 
@@ -217,6 +217,30 @@ NSString* const kRaceTokienDragons  = @"Dragons";
 
 #pragma mark - HELPER METHODS
 + (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*)category andGender:(ANGender) gender {
+    
+    NSDictionary *resultDict;
+    
+    if (gender == ANGenderAll) {
+        
+        NSDictionary* dictMasc = [self getDictMascOrFemForCategory:category andGender:ANGenderMasculine];
+        
+        NSDictionary* dictFem = [self getDictMascOrFemForCategory:category andGender:ANGenderFeminine];
+
+        NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
+        
+        [tmpDict addEntriesFromDictionary:dictMasc];
+        [tmpDict addEntriesFromDictionary:dictFem];
+        
+        resultDict = tmpDict;
+    } else {
+        resultDict = [self getDictMascOrFemForCategory:category andGender:gender];
+    }
+    
+    return resultDict;
+}
+
++ (NSDictionary *) getDictMascOrFemForCategory:(ANNameCategory*)category andGender:(ANGender) gender {
+    
     NSString* pathName;
     
     if (gender == ANGenderMasculine) {
@@ -320,7 +344,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     return allTolkienNamesDict;
 }
 
-+ (void) fillName:(ANName*)inputName withParams:(NSDictionary*) params andKey:(NSString*) key andGender:(ANGender) gender andCategory:(ANNameCategory*) category {
++ (void) fillName:(ANName*)inputName withParams:(NSDictionary*) params andKey:(NSString*) key andCategory:(ANNameCategory*) category {
     
     NSString* firstNameStr;
     
@@ -337,6 +361,12 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     NSDictionary* nameParams = [params objectForKey:key];
     NSString* nameID = [nameParams objectForKey:@"nameID"];
     
+    // 02.02.0
+    
+    NSArray *nameIDComponents = [nameID componentsSeparatedByString:@"."];
+    
+    ANGender genderOfName = (ANGender)[nameIDComponents[2] integerValue];
+    
     NSString* nameDesc = [nameParams objectForKey:@"nameDescription"];
     NSString* cleanedDesc = [self stringWithoutBrackets:nameDesc];
     
@@ -349,7 +379,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     inputName.nameURL            = nameURL;
     inputName.nameImageName      = nameImageName;
     inputName.nameCategory       = category;
-    inputName.nameGender         = gender;
+    inputName.nameGender         = genderOfName;
 }
 
 + (NSInteger) getRandomForCount:(NSInteger) totalCount {

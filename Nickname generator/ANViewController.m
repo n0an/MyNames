@@ -590,20 +590,7 @@ extern NSString* const kAppLaunchesCount;
     }
     
     self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
-    
-//    if ([sender isEqual:self.genderButtonMasc]) {
-//        self.selectedGender = ANGenderMasculine;
-//        
-//        [self.genderButtonMasc setImage:mascActiveImage forState:UIControlStateNormal];
-//        [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
-//     
-//    } else if ([sender isEqual:self.genderButtonFem]) {
-//        self.selectedGender = ANGenderFeminine;
-//        
-//        [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
-//        [self.genderButtonFem setImage:femActiveImage forState:UIControlStateNormal];
-//        
-//    }
+ 
 }
 
 - (IBAction)actionTapOnInfoButton:(id)sender {
