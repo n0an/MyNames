@@ -287,7 +287,6 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     }
     
     return resultDict;
-    
 }
 
 
@@ -317,13 +316,35 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     
 }
 
-
-
-
-
-
 + (NSDictionary *) getAllTolkienNamesForGender:(ANGender) gender {
     
+    NSDictionary *resultDict;
+    
+    if (gender == ANGenderAll) {
+        NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
+        
+        NSDictionary* dictMasc = [self getAllTolkienNamesDictForGender:ANGenderMasculine];
+        
+        [tmpDict addEntriesFromDictionary:dictMasc];
+        
+        NSDictionary* dictFem = [self getAllTolkienNamesDictForGender:ANGenderFeminine];
+        
+        [tmpDict addEntriesFromDictionary:dictFem];
+        
+        resultDict = tmpDict;
+        
+    } else {
+        resultDict = [self getAllTolkienNamesDictForGender:gender];
+    }
+    
+    return resultDict;
+    
+}
+
+
+
++ (NSDictionary *) getAllTolkienNamesDictForGender:(ANGender) gender {
+
     NSString* pathName;
     
     if (gender == ANGenderMasculine) {
@@ -379,11 +400,20 @@ NSString* const kRaceTokienDragons  = @"Dragons";
         
         [allTolkienNamesDict addEntriesFromDictionary:dictOrcs];
         [allTolkienNamesDict addEntriesFromDictionary:dictDragons];
-
+        
     }
-
+    
     return allTolkienNamesDict;
+    
+    
+    
 }
+
+
+
+
+
+
 
 + (void) fillName:(ANName*)inputName withParams:(NSDictionary*) params andKey:(NSString*) key andCategory:(ANNameCategory*) category {
     
