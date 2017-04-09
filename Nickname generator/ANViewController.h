@@ -15,8 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIView *wheelView;
 
 @property (weak, nonatomic) IBOutlet UIStackView *controlsStackView;
-@property (weak, nonatomic) IBOutlet UIStackView *raceSelectionStackView;
-
 @property (weak, nonatomic) IBOutlet UIStackView *categoryRaceLabelsStackView;
 @property (weak, nonatomic) IBOutlet UIStackView *categoryRaceButtonsStackView;
 
@@ -26,14 +24,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *wheelImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *genderImageView;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 @property (weak, nonatomic) IBOutlet UIButton* nameCategorySelectButton;
 @property (weak, nonatomic) IBOutlet UIButton* nameRaceSelectButton;
 
 @property (weak, nonatomic) IBOutlet UILabel* nameResultLabel;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
-
 
 @property (weak, nonatomic) IBOutlet UIButton* generateButton;
 @property (weak, nonatomic) IBOutlet UIButton* likeButton;
@@ -46,12 +42,8 @@
 #pragma mark - ACTIONS
 - (IBAction)actionGenerateButtonPressed:(UIButton*)sender;
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender;
-
 - (IBAction)actionGndrBtnPressed:(id)sender;
-
 - (IBAction)actionCategorySelectButtonPressed:(UIButton*)sender;
-
 - (IBAction)actionRaceSelectButtonPressed:(UIButton*)sender;
-
 
 @end

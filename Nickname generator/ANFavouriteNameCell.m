@@ -26,7 +26,6 @@
     NSString* adaptedCategory = [[ANNamesFactory sharedFactory] adoptToLocalizationString:favoriteName.nameCategoryTitle];
     self.nameCategoryLabel.text = adaptedCategory;
     
-
     [self setImageAndImageHeightForName:favoriteName];
     
     if (isEditingMode) {
@@ -43,11 +42,7 @@
             self.infoImageView.hidden = YES;
         }
     }
-    
-    
-    
 }
-
 
 - (void) setImageAndImageHeightForName:(ANFavoriteName *) name {
     
@@ -63,10 +58,7 @@
         self.nameRaceLabel.hidden = YES;
     }
     
-    
-    
     NSString *categoryAlias = originCategory.alias;
-    
     NSString* pathName;
     
     if (name.nameGender.boolValue == ANGenderMasculine) {
@@ -74,21 +66,17 @@
     } else {
         pathName = [categoryAlias stringByAppendingString:@"FemImages"];
     }
-    
     NSString *imageFileName = [NSString stringWithFormat:@"%@/%@", pathName, name.nameImageName];
     
     NSURL *imageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:imageFileName];
     
-    
     // *** DOWNLOAD FROM FIREBASE TO FILE AND STORE LOCALLY
-    
     UIImage *nameImage = [UIImage imageWithContentsOfFile:[imageFileURL path]];
     
     if (!nameImage) {
         
         self.nameImageView.image = [UIImage imageNamed:@"eye"];
         [self.nameImageView setContentMode:UIViewContentModeCenter];
-        
         
         FIRStorageReference *imageNameRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:imageFileName];
         
@@ -101,26 +89,14 @@
                 UIImage* nameImage = [UIImage imageWithContentsOfFile:[imageFileURL path]];
                 [self.nameImageView setImage:nameImage];
                 [self.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
-
             }
         }];
         
     } else {
-        
         self.nameImageView.image = nameImage;
         [self.nameImageView setContentMode:UIViewContentModeScaleAspectFit];
-        
     }
-    
-    
 }
 
-
 @end
-
-
-
-
-
-
 

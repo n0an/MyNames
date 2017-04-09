@@ -23,7 +23,6 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UILabel *nameCategoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameRaceLabel;
 
-
 @property (weak, nonatomic) IBOutlet UITextView* descriptionTextView;
 
 @property (weak, nonatomic) IBOutlet UIImageView* nameImageView;

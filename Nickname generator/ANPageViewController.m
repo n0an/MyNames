@@ -79,7 +79,6 @@
     
     [self loadAssetsWithPrefix:@"Stripes"];
     [self loadAssetsWithPrefix:@"Backgrounds"];
-    
 }
 
 - (void) loadAssetsWithPrefix:(NSString *) prefix {

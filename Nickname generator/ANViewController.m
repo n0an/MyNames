@@ -114,7 +114,6 @@ extern NSString* const kAppLaunchesCount;
     
     self.infoButton.layer.masksToBounds = YES;
     
-    
     UIBlurEffect *lightBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     UIVisualEffectView *lightBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:lightBlurEffect];
     
@@ -150,7 +149,6 @@ extern NSString* const kAppLaunchesCount;
 #endif
     
 }
-    
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
@@ -163,11 +161,9 @@ extern NSString* const kAppLaunchesCount;
     
     [self animateGenerateButton];
     
-    
     self.nameCategoryLabel.userInteractionEnabled    = YES;
     
     UITapGestureRecognizer* tapCategoryGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnCategoryLabel:)];
-    
     
     [self.nameCategoryLabel addGestureRecognizer:tapCategoryGesture];
     
@@ -183,7 +179,6 @@ extern NSString* const kAppLaunchesCount;
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnNameLabel:)];
     
     [self.nameResultLabel addGestureRecognizer:tapGesture];
-    
     
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.displayedName];
     [self refreshLikeButton];
@@ -253,7 +248,6 @@ extern NSString* const kAppLaunchesCount;
     
     self.genderImageView.image = [UIImage imageNamed:genderImage];
 
-    
     return name.firstName;
 }
 
@@ -560,13 +554,11 @@ extern NSString* const kAppLaunchesCount;
             [self.genderButtonMasc setImage:mascActiveImage forState:UIControlStateNormal];
             [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
             
-            
         } else if (self.selectedGender == ANGenderMasculine) {
             self.selectedGender = ANGenderAll;
             
             [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
             [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
-            
         }
         
     } else if ([sender isEqual:self.genderButtonFem]) {
@@ -582,7 +574,6 @@ extern NSString* const kAppLaunchesCount;
             
             [self.genderButtonMasc setImage:mascNonactiveImage forState:UIControlStateNormal];
             [self.genderButtonFem setImage:femNonactiveImage forState:UIControlStateNormal];
-            
         }
     }
     
@@ -603,14 +594,12 @@ extern NSString* const kAppLaunchesCount;
     }
 }
 
-
 - (void) showCategorySelection {
     ANCategoryVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ANCategoryVC"];
     
     vc.categories = self.sharedNamesFactory.namesCategories;
     vc.selectedCategory = self.selectedCategory;
     vc.delegate = self;
-    
     
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
@@ -621,10 +610,8 @@ extern NSString* const kAppLaunchesCount;
     [self showCategorySelection];
 }
 
-
 - (IBAction)actionCategorySelectButtonPressed:(UIButton*)sender {
     [self showCategorySelection];
-
 }
 
 - (void) actionTapOnWheelView:(UITapGestureRecognizer*) recognizer {
@@ -731,7 +718,6 @@ extern NSString* const kAppLaunchesCount;
     self.settingsViewPickedUp = NO;
 }
 
-
 #pragma mark - NAVIGATION
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showDescriptionVC"]) {
@@ -771,7 +757,6 @@ extern NSString* const kAppLaunchesCount;
     [self.raceSelectionPickerView removeFromSuperview];
     [self animateResultsLabelUpdate];
 }
-
 
 #pragma mark - +++ ANCategorySelectionDelegate +++
 - (void) categoryDidSelect:(ANNameCategory*) category {

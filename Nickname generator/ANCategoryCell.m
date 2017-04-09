@@ -13,7 +13,6 @@
 #import <FirebaseStorage/FirebaseStorage.h>
 #import "ANFBStorageManager.h"
 
-
 extern NSString* const kAppLaunchesCount;
 
 @implementation ANCategoryCell

@@ -116,10 +116,8 @@
 }
 
 - (BOOL) isDescriptionAvailable: (ANFavoriteName*) name {
-    
     return name.nameDescription && ![name.nameDescription isEqualToString:@""];
 }
-
 
 #pragma mark - ACTIONS
 - (void) actionDeleteSelectedNames:(id) sender {
@@ -288,7 +286,6 @@
         } else {
             [cell.checkBoxImageView setImage:[UIImage imageNamed:@"box_empty"]];
         }
-
     }
     
     return cell;
@@ -310,7 +307,6 @@
     }
     
     return NO;
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

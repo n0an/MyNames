@@ -26,8 +26,6 @@
     return manager;
 }
 
-
-
 #pragma mark - PUBLIC METHODS
 - (void) addFavoriteName:(ANName*) name {
   
@@ -266,7 +264,6 @@
         }
     }
     ANLog(@"saveContext");
-    
 }
 
 @end

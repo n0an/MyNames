@@ -61,13 +61,6 @@
     self.likeSetImage = [UIImage imageNamed:@"like1set"];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    
-    
-}
-
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.isNameFavorite = [[ANDataManager sharedManager] isNameFavorite:self.selectedName];
@@ -102,7 +95,6 @@
 - (void) setImageAndImageHeight {
 
     NSString *categoryAlias = self.selectedName.nameCategory.alias;
-    
     NSString* pathName;
     
     if (self.selectedName.nameGender == ANGenderMasculine) {
@@ -115,9 +107,7 @@
     
     NSURL *imageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:imageFileName];
     
-    
     // *** DOWNLOAD FROM FIREBASE TO FILE AND STORE LOCALLY
-    
     UIImage *nameImage = [UIImage imageWithContentsOfFile:[imageFileURL path]];
     
     if (!nameImage) {
@@ -125,7 +115,6 @@
         self.nameImageView.image = [UIImage imageNamed:@"Placeholder"];
         
         FIRStorageReference *imageNameRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:imageFileName];
-        
         FIRStorageDownloadTask *downloadTask = [imageNameRef writeToFile:imageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
             
             if (error) {
@@ -138,11 +127,8 @@
         }];
         
     } else {
-        
         self.nameImageView.image = nameImage;
-        
     }
-
 }
 
 - (void) refreshLikeButton {
@@ -164,7 +150,6 @@
     NSArray *allowedSchemes = @[@"http", @"https"];
     
     if ([allowedSchemes containsObject:[url.scheme lowercaseString]]) {
-        
         SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
         [self presentViewController:safariVC animated:true completion:nil];
     }
@@ -200,8 +185,4 @@
     [self openURLForURLString:urlString];
 }
 
-
-
 @end
-
-

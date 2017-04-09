@@ -10,8 +10,6 @@
 #import "ANPageViewController.h"
 #import "ANAnimationHelper.h"
 
-
-
 @interface ANContentPageViewController ()
 
 @end
@@ -34,12 +32,7 @@ extern NSString* const kAppAlreadySeen;
     self.nextButton.hidden = (self.index == 4) ? YES : NO;
     self.startButton.hidden = (self.index == 4) ? NO : YES;
     self.skipButton.hidden = !self.startButton.hidden;
-    
-    
 }
-
-
-
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -112,7 +105,6 @@ extern NSString* const kAppAlreadySeen;
                                               [[ANAnimationHelper sharedHelper] translateView:self.clickImageView toPoint:CGPointMake(0, 0) completion:^(BOOL finished) {
                                                   
                                                   [[ANAnimationHelper sharedHelper] animateBlinkButton:self.generateButton withDelay:0.f];
-                                                  
                                               }];
                                               
                                           }];
