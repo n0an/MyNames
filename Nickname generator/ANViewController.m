@@ -291,6 +291,10 @@ extern NSString* const kAppLaunchesCount;
         return;
     }
     
+    if (gender == ANGenderAll) {
+        return;
+    }
+    
     // ** Contents of !ToUpload directory
     NSURL *documentsURL = [[ANFBStorageManager sharedManager] getDocumentsDirectory];
     
