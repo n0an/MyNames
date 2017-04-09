@@ -290,29 +290,30 @@
         } else {
             [cell.checkBoxImageView setImage:[UIImage imageNamed:@"box_empty"]];
         }
+
     }
     
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
-- (nullable NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (self.isEditingMode) {
-        return indexPath;
+        return YES;
         
     } else {
         ANFavoriteName* name = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
         if ([self isDescriptionAvailable:name]) {
-            return indexPath;
+            return YES;
         }
     }
     
-    return nil;
+    return NO;
     
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
