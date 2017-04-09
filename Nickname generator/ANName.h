@@ -47,8 +47,10 @@ typedef enum {
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory;
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race;
 + (NSString *) adoptTolkienRaceForLocalizationForRace:(ANTolkienRace) race;
-
 - (NSString*) getRace;
+
+#pragma mark - TESTING METHODS (PUBLIC)
++ (ANName *) constructFakeName;
 
 @end
 

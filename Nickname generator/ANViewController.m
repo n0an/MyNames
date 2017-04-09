@@ -108,7 +108,6 @@ extern NSString* const kAppLaunchesCount;
     self.isDescriptionAvailable = NO;
     self.isSettingsActive = NO;
     
-//    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
     [self animateResultsLabelUpdate];
     
     self.infoButton.layer.cornerRadius = self.infoButton.bounds.size.width / 2.f;
@@ -225,7 +224,6 @@ extern NSString* const kAppLaunchesCount;
         [self animateWheelRotating];
     }
 }
-
 
 - (NSString *) getNewNameAndSetInfoButton {
     
@@ -370,7 +368,6 @@ extern NSString* const kAppLaunchesCount;
     }
     
     // *** CYCLING THROUGH ALL NAMES FROM PLIST FILE
-    
     NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     
@@ -444,7 +441,6 @@ extern NSString* const kAppLaunchesCount;
                              self.generateButton.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
                          }];
                      }];
-    
 }
 
 - (void) animateResultsLabelUpdate {
@@ -507,9 +503,6 @@ extern NSString* const kAppLaunchesCount;
 #pragma mark - ACTIONS
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (UIEventSubtypeMotionShake) {
-        
-        ANLog(@"I'm shaking!");
-        
         [self animateResultsLabelUpdate];
     }
 }
@@ -521,8 +514,6 @@ extern NSString* const kAppLaunchesCount;
 
 - (IBAction)actionlikeButtonPressed:(UIButton*)sender {
     
-    // *** Saving choosen names to CoreData
-    
     ANName* currentName = self.displayedName;
     
     if (self.isNameFavorite) {
@@ -532,7 +523,6 @@ extern NSString* const kAppLaunchesCount;
     }
     
     self.isNameFavorite = !self.isNameFavorite;
-    
     [self refreshLikeButton];
 }
 
@@ -545,8 +535,6 @@ extern NSString* const kAppLaunchesCount;
     [self showShareMenuActionSheetWithText:currentName.firstName Image:imageToShare andSourceForActivityVC:self.view];
 }
 
-
-
 - (IBAction)actionGndrBtnPressed:(id)sender {
     
     UIImage* mascActiveImage = [UIImage imageNamed:@"masc01"];
@@ -554,7 +542,6 @@ extern NSString* const kAppLaunchesCount;
     
     UIImage* femActiveImage = [UIImage imageNamed:@"fem01"];
     UIImage* femNonactiveImage = [UIImage imageNamed:@"fem02"];
-    
     
     if ([sender isEqual:self.genderButtonMasc]) {
         
@@ -590,9 +577,7 @@ extern NSString* const kAppLaunchesCount;
         }
     }
     
-//    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
     [self animateResultsLabelUpdate];
- 
 }
 
 - (IBAction)actionTapOnInfoButton:(id)sender {
@@ -621,7 +606,6 @@ extern NSString* const kAppLaunchesCount;
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self presentViewController:nav animated:YES completion:nil];
-
 }
 
 - (void) actionTapOnCategoryLabel:(UITapGestureRecognizer*) recognizer {
@@ -676,9 +660,6 @@ extern NSString* const kAppLaunchesCount;
     [self.controlsView addSubview:self.raceSelectionPickerView];
 }
 
-
-
-
 #pragma mark - TOUCHES
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch* touch = [touches anyObject];
@@ -704,9 +685,7 @@ extern NSString* const kAppLaunchesCount;
         UITouch* touch = [touches anyObject];
         
         CGPoint touchPoint = [touch locationInView:self.view];
-        
         CGFloat translationX = touchPoint.x - self.lastLocation.x;
-        
         CGFloat nextConstant = self.settingsViewLeadingConstraint.constant + translationX;
         
         if (ANMenuConstantStateClosed <= nextConstant && nextConstant <= ANMenuConstantStateOpened) {
@@ -725,7 +704,6 @@ extern NSString* const kAppLaunchesCount;
         }
         
         self.lastLocation = touchPoint;
-        
         [self.view layoutIfNeeded];
     }
 }
@@ -745,35 +723,28 @@ extern NSString* const kAppLaunchesCount;
 }
 
 
-
 #pragma mark - NAVIGATION
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showDescriptionVC"]) {
         
         UINavigationController *destinationNavVC = segue.destinationViewController;
-        
         ANDescriptioinVC *destinationVC = (ANDescriptioinVC*) destinationNavVC.topViewController;
-        
         destinationVC.selectedName = self.displayedName;
         
         if (iPhone()) {
-            
             destinationNavVC.transitioningDelegate = self.rotateTransition;
         }
     }
 }
-
 
 #pragma mark - UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
 
-
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return 9;
 }
-
 
 #pragma mark - UIPickerViewDelegate
 - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
@@ -788,10 +759,7 @@ extern NSString* const kAppLaunchesCount;
     NSString *raceTitle = self.racesTolkienArray[row];
     
     [self.nameRaceSelectButton setTitle:raceTitle forState:UIControlStateNormal];
-    
     [self.raceSelectionPickerView removeFromSuperview];
-    
-//    self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
     [self animateResultsLabelUpdate];
 }
 
@@ -804,15 +772,12 @@ extern NSString* const kAppLaunchesCount;
     if (![category.nameCategoryID isEqualToString:@"00.00"]) {
         
         NSString* bgFileName = [NSString stringWithFormat:@"Backgrounds/%@.jpg", category.alias];
-        
         NSURL* bgImageFileURL = [[[ANFBStorageManager sharedManager] getDocumentsDirectory] URLByAppendingPathComponent:bgFileName];
-        
         UIImage* bgImage = [UIImage imageWithContentsOfFile:[bgImageFileURL path]];
         
         if (!bgImage) {
             
             FIRStorageReference *bgRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:bgFileName];
-            
             FIRStorageDownloadTask *downloadTask = [bgRef writeToFile:bgImageFileURL completion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
                 
                 if (error) {
@@ -830,7 +795,6 @@ extern NSString* const kAppLaunchesCount;
             [self.bgImageView setImage:bgImage];
         }
         
-        
     } else {
         UIImage* bgImage = [UIImage imageNamed:@"diceBG03_1920"];
         [self.bgImageView setImage:bgImage];
@@ -840,10 +804,7 @@ extern NSString* const kAppLaunchesCount;
     
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
     
-    
     if ([category.nameCategoryID isEqualToString:@"02.02"]) {
-        
-//        [self.controlsStackView addArrangedSubview:self.raceSelectionStackView];
         
         [self.controlsStackView setSpacing:8];
         
@@ -852,11 +813,8 @@ extern NSString* const kAppLaunchesCount;
         raceLabel.text = @"Race";
         
         self.raceLabel = raceLabel;
-        
         [self.categoryRaceLabelsStackView addArrangedSubview:raceLabel];
-        
         [self.categoryRaceButtonsStackView addArrangedSubview:self.nameRaceSelectButton];
-        
         
         NSString *currentRaceTitle = self.racesTolkienArray[self.selectedRace];
         
@@ -864,16 +822,12 @@ extern NSString* const kAppLaunchesCount;
         
     } else {
         if (self.categoryRaceButtonsStackView.arrangedSubviews.count == 2) {
-//            [self.controlsStackView removeArrangedSubview:self.raceSelectionStackView];
             [self.controlsStackView setSpacing:40];
-            
             [self.categoryRaceLabelsStackView removeArrangedSubview:self.raceLabel];
-            
             [self.categoryRaceButtonsStackView removeArrangedSubview:self.nameRaceSelectButton];
         }
     }
 }
-
 
 @end
 

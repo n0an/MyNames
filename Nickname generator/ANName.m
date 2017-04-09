@@ -443,6 +443,10 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     inputName.nameGender         = genderOfName;
 }
 
+
+
+
+
 + (NSInteger) getRandomForCount:(NSInteger) totalCount {
     NSInteger randomIndex = arc4random_uniform((uint32_t)totalCount);
     return randomIndex;
@@ -498,6 +502,20 @@ NSString* const kRaceTokienDragons  = @"Dragons";
 }
 
 
+#pragma mark - TESTING METHODS (PUBLIC)
+
++ (ANName *) constructFakeName {
+    
+    ANName* name = [[ANName alloc] init];
+    
+    name.firstName = @"Fake name";
+    name.nameGender = ANGenderMasculine;
+    name.nameDescription = @"This is the test fake name";
+    name.nameID = @"00.00.0.1";
+    name.nameURL = @"";
+    
+    return name;
+}
 
 
 @end
