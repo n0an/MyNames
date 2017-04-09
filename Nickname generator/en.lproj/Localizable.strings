@@ -72,7 +72,7 @@ ROW_ACTION_DELETE   = "Delete";
 BARBUTTON_DONE = "Done";
 BARBUTTON_EDIT = "Edit";
 
-
+UILABEL_RACE = "Race:";
 
 
 

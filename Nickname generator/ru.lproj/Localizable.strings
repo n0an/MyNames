@@ -71,6 +71,7 @@ ROW_ACTION_DELETE = "Удалить";
 BARBUTTON_DONE = "Готово";
 BARBUTTON_EDIT = "Изменить";
 
+UILABEL_RACE = "Раса:";
 
 
 

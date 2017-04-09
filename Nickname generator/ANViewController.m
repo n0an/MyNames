@@ -804,7 +804,7 @@ extern NSString* const kAppLaunchesCount;
         
         CGRect raceLabelFrame = CGRectMake(0, 0, 80, 30);
         UILabel *raceLabel = [[UILabel alloc] initWithFrame:raceLabelFrame];
-        raceLabel.text = @"Race";
+        raceLabel.text = NSLocalizedString(@"UILABEL_RACE", nil);
         
         self.raceLabel = raceLabel;
         [self.categoryRaceLabelsStackView addArrangedSubview:raceLabel];
