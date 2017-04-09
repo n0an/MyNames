@@ -143,39 +143,6 @@
         
     }
 
-    
-    // *** DOWNLOAD FROM FIREBASE TO MEMORY
-/*
-    FIRStorageReference *imageNameRef = [[ANFBStorageManager sharedManager] getReferenceForFileName:imageFileName];
-
-    
-    FIRStorageDownloadTask *downloadTask = [imageNameRef dataWithMaxSize:1 * 1024 * 1024 completion:^(NSData *data, NSError *error){
-        if (error != nil) {
-            // Uh-oh, an error occurred!
-            NSLog(@"error = %@",error);
-        } else {
-            // Data for "images/island.jpg" is returned
-            UIImage *gotImage = [UIImage imageWithData:data];
-            
-            NSLog(@"gotImage = %@", gotImage);
-            
-            self.nameImageView.image = gotImage;
-        }
-    }];
-    */
-
-    
-    // *** SET FROM APP BUNDLE ASSETS
-    /*
-    UIImage* imageName = [UIImage imageNamed:self.currentName.nameImageName];
-
-    
-    if (!imageName) {
-        self.nameImageView.image = [UIImage imageNamed:@"Placeholder"];
-    } else {
-        self.nameImageView.image = imageName;
-    }
-    */
 }
 
 - (void) refreshLikeButton {
@@ -183,6 +150,23 @@
         [self.likeButton setImage:self.likeSetImage forState:UIControlStateNormal];
     } else {
         [self.likeButton setImage:self.likeNonSetImage forState:UIControlStateNormal];
+    }
+}
+
+- (void) openURLForURLString:(NSString *) urlString {
+    
+    NSURL* url = [NSURL URLWithString:urlString];
+    
+    if (url == nil) {
+        return;
+    }
+    
+    NSArray *allowedSchemes = @[@"http", @"https"];
+    
+    if ([allowedSchemes containsObject:[url.scheme lowercaseString]]) {
+        
+        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+        [self presentViewController:safariVC animated:true completion:nil];
     }
 }
 
@@ -213,12 +197,7 @@
 - (IBAction)actionWebButtonPressed:(UIButton*)sender {
     NSString *urlString = self.selectedName.nameURL;
     
-    NSURL* url = [NSURL URLWithString:urlString];
-    
-    if (url != nil) {
-        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-        [self presentViewController:safariVC animated:true completion:nil];
-    }
+    [self openURLForURLString:urlString];
 }
 
 

@@ -512,7 +512,7 @@ NSString* const kRaceTokienDragons  = @"Dragons";
     name.nameGender = ANGenderMasculine;
     name.nameDescription = @"This is the test fake name";
     name.nameID = @"00.00.0.1";
-    name.nameURL = @"";
+    name.nameURL = @"faff";
     
     return name;
 }
