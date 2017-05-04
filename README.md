@@ -1,22 +1,5 @@
-Nicknames Generator
+## MyNames - nicknames generator and encyclopedia
 
-Sources:
-* Mythology
--- Greek
--- Roman
--- Norse
--- Celtic
--- Egypt
--- Hinduism
-
-* Ancient real names
--- Classical greek names
--- Classical roman names
--- Ancient celtic names
--- Ancient norse names
-
-* Tolkien realms
--- Elfs
--- Orcs
--- Hobbits
--- Dwarfs 
+### Table of contents:
+- [Conception for App model architecture](./NamesConcept.md)
+- [Input data processing environment](https://github.com/n0an/MyNamesEnvironment)
