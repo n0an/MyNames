@@ -153,7 +153,12 @@ extern NSString* const kAppLaunchesCount;
     
     CGSize splashImageSize = CGSizeMake(150, 100);
     
-    UIColor *splashImageBGColor = [UIColor whiteColor];
+//    UIColor *splashImageBGColor = [UIColor whiteColor];
+    
+//    UIColor *splashImageBGColor = [UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1.00];
+    
+    UIColor *splashImageBGColor = [UIColor colorWithRed:236/255.0 green:240/255.0 blue:241/255.0 alpha:1.0];
+
     
     RevealingSplashView *splashView = [[RevealingSplashView alloc] initWithIconImage:splashImage iconInitialSize:splashImageSize backgroundColor:splashImageBGColor];
     
