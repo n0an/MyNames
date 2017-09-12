@@ -71,9 +71,9 @@
 		18FECE411CB252520003CED4 /* ANDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE401CB252520003CED4 /* ANDataManager.m */; };
 		18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE431CB256700003CED4 /* ANCoreDataVC.m */; };
 		18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */; };
-		560CB005E1689A4AB74362AD /* libPods-Nickname generatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 274B72FE95845625D1328E7E /* libPods-Nickname generatorTests.a */; };
-		580C5CC00D43F21F38343650 /* libPods-Nickname generatorUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD573ADFDEC36EC6DFF4EAB4 /* libPods-Nickname generatorUITests.a */; };
-		927ECE82B5C218DB8A43CE7D /* libPods-Nickname generator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFBD923A78E964C8BD08B45 /* libPods-Nickname generator.a */; };
+		32C5B56D96D3497594B19FE6 /* Pods_Nickname_generatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A40E69728FBF9F75184048 /* Pods_Nickname_generatorTests.framework */; };
+		4BFABFFDF9177B167CF93AC8 /* Pods_Nickname_generator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3C856ACCDCAD4B70447DB7 /* Pods_Nickname_generator.framework */; };
+		8C103CCD0C0F0F4FA6962291 /* Pods_Nickname_generatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96E4EC4D8FF856EA8264BA8 /* Pods_Nickname_generatorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,13 +222,13 @@
 		18FECE431CB256700003CED4 /* ANCoreDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCoreDataVC.m; sourceTree = "<group>"; };
 		18FECE461CB259850003CED4 /* ANFavoriteNamesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavoriteNamesVC.h; sourceTree = "<group>"; };
 		18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavoriteNamesVC.m; sourceTree = "<group>"; };
-		274B72FE95845625D1328E7E /* libPods-Nickname generatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nickname generatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		450B04765D32DB79479A3407 /* Pods-Nickname generatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generatorTests/Pods-Nickname generatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		853E72A117EF1F1767BB015B /* Pods-Nickname generatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generatorUITests/Pods-Nickname generatorUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8EFBD923A78E964C8BD08B45 /* libPods-Nickname generator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nickname generator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		915C5084CE3C1B31B0C2E309 /* Pods-Nickname generatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generatorTests/Pods-Nickname generatorTests.release.xcconfig"; sourceTree = "<group>"; };
-		AD573ADFDEC36EC6DFF4EAB4 /* libPods-Nickname generatorUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nickname generatorUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C814B3585295B08D5195C921 /* Pods-Nickname generatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generatorUITests/Pods-Nickname generatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C96E4EC4D8FF856EA8264BA8 /* Pods_Nickname_generatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nickname_generatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC3C856ACCDCAD4B70447DB7 /* Pods_Nickname_generator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nickname_generator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A40E69728FBF9F75184048 /* Pods_Nickname_generatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nickname_generatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0133BC71858DABE83CF006C /* Pods-Nickname generator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2288E11CA6EECD18E5F142 /* Pods-Nickname generator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				927ECE82B5C218DB8A43CE7D /* libPods-Nickname generator.a in Frameworks */,
+				4BFABFFDF9177B167CF93AC8 /* Pods_Nickname_generator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				560CB005E1689A4AB74362AD /* libPods-Nickname generatorTests.a in Frameworks */,
+				32C5B56D96D3497594B19FE6 /* Pods_Nickname_generatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				580C5CC00D43F21F38343650 /* libPods-Nickname generatorUITests.a in Frameworks */,
+				8C103CCD0C0F0F4FA6962291 /* Pods_Nickname_generatorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,9 +505,9 @@
 		B667E8DE75CA4E7BB6593B8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8EFBD923A78E964C8BD08B45 /* libPods-Nickname generator.a */,
-				274B72FE95845625D1328E7E /* libPods-Nickname generatorTests.a */,
-				AD573ADFDEC36EC6DFF4EAB4 /* libPods-Nickname generatorUITests.a */,
+				CC3C856ACCDCAD4B70447DB7 /* Pods_Nickname_generator.framework */,
+				D1A40E69728FBF9F75184048 /* Pods_Nickname_generatorTests.framework */,
+				C96E4EC4D8FF856EA8264BA8 /* Pods_Nickname_generatorUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -708,13 +708,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nickname generatorUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		361723309D4AE74D5E0656C8 /* [CP] Copy Pods Resources */ = {
@@ -738,13 +741,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nickname generator-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		85A7C94CEF9ACAB3104C3154 /* [CP] Embed Pods Frameworks */ = {
@@ -783,9 +789,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -813,13 +826,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nickname generatorTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C6C221BE775AAF9F3ADC9546 /* [CP] Embed Pods Frameworks */ = {
