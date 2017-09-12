@@ -22,12 +22,14 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
+  - RevealingSplashView (0.4.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - Firebase/Core
   - Firebase/Storage
+  - RevealingSplashView
 
 SPEC CHECKSUMS:
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
@@ -39,7 +41,8 @@ SPEC CHECKSUMS:
   FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  RevealingSplashView: 72be158ad5e1bc72713e8f78383dc3e1803ce4d1
 
-PODFILE CHECKSUM: 9b6bf1011c05bbd1a9c18a0cc1c7e6c6a98657f8
+PODFILE CHECKSUM: 16caf1f428a775b9388a8c8e84d2472f534c01a1
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1

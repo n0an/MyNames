@@ -10,3 +10,7 @@
 #endif
 #endif
 
+
+FOUNDATION_EXPORT double Pods_Nickname_generatorTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Nickname_generatorTestsVersionString[];
+

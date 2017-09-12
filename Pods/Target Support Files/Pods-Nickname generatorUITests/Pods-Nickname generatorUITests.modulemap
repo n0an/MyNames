@@ -1,0 +1,6 @@
+framework module Pods_Nickname_generatorUITests {
+  umbrella header "Pods-Nickname generatorUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
