@@ -21,6 +21,7 @@
 #import <FirebaseStorage/FirebaseStorage.h>
 #import "ANFRImage.h"
 
+
 #pragma mark - ENUM
 typedef enum {
     ANMenuConstantStateClosed       = -321,
@@ -148,6 +149,27 @@ extern NSString* const kAppLaunchesCount;
     
 #endif
     
+    UIImage *splashImage = [UIImage imageNamed:@"Eye_of_Horus"];
+    
+    CGSize splashImageSize = CGSizeMake(150, 100);
+    
+    UIColor *splashImageBGColor = [UIColor whiteColor];
+    
+    RevealingSplashView *splashView = [[RevealingSplashView alloc] initWithIconImage:splashImage iconInitialSize:splashImageSize backgroundColor:splashImageBGColor];
+    
+    [self.view addSubview:splashView];
+    
+    splashView.minimumBeats = 2;
+    
+    [splashView playHeartBeatAnimation:^{
+//        [splashView finishHeartBeatAnimation];
+    }];
+    
+    
+//    [splashView startAnimation:nil];
+
+//    splashView.heartAttack = YES;
+    [splashView finishHeartBeatAnimation];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
