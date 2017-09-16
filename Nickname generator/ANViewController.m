@@ -776,22 +776,44 @@ extern NSString* const kAppLaunchesCount;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 9;
+    if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        return 9;
+    } else {
+        return 4;
+    }
+    
 }
 
 #pragma mark - UIPickerViewDelegate
 - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
-    NSString *title = self.racesTolkienArray[row];
+    NSString *title;
+    
+    if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        title = self.racesTolkienArray[row];
+    } else {
+        title = self.housesGOTArray[row];
+    }
+    
    
     return title;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.selectedRace = (ANTolkienRace)row;
-    NSString *raceTitle = self.racesTolkienArray[row];
     
-    [self.nameRaceSelectButton setTitle:raceTitle forState:UIControlStateNormal];
+    NSString *title;
+    
+    if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        title = self.racesTolkienArray[row];
+    } else {
+        title = self.housesGOTArray[row];
+    }
+    
+    self.selectedRace = (ANTolkienRace)row;
+    
+    [self.nameRaceSelectButton setTitle:title forState:UIControlStateNormal];
     [self.raceSelectionPickerView removeFromSuperview];
     [self animateResultsLabelUpdate];
 }
