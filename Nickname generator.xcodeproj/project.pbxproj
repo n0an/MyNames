@@ -348,9 +348,9 @@
 			isa = PBXGroup;
 			children = (
 				1806DA521F6D847E00568A3F /* FictionGOT */,
+				18FCA2B61E978975000FE44B /* FictionTolkien */,
 				18C03C1C1E8447A00050773D /* FictionDuneMasc.plist */,
 				18C03C221E84496F0050773D /* FictionDuneFem.plist */,
-				18FCA2B61E978975000FE44B /* FictionTolkien */,
 				18AF09CE1CEF6F710061B497 /* MythCelticFem.plist */,
 				18A578511CECF47900A10BB1 /* MythCelticMasc.plist */,
 				18AF09C81CEF6E830061B497 /* MythEgyptFem.plist */,

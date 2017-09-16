@@ -190,6 +190,31 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return result;
 }
+    
+    + (NSString *) adoptGOTHouseForLocalizationForHouse:(ANGOTHouse) house {
+        
+        NSString *result;
+        
+        switch (house) {
+            case ANGOTHouseStark:
+            result = NSLocalizedString(@"NAMERACE020301", nil);
+            break;
+            
+            case ANGOTHouseTargaryen:
+            result = NSLocalizedString(@"NAMERACE020302", nil);
+            break;
+            
+            case ANGOTHouseLannister:
+            result = NSLocalizedString(@"NAMERACE020303", nil);
+            break;
+            
+            default:
+            result = nil;
+            break;
+        }
+        
+        return result;
+    }
 
     
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race {
@@ -247,6 +272,12 @@ NSString* const kHouseGOTOther     = @"Other";
         ANTolkienRace nameRace = (ANTolkienRace)[[components objectAtIndex:4] integerValue];
         
         return [ANName adoptTolkienRaceForLocalizationForRace:nameRace];
+    } else if ([self.nameCategory.nameCategoryID isEqualToString:@"02.03"]) {
+        NSArray *components = [self.nameID componentsSeparatedByString:@"."];
+        
+        ANGOTHouse nameHouse = (ANGOTHouse)[[components objectAtIndex:4] integerValue];
+        
+        return [ANName adoptGOTHouseForLocalizationForHouse:nameHouse];
     }
     
     return nil;
