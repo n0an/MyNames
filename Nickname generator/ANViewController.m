@@ -836,13 +836,21 @@ extern NSString* const kAppLaunchesCount;
     
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
     
-    if ([category.nameCategoryID isEqualToString:@"02.02"]) {
+    BOOL isTolkienCategory = [category.nameCategoryID isEqualToString:@"02.02"];
+    BOOL isGOTCategory = [category.nameCategoryID isEqualToString:@"02.03"];
+
+    if (isTolkienCategory || isGOTCategory) {
         
         [self.controlsStackView setSpacing:8];
         
         CGRect raceLabelFrame = CGRectMake(0, 0, 80, 30);
         UILabel *raceLabel = [[UILabel alloc] initWithFrame:raceLabelFrame];
-        raceLabel.text = NSLocalizedString(@"UILABEL_RACE", nil);
+        
+        if (isTolkienCategory) {
+            raceLabel.text = NSLocalizedString(@"UILABEL_RACE", nil);
+        } else {
+            raceLabel.text = NSLocalizedString(@"UILABEL_HOUSE", nil);
+        }
         
         self.raceLabel = raceLabel;
         [self.categoryRaceLabelsStackView addArrangedSubview:raceLabel];
@@ -852,6 +860,7 @@ extern NSString* const kAppLaunchesCount;
         
         [self.nameRaceSelectButton setTitle:currentRaceTitle forState:UIControlStateNormal];
         
+    
     } else {
         if (self.categoryRaceButtonsStackView.arrangedSubviews.count == 2) {
             [self.controlsStackView setSpacing:40];

@@ -78,6 +78,7 @@ BARBUTTON_DONE = "Готово";
 BARBUTTON_EDIT = "Изменить";
 
 UILABEL_RACE = "Раса:";
+UILABEL_HOUSE = "Дом:";
 
 
 
