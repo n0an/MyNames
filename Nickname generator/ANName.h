@@ -27,6 +27,13 @@ typedef enum {
     ANTolkienRaceDragons = 8
 } ANTolkienRace;
 
+typedef enum {
+    ANGOTHouseAll = 0,
+    ANGOTHouseStark = 1,
+    ANGOTHouseTargaryen = 2,
+    ANGOTHouseLannister = 3
+} ANGOTHouse;
+
 
 @class ANNameCategory;
 

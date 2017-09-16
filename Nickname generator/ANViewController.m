@@ -64,6 +64,8 @@ extern NSString* const kAppLaunchesCount;
 @property (strong, nonatomic) id rotateTransition;
 
 @property (strong, nonatomic) NSArray *racesTolkienArray;
+@property (strong, nonatomic) NSArray *housesGOTArray;
+
 
 @property (strong, nonatomic) UILabel *raceLabel;
 
@@ -93,6 +95,13 @@ extern NSString* const kAppLaunchesCount;
                                NSLocalizedString(@"NAMERACE020206", nil),
                                NSLocalizedString(@"NAMERACE020207", nil),
                                NSLocalizedString(@"NAMERACE020208", nil)];
+    
+    self.housesGOTArray = @[NSLocalizedString(@"NAMERACE020300", nil),
+                            NSLocalizedString(@"NAMERACE020301", nil),
+                            NSLocalizedString(@"NAMERACE020302", nil),
+                            NSLocalizedString(@"NAMERACE020303", nil)];
+    
+    
     
     [self listenForGoingBackgroundNotification];
     
@@ -255,6 +264,8 @@ extern NSString* const kAppLaunchesCount;
         
         name = [[ANNamesFactory sharedFactory] getRandomTolkienForRace:self.selectedRace andGender:self.selectedGender];
         
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
+        name = [[ANNamesFactory sharedFactory] getRandomGOTForHouse:(ANGOTHouse)self.selectedRace andGender:self.selectedGender];
     } else {
         name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
     }

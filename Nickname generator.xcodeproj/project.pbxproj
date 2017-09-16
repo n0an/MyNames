@@ -267,6 +267,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1806DA521F6D847E00568A3F /* FictionGOT */ = {
+			isa = PBXGroup;
+			children = (
+				1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */,
+				1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */,
+			);
+			name = FictionGOT;
+			sourceTree = "<group>";
+		};
 		18100DA71CB23EAF00508F1D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,8 +347,7 @@
 		18267E291CB132E600AB130B /* Names Plists */ = {
 			isa = PBXGroup;
 			children = (
-				1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */,
-				1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */,
+				1806DA521F6D847E00568A3F /* FictionGOT */,
 				18C03C1C1E8447A00050773D /* FictionDuneMasc.plist */,
 				18C03C221E84496F0050773D /* FictionDuneFem.plist */,
 				18FCA2B61E978975000FE44B /* FictionTolkien */,
