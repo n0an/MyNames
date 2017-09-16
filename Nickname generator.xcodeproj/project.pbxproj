@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1806DA481F6D835700568A3F /* FictionGOTMascStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */; };
+		1806DA4E1F6D840500568A3F /* FictionGOTFemStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */; };
 		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
 		1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */; };
 		182546401CA55A44006293A6 /* ANName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463F1CA55A44006293A6 /* ANName.m */; };
@@ -94,6 +96,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1806DA491F6D835700568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
+		1806DA4B1F6D835900568A3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
+		1806DA4F1F6D840500568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTFemStark.plist; sourceTree = "<group>"; };
+		1806DA511F6D840700568A3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTFemStark.plist; sourceTree = "<group>"; };
 		18100DAC1CB248C400508F1D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNameCategory.h; sourceTree = "<group>"; };
 		1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNameCategory.m; sourceTree = "<group>"; };
@@ -332,6 +338,8 @@
 		18267E291CB132E600AB130B /* Names Plists */ = {
 			isa = PBXGroup;
 			children = (
+				1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */,
+				1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */,
 				18C03C1C1E8447A00050773D /* FictionDuneMasc.plist */,
 				18C03C221E84496F0050773D /* FictionDuneFem.plist */,
 				18FCA2B61E978975000FE44B /* FictionTolkien */,
@@ -644,6 +652,7 @@
 				18D12DBD1E92D5BF003A62AF /* FictionTolkienFemMen.plist in Resources */,
 				18FCA2961E977D9F000FE44B /* FictionTolkienMascAinur.plist in Resources */,
 				18E6D01D1E87EFBC005D7867 /* InfoPlist.strings in Resources */,
+				1806DA4E1F6D840500568A3F /* FictionGOTFemStark.plist in Resources */,
 				18FCA2A81E9786BC000FE44B /* FictionTolkienMascEnts.plist in Resources */,
 				18FCA2AC1E9786C2000FE44B /* FictionTolkienFemEnts.plist in Resources */,
 				18AF09EC1CEF74660061B497 /* MythRomanMasc.plist in Resources */,
@@ -658,6 +667,7 @@
 				188E72341E865235006A8CBA /* GoogleService-Info.plist in Resources */,
 				18AF09DC1CEF72CA0061B497 /* MythNorseMasc.plist in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,
+				1806DA481F6D835700568A3F /* FictionGOTMascStark.plist in Resources */,
 				18D12DC51E92D968003A62AF /* FictionTolkienMascMen.plist in Resources */,
 				1847EB0F1E96AC99002F80CC /* FictionTolkienMascElves.plist in Resources */,
 				18FCA28E1E976AFA000FE44B /* FictionTolkienFemDwarves.plist in Resources */,
@@ -919,6 +929,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1806DA491F6D835700568A3F /* en */,
+				1806DA4B1F6D835900568A3F /* ru */,
+			);
+			name = FictionGOTMascStark.plist;
+			sourceTree = "<group>";
+		};
+		1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1806DA4F1F6D840500568A3F /* en */,
+				1806DA511F6D840700568A3F /* ru */,
+			);
+			name = FictionGOTFemStark.plist;
+			sourceTree = "<group>";
+		};
 		1847EB0B1E96A9C3002F80CC /* FictionTolkienFemElves.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
