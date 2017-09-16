@@ -309,7 +309,7 @@ extern NSString* const kAppLaunchesCount;
     
     [uploadButton setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [[uploadButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:0] setActive:YES];
+    [[uploadButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:70] setActive:YES];
     [[uploadButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:0] setActive:YES];
 }
 
@@ -355,6 +355,13 @@ extern NSString* const kAppLaunchesCount;
     if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
         NSString *raceString = [ANName getTolkienRaceStringForRace:self.selectedRace];
         checkingPrefix = [NSString stringWithFormat:@"%@%@%@", category.alias, raceString, genderString];
+        
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
+        
+        NSString *houseString =[ANName getGOTHouseStringForHouse: (ANGOTHouse)self.selectedRace];
+        
+        checkingPrefix = [NSString stringWithFormat:@"%@%@%@", category.alias, houseString, genderString];
+        
         
     } else {
         checkingPrefix = pathName;

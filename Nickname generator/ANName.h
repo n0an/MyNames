@@ -54,6 +54,8 @@ typedef enum {
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory;
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race;
 + (NSString *) adoptTolkienRaceForLocalizationForRace:(ANTolkienRace) race;
++ (NSString *) getGOTHouseStringForHouse:(ANGOTHouse) house;
+
 - (NSString*) getRace;
 
 #pragma mark - TESTING METHODS (PUBLIC)
