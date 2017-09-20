@@ -98,10 +98,18 @@ NSString* const kHouseGOTOther     = @"Other";
         
         dict = [self getNamesDictionaryforCategory:nameCategory race:nameRace andGender:nameGender];
         
+    } else if ([nameCategory.nameCategoryID isEqualToString:@"02.03"]) {
+        
+        ANGOTHouse nameHouse = (ANGOTHouse)[[nameAttributes objectAtIndex:4] integerValue];
+        
+        dict = [self getGOTDictMascOrFemForCategory:nameCategory house:nameHouse andGender:nameGender];
+        
     } else {
         
         dict = [self getNamesDictionaryforCategory:nameCategory andGender:nameGender];
     }
+    
+    
     
     NSArray* namesArr = [dict allKeys];
     
@@ -181,6 +189,10 @@ NSString* const kHouseGOTOther     = @"Other";
         
         case ANGOTHouseLannister:
         result = kHouseGOTLannister;
+        break;
+            
+        case ANGOTHouseOther:
+        result = kHouseGOTOther;
         break;
         
         default:
@@ -560,28 +572,28 @@ NSString* const kHouseGOTOther     = @"Other";
     }
     
     NSString* pathNameStark = [pathName stringByAppendingString:kHouseGOTStark];
-//    NSString* pathNameTargaryen = [pathName stringByAppendingString:kHouseGOTTargaryen];
-//    NSString* pathNameLannister = [pathName stringByAppendingString:kHouseGOTLannister];
-//    NSString* pathNameOther = [pathName stringByAppendingString:kHouseGOTOther];
+    NSString* pathNameTargaryen = [pathName stringByAppendingString:kHouseGOTTargaryen];
+    NSString* pathNameLannister = [pathName stringByAppendingString:kHouseGOTLannister];
+    NSString* pathNameOther = [pathName stringByAppendingString:kHouseGOTOther];
    
     NSMutableDictionary* allGOTNamesDict = [NSMutableDictionary dictionary];
     
     NSString *pathStark = [[NSBundle mainBundle] pathForResource:pathNameStark ofType:@"plist"];
     NSDictionary *dictStark = [NSDictionary dictionaryWithContentsOfFile:pathStark];
     
-//    NSString *pathTargaryen = [[NSBundle mainBundle] pathForResource:pathNameTargaryen ofType:@"plist"];
-//    NSDictionary *dictTargaryen = [NSDictionary dictionaryWithContentsOfFile:pathTargaryen];
-//
-//    NSString *pathLannister = [[NSBundle mainBundle] pathForResource:pathNameLannister ofType:@"plist"];
-//    NSDictionary *dictLannister = [NSDictionary dictionaryWithContentsOfFile:pathLannister];
-//
-//    NSString *pathOther = [[NSBundle mainBundle] pathForResource:pathNameOther ofType:@"plist"];
-//    NSDictionary *dictOther = [NSDictionary dictionaryWithContentsOfFile:pathOther];
+    NSString *pathTargaryen = [[NSBundle mainBundle] pathForResource:pathNameTargaryen ofType:@"plist"];
+    NSDictionary *dictTargaryen = [NSDictionary dictionaryWithContentsOfFile:pathTargaryen];
+
+    NSString *pathLannister = [[NSBundle mainBundle] pathForResource:pathNameLannister ofType:@"plist"];
+    NSDictionary *dictLannister = [NSDictionary dictionaryWithContentsOfFile:pathLannister];
+
+    NSString *pathOther = [[NSBundle mainBundle] pathForResource:pathNameOther ofType:@"plist"];
+    NSDictionary *dictOther = [NSDictionary dictionaryWithContentsOfFile:pathOther];
     
     [allGOTNamesDict addEntriesFromDictionary:dictStark];
-//    [allGOTNamesDict addEntriesFromDictionary:dictTargaryen];
-//    [allGOTNamesDict addEntriesFromDictionary:dictLannister];
-//    [allGOTNamesDict addEntriesFromDictionary:dictOther];
+    [allGOTNamesDict addEntriesFromDictionary:dictTargaryen];
+    [allGOTNamesDict addEntriesFromDictionary:dictLannister];
+    [allGOTNamesDict addEntriesFromDictionary:dictOther];
 
     return allGOTNamesDict;
 }
@@ -642,6 +654,9 @@ NSString* const kHouseGOTOther     = @"Other";
     while ([input rangeOfString:expression options:NSRegularExpressionSearch|NSCaseInsensitiveSearch].location!=NSNotFound){
         input = [input stringByReplacingOccurrencesOfString:expression withString:@"" options:NSRegularExpressionSearch|NSCaseInsensitiveSearch range:NSMakeRange(0, [input length])];
     }
+    
+    input = [input stringByReplacingOccurrencesOfString:@"            " withString:@"  "];
+    
     return input;
 }
     
