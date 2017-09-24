@@ -99,8 +99,8 @@ extern NSString* const kAppLaunchesCount;
     self.housesGOTArray = @[NSLocalizedString(@"NAMERACE020300", nil),
                             NSLocalizedString(@"NAMERACE020301", nil),
                             NSLocalizedString(@"NAMERACE020302", nil),
-                            NSLocalizedString(@"NAMERACE020303", nil)];
-    
+                            NSLocalizedString(@"NAMERACE020303", nil),
+                            NSLocalizedString(@"NAMERACE020304", nil)];
     
     
     [self listenForGoingBackgroundNotification];
@@ -786,7 +786,7 @@ extern NSString* const kAppLaunchesCount;
     if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
         return 9;
     } else {
-        return 4;
+        return 5;
     }
     
 }

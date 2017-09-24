@@ -40,6 +40,7 @@ NAMERACE020300 = "Все";
 NAMERACE020301 = "Старк";
 NAMERACE020302 = "Таргариен";
 NAMERACE020303 = "Ланнистер";
+NAMERACE020304 = "Другие";
 
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Удобный интерфейс";

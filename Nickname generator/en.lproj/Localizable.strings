@@ -40,6 +40,7 @@ NAMERACE020300 = "All";
 NAMERACE020301 = "Stark";
 NAMERACE020302 = "Targaryen";
 NAMERACE020303 = "Lannister";
+NAMERACE020304 = "Other";
 
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Easy to use";
