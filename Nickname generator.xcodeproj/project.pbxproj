@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1806DA481F6D835700568A3F /* FictionGOTMascStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */; };
+		1806DA4E1F6D840500568A3F /* FictionGOTFemStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */; };
 		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
 		1810F9721CA7DD7A00D7D00A /* ANNameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */; };
 		182546401CA55A44006293A6 /* ANName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825463F1CA55A44006293A6 /* ANName.m */; };
@@ -14,6 +16,12 @@
 		1825464A1CA57701006293A6 /* ANNamesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 182546491CA57701006293A6 /* ANNamesFactory.m */; };
 		183410751CCE764000C19817 /* ANPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410741CCE764000C19817 /* ANPageViewController.m */; };
 		183410791CCE7A5900C19817 /* ANContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183410781CCE7A5900C19817 /* ANContentPageViewController.m */; };
+		183AD6471F72EC8200BC51B9 /* FictionGOTMascTargaryen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183AD6491F72EC8200BC51B9 /* FictionGOTMascTargaryen.plist */; };
+		183AD64D1F72ECEA00BC51B9 /* FictionGOTFemTargaryen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183AD64F1F72ECEA00BC51B9 /* FictionGOTFemTargaryen.plist */; };
+		183AD6531F72ED7000BC51B9 /* FictionGOTMascLannister.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183AD6551F72ED7000BC51B9 /* FictionGOTMascLannister.plist */; };
+		183AD6591F72EDAC00BC51B9 /* FictionGOTFemLannister.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183AD65B1F72EDAC00BC51B9 /* FictionGOTFemLannister.plist */; };
+		183AD65F1F72EECD00BC51B9 /* FictionGOTMascOther.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183AD6611F72EECD00BC51B9 /* FictionGOTMascOther.plist */; };
+		183AD6651F72EF8400BC51B9 /* FictionGOTFemOther.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183AD6671F72EF8400BC51B9 /* FictionGOTFemOther.plist */; };
 		1847EB091E96A9C3002F80CC /* FictionTolkienFemElves.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1847EB0B1E96A9C3002F80CC /* FictionTolkienFemElves.plist */; };
 		1847EB0F1E96AC99002F80CC /* FictionTolkienMascElves.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1847EB111E96AC99002F80CC /* FictionTolkienMascElves.plist */; };
 		1847EB151E96D122002F80CC /* FictionTolkienMascHobbits.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1847EB171E96D122002F80CC /* FictionTolkienMascHobbits.plist */; };
@@ -71,9 +79,9 @@
 		18FECE411CB252520003CED4 /* ANDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE401CB252520003CED4 /* ANDataManager.m */; };
 		18FECE441CB256700003CED4 /* ANCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE431CB256700003CED4 /* ANCoreDataVC.m */; };
 		18FECE481CB259850003CED4 /* ANFavoriteNamesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */; };
-		560CB005E1689A4AB74362AD /* libPods-Nickname generatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 274B72FE95845625D1328E7E /* libPods-Nickname generatorTests.a */; };
-		580C5CC00D43F21F38343650 /* libPods-Nickname generatorUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD573ADFDEC36EC6DFF4EAB4 /* libPods-Nickname generatorUITests.a */; };
-		927ECE82B5C218DB8A43CE7D /* libPods-Nickname generator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFBD923A78E964C8BD08B45 /* libPods-Nickname generator.a */; };
+		32C5B56D96D3497594B19FE6 /* Pods_Nickname_generatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A40E69728FBF9F75184048 /* Pods_Nickname_generatorTests.framework */; };
+		4BFABFFDF9177B167CF93AC8 /* Pods_Nickname_generator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3C856ACCDCAD4B70447DB7 /* Pods_Nickname_generator.framework */; };
+		8C103CCD0C0F0F4FA6962291 /* Pods_Nickname_generatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96E4EC4D8FF856EA8264BA8 /* Pods_Nickname_generatorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +102,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1806DA491F6D835700568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
+		1806DA4B1F6D835900568A3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
+		1806DA4F1F6D840500568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTFemStark.plist; sourceTree = "<group>"; };
+		1806DA511F6D840700568A3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTFemStark.plist; sourceTree = "<group>"; };
 		18100DAC1CB248C400508F1D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1810F9701CA7DD7A00D7D00A /* ANNameCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNameCategory.h; sourceTree = "<group>"; };
 		1810F9711CA7DD7A00D7D00A /* ANNameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNameCategory.m; sourceTree = "<group>"; };
@@ -107,6 +119,18 @@
 		183410741CCE764000C19817 /* ANPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPageViewController.m; sourceTree = "<group>"; };
 		183410771CCE7A5900C19817 /* ANContentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANContentPageViewController.h; sourceTree = "<group>"; };
 		183410781CCE7A5900C19817 /* ANContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANContentPageViewController.m; sourceTree = "<group>"; };
+		183AD6481F72EC8200BC51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTMascTargaryen.plist; sourceTree = "<group>"; };
+		183AD64A1F72EC8300BC51B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTMascTargaryen.plist; sourceTree = "<group>"; };
+		183AD64E1F72ECEA00BC51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTFemTargaryen.plist; sourceTree = "<group>"; };
+		183AD6501F72ECEC00BC51B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTFemTargaryen.plist; sourceTree = "<group>"; };
+		183AD6541F72ED7000BC51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTMascLannister.plist; sourceTree = "<group>"; };
+		183AD6561F72ED7200BC51B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTMascLannister.plist; sourceTree = "<group>"; };
+		183AD65A1F72EDAC00BC51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTFemLannister.plist; sourceTree = "<group>"; };
+		183AD65C1F72EDAD00BC51B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTFemLannister.plist; sourceTree = "<group>"; };
+		183AD6601F72EECD00BC51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTMascOther.plist; sourceTree = "<group>"; };
+		183AD6621F72EECE00BC51B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTMascOther.plist; sourceTree = "<group>"; };
+		183AD6661F72EF8400BC51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTFemOther.plist; sourceTree = "<group>"; };
+		183AD6681F72EF8500BC51B9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTFemOther.plist; sourceTree = "<group>"; };
 		1847EB0A1E96A9C3002F80CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionTolkienFemElves.plist; sourceTree = "<group>"; };
 		1847EB0C1E96A9C4002F80CC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionTolkienFemElves.plist; sourceTree = "<group>"; };
 		1847EB101E96AC99002F80CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionTolkienMascElves.plist; sourceTree = "<group>"; };
@@ -222,13 +246,13 @@
 		18FECE431CB256700003CED4 /* ANCoreDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCoreDataVC.m; sourceTree = "<group>"; };
 		18FECE461CB259850003CED4 /* ANFavoriteNamesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFavoriteNamesVC.h; sourceTree = "<group>"; };
 		18FECE471CB259850003CED4 /* ANFavoriteNamesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFavoriteNamesVC.m; sourceTree = "<group>"; };
-		274B72FE95845625D1328E7E /* libPods-Nickname generatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nickname generatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		450B04765D32DB79479A3407 /* Pods-Nickname generatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generatorTests/Pods-Nickname generatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		853E72A117EF1F1767BB015B /* Pods-Nickname generatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generatorUITests/Pods-Nickname generatorUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8EFBD923A78E964C8BD08B45 /* libPods-Nickname generator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nickname generator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		915C5084CE3C1B31B0C2E309 /* Pods-Nickname generatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generatorTests/Pods-Nickname generatorTests.release.xcconfig"; sourceTree = "<group>"; };
-		AD573ADFDEC36EC6DFF4EAB4 /* libPods-Nickname generatorUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nickname generatorUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C814B3585295B08D5195C921 /* Pods-Nickname generatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generatorUITests/Pods-Nickname generatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C96E4EC4D8FF856EA8264BA8 /* Pods_Nickname_generatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nickname_generatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC3C856ACCDCAD4B70447DB7 /* Pods_Nickname_generator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nickname_generator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A40E69728FBF9F75184048 /* Pods_Nickname_generatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nickname_generatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0133BC71858DABE83CF006C /* Pods-Nickname generator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2288E11CA6EECD18E5F142 /* Pods-Nickname generator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nickname generator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,7 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				927ECE82B5C218DB8A43CE7D /* libPods-Nickname generator.a in Frameworks */,
+				4BFABFFDF9177B167CF93AC8 /* Pods_Nickname_generator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				560CB005E1689A4AB74362AD /* libPods-Nickname generatorTests.a in Frameworks */,
+				32C5B56D96D3497594B19FE6 /* Pods_Nickname_generatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +278,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				580C5CC00D43F21F38343650 /* libPods-Nickname generatorUITests.a in Frameworks */,
+				8C103CCD0C0F0F4FA6962291 /* Pods_Nickname_generatorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1806DA521F6D847E00568A3F /* FictionGOT */ = {
+			isa = PBXGroup;
+			children = (
+				1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */,
+				183AD6551F72ED7000BC51B9 /* FictionGOTMascLannister.plist */,
+				1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */,
+				183AD65B1F72EDAC00BC51B9 /* FictionGOTFemLannister.plist */,
+				183AD6491F72EC8200BC51B9 /* FictionGOTMascTargaryen.plist */,
+				183AD6611F72EECD00BC51B9 /* FictionGOTMascOther.plist */,
+				183AD6671F72EF8400BC51B9 /* FictionGOTFemOther.plist */,
+				183AD64F1F72ECEA00BC51B9 /* FictionGOTFemTargaryen.plist */,
+			);
+			name = FictionGOT;
+			sourceTree = "<group>";
+		};
 		18100DA71CB23EAF00508F1D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,9 +371,10 @@
 		18267E291CB132E600AB130B /* Names Plists */ = {
 			isa = PBXGroup;
 			children = (
+				1806DA521F6D847E00568A3F /* FictionGOT */,
+				18FCA2B61E978975000FE44B /* FictionTolkien */,
 				18C03C1C1E8447A00050773D /* FictionDuneMasc.plist */,
 				18C03C221E84496F0050773D /* FictionDuneFem.plist */,
-				18FCA2B61E978975000FE44B /* FictionTolkien */,
 				18AF09CE1CEF6F710061B497 /* MythCelticFem.plist */,
 				18A578511CECF47900A10BB1 /* MythCelticMasc.plist */,
 				18AF09C81CEF6E830061B497 /* MythEgyptFem.plist */,
@@ -505,9 +545,9 @@
 		B667E8DE75CA4E7BB6593B8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8EFBD923A78E964C8BD08B45 /* libPods-Nickname generator.a */,
-				274B72FE95845625D1328E7E /* libPods-Nickname generatorTests.a */,
-				AD573ADFDEC36EC6DFF4EAB4 /* libPods-Nickname generatorUITests.a */,
+				CC3C856ACCDCAD4B70447DB7 /* Pods_Nickname_generator.framework */,
+				D1A40E69728FBF9F75184048 /* Pods_Nickname_generatorTests.framework */,
+				C96E4EC4D8FF856EA8264BA8 /* Pods_Nickname_generatorUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -635,6 +675,8 @@
 				18AF09E01CEF73500061B497 /* MythPersianFem.plist in Resources */,
 				18AF09D41CEF71860061B497 /* MythGreekMasc.plist in Resources */,
 				1847EB151E96D122002F80CC /* FictionTolkienMascHobbits.plist in Resources */,
+				183AD6651F72EF8400BC51B9 /* FictionGOTFemOther.plist in Resources */,
+				183AD6591F72EDAC00BC51B9 /* FictionGOTFemLannister.plist in Resources */,
 				18C03C201E84496F0050773D /* FictionDuneFem.plist in Resources */,
 				18FCA2B21E978926000FE44B /* FictionTolkienMascDragons.plist in Resources */,
 				18AF09E41CEF738A0061B497 /* MythPersianMasc.plist in Resources */,
@@ -644,6 +686,7 @@
 				18D12DBD1E92D5BF003A62AF /* FictionTolkienFemMen.plist in Resources */,
 				18FCA2961E977D9F000FE44B /* FictionTolkienMascAinur.plist in Resources */,
 				18E6D01D1E87EFBC005D7867 /* InfoPlist.strings in Resources */,
+				1806DA4E1F6D840500568A3F /* FictionGOTFemStark.plist in Resources */,
 				18FCA2A81E9786BC000FE44B /* FictionTolkienMascEnts.plist in Resources */,
 				18FCA2AC1E9786C2000FE44B /* FictionTolkienFemEnts.plist in Resources */,
 				18AF09EC1CEF74660061B497 /* MythRomanMasc.plist in Resources */,
@@ -651,20 +694,25 @@
 				18AF09C61CEF6E830061B497 /* MythEgyptFem.plist in Resources */,
 				18FCA29A1E977DA4000FE44B /* FictionTolkienFemAinur.plist in Resources */,
 				18A5784F1CECF47900A10BB1 /* MythCelticMasc.plist in Resources */,
+				183AD6471F72EC8200BC51B9 /* FictionGOTMascTargaryen.plist in Resources */,
 				18A5783E1CECE0A300A10BB1 /* Localizable.strings in Resources */,
+				183AD64D1F72ECEA00BC51B9 /* FictionGOTFemTargaryen.plist in Resources */,
 				18AF09E81CEF742D0061B497 /* MythRomanFem.plist in Resources */,
 				18AF09F01CEF75180061B497 /* MythVedicFem.plist in Resources */,
 				1847EB1B1E96D19A002F80CC /* FictionTolkienFemHobbits.plist in Resources */,
 				188E72341E865235006A8CBA /* GoogleService-Info.plist in Resources */,
 				18AF09DC1CEF72CA0061B497 /* MythNorseMasc.plist in Resources */,
 				18F1B9811C8F43C1001A3B25 /* Assets.xcassets in Resources */,
+				1806DA481F6D835700568A3F /* FictionGOTMascStark.plist in Resources */,
 				18D12DC51E92D968003A62AF /* FictionTolkienMascMen.plist in Resources */,
 				1847EB0F1E96AC99002F80CC /* FictionTolkienMascElves.plist in Resources */,
 				18FCA28E1E976AFA000FE44B /* FictionTolkienFemDwarves.plist in Resources */,
+				183AD65F1F72EECD00BC51B9 /* FictionGOTMascOther.plist in Resources */,
 				18FCA2BF1E97D7EB000FE44B /* FictionTolkienFemDragons.plist in Resources */,
 				18AF09F41CEF75480061B497 /* MythVedicMasc.plist in Resources */,
 				1847EB091E96A9C3002F80CC /* FictionTolkienFemElves.plist in Resources */,
 				18FCA2B91E97D740000FE44B /* FictionTolkienFemOrcs.plist in Resources */,
+				183AD6531F72ED7000BC51B9 /* FictionGOTMascLannister.plist in Resources */,
 				18FCA2A01E9783BB000FE44B /* FictionTolkienMascOrcs.plist in Resources */,
 				18C03C1A1E8447A00050773D /* FictionDuneMasc.plist in Resources */,
 				18F1B97F1C8F43C1001A3B25 /* Main.storyboard in Resources */,
@@ -708,13 +756,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nickname generatorUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		361723309D4AE74D5E0656C8 /* [CP] Copy Pods Resources */ = {
@@ -738,13 +789,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nickname generator-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		85A7C94CEF9ACAB3104C3154 /* [CP] Embed Pods Frameworks */ = {
@@ -783,9 +837,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -813,13 +874,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nickname generatorTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C6C221BE775AAF9F3ADC9546 /* [CP] Embed Pods Frameworks */ = {
@@ -903,6 +967,78 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1806DA491F6D835700568A3F /* en */,
+				1806DA4B1F6D835900568A3F /* ru */,
+			);
+			name = FictionGOTMascStark.plist;
+			sourceTree = "<group>";
+		};
+		1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1806DA4F1F6D840500568A3F /* en */,
+				1806DA511F6D840700568A3F /* ru */,
+			);
+			name = FictionGOTFemStark.plist;
+			sourceTree = "<group>";
+		};
+		183AD6491F72EC8200BC51B9 /* FictionGOTMascTargaryen.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				183AD6481F72EC8200BC51B9 /* en */,
+				183AD64A1F72EC8300BC51B9 /* ru */,
+			);
+			name = FictionGOTMascTargaryen.plist;
+			sourceTree = "<group>";
+		};
+		183AD64F1F72ECEA00BC51B9 /* FictionGOTFemTargaryen.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				183AD64E1F72ECEA00BC51B9 /* en */,
+				183AD6501F72ECEC00BC51B9 /* ru */,
+			);
+			name = FictionGOTFemTargaryen.plist;
+			sourceTree = "<group>";
+		};
+		183AD6551F72ED7000BC51B9 /* FictionGOTMascLannister.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				183AD6541F72ED7000BC51B9 /* en */,
+				183AD6561F72ED7200BC51B9 /* ru */,
+			);
+			name = FictionGOTMascLannister.plist;
+			sourceTree = "<group>";
+		};
+		183AD65B1F72EDAC00BC51B9 /* FictionGOTFemLannister.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				183AD65A1F72EDAC00BC51B9 /* en */,
+				183AD65C1F72EDAD00BC51B9 /* ru */,
+			);
+			name = FictionGOTFemLannister.plist;
+			sourceTree = "<group>";
+		};
+		183AD6611F72EECD00BC51B9 /* FictionGOTMascOther.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				183AD6601F72EECD00BC51B9 /* en */,
+				183AD6621F72EECE00BC51B9 /* ru */,
+			);
+			name = FictionGOTMascOther.plist;
+			sourceTree = "<group>";
+		};
+		183AD6671F72EF8400BC51B9 /* FictionGOTFemOther.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				183AD6661F72EF8400BC51B9 /* en */,
+				183AD6681F72EF8500BC51B9 /* ru */,
+			);
+			name = FictionGOTFemOther.plist;
+			sourceTree = "<group>";
+		};
 		1847EB0B1E96A9C3002F80CC /* FictionTolkienFemElves.plist */ = {
 			isa = PBXVariantGroup;
 			children = (

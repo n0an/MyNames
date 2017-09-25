@@ -24,6 +24,7 @@ NAMECATEGORY0007 = "Кельтская мифология";
 
 NAMECATEGORY0201 = "Дюна";
 NAMECATEGORY0202 = "Толкиен";
+NAMECATEGORY0203 = "Игра Престолов";
 
 NAMERACE020200 = "Все";
 NAMERACE020201 = "Эльфы";
@@ -34,6 +35,12 @@ NAMERACE020205 = "Айнур";
 NAMERACE020206 = "Орки";
 NAMERACE020207 = "Энты";
 NAMERACE020208 = "Драконы";
+
+NAMERACE020300 = "Все";
+NAMERACE020301 = "Старк";
+NAMERACE020302 = "Таргариен";
+NAMERACE020303 = "Ланнистер";
+NAMERACE020304 = "Другие";
 
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Удобный интерфейс";
@@ -71,6 +78,8 @@ ROW_ACTION_DELETE = "Удалить";
 BARBUTTON_DONE = "Готово";
 BARBUTTON_EDIT = "Изменить";
 
+UILABEL_RACE = "Раса:";
+UILABEL_HOUSE = "Дом:";
 
 
 

@@ -1,9 +1,9 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '9.0'
 
 target 'Nickname generator' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+   use_frameworks!
 
   # Pods for Nickname generator
   
@@ -13,8 +13,13 @@ target 'Nickname generator' do
 
   # Fabric
   pod 'Fabric'
-  pod 'Crashlytics' 
+  pod 'Crashlytics'
 
+  # RevealingSplashView
+  pod 'RevealingSplashView' 
+
+
+  # Tests
   target 'Nickname generatorTests' do
     inherit! :search_paths
     # Pods for testing
