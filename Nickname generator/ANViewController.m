@@ -21,6 +21,7 @@
 #import <FirebaseStorage/FirebaseStorage.h>
 #import "ANFRImage.h"
 
+
 #pragma mark - ENUM
 typedef enum {
     ANMenuConstantStateClosed       = -321,
@@ -63,6 +64,8 @@ extern NSString* const kAppLaunchesCount;
 @property (strong, nonatomic) id rotateTransition;
 
 @property (strong, nonatomic) NSArray *racesTolkienArray;
+@property (strong, nonatomic) NSArray *housesGOTArray;
+
 
 @property (strong, nonatomic) UILabel *raceLabel;
 
@@ -92,6 +95,13 @@ extern NSString* const kAppLaunchesCount;
                                NSLocalizedString(@"NAMERACE020206", nil),
                                NSLocalizedString(@"NAMERACE020207", nil),
                                NSLocalizedString(@"NAMERACE020208", nil)];
+    
+    self.housesGOTArray = @[NSLocalizedString(@"NAMERACE020300", nil),
+                            NSLocalizedString(@"NAMERACE020301", nil),
+                            NSLocalizedString(@"NAMERACE020302", nil),
+                            NSLocalizedString(@"NAMERACE020303", nil),
+                            NSLocalizedString(@"NAMERACE020304", nil)];
+    
     
     [self listenForGoingBackgroundNotification];
     
@@ -148,6 +158,32 @@ extern NSString* const kAppLaunchesCount;
     
 #endif
     
+    UIImage *splashImage = [UIImage imageNamed:@"Eye_of_Horus"];
+    
+    CGSize splashImageSize = CGSizeMake(150, 100);
+    
+//    UIColor *splashImageBGColor = [UIColor whiteColor];
+    
+//    UIColor *splashImageBGColor = [UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1.00];
+    
+    UIColor *splashImageBGColor = [UIColor colorWithRed:236/255.0 green:240/255.0 blue:241/255.0 alpha:1.0];
+
+    
+    RevealingSplashView *splashView = [[RevealingSplashView alloc] initWithIconImage:splashImage iconInitialSize:splashImageSize backgroundColor:splashImageBGColor];
+    
+    [self.view addSubview:splashView];
+    
+    splashView.minimumBeats = 2;
+    
+    [splashView playHeartBeatAnimation:^{
+//        [splashView finishHeartBeatAnimation];
+    }];
+    
+    
+//    [splashView startAnimation:nil];
+
+//    splashView.heartAttack = YES;
+    [splashView finishHeartBeatAnimation];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -228,6 +264,8 @@ extern NSString* const kAppLaunchesCount;
         
         name = [[ANNamesFactory sharedFactory] getRandomTolkienForRace:self.selectedRace andGender:self.selectedGender];
         
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
+        name = [[ANNamesFactory sharedFactory] getRandomGOTForHouse:(ANGOTHouse)self.selectedRace andGender:self.selectedGender];
     } else {
         name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
     }
@@ -271,7 +309,7 @@ extern NSString* const kAppLaunchesCount;
     
     [uploadButton setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [[uploadButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:0] setActive:YES];
+    [[uploadButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:70] setActive:YES];
     [[uploadButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor constant:0] setActive:YES];
 }
 
@@ -317,6 +355,13 @@ extern NSString* const kAppLaunchesCount;
     if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
         NSString *raceString = [ANName getTolkienRaceStringForRace:self.selectedRace];
         checkingPrefix = [NSString stringWithFormat:@"%@%@%@", category.alias, raceString, genderString];
+        
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
+        
+        NSString *houseString =[ANName getGOTHouseStringForHouse: (ANGOTHouse)self.selectedRace];
+        
+        checkingPrefix = [NSString stringWithFormat:@"%@%@%@", category.alias, houseString, genderString];
+        
         
     } else {
         checkingPrefix = pathName;
@@ -738,22 +783,44 @@ extern NSString* const kAppLaunchesCount;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 9;
+    if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        return 9;
+    } else {
+        return 5;
+    }
+    
 }
 
 #pragma mark - UIPickerViewDelegate
 - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
-    NSString *title = self.racesTolkienArray[row];
+    NSString *title;
+    
+    if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        title = self.racesTolkienArray[row];
+    } else {
+        title = self.housesGOTArray[row];
+    }
+    
    
     return title;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.selectedRace = (ANTolkienRace)row;
-    NSString *raceTitle = self.racesTolkienArray[row];
     
-    [self.nameRaceSelectButton setTitle:raceTitle forState:UIControlStateNormal];
+    NSString *title;
+    
+    if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
+        
+        title = self.racesTolkienArray[row];
+    } else {
+        title = self.housesGOTArray[row];
+    }
+    
+    self.selectedRace = (ANTolkienRace)row;
+    
+    [self.nameRaceSelectButton setTitle:title forState:UIControlStateNormal];
     [self.raceSelectionPickerView removeFromSuperview];
     [self animateResultsLabelUpdate];
 }
@@ -798,13 +865,21 @@ extern NSString* const kAppLaunchesCount;
     
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
     
-    if ([category.nameCategoryID isEqualToString:@"02.02"]) {
+    BOOL isTolkienCategory = [category.nameCategoryID isEqualToString:@"02.02"];
+    BOOL isGOTCategory = [category.nameCategoryID isEqualToString:@"02.03"];
+
+    if (isTolkienCategory || isGOTCategory) {
         
         [self.controlsStackView setSpacing:8];
         
         CGRect raceLabelFrame = CGRectMake(0, 0, 80, 30);
         UILabel *raceLabel = [[UILabel alloc] initWithFrame:raceLabelFrame];
-        raceLabel.text = NSLocalizedString(@"UILABEL_RACE", nil);
+        
+        if (isTolkienCategory) {
+            raceLabel.text = NSLocalizedString(@"UILABEL_RACE", nil);
+        } else {
+            raceLabel.text = NSLocalizedString(@"UILABEL_HOUSE", nil);
+        }
         
         self.raceLabel = raceLabel;
         [self.categoryRaceLabelsStackView addArrangedSubview:raceLabel];
@@ -814,6 +889,7 @@ extern NSString* const kAppLaunchesCount;
         
         [self.nameRaceSelectButton setTitle:currentRaceTitle forState:UIControlStateNormal];
         
+    
     } else {
         if (self.categoryRaceButtonsStackView.arrangedSubviews.count == 2) {
             [self.controlsStackView setSpacing:40];

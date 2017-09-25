@@ -24,6 +24,7 @@ NAMECATEGORY0007 = "Celtic mythology";
 
 NAMECATEGORY0201 = "Dune";
 NAMECATEGORY0202 = "Tolkien";
+NAMECATEGORY0203 = "Game of Thrones";
 
 NAMERACE020200 = "All";
 NAMERACE020201 = "Elves";
@@ -34,6 +35,12 @@ NAMERACE020205 = "Ainur";
 NAMERACE020206 = "Orcs";
 NAMERACE020207 = "Ents";
 NAMERACE020208 = "Dragons";
+
+NAMERACE020300 = "All";
+NAMERACE020301 = "Stark";
+NAMERACE020302 = "Targaryen";
+NAMERACE020303 = "Lannister";
+NAMERACE020304 = "Other";
 
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Easy to use";
@@ -73,6 +80,7 @@ BARBUTTON_DONE = "Done";
 BARBUTTON_EDIT = "Edit";
 
 UILABEL_RACE = "Race:";
+UILABEL_HOUSE = "House:";
 
 
 
