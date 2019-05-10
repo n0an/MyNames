@@ -10,6 +10,7 @@
 		1566A7D822858579009E068A /* FictionStarwarsFemHuman.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7DA22858579009E068A /* FictionStarwarsFemHuman.plist */; };
 		1566A7DE22858935009E068A /* FictionStarwarsFemSith.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7E022858935009E068A /* FictionStarwarsFemSith.plist */; };
 		1566A7E422858A51009E068A /* FictionStarwarsFemWookie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7E622858A51009E068A /* FictionStarwarsFemWookie.plist */; };
+		1566A7EA22859157009E068A /* FictionStarwarsFemYoda.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7EC22859157009E068A /* FictionStarwarsFemYoda.plist */; };
 		1806DA481F6D835700568A3F /* FictionGOTMascStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */; };
 		1806DA4E1F6D840500568A3F /* FictionGOTFemStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */; };
 		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
@@ -111,6 +112,8 @@
 		1566A7E12285893A009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsFemSith.plist; sourceTree = "<group>"; };
 		1566A7E522858A51009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsFemWookie.plist; sourceTree = "<group>"; };
 		1566A7E722858A54009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsFemWookie.plist; sourceTree = "<group>"; };
+		1566A7EB22859157009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsFemYoda.plist; sourceTree = "<group>"; };
+		1566A7ED22859159009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsFemYoda.plist; sourceTree = "<group>"; };
 		1806DA491F6D835700568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
 		1806DA4B1F6D835900568A3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
 		1806DA4F1F6D840500568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTFemStark.plist; sourceTree = "<group>"; };
@@ -300,6 +303,7 @@
 				1566A7DA22858579009E068A /* FictionStarwarsFemHuman.plist */,
 				1566A7E022858935009E068A /* FictionStarwarsFemSith.plist */,
 				1566A7E622858A51009E068A /* FictionStarwarsFemWookie.plist */,
+				1566A7EC22859157009E068A /* FictionStarwarsFemYoda.plist */,
 			);
 			name = FictionStarwars;
 			sourceTree = "<group>";
@@ -698,6 +702,7 @@
 				1847EB151E96D122002F80CC /* FictionTolkienMascHobbits.plist in Resources */,
 				183AD6651F72EF8400BC51B9 /* FictionGOTFemOther.plist in Resources */,
 				183AD6591F72EDAC00BC51B9 /* FictionGOTFemLannister.plist in Resources */,
+				1566A7EA22859157009E068A /* FictionStarwarsFemYoda.plist in Resources */,
 				18C03C201E84496F0050773D /* FictionDuneFem.plist in Resources */,
 				1566A7D822858579009E068A /* FictionStarwarsFemHuman.plist in Resources */,
 				18FCA2B21E978926000FE44B /* FictionTolkienMascDragons.plist in Resources */,
@@ -1016,6 +1021,15 @@
 				1566A7E722858A54009E068A /* ru */,
 			);
 			name = FictionStarwarsFemWookie.plist;
+			sourceTree = "<group>";
+		};
+		1566A7EC22859157009E068A /* FictionStarwarsFemYoda.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7EB22859157009E068A /* en */,
+				1566A7ED22859159009E068A /* ru */,
+			);
+			name = FictionStarwarsFemYoda.plist;
 			sourceTree = "<group>";
 		};
 		1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */ = {
