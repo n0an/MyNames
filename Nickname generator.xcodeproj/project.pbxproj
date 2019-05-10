@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1566A7D822858579009E068A /* FictionStarwarsFemHuman.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7DA22858579009E068A /* FictionStarwarsFemHuman.plist */; };
 		1806DA481F6D835700568A3F /* FictionGOTMascStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */; };
 		1806DA4E1F6D840500568A3F /* FictionGOTFemStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */; };
 		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
@@ -102,6 +103,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1566A7D922858579009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsFemHuman.plist; sourceTree = "<group>"; };
+		1566A7DB2285857F009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsFemHuman.plist; sourceTree = "<group>"; };
 		1806DA491F6D835700568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
 		1806DA4B1F6D835900568A3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
 		1806DA4F1F6D840500568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTFemStark.plist; sourceTree = "<group>"; };
@@ -285,6 +288,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1566A7D122858488009E068A /* FictionStarwars */ = {
+			isa = PBXGroup;
+			children = (
+				1566A7DA22858579009E068A /* FictionStarwarsFemHuman.plist */,
+			);
+			name = FictionStarwars;
+			sourceTree = "<group>";
+		};
 		1806DA521F6D847E00568A3F /* FictionGOT */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +382,7 @@
 		18267E291CB132E600AB130B /* Names Plists */ = {
 			isa = PBXGroup;
 			children = (
+				1566A7D122858488009E068A /* FictionStarwars */,
 				1806DA521F6D847E00568A3F /* FictionGOT */,
 				18FCA2B61E978975000FE44B /* FictionTolkien */,
 				18C03C1C1E8447A00050773D /* FictionDuneMasc.plist */,
@@ -650,6 +662,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				ru,
@@ -678,6 +691,7 @@
 				183AD6651F72EF8400BC51B9 /* FictionGOTFemOther.plist in Resources */,
 				183AD6591F72EDAC00BC51B9 /* FictionGOTFemLannister.plist in Resources */,
 				18C03C201E84496F0050773D /* FictionDuneFem.plist in Resources */,
+				1566A7D822858579009E068A /* FictionStarwarsFemHuman.plist in Resources */,
 				18FCA2B21E978926000FE44B /* FictionTolkienMascDragons.plist in Resources */,
 				18AF09E41CEF738A0061B497 /* MythPersianMasc.plist in Resources */,
 				18AF09D81CEF728F0061B497 /* MythNorseFem.plist in Resources */,
@@ -967,6 +981,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1566A7DA22858579009E068A /* FictionStarwarsFemHuman.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7D922858579009E068A /* en */,
+				1566A7DB2285857F009E068A /* ru */,
+			);
+			name = FictionStarwarsFemHuman.plist;
+			sourceTree = "<group>";
+		};
 		1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
