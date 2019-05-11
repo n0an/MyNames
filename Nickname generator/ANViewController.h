@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @import RevealingSplashView;
 
+#import <RevealingSplashView.h>
+
 @interface ANViewController : UIViewController
 
 #pragma mark - OUTLETS
