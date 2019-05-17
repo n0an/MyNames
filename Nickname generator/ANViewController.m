@@ -930,13 +930,11 @@ extern NSString* const kAppLaunchesCount;
         
         NSString *currentRaceTitle = self.racesTolkienArray[0];
         
-        
         [self.nameRaceSelectButton setTitle:currentRaceTitle forState:UIControlStateNormal];
         
-        self.raceSelectionPickerView.reloadAllComponents;
+        [self.raceSelectionPickerView reloadAllComponents];
+        [self.raceSelectionPickerView selectRow:0 inComponent:0 animated:NO];
 
-        
-    
     } else {
         NSLog(@"here");
         if (self.categoryRaceButtonsStackView.arrangedSubviews.count == 2) {
