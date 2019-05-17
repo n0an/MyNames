@@ -225,6 +225,8 @@ extern NSString* const kAppLaunchesCount;
     
     UITapGestureRecognizer* tapGestureOnWheelView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapOnWheelView:)];
     [self.wheelView addGestureRecognizer:tapGestureOnWheelView];
+    
+    [self.view layoutIfNeeded];
 }
 
 - (void) deinit {
@@ -912,12 +914,16 @@ extern NSString* const kAppLaunchesCount;
             UILabel *raceLabel = [[UILabel alloc] initWithFrame:raceLabelFrame];
             
             self.raceLabel = raceLabel;
-            [self.categoryRaceLabelsStackView addArrangedSubview:raceLabel];
             
         }
+        
+        [self.categoryRaceLabelsStackView addArrangedSubview:self.raceLabel];
+        
         self.raceLabel.text = raceLabelText;
+        self.raceLabel.hidden = NO;
         
         [self.categoryRaceButtonsStackView addArrangedSubview:self.nameRaceSelectButton];
+        self.nameRaceSelectButton.hidden = NO;
         
         NSString *currentRaceTitle = self.racesTolkienArray[0];
         
@@ -928,10 +934,13 @@ extern NSString* const kAppLaunchesCount;
         
     
     } else {
+        NSLog(@"here");
         if (self.categoryRaceButtonsStackView.arrangedSubviews.count == 2) {
             [self.controlsStackView setSpacing:40];
             [self.categoryRaceLabelsStackView removeArrangedSubview:self.raceLabel];
+            self.raceLabel.hidden = YES;
             [self.categoryRaceButtonsStackView removeArrangedSubview:self.nameRaceSelectButton];
+            self.nameRaceSelectButton.hidden = YES;
         }
     }
 }
