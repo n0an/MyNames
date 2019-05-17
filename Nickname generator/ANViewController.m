@@ -897,22 +897,34 @@ extern NSString* const kAppLaunchesCount;
         
         [self.controlsStackView setSpacing:8];
         
-        CGRect raceLabelFrame = CGRectMake(0, 0, 80, 30);
-        UILabel *raceLabel = [[UILabel alloc] initWithFrame:raceLabelFrame];
+        NSString *raceLabelText;
         
         if (isTolkienCategory || isStarwarsCategory) {
-            raceLabel.text = NSLocalizedString(@"UILABEL_RACE", nil);
+            raceLabelText = NSLocalizedString(@"UILABEL_RACE", nil);
         } else {
-            raceLabel.text = NSLocalizedString(@"UILABEL_HOUSE", nil);
+            raceLabelText = NSLocalizedString(@"UILABEL_HOUSE", nil);
         }
         
-        self.raceLabel = raceLabel;
-        [self.categoryRaceLabelsStackView addArrangedSubview:raceLabel];
+        
+        if (self.raceLabel == nil) {
+            
+            CGRect raceLabelFrame = CGRectMake(0, 0, 80, 30);
+            UILabel *raceLabel = [[UILabel alloc] initWithFrame:raceLabelFrame];
+            
+            self.raceLabel = raceLabel;
+            [self.categoryRaceLabelsStackView addArrangedSubview:raceLabel];
+            
+        }
+        self.raceLabel.text = raceLabelText;
+        
         [self.categoryRaceButtonsStackView addArrangedSubview:self.nameRaceSelectButton];
         
-        NSString *currentRaceTitle = self.racesTolkienArray[self.selectedRace];
+        NSString *currentRaceTitle = self.racesTolkienArray[0];
         
         [self.nameRaceSelectButton setTitle:currentRaceTitle forState:UIControlStateNormal];
+        
+        self.raceSelectionPickerView.reloadAllComponents;
+
         
     
     } else {
