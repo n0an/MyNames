@@ -67,7 +67,6 @@ extern NSString* const kAppLaunchesCount;
 @property (strong, nonatomic) NSArray *housesGOTArray;
 @property (strong, nonatomic) NSArray *racesStarwarsArray;
 
-
 @property (strong, nonatomic) UILabel *raceLabel;
 
 @end
@@ -801,6 +800,8 @@ extern NSString* const kAppLaunchesCount;
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
         return 9;
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
+        return 5;
     } else {
         return 5;
     }
@@ -815,8 +816,12 @@ extern NSString* const kAppLaunchesCount;
     if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
         
         title = self.racesTolkienArray[row];
-    } else {
+        
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
         title = self.housesGOTArray[row];
+        
+    } else {
+        title = self.racesStarwarsArray[row];
     }
     
    
@@ -828,10 +833,13 @@ extern NSString* const kAppLaunchesCount;
     NSString *title;
     
     if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.02"]) {
-        
         title = self.racesTolkienArray[row];
-    } else {
+        
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
         title = self.housesGOTArray[row];
+
+    } else {
+        title = self.racesStarwarsArray[row];
     }
     
     self.selectedRace = (ANTolkienRace)row;
