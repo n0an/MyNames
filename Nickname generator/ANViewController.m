@@ -887,7 +887,10 @@ extern NSString* const kAppLaunchesCount;
         [self.bgImageView setImage:bgImage];
     }
     
+    self.selectedRace = ANTolkienRaceAll;
+
     self.nameResultLabel.text = [self getNewNameAndSetInfoButton];
+    
     
     [self.nameCategorySelectButton setTitle:self.selectedCategory.nameCategoryTitle forState:UIControlStateNormal];
     
@@ -926,6 +929,7 @@ extern NSString* const kAppLaunchesCount;
         self.nameRaceSelectButton.hidden = NO;
         
         NSString *currentRaceTitle = self.racesTolkienArray[0];
+        
         
         [self.nameRaceSelectButton setTitle:currentRaceTitle forState:UIControlStateNormal];
         
