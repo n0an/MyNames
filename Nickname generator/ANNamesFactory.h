@@ -20,6 +20,7 @@
 - (ANName*) getRandomNameForCategory:(ANNameCategory*) category andGender:(ANGender) gender;
 - (ANName*) getRandomTolkienForRace:(ANTolkienRace) race andGender:(ANGender) gender;
 - (ANName*) getRandomGOTForHouse:(ANGOTHouse) race andGender:(ANGender) gender;
+- (ANName*) getRandomStarwarsForRace:(ANStarwarsRace) race andGender:(ANGender) gender;
 
 - (ANName*) getNameForID:(NSString*) nameID;
 - (NSString*) adoptToLocalizationString:(NSString*) string;

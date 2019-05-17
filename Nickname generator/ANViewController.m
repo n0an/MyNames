@@ -65,6 +65,7 @@ extern NSString* const kAppLaunchesCount;
 
 @property (strong, nonatomic) NSArray *racesTolkienArray;
 @property (strong, nonatomic) NSArray *housesGOTArray;
+@property (strong, nonatomic) NSArray *racesStarwarsArray;
 
 
 @property (strong, nonatomic) UILabel *raceLabel;
@@ -86,22 +87,27 @@ extern NSString* const kAppLaunchesCount;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.racesTolkienArray = @[NSLocalizedString(@"NAMERACE020200", nil),
-                               NSLocalizedString(@"NAMERACE020201", nil),
-                               NSLocalizedString(@"NAMERACE020202", nil),
-                               NSLocalizedString(@"NAMERACE020203", nil),
-                               NSLocalizedString(@"NAMERACE020204", nil),
-                               NSLocalizedString(@"NAMERACE020205", nil),
-                               NSLocalizedString(@"NAMERACE020206", nil),
-                               NSLocalizedString(@"NAMERACE020207", nil),
-                               NSLocalizedString(@"NAMERACE020208", nil)];
+    self.racesTolkienArray =  @[NSLocalizedString(@"NAMERACE020200", nil),
+                                NSLocalizedString(@"NAMERACE020201", nil),
+                                NSLocalizedString(@"NAMERACE020202", nil),
+                                NSLocalizedString(@"NAMERACE020203", nil),
+                                NSLocalizedString(@"NAMERACE020204", nil),
+                                NSLocalizedString(@"NAMERACE020205", nil),
+                                NSLocalizedString(@"NAMERACE020206", nil),
+                                NSLocalizedString(@"NAMERACE020207", nil),
+                                NSLocalizedString(@"NAMERACE020208", nil)];
     
-    self.housesGOTArray = @[NSLocalizedString(@"NAMERACE020300", nil),
-                            NSLocalizedString(@"NAMERACE020301", nil),
-                            NSLocalizedString(@"NAMERACE020302", nil),
-                            NSLocalizedString(@"NAMERACE020303", nil),
-                            NSLocalizedString(@"NAMERACE020304", nil)];
+    self.housesGOTArray =     @[NSLocalizedString(@"NAMERACE020300", nil),
+                                NSLocalizedString(@"NAMERACE020301", nil),
+                                NSLocalizedString(@"NAMERACE020302", nil),
+                                NSLocalizedString(@"NAMERACE020303", nil),
+                                NSLocalizedString(@"NAMERACE020304", nil)];
     
+    self.racesStarwarsArray = @[NSLocalizedString(@"NAMERACE020400", nil),
+                                NSLocalizedString(@"NAMERACE020401", nil),
+                                NSLocalizedString(@"NAMERACE020402", nil),
+                                NSLocalizedString(@"NAMERACE020403", nil),
+                                NSLocalizedString(@"NAMERACE020404", nil)];
     
     [self listenForGoingBackgroundNotification];
     
@@ -265,6 +271,10 @@ extern NSString* const kAppLaunchesCount;
         
     } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
         name = [[ANNamesFactory sharedFactory] getRandomGOTForHouse:(ANGOTHouse)self.selectedRace andGender:self.selectedGender];
+        
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.04"]) {
+        name = [[ANNamesFactory sharedFactory] getRandomStarwarsForRace:(ANStarwarsRace)self.selectedRace andGender:self.selectedGender];
+        
     } else {
         name = [[ANNamesFactory sharedFactory] getRandomNameForCategory:self.selectedCategory andGender:self.selectedGender];
     }
@@ -297,7 +307,7 @@ extern NSString* const kAppLaunchesCount;
 }
     
 - (void) addUploadButton {
- 
+    
     UIButton *uploadButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [uploadButton setTitle:@"!!!UPLOAD!!!" forState:UIControlStateNormal];
@@ -313,6 +323,8 @@ extern NSString* const kAppLaunchesCount;
 }
 
 - (void) uploadUsingFileManager {
+    
+    NSLog(@"uploadUsingFileManager");
     
     // *** !!! SET THIS TWO PARAMETERS IN ACCORDANCE WITH CONTENTS OF !TOUPLOAD DIRECTORY !!!
     ANNameCategory* category = self.selectedCategory;
@@ -357,10 +369,15 @@ extern NSString* const kAppLaunchesCount;
         
     } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.03"]) {
         
-        NSString *houseString =[ANName getGOTHouseStringForHouse: (ANGOTHouse)self.selectedRace];
+        NSString *houseString = [ANName getGOTHouseStringForHouse: (ANGOTHouse)self.selectedRace];
         
         checkingPrefix = [NSString stringWithFormat:@"%@%@%@", category.alias, houseString, genderString];
         
+    } else if ([self.selectedCategory.nameCategoryID isEqualToString:@"02.04"]) {
+        
+        NSString *raceString = [ANName getStarwarsRaceStringForRace: (ANStarwarsRace)self.selectedRace];
+        
+        checkingPrefix = [NSString stringWithFormat:@"%@%@%@", category.alias, raceString, genderString];
         
     } else {
         checkingPrefix = pathName;
@@ -866,15 +883,16 @@ extern NSString* const kAppLaunchesCount;
     
     BOOL isTolkienCategory = [category.nameCategoryID isEqualToString:@"02.02"];
     BOOL isGOTCategory = [category.nameCategoryID isEqualToString:@"02.03"];
+    BOOL isStarwarsCategory = [category.nameCategoryID isEqualToString:@"02.04"];
 
-    if (isTolkienCategory || isGOTCategory) {
+    if (isTolkienCategory || isGOTCategory || isStarwarsCategory) {
         
         [self.controlsStackView setSpacing:8];
         
         CGRect raceLabelFrame = CGRectMake(0, 0, 80, 30);
         UILabel *raceLabel = [[UILabel alloc] initWithFrame:raceLabelFrame];
         
-        if (isTolkienCategory) {
+        if (isTolkienCategory || isStarwarsCategory) {
             raceLabel.text = NSLocalizedString(@"UILABEL_RACE", nil);
         } else {
             raceLabel.text = NSLocalizedString(@"UILABEL_HOUSE", nil);

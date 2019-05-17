@@ -28,9 +28,14 @@ NSString* const kHouseGOTTargaryen = @"Targaryen";
 NSString* const kHouseGOTLannister = @"Lannister";
 NSString* const kHouseGOTOther     = @"Other";
 
+NSString* const kRaceStarwarsAll    = @"All";
+NSString* const kRaceStarwarsHuman  = @"Human";
+NSString* const kRaceStarwarsWookie = @"Wookie";
+NSString* const kRaceStarwarsSith   = @"Sith";
+NSString* const kRaceStarwarsYoda   = @"Yoda";
 
 @implementation ANName
-    
+
 #pragma mark - PUBLIC METHODS
 + (ANName*) randomNameforCategory:(ANNameCategory*)category andGender:(ANGender) gender {
     ANName* name = [[ANName alloc] init];
@@ -46,7 +51,7 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return name;
 }
-    
+
 + (ANName*) randomNameforCategory:(ANNameCategory*)category race:(ANTolkienRace)race andGender:(ANGender) gender {
     ANName* name = [[ANName alloc] init];
     
@@ -57,9 +62,12 @@ NSString* const kHouseGOTOther     = @"Other";
             // Tolkien names
             dict = [self getAllTolkienNamesForGender:gender];
             
-        } else {
+        } else if ([category.nameCategoryID isEqualToString:@"02.03"]) {
             // GOT names
             dict = [self getAllGOTNamesForGender:gender];
+        } else {
+            // Starwars names
+            dict = [self getAllStarwarsNamesForGender:gender];
         }
         
     } else {
@@ -79,8 +87,8 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return name;
 }
-    
-    
+
+
 + (ANName*) getNameForID:(NSString*) nameID andCategory:(ANNameCategory*) nameCategory {
     // 01.02.0.15 - EXAMPLE OF ID (Mythology, Vedic, Masc, id15)
     
@@ -128,177 +136,238 @@ NSString* const kHouseGOTOther     = @"Other";
     [self fillName:name withParams:dict andKey:resultKey andCategory:nameCategory];
     return name;
 }
-    
-    
-+ (NSString *) adoptTolkienRaceForLocalizationForRace:(ANTolkienRace) race {
-    
-    NSString *result;
-    
-    switch (race) {
-        case ANTolkienRaceMen:
-        result = NSLocalizedString(@"NAMERACE020202", nil);
-        break;
-        
-        case ANTolkienRaceElves:
-        result = NSLocalizedString(@"NAMERACE020201", nil);
-        break;
-        
-        case ANTolkienRaceHobbits:
-        result = NSLocalizedString(@"NAMERACE020203", nil);
-        break;
-        
-        case ANTolkienRaceDwarves:
-        result = NSLocalizedString(@"NAMERACE020204", nil);
-        break;
-        
-        case ANTolkienRaceAinur:
-        result = NSLocalizedString(@"NAMERACE020205", nil);
-        break;
-        
-        case ANTolkienRaceOrcs:
-        result = NSLocalizedString(@"NAMERACE020206", nil);
-        break;
-        
-        case ANTolkienRaceEnts:
-        result = NSLocalizedString(@"NAMERACE020207", nil);
-        break;
-        
-        case ANTolkienRaceDragons:
-        result = NSLocalizedString(@"NAMERACE020208", nil);
-        break;
-        
-        default:
-        result = nil;
-        break;
-    }
-    
-    return result;
-}
-    
-+ (NSString *) getGOTHouseStringForHouse:(ANGOTHouse) house {
-    NSString *result;
-    
-    switch (house) {
-        case ANGOTHouseStark:
-        result = kHouseGOTStark;
-        break;
-        
-        case ANGOTHouseTargaryen:
-        result = kHouseGOTTargaryen;
-        break;
-        
-        case ANGOTHouseLannister:
-        result = kHouseGOTLannister;
-        break;
-            
-        case ANGOTHouseOther:
-        result = kHouseGOTOther;
-        break;
-        
-        default:
-        result = kHouseGOTAll;
-        break;
-    }
-    
-    return result;
-}
-    
-    + (NSString *) adoptGOTHouseForLocalizationForHouse:(ANGOTHouse) house {
-        
-        NSString *result;
-        
-        switch (house) {
-            case ANGOTHouseStark:
-            result = NSLocalizedString(@"NAMERACE020301", nil);
-            break;
-            
-            case ANGOTHouseTargaryen:
-            result = NSLocalizedString(@"NAMERACE020302", nil);
-            break;
-            
-            case ANGOTHouseLannister:
-            result = NSLocalizedString(@"NAMERACE020303", nil);
-            break;
-            
-            default:
-            result = nil;
-            break;
-        }
-        
-        return result;
-    }
 
-    
+
+
+
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race {
     
     NSString *result;
     
     switch (race) {
         case ANTolkienRaceMen:
-        result = kRaceTokienMen;
-        break;
-        
+            result = kRaceTokienMen;
+            break;
+            
         case ANTolkienRaceElves:
-        result = kRaceTokienElves;
-        break;
-        
+            result = kRaceTokienElves;
+            break;
+            
         case ANTolkienRaceHobbits:
-        result = kRaceTokienHobbits;
-        break;
-        
+            result = kRaceTokienHobbits;
+            break;
+            
         case ANTolkienRaceDwarves:
-        result = kRaceTokienDwarves;
-        break;
-        
+            result = kRaceTokienDwarves;
+            break;
+            
         case ANTolkienRaceAinur:
-        result = kRaceTokienAinur;
-        break;
-        
+            result = kRaceTokienAinur;
+            break;
+            
         case ANTolkienRaceOrcs:
-        result = kRaceTokienOrcs;
-        break;
-        
+            result = kRaceTokienOrcs;
+            break;
+            
         case ANTolkienRaceEnts:
-        result = kRaceTokienEnts;
-        break;
-        
+            result = kRaceTokienEnts;
+            break;
+            
         case ANTolkienRaceDragons:
-        result = kRaceTokienDragons;
-        break;
-        
+            result = kRaceTokienDragons;
+            break;
+            
         default:
-        result = kRaceTokienAll;
-        break;
+            result = kRaceTokienAll;
+            break;
     }
     
     return result;
 }
+
++ (NSString *) getStarwarsRaceStringForRace:(ANStarwarsRace) race {
     
+    NSString *result;
     
+    switch (race) {
+        case ANStarwarsRaceHuman:
+            result = kRaceStarwarsHuman;
+            break;
+            
+        case ANStarwarsRaceWookie:
+            result = kRaceStarwarsWookie;
+            break;
+            
+        case ANStarwarsRaceSith:
+            result = kRaceStarwarsSith;
+            break;
+            
+        case ANStarwarsRaceYoda:
+            result = kRaceStarwarsYoda;
+            break;
+            
+        default:
+            result = kRaceStarwarsAll;
+            break;
+    }
+    
+    return result;
+}
+
++ (NSString *) getGOTHouseStringForHouse:(ANGOTHouse) house {
+    NSString *result;
+    
+    switch (house) {
+        case ANGOTHouseStark:
+            result = kHouseGOTStark;
+            break;
+            
+        case ANGOTHouseTargaryen:
+            result = kHouseGOTTargaryen;
+            break;
+            
+        case ANGOTHouseLannister:
+            result = kHouseGOTLannister;
+            break;
+            
+        case ANGOTHouseOther:
+            result = kHouseGOTOther;
+            break;
+            
+        default:
+            result = kHouseGOTAll;
+            break;
+    }
+    
+    return result;
+}
+
+
+
++ (NSString *) adoptGOTHouseForLocalizationForHouse:(ANGOTHouse) house {
+    
+    NSString *result;
+    
+    switch (house) {
+        case ANGOTHouseStark:
+            result = NSLocalizedString(@"NAMERACE020301", nil);
+            break;
+            
+        case ANGOTHouseTargaryen:
+            result = NSLocalizedString(@"NAMERACE020302", nil);
+            break;
+            
+        case ANGOTHouseLannister:
+            result = NSLocalizedString(@"NAMERACE020303", nil);
+            break;
+            
+        default:
+            result = nil;
+            break;
+    }
+    
+    return result;
+}
+
++ (NSString *) adoptTolkienRaceForLocalizationForRace:(ANTolkienRace) race {
+    
+    NSString *result;
+    
+    switch (race) {
+        case ANTolkienRaceMen:
+            result = NSLocalizedString(@"NAMERACE020202", nil);
+            break;
+            
+        case ANTolkienRaceElves:
+            result = NSLocalizedString(@"NAMERACE020201", nil);
+            break;
+            
+        case ANTolkienRaceHobbits:
+            result = NSLocalizedString(@"NAMERACE020203", nil);
+            break;
+            
+        case ANTolkienRaceDwarves:
+            result = NSLocalizedString(@"NAMERACE020204", nil);
+            break;
+            
+        case ANTolkienRaceAinur:
+            result = NSLocalizedString(@"NAMERACE020205", nil);
+            break;
+            
+        case ANTolkienRaceOrcs:
+            result = NSLocalizedString(@"NAMERACE020206", nil);
+            break;
+            
+        case ANTolkienRaceEnts:
+            result = NSLocalizedString(@"NAMERACE020207", nil);
+            break;
+            
+        case ANTolkienRaceDragons:
+            result = NSLocalizedString(@"NAMERACE020208", nil);
+            break;
+            
+        default:
+            result = nil;
+            break;
+    }
+    
+    return result;
+}
+
++ (NSString *) adoptStarwarsRaceForLocalizationForRace:(ANStarwarsRace) race {
+    
+    NSString *result;
+    
+    switch (race) {
+        case ANStarwarsRaceHuman:
+            result = NSLocalizedString(@"NAMERACE020401", nil);
+            break;
+            
+        case ANStarwarsRaceWookie:
+            result = NSLocalizedString(@"NAMERACE020402", nil);
+            break;
+            
+        case ANStarwarsRaceSith:
+            result = NSLocalizedString(@"NAMERACE020403", nil);
+            break;
+            
+        case ANStarwarsRaceYoda:
+            result = NSLocalizedString(@"NAMERACE020204", nil);
+            break;
+        
+        default:
+            result = nil;
+            break;
+    }
+    
+    return result;
+}
+
 - (NSString*) getRace {
     
     if ([self.nameCategory.nameCategoryID isEqualToString:@"02.02"]) {
-        
         NSArray *components = [self.nameID componentsSeparatedByString:@"."];
-        
         ANTolkienRace nameRace = (ANTolkienRace)[[components objectAtIndex:4] integerValue];
-        
         return [ANName adoptTolkienRaceForLocalizationForRace:nameRace];
+        
     } else if ([self.nameCategory.nameCategoryID isEqualToString:@"02.03"]) {
         NSArray *components = [self.nameID componentsSeparatedByString:@"."];
-        
         ANGOTHouse nameHouse = (ANGOTHouse)[[components objectAtIndex:4] integerValue];
-        
         return [ANName adoptGOTHouseForLocalizationForHouse:nameHouse];
+        
+    } else if ([self.nameCategory.nameCategoryID isEqualToString:@"02.04"]) {
+        NSArray *components = [self.nameID componentsSeparatedByString:@"."];
+        ANStarwarsRace nameRace = (ANStarwarsRace)[[components objectAtIndex:4] integerValue];
+        return [ANName adoptStarwarsRaceForLocalizationForRace:nameRace];
     }
     
     return nil;
 }
-    
-    
+
+
 #pragma mark - HELPER METHODS
-    
-    // ==== PLAIN NAMES
+
+// ==== PLAIN NAMES
 + (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*)category andGender:(ANGender) gender {
     
     NSDictionary *resultDict;
@@ -321,7 +390,7 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return resultDict;
 }
-    
+
 + (NSDictionary *) getDictMascOrFemForCategory:(ANNameCategory*)category andGender:(ANGender) gender {
     
     NSString* pathName;
@@ -337,12 +406,12 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return dict;
 }
-    
-    
-    
-    // ==== RACE NAMES
-    
-    // Tolkien names
+
+
+
+// ==== RACE NAMES
+
+// Tolkien names
 + (NSDictionary*) getNamesDictionaryforCategory:(ANNameCategory*) category race:(ANTolkienRace) race andGender:(ANGender) gender {
     
     NSDictionary *resultDict;
@@ -369,7 +438,7 @@ NSString* const kHouseGOTOther     = @"Other";
         } else {
             resultDict = [self getTolkienDictMascOrFemForCategory:category race:race andGender:gender];
         }
-    } else {
+    } else if ([category.nameCategoryID isEqualToString:@"02.03"]) {
         // GOT names
         if (gender == ANGenderAll) {
             NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
@@ -387,16 +456,32 @@ NSString* const kHouseGOTOther     = @"Other";
         } else {
             resultDict = [self getGOTDictMascOrFemForCategory:category house:(ANGOTHouse)race andGender:gender];
         }
+    } else {
+        // Starwars names
+        if (gender == ANGenderAll) {
+            NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
+            
+            
+            NSDictionary* dictMasc = [self getStarwarsDictMascOrFemForCategory:category race:(ANStarwarsRace)race andGender:ANGenderMasculine];
+            
+            [tmpDict addEntriesFromDictionary:dictMasc];
+            
+            NSDictionary *dictFem = [self getStarwarsDictMascOrFemForCategory:category race:(ANStarwarsRace)race andGender:ANGenderFeminine];
+            
+            [tmpDict addEntriesFromDictionary:dictFem];
+            
+            resultDict = tmpDict;
+            
+        } else {
+            resultDict = [self getStarwarsDictMascOrFemForCategory:category race:(ANStarwarsRace)race andGender:gender];
+        }
     }
-    
-    
-    
     
     return resultDict;
 }
-    
-    
-    
+
+
+
 + (NSDictionary *) getTolkienDictMascOrFemForCategory:(ANNameCategory*)category race:(ANTolkienRace) race andGender:(ANGender) gender {
     
     NSString* pathName;
@@ -419,7 +504,7 @@ NSString* const kHouseGOTOther     = @"Other";
     return dict;
     
 }
-    
+
 + (NSDictionary *) getAllTolkienNamesForGender:(ANGender) gender {
     
     NSDictionary *resultDict;
@@ -445,8 +530,8 @@ NSString* const kHouseGOTOther     = @"Other";
     return resultDict;
     
 }
-    
-    
+
+
 + (NSDictionary *) getAllTolkienNamesDictForGender:(ANGender) gender {
     
     NSString* pathName;
@@ -510,9 +595,9 @@ NSString* const kHouseGOTOther     = @"Other";
     return allTolkienNamesDict;
     
 }
-    
-    // Game of Thrones names
-    
+
+// Game of Thrones names
+
 + (NSDictionary *) getGOTDictMascOrFemForCategory:(ANNameCategory*)category house:(ANGOTHouse) house andGender:(ANGender) gender {
     
     NSString* pathName;
@@ -535,7 +620,7 @@ NSString* const kHouseGOTOther     = @"Other";
     return dict;
     
 }
-    
+
 + (NSDictionary *) getAllGOTNamesForGender:(ANGender) gender {
     
     NSDictionary *resultDict;
@@ -560,7 +645,7 @@ NSString* const kHouseGOTOther     = @"Other";
     return resultDict;
     
 }
-    
+
 + (NSDictionary *) getAllGOTNamesDictForGender:(ANGender) gender {
     
     NSString* pathName;
@@ -575,7 +660,7 @@ NSString* const kHouseGOTOther     = @"Other";
     NSString* pathNameTargaryen = [pathName stringByAppendingString:kHouseGOTTargaryen];
     NSString* pathNameLannister = [pathName stringByAppendingString:kHouseGOTLannister];
     NSString* pathNameOther = [pathName stringByAppendingString:kHouseGOTOther];
-   
+    
     NSMutableDictionary* allGOTNamesDict = [NSMutableDictionary dictionary];
     
     NSString *pathStark = [[NSBundle mainBundle] pathForResource:pathNameStark ofType:@"plist"];
@@ -583,10 +668,10 @@ NSString* const kHouseGOTOther     = @"Other";
     
     NSString *pathTargaryen = [[NSBundle mainBundle] pathForResource:pathNameTargaryen ofType:@"plist"];
     NSDictionary *dictTargaryen = [NSDictionary dictionaryWithContentsOfFile:pathTargaryen];
-
+    
     NSString *pathLannister = [[NSBundle mainBundle] pathForResource:pathNameLannister ofType:@"plist"];
     NSDictionary *dictLannister = [NSDictionary dictionaryWithContentsOfFile:pathLannister];
-
+    
     NSString *pathOther = [[NSBundle mainBundle] pathForResource:pathNameOther ofType:@"plist"];
     NSDictionary *dictOther = [NSDictionary dictionaryWithContentsOfFile:pathOther];
     
@@ -594,14 +679,102 @@ NSString* const kHouseGOTOther     = @"Other";
     [allGOTNamesDict addEntriesFromDictionary:dictTargaryen];
     [allGOTNamesDict addEntriesFromDictionary:dictLannister];
     [allGOTNamesDict addEntriesFromDictionary:dictOther];
-
+    
     return allGOTNamesDict;
 }
+
+
+// Starwars names
+
++ (NSDictionary *) getStarwarsDictMascOrFemForCategory:(ANNameCategory*)category race:(ANStarwarsRace) race andGender:(ANGender) gender {
+    
+    NSString* pathName;
+    
+    //Example filename: FictionStarwarsMascHuman.plist
+    
+    if (gender == ANGenderMasculine) {
+        pathName = [category.alias stringByAppendingString:@"Masc"];
+    } else {
+        pathName = [category.alias stringByAppendingString:@"Fem"];
+    }
+    
+    NSString *raceString = [self getStarwarsRaceStringForRace:race];
+    pathName = [pathName stringByAppendingString:raceString];
     
     
+    NSString *path = [[NSBundle mainBundle] pathForResource:pathName ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     
-    // Filling names
+    return dict;
     
+}
+
++ (NSDictionary *) getAllStarwarsNamesForGender:(ANGender) gender {
+    
+    NSDictionary *resultDict;
+    
+    if (gender == ANGenderAll) {
+        NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
+        
+        NSDictionary* dictMasc = [self getAllStarwarsNamesDictForGender:ANGenderMasculine];
+        
+        [tmpDict addEntriesFromDictionary:dictMasc];
+        
+        NSDictionary* dictFem = [self getAllStarwarsNamesDictForGender:ANGenderFeminine];
+        
+        [tmpDict addEntriesFromDictionary:dictFem];
+        
+        resultDict = tmpDict;
+        
+    } else {
+        resultDict = [self getAllStarwarsNamesDictForGender:gender];
+    }
+    
+    return resultDict;
+    
+}
+
++ (NSDictionary *) getAllStarwarsNamesDictForGender:(ANGender) gender {
+    
+    NSString* pathName;
+    
+    if (gender == ANGenderMasculine) {
+        pathName = [@"FictionStarwars" stringByAppendingString:@"Masc"];
+    } else {
+        pathName = [@"FictionStarwars" stringByAppendingString:@"Fem"];
+    }
+    
+    NSString* pathNameHuman = [pathName stringByAppendingString:kRaceStarwarsHuman];
+    NSString* pathNameWookie = [pathName stringByAppendingString:kRaceStarwarsWookie];
+    NSString* pathNameSith = [pathName stringByAppendingString:kRaceStarwarsSith];
+    NSString* pathNameYoda = [pathName stringByAppendingString:kRaceStarwarsYoda];
+    
+    NSMutableDictionary* allStarwarsNamesDict = [NSMutableDictionary dictionary];
+    
+    NSString *pathHuman = [[NSBundle mainBundle] pathForResource:pathNameHuman ofType:@"plist"];
+    NSDictionary *dictHuman = [NSDictionary dictionaryWithContentsOfFile:pathHuman];
+    
+    NSString *pathWookie = [[NSBundle mainBundle] pathForResource:pathNameWookie ofType:@"plist"];
+    NSDictionary *dictWookie = [NSDictionary dictionaryWithContentsOfFile:pathWookie];
+    
+    NSString *pathSith = [[NSBundle mainBundle] pathForResource:pathNameSith ofType:@"plist"];
+    NSDictionary *dictSith = [NSDictionary dictionaryWithContentsOfFile:pathSith];
+    
+    NSString *pathYoda = [[NSBundle mainBundle] pathForResource:pathNameYoda ofType:@"plist"];
+    NSDictionary *dictYoda = [NSDictionary dictionaryWithContentsOfFile:pathYoda];
+    
+    [allStarwarsNamesDict addEntriesFromDictionary:dictHuman];
+    [allStarwarsNamesDict addEntriesFromDictionary:dictWookie];
+    [allStarwarsNamesDict addEntriesFromDictionary:dictSith];
+    [allStarwarsNamesDict addEntriesFromDictionary:dictYoda];
+    
+    return allStarwarsNamesDict;
+}
+
+
+
+// Filling names
+
 + (void) fillName:(ANName*)inputName withParams:(NSDictionary*) params andKey:(NSString*) key andCategory:(ANNameCategory*) category {
     
     NSString* firstNameStr;
@@ -639,16 +812,14 @@ NSString* const kHouseGOTOther     = @"Other";
     inputName.nameCategory       = category;
     inputName.nameGender         = genderOfName;
 }
-    
-    
-    
-    
-    
+
+
+
 + (NSInteger) getRandomForCount:(NSInteger) totalCount {
     NSInteger randomIndex = arc4random_uniform((uint32_t)totalCount);
     return randomIndex;
 }
-    
+
 + (NSString *)stringWithoutBrackets:(NSString *)input{
     NSString *expression = @"\\[[\\w]+\\]";
     while ([input rangeOfString:expression options:NSRegularExpressionSearch|NSCaseInsensitiveSearch].location!=NSNotFound){
@@ -659,8 +830,8 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return input;
 }
-    
-    
+
+
 + (BOOL) findRomanNumberForComponent:(NSString *) component {
     NSArray *romanNumbers = @[@"II", @"III", @"IV", @"VI", @"VII", @"VIII", @"IX", @"XI", @"XII", @"XIII", @"XIV", @"XV", @"XVI", @"XVII", @"XVIII", @"XIX", @"XX"];
     
@@ -672,7 +843,7 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return NO;
 }
-    
+
 + (NSString *) handleRomanNumbersForNameComponents:(NSArray *) nameComponents {
     
     NSMutableArray *resultArray = [NSMutableArray array];
@@ -700,10 +871,10 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return resultString;
 }
-    
-    
+
+
 #pragma mark - TESTING METHODS (PUBLIC)
-    
+
 + (ANName *) constructFakeName {
     
     ANName* name = [[ANName alloc] init];
@@ -716,9 +887,9 @@ NSString* const kHouseGOTOther     = @"Other";
     
     return name;
 }
-    
-    
-    @end
+
+
+@end
 
 
 
