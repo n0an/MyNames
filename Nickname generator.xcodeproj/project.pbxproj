@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1566A7D822858579009E068A /* FictionStarwarsFemHuman.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7DA22858579009E068A /* FictionStarwarsFemHuman.plist */; };
+		1566A7DE22858935009E068A /* FictionStarwarsFemSith.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7E022858935009E068A /* FictionStarwarsFemSith.plist */; };
+		1566A7E422858A51009E068A /* FictionStarwarsFemWookie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7E622858A51009E068A /* FictionStarwarsFemWookie.plist */; };
+		1566A7EA22859157009E068A /* FictionStarwarsFemYoda.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7EC22859157009E068A /* FictionStarwarsFemYoda.plist */; };
+		1566A7F0228592F3009E068A /* FictionStarwarsMascHuman.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7F2228592F3009E068A /* FictionStarwarsMascHuman.plist */; };
+		1566A7F62285930D009E068A /* FictionStarwarsMascSith.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7F82285930D009E068A /* FictionStarwarsMascSith.plist */; };
+		1566A7FC22859324009E068A /* FictionStarwarsMascWookie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A7FE22859324009E068A /* FictionStarwarsMascWookie.plist */; };
+		1566A80222859338009E068A /* FictionStarwarsMascYoda.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1566A80422859338009E068A /* FictionStarwarsMascYoda.plist */; };
 		1806DA481F6D835700568A3F /* FictionGOTMascStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */; };
 		1806DA4E1F6D840500568A3F /* FictionGOTFemStark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1806DA501F6D840500568A3F /* FictionGOTFemStark.plist */; };
 		18100DAD1CB248C400508F1D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18100DAB1CB248C400508F1D /* Model.xcdatamodeld */; };
@@ -102,6 +110,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1566A7D922858579009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsFemHuman.plist; sourceTree = "<group>"; };
+		1566A7DB2285857F009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsFemHuman.plist; sourceTree = "<group>"; };
+		1566A7DF22858935009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsFemSith.plist; sourceTree = "<group>"; };
+		1566A7E12285893A009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsFemSith.plist; sourceTree = "<group>"; };
+		1566A7E522858A51009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsFemWookie.plist; sourceTree = "<group>"; };
+		1566A7E722858A54009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsFemWookie.plist; sourceTree = "<group>"; };
+		1566A7EB22859157009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsFemYoda.plist; sourceTree = "<group>"; };
+		1566A7ED22859159009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsFemYoda.plist; sourceTree = "<group>"; };
+		1566A7F1228592F3009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsMascHuman.plist; sourceTree = "<group>"; };
+		1566A7F3228592F4009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsMascHuman.plist; sourceTree = "<group>"; };
+		1566A7F72285930D009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsMascSith.plist; sourceTree = "<group>"; };
+		1566A7F92285930E009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsMascSith.plist; sourceTree = "<group>"; };
+		1566A7FD22859324009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsMascWookie.plist; sourceTree = "<group>"; };
+		1566A7FF22859325009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsMascWookie.plist; sourceTree = "<group>"; };
+		1566A80322859338009E068A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionStarwarsMascYoda.plist; sourceTree = "<group>"; };
+		1566A80522859339009E068A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionStarwarsMascYoda.plist; sourceTree = "<group>"; };
 		1806DA491F6D835700568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
 		1806DA4B1F6D835900568A3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/FictionGOTMascStark.plist; sourceTree = "<group>"; };
 		1806DA4F1F6D840500568A3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/FictionGOTFemStark.plist; sourceTree = "<group>"; };
@@ -285,6 +309,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1566A7D122858488009E068A /* FictionStarwars */ = {
+			isa = PBXGroup;
+			children = (
+				1566A7DA22858579009E068A /* FictionStarwarsFemHuman.plist */,
+				1566A7E022858935009E068A /* FictionStarwarsFemSith.plist */,
+				1566A7E622858A51009E068A /* FictionStarwarsFemWookie.plist */,
+				1566A7EC22859157009E068A /* FictionStarwarsFemYoda.plist */,
+				1566A7F2228592F3009E068A /* FictionStarwarsMascHuman.plist */,
+				1566A7F82285930D009E068A /* FictionStarwarsMascSith.plist */,
+				1566A7FE22859324009E068A /* FictionStarwarsMascWookie.plist */,
+				1566A80422859338009E068A /* FictionStarwarsMascYoda.plist */,
+			);
+			name = FictionStarwars;
+			sourceTree = "<group>";
+		};
 		1806DA521F6D847E00568A3F /* FictionGOT */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +410,7 @@
 		18267E291CB132E600AB130B /* Names Plists */ = {
 			isa = PBXGroup;
 			children = (
+				1566A7D122858488009E068A /* FictionStarwars */,
 				1806DA521F6D847E00568A3F /* FictionGOT */,
 				18FCA2B61E978975000FE44B /* FictionTolkien */,
 				18C03C1C1E8447A00050773D /* FictionDuneMasc.plist */,
@@ -565,7 +605,6 @@
 				18F1B96F1C8F43C1001A3B25 /* Resources */,
 				18AF0AB41CF0C10D0061B497 /* ShellScript */,
 				9BDA8289E67D39DEE1442D84 /* [CP] Embed Pods Frameworks */,
-				361723309D4AE74D5E0656C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -584,8 +623,6 @@
 				18F1B9861C8F43C1001A3B25 /* Sources */,
 				18F1B9871C8F43C1001A3B25 /* Frameworks */,
 				18F1B9881C8F43C1001A3B25 /* Resources */,
-				C6C221BE775AAF9F3ADC9546 /* [CP] Embed Pods Frameworks */,
-				8F69DA97DABED58F10FAF080 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -605,8 +642,6 @@
 				18F1B9911C8F43C1001A3B25 /* Sources */,
 				18F1B9921C8F43C1001A3B25 /* Frameworks */,
 				18F1B9931C8F43C1001A3B25 /* Resources */,
-				85A7C94CEF9ACAB3104C3154 /* [CP] Embed Pods Frameworks */,
-				A13C43414749CB4A0E4DF5C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -650,6 +685,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				ru,
@@ -677,7 +713,9 @@
 				1847EB151E96D122002F80CC /* FictionTolkienMascHobbits.plist in Resources */,
 				183AD6651F72EF8400BC51B9 /* FictionGOTFemOther.plist in Resources */,
 				183AD6591F72EDAC00BC51B9 /* FictionGOTFemLannister.plist in Resources */,
+				1566A7EA22859157009E068A /* FictionStarwarsFemYoda.plist in Resources */,
 				18C03C201E84496F0050773D /* FictionDuneFem.plist in Resources */,
+				1566A7D822858579009E068A /* FictionStarwarsFemHuman.plist in Resources */,
 				18FCA2B21E978926000FE44B /* FictionTolkienMascDragons.plist in Resources */,
 				18AF09E41CEF738A0061B497 /* MythPersianMasc.plist in Resources */,
 				18AF09D81CEF728F0061B497 /* MythNorseFem.plist in Resources */,
@@ -694,11 +732,15 @@
 				18AF09C61CEF6E830061B497 /* MythEgyptFem.plist in Resources */,
 				18FCA29A1E977DA4000FE44B /* FictionTolkienFemAinur.plist in Resources */,
 				18A5784F1CECF47900A10BB1 /* MythCelticMasc.plist in Resources */,
+				1566A80222859338009E068A /* FictionStarwarsMascYoda.plist in Resources */,
 				183AD6471F72EC8200BC51B9 /* FictionGOTMascTargaryen.plist in Resources */,
+				1566A7F62285930D009E068A /* FictionStarwarsMascSith.plist in Resources */,
+				1566A7DE22858935009E068A /* FictionStarwarsFemSith.plist in Resources */,
 				18A5783E1CECE0A300A10BB1 /* Localizable.strings in Resources */,
 				183AD64D1F72ECEA00BC51B9 /* FictionGOTFemTargaryen.plist in Resources */,
 				18AF09E81CEF742D0061B497 /* MythRomanFem.plist in Resources */,
 				18AF09F01CEF75180061B497 /* MythVedicFem.plist in Resources */,
+				1566A7FC22859324009E068A /* FictionStarwarsMascWookie.plist in Resources */,
 				1847EB1B1E96D19A002F80CC /* FictionTolkienFemHobbits.plist in Resources */,
 				188E72341E865235006A8CBA /* GoogleService-Info.plist in Resources */,
 				18AF09DC1CEF72CA0061B497 /* MythNorseMasc.plist in Resources */,
@@ -706,6 +748,7 @@
 				1806DA481F6D835700568A3F /* FictionGOTMascStark.plist in Resources */,
 				18D12DC51E92D968003A62AF /* FictionTolkienMascMen.plist in Resources */,
 				1847EB0F1E96AC99002F80CC /* FictionTolkienMascElves.plist in Resources */,
+				1566A7E422858A51009E068A /* FictionStarwarsFemWookie.plist in Resources */,
 				18FCA28E1E976AFA000FE44B /* FictionTolkienFemDwarves.plist in Resources */,
 				183AD65F1F72EECD00BC51B9 /* FictionGOTMascOther.plist in Resources */,
 				18FCA2BF1E97D7EB000FE44B /* FictionTolkienFemDragons.plist in Resources */,
@@ -717,6 +760,7 @@
 				18C03C1A1E8447A00050773D /* FictionDuneMasc.plist in Resources */,
 				18F1B97F1C8F43C1001A3B25 /* Main.storyboard in Resources */,
 				18AF09C21CEF6E410061B497 /* MythEgyptMasc.plist in Resources */,
+				1566A7F0228592F3009E068A /* FictionStarwarsMascHuman.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,21 +812,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		361723309D4AE74D5E0656C8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5F22304AF05A61104B027DCF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -801,71 +830,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85A7C94CEF9ACAB3104C3154 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generatorUITests/Pods-Nickname generatorUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8F69DA97DABED58F10FAF080 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generatorTests/Pods-Nickname generatorTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9BDA8289E67D39DEE1442D84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Nickname generator/Pods-Nickname generator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generator/Pods-Nickname generator-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A13C43414749CB4A0E4DF5C8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generatorUITests/Pods-Nickname generatorUITests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nickname generator/Pods-Nickname generator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B0859A4328F0CEE73F4881B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -884,21 +870,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C6C221BE775AAF9F3ADC9546 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nickname generatorTests/Pods-Nickname generatorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -967,6 +938,78 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1566A7DA22858579009E068A /* FictionStarwarsFemHuman.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7D922858579009E068A /* en */,
+				1566A7DB2285857F009E068A /* ru */,
+			);
+			name = FictionStarwarsFemHuman.plist;
+			sourceTree = "<group>";
+		};
+		1566A7E022858935009E068A /* FictionStarwarsFemSith.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7DF22858935009E068A /* en */,
+				1566A7E12285893A009E068A /* ru */,
+			);
+			name = FictionStarwarsFemSith.plist;
+			sourceTree = "<group>";
+		};
+		1566A7E622858A51009E068A /* FictionStarwarsFemWookie.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7E522858A51009E068A /* en */,
+				1566A7E722858A54009E068A /* ru */,
+			);
+			name = FictionStarwarsFemWookie.plist;
+			sourceTree = "<group>";
+		};
+		1566A7EC22859157009E068A /* FictionStarwarsFemYoda.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7EB22859157009E068A /* en */,
+				1566A7ED22859159009E068A /* ru */,
+			);
+			name = FictionStarwarsFemYoda.plist;
+			sourceTree = "<group>";
+		};
+		1566A7F2228592F3009E068A /* FictionStarwarsMascHuman.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7F1228592F3009E068A /* en */,
+				1566A7F3228592F4009E068A /* ru */,
+			);
+			name = FictionStarwarsMascHuman.plist;
+			sourceTree = "<group>";
+		};
+		1566A7F82285930D009E068A /* FictionStarwarsMascSith.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7F72285930D009E068A /* en */,
+				1566A7F92285930E009E068A /* ru */,
+			);
+			name = FictionStarwarsMascSith.plist;
+			sourceTree = "<group>";
+		};
+		1566A7FE22859324009E068A /* FictionStarwarsMascWookie.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A7FD22859324009E068A /* en */,
+				1566A7FF22859325009E068A /* ru */,
+			);
+			name = FictionStarwarsMascWookie.plist;
+			sourceTree = "<group>";
+		};
+		1566A80422859338009E068A /* FictionStarwarsMascYoda.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1566A80322859338009E068A /* en */,
+				1566A80522859339009E068A /* ru */,
+			);
+			name = FictionStarwarsMascYoda.plist;
+			sourceTree = "<group>";
+		};
 		1806DA4A1F6D835700568A3F /* FictionGOTMascStark.plist */ = {
 			isa = PBXVariantGroup;
 			children = (

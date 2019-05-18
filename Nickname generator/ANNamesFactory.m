@@ -21,13 +21,14 @@
         sharedFactory = [[ANNamesFactory alloc] init];
                 
         ANNameCategory* randomCategory = [[ANNameCategory alloc] initWithCategoryID:@"00.00" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0000", nil) andAlias:@"RandomCat"];
-
+        
         ANNameCategory* area02cat01 = [[ANNameCategory alloc] initWithCategoryID:@"02.01" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0201", nil) andAlias:@"FictionDune"];
         
         ANNameCategory* area02cat02 = [[ANNameCategory alloc] initWithCategoryID:@"02.02" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0202", nil) andAlias:@"FictionTolkien"];
         
         ANNameCategory* area02cat03 = [[ANNameCategory alloc] initWithCategoryID:@"02.03" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0203", nil) andAlias:@"FictionGOT"];
-
+        
+        ANNameCategory* area02cat04 = [[ANNameCategory alloc] initWithCategoryID:@"02.04" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0204", nil) andAlias:@"FictionStarwars"];
 
         ANNameCategory* area01cat01 = [[ANNameCategory alloc] initWithCategoryID:@"01.01" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0001", nil) andAlias:@"MythGreek"];
         
@@ -43,7 +44,7 @@
         
         ANNameCategory* area01cat07 = [[ANNameCategory alloc] initWithCategoryID:@"01.07" andCategoryTitle:NSLocalizedString(@"NAMECATEGORY0007", nil) andAlias:@"MythCeltic"];
    
-        sharedFactory.namesCategories = @[randomCategory, area02cat03, area02cat01, area02cat02, area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
+        sharedFactory.namesCategories = @[randomCategory, area02cat04, area02cat03, area02cat01, area02cat02, area01cat01, area01cat02, area01cat03, area01cat04, area01cat05, area01cat06, area01cat07];
     });
     
     return sharedFactory;
@@ -63,6 +64,9 @@
             
         } else if ([randomCategory.nameCategoryID isEqualToString:@"02.03"]) {
             result = [self getRandomGOTForHouse:ANGOTHouseAll andGender:gender];
+            
+        } else if ([randomCategory.nameCategoryID isEqualToString:@"02.04"]) {
+            result = [self getRandomStarwarsForRace:ANStarwarsRaceAll andGender:gender];
 
         } else {
             result = [ANName randomNameforCategory:randomCategory andGender:gender];
@@ -89,8 +93,12 @@
     ANName* result = [ANName randomNameforCategory:gotCategory race:(ANTolkienRace) house andGender:gender];
     return result;
 }
-    
-    
+
+- (ANName*) getRandomStarwarsForRace:(ANStarwarsRace) race andGender:(ANGender) gender {
+    ANNameCategory* starwarsCategory = [self getCategoryForID:@"02.04"];
+    ANName* result = [ANName randomNameforCategory:starwarsCategory race:(ANTolkienRace)race andGender:gender];
+    return result;
+}
 
 - (ANName*) getNameForID:(NSString*) nameID {
     NSString* nameCategoryID = [nameID substringToIndex:5];
@@ -124,6 +132,8 @@
         adoptedCategory = NSLocalizedString(@"NAMECATEGORY0202", nil);
     } else if ([string isEqualToString:@"Game of Thrones"] || [string isEqualToString:@"Игра Престолов"]) {
         adoptedCategory = NSLocalizedString(@"NAMECATEGORY0203", nil);
+    } else if ([string isEqualToString:@"Starwars"] || [string isEqualToString:@"Звездные войны"]) {
+        adoptedCategory = NSLocalizedString(@"NAMECATEGORY0204", nil);
     } else {
         adoptedCategory = @"";
     }

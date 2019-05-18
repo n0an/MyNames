@@ -42,13 +42,13 @@ open class RevealingSplashView: UIView, SplashAnimatable{
             if(useCustomIconColor == true){
 
                 if let iconImage = self.iconImage {
-                    imageView?.image = iconImage.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+                  imageView?.image = iconImage.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
                 }
             }
             else{
                 
                 if let iconImage = self.iconImage {
-                    imageView?.image = iconImage.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                  imageView?.image = iconImage.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
                 }
             }
         }
@@ -62,6 +62,9 @@ open class RevealingSplashView: UIView, SplashAnimatable{
              imageView?.frame = CGRect(x: 0, y: 0, width: iconInitialSize.width, height: iconInitialSize.height)
         }
     }
+    
+    /// The image view containing the background Image
+    open var backgroundImageView: UIImageView?
     
     /// THe image view containing the icon Image
     open var imageView: UIImageView?
@@ -79,7 +82,7 @@ open class RevealingSplashView: UIView, SplashAnimatable{
     open var heartAttack: Bool = false
     
     /// The repeat counter for heart beat animation, default to 1
-    open var minimumBeats: Int = 1
+    @objc open var minimumBeats: Int = 1
     
     /**
      Default constructor of the class
@@ -90,7 +93,7 @@ open class RevealingSplashView: UIView, SplashAnimatable{
      
      - returns: The created RevealingSplashViewObject
      */
-    public init(iconImage: UIImage, iconInitialSize:CGSize, backgroundColor: UIColor)
+    @objc public init(iconImage: UIImage, iconInitialSize:CGSize, backgroundColor: UIColor)
     {
         //Sets the initial values of the image view and icon view
         self.imageView = UIImageView()
@@ -104,7 +107,7 @@ open class RevealingSplashView: UIView, SplashAnimatable{
         //Set the initial size and position
         imageView?.frame = CGRect(x: 0, y: 0, width: iconInitialSize.width, height: iconInitialSize.height)
         //Sets the content mode and set it to be centered
-        imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         imageView?.center = self.center
         
         //Adds the icon to the view
@@ -112,6 +115,36 @@ open class RevealingSplashView: UIView, SplashAnimatable{
         
         //Sets the background color
         self.backgroundColor = backgroundColor
+        
+    }
+    
+    public init(iconImage: UIImage, iconInitialSize:CGSize, backgroundImage: UIImage)
+    {
+        //Sets the initial values of the image view and icon view
+        self.imageView = UIImageView()
+        self.iconImage = iconImage
+        self.iconInitialSize = iconInitialSize
+        //Inits the view to the size of the screen
+        super.init(frame: (UIScreen.main.bounds))
+        
+        imageView?.image = iconImage
+        imageView?.tintColor = iconColor
+        //Set the initial size and position
+        imageView?.frame = CGRect(x: 0, y: 0, width: iconInitialSize.width, height: iconInitialSize.height)
+        //Sets the content mode and set it to be centered
+        imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        imageView?.center = self.center
+        
+        //Sets the background image
+        self.backgroundImageView = UIImageView()
+        backgroundImageView?.image = backgroundImage
+        backgroundImageView?.frame = UIScreen.main.bounds
+        backgroundImageView?.contentMode = UIView.ContentMode.scaleAspectFill
+        
+        self.addSubview(backgroundImageView!)
+        
+        //Adds the icon to the view
+        self.addSubview(imageView!)
         
     }
 
