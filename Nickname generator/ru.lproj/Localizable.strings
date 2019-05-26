@@ -25,6 +25,7 @@ NAMECATEGORY0007 = "Кельтская мифология";
 NAMECATEGORY0201 = "Дюна";
 NAMECATEGORY0202 = "Толкиен";
 NAMECATEGORY0203 = "Игра Престолов";
+NAMECATEGORY0204 = "Звездные войны";
 
 NAMERACE020200 = "Все";
 NAMERACE020201 = "Эльфы";
@@ -41,6 +42,12 @@ NAMERACE020301 = "Старк";
 NAMERACE020302 = "Таргариен";
 NAMERACE020303 = "Ланнистер";
 NAMERACE020304 = "Другие";
+
+NAMERACE020400 = "Все";
+NAMERACE020401 = "Люди";
+NAMERACE020402 = "Вуки";
+NAMERACE020403 = "Ситх";
+NAMERACE020404 = "Йода";
 
 PAGEHEADERS01 = "MyNames";
 PAGEHEADERS02 = "Удобный интерфейс";

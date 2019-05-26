@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   FictionStarwarsFemYoda.plist
+   Nickname generator
+
+   Created by nag on 10/05/2019.
+   Copyright (c) 2019 Anton Novoselov. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+        <key>Yaddle</key><dict><key>nameID</key><string>02.04.1.1.04</string><key>nameDescription</key><string>Yaddle, a Force-sensitive female being of the same species as Grand Master Yoda, was a Jedi Master and member of the Jedi High Council during the last years of the Galactic Republic. She trained a Thisspiasian Padawan, Oppo Rancisis, who eventually joined Yaddle on the High Council by the time of the Invasion of Naboo.
+            In 32 BBY, Qui-Gon Jinn brought the Chosen One Anakin Skywalker to the Jedi Temple on Coruscant where he met Yaddle and the Jedi elders. After the Battle of Naboo, Yaddle took a less active role in the Jedi Order's affairs and was no longer on the High Council by the time of the Clone Wars.
+            During the rise of the Galactic Empire, the Sith Lord Darth Vader encountered apparitions of several Jedi, including Yaddle, while experiencing a series of Force visions.
+            Yaddle was born around five hundred and nine years before the Battle of Yavin.[1] At some point during her life, she was found to be Force-sensitive, and was taken to the Jedi Temple to be trained in the ways of the Jedi. Eventually, she was promoted to the rank of Jedi Master, and was given a seat on the Jedi High Council on which she remained for some time. She also trained the Thisspiasian Oppo Rancisis, who eventually took up a seat alongside her in the High Council as well.[1]
+            During the Invasion of Naboo[3] in 32 BBY,[4] Yaddle was present in the Jedi Council Chamber inside the Temple on Coruscant, when fellow Jedi Master Qui-Gon Jinn presented himself to the High Council with daunting news that the Sith, the ancient enemies of the Jedi had returned to the galaxy. She was also present during the evaluation of Anakin Skywalker, a 9-year-old Force-sensitive child, who Jinn believed was the Chosen One that was prophesied to bring balance to the Force. The High Council initially agreed that they would not accept him into the Jedi Order, however, they reversed their decision as Jinn's dying wish was for Skywalker to be trained.[3]
+            Following the Battle of Naboo, Yaddle decided to take a less active role in Jedi affairs[5] and left the Jedi High Council by the time of the Clone Wars.[2] Her seat on the Council was taken by Jedi Master Shaak Ti.[6]
+            Shortly after the Battle of Fortress Vader, Darth Vader entered a portal constructed by Lord Momin to resurrect his wife Padmé Amidala. While walking through visions, he encountered Yaddle along with many Jedi with their lightsabers ready to battle him. However, Vader defeated all of the illusions, impaling Yaddle through the chest as the words "Let the past die" resounded in his mind.[7]
+            Yaddle was highly sought after for her great wisdom,[8] and was also known for her quietness,[2] patience and kindness.[9] A female member of the same mysterious species as Yoda,[2] Yaddle had auburn hair, green-gold eyes, green skin[3] and a height of 0.61 meters.[2]
+            Yaddle was skilled in little-known[8] and deadly Jedi powers[10] such as morichro, an ancient art that enabled the user to slow the opponent's bodily functions to the point of death.[1]
+            Yaddle was operated in the 1999 film Star Wars: Episode I The Phantom Menace by Phil Eason.[11] The model for Yaddle was originally created by concept artist Iain McCaig as a sketch for a young Yoda, but was later put in the movies as Yaddle, a female member of Yoda's species.[12]</string><key>nameURL</key><string>https://starwars.fandom.com/wiki/Yaddle</string><key>nameImageName</key><string>FictionStarwarsYodaFemYaddle</string></dict>
+    
+    </dict>
+</plist>

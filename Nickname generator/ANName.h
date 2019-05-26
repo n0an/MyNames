@@ -35,6 +35,14 @@ typedef enum {
     ANGOTHouseOther = 4
 } ANGOTHouse;
 
+typedef enum {
+    ANStarwarsRaceAll = 0,
+    ANStarwarsRaceHuman = 1,
+    ANStarwarsRaceWookie = 2,
+    ANStarwarsRaceSith = 3,
+    ANStarwarsRaceYoda = 4,
+    ANStarwarsRaceOther = 5
+} ANStarwarsRace;
 
 @class ANNameCategory;
 
@@ -57,6 +65,7 @@ typedef enum {
 + (NSString *) getTolkienRaceStringForRace:(ANTolkienRace) race;
 + (NSString *) adoptTolkienRaceForLocalizationForRace:(ANTolkienRace) race;
 + (NSString *) getGOTHouseStringForHouse:(ANGOTHouse) house;
++ (NSString *) getStarwarsRaceStringForRace:(ANStarwarsRace) race;
 
 - (NSString*) getRace;
 
@@ -100,18 +109,20 @@ typedef enum {
  | **03**         | Ancient real names   |
  
  ##### Category of Area
- | Area Key       | Category Key     | Description      |
- | :------------- | :-------------   | ------           |
- | **01**         | **01**           | Mythological     |
- |                | **02**           | Vedic            |
- |                | **03**           | Roman            |
- |                | **04**           | Norse            |
- |                | **05**           | Egypt            |
- |                | **06**           | Persian          |
- |                | **07**           | Celtic           |
- | **02**         | **01**           | Dune             |
- |                | **02**           | Tolkien          |
- |                | **03**           | Game of Thrones  |
+ | Area Key       | Category Key     | Description         |
+ | :------------- | :-------------   | ------              |
+ | **01**         | **01**           | Mythological        |
+ |                | **02**           | Vedic               |
+ |                | **03**           | Roman               |
+ |                | **04**           | Norse               |
+ |                | **05**           | Egypt               |
+ |                | **06**           | Persian             |
+ |                | **07**           | Celtic              |
+ | **02**         | **01**           | Dune                |
+ |                | **02**           | Tolkien             |
+ |                | **03**           | Game of Thrones     |
+ |                | **04**           | Star Wars           |
+ |                | **05**           | Chronicles of Amber |
  
  ##### Races or house, or subcat, or etc.
  | Area Key       | Category Key   | Race Key | Description       |
@@ -128,5 +139,9 @@ typedef enum {
  |                |                | 02       | Targaryen         |
  |                |                | 03       | Lannister         |
  |                |                | 04       | Other (not shown) |
+ |                | **04**         | 01       | Human             |
+ |                |                | 02       | Wookie            |
+ |                |                | 03       | Sith              |
+ |                |                | 04       | Yoda              |
 
 */
